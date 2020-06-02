@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT server EMPTY>
+<!ATTLIST server
+  host CDATA #IMPLIED
+  name CDATA #IMPLIED
+  port CDATA #IMPLIED
+>
+<!ELEMENT servers (server) >

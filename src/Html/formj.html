@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+  <!-- Created with AOLpress/2.0 -->
+  <TITLE>javascript forms test. (Page 2)</TITLE>
+</HEAD>
+<BODY>
+<H1>
+  Sample From
+</H1>
+<P>
+<SCRIPT Language="JavaScript"> 
+document.writeln("Sample javascript text<BR> "); 
+document.bgColor="blue"; 
+
+var nwin = null;
+
+function check_input()
+{
+
+/*
+	nwin = window.open('','Note','toolbar=no,location=no,directories=no,
+	      		   status=no,scrollbars=yes,resizable=yes,
+			   copyhistory=no, width=300,height=300');
+			   */
+
+	nwin = window.open('','Note',
+	'toolbar=no,status=no,scrollbars=yes,resizable=yes,copyhistory=no,width=300,height=300');
+	ndoc = nwin.document;
+	nstr =
+	"<HTML><HEAD><BR><TITLE>poo</TITLE></HEAD><BODY>poo</BODY></HTML>";
+	//ndoc.write(nstr);
+	ndoc.writeln("<H1>Form output</H1>");
+	ndoc.writeln("<B>");
+	ndoc.writeln("<br>name     :" + document.forms[0].name.value);
+	ndoc.writeln("<br>address  :" + document.forms[0].address.value);
+	ndoc.writeln("<br>Prof     :" + document.forms[0].Prof.value);
+	ndoc.writeln("<br>Standard :" + document.forms[0].Standard.value);
+	ndoc.writeln("<br>Platforms:" + document.forms[0].Platforms.value);
+	ndoc.writeln("<br>comments :" + document.forms[0].comments.value);
+	ndoc.writeln("<\B>");
+	str = '<FORM><CENTER><INPUT TYPE="button" NAME="closebutton" VALUE= "Close"';
+	str += ' OnClick="self.close();"></CENTER><\FORM>';
+	ndoc.writeln(str);
+	ndoc.close();
+	//return(confirm("Are you Sure asshole ??"));
+}
+</SCRIPT> 
+Enter Name
+<FORM ACTION="" METHOD="POST" OnSubmit="check_input();">
+  <INPUT TYPE="text" NAME="name">
+  <P>
+  Enter e-mail address
+  <P>
+  <INPUT TYPE="text" NAME="address">
+  <P>
+  Choose Platform
+  <P>
+  <SELECT NAME="platforms"> 
+  <OPTION SELECTED>Windows 95 
+  <OPTION>Unix 
+  <OPTION>OS2</SELECT>
+  <P>
+  Check Type:
+  <P>
+  <INPUT TYPE="checkbox" NAME="Standard" VALUE="Standard">Standard &nbsp;
+  <INPUT TYPE="checkbox" NAME="Prof" VALUE="Professional">Professional
+  <P>
+  Enter Comments:
+  <P>
+  <TEXTAREA NAME="comments" COLS="20" ROWS="10"></TEXTAREA>
+  <P>
+  <INPUT TYPE="submit" NAME="submit" VALUE="Submit">
+</FORM>
+<P>
+<P>
+</BODY></HTML>

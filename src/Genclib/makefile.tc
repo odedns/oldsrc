@@ -1,0 +1,76 @@
+
+include ..\inc\Gmake.inc
+
+LIBSRC1 = llist.c	\
+	  hash.c  	\
+	  stk.c		\
+	  queue.c	\
+	  path.c	
+
+LIBSRC2	= sort.c 	\
+	  getopt.c	\
+	  match.c	\
+	  inifile.c	\
+	  vector.c
+
+LIBSRC3 = bignum1.c	\
+	  bignum2.c	\
+	  soundex.c
+
+LIBOBJ1 := $(patsubst %.c,%.obj,$(LIBSRC1))
+LIBOBJ2 := $(patsubst %.c,%.obj,$(LIBSRC2))
+LIBOBJ3 := $(patsubst %.c,%.obj,$(LIBSRC3))
+GENCLIB = gclib16.lib
+LIB = tlib
+RM = rm -v
+
+BINDIR = .
+HASHTST = $(BINDIR)\\hashtst.exe
+INITST = $(BINDIR)\\initst.exe
+SRCDIR = /dev/src/genclib/
+
+
+all: $(GENCLIB) 
+
+
+# remove object files and executables
+clean:
+	@echo cleanning up ....
+	@cd $(BINDIR)
+	@-$(RM) $(LIBOBJ1) 
+	@-$(RM) $(LIBOBJ2) $(GENCLIB) 
+	@-$(RM) $(LIBOBJ3) 
+	@cd $(SRCDIR)
+
+
+# create the library.
+$(GENCLIB): $(LIBOBJ1) $(LIBOBJ2) $(LIBOBJ3)
+	@echo creating $@ ....
+	cd $(BINDIR)
+	$(LIB) $(notdir $@)/C $(foreach f,$(LIBOBJ1), $(join -+ , $(f)))
+	$(LIB) $(notdir $@)/C $(foreach f,$(LIBOBJ2), $(join -+ , $(f)))
+	$(LIB) $(notdir $@)/C $(foreach f,$(LIBOBJ3), $(join -+ , $(f)))
+	cd $(SRCDIR)
+
+
+# create the library.
+
+
+
+#echo $(LIB) $(notdir $@)/C $(foreach f,$(notdir $(MYOBJS)), $(join -+ , $(f)))
+#echo $(LIB) $(notdir $@)/C $(foreach f,$(notdir $(MYOBJS2)), $(join -+ , $(f)))
+#echo $(LIB) $(GENCLIB)/E
+#@cd \dev\src
+
+
+show_flags:
+	@echo CC 		=  $(CC)
+	@echo CFLAGS 		=  $(CFLAGS)
+	@echo LIB 		= $(LIB)
+	@echo INCLUDE  		= $(INCLUDE)
+	@echo OS 		= $(OS)
+	@echo SRCDIR		= $(SRCDIR)
+	@echo LIBSRC1		= $(LIBSRC1)
+	@echo LIBOBJ1		= $(LIBOBJ1)
+	@echo LIBOBJ2		= $(LIBOBJ2)
+

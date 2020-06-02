@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="appClientModule"/>
+    <classpathentry kind="var" path="SERVERJDK_PLUGINDIR/jre/lib/rt.jar"
+        rootpath="SERVERJDK_SRCROOT" sourcepath="SERVERJDK_PLUGINDIR/src.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/j2ee.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/ivjejb35.jar"/>
+    <classpathentry kind="lib" path="/MatafServer/Web Content/Client Jars/dseb.jar"/>
+    <classpathentry kind="lib" path="/MatafServer/Web Content/Client Jars/xerces.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/eclipse/plugins/org.junit_3.7.0/junit.jar"/>
+    <classpathentry kind="lib" path="jars/db2java.zip"/>
+    <classpathentry kind="lib" path="jars/dwplugin.jar"/>
+    <classpathentry kind="output" path="classes"/>
+</classpath>

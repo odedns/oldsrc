@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ============================================================================ -->
+	<!-- paging button set -->
+	<!-- ============================================================================ -->
+ 	<buttonSet name="pagingBS">
+ 		<button name="first" eventName="first" group="paging"/>
+ 		<button name="next" eventName="next" group="paging"/>
+ 		<button name="prev" eventName="prev" group="paging"/>
+ 		<button name="last" eventName="last" group="paging"/>
+ 	</buttonSet> 
+ </root>

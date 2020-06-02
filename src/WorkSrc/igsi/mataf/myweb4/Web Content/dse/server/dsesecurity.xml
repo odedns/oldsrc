@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <Generic_Security>
+    <groupDef>
+      <group id="managerOperations">
+        <operation id="newAccount"/>
+        <operation id="cancelAccount"/>
+        <group id="cashOperations"/>
+      </group>
+      <group id="cashOperations">
+        <operation id="deposit"/>
+        <operation id="withdrawal"/>
+      </group>
+    </groupDef>
+
+    <securityDef>
+      <role id="Manager">
+        <group id="managerOperations"/>
+      </role>
+      <role id="Teller">
+        <operation id="serverHandlerOp"/>
+        <operation id="withdrawal"/>
+      </role>
+    </securityDef>
+  </Generic_Security>

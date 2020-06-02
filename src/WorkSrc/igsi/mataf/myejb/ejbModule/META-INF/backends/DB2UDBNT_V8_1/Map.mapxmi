@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejbrdbmapping:EjbRdbDocumentRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ejbrdbmapping="ejbrdbmapping.xmi" xmlns:RDBSchema="RDBSchema.xmi" xmlns:ejb="ejb.xmi" xmlns:Mapping="Mapping.xmi" xmi:id="EjbRdbDocumentRoot_1046705402719" outputReadOnly="false" topToBottom="true" commandStack="&#60;collection>&#60;command-creation-record>&#60;class name=&#34;com.ibm.etools.ejbrdbmapping.command.TopDownEjbJarCommand&#34;/>&#60;command-parameter>&#60;ref-object href=&#34;META-INF/ejb-jar.xml#EJBJar_1044259050688&#34;/>&#60;null/>&#60;collection>&#60;string value=&#34;MYDB&#34;/>&#60;string value=&#34;MYCMP&#34;/>&#60;int value=&#34;24&#34;/>&#60;hashtable>&#60;/hashtable>&#60;hashtable>&#60;/hashtable>&#60;boolean value=&#34;false&#34;/>&#60;boolean value=&#34;false&#34;/>&#60;/collection>&#60;null/>&#60;int value=&#34;-1&#34;/>&#60;/command-parameter>&#60;/command-creation-record>&#60;/collection>">
+  <helper xmi:type="ejbrdbmapping:RdbSchemaProperies" xmi:id="RdbSchemaProperies_1046705402719" primitivesDocument="DB2UDBNT_V8"/>
+  <nested xmi:type="ejbrdbmapping:RDBEjbMapper" xmi:id="RDBEjbMapper_1046705402719">
+    <helper xmi:type="ejbrdbmapping:PrimaryTableStrategy" xmi:id="PrimaryTableStrategy_1046705402719">
+      <table href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP_MYCMP.tblxmi#RDBTable_1046705402734"/>
+    </helper>
+    <nested xmi:type="ejbrdbmapping:RDBEjbFieldMapper" xmi:id="RDBEjbFieldMapper_1046705402719">
+      <inputs xmi:type="ejb:CMPAttribute" href="META-INF/ejb-jar.xml#CMPAttribute_1046705402734"/>
+      <outputs xmi:type="RDBSchema:RDBColumn" href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP_MYCMP.tblxmi#RDBColumn_1046705402750"/>
+      <typeMapping href="JavatoDB2UDBNT_V8TypeMaps.xmi#Integer-INTEGER"/>
+    </nested>
+    <nested xmi:type="ejbrdbmapping:RDBEjbFieldMapper" xmi:id="RDBEjbFieldMapper_1046705402720">
+      <inputs xmi:type="ejb:CMPAttribute" href="META-INF/ejb-jar.xml#CMPAttribute_1046705402750"/>
+      <outputs xmi:type="RDBSchema:RDBColumn" href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP_MYCMP.tblxmi#RDBColumn_1046705402751"/>
+      <typeMapping href="JavatoDB2UDBNT_V8TypeMaps.xmi#String-VARCHAR"/>
+    </nested>
+    <nested xmi:type="ejbrdbmapping:RDBEjbFieldMapper" xmi:id="RDBEjbFieldMapper_1046705402721">
+      <inputs xmi:type="ejb:CMPAttribute" href="META-INF/ejb-jar.xml#CMPAttribute_1046705402751"/>
+      <outputs xmi:type="RDBSchema:RDBColumn" href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP_MYCMP.tblxmi#RDBColumn_1046705402766"/>
+      <typeMapping href="JavatoDB2UDBNT_V8TypeMaps.xmi#String-VARCHAR"/>
+    </nested>
+    <inputs xmi:type="ejb:ContainerManagedEntity" href="META-INF/ejb-jar.xml#Mycmp"/>
+    <outputs xmi:type="RDBSchema:RDBTable" href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP_MYCMP.tblxmi#RDBTable_1046705402734"/>
+  </nested>
+  <inputs xmi:type="ejb:EJBJar" href="META-INF/ejb-jar.xml#EJBJar_1044259050688"/>
+  <outputs xmi:type="RDBSchema:RDBDatabase" href="META-INF/backends/DB2UDBNT_V8_1/MYDB.dbxmi#RDBDatabase_1046705402766"/>
+  <typeMapping xmi:type="Mapping:MappingRoot" href="JavatoDB2UDBNT_V8TypeMaps.xmi#Java_to_DB2UDBNT_V8_TypeMaps"/>
+</ejbrdbmapping:EjbRdbDocumentRoot>

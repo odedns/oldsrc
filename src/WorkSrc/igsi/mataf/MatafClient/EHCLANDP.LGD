@@ -1,0 +1,13 @@
+IBM LANDP Error Dump Facility Version 6.0 (2002)
+-----------------------------------------------------
+The system detected a Fatal Error in 17:37:06  02/09/04
+ Module: ..\ehcrmtq.c
+ Date  : Nov 17 2003
+ Line:   1193
+ Rc(dec)= 105
+ Rc(hex)= 69
+The process is using EHCWINNT.DLL
+EHCWINNT_Start is at: 5A601000
+Thread number 1636, priority 00000001
+Process Id : 2172 .EXE name : C:\j2sdk1.5.0\bin\javaw.exe
+/*----- End of Error Dump -----*/

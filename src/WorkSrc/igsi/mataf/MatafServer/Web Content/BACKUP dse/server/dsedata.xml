@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsedata.xml>
+     <field id="BranchId" value="1005"/>
+     <field id="TID"/>
+     
+     <field id="schum"/>
+     <field id="UserId"/>
+     
+     <field id="taarichMatan"/>
+     <field id="TrxReplyCode"/>
+     <!--Collection of data elements identified by key-->
+     <kColl id="openHlViewData">
+          
+          <refData refId="sugCheshbonHlList"/>
+     </kColl>
+     
+     <field id="marechetCode"/>
+     <!--=========================================================================-->
+     <!-- WorkStation Data                                                        -->
+     <!--=========================================================================-->
+     <kColl id="workstationData">
+          <refData refId="TID"/>
+          <refData refId="UserId"/>
+          <refData refId="sessionID"/>
+     </kColl>
+     <!--Collection of data elements identified by key-->
+     <kColl id="initHlData">
+          
+          <refData refId="marechetList"/>
+          <refData refId="sugCheshbonHlList"/>          
+          <refData refId="misparHl"/>
+     </kColl>
+     <!--Collection of data elements identified by key-->
+     <kColl id="confirmOpenHlData">
+          
+          <refData refId="marechetCode"/>
+          
+          <refData refId="bankKupa"/>
+          
+          <refData refId="snifCode"/>
+          
+          <refData refId="sugCheshbonHlCode"/>
+          
+          <refData refId="cheshbon"/>
+          
+          <refData refId="misparHl"/>
+          
+          <refData refId="taarichMatan"/>
+     </kColl>
+     <!--Collection of data elements identified by key-->
+     <kColl id="StartupServerData">
+          
+          <refData refId="snifList"/>
+     </kColl>
+     <field id="TrxErrorMessage"/>
+     
+     <field id="marechetText"/>
+     <field id="AccountNumber"/>
+     <field id="HostBuff"/>
+     <!--Collection of data elements identified by key-->
+     <kColl id="marechetData">
+          
+          <refData refId="marechetCode"/>
+          
+          <refData refId="marechetText"/>
+     </kColl>
+     <field id="clientType"/>
+     
+     <iColl id="marechetList">
+          
+          <refData refId="marechetData"/>
+     </iColl>
+     
+     <field id="snifText"/>
+     <field id="sessionID"/>
+     <field id="dse_sessionId"/>
+     
+     <field id="snifCode"/>
+     <!--Collection of data elements identified by key-->
+     <kColl id="snifData">
+          
+          <refData refId="snifCode"/>
+          
+          <refData refId="snifText"/>
+     </kColl>
+     <field id="dse_pageId"/>
+     <field id="dse_replyPage"/>
+     
+     <iColl id="snifList">
+          
+          <refData refId="snifData"/>
+     </iColl>
+     <!--=========================================================================-->
+     <!-- Branch Data                                                             -->
+     <!--=========================================================================-->
+     <kColl id="branchData">
+          <refData refId="BranchId"/>
+          <refData refId="snifList"/>
+     </kColl>
+     
+     <field id="bankKupa"/>
+     <field id="OpnDate"/>
+     
+     <field id="cheshbon"/>
+     <!--=========================================================================-->
+     <!-- Java Channel Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="javaChannelData">
+          <refData refId="clientType"/>
+     </kColl>
+     
+     <field id="cheshbonText"/>
+     <field id="OpnDescription"/>
+     <!--=========================================================================-->
+     <!-- Java Session Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="javaSessionData">
+          <refData refId="TID"/>
+          <refData refId="UserId"/>
+          <refData refId="CustomerId"/>
+          <refData refId="CustomerName"/>
+          <refData refId="AccountListData"/>
+          <refData refId="HostBuff"/>
+          <refData refId="sessionID"/>
+     </kColl>
+     
+     
+     <field id="sugCheshbonHlCode"/>
+     <field id="OpnAmount"/>
+     <field id="Type"/>
+     <field id="OpnBalance"/>
+     
+     
+     <field id="sugCheshbonHlText"/>
+     
+     <kColl id="sugCheshbonHlData">
+          
+          <refData refId="sugCheshbonHlCode"/>
+          
+          <refData refId="sugCheshbonHlText"/>
+     </kColl>
+          
+     <field id="returnCode"/>
+     
+     <iColl id="sugCheshbonHlList">
+          
+          <refData refId="sugCheshbonHlData"/>
+     </iColl>
+     
+     <field id="misparHl"/>
+     <!--=========================================================================-->
+     <!-- Startup Operation Data                                                  -->
+     <!--=========================================================================-->
+     <kColl id="startupServerData">
+          <refData refId="TID"/>
+          <field id="WKSContext"/>
+          <field id="WKSParentContext"/>
+          <refData refId="sessionID"/>
+          <refData refId="UserId"/>          
+     </kColl>
+     <field id="CustomerId"/>
+     <!--=========================================================================-->
+     <!-- End session Operation Data                                              -->
+     <!--=========================================================================-->
+     <kColl id="endSessionServerData"/>
+     <field id="CustomerName"/>
+     <field id="Name"/>
+     <field id="Balance"/>
+     
+     <field id="TrxId"/>
+</dsedata.xml>

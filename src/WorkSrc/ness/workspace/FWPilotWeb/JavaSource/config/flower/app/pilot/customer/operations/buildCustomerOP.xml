@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+    <operationDefinition name="PLInitBuildCustomerOP"  activityType="readOnly" class="fwpilot.customer.operations.PLInitBuildCustomerOP"/>
+    <operationDefinition name="PLSaveCustomerOP"  activityType="readWrite"  class="fwpilot.customer.operations.PLSaveCustomerOP"/>
+	<operationDefinition name="PLInitAddressOP"  activityType="readOnly" class="fwpilot.customer.operations.PLInitAddressOP"/>
+	<operationDefinition name="PLNewAddressOP"  activityType="readWrite" class="fwpilot.customer.operations.PLNewAddressOP"/>
+	<operationDefinition name="PLUpdateAddressOP"  activityType="readWrite" class="fwpilot.customer.operations.PLUpdateAddressOP"/>
+	<operationDefinition name="PLDeleteAddressOP"  activityType="readWrite" class="fwpilot.customer.operations.PLDeleteAddressOP"/>
+	<operationDefinition name="clickAddress"  activityType="readOnly" class="fwpilot.customer.operations.PLLoadAddressOP"/>
+	<operationDefinition name="PLInitRelatedOP"  activityType="readOnly" class="fwpilot.customer.operations.PLInitRelatedOP"/>
+	<operationDefinition name="PLNewRelatedOP"  activityType="readWrite" class="fwpilot.customer.operations.PLNewRelatedOP"/>
+	<operationDefinition name="PLUpdateRelatedOP"  activityType="readWrite" class="fwpilot.customer.operations.PLUpdateRelatedOP"/>
+	<operationDefinition name="PLDeleteRelatedOP"  activityType="readWrite" class="fwpilot.customer.operations.PLDeleteRelatedOP"/>
+	<operationDefinition name="clickRelated"  activityType="readOnly" class="fwpilot.customer.operations.PLLoadRelatedOP"/>
+
+	<operationDefinition name="initSearchCustomerFromAgreement"  activityType="readOnly"  class="fwpilot.customer.operations.PLCustomerSearchInitFromAgreementOP"/>
+	<operationDefinition name="validateCustomer"  activityType="readOnly" context="validateCustomerContext" class="fwpilot.customer.operations.ValidateCustomerSearch"/>
+	<operationDefinition name="fillCustomerFromAgreementSearchResults"  activityType="readOnly"  class="fwpilot.customer.operations.FillCustomerFromAgreementSearchResults"/>
+
+
+</root>

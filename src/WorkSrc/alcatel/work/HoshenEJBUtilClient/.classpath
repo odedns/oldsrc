@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ejbModule"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/WebSphere v5.1 JRE"/>
+	<classpathentry kind="con" path="com.ibm.wtp.server.java.core.container/com.ibm.etools.websphere.runtime.core.runtimeTarget.v51/was.base.v51"/>
+	<classpathentry exported="true" kind="src" path="/prjEJ_Utils"/>
+	<classpathentry kind="src" path="gen/src"/>
+	<classpathentry kind="lib" path="C:/IBM/Rational/SDP/6.0/runtimes/base_v51/lib/namingclient.jar"/>
+	<classpathentry kind="lib" path="C:/IBM/Rational/SDP/6.0/runtimes/base_v51/lib/naming.jar"/>
+	<classpathentry kind="lib" path="C:/IBM/Rational/SDP/6.0/runtimes/base_v51/lib/namingserver.jar"/>
+	<classpathentry kind="lib" path="C:/temp/implfactory.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

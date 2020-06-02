@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="var" path="SERVERJDK_PLUGINDIR/jre/lib/rt.jar"
+        rootpath="SERVERJDK_SRCROOT" sourcepath="SERVERJDK_PLUGINDIR/src.jar"/>
+    <classpathentry kind="src" path="Java Source"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/j2ee.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/webcontainer.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/ivjejb35.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/websphere.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-beanutils.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-collections.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-dbcp.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-digester.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-fileupload.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-lang.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-logging.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-pool.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-resources.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-validator.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/jakarta-oro.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/struts.jar"/>
+    <classpathentry kind="output" path="Web Content\WEB-INF\classes"/>
+</classpath>

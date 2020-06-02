@@ -1,0 +1,115 @@
+
+
+
+SETENV program history.
+
+V0.1
+SETENV <variable> <value>
+
+V0.2
+SETENV <variable>
+
+V0.3
+return error level
+
+V0.4
+SETENV <variable> %drive
+SETENV <variable> %cwd
+
+V0.5
+SETENV <variable> %+n
+SETENV <variable> %-n
+
+V0.6
+SETENV <variable> %dosv
+SETENV <variable> %dosm
+
+V0.7
+SETENV <variable> %prompt <message>
+
+V0.8
+SETENV <variable> %prompt %def<del><text><del> <message>
+
+V0.9
+redo errorlevel values
+
+V1.0
+make %drive, %cwd, %dosv, %dosm, %-n, and %-n keys
+
+V1.1
+fix bug %def could not be upper case
+SETENV <variable> %noecho <message>
+
+V1.2
+SETENV <variable> %rep<del><text1><del><text2><del>
+return not found message if erasing a none existing variable
+
+V1.3
+fix bug with deleting over prompt string in %prompt
+SETENV %rce <variable> <message>
+SETENV <variable> %upper <message>
+make %noecho, %upper, and %def order independent
+environment test for SETENV= variable on first segment
+
+V1.4
+fix bug where environment variable is greater then 80 for %rep
+reduce the program size by using the help area
+
+V1.5
+SETENV <variable> %prompt %timo=hh:mm:ss <prompt string>
+make %timo, %noecho, %upper, and %def order independent
+if there is a %timo and no %def then assume %def//
+use default value on timeout
+
+V1.6
+SETENV <variable> %chgup {change environment variable to upper case}
+fix bug we don't see the first environment variable for %rep///
+we can now allow white space infront of %prompt, %rep///, and %chgup
+the drive letter returned is lowercase use %chgup uppercase
+add %time, %date, %date1, %date2, and %date3
+
+V1.7
+'environment space over written' removed as errorlevel 04h
+'don't know about MS-DOS V1.x' from errorlevel 07h to 04h
+'not a valid argument' added for errorlevel 07h 
+add the following as keys:
+%len<del><environment variable><del>
+%sum<del><environment variable><del><number><del>
+%element<del><element number><del><environment variable><del><element><del>
+%mid<del><environment variable><del><starting position><del><length><del>
+%loc<del><starting position><del><environment variable><del><search string><del>
+
+V1.8
+add logical operators %eq %lt %le %gt %ge
+%<log_oper> [<string> or <variable>] [<string> or <variable>]
+
+V1.9
+add %chglo to lowercase the environment variable
+add %lower to %prompt to write lowercase only
+add %trim to %prompt to trim leading and trialing spaces on entry
+add %chr<del><number><del> to create characters you can not enter like >|<
+add %\<number>\ in prompt string to create characters you can not enter >|<
+
+V2.0
+version change just to release program
+add %cfd for current full directory ie: \bin\ where %cwd makes \bin
+
+V2.1
+stop the program when we can not file a environment variable to anchor on
+add to %prompt, %readkey to read just one key stroke without a carriage return
+
+V2.2
+environment test for CONFIG= variable on first segment
+list is now COMSPEC= PROMPT= PATH= COMFIG= SETENV=
+
+V2.3
+fix bug character echo on the %prompt %readkey
+
+V2.4
+restucture return codes
+program not released - will be version 3.0
+
+V2.5
+environment test for Windows 95 variables on first segment
+list is now COMSPEC= PROMPT= PATH= COMFIG= SETENV=
+            TEMP= TMP= winbootdir=

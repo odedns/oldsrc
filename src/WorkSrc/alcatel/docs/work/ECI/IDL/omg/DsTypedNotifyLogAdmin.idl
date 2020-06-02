@@ -1,0 +1,67 @@
+#ifndef _OMG_DS_TYPED_NOTIFY_LOG_ADMIN_IDL_
+#define _OMG_DS_TYPED_NOTIFY_LOG_ADMIN_IDL_
+
+//
+//	Copyright (c) 1999 IONA Technologies PLC. All Rights Reserved.
+//
+//   THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF IONA Technologies PLC
+//	    The copyright notice above does not evidence any
+//	    actual or intended publication of such source code.
+//
+
+#include <omg/CosTypedNotifyChannelAdmin.idl> // CORBA Typed Notify Service
+#include <omg/DsTypedEventLogAdmin.idl>
+#include <omg/CosNotifyFilter.idl>
+#include <omg/CosNotification.idl>
+
+#pragma IT_SystemSpecification
+
+#pragma prefix "omg.org"
+
+#pragma IT_BeginCBESpecific AllJava                             "@@\
+@module DsTypedNotifyLogAdmin=org.omg"
+module DsTypedNotifyLogAdmin
+{
+    
+interface TypedNotifyLog : DsTypedEventLogAdmin::TypedEventLog, 
+    CosTypedNotifyChannelAdmin::TypedEventChannel
+{
+    CosNotifyFilter::Filter get_filter();
+
+    void set_filter(in CosNotifyFilter::Filter filter);
+};
+    
+interface TypedNotifyLogFactory : 
+	DsLogAdmin::LogMgr, CosNotifyChannelAdmin::ConsumerAdmin
+{
+    TypedNotifyLog create (
+	in DsLogAdmin::LogFullActionType full_action,
+	in unsigned long long max_size,
+	in DsLogAdmin::CapacityAlarmThresholdList thresholds,
+	in CosNotification::QoSProperties initial_qos,
+	in CosNotification::AdminProperties initial_admin,
+	out DsLogAdmin::LogId id
+	) 
+	raises (DsLogAdmin::InvalidLogFullAction,
+		DsLogAdmin::InvalidThreshold,
+		CosNotification::UnsupportedQoS,
+		CosNotification::UnsupportedAdmin);
+    
+    TypedNotifyLog create_with_id (
+          in DsLogAdmin::LogId id,
+          in DsLogAdmin::LogFullActionType full_action,
+          in unsigned long long max_size,
+          in DsLogAdmin::CapacityAlarmThresholdList thresholds,
+          in CosNotification::QoSProperties initial_qos,
+          in CosNotification::AdminProperties initial_admin
+	) 
+	raises (DsLogAdmin::LogIdAlreadyExists, 
+		DsLogAdmin::InvalidLogFullAction,
+		DsLogAdmin::InvalidThreshold,
+		CosNotification::UnsupportedQoS, 
+		CosNotification::UnsupportedAdmin);
+};
+
+};
+
+#endif

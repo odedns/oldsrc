@@ -1,0 +1,249 @@
+<!ELEMENT dseoper.xml ((operation|clientOperation|serverOperation|labs.WithdrawalClientOperation|StartupClientOp|EndSessionClientOp|com.ibm.dse.automaton.html.DSEHtmlProcessorOperation | com.ibm.dse.samples.html.StartHtmlSession | labs.WithdrawalServerOperation | EndSessionServerOp | com.ibm.dse.base.EventManagerServerOperation | StartupServerOp | opStepsKColl)+)>
+
+<!ELEMENT operation ((opStep | elements | compare | exists | setMessageAndOrValue)*,(refOpSteps)?,(iniValue)*,(refFormat)*,(refService)*)*>
+<!ATTLIST operation 
+    implClass CDATA #IMPLIED
+    context CDATA #IMPLIED
+    xVal CDATA #IMPLIED
+    id ID #REQUIRED
+>
+
+<!ELEMENT clientOperation ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST clientOperation
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context IDREF #IMPLIED
+	serverOperation CDATA #REQUIRED
+	xVal CDATA #IMPLIED
+	serverOperationParentContext IDREF #IMPLIED
+>
+
+<!ELEMENT StartupClientOp ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST StartupClientOp
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	serverOperation CDATA #REQUIRED
+	xVal CDATA #IMPLIED
+	serverOperationParentContext IDREF #IMPLIED
+>
+
+<!ELEMENT EndSessionClientOp ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST EndSessionClientOp
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	serverOperation CDATA #REQUIRED
+	xVal CDATA #IMPLIED
+	serverOperationParentContext IDREF #IMPLIED
+>
+
+<!ELEMENT labs.WithdrawalClientOperation ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST labs.WithdrawalClientOperation
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	serverOperation CDATA #REQUIRED
+	xVal CDATA #IMPLIED
+	serverOperationParentContext IDREF #IMPLIED
+>
+
+<!ELEMENT refService EMPTY>
+<!ATTLIST refService 
+    alias CDATA #IMPLIED
+    type CDATA #IMPLIED
+    refId CDATA #REQUIRED
+>
+
+<!ELEMENT serverOperation ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST serverOperation
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT com.ibm.dse.samples.html.StartHtmlSession ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST com.ibm.dse.samples.html.StartHtmlSession
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT com.ibm.dse.automaton.html.DSEHtmlProcessorOperation ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST com.ibm.dse.automaton.html.DSEHtmlProcessorOperation
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT labs.WithdrawalServerOperation ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST labs.WithdrawalServerOperation
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT EndSessionServerOp ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST EndSessionServerOp
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT StartupServerOp ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST StartupServerOp
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT com.ibm.dse.base.EventManagerServerOperation ((refFormat)*, (refService)*, (iniValue)*, ((opStep | compare | exists | elements)*| refOpSteps)?)>
+<!ATTLIST com.ibm.dse.base.EventManagerServerOperation
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	xVal CDATA #IMPLIED
+>
+
+<!ELEMENT opStep ((param)*)*>
+<!ATTLIST opStep 
+    implClass CDATA #IMPLIED
+    on0Do CDATA #IMPLIED
+    onOtherDo CDATA #IMPLIED
+    on2Do CDATA #IMPLIED
+    onTrue CDATA #IMPLIED
+    onFalse CDATA #IMPLIED
+    id CDATA #REQUIRED
+    on1Do CDATA #IMPLIED
+    fieldName2check CDATA #IMPLIED
+    msgTableId CDATA #IMPLIED
+    errorNo CDATA #IMPLIED
+    accountFieldName CDATA #IMPLIED
+    accountTypeFieldName CDATA #IMPLIED
+    branchFieldName CDATA #IMPLIED
+    icoll2check CDATA #IMPLIED
+    fieldNameInIcoll CDATA #IMPLIED
+    field2setText CDATA #IMPLIED
+    tableName CDATA #IMPLIED
+    tableKey CDATA #IMPLIED
+    fieldNameToCmpr CDATA #IMPLIED
+    value2cmpr CDATA #IMPLIED
+    fieldToSet CDATA #IMPLIED
+    valueToSet CDATA #IMPLIED
+    icoll1name CDATA #IMPLIED
+    icoll2name CDATA #IMPLIED
+    fieldsNames2cmpr CDATA #IMPLIED
+    delim CDATA #IMPLIED
+    fieldsNames2load CDATA #IMPLIED
+    serviceName CDATA #IMPLIED
+    kcollName CDATA #IMPLIED
+    dataMapperName CDATA #IMPLIED
+    comparisonType CDATA #IMPLIED
+    entityName CDATA #IMPLIED
+    formatName CDATA #IMPLIED
+    action CDATA #IMPLIED
+    textFormat CDATA #IMPLIED
+    setErrorInField CDATA #IMPLIED
+    indexFieldName CDATA #IMPLIED
+    bankFieldName CDATA #IMPLIED
+    operator CDATA #IMPLIED
+    const CDATA #IMPLIED
+    dataElementA CDATA #IMPLIED
+    dataElementName CDATA #IMPLIED
+    dataValue CDATA #IMPLIED
+>
+
+<!ELEMENT opStepsKColl ((opStep | elements | compare | exists | setMessageAndOrValue | refOpSteps)*,(refOpSteps)*)*>
+<!ATTLIST opStepsKColl 
+    id ID #REQUIRED
+>
+
+<!ELEMENT elements ((param)*)*>
+<!ATTLIST elements 
+    on2Do CDATA #IMPLIED
+    id ID #REQUIRED
+    operator CDATA #REQUIRED
+    onTrue CDATA #IMPLIED
+    dataElement CDATA #REQUIRED
+    on0Do CDATA #IMPLIED
+    onFalse CDATA #IMPLIED
+    onOtherDo CDATA #IMPLIED
+    implClass CDATA #IMPLIED
+    on1Do CDATA #IMPLIED
+    size CDATA #REQUIRED
+>
+
+<!ELEMENT refFormat EMPTY>
+<!ATTLIST refFormat 
+    name CDATA #REQUIRED
+    refId CDATA #REQUIRED
+>
+
+<!ELEMENT compare ((param)*)*>
+<!ATTLIST compare 
+    on2Do CDATA #IMPLIED
+    id CDATA #REQUIRED
+    operator CDATA #REQUIRED
+    onTrue CDATA #IMPLIED
+    on0Do CDATA #IMPLIED
+    onFalse CDATA #IMPLIED
+    onOtherDo CDATA #IMPLIED
+    implClass CDATA #IMPLIED
+    const CDATA #IMPLIED
+    dataElementB CDATA #IMPLIED
+    dataElementA CDATA #REQUIRED
+    on1Do CDATA #IMPLIED
+>
+
+<!ELEMENT exists ((param)*)*>
+<!ATTLIST exists 
+    negated CDATA #REQUIRED
+    on2Do CDATA #IMPLIED
+    id ID #REQUIRED
+    onTrue CDATA #IMPLIED
+    dataElement CDATA #REQUIRED
+    on0Do CDATA #IMPLIED
+    onFalse CDATA #IMPLIED
+    onOtherDo CDATA #IMPLIED
+    implClass CDATA #IMPLIED
+    on1Do CDATA #IMPLIED
+>
+
+<!ELEMENT param EMPTY>
+<!ATTLIST param 
+    value CDATA #REQUIRED
+    id ID #REQUIRED
+>
+
+<!ELEMENT refOpSteps EMPTY>
+<!ATTLIST refOpSteps 
+    refId IDREF #REQUIRED
+>
+
+<!ELEMENT iniValue EMPTY>
+<!ATTLIST iniValue 
+    name IDREF #REQUIRED
+    value CDATA #REQUIRED
+>
+
+<!ELEMENT setMessageAndOrValue ((param)*)*>
+<!ATTLIST setMessageAndOrValue 
+    on2Do CDATA #IMPLIED
+    id CDATA #REQUIRED
+    onTrue CDATA #IMPLIED
+    on0Do CDATA #IMPLIED
+    onFalse CDATA #IMPLIED
+    onOtherDo CDATA #IMPLIED
+    implClass CDATA #IMPLIED
+    dataElementName CDATA #IMPLIED
+    dataValue CDATA #IMPLIED
+    on1Do CDATA #IMPLIED
+    msgTableId CDATA #IMPLIED
+    errorNo CDATA #IMPLIED
+>

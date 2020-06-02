@@ -1,0 +1,2 @@
+#!/bin/sh
+Y --host sne451 --fg cyan --bg blue --font 12b

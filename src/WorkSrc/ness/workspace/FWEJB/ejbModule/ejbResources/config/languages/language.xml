@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "language.dtd">
+<root>
+
+	<defaultLanguage language="he" country="IL"/>	
+
+	<languageSet language="he" country="IL" >
+		<definition charset="UTF-8"  encoding="UTF-8" direction="rtl" flagImage="israel.gif" imagesDirectoryName="heb"/>
+	</languageSet>
+	
+	<languageSet language="en" country="US" >
+		<definition charset="UTF-8"  encoding="UTF-8" direction="ltr" flagImage="use.gif" imagesDirectoryName="eng"/>
+	</languageSet> 
+
+	<languageSet language="iw" country="IL">
+		<copyDefFrom fromLanguage="he" fromCountry="IL" />
+	</languageSet>
+	
+	<languageSet language="iw">
+		<copyDefFrom fromLanguage="he" fromCountry="IL" />
+	</languageSet> 
+
+</root>

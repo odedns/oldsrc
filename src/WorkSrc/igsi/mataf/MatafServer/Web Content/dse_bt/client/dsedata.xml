@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Data>
+     <!--DWGroupDef:Test Bank Teller.Client.Data-->
+     <!-- ******************************************************************************** -->
+     <!-- 		START DATA DEFINITIONS SAMPLE FOR THE CLIENT		        		  -->
+     <!-- ******************************************************************************** -->
+     <!-- ================================================================== -->
+     <!-- 				Common Definitions			         	-->
+     <!-- ================================================================== -->
+     <field id="AccountBalance"/>
+     <field id="CustomerAddress"/>
+     <field id="CustomerCity"/>
+     <field id="CustomerName"/>
+     <field id="UserId"/>
+     <field id="UserName"/>
+     <!-- ================================================================== -->
+     <!-- 			 		Branch			         	      -->
+     <!-- ================================================================== -->
+     <kColl id="branch">
+          <field id="BranchAddress"/>
+          <field id="BranchId" value="111"/>
+          <field id="BranchName"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 			 		Workstation	         	    	         	-->
+     <!-- ================================================================== -->
+     <kColl id="workstation">
+          <field id="TID"/>
+          <refData refId="UserId"/>
+          <refData refId="UserName"/>
+          <field id="OperSequenceNumber"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 			 		User         	    	         	-->
+     <!-- ================================================================== -->
+	<kColl id="UserData">
+		<field id="UserId"/>
+		<field id="Password"/>
+		<field id="LogonId"/>
+		<field id="journalAlias" value="Journal"/>
+		<field id="entityName" value="EJTABLE"/>
+		<field id="generationNum"/>
+		<field id="TID"/>
+	</kColl>
+
+
+     <!-- ================================================================== -->
+     <!-- 			 	Customer Session   			   	      -->
+     <!-- ================================================================== -->
+     <kColl id="customerSession">
+          <refData refId="CustomerName"/>
+          <refData refId="CustomerAddress"/>
+          <refData refId="CustomerCity"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 			 	Startup Operation      			         	-->
+     <!-- ================================================================== -->
+     <kColl id="startupClientData">
+          <field id="TID"/>
+          <field id="WKSContext" value="clientWorkstationCtx"/>
+          <field id="WKSParentContext" value="typeACtx"/>
+          <field id="sessionID"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				End Session Operation	      	       	-->
+     <!-- ================================================================== -->
+     <kColl id="endSessionClientData"/>
+     <!-- ******************************************************************************** -->
+     <!-- 		END DATA DEFINITIONS SAMPLE FOR THE CLIENT		        			  -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 		START BTF CORE EXTENSION DATA DEFINITIONS  FOR THE CLIENT	       	  -->
+     <!-- ******************************************************************************** -->
+	
+     <!-- ================================================================== -->
+     <!-- 				Forced Logon			     -->
+     <!-- ================================================================== -->
+	
+     <kColl id="ForcedLogonData">
+     	<field id="UserId"/>
+     	<field id="Password"/>
+     	<field id="SuperId"/>
+     	<field id="SuperPassword"/>
+     	<refData refId="Status"/>
+     </kColl>
+	
+     <!-- ================================================================== -->
+     <!-- 				Logon				     -->
+     <!-- ================================================================== -->
+	
+     <kColl id="LogonData">
+          <field id="UserId"/>
+          <field id="Password"/>
+          <refData refId="Status"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Logoff		     		     -->
+     <!-- ================================================================== -->
+     <kColl id="LogoffData">
+          <refData refId="Status"/>
+     </kColl>
+     <kColl id="Status">
+          <field id="ReturnStatus"/>
+          <field id="ReturnCode"/>
+          <field id="MessageBody"/>
+          <field id="ConfirmationNumber"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 			Teller End Of Day       	             -->
+     <!-- ================================================================== -->
+     <kColl id="tellerEODData">
+          <refData refId="Status"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Agent Admin		      	      	      -->
+     <!-- ================================================================== -->
+     <!--Change Own Password Context Data-->
+     <kColl id="ChangeOwnPassword">
+          <field id="NewPassword"/>
+          <field id="VerifyPassword"/>
+          <refData refId="Status"/>
+     </kColl>
+     <kColl id="UserRole">
+          <field id="RoleName"/>
+          <refData refId="UserRights"/>
+          <field id="FromEffDate"/>
+          <field id="ToEffDate"/>
+     </kColl>
+     <iColl id="UserRoles" size="0">
+          <refData refId="UserRole"/>
+     </iColl>
+     <kColl id="RightsAndRolesAndUsers">
+          <refData refId="SecurityUsers"/>
+          <refData refId="SecurityUser"/>
+          <refData refId="UsersIDs"/>
+          <refData refId="UserRoles"/>
+          <refData refId="RolesNames"/>
+          <refData refId="UserRights"/>
+          <refData refId="RightsNames"/>
+     </kColl>
+     <kColl id="RightsAndRoles">
+          <refData refId="UserRoles"/>
+          <refData refId="RolesNames"/>
+          <refData refId="UserRights"/>
+          <refData refId="RightsNames"/>
+     </kColl>
+     <kColl id="Roles">
+          <!--field id="UserId" value="SUPV1"/-->
+          <!--field id="Password" value="1SUPV"/-->
+          <refData refId="UserRoles"/>
+          <refData refId="RolesNames"/>
+     </kColl>
+     <iColl id="RolesNames" size="0">
+          <field id="RoleName"/>
+     </iColl>
+     <kColl id="Role">
+          <field id="RoleName"/>
+          <refData refId="RightsNames"/>
+     </kColl>
+     <iColl id="RightsNames" size="0">
+          <field id="RightName"/>
+     </iColl>
+     <kColl id="UserRight">
+          <field id="RightName"/>
+          <field id="FromEffDate"/>
+          <field id="ToEffDate"/>
+     </kColl>
+     <iColl id="UserRights" size="0">
+          <refData refId="UserRight"/>
+     </iColl>
+     <kColl id="Rights">
+          <refData refId="UserRights"/>
+          <refData refId="RightsNames"/>
+     </kColl>
+     <kColl id="SecurityUser">
+          <field id="SecurityUserName"/>
+          <field id="SecurityUserID"/>
+          <field id="FromEffDate"/>
+          <field id="ToEffDate"/>
+          <field id="SecurityUserPassword"/>
+          <refData refId="UserRoles"/>
+          <refData refId="UserRights"/>
+     </kColl>
+     <iColl id="UsersIDs" size="0">
+          <field id="SecurityUserID"/>
+     </iColl>
+     <kColl id="UserProfiles">
+          <refData refId="SecurityUsers"/>
+          <refData refId="UsersIDs"/>
+     </kColl>
+     <iColl id="SecurityUsers" size="0">
+          <refData refId="SecurityUser"/>
+     </iColl>
+     <!-- ================================================================== -->
+     <!-- 				Electronic Journal	 	  	      	      -->
+     <!-- ================================================================== -->
+     <field id="journalAlias" value="Journal"/>
+     <kColl id="retrieveSchemaInfoClientData">
+          <refData refId="journalAlias"/>
+          <refData refId="entities"/>
+          <field id="numOfGeneration"/>
+     </kColl>
+     <iColl id="entities">
+          <field id="entity"/>
+     </iColl>
+     <kColl id="ejClientData">
+          <!-- Request Data-->
+          <field id="pageNum"/>
+          <field id="generationNum"/>
+          <field id="entityName" value="EJTABLE"/>
+          <field id="sqlWhereClause"/>
+          <field id="processSQLWhereClause"/>
+          <refData refId="journalAlias"/>
+          <!-- Response Data-->
+          <refData refId="ejItems"/>
+          <field id="lastPage"/>
+          <!-- View Data-->
+          <refData refId="detailsList"/>
+     </kColl>
+     <iColl id="ejItems">
+          <refData refId="ejItem"/>
+     </iColl>
+     <kColl id="ejItem">
+          <field id="opCode"/>
+          <field id="sessionID"/>
+          <field id="userID"/>
+          <field id="customerID"/>
+          <field id="accountID"/>
+          <field id="accountCurr"/>
+          <field id="amount"/>
+          <field id="currency"/>
+          <field id="cashIn"/>
+          <field id="cashOut"/>
+          <field id="effectiveDate"/>
+          <field id="postingTime"/>
+          <field id="status"/>
+     </kColl>
+     <kColl id="detailsData">
+          <field id="key"/>
+          <field id="value"/>
+     </kColl>
+     <iColl id="detailsList">
+          <refData refId="detailsData"/>
+     </iColl>
+     <viewerDefinition description="Default attributes for EJViewer." id="Viewer">
+          <field id="viewOperationName" value="ejClientOp"/>
+          <field id="schemaInfoOperationName" value="retrieveSchemaInfoClientOp"/>
+          <field id="journalAlias" value="Journal"/>
+          <field id="viewerType" value="log"/>
+          <field id="viewerMode" value="admin"/>
+          <kColl description="Files containing the queries description." id="files">
+               <field id="xmlFile" value="http://localhost:80/MatafServer/dse/ej/ejview.xml"/>
+          </kColl>
+          <kColl description="Parsers used by the EJViewer." id="parsers">
+               <field id="xmlFileParseImplementer" value="com.ibm.dse.appl.ej.client.EJQueryParserImpl"/>
+          </kColl>
+          <kColl description="Converters used by the EJViewer." id="converters">
+               <dateConverter
+                    errorMessage="Invalid text, date expected."
+                    fourDigitsYear="true" id="date" ordering="1"
+                    pattern="MM-dd-yyyy" sep="-"/>
+               <dateConverter
+                    errorMessage="Invalid text, packed date expected."
+                    id="pdate" ordering="1" pattern="MMddyy" useSep="false"/>
+               <integerConverter
+                    errorMessage="Invalid text, integer expected."
+                    id="integer" sep=""/>
+               <floatConverter decSep="."
+                    errorMessage="Invalid text, 2 decimals float expected."
+                    id="float2" sep=""/>
+               <floatConverter decSep="." decimals="4"
+                    errorMessage="Invalid text, 4 decimals float expected."
+                    id="float4" sep=""/>
+          </kColl>
+     </viewerDefinition>
+     <!-- ================================================================== -->
+     <!-- 				Forwarding	  	      	         	      -->
+     <!-- ================================================================== -->
+     <kColl id="forwardData">
+          <field id="forwardType"/>
+          <field id="idCollection"/>
+          <field id="criteria"/>
+          <field id="successResult"/>
+          <field id="failureResult"/>
+          <refData refId="Status"/>
+     </kColl>
+     <!-- ******************************************************************************** -->
+     <!-- 		END BTF CORE EXTENSION DATA DEFINITIONS  FOR THE CLIENT	        		  -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 		START TELLER EXTENSIONS DATA DEFINITIONS  FOR THE CLIENT	        	  -->
+     <field id="ReplyCode"/>
+     <field id="ReplyMessage"/>
+     <field id="UserId"/>
+     <field id="UserName"/>
+     <field id="DrawerId"/>
+     <field id="DrawerType"/>
+     <field id="Location"/>
+     <field id="CurrencyCode"/>
+     <field id="Reserves"/>
+     <field id="StartingPosition"/>
+     <field id="CurrentPosition"/>
+     <field id="SignedOn"/>
+     <field id="EodStatus"/>
+     <field id="TrayType"/>
+     <field id="TrapAmount"/>
+     <field id="BinType"/>
+     <field id="BatchId"/>
+     <field id="BatchDate"/>
+     <field id="selectedDrawerId"/>
+     <field id="ItemId"/>
+     <field id="ItemAmount"/>
+     <field id="selectedDrawerLocation"/>
+     <field id="BillId"/>
+     <field id="Denomination"/>
+     <field id="Type"/>
+     <field id="Series"/>
+     <field id="SerialNumber"/>
+     <!-- Externalized type list for drop down list box on the cash drawer creation view -->
+     <kColl id="TypeList">
+          <field id="2" value="STD"/>
+          <field id="1" value="VLT"/>
+     </kColl>
+     <!-- Externalized currency code list for drop down list box on the cash drawer creation view -->
+     <kColl id="CurrencyCodList">
+          <field id="2" value="CAD"/>
+          <field id="1" value="USD"/>
+     </kColl>
+     <!-- Externalized reserve list for drop down list box on the cash drawer creation view -->
+     <kColl id="ReservesList">
+          <field id="3" value="0"/>
+          <field id="2" value="1"/>
+          <field id="1" value="2"/>
+     </kColl>
+     <kColl id="CloseDBConnectionData">
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="CDMCommonReplyData">
+          <refData refId="ReplyCode"/>
+          <refData refId="ReplyMessage"/>
+     </kColl>
+     <kColl id="InitializeCDMData">
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="DrawerTypeAndIdData">
+          <refData refId="DrawerType"/>
+          <refData refId="DrawerId"/>
+     </kColl>
+     <iColl id="DrawerTypesAndIdsData">
+          <refData refId="DrawerTypeAndIdData"/>
+     </iColl>
+     <kColl id="QueryNextIdsData">
+          <refData refId="DrawerTypesAndIdsData"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="CreateCashDrawerData">
+          <refData refId="DrawerId"/>
+          <refData refId="DrawerType"/>
+          <refData refId="Location"/>
+          <refData refId="CurrencyCode"/>
+          <refData refId="Reserves"/>
+          <refData refId="CDMCommonReplyData"/>
+          <refData refId="TypeList"/>
+          <refData refId="CurrencyCodList"/>
+          <refData refId="ReservesList"/>
+     </kColl>
+     <kColl id="UserIdAndUserNameData">
+          <refData refId="UserId"/>
+          <refData refId="UserName"/>
+     </kColl>
+     <iColl id="UserIdsAndUserNamesData">
+          <refData refId="UserIdAndUserNameData"/>
+     </iColl>
+     <kColl id="QueryUserIdsAndUserNamesData">
+          <refData refId="DrawerType"/>
+          <refData refId="CurrencyCode"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="AssignCashDrawerData">
+          <refData refId="DrawerId"/>
+          <refData refId="UserId"/>
+          <refData refId="UserName"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="QueryCashDrawersData">
+          <field id="IsSupervisor"/>
+          <refData refId="selectedDrawerId"/>
+          <field id="selectedRow"/>
+          <field id="selectedDrawerType"/>
+          <field id="selectedDrawerCurrencyCode"/>
+          <refData refId="selectedDrawerLocation"/>
+          <refData refId="UserIdsAndUserNamesData"/>
+          <refData refId="CashDrawersData"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <iColl id="CashDrawersData">
+          <refData refId="CDData"/>
+     </iColl>
+     <kColl id="CDData">
+          <refData refId="DrawerId"/>
+          <refData refId="DrawerType"/>
+          <refData refId="CurrencyCode"/>
+          <refData refId="StartingPosition"/>
+          <refData refId="CurrentPosition"/>
+          <refData refId="UserId"/>
+          <refData refId="UserName"/>
+          <refData refId="SignedOn"/>
+          <refData refId="EodStatus"/>
+          <refData refId="Location"/>
+     </kColl>
+     <kColl id="ModifyCashDrawerLocationData">
+          <refData refId="DrawerId"/>
+          <refData refId="Location"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="DeleteCashDrawerData">
+          <refData refId="DrawerId"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="UnAssignCashDrawerData">
+          <refData refId="DrawerId"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <iColl id="DrawerIdsData">
+          <refData refId="DrawerId"/>
+     </iColl>
+     <kColl id="QueryCashDrawerIdsData">
+          <refData refId="DrawerIdsData"/>
+          <refData refId="selectedDrawerId"/>
+          <field id="selectedBinType"/>
+          <field id="selectedBatchDate"/>
+          <refData refId="CurrencyCode"/>
+          <refData refId="StartingPosition"/>
+          <refData refId="CurrentPosition"/>
+          <refData refId="CDTotalsData"/>
+          <refData refId="BinsData"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <iColl id="CDTotalsData">
+          <refData refId="CDTotalData"/>
+     </iColl>
+     <kColl id="CDTotalData">
+          <field id="TotalType"/>
+          <field id="Amount"/>
+          <field id="Count"/>
+          <field id="CurrencyCode"/>
+     </kColl>
+     <kColl id="QueryCashDrawerTotalsData">
+          <refData refId="DrawerId"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <iColl id="BatchIdsData">
+          <refData refId="BatchId"/>
+     </iColl>
+     <kColl id="QueryBatchIdsData">
+          <refData refId="DrawerId"/>
+          <refData refId="BinType"/>
+          <refData refId="BatchIdsData"/>
+          <field id="selectedBatchId"/>
+          <refData refId="BatchItemsData"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="BatchItemData">
+          <refData refId="ItemId"/>
+          <refData refId="ItemAmount"/>
+          <refData refId="CurrencyCode"/>
+     </kColl>
+     <iColl id="BatchItemsData">
+          <refData refId="BatchItemData"/>
+     </iColl>
+     <kColl id="QueryBatchItemsData">
+          <refData refId="DrawerId"/>
+          <refData refId="BinType"/>
+          <refData refId="BatchId"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="BaitBillData">
+          <refData refId="BillId"/>
+          <refData refId="Denomination"/>
+          <refData refId="Type"/>
+          <refData refId="Series"/>
+          <refData refId="SerialNumber"/>
+     </kColl>
+     <kColl id="TrapData">
+          <refData refId="TrayType"/>
+          <refData refId="TrapAmount"/>
+     </kColl>
+     <kColl id="BaitData">
+          <refData refId="TrayType"/>
+          <refData refId="BillId"/>
+          <refData refId="Denomination"/>
+          <refData refId="Type"/>
+          <refData refId="Series"/>
+          <refData refId="SerialNumber"/>
+     </kColl>
+     <iColl id="TrapsData">
+          <refData refId="TrapData"/>
+     </iColl>
+     <iColl id="BaitsData">
+          <refData refId="BaitData"/>
+     </iColl>
+     <kColl id="TrapsAndBaitsData">
+          <refData refId="DrawerId"/>
+          <refData refId="TrapsData"/>
+          <refData refId="BaitsData"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="BinData">
+          <field id="BinType"/>
+          <field id="CurrencyCode"/>
+          <field id="OpenBatchNumber"/>
+          <field id="TotalBatchAmount"/>
+          <field id="TotalBatchCount"/>
+          <field id="BatchStatus"/>
+     </kColl>
+     <iColl id="BinsData">
+          <refData refId="BinData"/>
+     </iColl>
+     <kColl id="QueryBinsData">
+          <refData refId="DrawerId"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="CloseBatchData">
+          <refData refId="DrawerId"/>
+          <refData refId="BinType"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <kColl id="SetHoldoverData">
+          <refData refId="DrawerId"/>
+          <refData refId="BinType"/>
+          <refData refId="CDMCommonReplyData"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 			 	Customer Session			       	      -->
+     <!-- ================================================================== -->
+     <kColl id="CustomerSessionData">
+          <kColl id="Customer">
+               <field id="Id"/>
+               <field id="Name"/>
+               <field id="Address"/>
+               <field id="Phone"/>
+          </kColl>
+          <field id="CustomerSessionId"/>
+          <iColl id="OperationReceipts">
+               <refData refId="Receipt"/>
+          </iColl>
+     </kColl>
+     <kColl id="Account">
+          <field id="AccountNumber"/>
+          <field id="AccountCurrency"/>
+          <field id="AccountType"/>
+          <field id="Balance"/>
+     </kColl>
+     <kColl id="Receipt">
+          <field id="TransactionType"/>
+          <field id="CurrencyType"/>
+          <field id="Amount"/>
+          <field id="EffectiveDate"/>
+          <!--field id=TransactionSequenceNumber-->
+          <!--field id=CashDrawerId-->
+          <refData refId="Account"/>
+     </kColl>
+     <kColl id="StartCustomerSessionRequestData">
+          <field id="CustomerId"/>
+     </kColl>
+     <kColl id="EndCustomerSessionRequestData"/>
+     
+     <!-- ================================================================== -->
+     <!--  Data collection for client Branch Admin context                   -->
+     <!-- ================================================================== -->
+     <kColl id="BranchSettlementQueryData">
+          <refData refId="Status"/>
+          <refData refId="BranchSettlementTotals"/>
+          <refData refId="Totals"/>
+          <refData refId="CurrencyList"/>
+          <field id="TotalStartingPosition"/>
+          <field id="TotalCurrentPosition"/>
+     </kColl>
+     <iColl id="BranchSettlementTotals">
+          <refData refId="TotalsPerCurrency"/>
+     </iColl>
+     <kColl id="TotalsPerCurrency">
+          <field id="Currency"/>
+          <!--Currency type, CAD, USD, ...-->
+          <refData refId="Totals"/>
+     </kColl>
+     <iColl id="Totals">
+          <!--refData refId=Total-->
+          <!--This refData will be removed at runtime and replaced with CDTotalData-->
+          <refData refId="CDTotalData"/>
+     </iColl>
+     <kColl id="Total"/>
+     <kColl id="CDTotalData">
+          <field id="TotalType"/>
+          <field id="Amount"/>
+          <field id="Count"/>
+          <field id="CurrencyCode"/>
+     </kColl>
+     <iColl id="CurrencyList">
+          <field id="Currency"/>
+     </iColl>
+     <kColl id="BranchSettlementData">
+          <refData refId="Status"/>
+     </kColl>
+     <kColl id="BranchSettlementDebitsType">
+          <field id="6" value="CASH_IN"/>
+          <field id="5" value="TRANSIT"/>
+          <field id="4" value="ON_US_CHECK"/>
+          <field id="3" value="WITHDRAWAL"/>
+          <field id="2" value="GL_DEBIT"/>
+          <field id="1" value="TX_DEBIT"/>
+     </kColl>
+     <kColl id="BranchSettlementCreditsType">
+          <field id="4" value="CASH_OUT"/>
+          <field id="3" value="DEPOSIT"/>
+          <field id="2" value="GL_CREDIT"/>
+          <field id="1" value="TX_CREDIT"/>
+     </kColl>
+     <iColl id="BranchSettlementDebitsTotals">
+          <refData refId="CDTotalData"/>
+     </iColl>
+     <iColl id="BranchSettlementCreditsTotals">
+          <refData refId="CDTotalData"/>
+     </iColl>
+     <kColl id="BranchCurrenciesResponse">
+          <refData refId="BranchCurrenciesTotals"/>
+     </kColl>
+     <kColl id="BranchCurrenciesQueryData">
+          <refData refId="Status"/>
+          <refData refId="BranchCurrenciesTotals"/>
+          <refData refId="Totals"/>
+          <refData refId="CurrencyList"/>
+          <refData refId="BranchSettlementDebitsTotals"/>
+          <refData refId="BranchSettlementCreditsTotals"/>
+          <refData refId="BranchSettlementDebitsType"/>
+          <refData refId="BranchSettlementCreditsType"/>
+          <field id="TotalDebits"/>
+          <field id="TotalCredits"/>
+          <field id="TotalStartingPosition"/>
+          <field id="TotalCurrentPosition"/>
+     </kColl>
+     <iColl id="BranchCurrenciesTotals">
+          <refData refId="TotalsPerCurrency"/>
+     </iColl>
+     <!-- CASH SETTLEMENT -->
+     <kColl id="cashSettlementQueryData">
+          <refData refId="Status"/>
+          <iColl id="DrawersNotSettled">
+               <!--  List of unsettled cash drawers-->
+               <refData refId="CashDrawerData"/>
+          </iColl>
+     </kColl>
+     <kColl id="CashDrawerData">
+          <field id="DrawerId"/>
+          <field id="Type"/>
+          <field id="Location"/>
+          <field id="CurrentPosition"/>
+          <field id="StartingPosition"/>
+          <field id="CurrencyCode"/>
+          <field id="Status"/>
+          <field id="UserId"/>
+          <field id="SettledStatus"/>
+          <field id="EodStatus"/>
+          <field id="EodDate"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 			Branch Administration		 	       	      -->
+     <!-- ================================================================== -->
+     <!--  Teller Exchange -->
+     <kColl id="QueryTXDrawerDataData">
+          <!-- refData refId="branchId"/ -->
+          <field id="tellerId" value=""/>
+          <field id="selectedDrawer" value=""/>
+          <field id="selectedType" value=""/>
+          <iColl id="CashDrawerList" size="0">
+               <refData refId="CashDrawerData"/>
+          </iColl>
+          <!-- Reply data follows  -->
+          <refData refId="Status"/>
+     </kColl>
+     <kColl id="CashDrawerData">
+          <field id="DrawerId"/>
+          <field id="Type"/>
+          <field id="Location"/>
+          <field id="CurrentPosition"/>
+          <field id="StartingPosition"/>
+          <field id="CurrencyCode"/>
+          <field id="Status"/>
+          <field id="UserId"/>
+          <field id="SettledStatus"/>
+          <field id="EodStatus"/>
+          <field id="EodDate"/>
+     </kColl>
+     <kColl id="TXPostDataData">
+          <field id="SourceCDId"/>
+          <field id="SourceCDType"/>
+          <field id="TargetCDId"/>
+          <field id="TargetCDType"/>
+          <field id="DocRefNum"/>
+          <field id="ExchangeAmt"/>
+          <field id="CurrencyCode"/>
+          <field id="BuyOrSellFlg"/>
+          <!-- Reply data follows                 -->
+          <refData refId="Status"/>
+     </kColl>
+     <kColl id="QueryTXReconcileData">
+          <field id="cashDrawerId"/>
+          <field id="branchId"/>
+          <field id="currencyCode"/>
+          <field id="DocRefCode"/>
+          <!-- Reply data follows                 -->
+          <refData refId="Status"/>
+          <iColl id="ReconcileDrawerList">
+               <refData refId="ReconcileDrawer"/>
+          </iColl>
+     </kColl>
+     <kColl id="TXPostReconcileData">
+          <field id="DocRefNum"/>
+          <!-- Reply data follows                 -->
+          <refData refId="Status"/>
+     </kColl>
+     <!-- reply data structure to be stored in reconcileDrawerList return data-->
+     <kColl id="ReconcileDrawer">
+          <field id="SourceUserId"/>
+          <field id="SourceDrawerId"/>
+          <field id="SourceType"/>
+          <field id="TargetUserId"/>
+          <field id="TargetDrawerId"/>
+          <field id="TargetType"/>
+          <field id="CurrencyCode"/>
+          <field id="DocRefNum"/>
+          <field id="BuySell"/>
+          <field id="Amount"/>
+     </kColl>
+     <kColl id="cashSettlementData">
+          <field id="DrawerId"/>
+          <!--  input - id of cash drawer to settle-->
+          <!-- Reply data follows                 -->
+          <refData refId="Status"/>
+     </kColl>
+     <kColl id="PostOverShortData">
+          <field id="DrawerId"/>
+          <field id="OverShortInd"/>
+          <field id="Amount"/>
+          <refData refId="Status"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Overrides		  	 	         	      -->
+     <!-- ================================================================== -->
+     <kColl id="overrideClientData">
+          <field id="OverrideUserId"/>
+          <field id="OverrideUserPwd"/>
+          <field id="OverrideLevel"/>
+          <field id="OverrideReply"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Store query			         			-->
+     <!-- ================================================================== -->
+     <kColl id="queryStoreData">
+          <refData refId="Status"/>
+          <refData refId="queryStoreItemCollection"/>
+     </kColl>
+     <iColl id="queryStoreItemCollection">
+          <refData refId="queryStoreDataItem"/>
+     </iColl>
+     <kColl id="queryStoreDataItem">
+          <field id="recordId"/>
+          <field id="ejId"/>
+          <field id="opcode"/>
+          <field id="BranchId"/>
+          <field id="buffer"/>
+          <field id="timestamp"/>
+          <field id="UserId"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Sample Transactions		      	      -->
+     <!-- ================================================================== -->
+     <!--Common defintitions -->
+     <kColl id="transactionOperationData">
+          <field id="sessionId"/>
+          <field id="currency"/>
+          <field id="effectiveDate"/>
+          <field id="amount"/>
+          <field id="exchangeAmount"/>
+          <field id="operationId"/>
+          <field id="operationCode"/>
+          <field id="transactionSequenceNumber"/>
+          <field id="overrideUserId"/>
+     </kColl>
+     <kColl id="transactionAccount">
+          <field id="ID"/>
+          <field id="bankID"/>
+          <field id="transitNumber"/>
+          <field id="internationalBankID"/>
+          <field id="accountBalance"/>
+          <field id="dateOpened"/>
+          <field id="accountLimit"/>
+          <field id="accountType"/>
+          <field id="accountCurrency"/>
+          <refData refId="signors"/>
+     </kColl>
+     <iColl id="signors" size="0">
+          <refData refId="signorName"/>
+     </iColl>
+     <kColl id="signorName">
+          <field id="name"/>
+     </kColl>
+     <kColl id="transactionPassbook">
+          <field id="currentPageNumber"/>
+          <field id="currentLineNumber"/>
+          <field id="bookBalance"/>
+     </kColl>
+     <kColl id="serviceCharge">
+          <field id="waiveIndicator"/>
+          <field id="type"/>
+          <field id="referenceID"/>
+          <field id="amount"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Withdrawal		     	         	         	-->
+     <!-- ================================================================== -->
+     <kColl id="clientWithdrawalData">
+          <refData refId="transactionAccount"/>
+          <refData refId="transactionOperationData"/>
+          <refData refId="Status"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Deposit		     		         	      -->
+     <!-- ================================================================== -->
+     <kColl id="clientDepositData">
+          <refData refId="transactionAccount"/>
+          <refData refId="transactionOperationData"/>
+          <refData refId="chequeItemsCollection"/>
+          <field id="cashIn"/>
+          <field id="cashOut"/>
+          <refData refId="Status"/>
+     </kColl>
+     <iColl id="chequeItemsCollection" size="0">
+          <refData refId="chequeItemData"/>
+     </iColl>
+     <kColl id="chequeItemData">
+          <field id="amount"/>
+          <field id="transitNumber"/>
+          <field id="accountNumber"/>
+          <field id="auxillary"/>
+          <field id="serial"/>
+          <field id="checkType"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Bill Payment		     	         	      -->
+     <!-- ================================================================== -->
+     <kColl id="clientBillPaymentData">
+          <refData refId="transactionOperationData"/>
+          <!--refData refId=transactionPassbook-->
+          <refData refId="transactionAccount"/>
+          <refData refId="serviceCharge"/>
+          <refData refId="Status"/>
+          <field id="billAccountNumber"/>
+          <field id="referenceNumber"/>
+          <field id="billType"/>
+          <field id="billCode"/>
+          <field id="paymentFromAccount"/>
+     </kColl>
+     <!-- ================================================================== -->
+     <!-- 				Account List		   	         	      -->
+     <!-- ================================================================== -->
+     <kColl id="clientAccountListData">
+          <field id="customerNumber"/>
+          <refData refId="AccountListItemsCollection"/>
+          <refData refId="Status"/>
+     </kColl>
+     <iColl id="AccountListItemsCollection" size="0">
+          <refData refId="transactionAccount"/>
+     </iColl>
+     <!-- ================================================================== -->
+     <!-- 				Account History		   	         	      -->
+     <!-- ================================================================== -->
+     <kColl id="clientAccountHistoryData">
+          <refData refId="transactionAccount"/>
+          <refData refId="accountHistoryItemsCollection"/>
+          <refData refId="Status"/>
+          <!--refData refId=transactionPassbook-->
+          <field id="searchFromDate"/>
+          <field id="searchToDate"/>
+     </kColl>
+     <iColl id="accountHistoryItemsCollection" size="0">
+          <refData refId="accountHistoryItems"/>
+     </iColl>
+     <kColl id="accountHistoryItems">
+          <field id="transactionID"/>
+          <field id="transactionType"/>
+          <field id="date"/>
+          <field id="amount"/>
+          <field id="accountBalance"/>
+          <field id="debitType"/>
+          <field id="creditType"/>
+     </kColl>
+     <!--/DWGroupDef-->
+</Data>

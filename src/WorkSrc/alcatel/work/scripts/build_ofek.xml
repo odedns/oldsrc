@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="buildWeb" name="build_ofek">
+
+	<property name="compile.debug" value="true" />
+	<property name="build.type" value="incremental" />
+	<property name="basepath" location=".." />	
+	<property name="destdir" location="WebContent/WEB-INF/classes/config" />
+	
+
+	<!-- build ofek project in correct order -->
+	<target name="buildCommon">
+		<projectBuild ProjectName="OfekCommon" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+	<target name="buildAuth" depends="buildCommon">
+		<projectBuild ProjectName="OfekAuth" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+	
+	<target name="buildParty" depends="buildAuth">
+		<projectBuild ProjectName="OfekParty" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+	<target name="buildProducts" depends="buildParty">
+		<projectBuild ProjectName="OfekProducts" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+	<target name="buildPolicyTree" depends="buildProducts">
+		<projectBuild ProjectName="OfekPolicyTree" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+	<target name="buildCalc" depends="buildPolicyTree">
+		<projectBuild ProjectName="OfekCalculation" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+	<target name="buildPolicy" depends="buildCalc">
+		<projectBuild ProjectName="OfekCalculation" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+	
+	<target name="buildReinsurance" depends="buildPolicyTree">
+		<projectBuild ProjectName="OfekReinsurance" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+	
+	<target name="buildSurrender" depends="buildPolicy">
+		<projectBuild ProjectName="OfekSurrender" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+	
+	<target name="buildWorkflow" depends="buildPolicyTree">
+		<projectBuild ProjectName="OfekWorkflow" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+	<target name="buildUnderwriting" depends="buildCommon">
+		<projectBuild ProjectName="OfekUnderwriting" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+	
+	<target name="buildWeb" depends="buildSurrender">
+		<projectBuild ProjectName="OfekWeb" buildType="${build.type}" failonerror="true" DebugCompilation="${compile.debug}" />		
+	</target>
+
+
+<!-- copy configuration files to OfekWeb output directory so that WAS finds them -->
+ <target name="copyConfig" depends="buildWeb" >
+		 <!-- copy config xml files -->
+		 <echo> Copying OfekAuth Config Files </echo>
+		 <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekAuth\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+  		  <echo> Copying OfekCommon Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekCommon\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  <echo> Copying OfekProducts Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekProducts\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+  		  <echo> Copying OfekParty Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekParty\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+   		  <echo> Copying OfekPolicy Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekPolicy\JavaSource\config\">
+    			<include name="**/*.*"/>
+		    </fileset>    		    
+		  </copy>
+   		  <echo> Copying OfekPolicyTree Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekPolicyTree\JavaSource\config\">
+    			<include name="**/*.*"/>
+		    </fileset>    		    
+		  </copy>
+
+		  
+   		  <echo> Copying OfekReinsurance Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekReinsurance\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  
+   		  <echo> Copying OfekSurrender Config Files </echo>
+  		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekSurrender\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  
+   		  <echo> Copying OfekUnderwriting Config Files </echo>
+  		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekUnderwriting\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+
+   		  <echo> Copying OfekCalculation Config Files </echo>
+  		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekCalculation\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  
+   		  <echo> Copying OfekWorkFlow Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekWorkFlow\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+      </target>
+
+	<!-- export the ear project -->
+	<target name="exportEAR" depends="copyConfig" >
+		<earExport EARProjectName="OfekEAR" EARExportFile="C:\temp\OfekEAR.ear" OverWrite="true" />		
+	</target>
+	
+</project>

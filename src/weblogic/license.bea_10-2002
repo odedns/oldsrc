@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<bea-licenses>
+    <license-group format="1.0" product="WebLogic Server" release="6.1">
+        <license
+            component="WebLogic"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MCwCFG7y9V38tcNmKJTEzSAzs/zDF4g9AhR5EdcB/jJRoDnF0qPVafglCFG/+w=="
+        />
+        <license
+            component="SSL/Export"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFQCxnVewCuHAwZLdOdcIbZXtCXtGWQIURfVI86IqOEPRshLGWX0NyV+kqds="
+        />
+        <license
+            component="2PC"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MCwCFBa7zSAgRu6eDarD6uMUF+GjACCEAhQIujYV2kOmCpOzXaSzfW6KQ2hTKw=="
+        />
+        <license
+            component="In-memory Replication - Servlet"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFBa7zSAgRu6eDarD6uMUF+GjACCEAhUAkfNqC8GUXSPlc5UwhVn22+S7TUo="
+        />
+        <license
+            component="In-memory Replication - EJB"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFQCeKgUJev+f13VQTmRoEnoK1CSXzQIUamR2DOhiwUhUBeo2Y5kAvbixxNg="
+        />
+        <license
+            component="EJB 1.1"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFQCeKgUJev+f13VQTmRoEnoK1CSXzQIUHUVGtliysbqaGerE6zaIepXoqMc="
+        />
+        <license
+            component="EJB 2.0"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFBJWyWsD0c5qkp+l1FlBGIhNESUqAhUAvPyufkBxHXHqP4v08Bk9k+kndDo="
+        />
+        <license
+            component="JMS"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFBJWyWsD0c5qkp+l1FlBGIhNESUqAhUAlqa+rNzAAKTmXPbI7kwUBui2af0="
+        />
+        <license
+            component="Cluster"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MCwCFDkedS6Y9LA+zHnlvWLwS6F9BqbFAhRh8Es1dP+VrNFOa34Z6e7hdfZRNw=="
+        />
+        <license
+            component="Clustered JMS"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFDkedS6Y9LA+zHnlvWLwS6F9BqbFAhUAieolt2YB8Udgl6Nwnsb6oyjIJSo="
+        />
+        <license
+            component="jDriver/MSSQLServer4"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFDr4xiWLGTJZ5n/AhHkmZPWJ4XTgAhUAjK4PXK8nMmDFvmq9puEX9cvSvJ8="
+        />
+        <license
+            component="jDriver/Informix4"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MCwCFFLgIeWr1zCAWSFdy+EVPfoJPS2tAhQZeCOQ+/Fr7dCTpTtUGbx+0JozhA=="
+        />
+        <license
+            component="jDriver/Oracle"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFQCG/0MA/CcoHhUVNPkPwSj5ZcWgZgIUDcbDbMINOHM5HpjYKzF1Nr0tZ0c="
+        />
+        <license
+            component="Connector"
+            expiration="2002-10-31"
+            ip="any"
+            licensee="Star Partner Oct01"
+            serial="210192041214-55264487"
+            type="EVAL"
+            units="unlimited"
+            signature="MC0CFCuIPIr6HSMb6D87mY0ISbJYw4hSAhUAuzOOL6N2yMwqbK4GR7i0GRMZzAg="
+        />
+    </license-group>
+</bea-licenses>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientbnd:ApplicationClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:clientbnd="clientbnd.xmi" xmlns:client="client.xmi" xmlns:commonbnd="commonbnd.xmi" xmlns:common="common.xmi" xmi:id="ApplicationClientBinding_1044489530209">
+  <applicationClient href="META-INF/application-client.xml#Application-client_ID"/>
+  <ejbRefs xmi:id="EjbRefBinding_1044492037945" jndiName="com/ibm/bpe/api/BusinessProcessHome">
+    <bindingEjbRef href="META-INF/application-client.xml#EjbRef_1044492037945"/>
+  </ejbRefs>
+  <ejbRefs xmi:id="EjbRefBinding_1045388055274" jndiName="ejb/com/ibm/AuditDataHome">
+    <bindingEjbRef href="META-INF/application-client.xml#EjbRef_1045388055274"/>
+  </ejbRefs>
+  <resourceEnvRefBindings xmi:id="ResourceEnvRefBinding_1044656636741" jndiName="jms/BPEApiQueue">
+    <bindingResourceEnvRef href="META-INF/application-client.xml#ResourceEnvRef_1044656636741"/>
+  </resourceEnvRefBindings>
+  <resourceEnvRefBindings xmi:id="ResourceEnvRefBinding_1044658597441" jndiName="jms/receiverQ">
+    <bindingResourceEnvRef href="META-INF/application-client.xml#ResourceEnvRef_1044658597441"/>
+  </resourceEnvRefBindings>
+  <resourceEnvRefBindings xmi:id="ResourceEnvRefBinding_1044923835829" jndiName="jms/BPECF">
+    <bindingResourceEnvRef href="META-INF/application-client.xml#ResourceEnvRef_1044923835829"/>
+  </resourceEnvRefBindings>
+</clientbnd:ApplicationClientBinding>

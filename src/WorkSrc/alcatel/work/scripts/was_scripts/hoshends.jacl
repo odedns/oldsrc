@@ -1,0 +1,36 @@
+# Set the ORACLE_JDBC_DRIVER_PATH var
+set node [$AdminControl getNode]
+# now define the JDBC provider
+set providerName "HoshenProvider"
+set myalias "hoshenDB"
+
+# define DataSource
+
+set jdbcpr [$AdminConfig getid /Node:$node/JDBCProvider:$providerName/]
+set myds "HoshenJdbc"
+set myjndi "jdbc/hoshenJdbc"
+set myauth $myalias
+set myurl "jdbc:oracle:thin:@dev190sun01:1521:hoshen"
+set myhelper "com.ibm.websphere.rsadapter.Oracle10gDataStoreHelper"
+set provider "Oracle JDBC Driver (XA)"
+set dsname [list name $myds]
+set provideratt [list providerType $provider]
+set dsattr [list $dsname $provideratt]
+set newds [$AdminConfig create DataSource $jdbcpr $dsattr]
+puts "Succesfully created DataSource : $myds"
+
+# now add properties
+set jndiattr [list jndiName $myjndi]
+set authattr [list authDataAlias $myauth]
+set dshelper [list datasourceHelperClassname $myhelper]
+set dsattr [list $jndiattr $authattr $dshelper]
+$AdminConfig modify $newds $dsattr
+# now add the url
+set propSet1 [$AdminConfig create J2EEResourcePropertySet $newds {}]
+set attrs3 [subst {{name URL} {type java.lang.String} {value "$myurl"}}]
+set attrs4 [subst {{name driverType} {type java.lang.String} {value "thin"}}]
+$AdminConfig create J2EEResourceProperty $propSet1 $attrs3 
+$AdminConfig create J2EEResourceProperty $propSet1 $attrs4 
+$AdminConfig save
+puts "Succesfully updated DataSource properties"
+puts "Succesfully Configured server ...."

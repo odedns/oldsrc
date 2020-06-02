@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type"
+	content="text/html; charset=windows-1255">
+<META name="GENERATOR" content="IBM Software Development Platform">
+<META http-equiv="Content-Style-Type" content="text/css">
+<LINK href="../theme/Master.css" rel="stylesheet" type="text/css">
+<TITLE>Cluster</TITLE>
+</HEAD>
+
+<SCRIPT language=JavaScript src="myjs.js">
+</SCRIPT>
+
+
+
+
+<BODY>
+<H2>Available Clusters.</H2>
+<p> This is a cluster management screen. It displays all clusters in the network, 
+displays cluster members and cluster type. The user can start/stop the clusters or press the link
+and edit the cluster configuration. The user can also delete and create new clusters.
+<br>
+<br>
+
+<TABLE border="1">
+	<TBODY>
+		<TR>
+			<TD width="5">&nbsp</TD>
+			<TD width="100">Name</TD>
+			<TD width="120">Type</TD>
+			<TD width="200">Members</TD>
+			<TD width="250">Description </TD>
+			<TD width="100">Status </TD>
+						
+		</TR>
+		<TR>
+			<TD width="5"><INPUT type="checkbox" name="install" value="1"></TD>
+			<TD width="100"><a href="cluster_details.html">Cluster-1</a></TD>
+			<TD width="120">WebSphere 6.0</TD>
+			<TD width="200">WAS-1, WAS-2</TD>
+			<TD width="250">Investment system - production</TD>
+			<TD width="100">
+				<INPUT type="button" name="Start" value="Start">
+				<INPUT type="button" name="Stop" value="Stop">
+			</TD>
+		</TR>
+		<TR>
+			<TD width="5"><INPUT type="checkbox" name="install" value="1"></TD>
+			<TD width="100"><a href="cluster_details.html">Cluster-2</a></TD>
+			<TD width="120">Weblogic 8.1</TD>
+			<TD width="200">WLS-1, WLS-2</TD>
+			<TD width="250">CRM system - Test environment</TD>
+			<TD width="100">
+				<INPUT type="button" name="Start" value="Start">
+				<INPUT type="button" name="Stop" value="Stop">
+			</TD>
+		</TR>
+		
+	</TBODY>
+</TABLE>
+<br>
+<INPUT type="button" name="New" value="New" onclick="location.href='cluster_details.html';">
+<INPUT type="button" name="Delete" value="Delete">
+		
+</BODY>
+</HTML>

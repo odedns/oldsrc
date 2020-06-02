@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dseoper.xml>
+     <!-- SERVER OPERATION DEFs.================================================= -->
+     <!--=========================================================================-->
+     <!-- Java StartUp Operation                                                  -->
+     <!--=========================================================================-->
+     <operation context="startupServerCtx" id="startupServerOp" implClass="composer.StartupServerOp">
+          <refFormat name="csReplyFormat" refId="startupReqFmt"/>
+     </operation>
+     <!--=========================================================================-->
+     <!-- Html StartUp Operation                                                  -->
+     <!--=========================================================================-->
+     <operation context="startupServerCtx" id="startupHtmlServerOp" implClass="composer.html.StartHtmlSession"/>
+     <!--=========================================================================-->
+     <!-- End Session Operation                                                   -->
+     <!--=========================================================================-->
+     <operation context="endSessionServerCtx" id="endSessionServerOp" implClass="composer.EndSessionServerOp"/>
+     <!--=========================================================================-->
+     <!-- DO NOT MODIFY !!! Event Manager Operation                               -->
+     <!--=========================================================================-->
+     <com.ibm.dse.base.EventManagerServerOperation
+          id="eventManagerServerOperation" implClass="com.ibm.dse.base.EventManagerServerOperation"/>
+     <!--=========================================================================-->
+     <!-- DO NOT MODIFY !!! DSEHtml Processor Operation                           -->
+     <!--=========================================================================-->
+     <!-- ACAccessOp id="depositServerOp"     context="depositServerCtx"     connector="CashOperationsACConnector"     function="Deposit" -->
+     <!-- refFormat name="csReplyFormat" refId="depositRepFmt"/-->
+     <operation id="dse_htmlProcessorOp" implClass="com.ibm.dse.automaton.html.DSEHtmlProcessorOperation"/>
+     <!--/DWGroupDef-->
+
+	 <!-- test server operation -->
+
+	 <operation context="transCtx" id="serverOp" implClass="composer.ServerOp">
+		 <refFormat name="csReplyFormat" refId="myReplyFmt"/>
+	 </operation>
+	 
+	 <operation context="genOpCtx" id="genericSrvOp" implClass="composer.utils.GenericSrvOp">
+		 <refFormat name="csReplyFormat" refId="genReplyFmt"/>
+	 </operation>
+	 
+   
+    <operation context="myCtx" id="op1" implClass="composer.Op1">
+	</operation>
+	<operation context="myCtx" id="op2" implClass="composer.Op2">
+	</operation>
+	<operation context="myCtx" id="op3" implClass="composer.Op3">
+	</operation>
+	<operation context="myCtx" id="fooOp" implClass="composer.FooOp">
+			<opStep id="opstep1" on0Do="opstep2" on1Do="opStep3" />
+			<opStep id="opstep2" on0Do="opstep3" on1Do="return" />
+			<opStep id="opstep3" on0Do="return"/>
+	</operation>
+	<operation context="myCtx" id="serverHandlerOp" implClass="composer.ServerHandlerOp">
+	</operation>
+	
+	<com.ibm.dse.services.appltables.ApplicationTablesServerOp id="applicationTablesServerOp" 
+	    operationContext="applicationTablesServerOpCtxt">
+	  <refFormat name="csRequestFormat" refId="applicationTablesRequestFormat"/>
+	  <refFormat name="csReplyFormat" refId="applicationTablesReplyFormat"/>
+	</com.ibm.dse.services.appltables.ApplicationTablesServerOp>
+
+	<operation context="refTablesCtx" id="refTablesServerOp"
+		implClass="composer.services.reftables.RefTablesServerOp" >
+  		 <refFormat name="csRequestFormat" refId="refTablesReqFmt"/>
+		 <refFormat name="csReplyFormat" refId="refTablesReplyFmt"/>   	      		 
+	</operation>
+	 
+	 
+</dseoper.xml>

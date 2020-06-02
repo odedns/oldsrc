@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsefmts.xml>
+     <!--DWGroupDef:DSE Sample application.Client.Formats-->
+     <!-- CLIENT FORMAT DEFs.    ================================================ -->
+     <!--=========================================================================-->
+     <!-- StarUp Operation Formats                                                -->
+     <!--=========================================================================-->
+     <fmtDef id="startupReqFmt">
+          <record>
+               <fString dataName="TID"/>
+               <delim delimChar="#"/>
+               <fString dataName="WKSContext"/>
+               <delim delimChar="#"/>
+               <fString dataName="WKSParentContext"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!--=========================================================================-->
+     <!-- Customer Search peration Formats                                        -->
+     <!--=========================================================================-->
+     <fmtDef id="customerSearchReqFmt">
+          <record>
+               <fString dataName="CustomerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="customerSearchRepFmt">
+          <record>
+               <fString dataName="TrxReplyCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="CustomerName"/>
+               <delim delimChar="#"/>
+               <iCollF dataName="AccountListData" times="*">
+                    <record dataName="AccountRecordData">
+                         <fString dataName="AccountNumber"/>
+                         <delim delimChar="@"/>
+                         <fString dataName="Type"/>
+                         <delim delimChar="@"/>
+                         <fString dataName="Name"/>
+                         <delim delimChar="@"/>
+                         <fString dataName="Balance"/>
+                         <delim delimChar="@"/>
+                    </record>
+               </iCollF>
+               <delim delimChar="#"/>
+               <fString dataName="TrxErrorMessage"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!--=========================================================================-->
+     <!-- Withdrawal Operation Formats                                            -->
+     <!--=========================================================================-->
+     <fmtDef id="withdrawalReqFmt">
+          <record>
+               <fString dataName="AccountNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fDate dataName="Date"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fNumString dataName="Amount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="BranchId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="withdrawalRepFmt">
+          <record>
+               <fString dataName="TrxReplyCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fNumString dataName="AccountBalance"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="TrxErrorMessage"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!--=========================================================================-->
+     <!-- Deposit Operation Formats                                               -->
+     <!--=========================================================================-->
+     <fmtDef id="depositReqFmt">
+          <record>
+               <fString dataName="AccountNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fDate dataName="Date"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fNumString dataName="Amount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="BranchId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositRepFmt">
+          <record>
+               <fString dataName="TrxReplyCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fNumString dataName="AccountBalance"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="TrxErrorMessage"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!--=========================================================================-->
+     <!-- Account Statement Operation Formats                                     -->
+     <!--=========================================================================-->
+     <fmtDef id="accountStatementReqFmt">
+          <record>
+               <fString dataName="AccountNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountStatementRepFmt">
+          <record>
+               <fString dataName="TrxReplyCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <iCollF dataName="accountStatementDetails" times="*">
+                    <record dataName="accountStatementLine">
+                         <fString dataName="OpnDate"/>
+                         <nullCheck/>
+                         <delim delimChar="@"/>
+                         <fString dataName="OpnDescription"/>
+                         <nullCheck/>
+                         <delim delimChar="@"/>
+                         <fString dataName="OpnAmount"/>
+                         <nullCheck/>
+                         <delim delimChar="@"/>
+                         <fString dataName="OpnBalance"/>
+                         <nullCheck/>
+                         <delim delimChar="@"/>
+                    </record>
+               </iCollF>
+               <fString dataName="TrxErrorMessage"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!--======================================================================================-->
+     <!-- DO NOT MODIFY!! Event Manager Formats                                                -->
+     <!--======================================================================================-->
+     <fmtDef id="EventManagerCSFormat">
+          <record>
+               <fString dataName="operationType"/>
+               <delim delimChar="+"/>
+               <iCollF dataName="eventList">
+                    <refFmt refId="eventPair"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="eventPair">
+          <record dataName="eventPair">
+               <fString dataName="eventName"/>
+               <delim delimChar="+"/>
+               <fString dataName="notifierName"/>
+               <delim delimChar="+"/>
+          </record>
+     </fmtDef>
+     <!--/DWGroupDef-->
+ <!-- my cs formats -->
+	 <fmtDef id="myReqFmt">
+          <record>
+               <fString dataName="BranchId"/>
+          </record>
+     </fmtDef>
+	 <fmtDef id="myReplyFmt">
+          <record>
+               <fString dataName="BranchId"/>
+          </record>
+     </fmtDef>
+
+</dsefmts.xml>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ========================================================== -->
+	<!-- The formatter copy fields data from one context to another -->
+	<!-- All the fields must be exist in the destination context 	-->
+	<!-- with the same name and type. 								-->
+	<!-- ========================================================== -->
+	<formatterDefinition name="copy" type="custom" class="com.ness.fw.flower.util.formatters.CopyFormatter"/>
+
+</root>

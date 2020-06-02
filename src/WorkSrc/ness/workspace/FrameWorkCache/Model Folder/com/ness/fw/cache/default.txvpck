@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.0">
+	<view uin="V574ng9e31cl6i5-qnwsjo">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="Package Diagram"/>
+		<reference referencedUin="design:view:::V574ng9e4142hrr-fb6eiz">
+			<property name="bounds" value="365,230,157,163"/>
+		</reference>
+		<reference referencedUin="design:view:::V574ng9e45azef3f9pyqf">
+			<property name="bounds" value="190,330,158,108"/>
+		</reference>
+		<reference referencedUin="design:view:::V574ng9e3uc7txi-3sxz8t">
+			<property name="bounds" value="221,10,128,160"/>
+		</reference>
+		<reference referencedUin="design:view:::V574ng9e45brrkd-azvg3v">
+			<property name="bounds" value="10,330,153,134"/>
+		</reference>
+		<reference referencedUin="design:view:::V574ng9e4mo1klr-52sjkt">
+			<property name="bounds" value="10,210,171,82"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:com.ness.fw.cache.CacheFactory">
+			<property name="bounds" value="10,10,137,133"/>
+			<reference referencedUin="jdt:l_ast:src:com.ness.fw.cache.CacheFactory:instance">
+				<property name="sourceAnchor" value="121,143"/>
+				<property name="targetAnchor" value="147,117"/>
+				<property name="bendpoints" value="121,179,183,179,183,117"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:view:::V574ng9e31bmbgplkj0i1">
+			<property name="bounds" value="201,210,144,82"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:com.ness.fw.cache.Cache">
+			<property name="bounds" value="369,10,165,198"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:com.ness.fw.cache.CacheEventHandler">
+			<property name="bounds" value="10,490,198,198"/>
+		</reference>
+	</view>
+</nodeSet>

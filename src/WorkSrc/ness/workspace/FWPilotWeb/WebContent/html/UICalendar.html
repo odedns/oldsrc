@@ -1,0 +1,99 @@
+<LINK href="theme/system.css" rel="stylesheet" type="text/css">
+<script src="scripts/UIUtil.js"></script>
+<script src="scripts/UICalendar.js"></script>
+<body dir=rtl link="#0000ff" class="calendarBg" style="overflow:hidden;font-family: arial;border:1px solid;" topmargin="0" rightmargin="0" leftmargin="0" bottommargin="0">
+<input type=hidden name="returnFieldName" id="returnFieldName" value="">
+<input type=button id="initButton" style="display:none" onclick="calInit();">
+<center>
+<table id="t1" cellpadding="0" cellspacing="2">
+  <tr style="WIDTH: 130px">
+  	<td colspan="7">
+
+	<table cellpadding="0" cellspacing="0" width="100%">
+	  <tr style="WIDTH: 130px">
+	    <td><input id="previous" type="button" value="8" class="cNavigation" onclick="pr()"></td>
+	    <td colspan="3"><select id="s1" class="s1" style="width: 100px;" onchange="sm()"></select></td>
+	    <td colspan="2"><select id="s2" class="s1" style="width: 60px;" onchange="sy()"></select></td>
+	    <td><input id="next" type="button" value="7" class="cNavigation" onclick="ne()"></td>
+	  </tr>  
+	</table>
+
+	</td>
+  </tr>
+  <tr id="daysTr">
+    <td class="hc"></td>
+    <td class="hc"></td>
+    <td class="hc"></td>
+    <td class="hc"></td>
+    <td class="hc"></td>
+    <td class="hc"></td>
+    <td class="hc"></td>
+  </tr>
+  <tr>
+    <td><input id="b1" type="button" class="cw" onclick="ck(1)"></td>
+    <td><input id="b2" type="button" class="dayButton" onclick="ck(2)"></td>
+    <td><input id="b3" type="button" class="dayButton" onclick="ck(3)"></td>
+    <td><input id="b4" type="button" class="dayButton" onclick="ck(4)"></td>
+    <td><input id="b5" type="button" class="dayButton" onclick="ck(5)"></td>
+    <td><input id="b6" type="button" class="dayButton" onclick="ck(6)"></td>
+    <td><input id="b7" type="button" class="dayButton" onclick="ck(7)"></td>
+  </tr>
+  <tr>
+    <td><input id="b8" type="button" class="dayButton" onclick="ck(8)"></td>
+    <td><input id="b9" type="button" class="dayButton" onclick="ck(9)"></td>
+    <td><input id="b10" type="button" class="dayButton" onclick="ck(10)"></td>
+    <td><input id="b11" type="button" class="dayButton" onclick="ck(11)"></td>
+    <td><input id="b12" type="button" class="dayButton" onclick="ck(12)"></td>
+    <td><input id="b13" type="button" class="dayButton" onclick="ck(13)"></td>
+    <td><input id="b14" type="button" class="dayButton" onclick="ck(14)"></td>
+  </tr>
+  <tr>
+    <td><input id="b15" type="button" class="dayButton" onclick="ck(15)"></td>
+    <td><input id="b16" type="button" class="dayButton" onclick="ck(16)"></td>
+    <td><input id="b17" type="button" class="dayButton" onclick="ck(17)"></td>
+    <td><input id="b18" type="button" class="dayButton" onclick="ck(18)"></td>
+    <td><input id="b19" type="button" class="dayButton" onclick="ck(19)"></td>
+    <td><input id="b20" type="button" class="dayButton" onclick="ck(20)"></td>
+    <td><input id="b21" type="button" class="dayButton" onclick="ck(21)"></td>
+  </tr>
+  <tr>
+    <td><input id="b22" type="button" class="dayButton" onclick="ck(22)"></td>
+    <td><input id="b23" type="button" class="dayButton" onclick="ck(23)"></td>
+    <td><input id="b24" type="button" class="dayButton" onclick="ck(24)"></td>
+    <td><input id="b25" type="button" class="dayButton" onclick="ck(25)"></td>
+    <td><input id="b26" type="button" class="dayButton" onclick="ck(26)"></td>
+    <td><input id="b27" type="button" class="dayButton" onclick="ck(27)"></td>
+    <td><input id="b28" type="button" class="dayButton" onclick="ck(28)"></td>
+  </tr>
+  <tr>
+    <td><input id="b29" type="button" class="dayButton" onclick="ck(29)"></td>
+    <td><input id="b30" type="button" class="dayButton" onclick="ck(30)"></td>
+    <td><input id="b31" type="button" class="dayButton" onclick="ck(31)"></td>
+    <td><input id="b32" type="button" class="dayButton" onclick="ck(32)"></td>
+    <td><input id="b33" type="button" class="dayButton" onclick="ck(33)"></td>
+    <td><input id="b34" type="button" class="dayButton" onclick="ck(34)"></td>
+    <td><input id="b35" type="button" class="dayButton" onclick="ck(35)"></td>
+  </tr>
+  <tr>
+	<td><input id="b36" type="button" class="dayButton" onclick="ck(36)"></td>
+	<td><input id="b37" type="button" class="dayButton" onclick="ck(37)"></td>
+	<td><input id="b38" type="button" class="dayButton" onclick="ck(38)"></td>
+	<td><input id="b39" type="button" class="dayButton" onclick="ck(39)"></td>
+	<td><input id="b40" type="button" class="dayButton" onclick="ck(40)"></td>
+	<td><input id="b41" type="button" class="dayButton" onclick="ck(41)"></td>
+	<td><input id="b42" type="button" class="dayButton" onclick="ck(42)"></td>
+  </tr>
+    <tr>
+		<td colspan="7">
+		  	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		  		<tr>
+		  			<td width="50%"><input type="button" class="cNavigation2" id="todayButton" onclick="returnToday()"></td>
+			  		<td width="10">&nbsp;</td>
+			  		<td width="50%"><input type="button" class="cNavigation2" id="noDateButton" onclick="clearDate()"></td>
+		  		</tr>
+			</table>
+		</td>
+	</tr>  
+</table>
+</center>
+</body>

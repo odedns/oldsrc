@@ -1,0 +1,155 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex12.jacl - Jacl implementation of example script 12
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to show  methods for
+#  updating configuration attributes that are lists.  Some attributes
+#  (the "transportChannels" attribute of the TransportChannelService in this example) are 
+#  lists of objects.  If you request a list of attributes for the TransportChannelService
+#  object you will see:
+#
+#"transportChannels TransportChannel(InboundTransportChannel, OutboundTransportChannel, TCPInboundChannel,
+#                                    JFAPInboundChannel, HTTPInboundChannel, MQFAPInboundChannel,
+#                                    WebContainerInboundChannel, SSLInboundChannel, HTTPTunnelInboundChannel,
+#                                    TCPOutboundChannel, HTTPOutboundChannel, HTTPTunnelOutboundChannel,
+#                                    SSLOutboundChannel, JFAPOutboundChannel, MQFAPOutboundChannel,
+#                                    DCSInboundChannel, GenericInboundChannel, GenericOutboundChannel)*" 
+#   
+#  This means that the transportChannels attribute is a list (signified by the asterisk
+#  at the end) of objects of type "TransportChannel."  Individual members of the 
+#  list may have type InboundTransportChannel, OutboundTransportChannel, TCPInboundChannel, etc.
+#
+#  If you modify an attribute that is a list you set it in it's entirety.  There
+#  is no syntax for adding or deleting from a list-type attribute by operating
+#  on the attribute itself.  But since the members of the list are objects themselves,
+#  they can be added, modified, and removed individually.
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     wsadmin -f ex12.jacl mynode myserv 
+#
+#  or the script can be sourced from the wsadmin command line if:
+#     wsadmin> source ex12.jacl
+#     wsadmin> ex12 mynode myserv 
+# 
+#  The script expects some parameters:
+#      arg1 - node name
+#      arg2 - server name
+#
+#  This example demonstrates many wsadmin features:
+#
+#   - The use of the AdminConfig object to create objects in the configuration
+#   - The use of the AdminConfig object to find objects in the configuration
+#   - The use of the AdminConfig object to modify objects in the configuration
+#   - The use of the AdminConfig object to save the configuration
+#-----------------------------------------------------------------
+
+proc ex12 {nodeName serverName} {
+
+   #--------------------------------------------------------------
+   # set up globals
+   #--------------------------------------------------------------
+   global AdminConfig
+   global AdminControl
+   global AdminApp
+
+   #--------------------------------------------------------------
+   # do some sanity checking 
+   #     -- do we have a node by this name? 
+   #--------------------------------------------------------------
+   set node [$AdminConfig getid /Node:$nodeName/]
+   puts "ex12: checking for existence of node $nodeName"
+   if {[llength $node] == 0} {
+      puts "ex12: Error -- node not found for name $nodeName"
+      return 
+   }
+
+   #--------------------------------------------------------------
+   #     -- and a server?..... 
+   #--------------------------------------------------------------
+   set server [$AdminConfig getid /Node:$nodeName/Server:$serverName/]
+   puts "ex12: checking for existence of server $serverName"
+   if {[llength $server] == 0} {
+      puts "ex12: Error -- server not found for name $serverName"
+      return 
+   }
+
+   #--------------------------------------------------------------
+   #     -- and a transport channel service? 
+   #--------------------------------------------------------------
+   set tcs [$AdminConfig list TransportChannelService $server] 
+   puts "ex12: checking for existence of TransportChannelService in $serverName"
+   if {[llength $tcs] == 0} {
+      puts "ex12: Error -- TransportChannelService not found in name $serverName"
+      return 
+   }
+
+   #--------------------------------------------------------------
+   #     -- and a WebContainerInboundChannel
+   #--------------------------------------------------------------
+   set wcic_list [$AdminConfig list WebContainerInboundChannel $tcs]
+
+   #--------------------------------------------------------------
+   # Manipulate list -- change the first WebContainerInboundChannel transport 
+   #--------------------------------------------------------------
+   puts "ex12: change attributes of the first member in the list."
+   puts "wcic_list $wcic_list"
+   set t0    [lindex $wcic_list 0]
+   puts "t0 $t0"
+
+   set t_before [$AdminConfig showall $t0]
+   set discriminationWeight_attr    [list discriminationWeight 2]
+   set writeBufferSz_attr           [list writeBufferSize 32770]
+   set attrs        [list $discriminationWeight_attr $writeBufferSz_attr]
+   $AdminConfig modify $t0 $attrs 
+   set t_after [$AdminConfig showall $t0]
+   puts "ex12: transport before: "
+   puts "$t_before"
+   puts ""
+   puts "ex12: transport after: "
+   puts "$t_after"
+   puts ""
+
+
+   #--------------------------------------------------------------
+   # Manipulate list -- add new one WebContainerInboundChannel to the list
+   #--------------------------------------------------------------
+   puts "ex12: Add a new member to the list."
+   set name_attr [list name MyWebContainerTransport]
+   set discriminationWeight_attr    [list discriminationWeight 2]
+   set writeBufferSz_attr           [list writeBufferSize 32770]
+   set attrs        [list $name_attr $discriminationWeight_attr $writeBufferSz_attr]
+   puts "Attributes used to create new WebContainerInboundChannel is $attrs"
+   set newwcic [$AdminConfig create WebContainerInboundChannel $tcs $attrs]
+   puts "new WebContainerInboundChannel $newwcic"
+
+   #--------------------------------------------------------------
+   # Manipulate list -- remove new member in the list
+   #--------------------------------------------------------------
+   puts "ex12: Remove a new member from the list."
+   $AdminConfig remove $newwcic
+
+
+   #--------------------------------------------------------------
+   # Save all the changes 
+   #--------------------------------------------------------------
+   puts "ex12: saving the configuration"
+   $AdminConfig save
+
+}
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 2) } {
+   puts "ex12: this script requires 2 parameters: node name, server name"
+   puts "e.g.:     ex12  mynode myserv"
+} else { 
+   set nodeName         [lindex $argv 0]  
+   set serverName       [lindex $argv 1]  
+
+   ex12 $nodeName $serverName
+}

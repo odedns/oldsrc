@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "language.dtd">
+<root>
+
+	<defaultLanguage language="en" country="US"/>	
+
+	<languageSet language="en" country="US" >
+		<definition charset="UTF-8"  encoding="UTF-8" direction="ltr" flagImage="use.gif" imagesDirectoryName="eng"/>
+	</languageSet> 
+
+</root>

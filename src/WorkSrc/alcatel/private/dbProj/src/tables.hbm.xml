@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+
+	<!--
+	one-to-many
+	team to players.
+	-->
+	<class name="test.Team" table="teams" >
+		<id name="id" column="TEAM_ID" type="long" unsaved-value="null" >
+			<generator class="increment" />
+		</id>
+		<property name="name" column="TEAM_NAME" type="string"
+			length="15" not-null="true" />
+		<property name="city" column="TEAM_CITY" type="string"
+			length="15" not-null="true" />
+		<set name="players" cascade="all" inverse="true" lazy="true">
+			<key column="TEAM_ID" />
+			<one-to-many class="test.Player"/>
+		</set>
+	</class>
+	
+	<class name="test.Player" table="players" >
+		<id name="id" column="PLAYER_ID" type="long" unsaved-value="null" >
+			<generator class="increment" />
+		</id>
+		<property name="firstName" column="FIRST_NAME" type="string" 
+			length="20" not-null="false" />
+		<property name="lastName" column="LAST_NAME" type="string" 
+			length="20" not-null="false" />
+		<property name="draftDate" column="DRAFT_DATE" type="date" />
+		<property name="annualSalary" column="ANNUAL_SALARY" type="float" />						
+		<many-to-one name="team" class="test.Team" column="TEAM_ID" />
+	</class>
+
+
+	<!-- 
+		inheritance in diffrent tables.
+	-->
+	<class name="test.Employee" table="EMPLOYEE" polymorphism="implicit">
+		<id name="id" column="ID" type="long" unsaved-value="null" >
+			<generator class="increment" />
+		</id>
+		
+		<property name="name" column="NAME" type="string" 
+			length="20" not-null="false" />
+		<property name="salary" column="SALARY" type="float" />						
+		<property name="type" column="TYPE" type="integer" />						
+		
+		<joined-subclass name="test.Manager" table="MANAGER">
+	        <key column="ID"/>      
+		<property name="numEmps" column="NUM_EMPS" type="integer" />  
+    	</joined-subclass>
+	</class>
+	
+	<!-- 
+	inheritance in the same table.
+	with the descriminator column
+	-->
+	<class name="test.Vehicle" table="VEHICLE" polymorphism="implicit">
+		<id name="id" column="ID" type="long" unsaved-value="null" >
+			<generator class="increment" />
+		</id>
+		<discriminator>
+			<column name="DISCRIMINATOR"/>
+		</discriminator>
+		<property name="desc" column="DESCRIPTION" type="string" 
+			length="40" not-null="false" />
+		<subclass name="test.Car" discriminator-value="CAR">
+			<property name="model" column="MODEL" type="string" 
+			length="40" not-null="false" />
+			<property name="year" column="CAR_YEAR" type="integer" not-null="false" />  
+		</subclass>			
+		<subclass name="test.Truck" discriminator-value="TRUCK">
+			<property name="make" column="MAKE" type="string" 
+			length="40" not-null="false" />
+			<property name="horsePower" column="HORSE_POWER" type="integer" />  
+		</subclass>			
+		
+	</class>
+	
+	<!-- 
+		link employee to department with a link table.
+		many-to-many relationship.
+	-->
+	<class name="test.Department" table="DEPARTMENT" >
+		<id name="id" column="DEPT_ID" type="long" unsaved-value="null" >
+			<generator class="increment" />
+		</id>		
+		<property name="name" column="DEPT_NAME" type="string" 
+			length="20" not-null="false" />
+		<property name="type" column="DEPT_TYPE" type="integer" />						
+		<set name="employees" table="DEPT_EMP">
+			<key>
+				<column name="DEPT_ID" not-null="true"/>
+			</key>
+			<many-to-many class="test.Employee">
+				<column name="EMP_ID" not-null="true"/>				
+			</many-to-many>
+		</set>
+	</class>
+
+</hibernate-mapping>

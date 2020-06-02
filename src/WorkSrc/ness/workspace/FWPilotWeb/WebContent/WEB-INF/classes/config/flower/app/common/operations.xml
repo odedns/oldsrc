@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ============================================================================ -->
+	<!-- Init operation -->
+	<!-- ============================================================================ -->
+    <operationDefinition name="init"  activityType="readOnly"  class="fwpilot.general.operations.InitSystem"/>	
+    <operationDefinition name="InitApp"  activityType="readOnly"  class="fwpilot.general.operations.InitApp"/>	
+  
+    
+	<operationDefinition name="ClearDirtyFlagOp"  activityType="readOnly" class="fwpilot.general.operations.ClearDirtyFlagOp"/>
+	<operationDefinition name="SetDirtyFlagOp"  activityType="readWrite" class="fwpilot.general.operations.SetDirtyFlagOp"/>
+	<operationDefinition name="SetButtonsPagingState"  activityType="readOnly" class="fwpilot.common.operations.SetButtonsPagingState"/>
+
+	<operationDefinition name="initAllDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitAllDesktop"/>
+	<operationDefinition name="initApprovalDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitApprovalDesktop"/>
+	<operationDefinition name="initChangesDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitChangesDesktop"/>
+	<operationDefinition name="initDocumentsDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitDocumentsDesktop"/>
+	<operationDefinition name="initManagerDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitManagerDesktop"/>
+	<operationDefinition name="initProductionDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitProductionDesktop"/>
+	<operationDefinition name="initRejectedDesktop"  activityType="readOnly" class="fwpilot.desktop.operations.InitRejectedDesktop"/>
+
+	<operationDefinition name="CheckLegacy" class="fwpilot.common.operations.CheckLegacy"/>
+
+	<operationDefinition name="batchOP" class="fwpilot.general.operations.BatchOP"/>
+
+</root>

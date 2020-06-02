@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLES>
+	<snif>
+		<ROW SNIFCODE="100" SNIFNAME="Tel-Aviv"/>
+		<ROW SNIFCODE="101" SNIFNAME="Beer-Sheva"/>
+		<ROW SNIFCODE="103" SNIFNAME="Haifa"/>
+	</snif>
+</TABLES>

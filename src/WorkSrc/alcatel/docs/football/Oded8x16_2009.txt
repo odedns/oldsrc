@@ -1,0 +1,287 @@
+
+MPS Coaches Club Football          League Standings                     Page  1
+Copyright 1994 Microprose Software
+
+
+
+                                 Win Loss  Tie Percent  Pts.    OP
+------------------------------- ---- ---- ---- ------- ------ ------
+
+Dolphins                         14    2    0    .875    347    201
+Eagles                           10    6    0    .625    393    255
+Packers                           9    7    0    .562    334    278
+Redskins                          8    8    0    .500    298    331
+Cowboys                           8    8    0    .500    265    232
+49ers                             6   10    0    .375    294    332
+Vikings                           5   11    0    .312    266    349
+Jets                              4   12    0    .250    199    418
+
+MPS Coaches Club Football          League Standings                     Page  2
+Copyright 1994 Microprose Software
+
+RUSHING OFFENSE                 Attempts Yards Average Yards/Game TDs
+------------------------------- -------- ----- ------- ---------- ---
+Dolphins                           502    2237   4.4      139      20
+Eagles                             447    2315   5.1      144      18
+Packers                            341    1640   4.8      102      22
+Redskins                           430    1593   3.7       99      12
+Cowboys                            499    2150   4.3      134      15
+49ers                              391    1561   3.9       97      11
+Vikings                            309    1378   4.4       86      15
+Jets                               256    1196   4.6       74       8
+
+MPS Coaches Club Football          League Standings                     Page  3
+Copyright 1994 Microprose Software
+
+PASSING OFFENSE                 Attempts Completes Percent Net Yards Long TDs
+------------------------------- -------- --------- ------- --------- ---- ---
+Dolphins                           559      327       58      3623     83  14
+Eagles                             612      358       58      3821     65  24
+Packers                            718      464       64      4082     70  16
+Redskins                           602      338       56      3890     91  18
+Cowboys                            580      349       60      3417    100  11
+49ers                              572      332       58      3695     81  17
+Vikings                            729      411       56      3910     68   8
+Jets                               682      390       57      3510     49  12
+
+MPS Coaches Club Football          League Standings                     Page  4
+Copyright 1994 Microprose Software
+
+TOTAL OFFENSE                   Rushing Passing Total Avg/Game TDs
+------------------------------- ------- ------- ----- -------- ---
+Dolphins                          2237    3623   5860    366    34
+Eagles                            2315    3821   6136    383    42
+Packers                           1640    4082   5722    357    38
+Redskins                          1593    3890   5483    342    30
+Cowboys                           2150    3417   5567    347    26
+49ers                             1561    3695   5256    328    28
+Vikings                           1378    3910   5288    330    23
+Jets                              1196    3510   4706    294    20
+
+MPS Coaches Club Football          League Standings                     Page  5
+Copyright 1994 Microprose Software
+
+RUSHING DEFENSE                 Attempts Yards Average Yards/Game TDs
+------------------------------- -------- ----- ------- ---------- ---
+Dolphins                           284    1157   4.0       72       4
+Eagles                             346    1403   4.0       87      14
+Packers                            372    1567   4.2       97      14
+Redskins                           398    1771   4.4      110      15
+Cowboys                            346    1458   4.2       91       8
+49ers                              417    2101   5.0      131      18
+Vikings                            466    2031   4.3      126      21
+Jets                               546    2582   4.7      161      27
+
+MPS Coaches Club Football          League Standings                     Page  6
+Copyright 1994 Microprose Software
+
+PASSING DEFENSE                 Yards Avg/Game TDs Interceptions Sacks
+------------------------------- ----- -------- --- ------------- -----
+Dolphins                         3518    219    16       14        73
+Eagles                           3805    237    12       13        72
+Packers                          4432    277    13        7        41
+Redskins                         3577    223    14       13        42
+Cowboys                          3441    215    13       15        64
+49ers                            3504    219    16       16        61
+Vikings                          3988    249    17       14        37
+Jets                             3683    230    19       14        27
+
+MPS Coaches Club Football          League Standings                     Page  7
+Copyright 1994 Microprose Software
+
+TOTAL DEFENSE                   Rushing Passing Total Avg/Game TDs
+------------------------------- ------- ------- ----- -------- ---
+Dolphins                          1157    3518   4675    292    20
+Eagles                            1403    3805   5208    325    26
+Packers                           1567    4432   5999    374    27
+Redskins                          1771    3577   5348    334    29
+Cowboys                           1458    3441   4899    306    21
+49ers                             2101    3504   5605    350    34
+Vikings                           2031    3988   6019    376    38
+Jets                              2582    3683   6265    391    46
+
+MPS Coaches Club Football          League Stats                       Page  1
+Copyright 1993 Microprose Software
+
+Regular Season Passing Leaders
+Name/Team            Completes Attempts Percent Yards  TD Rating
+-------------------- --------- -------- ------- ----- --- ------
+Wexler, G.B             458       703      65    4187  16   84.9
+Condorus, S.F           264       459      57    3222  14   83.9
+Wilson, Phil,           350       596      58    3836  24   83.7
+Cummings, Mia.          320       546      58    3769  14   76.9
+Phifer, Dall            349       580      60    3511  11   75.3
+Walker, Was             137       242      56    1694   9   75.3
+Brister, S.F.            56        97      57     573   1   74.0
+Carter, N.Y.A           102       181      56    1048   3   74.0
+Darden, N.Y.A           136       219      62    1194   4   71.3
+Richardson, Wash        198       356      55    2626   9   70.0
+Pirece, N.Y.A           152       282      53    1622   5   69.7
+Hall, Minn              240       425      56    2502   6   69.5
+Riichardson, Minn       168       300      56    1593   2   63.5
+
+MPS Coaches Club Football          League Stats                       Page  2
+Copyright 1993 Microprose Software
+
+Regular Season Rushing Leaders
+Name/Team             Attempts  Yards  Average   TD
+--------------------  --------  -----  -------  ---
+Thomas, Dall             354     1589       4.4   8
+Chrencik, Phil           313     1576       5.0  10
+Matson, Mia.             241     1225       5.0  12
+Green, G.B               220     1085       4.9  16
+Gore, S.F.               213     945       4.4   5
+Allen, Minn              198     885       4.4   8
+Robinson, Wash           182     717       3.9   5
+McLoughin, Phil          122     711       5.8   7
+Stewart, Dall             98     477       4.8   5
+Francis, G.B              84     448       5.3   4
+Mitchell, N.Y.A           80     361       4.5   2
+Lee, Minn                 67     352       5.2   5
+Vinyard, Wash             81     337       4.1   2
+Smith, N.Y.A              67     320       4.7   2
+Spencer, Mia.             85     319       3.7   3
+Joredan, G.B              44     279       6.3   2
+
+MPS Coaches Club Football          League Stats                       Page  3
+Copyright 1993 Microprose Software
+
+Regular Season Receiving Leaders
+Name/Team             Number  Yards  Average   TD
+--------------------  ------  -----  -------  ---
+Fuhr, Wash               98    1377     14.0     7
+Nohe, Phi                74    1046     14.1     6
+Palmer, Minn             92    1018     11.0     1
+Boucher, G.B.           118    969      8.2     5
+Fryar, S.F               68    916     13.4     4
+Ingram, G.B              82    909     11.0     2
+Carter, Minn             81    849     10.4     3
+Clark, Mia               57    828     14.5     4
+Donati, S.F.             55    773     14.0     6
+Trump, Dall              59    765     12.9     3
+Trojan,Phi               58    758     13.0     4
+Bell, Phi                44    754     17.1     5
+Novacek, Dall            69    744     10.7     2
+Beyer, Dall              51    717     14.0     3
+Fugate, Minn             53    710     13.3     1
+Waltman, Was             50    707     14.1     3
+
+MPS Coaches Club Football          League Stats                       Page  4
+Copyright 1993 Microprose Software
+
+Regular Season Kick Return Leaders
+Name/Team             Number  Yards  Average   TD
+--------------------  ------  -----  -------  ---
+Truitt, N.Y.A            41    904     22.0     0
+Palmer, Minn             40    901     22.5     0
+Vinyard, Minn            35    749     21.4     0
+Bull, Was                29    629     21.6     0
+Lee, Minn                28    625     22.3     0
+Olan, Mia.               27    622     23.0     0
+Gallagher, Dall          26    592     22.7     0
+Hill, G.B                24    541     22.5     0
+McLoughin, N.Y.A         24    540     22.5     0
+Francis, G.B             23    493     21.4     0
+Moscati, Was             22    471     21.4     0
+Mitchell, Phi            19    443     23.3     0
+Valencia, Mia.           22    432     19.6     0
+Donati, Minn             19    432     22.7     0
+Arnold, Phi              17    410     24.1     0
+Sydner, Phi              15    387     25.8     0
+
+MPS Coaches Club Football          League Stats                       Page  5
+Copyright 1993 Microprose Software
+
+Regular Season Punt Return Leaders
+Name/Team             Number  Yards  Average   TD
+--------------------  ------  -----  -------  ---
+Turnbaugh, Dall          99    836      8.4     2
+McLoughin, N.Y.A         55    620     11.2     3
+Lee, Minn                69    470      6.8     1
+Francis, G.B             57    370      6.4     0
+Robinson, S.F            35    346      9.8     2
+Piercr, Mia.             40    312      7.8     1
+Moscati, Was             45    312      6.9     1
+Spencer, Mia.            43    310      7.2     0
+Chrencik, Dall           17    298     17.5     2
+Vinyard, Minn            45    243      5.4     0
+Rocher, S.F              16    177     11.0     1
+Chrencik, S.F             2    172     86.0     2
+Mitchell, Phi            25    140      5.6     0
+Gore, Mia.               17    121      7.1     0
+Smith, N.Y.A             12    115      9.5     0
+Garrett, N.Y.A           16    112      7.0     0
+
+MPS Coaches Club Football          League Stats                       Page  6
+Copyright 1993 Microprose Software
+
+Regular Season Tackle Leaders
+Name/Team             Number     Sacks
+--------------------  ------     -----
+Petersen, S.F           140        27
+Olrick, Was             126        19
+Tuder, N.Y.A            123         2
+Thomas, Mia.            111        22
+Unger, N.Y.A             87         3
+Vincent, Mia.            86         0
+Carter, Mia.             85         5
+Dittmar, Was             85         1
+Fraisher, G.B            83        20
+Green, Was               82         0
+Fremd, S.F               81         0
+Barnett, Minn            81         0
+Johansson, Minn          80         7
+Corduff, N.Y.A           79         0
+Plagianakos, Dall        78         0
+Agro, Minn               78         0
+
+MPS Coaches Club Football          League Stats                       Page  7
+Copyright 1993 Microprose Software
+
+Regular Season Sack Leaders
+Name/Team             Number     Sacks
+--------------------  ------     -----
+Petersen, S.F           140        27
+Fiero, Dall              70        23
+Thomas, Mia.            111        22
+Fraisher, G.B            83        20
+Olrick, Was             126        19
+Howarth, N.Y.A           68        17
+Stewart, Mia.            68        12
+Vinas, Dall              55        12
+Lefko, Dall              43        12
+Drew, Mia.               37        12
+Myers, Phi               36        12
+Potter, Was              59        11
+Street, N.Y.A            43        11
+Piercr, G.B              52        10
+Whatley, S.F             63         9
+Nickel, Dall             57         9
+
+MPS Coaches Club Football          League Stats                       Page  8
+Copyright 1993 Microprose Software
+
+Regular Season Interception Leaders
+Name/Team              Num  Yards  Long   TD
+--------------------  ----  -----  ----  ---
+Webber, S.F             11     41    18    0
+Green, Was               6      3     1    0
+Fremd, S.F               4      6     5    0
+Waters, N.Y.A            4      5     2    0
+Dearth, Phi              4      5     3    0
+Prior, N.Y.A             4      2     1    0
+Kulh, Minn               4      1     1    0
+Kacher, Mia.             3     31    19    1
+Forde, G.B               3     23    22    0
+Hearne, N.Y.A            3     21    18    0
+Evans, Mia.              3      9     5    0
+Plagianakos, Dall        3      6     5    0
+Watson, Was              3      6     4    0
+Vincent, Mia.            3      5     2    0
+Stevens, Phi             3      4     3    0
+Forlenza, Minn           2     28    28    1
+
+Ultimate NFL Coaches Club Football       Team Information               Page  1
+                       Copyright 1994 Microprose Software
+
+

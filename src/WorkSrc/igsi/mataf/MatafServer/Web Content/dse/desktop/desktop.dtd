@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding = "ISO-8859-1" ?>
+<!ELEMENT Desktop (BookmarkArea?,CustomizableArea*,ScenarioArea?,CustomizableArea*,(WorkingArea|TaskArea|SplitArea|CustomizableArea|TaskInfo)*)>
+<!ATTLIST Desktop
+	title CDATA "desktop_title"
+	width CDATA  "800" 
+	height CDATA "600"
+	lookAndFeel CDATA #IMPLIED
+	finalizerClass CDATA #IMPLIED
+	finalizerMethod CDATA #IMPLIED
+	helpFileURL CDATA #IMPLIED
+	initializerClass CDATA #IMPLIED
+	initializerMethod CDATA #IMPLIED
+	rebuilderClass CDATA #IMPLIED
+	rebuilderMethod CDATA #IMPLIED
+	multiTasking (true|false) "false"
+	onInitialize CDATA #IMPLIED
+	orientation CDATA "LEFT_TO_RIGHT"
+	packages CDATA #IMPLIED>
+
+<!ELEMENT LanguageBox EMPTY>
+<!ATTLIST LanguageBox
+	width CDATA "94"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	name CDATA #IMPLIED
+	languages CDATA #REQUIRED>
+
+
+<!ELEMENT TaskInfo EMPTY>
+<!ATTLIST TaskInfo
+	taskName CDATA #REQUIRED
+	operation CDATA #IMPLIED
+	process CDATA #IMPLIED
+	application CDATA #IMPLIED
+	operationPanel CDATA #IMPLIED
+	shortDescription CDATA #REQUIRED
+	longDescription CDATA #REQUIRED
+	yNavigationArea CDATA #IMPLIED
+	xNavigationArea CDATA #IMPLIED
+	widthNavigationArea CDATA #IMPLIED
+	heightNavigationArea CDATA #IMPLIED
+	code CDATA #REQUIRED
+	executeOperation (true|false) "false">
+
+<!-- TaskInfos are the place to save short and log descriptions -->
+<!-- Parameters are like this par1,par2,par3 They are in operation constructors -->
+
+<!-- ScenarioArea -->
+
+<!ELEMENT ScenarioArea (Scenario)+>
+<!ATTLIST ScenarioArea
+	width CDATA "600"
+	name CDATA #IMPLIED
+	height CDATA "82">
+
+<!ELEMENT SplitArea (ScenarioArea|TaskArea|WorkingArea|CustomizableArea)+>
+<!ATTLIST SplitArea
+	width CDATA "977"
+	height CDATA "457"
+	orientation (HORIZONTAL|VERTICAL) "HORIZONTAL">
+
+<!ELEMENT Scenario (ButtonRow|MenuButtonRow)+>
+<!ATTLIST Scenario
+	label CDATA #REQUIRED
+	name CDATA #IMPLIED
+	hotKey CDATA #IMPLIED>
+
+<!ELEMENT ButtonRow (TaskLauncherButton)+>
+<!ATTLIST ButtonRow
+	width CDATA "372"
+	height CDATA "25"
+	x CDATA #IMPLIED
+	y CDATA #IMPLIED
+	name CDATA #IMPLIED
+	hSpace CDATA "2"
+	vSpace CDATA "2">
+<!ELEMENT TaskLauncherButton EMPTY>
+<!ATTLIST TaskLauncherButton
+	name CDATA #IMPLIED
+	label CDATA #REQUIRED
+	toolTipText CDATA #REQUIRED
+	width CDATA "90"
+	height CDATA "22"
+	x CDATA #IMPLIED
+	y CDATA #IMPLIED
+	yNavigationArea CDATA #IMPLIED
+	xNavigationArea CDATA #IMPLIED
+	heightNavigationArea CDATA #IMPLIED
+	widthNavigationArea CDATA #IMPLIED
+	operation CDATA #IMPLIED
+	process CDATA #IMPLIED
+	application CDATA #IMPLIED
+	operationPanel CDATA #IMPLIED
+	code CDATA #IMPLIED
+	parameters CDATA #IMPLIED
+	shortDescription CDATA #IMPLIED
+	longDescription CDATA #IMPLIED
+	executeOperation CDATA #IMPLIED
+	taskName CDATA #REQUIRED 
+	enabled (true|false) #IMPLIED
+	errorMessageOnInstantiateOperation CDATA "OperationerrorMessage"
+	hotKey CDATA #IMPLIED
+	mnemonic CDATA #IMPLIED
+	onClick CDATA #IMPLIED
+	onMouseEntered CDATA #IMPLIED
+	onMouseExited CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED>
+
+<!ELEMENT MenuButtonRow (MenuButton+)>
+<!ATTLIST MenuButtonRow
+	width CDATA "140"
+	height CDATA "25"
+	hSpace CDATA "2"
+	vSpace CDATA "2">
+
+<!ELEMENT MenuButton (MenuItem+,Separator*)+>
+<!ATTLIST MenuButton
+	iconName CDATA #REQUIRED
+	toolTipText CDATA #REQUIRED
+	name CDATA #IMPLIED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #IMPLIED
+	y CDATA #IMPLIED
+	circularNavigation (true|false) "true"
+	hotKey CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED>
+
+<!ELEMENT Separator EMPTY>
+
+<!ELEMENT MenuItem EMPTY>
+<!ATTLIST MenuItem
+	label CDATA #REQUIRED
+	operation CDATA #IMPLIED
+	process CDATA #IMPLIED
+	application CDATA #IMPLIED
+	operationPanel CDATA #IMPLIED
+	name CDATA #IMPLIED
+	code CDATA #IMPLIED
+	parameters CDATA #IMPLIED
+	yNavigationArea CDATA #IMPLIED
+	xNavigationArea CDATA #IMPLIED
+	heightNavigationArea CDATA #IMPLIED
+	widthNavigationArea CDATA #IMPLIED
+	shortDescription CDATA #IMPLIED
+	longDescription CDATA #IMPLIED
+	executeOperation CDATA #IMPLIED
+	errorMessageOnInstantiateOperation CDATA "OperationerrorMessage"
+	mnemonic CDATA #IMPLIED
+	taskName CDATA #REQUIRED
+	toolTipText CDATA #IMPLIED>
+
+<!ELEMENT Tree (TreeNode+)>
+<!ATTLIST Tree
+	name CDATA "Tree"
+	width CDATA "307"
+	height CDATA "457"
+	backgroundNonSelectionColor CDATA #IMPLIED
+	backgroundSelectionColor CDATA #IMPLIED
+	foregroundNonSelectionColor CDATA #IMPLIED
+	foregroundSelectionColor CDATA #IMPLIED
+	iconName CDATA #IMPLIED
+	hotKey CDATA #IMPLIED
+	label CDATA #IMPLIED>
+
+<!ELEMENT TreeNode (TreeNode|LeafTreeNode)+>
+<!ATTLIST TreeNode
+	backgroundNonSelectionColor CDATA #IMPLIED
+	backgroundSelectionColor CDATA #IMPLIED
+	foregroundNonSelectionColor CDATA #IMPLIED
+	foregroundSelectionColor CDATA #IMPLIED
+	iconName CDATA #IMPLIED
+	name CDATA #IMPLIED
+	label CDATA #IMPLIED
+	toolTipText CDATA #IMPLIED>
+
+<!ELEMENT LeafTreeNode EMPTY>
+<!ATTLIST LeafTreeNode
+	operation CDATA #IMPLIED
+	process CDATA #IMPLIED
+	application CDATA #IMPLIED
+	operationPanel CDATA #IMPLIED
+	code CDATA #IMPLIED
+	parameters CDATA #IMPLIED
+	shortDescription CDATA #IMPLIED
+	yNavigationArea CDATA #IMPLIED
+	xNavigationArea CDATA #IMPLIED
+	heightNavigationArea CDATA #IMPLIED
+	widthNavigationArea CDATA #IMPLIED
+	longDescription CDATA #IMPLIED
+	executeOperation CDATA #IMPLIED
+	taskName CDATA #REQUIRED 
+	backgroundNonSelectionColor CDATA #IMPLIED
+	backgroundSelectionColor CDATA #IMPLIED
+	errorMessageOnInstantiateOperation CDATA "OperationerrorMessage"
+	foregroundNonSelectionColor CDATA #IMPLIED
+	foregroundSelectionColor CDATA #IMPLIED
+	iconName CDATA #IMPLIED
+	label CDATA #IMPLIED
+	toolTipText CDATA #IMPLIED>
+
+<!-- CustomizableArea -->
+
+<!ELEMENT CustomizableArea (LanguageBox|DateField|Timer|ExitButton|IconButton|TextField|IconLabel|Label|MultipleStateIconLabel|MenuButton|Tree|TaskLauncherTextField|ExternalApplicationButton|MessageArea|TaskLauncherButton|BookmarkArea)+>
+<!ATTLIST CustomizableArea
+	name CDATA #REQUIRED
+	name CDATA #IMPLIED
+	width CDATA "237"
+	height CDATA "82">
+
+<!ELEMENT IconButton EMPTY>
+<!ATTLIST IconButton
+	name CDATA #IMPLIED
+	iconName CDATA #REQUIRED
+	toolTipText CDATA #REQUIRED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	operation CDATA #IMPLIED
+	process CDATA #IMPLIED
+	aplication CDATA #IMPLIED
+	operationPanel CDATA #IMPLIED
+	code CDATA #IMPLIED
+	parameters CDATA #IMPLIED
+	shortDescription CDATA #IMPLIED
+	longDescription CDATA #IMPLIED
+	executeOperation CDATA #IMPLIED
+	taskName CDATA #REQUIRED
+	enabled (true|false) #IMPLIED
+	errorMessageOnInstantiateOperation CDATA "OperationerrorMessage"
+	onClick CDATA #IMPLIED
+	onMouseEntered CDATA #IMPLIED
+	onMouseExited CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED>
+
+
+<!ELEMENT ExternalApplicationButton EMPTY>
+<!ATTLIST ExternalApplicationButton 
+	name CDATA #IMPLIED
+	command CDATA #REQUIRED
+	iconName CDATA #REQUIRED
+	toolTipText CDATA #REQUIRED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	enabled (true|false) #IMPLIED
+	hotKey CDATA #IMPLIED
+	onClick CDATA #IMPLIED
+	onMouseEntered CDATA #IMPLIED
+	onMouseExited CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED>
+
+
+<!ELEMENT TextField EMPTY>
+<!ATTLIST TextField
+	name CDATA #IMPLIED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	focusTraversable (true|false) #IMPLIED
+	horizontalAlignment CDATA "0"
+	hotKey CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED
+	text CDATA #IMPLIED>
+
+<!ELEMENT MessageArea EMPTY>
+<!ATTLIST MessageArea
+	name CDATA #IMPLIED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	focusTraversable (true|false) #IMPLIED
+	hotKey CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED
+	text CDATA #IMPLIED
+	intNumberOfTasks CDATA #IMPLIED
+	showMessageArea (true|false) #IMPLIED
+	informationLevel CDATA #IMPLIED>
+	
+<!ELEMENT TaskLauncherTextField EMPTY>
+<!ATTLIST TaskLauncherTextField
+	name CDATA #IMPLIED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	focusTraversable (true|false) #IMPLIED
+	errorMessageOnInstantiateOperation CDATA "OperationerrorMessage"
+	delimChar CDATA #IMPLIED
+	horizontalAlignment CDATA "0"
+	hotKey CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED	
+	prefix CDATA #IMPLIED
+	suffix CDATA #IMPLIED
+	text CDATA #IMPLIED>
+
+<!ELEMENT Timer EMPTY>
+<!ATTLIST Timer
+	name CDATA  #FIXED "Timer" 
+	width CDATA "40"
+	height CDATA "20"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	focusTraversable (true|false) #IMPLIED
+	horizontalAlignment CDATA "0"
+	onInitialize CDATA #IMPLIED
+	pattern CDATA "HH:mm">
+
+<!ELEMENT DateField EMPTY>
+<!ATTLIST DateField
+	name CDATA  #FIXED "DateField" 
+	width CDATA "75"
+	height CDATA "20"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	focusTraversable (true|false) #IMPLIED
+	horizontalAlignment CDATA "0"
+	onInitialize CDATA #IMPLIED
+	pattern CDATA "dd/MM/yy">
+
+<!ELEMENT IconLabel EMPTY>
+<!ATTLIST IconLabel
+	iconName CDATA #REQUIRED
+	name CDATA #IMPLIED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	onClick CDATA #IMPLIED
+	onMouseEntered CDATA #IMPLIED
+	onMouseExited CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED>
+
+<!ELEMENT MultipleStateIconLabel (IconState+)>
+<!ATTLIST MultipleStateIconLabel
+	name CDATA #REQUIRED
+	width CDATA "11"
+	height CDATA "20"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	onInitialize CDATA #IMPLIED>
+
+<!ELEMENT IconState EMPTY>
+<!ATTLIST IconState
+	name CDATA #REQUIRED
+	icon CDATA #REQUIRED>
+
+<!ELEMENT Label EMPTY>
+<!ATTLIST Label
+	label CDATA #REQUIRED
+	width CDATA "32"
+	height CDATA "22"
+	name CDATA #IMPLIED
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	onClick CDATA #IMPLIED
+	onMouseEntered CDATA #IMPLIED
+	onMouseExited CDATA #IMPLIED
+	onInitialize CDATA #IMPLIED>
+
+<!ELEMENT ExitButton EMPTY>
+<!ATTLIST ExitButton
+	name CDATA #FIXED "ExitButton" 
+	iconName CDATA #REQUIRED
+	toolTipText CDATA #REQUIRED
+	width CDATA "32"
+	height CDATA "22"
+	x CDATA #REQUIRED
+	y CDATA #REQUIRED
+	confirmationWindowTitle CDATA "Confirmation"
+	confirmationWindowMessage CDATA "confirmationWindowMessage" 
+	confirmationWindowYesTitle CDATA "confirmationWindowYesTitle"
+	confirmationWindowNoTitle CDATA "confirmationWindowNoTitle"
+	onInitialize CDATA #IMPLIED>
+	
+<!-- There must be one and only one ExitButton in the Desktop -->
+
+<!-- WorkingArea -->
+
+<!ELEMENT WorkingArea EMPTY>
+<!ATTLIST WorkingArea
+   	name CDATA #FIXED "WorkingArea"
+	iconName CDATA #REQUIRED
+	defaultIcon CDATA #REQUIRED
+	width CDATA "730"
+	warningMessageWhenAViewCanNotBeClosed CDATA "ViewErrormessage"
+	showPopup (true|false) "true"
+	height CDATA "457"
+	xCascade CDATA "22"
+	color  CDATA #IMPLIED
+	redGreenBlue CDATA #IMPLIED 
+	yCascade CDATA "22">
+
+<!-- TaskArea -->
+
+<!ELEMENT BookmarkArea (Bookmark*)>
+<!ATTLIST BookmarkArea
+	name CDATA #REQUIRED
+	width CDATA "95"
+	height CDATA "457"
+	hSpace CDATA "4"
+	vSpace CDATA "4"
+	bookmarkWidth CDATA "70"
+	bookmarkHeight CDATA "22"
+	iconName CDATA "/images/ExButt32.gif"	
+	alignment CDATA #REQUIRED>
+
+<!ELEMENT Bookmark EMPTY>
+<!ATTLIST Bookmark
+	label CDATA #REQUIRED
+	operation CDATA #IMPLIED
+	process CDATA #IMPLIED
+	application CDATA #IMPLIED
+	operationPanel CDATA #IMPLIED
+	parameters CDATA #IMPLIED
+	shortDescription CDATA #IMPLIED
+	longDescription CDATA #IMPLIED
+	taskName CDATA #REQUIRED 
+	executeOperation (true|false) "false"
+	errorMessageOnInstantiateOperation CDATA "OperationerrorMessage"
+	yNavigationArea CDATA #IMPLIED
+	xNavigationArea CDATA #IMPLIED
+	heightNavigationArea CDATA #IMPLIED
+	widthNavigationArea CDATA #IMPLIED>
+
+<!ELEMENT TaskArea EMPTY>
+<!ATTLIST TaskArea
+    name CDATA #FIXED "TaskArea"
+	width CDATA "489"
+	height CDATA "30"
+	hSpace CDATA "2"
+	vSpace CDATA "2"
+	taskWidth CDATA "80"
+	taskHeight CDATA "25"
+	baseHotKey CDATA "ALT"
+	substituteHotKey CDATA "SHIFT"
+	maxNumberOfTasks CDATA "5"
+	errorMessageWhenClassNotExist CDATA "ClassErrorMessage"
+	warningMessageWhenMaxNumberOfTasksReached CDATA "WarningMaxTasks">

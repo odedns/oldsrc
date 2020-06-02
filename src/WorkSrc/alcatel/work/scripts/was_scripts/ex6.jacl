@@ -1,0 +1,230 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex6.jacl - Jacl implementation of example script 6
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate the invocation  
+#  of some commands that produce a short summary of some configuration
+#  and runtime information about the WebSphere installation. 
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex6.jacl all
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex6.jacl
+#     wsadmin> ex6.jacl all
+# 
+#  The script expects one parameter:
+#      arg1 - a flag -- either "all" or "config" 
+#
+#  This example demonstrates many wsadmin features:
+#
+#   - The use of the AdminControl object to locate running MBeans 
+#   - The use of the AdminControl object to getAttributes from running MBeans 
+#   - The use of the AdminControl object to invoke operations on running MBeans 
+#   - The use of the AdminConfig  object to locate configuration objects        
+#   - The use of the AdminConfig  object to display attributes of configuration objects        
+#   - The use of the AdminConfig getObjectName command to look up a running object.
+#   - The use of the AdminControl getConfigId  command to look up a config object.
+#-----------------------------------------------------------------
+#
+proc ex6 {flag} {
+  
+  if {$flag == "config"} {
+     set configonly 1
+  } else {
+     if {$flag == "all"} {
+        set configonly 0
+     } else {
+        puts "Single argument must be \"all\" or \"config\""
+        return
+     }
+  }
+
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminControl
+  global AdminConfig
+  global AdminApp
+
+
+  puts "Installation summary: "           
+  puts "----------------------------------------------------"           
+  puts ""
+
+  #---------------------------------------------------------
+  # Get the cells/nodes/servers 
+  #---------------------------------------------------------
+  puts "Configured cells, nodes, and servers: "           
+  puts "----------------------------------------------------"           
+  puts ""
+  set cells [$AdminConfig list Cell]
+  puts "Number of cells: [llength $cells]"
+  foreach cell $cells {
+
+     #---------------------------------------------------------
+     # Get some attributes from the config for this cell --
+     # the name and the security enabled flag. 
+     #---------------------------------------------------------
+     set cname [$AdminConfig showAttribute $cell name]
+     set sec [$AdminConfig list Security $cell]
+     set enabled [$AdminConfig showAttribute $sec enabled]
+     puts "$cname -- security enabled: $enabled"
+
+     #---------------------------------------------------------
+     # Get a list of the nodes in this cell, and the name of each
+     #---------------------------------------------------------
+     set nodes [$AdminConfig list Node $cell]
+     puts "  Number of nodes in $cname: [llength $nodes]"
+     foreach node $nodes {
+        set nname [$AdminConfig showAttribute $node name]
+        puts "  $nname"
+
+        #---------------------------------------------------------
+        # Get a list of the servers on this node.  Use getObjectName
+        # to see if there is a running server for this config object. 
+        #---------------------------------------------------------
+        set servs [$AdminConfig list Server $node]
+        puts "    Number of servers in $nname: [llength $servs]"
+        foreach server $servs {
+           puts ""
+           set sname [$AdminConfig showAttribute $server name]
+           set runserv [$AdminConfig getObjectName $server]
+           if {[llength $runserv] > 0} {
+              set state [$AdminControl getAttribute $runserv state]
+              puts "    Server $sname is running; state is $state"
+           } else {
+              puts "    Server $sname is not running"
+           }
+
+
+           #---------------------------------------------------------
+           # Get a list of the http transports on the server, and display 
+           # host and port information for them. 
+           #---------------------------------------------------------
+           set https [$AdminConfig list HTTPTransport $server]
+           puts "       $sname has [llength $https] HTTPTransports"
+           foreach http $https {
+              set add [$AdminConfig showAttribute $http address]
+              set host [$AdminConfig showAttribute $add host]
+              set port [$AdminConfig showAttribute $add port]
+              puts "         port: $port on host \"$host\""
+           }
+        }
+        puts "" 
+     }
+
+     #---------------------------------------------------------
+     # Get a list of the ServerClusters and display it. 
+     #---------------------------------------------------------
+     puts "" 
+     set clusters [$AdminConfig list ServerCluster $cell]
+     puts "  Number of ServerClusters in $cname: [llength $clusters]"
+     foreach cluster $clusters {
+        set clname [$AdminConfig showAttribute $cluster name]
+        set memberlist [$AdminConfig showAttribute $cluster members]
+        set members [lindex $memberlist 0]
+        puts "  Cluster $clname has [llength $members] members"
+        foreach member $members {
+           set mname [$AdminConfig showAttribute $member memberName]
+           set weight [$AdminConfig showAttribute $member weight]
+           puts "    Member $mname has weight $weight"
+        }
+     }
+  }
+
+  #---------------------------------------------------------
+  # Get the apps 
+  #---------------------------------------------------------
+  puts "----------------------------------------------------"           
+  puts ""
+  set apps [$AdminApp list]
+  puts "Number of applications: [llength $apps]"
+  puts ""
+  puts $apps 
+
+  if {$configonly} {
+     return
+  }
+
+  #---------------------------------------------------------
+  # What servers are running on each node, and what apps do they have? 
+  #---------------------------------------------------------
+  puts "Running servers: "           
+  puts "----------------------------------------------------"           
+  puts ""
+  foreach cell $cells {
+     set cname [$AdminConfig showAttribute $cell name]
+     set nodes [$AdminConfig list Node $cell]
+     foreach node $nodes {
+        set nname [$AdminConfig showAttribute $node name]
+        set servs [$AdminControl queryNames type=Server,cell=$cname,node=$nname,*]
+
+        puts "Number of running servers on node $nname: [llength $servs]"
+        foreach server $servs {
+
+           #---------------------------------------------------------
+           # Get some attributes from the server to display; also invoke 
+           # an operation on the server JVM to display a property.  
+           #---------------------------------------------------------
+           set sname [$AdminControl getAttribute $server name]
+           set ptype [$AdminControl getAttribute $server processType]
+           set pid   [$AdminControl getAttribute $server pid]
+           set state [$AdminControl getAttribute $server state]
+           set jvm [$AdminControl queryNames type=JVM,cell=$cname,node=$nname,process=$sname,*]
+           set osname [$AdminControl invoke $jvm getProperty os.name]
+           puts "  $sname ($ptype) has pid $pid; state: $state; on $osname"
+
+           #---------------------------------------------------------
+           # Use getConfigId to see if there is config data for this 
+           # server.
+           #---------------------------------------------------------
+           set configserv [$AdminControl getConfigId $server]
+           if {[llength $configserv] > 0} {
+              puts "  $sname is configured."
+           } else {
+              puts "  $sname is not configured; configuration must have changed after the server was started."
+           }
+
+           #---------------------------------------------------------
+           # Find the applications running on this server. 
+           #---------------------------------------------------------
+           set apps [$AdminControl queryNames type=Application,cell=$cname,node=$nname,process=$sname,*]
+           puts "  Number of applications running on $sname: [llength $apps]"
+           foreach app $apps {
+              set aname [$AdminControl getAttribute $app name]
+              puts "    $aname" 
+           }
+           puts "----------------------------------------------------"           
+           puts ""
+
+           #---------------------------------------------------------
+           # Display the serverVersion information. 
+           #---------------------------------------------------------
+           set svreport [$AdminControl getAttribute $server serverVersion]
+           puts "  Server version report for this server follows:"
+           puts $svreport 
+           puts "----------------------------------------------------"           
+           puts ""
+        } 
+     }
+  }
+}
+ 
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 1) } {
+   puts "ex6: this script requires 1 parameter: a flag that should be \"all\" or \"config\""
+   puts ""
+   puts "e.g.:     ex6  all" 
+} else { 
+   set flag      [lindex $argv 0]  
+   ex6 $flag
+}

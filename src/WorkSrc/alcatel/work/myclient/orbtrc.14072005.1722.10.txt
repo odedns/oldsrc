@@ -1,0 +1,8 @@
+17:22:10.926 com.ibm.rmi.javax.rmi.PortableRemoteObject narrow:378 P=929739:O=0:CT ORBRas[default]  java.lang.ClassCastException: com.ibm.ws.naming.jndicos.CNContextImpl
+	at com.ibm.rmi.javax.rmi.PortableRemoteObject.getObjectImpl(PortableRemoteObject.java:614)
+	at com.ibm.rmi.javax.rmi.PortableRemoteObject.narrow(PortableRemoteObject.java:339)
+	at javax.rmi.PortableRemoteObject.narrow(PortableRemoteObject.java:157)
+	at onjlib.j2ee.ServiceLocator.findObject(ServiceLocator.java:66)
+	at onjlib.command.CommandDispatcher.executeCommand(CommandDispatcher.java:25)
+	at work.TestCmdEjb.main(TestCmdEjb.java:24)
+

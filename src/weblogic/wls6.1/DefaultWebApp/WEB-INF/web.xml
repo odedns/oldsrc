@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 1.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+<web-app>
+	<servlet>
+		<servlet-name>mydefservlet</servlet-name>
+		<servlet-class>weblogic.servlet.ServletServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>snoopservlet</servlet-name>
+		<servlet-class>SnoopServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mydefservlet</servlet-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>snoopservlet</servlet-name>
+		<url-pattern>/servlet/snoopservlet</url-pattern>
+	</servlet-mapping>
+
+	<env-entry>
+		<env-entry-name>
+			url
+		</env-entry-name>
+		<env-entry-value>
+			t3://localhost:7001
+		</env-entry-value>
+		<env-entry-type>
+			java.lang.String
+		</env-entry-type>
+	</env-entry>
+	<resource-ref>
+	<res-ref-name>
+		jdbc/myDS
+	</res-ref-name>
+	<res-type>
+		javax.sql.DataSource
+	</res-type>
+	<res-auth>
+		CONTAINER
+	</res-auth>
+	</resource-ref>
+
+
+	<security-constraint>
+	 	<web-resource-collection>
+	   		<web-resource-name>myauth</web-resource-name>
+	     		<url-pattern>/SnoopServlet.jsp</url-pattern>
+	  	</web-resource-collection>
+		<auth-constraint>
+	         	<role-name>admin</role-name>
+  		</auth-constraint>
+  	</security-constraint>
+
+ 	<login-config>
+	   <auth-method>BASIC</auth-method>
+        </login-config>
+
+		   <security-role>
+		    <role-name>admin</role-name>
+		    </security-role>
+
+
+</web-app>

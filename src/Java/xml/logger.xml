@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logger>
+	<logfile-name>mylog.log</logfile-name>
+	<log-level>INFO</log-level>
+	<type>foo</type>
+	<rotation>
+		<rotation-size>1024</rotation-size>
+		<max-rotations>10</max-rotations>
+		<type>file</type>
+	</rotation>
+	<property name="foo" value="bar" />
+</logger>

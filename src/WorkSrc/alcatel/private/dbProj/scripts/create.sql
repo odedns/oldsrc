@@ -1,0 +1,57 @@
+CREATE TABLE PLAYERS
+   (
+      PLAYER_ID INT,
+      FIRST_NAME VARCHAR(20),
+      LAST_NAME VARCHAR(20),
+      DRAFT_DATE DATE,
+      ANNUAL_SALARY DOUBLE PRECISION,
+      TEAM_ID INT
+   );
+   
+   CREATE TABLE TEAMS
+   (
+      TEAM_ID INT,
+      TEAM_NAME VARCHAR(15),
+      TEAM_CITY VARCHAR(15)
+   );
+   
+   
+   CREATE TABLE EMPLOYEE
+   (
+      ID INT,
+      NAME VARCHAR(20),
+      SALARY DOUBLE PRECISION,
+      TYPE INT
+   );
+   
+   CREATE TABLE VEHICLE
+   (
+      ID INT,
+      DESCRIPTION VARCHAR(40),
+      MODEL VARCHAR(40),
+      DISCRIMINATOR VARCHAR(20),
+      MAKE VARCHAR(1),
+      CAR_YEAR INT,
+      HORSE_POWER INT
+   );
+   
+   CREATE TABLE DEPARTMENT
+   (
+      DEPT_ID INT,
+      DEPT_NAME VARCHAR(20),
+      DEPT_TYPE INT
+   );
+   
+   CREATE TABLE DEPT_EMP
+   (
+      DEPT_ID INT,
+      EMP_ID INT
+   );
+   
+   CREATE TABLE ON_PK_GENERATOR (
+		ID int,
+		NUMERATOR int, 
+		DESCRIPTION varchar(40)
+
+	);
+   

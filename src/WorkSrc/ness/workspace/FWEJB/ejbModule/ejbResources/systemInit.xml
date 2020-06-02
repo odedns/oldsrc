@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "system.dtd">
+<root>
+
+	<businessProcessConfigPath>
+		<rootPath load="true" value="ejbResources/config/businessProcess"/>
+		<rootPath load="true" value="config/businessProcess"/>
+	</businessProcessConfigPath>
+	
+	<legacyConfigPath>
+		<rootPath load="true" value="ejbResources/config/legacy"/>
+	</legacyConfigPath>
+		
+	<systemConfigurationFiles value="SystemConfigurationFiles"/>
+	
+	<loggerConfigurationLocation value="ejbResources/config/logger/logger.xml"/>
+	
+	<languageConfigFile value="ejbResources/config/languages/language.xml"/>
+		
+	<serversConfigFile value="ejbResources/config/servers"/>
+	
+	<systemResourcesPrefix value="ejbRes"/>
+
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxyrequest>
+		<request id="11111">
+			<command>
+					some_action
+			</command>
+		<params>
+			<param>
+				<name>p1</name>
+				<value>
+					10
+				</value>
+			</param>
+			<param>
+				<name>p2</name>
+				<value>
+					11
+				</value>
+			</param>
+		</params>
+	</request>
+</proxyrequest>

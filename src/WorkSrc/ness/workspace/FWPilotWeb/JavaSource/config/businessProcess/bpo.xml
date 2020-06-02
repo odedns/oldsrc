@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "bpo.dtd">
+<root>
+
+	<commandDefinition name="saveAgreementCmd" methodName="saveAgreement" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="loadAgreementCmd" methodName="loadAgreement" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="loadPackageCmd" methodName="loadPackage" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="loadDocumentCmd" methodName="loadDocument" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="findAgreementsCmd" methodName="findAgreements" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="getCatalogTreeCmd" methodName="getCatalogTree" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="loadAgreementCustomerCmd" methodName="loadAgreementCustomer" className="fwpilot.agreement.bpo.PLAgreementBPO" />	
+	<commandDefinition name="loadCharacteristicsCmd" methodName="loadCharacteristics" className="fwpilot.agreement.bpo.PLAgreementBPO" />
+	<commandDefinition name="deleteAgreement" methodName="deleteAgreement" className="fwpilot.agreement.bpo.PLAgreementBPO"/>
+
+	<commandDefinition name="findCustomersCmd" methodName="findCustomers" className="fwpilot.customer.bpo.PLCustomerBPO" />
+	<commandDefinition name="loadCustomerCmd" methodName="loadCustomer" className="fwpilot.customer.bpo.PLCustomerBPO" />
+	<commandDefinition name="loadAddressCmd" methodName="loadAdress" className="fwpilot.customer.bpo.PLCustomerBPO" />
+	<commandDefinition name="loadRelatedCmd" methodName="loadRelated" className="fwpilot.customer.bpo.PLCustomerBPO" />
+	<commandDefinition name="saveCustomerCmd" methodName="saveCustomer" className="fwpilot.customer.bpo.PLCustomerBPO" />
+	<commandDefinition name="loadProfessionsCmd" methodName="loadProfessions" className="fwpilot.customer.bpo.PLCustomerBPO" />
+
+	<commandDefinition name="pagingCmd" methodName="paging" className="fwpilot.common.bpo.PLPagingBPO" />
+	<commandDefinition name="randomPagingCmd" methodName="paging" className="fwpilot.common.bpo.PLRandomPagingBPO" />
+
+	<commandDefinition name="queueCmd" methodName="loadQueue" className="fwpilot.general.bpo.PLQueueBPO" />
+
+
+	<commandDefinition name="getAllCmd" methodName="getAll" className="fwpilot.general.bpo.PLCodeTableBPO" />
+	<commandDefinition name="getByIdCmd" methodName="getById" className="fwpilot.general.bpo.PLCodeTableBPO" />
+
+	<commandDefinition name="batchCmd" methodName="runJobs" className="fwpilot.general.bpo.PLBatchBPO" />
+
+	<commandDefinition name="test1" methodName="m1" className="fwpilot.general.bpo.TestBPO" />
+	<commandDefinition name="test2" methodName="m2" className="fwpilot.general.bpo.TestBPO" />
+
+	<commandDefinition name="initCustomersCmd" methodName="initCustomers" className="fwpilot.customer.bpo.PLCustomerBPO" />
+	<commandDefinition name="saveCustomersCmd" methodName="saveCustomers" className="fwpilot.customer.bpo.PLCustomerBPO" />
+
+
+
+</root>

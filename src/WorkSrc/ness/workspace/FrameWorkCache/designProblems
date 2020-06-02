@@ -1,0 +1,7 @@
+The cached object list should be sorted.
+when putting a new object to the list, should sort the list 
+or should sort the list every time a user request the entire list.
+
+should support partial loaded entities in the business cache ?
+when a entity is not loaded automatically, and a user perform put of one 
+object to the entity cached object list, in that case the list is partial and don't contain all the values.

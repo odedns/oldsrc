@@ -1,0 +1,241 @@
+/* site wide left subnav styles */
+.subnav, a.subnav {font-size:11px; color:#ffffff; text-decoration:none;}
+a.subnav:hover {color:#c0c0c0;text-decoration:underline}
+
+h2.red {
+    font-size:11pt;
+    font-weight:bold;
+    margin-top:0.1em;
+    margin-bottom:0.02em;
+	color:#a60000;
+   }
+
+h2.grey {
+    font-size:11pt;
+    font-weight:bold;
+    margin-top:0.1em;
+    margin-bottom:0.02em;
+    	color:#848484;
+    }
+
+h2.orange  {
+	font-size:11pt;
+	font-weight:bold;
+	margin-top:0.1em;
+	margin-bottom:0.02em;
+	  color:#f44f30;
+	  }
+
+h3.orange {
+    font-size:9pt;
+    font-weight:bold;
+    margin-top:0.1em;
+    margin-bottom:0.02em;
+      color:#f44f30;
+    }
+
+td.grey {
+    font-size:9pt;
+    background-color:#C6C6C6;
+    }
+
+hr {
+	height:1px;
+}
+
+div.div_list1 {
+    font-size:10pt;
+    margin-bottom:1.0em;
+}
+
+div.actions {
+	text-align:right;
+    margin-bottom:0.2em;
+	width:180;
+}
+
+div.reminder {
+	width:60%;
+    font-size:10pt;
+    background-color:#eeeeee;
+	text-align:center;
+	align:center;
+}
+
+div.copyright {
+	font-size:7pt;
+}
+
+div.blackbox {
+	width:100%;
+	height:14pt;
+	color:#ffffff;
+	background-color:#000000;
+	padding-left:2px;
+	vertical-align:middle;
+}
+
+span.hint {
+    font-size:8pt;
+    margin-top:0.1em;
+    margin-bottom:0.1em;
+}
+
+div.toc-sect1 {
+	font-size:9pt;
+}
+
+div.category-pages {
+	text-align:center;
+}
+
+span.toc-sect2 {
+	font-size:8pt;
+    padding-left:10px;
+}
+
+td.SubCategories {
+    text-align: left;
+}
+
+a.Children {
+	font-size:10pt;
+	font-weight:bold;
+	}
+
+td.GrandChildren {
+	padding-left:10pt;
+	}
+
+a.GrandChildren {
+	font-size:8pt;
+	}
+
+td.Question {font-size:10pt;}
+
+td.SmallText {
+    font-size:8pt;
+	}
+
+div.ArticleDetails {
+	text-align:left;
+	font-size:9pt;
+	padding-left:5px;
+	padding-right:5px;
+	padding-bottom:4px;
+	}
+
+td.ChunkingBox {
+    font-size:10pt;
+    font-weight:bold;
+    margin:0px;
+    border:0px;
+    color:#000000;
+    background-color:#002E4F;
+}
+
+td.YellowBox, a.YellowBox {
+	font-size:9pt;
+    letter-spacing:0.5pt;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#000000;
+    vertical-align:middle;
+    padding:2px;
+	padding-left:10px;
+}
+
+td.YellowScoreBox {
+    font-size:10pt;
+    font-weight:bold;
+    width:40px;
+    color:#ffffff;
+    background-color:#002E4F;
+}
+
+td.ScoreBox {
+    font-size:10pt;
+    width:40px;
+}
+
+form {
+    margin-top:0.1em;
+    margin-bottom:0.02em;
+    }
+
+form.SearchBox {
+margin:0px;
+}
+
+td.SearchBox {
+    font-size:10pt;
+     text-align:center;
+}
+
+td.NavItem {
+    font-size:8pt;
+}
+
+td.FormLabel {
+    font-size:10pt;
+    text-align:right;
+	vertical-align:top;
+}
+
+td.FeedbackLabel {
+    font-size:8pt;
+    font-weight:bold;
+    text-align:left;
+    vertical-align:top;
+}
+
+td.FeedbackForm {
+    font-size:8pt;
+}
+
+td.Form {
+    font-size:10pt;
+}
+
+td.ArticleFeedback{
+ 	font-size:10pt;
+}
+
+p.ArticleFeedbackTitle{
+    font-weight:bold;
+}
+
+td.ArticleHeader {
+    font-size:9pt;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#000000;
+    text-align:center;
+}
+
+/* serviceBar styles */
+
+td.ServiceBarListingHeader {
+    font-size:9pt;
+    font-weight:bold;
+    color: #ffffff;
+    background-color:#002E4F;
+    text-align:center;
+}
+
+td.SubServiceBarListingHeader {
+    font-size:8pt;
+    background-color:#eeeeee;
+}
+
+td.ServiceBar {
+	font-size:8pt;
+    background-color:#eeeeee;
+}
+
+/* menuBar styles */
+
+table.menuBar_nojs {
+	border:thin;
+}
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ======================================== -->
+	<!-- Data Bulders and Data Types Declarations -->
+	<!-- ======================================== -->
+
+	<typeDefinition>
+		<!-- UserCredentials type -->
+		<type name="WFUserCredentials" class="com.ness.fw.workflow.UserCredentials"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- Agent type -->
+		<type name="WFAgent" class="com.ness.fw.workflow.Agent"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WorkFlowServiceParameterMap type -->
+		<type name="WFParametersMap" class="com.ness.fw.workflow.WorkFlowServiceParameterMap"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WFWorkList type -->
+		<type name="WFWorkList" class="com.ness.fw.workflow.WFWorkList"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WFWorkItemList type -->
+		<type name="WFWorkItemList" class="com.ness.fw.workflow.WFWorkItemList"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WFWorkItem type -->
+		<type name="WFWorkItem" class="com.ness.fw.workflow.WFWorkItem"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WFProcessInstance type -->
+		<type name="WFProcessInstance" class="com.ness.fw.workflow.WFProcessInstance"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WFProcessInstanceList type -->
+		<type name="WFProcessInstanceList" class="com.ness.fw.workflow.WFProcessInstanceList"/>
+	</typeDefinition>
+
+	<typeDefinition>
+		<!-- WFLastHandlerOfCustomer type -->
+		<type name="WFLastHandlerOfCustomer" class="com.ness.fw.workflow.WFLastHandlerOfCustomer"/>
+	</typeDefinition>
+
+</root>

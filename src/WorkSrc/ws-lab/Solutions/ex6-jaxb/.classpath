@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="src"/>
+    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jaxb/lib/jaxb-api.jar"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jaxb/lib/jaxb-impl.jar"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jaxb/lib/jaxb-libs.jar"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jaxb/lib/jaxb-xjc.jar"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jwsdp-shared/lib/relaxngDatatype.jar"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jwsdp-shared/lib/namespace.jar"/>
+    <classpathentry kind="lib" path="C:/jwsdp-1.4/jwsdp-shared/lib/jax-qname.jar"/>
+    <classpathentry kind="output" path="bin"/>
+</classpath>

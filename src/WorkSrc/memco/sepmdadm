@@ -1,0 +1,1192 @@
+#!/bin/sh  -x
+#-------------------------------------------------------------------
+# SeOS v2.50
+#   MEMCO Software Ltd.
+#  Copyright (c) 1993-1998
+#  -----------------------
+#-------------------------------------------------------------------
+# VeRsIoN: 2.50 (2.50) Compiled On:Script
+# -------------------------------------------------------------------------
+# Parameter $1 should be the directory where seos was installed
+# Parameter $2 should be "yes" if user selected nis or no nis server
+# If parameters are not specified then script will try to use __SEOS__ env
+# or SEOSDIR env variable, and NIS will be assumed as if not asked.
+
+
+# Simply echo in one line, like echo -n on some systems
+echonl()
+{
+	case "$ECHO" in
+	sysv)	echo "$@\c";;
+	bsd)	echo -n "$@";;
+	esac
+}
+
+# Reads user KB. Echos $1 as a prefix message
+# Echo $2 as the prompt for the message
+# if there is $3 then, empty response is considered as if $3 was specified
+# else, a repeated request to specify an answer is prompted to the user.
+PromptUser()
+{
+  
+  if [ $# -eq 0 -o $# -eq 1 ]; then
+    echo "ERROR: Script internal error."
+    echo "       Wrong # of arguments specified to PrompUser"
+    exit 1
+  fi
+
+#SB4214 
+# save input params
+  argc=$#
+  arg1=$1
+  arg2=$2
+  arg3=$3
+
+  echo $arg1
+  echo
+  echonl "$arg2" ": "
+  stay=1
+  while [ $stay = 1 ]
+  do
+     read PromptUser_Input
+     if [ "A$PromptUser_Input" = "A" ]; then
+      if [ $argc = 3 ]; then
+        PromptUser_Input="$arg3"
+        stay=0
+      else
+        echo "Error: Must enter value."
+      fi
+    else
+      stay=0
+    fi
+  done
+  export PromptUser_Input
+}
+
+# 'Which' function
+#
+Which_Prog()
+{
+   program=$1
+   for bindir in /bin /usr/bin /usr/ucb /usr/bsd ; do
+       if [ -x $bindir/$program ] ; then
+	  echo $bindir/$program
+          break
+       fi
+   done
+}
+
+# Function expects a single variable. This should be Yes or No or any
+# flavor of these values (Y/YES/Yes/yes N/NO/No/no)
+# Function return 0 status code if the argument was a valid value, or
+#                 1 if the argument was not part of the Y/N flavors.
+#                 In the 2nd case the exported variable from the function
+#                 contains the original value specified.
+# The result itself is returned in an exported variable YesNoFlavours_result
+# where the values are set to "yes" or to "no" in lower case.
+Check_YesNoFlavours()
+{
+YES="yes"
+NO="no"
+
+  if [ $# != 1 ]; then
+     echo "ERROR: Script internal error."
+     echo "       An expected argument to Check_YesNoFlavours is missing."
+     exit 1
+  fi
+
+  case $1 in
+	Yes)
+	      YesNoFlavours_result=$YES
+	      status=0
+	;;
+	YES)
+	      YesNoFlavours_result=$YES
+	      status=0
+	;;
+	yes)
+	      YesNoFlavours_result=$YES
+	      status=0
+	;;
+	y)
+	      YesNoFlavours_result=$YES
+	      status=0
+	;;
+	Y)
+	      YesNoFlavours_result=$YES
+	      status=0
+	      ;;
+	No)
+	      YesNoFlavours_result=$NO
+	      status=0
+	      ;;
+	NO)
+	      YesNoFlavours_result=$NO
+	      status=0
+	      ;;
+	no)
+	      YesNoFlavours_result=$NO
+	      status=0
+	      ;;
+	n)
+	      YesNoFlavours_result=$NO
+	      status=0
+	      ;;
+	N)
+	      YesNoFlavours_result=$NO
+	      status=0
+	      ;;
+	*)
+		echo "Error: You must enter Yes/No."
+		YesNoFlavours_result=$1
+		status=1
+esac
+  export YesNoFlavours_result
+  return $status
+}
+
+
+# Prompts the user with a message, then present a question. The user
+# is prompted on the same line to provide a response.
+# Argument #1 is the echod message.
+# Argument #2 is the prompted message.
+# Argument #3 is an optional default that applies for an empty response from
+#             the user.
+# The response from the user is expected to be yes or no (all flavors).
+# Function will continuously ask for a response from the user if the answer
+# was not valid.
+# Function will return status code of 0 on success or 1 if too few parameters.
+# The value itself is returned in an exported variable PromptUserYN_Input.
+# Valid returned values in this variable is according to Check_YesNoFlavours
+# function.
+PromptUserYN()
+{
+  if [ $# = 2 -o $# = 3 ]; then
+    stay=1
+    while [ $stay = 1 ]
+    do
+       PromptUser "$1" "$2" "$3"
+       Check_YesNoFlavours $PromptUser_Input
+       if [ $? != 0 ]; then
+         stay=1
+       else
+         stay=0
+       fi
+    done
+    PromptUserYN_Input=$YesNoFlavours_result
+    export PromptUserYN_Input
+    return 0
+  fi
+  return 1
+}
+
+head() {
+	clear
+	echo ""
+	echo "###########################################################"
+	echo "#                                                         #"
+	echo "#      Policy Model Database Administration Script:       #"
+	echo "#                      sepmdadm                           #"
+	echo "###########################################################"
+	echo ""
+	
+}
+
+# Simply clears screen
+ClearScreen()
+{
+  clear
+  if [ $# = 0 ]; then
+    echo "              ------------------------------------"
+    echo "                    $PRODNAME interactive setup"
+    echo "              ------------------------------------"
+  else
+    echo "  -----------------[ $1 ]-----------------"
+  fi
+}
+
+
+# The normal abort message and exit
+AbortScript()
+{
+  echo "Aborting interactive setup"
+  exit 1
+}
+
+WaitEnter()
+{
+  echo "Press ENTER to continue"
+  read dummy
+}
+
+# Function tests if user is root or not
+Check_ifroot()
+{
+ID=`id`
+
+    uid=`expr "$ID" : "uid=0.*"`
+    uidlen=`expr "$uid" : '.*'`
+    if [ $uidlen -eq 1 ]
+    then
+        echo "ERROR: You are not root, You must be root to use this script."
+        exit 1
+    fi
+}
+
+
+# Function test if a daemon, supplied as parameter is running. If so the
+# result is returned in a the status variable. 1 means running, 0 means not
+Check_ifrunning()
+{
+
+  DAEMON=$1
+  PSOPTIONS=-ea   # default
+  if [ ! -x $SEOSDIR/lib/getvar.sh ]; then
+    echo "ERROR: $PRODNAME could not find $SEOSDIR/lib/getvar.sh"
+    AbortScript
+  fi
+  OS=`$SEOSDIR/lib/getvar.sh OS`
+  status=1
+
+  case ${OS} in
+    _HPUX)
+      PSOPTIONS=-ea
+      ;;
+    _AIX)
+      PSOPTIONS=-ea
+      ;;
+    _SOLARIS)
+      PSOPTIONS=-ea
+      ;;
+    _ATT)
+      PSOPTIONS=-ea
+      ;;
+    _SUNOS)
+      PSOPTIONS=-ax
+      ;;
+    _IRIX*)
+      PSOPTIONS=-ea
+      ;;
+    _DECUNIX)
+      PSOPTIONS=-ea
+      ;;
+    _UNIXWARE)
+      PSOPTIONS=-ea
+      ;;
+    _SINIX)
+      PSOPTIONS=-ea
+      ;;
+    *)
+      echo $ECHO Unknown Operating system - $OS
+      exit 1
+  esac
+
+  InputLines=`ps ${PSOPTIONS} | grep ${DAEMON} | grep -v grep`
+  if [ "A${InputLines}" = "A" ]   # empty
+  then
+    status=0
+  else
+    status=1
+  fi
+  export status
+  return $status
+}
+
+
+Check_IfNeedunderNIS()
+{
+OS=`$SEOSDIR/lib/getvar.sh OSVER`
+
+        case $OS in
+                _SOLARIS20)
+                        status=0
+                        ;;
+                _SOLARIS21)
+                        status=0
+                        ;;
+                _SOLARIS22)
+                        status=0
+                        ;;
+                _SOLARIS23)
+                        status=0
+                        ;;
+                _SOLARIS24)
+                        status=0
+                        ;;
+                # Solaris 2.5 and above
+                _SOLARIS2*)
+                        status=1
+                        ;;
+        esac
+        if [ $status = 1 ]; then
+                export status
+                return $status
+        fi
+        # Now check if one of the NIS/DNS is running in the system
+        for daemon in "ypserv named rpc.nisd"
+        do
+                Check_ifrunning $daemon
+                if [ $? = 1 ]; then
+                        status=1
+                        export status
+                        return $status
+                fi
+        done
+        status=0
+        export status
+        return $status
+}
+
+
+# gets a token from the ini file.
+# first argument is the ini file name.
+# second argument is the token to be retrieved.
+# returns 0 on success != 0 on failure.
+
+GetIniToken()
+{
+
+	CurrToken=`grep "^$2" $1 | cut -f2 -d=`
+	if [ -z "$CurrToken" ] ; then
+		status=1
+	else 
+		status=0
+	fi
+	return $status
+}
+
+
+ChangeToken()
+{
+	$SEOSDIR/bin/seini -s $1 $2 pmd.ini > /dev/null
+}
+
+# input arguments are the prompt
+# stores the user input in UserInputList
+GetInputList()
+{
+TempInput=" "
+UserInputList=""
+
+# SB4214
+# save input params
+
+	argc=$#
+	arg1=$1
+	arg2=$2
+	arg3=$3
+
+	echo $arg1
+	echonl "$arg2"
+	read TempInput
+	while [ ! -z "$TempInput" ] 
+	do
+                if [ -z "$UserInputList" ] ; then
+                        UserInputList="$TempInput"
+                else
+                        UserInputList="$UserInputList $TempInput"
+                fi
+
+		echonl "$arg2"
+		read TempInput
+	done
+	if [ -z "$UserInputList" ]; then 
+# put default
+		UserInputList=$arg3
+		status=1
+	else
+		status=0
+	fi
+	
+	return $status
+
+}
+
+#-------------------------------------------------------------------
+# Check if user is Admin of SeOS database.
+#
+#-------------------------------------------------------------------
+Check_IfAdmin()
+{
+	if [ -z "$SeOS_Running" ]; then 
+		Check_ifrunning "seosd"
+		SeOS_Running=$?
+	fi
+
+	if [ $SeOS_Running -eq  1 ]; then
+		status=`$SEOSDIR/bin/sewhoami -a | grep -c Admin`
+	else 
+		me=`whoami`
+		status=`echo "su $me" | grep -c Admin | $SEOSDIR/bin/selang -l -s`
+	fi
+	return $status
+	
+}
+
+SetupNIS()
+{
+
+	ChangeToken pmd.filter nis_filter.dat
+
+cat <<EOF >"$1/$2/nis_filter.dat"
+#----------------------------------------------------------
+# access env. class    objects    properties    pass/nopass
+#----------------------------------------------------------
+*	UNIX	USER	*	*	NOPASS
+*	UNIX	GROUP	*	*	NOPASS
+*	*	*	*	*	PASS
+#----------------------------------------------------------
+EOF
+
+	if [ $PASSWD_FILE != "none" ]; then 
+		ChangeToken pmd.password_file_name $PASSWD_FILE
+	fi
+	if [ $GROUP_FILE != "none" ]; then 
+		ChangeToken pmd.group_file_name $GROUP_FILE
+	fi
+	
+}
+
+CreateAdmins()
+{
+	if [ "$ADMINISTRATORS" != "none" ]; then 
+		echo "editusr ($ADMINISTRATORS) admin" | $SEOSDIR/bin/selang -p $PMD_NAME -s > /dev/null
+	fi
+}
+
+CreateAuditors()
+{
+	if [ "$AUDITORS" != "none" ]; then 
+        	$SEOSDIR/bin/selang -s -p $PMD_NAME  > /dev/null << EOF
+		editusr ($AUDITORS) 
+		chusr ($AUDITORS) auditor 
+EOF
+	fi
+}
+
+CreatePwManagers()
+{
+	if [ "$PWMANAGERS" != "none" ]; then 
+		
+        	$SEOSDIR/bin/selang -s -p $PMD_NAME  > /dev/null << EOF
+		editusr ($PWMANAGERS)
+		chusr ($PWMANAGERS) pwmanager
+EOF
+	fi
+}
+
+# fix SB4329
+# give terminal authorization to pwmanagers as well.
+CreateDeskManagers()
+{
+
+# start SB4348
+        if [ "$PWMANAGERS" != "none" ]; then
+                PWM=$PWMANAGERS
+        else
+                PWM=""
+        fi
+#end SB4348 
+
+        $SEOSDIR/bin/selang -s -p $PMD_NAME  > /dev/null << EOF
+        editusr nobody
+        newres TERMINAL ($DESKMANAGERS) owner(nobody) defaccess(read)
+        auth TERMINAL ($DESKMANAGERS) uid($ADMINISTRATORS $PWM) access(write)
+EOF
+	
+}
+#-------------------------------------------------------------------
+# Print help text.
+#
+#-------------------------------------------------------------------
+help()
+{
+	echo "sepmdadm - a policy model setup utility."
+	echo "Usage: sepmdadm options"
+	echo " "
+	echo "Where : "
+	echo "   --help | -h                  : print this help."
+	echo "   --admin   <name>             : sets the Policy Model's admin."
+	echo "   --auditor <name>             : sets the Policy Model's auditor."
+	echo "   --desktop <name>             : sets the Policy Model's desktop admin."
+	echo "   --interactive | -i           : perform interactive setup."
+	echo "   --nis | --NIS                : perform NIS setup."
+	echo "   --password_fname  <filename> : sets the location of the "
+	echo "                                  passwd file under NIS."
+	echo "   --group_fname  <filename>    : sets the location of the"
+	echo "                                  groups file under NIS."
+	echo "   --noconfirm                  : no confirmation."
+	echo "   --parentpmd <name>           : sets the parent of the Policy Model."
+	echo "   --pmdname <name>             : sets the Policy Model name."
+	echo "   --pwmanger <name>            : sets the Policy Model's password manager."
+	echo "   --seosdir <directory>        : sets the SeOS directory."
+	echo "   --subscriber <name>          : sets the subscriber's name."
+	echo "   --subsconfig                 : configures a subscriber machine."
+	exit 1
+}
+
+
+# SB4192
+#-------------------------------------------------------------------
+# check if var is not empy and does not contain a '-' 
+#-------------------------------------------------------------------
+
+
+check_var() {
+
+        if [ -z "$1" ]; then
+                A=1
+        else
+                A=`echo $1 | grep -c "^-"`
+        fi
+	if [ $A -eq 1 ]; then 
+		echo "Error: invalid parameter"
+		help
+		exit 2
+	fi
+
+}
+# SB4192
+
+
+
+#-------------------------------------------------------------------
+# parse command line args.
+#
+#-------------------------------------------------------------------
+ParseArgs()
+{
+# assume no interactive mode
+NOCONFIRM=0;
+INTERACTIVE=0
+NO_PARENT=0
+PARENT_PMD="none"
+PMD_NAME="none"
+NIS_ENV="no"
+# Get SeOS installation directory  
+
+SEOSDIR="/usr/seos/" 
+##################################
+##AUTO_INSERT_CODE  -- start here.
+if [ $__SEOS__ ] ; then 
+   SEOSINIPATH=$__SEOS__       
+else
+   if [ -d "/usr/seos/" ] ; then
+      SEOSINIPATH="/usr/seos/"
+   else
+      if [ -f "/etc/seos.ini" ] ; then
+         SEOSINIPATH="/etc"
+      else
+         echo "Could not found seos.ini. set __SEOS__ and try again."
+         exit 1
+      fi
+   fi
+fi
+SEOSDIR=`grep SEOSPATH $SEOSINIPATH/seos.ini | awk '{print $3}'`
+##AUTO_INSERT_CODE  -- ends here.
+##################################
+
+SUBSCRIBERS=""
+AUDITORS=""
+ADMINISTRATORS=""
+PWMANAGERS=""
+DESKMANAGERS=""
+
+
+
+	while [ $# != 0 ] 
+	do
+		case "$1"  in 
+			--help)  help
+				 exit 1
+				;;
+			 -h)  help
+				 exit 1
+				;;
+			--interactive) INTERACTIVE=1
+					;;
+			-i) INTERACTIVE=1
+					;;
+
+			--seosdir)    
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+
+					shift 
+					SEOSDIR=$1
+					;;
+			--subsconfig)   
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					exec $SEOSDIR/lib/subsconfig.sh $@
+					;;
+			--subscriber)	
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					if [ -z "$SUBSCRIBERS" ]; then 
+						SUBSCRIBERS="$1"
+					else
+						SUBSCRIBERS="$SUBSCRIBERS $1"
+					fi
+					;;
+
+			--noparent)     NO_PARENT=1
+					;;
+			--pmdname)	
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					PMD_NAME=$1
+					;;
+			--parentpmd)   
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					PARENT_PMD=$1
+					;;
+			--NIS)		NIS_ENV="yes"
+					;;
+			--nis)		NIS_ENV="yes"
+					;;
+			--passwd_fname)
+					if [ -z "$2" ]; then
+						echo "Error: invalid parameter"
+						help
+						exit 2
+					fi
+					shift
+					PASSWD_FILE=$1
+					;;
+			--group_fname)
+					if [ -z "$2" ]; then
+						echo "Error: invalid parameter"
+						help
+						exit 2
+					fi
+					shift
+					GROUP_FILE=$1
+					;;
+
+			--pwmanager)    
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					if [ -z "$PWMANAGERS" ]; then 
+						PWMANAGERS="$1"
+					else 
+						PWMANAGERS="$PWMANAGERS $1"
+					fi
+					;;
+
+			--admin)
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					if [ -z "$ADMINISTRATORS" ]; then 
+						ADMINISTRATORS="$1"
+					else 
+						ADMINISTRATORS="$ADMINISTRATORS $1"
+					fi
+					;;
+			--auditor)
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					if [ -z "$AUDITORS" ]; then 
+						AUDITORS="$1"
+					else
+						AUDITORS="$AUDITORS $1"
+					fi
+					;;
+			--desktop)
+				if [ -z "$2" ]; then
+					echo "Error: invalid parameter"
+					help
+					exit 2
+				fi
+					shift
+					if [ -z "$DESKMANAGERS" ]; then 
+						DESKMANAGERS="$1"
+					else 
+						DESKMANAGERS="$DESKMANAGERS $1"
+					fi
+					;;
+
+			--noconfirm)   NOCONFIRM=1
+					;;
+			*)	help
+				 exit 1
+				;;
+		esac
+		shift
+	done
+}
+
+CreateSubscribers() 
+{
+# only subscribe if pmd has subscribers
+PmdName=$1
+
+	shift
+	if [ "$1" != "none" ] ; then 
+		while [ $# != 0 ] 
+		do 
+			echo "Subscribing $1 to  : $PmdName"
+			$SEOSDIR/bin/sepmd -s $PmdName $1
+			shift
+		done
+	fi
+
+
+}
+
+#-------------------------------------------------------------------
+# Create Policy Model database.
+#
+#-------------------------------------------------------------------
+CreatePmd()
+{
+
+	PmdName=$1
+	PmdDir=`$SEOSDIR/bin/seini -f "pmd._pmd_directory_" $SEOSDIR/seos.ini`
+
+# no policy model to create 
+	if [ $PmdName = "none" ]; then 
+		echo "No Policy Model was Defined."
+		return 1
+	fi
+
+	head
+	echo "Creating Policy Model Database For : $PmdName"
+	echo "---------------------------------------------"
+	echo "Please Wait ....."
+
+	#begin SB4290
+	if [  -d $PmdDir/$PmdName ] ; then
+		echo "Error: a policy model by that name already exists."
+		echo "Delete the old policy model first."
+		exit 3
+	fi
+	# end SB4290
+	mkdir $PmdDir/$PmdName
+	cd $PmdDir/$PmdName
+	$SEOSDIR/bin/secredb -c  > /dev/null
+	cp $SEOSDIR/samples/pmd.init/pmd.ini .
+	if [ $PARENT_PMD != "none" ] ;then 
+		ChangeToken "seos.parent_pmd"  $PARENT_PMD
+	fi
+
+	if [ $NIS_ENV != "no" ]; then
+		SetupNIS $PmdDir $PmdName
+	fi
+
+	echo "Database  has been created."
+	echo "---------------------------------------------"
+		
+# create administrators 
+	CreateAdmins
+	CreateAuditors
+	CreatePwManagers
+	CreateDeskManagers
+
+# now define subscribers for policy model
+	CreateSubscribers $PmdName $SUBSCRIBERS
+
+
+	echo "Policy Model $PmdName has been created."
+	echo "---------------------------------------------"
+
+	return 0
+
+}
+	
+#-------------------------------------------------------------------
+# Program Initialization.
+# parse command line
+# check if SeOS is running 
+# check if user is Admin.
+#-------------------------------------------------------------------
+ProgInit()
+{
+
+	Check_ifrunning "seosd"
+	if [ $? = 0 ] ; then 
+		echo "SeOS is not running !"
+		echo "Load  SeOS and rerun the script."
+		exit 3
+	fi
+	Check_ifroot
+
+}
+
+
+
+
+SeOS_Check()
+{
+
+	Check_ifrunning "seosd"
+	if [ $? = 0 ] ; then 
+		echo "SeOS is not running !"
+		echo "Load  SeOS and rerun the script."
+		PromptUserYN "" "Load SeOS now ? [Y/n]" "yes"
+        	if [ $PromptUserYN_Input = "yes" ]; then
+                	$SEOSDIR/bin/seosd
+# begin SB4227
+			sleep 3
+			Check_ifrunning "seosd"
+			if [ $? = 0 ] ; then 
+				echo "cannot load SeOS !"
+				echo "quitting ..."
+				exit 3
+			fi
+# end SB4227
+			
+		else 
+			echo "SeOS not loaded."
+			echo "quitting ..."
+			exit 3
+        	fi
+
+	fi
+
+}
+
+#-------------------------------------------------------------------
+# Perform interactive user setup.
+# define pmd name , subscribers , password_pmd , parent_pmd.
+# PMD admin , auditor password_manager , desktop admin.
+#-------------------------------------------------------------------
+UserSetup()
+{
+	clear
+	head
+	WaitEnter
+
+	
+	SeOS_Check
+	
+# get hostname 
+	my_hostname=`Which_Prog hostname`
+	MY_HOST=`$my_hostname`
+
+
+# start SB4286 
+	MY_FQHOST1=`$SEOSDIR/lib/sehostinf -n $MY_HOST`
+
+	MY_FQHOST=""
+	for f  in $MY_FQHOST1  ; do
+	       MY_FQHOST="$MY_FQHOST $f"
+	done
+# end SB4286 
+
+
+#----------------
+# define PMD name 
+#----------------
+	ClearScreen "Policy Model Name"
+	echo "   Choose a name for the policy model you wish to create"
+
+	PromptUser "" "Enter policy model name [none]" "none"
+	PMD_NAME=$PromptUser_Input
+	if [ $PMD_NAME = "none" ] ; then
+		echo "No policy model defined."
+		echo "quitting !!"
+#SW0627
+		return
+	fi
+
+#----------------
+# define subscribers 
+#----------------
+	ClearScreen "Subscribers"
+	echo "   Enter the names of the subscriber hosts for this policy model"
+	echo "   Enter subscribers one at a time. "
+	echo "   Press <ENTER> twice when done."
+	GetInputList "" "Enter subscribers name [none] : " "none"
+	SUBSCRIBERS=$UserInputList
+
+#----------------
+# define parent PMD
+#----------------
+
+	if [ $NO_PARENT = 0 ]; then 
+		ClearScreen "Parent PMD"
+		echo "   This policy model must be subscribed to another policy model"
+		echo "   Enter the full domain name (pmdb@myhost.com) "
+		echo "   of the parent policy model."
+
+		PromptUser "" "Enter parent pmd [none]" "none"
+		PARENT_PMD=$PromptUser_Input
+	fi
+
+#----------------
+# define NIS environment
+#----------------
+	ClearScreen "NIS environment"
+	echo "   If this host is an NIS/NIS+/DNS server,"              
+	PromptUserYN "   do you want updates that are made to users and groups"   "in the PMDB to update the NIS/NIS+/DNS tables ? [y/N]" "no"
+  	NIS_ENV=$PromptUserYN_Input
+
+	if [ $NIS_ENV = "yes" ]; then 
+		PromptUser "" "Enter the location of the NIS password file  [none]" "none"    
+		PASSWD_FILE=$PromptUser_Input
+		PromptUser "" "Enter the location of the NIS groups file  [none]" "none"    
+		GROUP_FILE=$PromptUser_Input
+	fi
+
+
+#--------------------------
+# define PMD administrators 
+#--------------------------
+	ClearScreen "PMD Administrators"
+	echo "   Enter the names of the users who will be "
+	echo "   the administrators of the PMDB."
+	echo "   If you do not enter any names,"
+	echo "   root will become the administrator."
+	echo "   After entering all the names"
+	echo "   press <ENTER> twice to continue."
+	GetInputList "" "Enter administrator name [root] : " "root"
+	ADMINISTRATORS=$UserInputList
+
+#--------------------------
+# define PMD Auditors 
+#--------------------------
+	ClearScreen "PMD Auditors "
+	echo "   Enter the names of the users who will be "
+	echo "   the auditors of the PMDB."
+	echo "   If you do not enter any names,"
+	echo "   root will become the auditor."
+	echo "   After entering all the names"
+	echo "   press <ENTER> twice to continue."
+	GetInputList "" "Enter auditor name [root] : " "root"
+	AUDITORS=$UserInputList
+
+#--------------------------
+# define PMD Passwd managers
+#--------------------------
+	ClearScreen "PMD Password Managers"
+	echo "   Enter the names of the users who will be"	
+	echo "   the password managers of the PMDB."
+	echo "   The PMDB administrator can always manage"
+	echo "   the password functions."
+	echo "   After entering all the names"
+	echo "   press <ENTER> twice to continue."
+	GetInputList "" "Enter password manager name [none] : " "none"
+	PWMANAGERS=$UserInputList
+
+#--------------------------
+# define PMD Desktop managers
+#--------------------------
+	ClearScreen "The location of the PMDB administration"
+	echo "   Enter the full names of the terminals"
+	echo "   from which you will administer the PMDB."
+	echo "   After entering all the names"
+	echo "   press <ENTER> twice to continue."
+	GetInputList "" "Enter terminal's full name [$MY_FQHOST] : " "$MY_FQHOST"
+	DESKMANAGERS=$UserInputList
+}
+
+#-------------------------------------------------------------------
+# Print the user choices.
+# Print a confirm message.
+# If user does not confirm choices - exit.
+#
+#-------------------------------------------------------------------
+PrintUserInput()
+{
+NO_CREATE=0
+
+	if [ $NOCONFIRM = 0 ]; then 
+		ClearScreen "User Choices"
+		echo ""
+		echo "You have made the following selections : "
+		echo ""
+
+		echo "Policy Model Name               :  $PMD_NAME"
+		echo "Policy Model Subscribers        :  $SUBSCRIBERS"
+		echo "Parent Policy Model Name        :  $PARENT_PMD"
+		echo "NIS/NIS+/DNS  Environment Setup :  $NIS_ENV"
+		echo "password file location          :  $PASSWD_FILE"
+		echo "groups file location            :  $GROUP_FILE"
+		echo "Policy Model Administrators     :  $ADMINISTRATORS"
+		echo "Policy Model Auditors           :  $AUDITORS"
+		echo "Policy Model Password Managers  :  $PWMANAGERS"
+		echo "Policy Model Desktop  Managers  :  $DESKMANAGERS"
+		echo ""
+		PromptUserYN "" "Setup a Policy Model with those selections ? [Y/n]" "yes"
+		if [ $PromptUserYN_Input != "yes" ]; then 
+			NO_CREATE=1
+		fi
+	fi
+	if [ $NO_CREATE = 0 ]; then
+		CreatePmd $PMD_NAME 
+	fi
+
+}
+
+
+
+UserMenu() {
+
+	head
+	echo ""
+	echo " The Policy Model Database Concept:"
+	echo ""
+	echo "                  Level 1:        Master PMDB                         "
+	echo "                                     #  #                             "
+	echo "                                    #    #                            "
+	echo "                                   #      #                           "
+	echo "                  Level 2:    Sub-PMDB  Sub-PMDB                      "
+	echo "                               #    #    #    #                       "
+	echo "                              #     #    #     #                      "
+	echo "                  Level 3:  Host  Host  Host  Host                    "
+	echo "" 
+	echo " Options:"
+	echo ""
+	echo " 1. Create a Master PMDB and define its subscribers."
+	echo ""  
+	echo " 2. Create a Subsidiary PMDB and define its subscribers and parent."
+	echo ""
+	echo " 3. Define the parent and password PMDBs of the local host."
+	echo ""
+	echo " 4. Quit"
+	echo ""
+	echo " (you can exit this interactive script anytime by pressing ^C)"
+
+        PromptUser ""  "Enter Your Choice  [4]" "4"
+        USER_CHOICE=$PromptUser_Input
+
+
+}
+
+
+ProcessMenu()
+{
+LEGIT=0
+
+	while [ $LEGIT = 0  ] 
+	do 
+		UserMenu
+		case "$USER_CHOICE"  in 
+			1 | 2 | 3 | 4 ) LEGIT=1
+				 ;;
+			*)	LEGIT=0
+				;;
+		esac
+
+	done 
+
+	return $USER_CHOICE
+}
+
+DisplayMenu()
+{
+
+
+	ProcessMenu
+	USER_CHOICE=$?
+	while [ $USER_CHOICE != 4 ] 
+	do
+
+
+		case "$USER_CHOICE"  in 
+
+			1)	NO_PARENT=1
+				UserSetup
+				# SW0627
+				if [ $PMD_NAME != "none" ]; then
+					PrintUserInput
+				fi
+				WaitEnter
+				;;
+			2)	NO_PARENT=0
+				UserSetup
+				# SW0627
+				if [ $PMD_NAME != "none" ]; then
+					PrintUserInput
+				fi
+				WaitEnter
+				;;
+			3)	$SEOSDIR/lib/subsconfig.sh -i
+				;;
+			4)	exit 0
+				;;
+			*)	exit 2
+			;;
+		esac
+
+		ProcessMenu
+		USER_CHOICE=$?
+
+	done
+}
+
+	
+	
+#-------------------------------------------------------------------
+# main 
+# Check Permissions.
+# Parse Command line args.
+# Set up the policy model.
+#
+#-------------------------------------------------------------------
+
+NOCONFIRM=0
+
+
+	a=`echo -n a`
+	case "$a" in
+		"-n"*)	ECHO=sysv;;
+		    *)	ECHO=bsd;;
+	esac
+
+	if [ $# -lt 1 ]; then 
+		head
+		help
+		exit 1
+	fi
+	ParseArgs $@
+
+# perform interactive setup
+	if [ $INTERACTIVE -eq 1 ] ; then 
+		Check_ifroot
+		DisplayMenu
+	else 
+
+		ProgInit
+		if [ $PMD_NAME = "none"  ]; then 
+			echo "policy model name not defined."
+			echo "quitting ...."
+			exit 1
+		fi
+# check noconfirm flag 
+		PrintUserInput
+	fi
+	

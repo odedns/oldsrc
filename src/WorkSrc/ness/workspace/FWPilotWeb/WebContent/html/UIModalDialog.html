@@ -1,0 +1,72 @@
+<html>
+<HEAD>
+<META http-equiv="Content-Type"	content="text/html; charset=UTF-8">
+<script src="../scripts/UIConstants.js"></script>
+<script src="../scripts/UIUtil.js"></script>
+
+<script>
+function submitModal()
+{			
+	parentForm = dialogArguments[DIALOG_ARGUEMENT_SOURCE_FORM];
+	modalForm.action = parentForm.action;
+	
+	var length = parentForm.elements.length;
+	var formElements = parentForm.elements;
+	for (i = 0;i < length;i++) 
+	{
+		var formElement = formElements[i];
+		if (formElement.name != FORM_FIELD_EVENT_NAME 
+		&& formElement.name != FORM_FIELD_FLOW_ID 
+		&& formElement.name != FORM_FIELD_FLOW_STATE 
+		&& formElement.name != FORM_FIELD_IS_POPUP_WINDOW)
+		{
+			if (formElement.type == "radio" || formElement.type == "checkbox")
+			{
+				if (formElement.checked)
+				{
+					appendHidden(formElement.name,formElement.value);
+				}
+			} 		
+			else if (formElement.type == "select-multiple")
+			{
+				var options = formElement.options;
+				var optionsLength = options.length;
+				for (j = 0;j < optionsLength;j++)
+				{
+					if (options[j].selected)
+					{
+						appendHidden(formElement.name,options[j].value);
+					}
+				}
+			}
+			else 
+			{
+				appendHidden(formElement.name,formElement.value);
+			}			
+		}
+	}
+	modalForm.elements[FORM_FIELD_EVENT_NAME].value = dialogArguments[FORM_FIELD_EVENT_NAME];
+	modalForm.elements[FORM_FIELD_FLOW_ID].value = dialogArguments[FORM_FIELD_FLOW_ID];
+	modalForm.elements[FORM_FIELD_FLOW_STATE].value = dialogArguments[FORM_FIELD_FLOW_STATE];
+	modalForm.submit();	
+}
+
+function appendHidden(fieldName,fieldValue)
+{
+	var input = document.createElement("input");
+	input.type = "hidden";
+	input.name = fieldName;
+	input.value = fieldValue;
+	modalForm.appendChild(input);
+}
+</script>
+</HEAD>
+<body onload="self.name='modalWin';initModal();submitModal()">
+<form id="modalForm" method="post" target="modalWin">
+<input type="hidden" name="eventData.eventName">
+<input type="hidden" name="eventData.flowState">
+<input type="hidden" name="eventData.flowId">
+<input type="hidden" name="isPopupWindow" value="1">
+</form>
+</body>
+</html>

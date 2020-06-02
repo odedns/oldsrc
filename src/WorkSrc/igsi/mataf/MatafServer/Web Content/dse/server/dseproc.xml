@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dseproc.xml SYSTEM "../../dtd/dseproc.dtd">
+<dseproc.xml>
+	<!--DWGroupDef:DSE Sample application.Server.Processor-->
+	<opProcessor id="flowServerOp" context="testTrxCtx">
+		<refFormat name="csReplyFormat" refId="testTrxReplyFmt" />
+		
+<!--		<state id="initial" type="initial">
+			<entryActions>
+				<tests.TestStep1 id="dummyJournalAct">
+					<conditions />
+				</tests.TestStep1>
+			</entryActions>
+			<transitions>
+				<transition id="dummyJournalAct.ok" targetState="state2" />
+				<transition id="dummyJournalAct.error" targetState="finalNotOk" />
+			</transitions>
+		</state>
+		
+		<state id="state2">
+			<entryActions>
+				<tests.TestStep2 id="dummyHostAct">
+					<conditions />
+				</tests.TestStep2>
+			</entryActions>
+			<transitions>
+				<transition id="dummyHostAct.ok" targetState="state3" />
+				<transition id="dummyHostAct.error" targetState="finalNotOk" />
+			</transitions>
+		</state>
+		
+		<state id="state3">
+			<entryActions>
+				<tests.TestStep3 id="dummyReplyAct">
+					<conditions />
+				</tests.TestStep3>
+			</entryActions>
+			<transitions>
+				<transition id="dummyReplyAct.ok" targetState="state4" />
+				<transition id="dummyReplyAct.error" targetState="finalNotOk" />
+			</transitions>
+		</state>
+		
+		<state id="state4">
+			<entryActions>
+				<tests.TestStep1 id="dummyReplyAct">
+					<conditions />
+				</tests.TestStep1>
+			</entryActions>
+			<transitions>
+				<transition id="dummyReplyAct.ok" targetState="finalOk" />
+				<transition id="dummyReplyAct.error" targetState="finalNotOk" />
+			</transitions>
+		</state>-->
+		
+		<state id="finalOk" type="final" typeIdInfo="ok"/>
+		<state id="finalNotOk" type="final" typeIdInfo="error"/>
+	</opProcessor>
+	
+	<!--opProcessor id="initSlikaServerOp" context="slikaOpCtx">
+		<refFormat name="csReplyFormat" refId="testTrxReplyFmt" />
+		
+		<state id="initial" type="initial">
+			<entryActions>
+				<mataf.slika.opSteps.initSnifStep id="initSnifAct">
+					<conditions />
+				</mataf.slika.opSteps.initSnifStep>
+			</entryActions>
+			<transitions>
+				<transition id="initSnifAct.ok" targetState="state2" />
+				<transition id="initSnifAct.error" targetState="finalNotOk" />
+			</transitions>
+		</state>
+		
+		<state id="state2">
+			<entryActions>
+				<mataf.slika.opSteps.initSugCheshbonStep id="initSugCheshbonAct">
+					<conditions />
+				</mataf.slika.opSteps.initSugCheshbonStep>
+			</entryActions>
+			<transitions>
+				<transition id="initSugCheshbonAct.ok" targetState="state3" />
+				<transition id="initSugCheshbonAct.error" targetState="finalNotOk" />
+			</transitions>
+		</state>
+		
+		<state id="state3">
+			<entryActions>
+				<mataf.slika.opSteps.initPeulotHemshechStep id="initPeulotHemshech">
+					<conditions />
+				</mataf.slika.opSteps.initPeulotHemshechStep>
+			</entryActions>
+			<transitions>
+				<transition id="initPeulotHemshech.ok" targetState="finalOk" />
+				<transition id="initPeulotHemshech.error" targetState="finalNotOk" />
+			</transitions>
+		</state>
+		
+		<state id="finalOk" type="final" typeIdInfo="ok"/>
+		<state id="finalNotOk" type="final" typeIdInfo="error"/>
+	</opProcessor-->
+	<!--/DWGroupDef-->
+</dseproc.xml>

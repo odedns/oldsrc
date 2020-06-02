@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT dsectxt.xml (context+)>
+
+<!ELEMENT context ((refService)*,(refKColl | refType)?)*>
+<!ATTLIST context 
+    implClass CDATA #IMPLIED
+    parent CDATA #IMPLIED
+    type CDATA #REQUIRED
+    id ID #REQUIRED
+>
+
+<!ELEMENT refKColl (iniValue)*>
+<!ATTLIST refKColl 
+    refId CDATA #REQUIRED
+>
+
+<!ELEMENT refType EMPTY>
+<!ATTLIST refType
+	refId IDREF #REQUIRED
+>
+
+<!ELEMENT refService EMPTY>
+<!ATTLIST refService
+	refId CDATA #REQUIRED
+	alias CDATA #REQUIRED
+	type CDATA #REQUIRED
+>
+
+<!ELEMENT iniValue EMPTY>
+<!ATTLIST iniValue
+	value CDATA #REQUIRED
+	name IDREF #REQUIRED
+>

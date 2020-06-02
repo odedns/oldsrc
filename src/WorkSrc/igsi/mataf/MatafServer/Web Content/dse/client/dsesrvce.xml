@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dsesrvce.xml>
+	<!--DWGroupDef:client.Services-->
+	<!-- CLIENT SERVICE DEFs.===================================================-->
+	<!--========================================================================-->
+	<!-- Real client-server client service										-->
+	<!--========================================================================-->
+	<CSClient id="realCSClient" />
+	<Monitor id="Monitor" layout="Vertical" />
+	<!--ApplicationTables id="appTablesService" classNameForTableAccess="myApplicationTablesAccessImplementation">
+		<table id="snif" inMemory="true">
+		<tableColumn id="snifCode" type="VARCHAR(3)" isKey="true" />
+		<tableColumn id="snifName" type="VARCHAR(20)" />
+		</table>
+		</ApplicationTables-->
+	<!--========================================================================-->
+	<!-- Proxy service															-->
+	<!--========================================================================-->
+	<ProxyService id="proxyService" sendPort="9999" listenPort="9998" sendHost="localhost" loadReceiver="true" />
+	<!--========================================================================-->
+	<!-- Reference Tables client service															-->
+	<!--========================================================================-->
+	<RefTablesClientService id="refTables" loadAll="false" />
+	<!--
+	<RefTablesService id="refTables" jdbcService="jdbcDSConnection" loadAll="true" />
+	-->
+
+	<!--========================================================================-->
+	<!-- Cheque Reader service															-->
+	<!--========================================================================-->
+	<!--<ChequeMateReader id="chequeReader" port="1" baudRate="9600" dataBits="7" stopBits="1" parity="even" timeout="11000" checkLink="no" trace="no" reset="yes" /-->
+	<ChequeMateReader id="chequeReader"/>
+
+	<!--MsgsHandlerService id="msgsHandler" msgTableName="APP_MSG" msgKeyColumnName="number" msgDescColumnName="desc" 
+						runtimeMsgTableName="GLST_SGIA" runtimeMsgKeyColumnName="GL_ZIHUY_HODAA" runtimeMsgDescColumnName="GL_HODAA" /-->
+	<MsgsHandlerService id="msgsHandler">
+		<!--MsgsTable id="appMsgs" tableName="APP_MSG" keyColumnName="number" msgDescColumnName="desc" /-->
+		<MsgsTable id="runtimeMsgs" tableName="GLST_SGIA" keyColumnName="GL_ZIHUY_HODAA" msgDescColumnName="GL_HODAA" />
+	</MsgsHandlerService>
+		
+	<!-- MQ Connection service -->
+	<MQConnection id="MQC" QMgrName="Q283US00" sendToQ="QS1" 
+			replyToQ="QS1" synchronousMode="enabled" 
+			messageOrCorrelation="correlation"		
+			serverOrClient="client" hostName="10.11.103.216" channel="SERVER.CHANNEL" 
+			port="1414" automaticConnectionEstablishment="disabled"/>
+
+	<!-- mq queue for log messages -->
+	<MQConnection id="MQ_LOG" QMgrName="Q283US00" sendToQ="QS1" 
+			replyToQ="QS1" synchronousMode="enabled" 
+			messageOrCorrelation="correlation"		
+			serverOrClient="client" hostName="10.11.103.216" channel="SERVER.CHANNEL" 
+			port="1414" automaticConnectionEstablishment="disabled"/>
+
+	<!-- MQ Connection service -->
+	<MQConnection id="MQ_OR" QMgrName="Q283US00" sendToQ="T05.ISHUR_MENAHEL" 																				
+			synchronousMode="enabled" 
+			messageOrCorrelation="correlation"		
+			serverOrClient="client" hostName="10.11.103.216" channel="SERVER.CHANNEL" 
+			port="1414" automaticConnectionEstablishment="disabled"  
+			establishConnectionRetries="0" />
+
+
+	<!--========================================================================-->
+	<!-- printer service															-->
+	<!--========================================================================-->
+	<PrinterService id="printer" formsPath="k:/dat/" />
+
+	<!--/DWGroupDef-->
+</dsesrvce.xml>

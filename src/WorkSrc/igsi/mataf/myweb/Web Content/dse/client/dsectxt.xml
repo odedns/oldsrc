@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsectxt.xml>
+     <!--DWGroupDef:DSE Sample application.Client.Contexts-->
+     <!-- CLIENT CONTEXT DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Branch Context                                                          -->
+     <!--=========================================================================-->
+     <context id="branchClientCtx" parent="nil" type="branch">
+          <refKColl refId="branchData"/>
+		  <refService alias="CSClient" refId="realCSClient" type="cs"/>
+     </context>
+	 <context id="myClientCtx" parent="startupClientCtx" type="branch">
+          <refKColl refId="branchData"/>
+		  <refService alias="CSClient" refId="realCSClient" type="cs"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- WorkStation Context                                                     -->
+     <!--=========================================================================-->
+     <context id="workstationCtx" parent="branchClientCtx" type="branch">
+          <refKColl refId="workstationData"/>
+          <refService alias="CSClient" refId="realCSClient" type="cs"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- StartUp Operation Context                                               -->
+     <!--=========================================================================-->
+     <context id="startupClientCtx" parent="workstationCtx" type="op">
+          <refKColl refId="startupClientData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- End Session Operation Context                                           -->
+     <!--=========================================================================-->
+     <context id="endSessionClientCtx" parent="workstationCtx" type="op">
+          <refKColl refId="endSessionClientData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Customer Session Context                                                -->
+     <!--=========================================================================-->
+     <context id="customerSessionCtx" parent="workstationCtx" type="branch">
+          <refKColl refId="customerSessionData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Customer Search View Context                                       -->
+     <!--=========================================================================-->
+     <context id="customerViewClientCtx" parent="customerSessionCtx" type="view">
+          <refKColl refId="customerViewData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Customer Search Operation Context                                       -->
+     <!--=========================================================================-->
+     <context id="customerSearchClientCtx" type="op">
+          <refKColl refId="customerSearchData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Account View Context                                       -->
+     <!--=========================================================================-->
+     <context id="accountViewClientCtx" type="op">
+          <refKColl refId="accountViewData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Withdrawal Operation Context                                            -->
+     <!--=========================================================================-->
+     <context id="withdrawalClientCtx" type="op">
+          <refKColl refId="withdrawalData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Deposit Operation Context                                               -->
+     <!--=========================================================================-->
+     <context id="depositClientCtx" type="op">
+          <refKColl refId="depositData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Account Statement Operation Context                                       -->
+     <!--=========================================================================-->
+     <context id="accountStatementClientCtx" type="op">
+          <refKColl refId="accountStatementData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Account Statement View Context                                       -->
+     <!--=========================================================================-->
+     <context id="statementViewClientCtx" type="op">
+          <refKColl refId="statementViewData"/>
+     </context>
+     <!--/DWGroupDef-->
+</dsectxt.xml>

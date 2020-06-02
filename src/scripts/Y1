@@ -1,0 +1,57 @@
+#!/bin/sh
+
+USAGE="$0 --font fontname --fg color --bg color"
+BG=white
+FG=black
+
+
+	if [ $# -lt 1 ]; then
+		echo "usage $USAGE "
+		exit 1
+	fi
+
+	while [  $# -gt 0 ]; do
+		case $1 in
+
+			"--font"):
+				shift;
+				FNT=$1
+				echo $FNT
+				;;
+			"--fg"):
+				shift;
+				FG=$1
+				;;
+			"--bg"):
+				shift;
+				BG=$1
+				;;
+			*):
+				echo "invalid option"
+				exit 1;;
+		esac
+		shift
+	done
+
+	case $FNT in 
+		"12"):
+		FONT=-adobe-courier-medium-r-normal--12-120-75-75-m-70-iso8859-1
+		;;
+		"14"):
+		FONT=-adobe-courier-medium-r-normal--14-140-75-75-m-90-iso8859-1
+		;;
+		"14b"):
+		FONT=-adobe-courier-bold-r-normal--14-140-75-75-m-90-iso8859-1
+		;;
+		*):
+		FONT=-adobe-courier-medium-r-normal--12-120-75-75-m-70-iso8859-1
+		;;
+	esac
+
+
+
+	if [ -z "$DISPLAY" ]; then 
+		DISPLAY=10.224.13.178:0.0
+	fi
+	xterm -sb -display $DISPLAY -cr "#00ff00" -T sne451 -fn $FONT \
+	-fg $FG -bg $BG  &

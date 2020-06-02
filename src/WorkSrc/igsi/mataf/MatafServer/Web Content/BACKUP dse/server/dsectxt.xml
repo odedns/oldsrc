@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsectxt.xml>
+     <!--DWGroupDef:Server.Contexts-->
+     <!-- SERVER CONTEXT DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Branch Context                                                          -->
+     <!--=========================================================================-->
+     <context id="branchServer" parent="nil" type="branch">
+          <refKColl refId="branchData"/>
+          <refService alias="CSServer" refId="realCSServer" type="cs"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Java Channel Context                                                    -->
+     <!--=========================================================================-->
+     <context id="javaChannelCtx" parent="branchServer" type="op">
+          <refKColl refId="javaChannelData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- HTML Presentation Context                                               -->
+     <!--=========================================================================-->
+     <context id="htmlPresentationCtx" type="op">
+          <refKColl refId="htmlPresentationData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Java Session Context                                                    -->
+     <!--=========================================================================-->
+     <!--context id="javaSessionCtx" type="op" parent="javaChannelCtx"-->
+     <context id="javaSessionCtx" type="op">
+          <refKColl refId="javaSessionData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- HTML Channel Context                                                    -->
+     <!--=========================================================================-->
+     <context id="htmlChannelCtx" parent="branchServer" type="op">
+          <refKColl refId="htmlChannelData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- HTML Session Context                                                    -->
+     <!--=========================================================================-->
+     <context id="htmlSessionCtx" type="op">
+          <refKColl refId="htmlSessionData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Startup Operation Context                                               -->
+     <!--=========================================================================-->
+     <context id="startupServerCtx" parent="branchServer" type="op">
+          <refKColl refId="startupServerData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- End session Operation Context                                           -->
+     <!--=========================================================================-->
+     <context id="endSessionServerCtx" type="op">
+          <refKColl refId="endSessionServerData"/>
+     </context>
+     
+     <context id="initHlCtx" type="op">
+          <refKColl refId="initHlData"/>
+     </context>
+     
+     <context id="confirmOpenHlCtx" type="op">
+          <refKColl refId="confirmOpenHlData"/>
+     </context>
+     <!--/DWGroupDef-->
+</dsectxt.xml>

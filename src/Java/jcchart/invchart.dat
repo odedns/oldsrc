@@ -1,0 +1,5 @@
+ ARRAY '[FONT=TimesRoman-bold-16] H&ouml;he der [NEWLINE] Entgelte [NEWLINE] in DM'  2  5
+   'Juni\n1998'   'Juli\n1998'   'Aug.\n1998'   'Sep.\n1998'   'Jan.\n1999'
+'order'    199806 199807 199808 199809 199901
+'s1'   99.0   0.0   9898.0   0.0   79.0   
+'s2'   0.0   9899.0   0.0   9897.0   0.0

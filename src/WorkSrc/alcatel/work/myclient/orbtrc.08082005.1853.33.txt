@@ -1,0 +1,63 @@
+18:53:33.446 com.ibm.CORBA.iiop.ClientDelegate@46aeba60 invoke:729 P=412352:O=0:CT ORBRas[default] Received SystemException  org.omg.CORBA.UNKNOWN: 
+
+Trace from server: 1198777258 at host localhost >>
+java.rmi.RemoteException: ; nested exception is: 
+	java.lang.NullPointerException
+	at com.ibm.ejs.container.RemoteExceptionMappingStrategy.setUncheckedException(RemoteExceptionMappingStrategy.java:196)
+	at com.ibm.ejs.container.EJSDeployedSupport.setUncheckedException(EJSDeployedSupport.java:296)
+	at onjlib.ejb.mytest.EJSRemoteStatelessmytest_c69cb50d.setData(EJSRemoteStatelessmytest_c69cb50d.java:68)
+	at onjlib.ejb.mytest._EJSRemoteStatelessmytest_c69cb50d_Tie._set_data(_EJSRemoteStatelessmytest_c69cb50d_Tie.java:153)
+	at onjlib.ejb.mytest._EJSRemoteStatelessmytest_c69cb50d_Tie._invoke(_EJSRemoteStatelessmytest_c69cb50d_Tie.java:80)
+	at com.ibm.CORBA.iiop.ServerDelegate.dispatchInvokeHandler(ServerDelegate.java:608)
+	at com.ibm.CORBA.iiop.ServerDelegate.dispatch(ServerDelegate.java:461)
+	at com.ibm.rmi.iiop.ORB.process(ORB.java:432)
+	at com.ibm.CORBA.iiop.ORB.process(ORB.java:1728)
+	at com.ibm.rmi.iiop.Connection.doWork(Connection.java:2227)
+	at com.ibm.rmi.iiop.WorkUnitImpl.doWork(WorkUnitImpl.java:65)
+	at com.ibm.ejs.oa.pool.PooledThread.run(ThreadPool.java:95)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:912)
+Caused by: java.lang.NullPointerException
+	at onjlib.db.DbUtil.getConnection(DbUtil.java:35)
+	at onjlib.ejb.mytest.MytestBean.setData(MytestBean.java:63)
+	at onjlib.ejb.mytest.EJSRemoteStatelessmytest_c69cb50d.setData(EJSRemoteStatelessmytest_c69cb50d.java:62)
+	... 10 more
+<<  END server: 1198777258 at host localhost
+
+  vmcid: IBM  minor code: E86 completed: Maybe
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:80)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:44)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:315)
+	at com.ibm.rmi.iiop.ReplyMessage._getSystemException(ReplyMessage.java:225)
+	at com.ibm.rmi.iiop.ReplyMessage.getSystemException(ReplyMessage.java:174)
+	at com.ibm.rmi.iiop.ClientResponseImpl.getSystemException(ClientResponseImpl.java:173)
+	at com.ibm.rmi.corba.ClientDelegate.intercept(ClientDelegate.java:903)
+	at com.ibm.rmi.corba.ClientDelegate.invoke(ClientDelegate.java:428)
+	at com.ibm.CORBA.iiop.ClientDelegate.invoke(ClientDelegate.java:1148)
+	at com.ibm.rmi.corba.ClientDelegate.invoke(ClientDelegate.java:700)
+	at com.ibm.CORBA.iiop.ClientDelegate.invoke(ClientDelegate.java:1178)
+	at org.omg.CORBA.portable.ObjectImpl._invoke(ObjectImpl.java:486)
+	at onjlib.ejb.mytest._Mytest_Stub.setData(_Mytest_Stub.java:235)
+	at tests.Client.main(Client.java:31)
+, p1=<null> 
+18:53:33.696 com.ibm.CORBA.iiop.ClientDelegate@46aeba60 invoke:771 P=412352:O=0:CT ORBRas[default] Throwable from UnknownExceptionInfo  java.rmi.RemoteException: ; nested exception is: 
+	java.lang.NullPointerException
+	at com.ibm.ejs.container.RemoteExceptionMappingStrategy.setUncheckedException(RemoteExceptionMappingStrategy.java:196)
+	at com.ibm.ejs.container.EJSDeployedSupport.setUncheckedException(EJSDeployedSupport.java:296)
+	at onjlib.ejb.mytest.EJSRemoteStatelessmytest_c69cb50d.setData(EJSRemoteStatelessmytest_c69cb50d.java:68)
+	at onjlib.ejb.mytest._EJSRemoteStatelessmytest_c69cb50d_Tie._set_data(_EJSRemoteStatelessmytest_c69cb50d_Tie.java:153)
+	at onjlib.ejb.mytest._EJSRemoteStatelessmytest_c69cb50d_Tie._invoke(_EJSRemoteStatelessmytest_c69cb50d_Tie.java:80)
+	at com.ibm.CORBA.iiop.ServerDelegate.dispatchInvokeHandler(ServerDelegate.java:608)
+	at com.ibm.CORBA.iiop.ServerDelegate.dispatch(ServerDelegate.java:461)
+	at com.ibm.rmi.iiop.ORB.process(ORB.java:432)
+	at com.ibm.CORBA.iiop.ORB.process(ORB.java:1728)
+	at com.ibm.rmi.iiop.Connection.doWork(Connection.java:2227)
+	at com.ibm.rmi.iiop.WorkUnitImpl.doWork(WorkUnitImpl.java:65)
+	at com.ibm.ejs.oa.pool.PooledThread.run(ThreadPool.java:95)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:912)
+Caused by: java.lang.NullPointerException
+	at onjlib.db.DbUtil.getConnection(DbUtil.java:35)
+	at onjlib.ejb.mytest.MytestBean.setData(MytestBean.java:63)
+	at onjlib.ejb.mytest.EJSRemoteStatelessmytest_c69cb50d.setData(EJSRemoteStatelessmytest_c69cb50d.java:62)
+	... 10 more
+, p1=<null> 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>OverrideEAR</name>
+	<comment></comment>
+	<projects>
+		<project>OverrideEJB</project>
+		<project>Override</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.ibm.etools.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.etools.j2ee.EAR13Nature</nature>
+	</natures>
+</projectDescription>

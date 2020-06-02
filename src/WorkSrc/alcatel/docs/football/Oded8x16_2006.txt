@@ -1,0 +1,577 @@
+
+MPS Coaches Club Football          League Standings                     Page  1
+Copyright 1994 Microprose Software
+
+
+
+                                 Win Loss  Tie Percent  Pts.    OP
+------------------------------- ---- ---- ---- ------- ------ ------
+
+Redskins                         12    4    0    .750    512    330
+Eagles                           11    5    0    .687    432    315
+Cowboys                           9    7    0    .562    277    280
+49ers                             8    8    0    .500    346    357
+Packers                           8    8    0    .500    298    311
+Vikings                           7    9    0    .437    338    306
+Jets                              5   11    0    .312    284    446
+Dolphins                          4   12    0    .250    311    453
+
+MPS Coaches Club Football          League Standings                     Page  2
+Copyright 1994 Microprose Software
+
+RUSHING OFFENSE                 Attempts Yards Average Yards/Game TDs
+------------------------------- -------- ----- ------- ---------- ---
+Redskins                           557    2160   3.8      135      28
+Eagles                             481    2293   4.7      143      25
+Cowboys                            494    2198   4.4      137      13
+49ers                              447    2098   4.6      131      16
+Packers                            379    1739   4.5      108      23
+Vikings                            363    1730   4.7      108      17
+Jets                               270    1250   4.6       78      14
+Dolphins                           254    1021   4.0       63       9
+
+MPS Coaches Club Football          League Standings                     Page  3
+Copyright 1994 Microprose Software
+
+PASSING OFFENSE                 Attempts Completes Percent Net Yards Long TDs
+------------------------------- -------- --------- ------- --------- ---- ---
+Redskins                           538      319       59      4447     81  34
+Eagles                             667      400       59      3932     73  24
+Cowboys                            577      383       66      3542     47  12
+49ers                              637      357       56      3916     80  21
+Packers                            742      473       63      3887     32   8
+Vikings                            727      437       60      4028     54  17
+Jets                               679      361       53      3668     50  10
+Dolphins                           773      436       56      5040     81  25
+
+MPS Coaches Club Football          League Standings                     Page  4
+Copyright 1994 Microprose Software
+
+TOTAL OFFENSE                   Rushing Passing Total Avg/Game TDs
+------------------------------- ------- ------- ----- -------- ---
+Redskins                          2160    4447   6607    412    62
+Eagles                            2293    3932   6225    389    49
+Cowboys                           2198    3542   5740    358    25
+49ers                             2098    3916   6014    375    37
+Packers                           1739    3887   5626    351    31
+Vikings                           1730    4028   5758    359    34
+Jets                              1250    3668   4918    307    24
+Dolphins                          1021    5040   6061    378    34
+
+MPS Coaches Club Football          League Standings                     Page  5
+Copyright 1994 Microprose Software
+
+RUSHING DEFENSE                 Attempts Yards Average Yards/Game TDs
+------------------------------- -------- ----- ------- ---------- ---
+Redskins                           340    1641   4.8      102      15
+Eagles                             325    1227   3.7       76      16
+Cowboys                            351    1446   4.1       90      12
+49ers                              452    2070   4.5      129      24
+Packers                            381    1629   4.2      101      16
+Vikings                            391    1652   4.2      103      17
+Jets                               504    2562   5.0      160      24
+Dolphins                           501    2262   4.5      141      21
+
+MPS Coaches Club Football          League Standings                     Page  6
+Copyright 1994 Microprose Software
+
+PASSING DEFENSE                 Yards Avg/Game TDs Interceptions Sacks
+------------------------------- ----- -------- --- ------------- -----
+Redskins                         4610    288    20       27        52
+Eagles                           4377    273    20       22        30
+Cowboys                          3982    248    17       12        46
+49ers                            3600    225    16       11        38
+Packers                          4089    255    17       10        50
+Vikings                          3889    243    19       16        42
+Jets                             4429    276    27       19        21
+Dolphins                         3484    217    15       16        28
+
+MPS Coaches Club Football          League Standings                     Page  7
+Copyright 1994 Microprose Software
+
+TOTAL DEFENSE                   Rushing Passing Total Avg/Game TDs
+------------------------------- ------- ------- ----- -------- ---
+Redskins                          1641    4610   6251    390    35
+Eagles                            1227    4377   5604    350    36
+Cowboys                           1446    3982   5428    339    29
+49ers                             2070    3600   5670    354    40
+Packers                           1629    4089   5718    357    33
+Vikings                           1652    3889   5541    346    36
+Jets                              2562    4429   6991    436    51
+Dolphins                          2262    3484   5746    359    36
+
+MPS Coaches Club Football          League Stats                       Page  1
+Copyright 1993 Microprose Software
+
+Regular Season Passing Leaders
+Name/Team            Completes Attempts Percent Yards  TD Rating
+-------------------- --------- -------- ------- ----- --- ------
+Feng, Was               302       504      60    4409  31   96.8
+Cummings, Mia.           93       145      64    1268   7   93.8
+Maxwell, Phi            399       665      60    4022  24   81.3
+Shuler, Mia              84       136      61    1011   3   79.7
+Phifer, Dall            383       577      66    3659  12   79.4
+Condorus, S.F	        335       598      56    3808  18   76.5
+Farve, G.B              472       741      63    4040   8   75.9
+Knabe, N.Y.A            299       557      53    3287   9   70.8
+Hall, Minn              437       727      60    4167  17   70.0
+Richardson, Mia         243       467      52    2729  11   60.9
+
+MPS Coaches Club Football          League Stats                       Page  2
+Copyright 1993 Microprose Software
+
+Regular Season Rushing Leaders
+Name/Team             Attempts  Yards  Average   TD
+--------------------  --------  -----  -------  ---
+Chrencik, Phi            340     1689       4.9  13
+Thomas, Dall             323     1414       4.3  10
+Allen, Was               289     1207       4.1  14
+Green, G.B               257     1191       4.6  17
+Smith, Minn              229     1081       4.7   6
+Robinson, S.F            152     804       5.2   6
+Kirby, S.F               152     708       4.6   5
+Rocher, N.Y.A            132     636       4.8   5
+Mitchell, Phi            117     569       4.8   9
+Stewart, Dall            112     568       5.0   2
+Gore, Mia.               133     539       4.0   2
+McFaul, Minn             115     538       4.6  11
+Rubsamen, N.Y.A          101     482       4.7   8
+Moscati, Was             120     437       3.6   6
+Francis, G.B              66     352       5.3   3
+McCarter, Mia             69     285       4.1   5
+
+MPS Coaches Club Football          League Stats                       Page  3
+Copyright 1993 Microprose Software
+
+Regular Season Receiving Leaders
+Name/Team             Number  Yards  Average   TD
+--------------------  ------  -----  -------  ---
+Kurpaska, Mia.           88    1153     13.1     8
+Donati, Was              66    1127     17.0    15
+Westbrook, Was           67    1121     16.7    12
+Ingram, Dall            104    1074     10.3     5
+Nohe, Mia.               82    1020     12.4     6
+Bjornson, N.Y.A          71    1008     14.1     3
+Novacek, Dall            71    1006     14.1     1
+Fryar, S.F               80    992     12.4     7
+Boucher, Phi            115    990      8.6     1
+Wycheck, Was             54    916     16.9     2
+Gore, Mia.               86    881     10.2     0
+Rozanski, Phi            91    867      9.5     8
+Trojan, S.F              66    842     12.7     6
+Trump, Dall              70    816     11.6     6
+Bess, Phi                70    790     11.2     1
+Brady, N.Y.A             57    760     13.3     3
+
+MPS Coaches Club Football          League Stats                       Page  4
+Copyright 1993 Microprose Software
+
+Regular Season Kick Return Leaders
+Name/Team             Number  Yards  Average   TD
+--------------------  ------  -----  -------  ---
+Valencia, Mia.           43    945     21.9     0
+McLoughin, N.Y.A         40    918     22.9     0
+Mitchell, Phi            34    819     24.0     0
+Spencer, Mia.            38    809     21.2     0
+Botsford, S.F            35    798     22.8     0
+Moscati, Was             35    786     22.4     0
+Palmer, Minn             30    783     26.1     0
+Sydner, Phi              29    688     23.7     0
+Francis, G.B             28    679     24.2     0
+Kirby, S.F               30    664     22.1     0
+Lee, Minn                30    659     21.9     0
+Truitt, N.Y.A            27    636     23.5     0
+Warrell, Dall            29    632     21.7     0
+Trump, Dall              28    618     22.0     0
+Hill, G.B                23    597     25.9     0
+Bull, Was                27    564     20.8     0
+
+MPS Coaches Club Football          League Stats                       Page  5
+Copyright 1993 Microprose Software
+
+Regular Season Punt Return Leaders
+Name/Team             Number  Yards  Average   TD
+--------------------  ------  -----  -------  ---
+Mitchell, Phi            83    965     11.6     4
+Lee, Minn                90    756      8.4     1
+Moscati, Was             83    745      8.9     3
+Warrell, Dall            71    744     10.4     3
+Francis, G.B             72    632      8.7     2
+McLoughin, N.Y.A         41    593     14.4     5
+Robinson, S.F            22    274     12.4     0
+Kirby, S.F               40    271      6.7     0
+Spencer, Mia.            57    266      4.6     0
+Dec, Mia.                 4     86     21.5     1
+Rocher, N.Y.A             4     28      7.0     0
+Kirk, N.Y.A               5     15      3.0     0
+Gunn, N.Y.A               1     13     13.0     0
+Crafts, G.B               5      5      1.0     0
+Crouse, G.B               1      1      1.0     0
+Wesley, N.Y.A             2      1      0.5     0
+
+MPS Coaches Club Football          League Stats                       Page  6
+Copyright 1993 Microprose Software
+
+Regular Season Tackle Leaders
+Name/Team             Number     Sacks
+--------------------  ------     -----
+Olrick, Was             137        15
+Petersen, S.F           125         9
+Thomas, Mia.            123         7
+Coakley, Dall           119         1
+Strickland, Phi         105         0
+Agro, Minn               95         0
+Smith, Dall              92         0
+Barnett, Minn            89         0
+Goulet, S.F              85         2
+Corduff, N.Y.A           85         0
+Woodson, Dall            83         0
+Randle, Minn             81        11
+Vincent, Mia.            79         0
+Le Tourneur, Min         75         6
+Davis, Minn              75         0
+Bullough, Phi            74        26
+
+MPS Coaches Club Football          League Stats                       Page  7
+Copyright 1993 Microprose Software
+
+Regular Season Sack Leaders
+Name/Team             Number     Sacks
+--------------------  ------     -----
+Bullough, G.B            74        26
+Olrick, Was             137        15
+Fiero, Dall              66        14
+Randle, Minn             81        11
+Drew, Mia.               56        11
+Ku, N.Y.A                60        10
+Petersen, S.F           125         9
+Fraisher, G.B            60         9
+Vinas, Dall              67         8
+Maryland, S.F            55         8
+Patton, G.B              50         8
+Thomas, Mia.            123         7
+Kim, N.Y.A               57         7
+Stewart, Mia.            51         7
+Davis, Minn              46         7
+Virden, Was              37         7
+
+MPS Coaches Club Football          League Stats                       Page  8
+Copyright 1993 Microprose Software
+
+Regular Season Interception Leaders
+Name/Team              Num  Yards  Long   TD
+--------------------  ----  -----  ----  ---
+Dearth, Phi              8     35    27    0
+Green, Was               7     49    24    0
+Dearth, Was              6     36    46    0
+Plagianakos, Dall        5     27    22    0
+Henderson, Phi           5      5     3    0
+Suggs, Minn              4     16     8    0
+Prior, N.Y.A             4     13     9    0
+Corduff, N.Y.A           4      4     5    0
+Webber, S.F              4      4     2    0
+Korbeck, N.Y.A           4      4     3    0
+Watson, Was              4      4     2    0
+Wrightson, Mia.          3    157    62    3
+Agro, Minn               3     56    57    1
+Dods, N.Y.A              3     15    13    0
+Hearne, N.Y.A            3      6     3    0
+Smith, Dall              3      4     3    0
+
+Ultimate NFL Coaches Club Football       Team Information               Page  1
+                       Copyright 1994 Microprose Software
+
+
+Team Info:
+
+Team City: Washington
+Team Name: Redskins
+ Playbook: ODED00.PBK
+  Uniform: Redskins (16)
+     Year: 1995
+
+
+      Off Pnlty ----------------------(50)---------------------- Off Pnlty
+      Def Pnlty -------------------(43)------------------------- Def Pnlty
+       Kick Ret -----------------------(52)--------------------- Kick Ret
+       Punt Ret -----------------(39)--------------------------- Punt Ret
+     Punt Block -----------------------(53)--------------------- Punt Block
+     Kick Block --------------------------(59)------------------ Kick Block
+       Punt Def --------------------(45)------------------------ Punt Def
+       Kick Def --------------------(47)------------------------ Kick Def
+
+
+Coach Info:
+
+Coach's Name: Norv Turner
+
+            Run -------------------(43)------------------------- Pass
+       Safe Off --------------------(45)------------------------ Daring Off
+   Man Coverage --------------------------(60)------------------ Zone Coverage
+       Safe Def --------------------(47)------------------------ Blitz Def
+            3-4 --------------------------------(74)------------ 4-3
+       Fullback ------------------------------------(81)-------- Halfback
+   2 Tight Ends -----------------------(52)--------------------- 4 Wide Rcvrs
+   Short Passes ------------------(41)-------------------------- Deep Passes
+
+Ultimate NFL Coaches Club Football       Team Information               Page  2
+                       Copyright 1994 Microprose Software
+
+
+Roster Data:
+
+Position: Center
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Jennings,Warren                    60 295  78  92   92   92   90    62    83  83
+                                   85  20  20  20   89   92   20    20    20
+                                  Snap:29
+Concepcion,Cody                    52 293  74  84   86   86   61    63    75  78
+                                   80  20  20  20   88   78   20    20    20
+                                  Snap:32
+
+Position: Guard
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Brudin,Benjammin                   77 295  76  86   87   87   49    54    78  78
+                                   20  20  20  20   87   85   20    20    20
+                                  Snap:26
+Loizeaux,Troy                      61 285  77  82   82   84   80    56    78  75
+                                   20  20  20  20   84   80   20    20    20
+                                  Snap:23
+Taylor,Aaron                       73 300  76  86   87   90   35    98    82  78
+                                   35  50  50  50   88   86   35    50    35
+                                  Snap:62
+
+Position: Tackle
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+DeBalla,Andre                      73 320  80  75   82   82   82    58    75  75
+                                   20  20  20  20   75   75   20    20    20
+                                  Snap:20
+Kramer,Brandon                     75 290  78  85   87   89   39    61    81  80
+                                   35  20  20  20   86   84   35    20    35
+                                  Snap:23
+Hunt,John                          78 284  76  82   80   80   40    58    78  75
+                                   35  20  20  20   82   82   35    20    35
+                                  Snap:23
+
+Position: Tight End
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Morrison,Chiante                   88 250  76  83   87   87   85    55    89  87
+                                   80  80  80  20   80   80   20    20    20
+                                  Rts:84 Tyds:84
+Christian,Morgan                   84 255  75  82   85   85   33    72    89  82
+                                   86  75  77  20   78   78   20    20    20
+                                  Rts:84 Tyds:83
+Wycheck,Frank                      89 235  75  92   91   88   51    95    93  92
+                                   88  80  80  50   70   70   50    50    50
+                                  Rts:93 Tyds:93
+
+Ultimate NFL Coaches Club Football       Team Information               Page  3
+                       Copyright 1994 Microprose Software
+
+
+
+Position: Qtrback
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Saudek,Brandon                      3 200  75  80   91   80   42    81    75  83
+                                   80  80  75  82   20   20   20    20    20
+                                  Pres:86 RCvr:82 RolR:76 RolL:29
+Feng,Denny                          4 222  74  91   91   85   45    68    84  87
+                                   88  80  75  92   20   20   25    20    20
+                                  Pres:92 RCvr:92 RolR:89 RolL:82
+Darden,Roy                         17 216  77  84   89   85   54    61    78  85
+                                   70  85  45  85   20   20   20    20    20
+                                  Pres:94 RCvr:89 RolR:84 RolL:76
+
+Position: Runningback
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Pineau,Joe                         45 248  73  78   70   80   63    50    85  80
+                                   73  70  78  20   80   86   20    20    20
+                                  Rts:73 Tyds:86
+Allen,Terry                        21 202  70  90   90   88   41    97    90  88
+                                   91  90  92  50   68   68   50    50    50
+                                  Rts:95 Tyds:84
+Moscati,Carson                     34 220  70  80   95   95   36    77    89  89
+                                   85  83  80  20   84   82   20    20    20
+                                  Rts:84 Tyds:82
+
+Position: Fullback
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Moyer,Terry                        39 230  73  80   80   80   59    65    90  89
+                                   92  75  84  20   82   81   20    20    20
+                                  Rts:91 Tyds:84
+Biggs,Paul                         43 230  74  85   90   90   46    56    83  85
+                                   89  85  85  20   89   81   20    20    20
+                                  Rts:87 Tyds:96
+
+Position: Wide Rcrv
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Donati,Allen                       80 221  76  92   93   95   55    77    92  91
+                                   90  80  75  20   75   75   35    20    35
+                                  Rts:92 Tyds:91
+Westbrook,Michael                  81 215  75  95   93   89   43    95    96  93
+                                   91  80  80  50   50   50   50    50    50
+                                  Rts:96 Tyds:90
+Kuper,Andrew                       83 221  76  82   89   89   58    70    92  91
+                                   88  80  75  20   75   75   20    20    20
+                                  Rts:82 Tyds:88
+
+Ultimate NFL Coaches Club Football       Team Information               Page  4
+                       Copyright 1994 Microprose Software
+
+
+Walsh,Chris                        86 193  73  87   93   92   68    96    91  98
+                                   95  80  70  50   50   50   50    50    50
+                                  Rts:87 Tyds:70
+Bull,Edgar                         87 175  72  83   87   89   46    59    89  92
+                                   84  80  80  20   80   80   20    20    20
+                                  Rts:84 Tyds:86
+                                  Specialty: Punt Returner - 78
+
+Position: Punter
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Botsford,Aaron                      5 220  73  88   78   72   72    69    83  85
+                                   92  20  20  20   20   20   20    20    20
+                                  Klen:89 Acc:87 Htmn:95 Rels:95
+
+Position: Kicker
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Plagianakos,Clayton                19 203  74  95   84   70   70    85    82  86
+                                   20  20  20  20   20   20   20    20    20
+                                  Klen:92 Acc:95 Rels:91 Onsd:92
+
+Position: DefTack
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Hollis,Adrian                      91 310  76  94   86   85   41    77    80  77
+                                   45  20  20  23   20   20   91    80    95
+                                  MCvr:20 ZCvr:20
+Taramino,Lou                       97 280  75  80   80   80   80    68    75  78
+                                   20  20  20  20   20   20   82    80    80
+                                  MCvr:80 ZCvr:80
+Gawley,Ted                         98 276  76  87   92   87   42    58    81  81
+                                   20  20  20  20   20   20   86    85    89
+                                  MCvr:20 ZCvr:20
+Pardee,Don                         94 290  76  84   84   86   57    59    78  81
+                                   35  20  20  20   20   20   86    71    84
+                                  MCvr:20 ZCvr:20
+
+Position: DefEnd
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Potter,Lee                         90 275  78  83   82   84   52    58    83  81
+                                   20  20  20  20   20   20   91    80    84
+                                  MCvr:80 ZCvr:80
+Virden,Milton                      79 280  77  89   88   80   38    68    83  87
+                                   20  20  20  20   20   20   76    74    74
+                                  MCvr:20 ZCvr:20
+Place,Casey                        93 290  76  93   88   88   45    80    81  81
+                                   35  20  20  35   20   20   93    91    91
+                                  MCvr:20 ZCvr:20
+
+Ultimate NFL Coaches Club Football       Team Information               Page  5
+                       Copyright 1994 Microprose Software
+
+
+Crawford,Erin                      94 280  77  80   80   82   54    55    78  78
+                                   20  20  20  20   20   20   82    82    82
+                                  MCvr:80 ZCvr:80
+
+Position: Outside LB
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Valencia,Terry                     51 232  76  86   85   85   85    50    82  80
+                                   60  20  20  20   20   20   87    84    87
+                                  MCvr:81 ZCvr:84 Intcp:65
+Licari,Olli                        50 252  77  91   82   82   55    78    88  80
+                                   20  20  20  20   20   20   91    83    88
+                                  MCvr:83 ZCvr:86 Intcp:68
+Ditzel,Aaron                       58 265  75  84   78   78   78    61    84  80
+                                   20  20  20  20   20   20   84    80    83
+                                  MCvr:82 ZCvr:84 Intcp:63
+Harris,Jay                         59 245  74  83   80   80   63    57    85  82
+                                   20  20  20  20   20   20   89    82    86
+                                  MCvr:81 ZCvr:75 Intcp:66
+
+Position: Mid LB
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Olrick,Walt                        56 240  74  97   85   85   55    61    80  85
+                                   92  20  20  20   20   20   99    96    97
+                                  MCvr:98 ZCvr:96 Intcp:94
+Kac,Franklin                       99 248  74  80   90   90   90    77    84  80
+                                   60  20  20  20   20   20   80    84    84
+                                  MCvr:88 ZCvr:86 Intcp:68
+                                  Specialty: Long Snapper - 84
+
+Position: Corner Back
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Watson,Tremaine                    26 178  71  88   90   90   54    53    94  95
+                                   85  20  20  20   20   20   89    87    87
+                                  MCvr:91 ZCvr:92 Intcp:85
+Bowes,P,J                          23 171  71  82   80   80   52    56    94  88
+                                   65  20  20  20   20   20   81    79    76
+                                  MCvr:86 ZCvr:88 Intcp:68
+                                  Specialty: Punt Returner - 70
+Green,Darrell                      28 170  68  97   92   92   55    95    99  98
+                                   92  50  50  50   50   50   92    94    93
+                                  MCvr:97 ZCvr:99 Intcp:95
+Dearth,Milton                      20 205  73  82   80   80   45    67    93  90
+                                   80  20  20  20   20   20   84    82    84
+                                  MCvr:80 ZCvr:80 Intcp:88
+Harbold,Russell                    38 180  72  79   80   80   80    50    90  90
+                                   20  20  20  20   20   20   75    70    73
+                                  MCvr:79 ZCvr:79 Intcp:65
+
+Ultimate NFL Coaches Club Football       Team Information               Page  6
+                       Copyright 1994 Microprose Software
+
+
+
+Position: Strong Safety
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Case,Glenn                         46 215  74  88   90   90   36    50    91  90
+                                   85  20  20  30   20   20   88    76    85
+                                  MCvr:91 ZCvr:96 Intcp:85
+Kerman,Barry                       29 215  75  81   80   80   48    52    93  90
+                                   60  20  20  20   20   20   80    78    81
+                                  MCvr:75 ZCvr:81 Intcp:63
+
+Position: Free Safety
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Henderson,Maverick                 40 210  74  88   85   85   40    68    91  90
+                                   20  20  20  20   20   20   92    91    88
+                                  MCvr:89 ZCvr:89 Intcp:87
+Jackson,Greg                       47 210  73  83   85   85   42    95    92  85
+                                   79  50  50  50   50   50   88    85    83
+                                  MCvr:79 ZCvr:81 Intcp:84
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulemap:EARProjectMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulemap="modulemap.xmi" xmlns:application="application.xmi" xmi:id="EARProjectMap_1084287857800">
+  <mappings xmi:id="ModuleMapping_1084287857800" projectName="struts-blank">
+    <module xmi:type="application:WebModule" href="META-INF/application.xml#WebModule_1084287857800"/>
+  </mappings>
+</modulemap:EARProjectMap>

@@ -1,0 +1,2127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Formats>
+     <!--DWGroupDef:Test Bank Teller.Server.Formats-->
+     <!-- ******************************************************************************** -->
+     <!-- 		START FORMAT DEFINTIONS SAMPLE FOR THE SERVER	     			        -->
+     <!-- ******************************************************************************** -->
+     <!-- ================================================================== -->
+     <!-- 				Startup Operation			         	      -->
+     <!-- ================================================================== -->
+     <fmtDef id="startupReqFmt">
+          <record>
+               <fString dataName="TID"/>
+               <delim delimChar="#"/>
+               <fString dataName="WKSContext"/>
+               <delim delimChar="#"/>
+               <fString dataName="WKSParentContext"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- HTML format used in the startup operation-->
+     <fmtDef id="startupHTMLFmt">
+          <record>
+               <fString dataName="TID"/>
+               <delim delimChar=","/>
+               <fString dataName="WKSContext"/>
+               <delim delimChar=","/>
+               <fString dataName="WKSParentContext"/>
+               <delim delimChar=","/>
+               <fString dataName="UserId"/>
+               <delim delimChar=","/>
+               <fString dataName="Password"/>
+               <delim delimChar=","/>
+               <fString dataName="BranchId"/>
+               <delim delimChar=","/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 			Event Manager Subsystem. DO NOT MODIFY !!!     	      -->
+     <!-- ================================================================== -->
+     <fmtDef id="EventManagerCSFormat">
+          <record>
+               <fString dataName="operationType"/>
+               <delim delimChar="+"/>
+               <iCollF dataName="eventList">
+                    <refFmt refId="eventPair"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="eventPair">
+          <record dataName="eventPair">
+               <fString dataName="eventName"/>
+               <delim delimChar="+"/>
+               <fString dataName="notifierName"/>
+               <delim delimChar="+"/>
+          </record>
+     </fmtDef>
+     <!-- ******************************************************************************** -->
+     <!-- 		END FORMATS DEFINTION SAMPLE FOR THE SERVER	        			  -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 		START BTF CORE EXTENSIONS FORMAT DEFINITIONS FOR THE SERVER		        -->
+     <!-- ******************************************************************************** -->
+
+     <fmtDef id="replyStatus">
+          <record dataName="Status">
+               <fString dataName="ReturnStatus"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="ReturnCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="MessageBody"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="ConfirmationNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Agent Admin	         				      -->
+     <!-- ================================================================== -->
+     <!--Change own password-->
+     <fmtDef id="changeOwnPasswordRequestFmt">
+          <record>
+               <fString dataName="NewPassword"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="changeOwnPasswordReplyFmt">
+          <record>
+               <refFmt refId="replyStatus"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="RightFmt">
+          <record dataName="UserRight">
+               <fString dataName="RightName"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fDate dataName="FromEffDate"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fDate dataName="ToEffDate"/>
+               <nullCheck/>
+               <delim delimChar="?"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="RoleFmt">
+          <record dataName="UserRole">
+               <fString dataName="RoleName"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fDate dataName="FromEffDate"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fDate dataName="ToEffDate"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <refFmt refId="RightsFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="RightsFmt">
+          <record>
+               <iCollF dataName="UserRights" times="*">
+                    <refFmt refId="RightFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+          <nullCheck/>
+     </fmtDef>
+     <fmtDef id="RolesFmt">
+          <record>
+               <iCollF dataName="UserRoles" times="*">
+                    <refFmt refId="RoleFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+          <nullCheck/>
+     </fmtDef>
+     <fmtDef id="SecurityUserFmt">
+          <record dataName="SecurityUser">
+               <fString dataName="SecurityUserName"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="SecurityUserID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fDate dataName="FromEffDate"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fDate dataName="ToEffDate"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="SecurityUserPassword"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <refFmt refId="RolesFmt"/>
+               <refFmt refId="RightsFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="UserProfilesFmt">
+          <record>
+               <iCollF dataName="SecurityUsers" times="*">
+                    <refFmt refId="SecurityUserFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Electronic Journal 		         		-->
+     <!-- ================================================================== -->
+     <fmtDef id="retrieveSchemaInfoRepFmt">
+          <record>
+               <fInteger dataName="numOfGeneration"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <iCollF dataName="entities" times="*">
+                    <fString dataName="entity"/>
+                    <nullCheck/>
+                    <delim delimChar=","/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="retrieveSchemaInfoHTMLFmt">
+          <record>
+               <fString dataName="journalAlias"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+          </record>
+     </fmtDef>
+     <!-- Formats used in the Electronic Journal Query operation-->
+     <fmtDef id="ejRepFmt">
+          <record>
+               <fString dataName="lastPage"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <iCollF dataName="ejItems" times="*">
+                    <refFmt refId="ejItemFmt"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="ejItemFmt">
+          <record dataName="ejItem">
+               <fString dataName="EJData.opCode"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.sessionID"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.userID"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.customerID"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.accountID"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.accountCurr"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.currency"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fDate dataName="EJData.effectiveDate"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fTime dataName="EJData.postingTime"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="EJData.status"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fBigDecimal dataName="EJData.amount"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fBigDecimal dataName="EJData.cashIn"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fBigDecimal dataName="EJData.cashOut"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="ejHTMLFmt">
+          <record>
+               <fInteger dataName="pageNum"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="entityName"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="generationNum"/>
+               <nullCheck/>
+               <delim delimChar=","/>
+               <fString dataName="sqlWhereClause"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="journalAlias"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="ejQueryResultFmt">
+          <hashtableIColl dataName="ejItems" times="*">
+               <hashtable dataName="ejItem">
+                    <fObject dataName="EJData.opCode"/>
+                    <fObject dataName="EJData.sessionID"/>
+                    <fObject dataName="EJData.userID"/>
+                    <fObject dataName="EJData.customerID"/>
+                    <fObject dataName="EJData.accountID"/>
+                    <fObject dataName="EJData.accountCurr"/>
+                    <fObject dataName="EJData.amount"/>
+                    <fObject dataName="EJData.currency"/>
+                    <fObject dataName="EJData.cashIn"/>
+                    <fObject dataName="EJData.cashOut"/>
+                    <fObject dataName="EJData.effectiveDate"/>
+                    <fObject dataName="EJData.postingTime"/>
+                    <fObject dataName="EJData.status"/>
+                    <!-- Field convertion Shift decimal place-->
+                    <fConvertAmount amountDataName="amount"
+                         currencyDataName="currency" dataName="EJData"/>
+                    <fConvertAmount amountDataName="cashIn"
+                         currencyDataName="currency" dataName="EJData"/>
+                    <fConvertAmount amountDataName="cashOut"
+                         currencyDataName="currency" dataName="EJData"/>
+               </hashtable>
+          </hashtableIColl>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Electronic Journal Service		         	-->
+     <!-- ================================================================== -->
+     <fmtDef id="createJournalEntryFmt">
+          <hashtable>
+               <!-- Transaction Data-->
+               <fObject dataName="EJData.opCode"/>
+               <fObject dataName="EJData.sessionID"/>
+               <fObject dataName="EJData.userID"/>
+               <fObject dataName="EJData.customerID"/>
+               <fObject dataName="EJData.accountID"/>
+               <fObject dataName="EJData.accountCurr"/>
+               <fObject dataName="EJData.amount"/>
+               <fObject dataName="EJData.currency"/>
+               <fObject dataName="EJData.cashIn"/>
+               <fObject dataName="EJData.cashOut"/>
+               <fObject dataName="EJData.effectiveDate"/>
+               <fObject dataName="EJData.postingTime"/>
+               <fObject dataName="EJData.status"/>
+               <!-- Operation Data-->
+               <fObject dataName="OpData.opID"/>
+               <fObject dataName="OpData.hostRequest"/>
+               <fObject dataName="OpData.hostResponse"/>
+               <fObject dataName="OpData.requestData"/>
+          </hashtable>
+     </fmtDef>
+     <fmtDef id="updateJournalEntryFmt">
+          <hashtable>
+               <!-- Transaction Data-->
+               <fObject dataName="EJData.opCode"/>
+               <fObject dataName="EJData.sessionID"/>
+               <fObject dataName="EJData.userID"/>
+               <fObject dataName="EJData.customerID"/>
+               <fObject dataName="EJData.accountID"/>
+               <fObject dataName="EJData.accountCurr"/>
+               <fObject dataName="EJData.amount"/>
+               <fObject dataName="EJData.currency"/>
+               <fObject dataName="EJData.cashIn"/>
+               <fObject dataName="EJData.cashOut"/>
+               <fObject dataName="EJData.effectiveDate"/>
+               <fObject dataName="EJData.postingTime"/>
+               <fObject dataName="EJData.status"/>
+               <!-- Operation Data-->
+               <fObject dataName="OpData.opID"/>
+               <fObject dataName="OpData.hostRequest"/>
+               <fObject dataName="OpData.hostResponse"/>
+               <fObject dataName="OpData.requestData"/>
+          </hashtable>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 					Forwarding	         		         	-->
+     <!-- ================================================================== -->
+     <fmtDef id="forwardDataRequestFormat">
+          <record>
+               <fInteger dataName="forwardType"/>
+               <delim delimChar="#"/>
+               <fIntegerVector dataName="idCollection" separator=","/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="criteria"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="forwardDataReplyFormat">
+          <record>
+               <fIntegerVector dataName="successResult" separator=","/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fIntegerVector dataName="failureResult" separator=","/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <refFmt refId="replyStatus"/>
+          </record>
+     </fmtDef>
+     <!-- Sample Store -->
+     <fmtDef id="storeFormat">
+          <hashtable>
+               <!-- Store Data-->
+               <fObject dataName="storeData.BranchId"/>
+               <fObject dataName="storeData.opcode"/>
+               <fObject dataName="storeData.UserId"/>
+               <fObject dataName="storeData.timestamp"/>
+               <fObject dataName="storeData.buffer"/>
+               <fObject dataName="storeData.ejId"/>
+          </hashtable>
+     </fmtDef>
+     <!-- ******************************************************************************** -->
+     <!-- 		END BTF CORE EXTENSIONS FORMAT DEFINITIONS FOR THE SERVER	   	        -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 		START BTF TELLER EXTENSIONS FORMAT DEFINITION FOR THE SERVER	        -->
+     <!-- ******************************************************************************** -->
+
+     <!-- ******************************************************************************** -->
+     <!-- 				Agent Admin				           -->
+     <!-- ******************************************************************************** -->
+
+     <fmtDef id="logonRequestFmt">
+          <record>
+               <fString dataName="UserId"/>
+               <delim delimChar="#"/>
+               <fString dataName="Password"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="logonReplyFmt">
+          <record>
+               <refFmt refId="replyStatus"/>
+          </record>
+     </fmtDef>
+     <!-- Forced Logon -->
+     <fmtDef id="forcedLogonRequestFmt">
+	  <record>
+               <fString dataName="UserId"/>
+               <delim delimChar="#"/>
+               <fString dataName="Password"/>
+               <delim delimChar="#"/>
+               <fString dataName="SuperId"/>
+               <delim delimChar="#"/>
+               <fString dataName="SuperPassword"/>
+               <delim delimChar="#"/>
+	  </record>
+     </fmtDef>
+     <fmtDef id="forcedLogonReplyFmt">
+	  <record>
+               <refFmt refId="replyStatus"/>
+	  </record>
+     </fmtDef>
+     <!-- Logoff -->
+     <!--fmtDef id=logoffReplyFmt-->
+     <!--fXML dataName=LogoffResponse-->
+     <!--/fXML-->
+     <!--/fmtDef-->
+     <fmtDef id="logoffReplyFmt">
+          <record>
+               <refFmt refId="replyStatus"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 			Branch Admin Persistence Service			      -->
+     <!-- ================================================================== -->
+     <!-- Formats used by the Branch Management persistence service-->
+     <fmtDef id="BranchStatusFormat">
+          <hashtable>
+               <fObject dataName="BranchId"/>
+               <fObject dataName="OperationDay"/>
+               <fObject dataName="BusinessDay"/>
+               <fObject dataName="BranchStatus"/>
+          </hashtable>
+     </fmtDef>
+     <fmtDef id="BranchTotalsFormat">
+          <hashtable>
+               <fObject dataName="BranchTotals.BranchId"/>
+               <fObject dataName="BranchTotals.TotalType"/>
+               <fObject dataName="BranchTotals.TotalCurrency"/>
+               <fObject dataName="BranchTotals.CurrentAmount"/>
+               <fObject dataName="BranchTotals.NextAmount"/>
+          </hashtable>
+     </fmtDef>
+     <fmtDef id="UserStatusFormat">
+          <hashtable>
+               <fObject dataName="BranchId"/>
+               <fObject dataName="UserId"/>
+               <fObject dataName="UserOperationDay"/>
+               <fObject dataName="UserBusinessDay"/>
+               <fObject dataName="UserStatus"/>
+          </hashtable>
+     </fmtDef>
+     <!-- Common Reply Header-->
+     <fmtDef id="replyHeader">
+          <record dataName="Status">
+               <fString dataName="ReturnStatus"/>
+               <delim delimChar="#"/>
+               <fString dataName="ReturnCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="MessageBody"/>
+               <delim delimChar="#"/>
+               <fString dataName="ConfirmationNumber"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- Formats used by the Branch Admin operations -->
+     <!-- Cash Settlement Query Operation request/response format-->
+     <fmtDef id="cashSettlementQueryOperReqFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="cashSettlementQueryOperRespFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <fString dataName="TrayType"/>
+               <delim delimChar="#"/>
+               <fString dataName="StartingPosition"/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrentPosition"/>
+               <delim delimChar="#"/>
+               <fString dataName="TrapAmount"/>
+               <delim delimChar="#"/>
+               <fString dataName="BaitAmount"/>
+               <delim delimChar="#"/>
+               <fString dataName="currencyCode"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- Post Over/Short operation request/response format-->
+     <fmtDef id="PostOvrShrtReqFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="OverShortInd"/>
+               <delim delimChar="#"/>
+               <fBigDecimal dataName="Amount"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="PostOvrShrtReplyFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+          </record>
+     </fmtDef>
+     <!-- Cash Settlement operation request/response format-->
+     <fmtDef id="cashSettlementOperReqFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="cashSettlementOperRespFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryCashSettlementFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <iCollF dataName="DrawersNotSettled" times="*">
+                    <record dataName="CashDrawerData">
+                         <fString dataName="DrawerId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Type"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Location"/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="CurrentPosition"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="StartingPosition"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fString dataName="CurrencyCode"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Status"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="UserId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="SettledStatus"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="EodStatus"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="EodDate"/>
+                         <delim delimChar="#"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!-- Query End of Day operation request/response format-->
+     <fmtDef id="QueryEODRequestFmt">
+          <record>
+               <fString dataName="userId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryEODReponseFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <iCollF dataName="DrawersNotSettled" times="*">
+                    <record dataName="CashDrawerData">
+                         <fString dataName="DrawerId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Type"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Location"/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="CurrentPosition"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="StartingPosition"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fString dataName="CurrencyCode"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Status"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="UserId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="SettledStatus"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="EodStatus"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="EodDate"/>
+                         <delim delimChar="#"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!-- Post End of Day operation request/response format-->
+     <fmtDef id="postEndOfDayOperReqFmt">
+          <record>
+               <fString dataName="userId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="postEndOfDayOperRespFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+          </record>
+     </fmtDef>
+     <!-- Request Formatter for QueryTXDrawerDataOperation -->
+     <fmtDef id="QueryTXDrawerDataReqFmt">
+          <record>
+               <fString dataName="branchId"/>
+               <delim delimChar="#"/>
+               <fString dataName="tellerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- Request Formatter for QueryTXDrawerDataOperation -->
+     <fmtDef id="QueryTXDrawerDataReplyFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <iCollF dataName="DrawersNotSettled" times="*">
+                    <record dataName="CashDrawerData">
+                         <fString dataName="DrawerId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Type"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Location"/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="CurrentPosition"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="StartingPosition"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fString dataName="CurrencyCode"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="Status"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="UserId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="SettledStatus"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="EodStatus"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="EodDate"/>
+                         <delim delimChar="#"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!-- Request Formatter for TXPostDataOperation -->
+     <fmtDef id="TXPostDataReqFmt">
+          <record>
+               <fString dataName="SourceCDId"/>
+               <delim delimChar="#"/>
+               <fString dataName="SourceCDType"/>
+               <delim delimChar="#"/>
+               <fString dataName="TargetCDId"/>
+               <delim delimChar="#"/>
+               <fString dataName="TargetCDType"/>
+               <delim delimChar="#"/>
+               <fString dataName="DocRefNum"/>
+               <delim delimChar="#"/>
+               <fBigDecimal dataName="ExchangeAmt"/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrencyCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="BuyOrSellFlg"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- Reply Formatter for TXPostDataOperation -->
+     <fmtDef id="TXPostDataReplyFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+          </record>
+     </fmtDef>
+     <!-- Request Formatter for QueryTXReconcileOperation -->
+     <fmtDef id="QueryTXRecReqFmt">
+          <record>
+               <fString dataName="cashDrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="branchId"/>
+               <delim delimChar="#"/>
+               <fString dataName="currencyCode"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- Reply Formatter for QueryTXReconcileOperation -->
+     <fmtDef id="QueryTXRecReplyFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <iCollF dataName="ReconcileDrawerList" times="*">
+                    <record dataName="ReconcileDrawer">
+                         <fString dataName="SourceUserId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="SourceDrawerId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="SourceType"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="TargetUserId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="TargetDrawerId"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="TargetType"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="CurrencyCode"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="DocRefNum"/>
+                         <delim delimChar="#"/>
+                         <fString dataName="BuySell"/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="Amount"/>
+                         <delim delimChar="#"/>
+                    </record>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!-- Request Formatter for TXPostReconcileOperation -->
+     <fmtDef id="TXPostRecReqFmt">
+          <record>
+               <fString dataName="DocRefNum"/>
+          </record>
+     </fmtDef>
+     <!-- Reply Formatter for TXPostReconcileOperation -->
+     <fmtDef id="TXPostRecReplyFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+          </record>
+     </fmtDef>
+     <!-- Query Branch Settlement Currencies operation request/response format-->
+     <fmtDef id="queryBranchSettCurrenciesOperReqFmt">
+          <record>
+               <fString dataName="currency"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="queryBranchSettCurrenciesOperRespFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <iCollF dataName="BranchSettlementTotals" times="*">
+                    <refFmt refId="TotalsPerCurrencyFormat"/>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="TotalsPerCurrencyFormat">
+          <record dataName="TotalsPerCurrency">
+               <fString dataName="Currency"/>
+               <nullCheck/>
+               <delim delimChar="+"/>
+               <iCollF dataName="Totals" times="*">
+                    <record dataName="CDTotalData">
+                         <fString dataName="TotalType"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fBigDecimal dataName="Amount"/>
+                         <nullCheck/>
+                         <delim delimChar="#"/>
+                         <fInteger dataName="Count"/>
+                         <nullCheck/>
+                         <fixedLength length="8"/>
+                         <fString dataName="CurrencyCode"/>
+                         <nullCheck/>
+                         <delim delimChar="@"/>
+                    </record>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="branchSettlementOperRespFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+          </record>
+     </fmtDef>
+     <!-- Query Branch Currencies operation response format-->
+     <fmtDef id="QueryBranchCurrenciesOperRespFmt">
+          <record>
+               <refFmt refId="replyHeader"/>
+               <iCollF dataName="BranchCurrenciesTotals" times="*">
+                    <refFmt refId="TotalsPerCurrencyFormat"/>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Cash Drawer Management	         		      -->
+     <!-- ================================================================== -->
+     <fmtDef id="CDMCommonReplyFmt">
+          <record dataName="CDMCommonReplyData">
+               <fString dataName="ReplyCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="ReplyMessage"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="InitializeCDMReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CloseDBConnectionReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="DrawerTypeAndIdFmt">
+          <record dataName="DrawerTypeAndIdData">
+               <fString dataName="DrawerType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="DrawerId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryNextIdsReplyFmt">
+          <record>
+               <iCollF dataName="DrawerTypesAndIdsData" times="*">
+                    <refFmt refId="DrawerTypeAndIdFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CreateCashDrawerRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="DrawerType"/>
+               <delim delimChar="#"/>
+               <fString dataName="Location"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrencyCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="Reserves"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CreateCashDrawerReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryUserIdsAndUserNamesRequestFmt">
+          <record>
+               <fString dataName="DrawerType"/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrencyCode"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="UserIdAndUserNameFmt">
+          <record dataName="UserIdAndUserNameData">
+               <fString dataName="UserId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="UserName"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryUserIdsAndUserNamesReplyFmt">
+          <record>
+               <iCollF dataName="UserIdsAndUserNamesData" times="*">
+                    <refFmt refId="UserIdAndUserNameFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="AssignCashDrawerRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="AssignCashDrawerReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CDFmt">
+          <record dataName="CDData">
+               <fString dataName="DrawerId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="DrawerType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrencyCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fFloat dataName="StartingPosition"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fFloat dataName="CurrentPosition"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fString dataName="UserId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="UserName"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="SignedOn"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="EodStatus"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="Location"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryCashDrawersReplyFmt">
+          <record>
+               <fString dataName="IsSupervisor"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <iCollF dataName="CashDrawersData" times="*">
+                    <refFmt refId="CDFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="UnAssignCashDrawerRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="UnAssignCashDrawerReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="DeleteCashDrawerRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="DeleteCashDrawerReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="ModifyCashDrawerLocationRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="Location"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="ModifyCashDrawerLocationReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryTrapsAndBaitsRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="TrapFmt">
+          <record dataName="TrapData">
+               <fString dataName="TrayType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fFloat dataName="TrapAmount"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="BaitFmt">
+          <record dataName="BaitData">
+               <fString dataName="TrayType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fInteger dataName="BillId"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fInteger dataName="Denomination"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fString dataName="Type"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="Series"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="SerialNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CashSettlementRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryTrapsAndBaitsReplyFmt">
+          <record>
+               <iCollF dataName="TrapsData" times="*">
+                    <refFmt refId="TrapFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <iCollF dataName="BaitsData" times="*">
+                    <refFmt refId="BaitFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="ModifyTrapsAndBaitsRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <iCollF dataName="TrapsData" times="*">
+                    <refFmt refId="TrapFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <iCollF dataName="BaitsData" times="*">
+                    <refFmt refId="BaitFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="ModifyTrapsAndBaitsReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="DrawerIdFmt">
+          <fString dataName="DrawerId"/>
+          <nullCheck/>
+          <delim delimChar="#"/>
+     </fmtDef>
+     <fmtDef id="QueryCashDrawerIdsReplyFmt">
+          <record>
+               <iCollF dataName="DrawerIdsData" times="*">
+                    <refFmt refId="DrawerIdFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryBinsRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="BinFmt">
+          <record dataName="BinData">
+               <fString dataName="BinType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fInteger dataName="OpenBatchNumber"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fInteger dataName="TotalBatchCount"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fFloat dataName="TotalBatchAmount"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fString dataName="BatchStatus"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryBinsReplyFmt">
+          <record>
+               <iCollF dataName="BinsData" times="*">
+                    <refFmt refId="BinFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CloseBatchRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="BinType"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CloseBatchReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="SetHoldoverRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="BinType"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="SetHoldoverReplyFmt">
+          <record>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryBatchIdsRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="BinType"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="BatchIdFmt">
+          <fString dataName="BatchId"/>
+          <delim delimChar="#"/>
+     </fmtDef>
+     <fmtDef id="QueryBatchIdsReplyFmt">
+          <record>
+               <iCollF dataName="BatchIdsData" times="*">
+                    <refFmt refId="BatchIdFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryBatchItemsRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+               <fString dataName="BinType"/>
+               <delim delimChar="#"/>
+               <!-- fString dataName="BatchDate"/ -->
+               <!-- delim delimChar="#"/ -->
+               <fString dataName="BatchId"/>
+               <fixedLength length="8"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="BatchItemFmt">
+          <record dataName="BatchItemData">
+               <fInteger dataName="ItemId"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fFloat dataName="ItemAmount"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryBatchItemsReplyFmt">
+          <record>
+               <iCollF dataName="BatchItemsData" times="*">
+                    <refFmt refId="BatchItemFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryCashDrawerTotalsRequestFmt">
+          <record>
+               <fString dataName="DrawerId"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="CDTotalFmt">
+          <record dataName="CDTotalData">
+               <fString dataName="TotalType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fFloat dataName="Amount"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fInteger dataName="Count"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="QueryCashDrawerTotalsReplyFmt">
+          <record>
+               <fString dataName="CurrencyCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fFloat dataName="StartingPosition"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <fFloat dataName="CurrentPosition"/>
+               <nullCheck/>
+               <fixedLength length="8"/>
+               <iCollF dataName="CDTotalsData" times="*">
+                    <refFmt refId="CDTotalFmt"/>
+               </iCollF>
+               <selfLength size="2"/>
+               <refFmt refId="CDMCommonReplyFmt"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Customer Session		         		      -->
+     <!-- ================================================================== -->
+     <fmtDef id="CustomerInfoFmt">
+          <record dataName="Customer">
+               <fString dataName="Id"/>
+               <delim delimChar="#"/>
+               <fString dataName="Name"/>
+               <delim delimChar="#"/>
+               <fString dataName="Address"/>
+               <delim delimChar="#"/>
+               <fString dataName="Phone"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="AccountInfoFmt">
+          <record dataName="Account">
+               <fString dataName="AccountNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="AccountCurrency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="AccountType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="Balance"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="OperationReceiptFmt">
+          <record dataName="Receipt">
+               <fString dataName="TransactionType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrencyType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="Amount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="EffectiveDate"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <refFmt refId="AccountInfoFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="GetOperationInfoFmt">
+          <record>
+               <fString dataName="transactionOperationData.operationCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.amount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.effectiveDate"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.ID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountBalance"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="StartCustomerSessionRequestFmt">
+          <fString dataName="CustomerId"/>
+     </fmtDef>
+     <fmtDef id="StartCustomerSessionReplyFmt">
+          <record>
+               <fString dataName="CustomerSessionId"/>
+               <delim delimChar="@"/>
+               <refFmt refId="CustomerInfoFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="EndCustomerSessionRequestFmt">
+          <fString dataName="CustomerSessionId"/>
+     </fmtDef>
+     <fmtDef id="EndCustomerSessionReplyFmt">
+          <record>
+               <fString dataName="CustomerSessionId"/>
+               <nullCheck/>
+               <delim delimChar="@"/>
+               <iCollF dataName="OperationReceipts" times="*">
+                    <refFmt refId="OperationReceiptFmt"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!--*********************************************************************-->
+     <!--              	Customer Session View Demo    	             -->
+     <!--*********************************************************************-->
+     <fmtDef id="transactionAccountFmt">
+          <record>
+               <fString dataName="transactionAccount.ID"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.bankID"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.transitNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.internationalBankID"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountBalance"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.dateOpened"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountLimit"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="transactionOperationFmt">
+          <record>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.operationId"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.operationCode"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="lala">
+          <record>
+               <refFmt refId="transactionAccountFmt"/>
+               <refFmt refId="transactionOperationFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="baba">
+          <fString dataName="CustomerSessionId"/>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 					Overrides		         		      -->
+     <!-- ================================================================== -->
+     <fmtDef id="overrideRequestFmt">
+          <record>
+               <fString dataName="OverrideUserId"/>
+               <delim delimChar="#"/>
+               <fString dataName="OverrideUserPwd"/>
+               <delim delimChar="#"/>
+               <fString dataName="OverrideLevel"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="overrideReplyFmt">
+          <record>
+               <fString dataName="OverrideReply"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Query Store	     	        				-->
+     <!-- ================================================================== -->
+     <fmtDef id="storeQueryResultFmt">
+          <hashtableIColl dataName="queryStoreItemCollection" times="*">
+               <hashtable dataName="queryStoreDataItem">
+                    <fObject dataName="BranchId"/>
+                    <fObject dataName="opcode"/>
+                    <fObject dataName="UserId"/>
+                    <fObject dataName="timestamp"/>
+                    <fObject dataName="buffer"/>
+                    <fObject dataName="ejId"/>
+               </hashtable>
+          </hashtableIColl>
+     </fmtDef>
+     <fmtDef id="storeQueryReceiveFmt">
+          <record>
+               <iCollF dataName="queryStoreItemCollection" times="*">
+                    <record dataName="queryStoreDataItem">
+                         <refFmt refId="storeQueryFmt"/>
+                    </record>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="storeQueryFmt">
+          <record>
+               <fString dataName="recordId"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+               <fString dataName="ejId"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+               <fString dataName="opcode"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+               <fString dataName="BranchId"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+               <fString dataName="buffer"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+               <fTimestamp dataName="timestamp"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+               <fString dataName="UserId"/>
+               <nullCheck/>
+               <delim delimChar="$"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 				Sample Transactions	         			-->
+     <!-- ================================================================== -->
+     <!--Common formats  -->
+     <fmtDef id="transactionAccountRequestFmt">
+          <record dataName="transactionAccount">
+               <fString dataName="ID"/>
+               <delim delimChar="#"/>
+               <fString dataName="bankID"/>
+               <delim delimChar="#"/>
+               <fString dataName="transitNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="internationalBankID"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="accountCurrency"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="transactionAccountReplyFmt">
+          <record dataName="transactionAccount">
+               <fString dataName="accountBalance"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="transactionOperationRequestFmt">
+          <record dataName="transactionOperationData">
+               <fString dataName="sessionId"/>
+               <delim delimChar="#"/>
+               <fString dataName="currency"/>
+               <delim delimChar="#"/>
+               <fString dataName="effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="exchangeAmount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="operationId"/>
+               <delim delimChar="#"/>
+               <fString dataName="operationCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionSequenceNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="overrideUserId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="serverMessageReplyFmt">
+          <record dataName="Status">
+               <fString dataName="ReturnStatus"/>
+               <delim delimChar="#"/>
+               <fString dataName="ReturnCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="MessageBody"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="ConfirmationNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="serviceChargeRequestFmt">
+          <record dataName="serviceCharge">
+               <fString dataName="waiveIndicator"/>
+               <delim delimChar="#"/>
+               <fString dataName="type"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="referenceID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="amount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="foreignExchangeReplyFmt">
+          <record>
+               <fString dataName="transactionOperationData.exchangeAmount"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="storeToFmt">
+          <record dataName="storeData">
+               <fInteger dataName="ejId"/>
+               <delim delimChar="@"/>
+               <fString dataName="BranchId"/>
+               <delim delimChar="@"/>
+               <fString dataName="opcode"/>
+               <delim delimChar="@"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="@"/>
+               <fTimestamp dataName="timestamp"/>
+               <delim delimChar="@"/>
+               <fString dataName="buffer"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="storeFromTransactionFmt">
+          <record>
+               <!--Hidden field added by EJ, comment if not in use with EJ-->
+               <fInteger dataName="ejRecordNum"/>
+               <delim delimChar="@"/>
+               <fString dataName="BranchId"/>
+               <delim delimChar="@"/>
+               <fString dataName="transactionOperationData.operationCode"/>
+               <delim delimChar="@"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="@"/>
+               <fTimestamp dataName="timestamp"/>
+               <delim delimChar="@"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="AssignedCashDrawerFmt">
+          <record>
+               <fString dataName="CashDrawerId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="CurrencyCode"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="Type"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="cashDrawerPrepFmt">
+          <record>
+               <fString dataName="BranchId"/>
+               <delim delimChar="@"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="@"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="@"/>
+               <iCollF dataName="AssignedCashDrawers" times="*">
+                    <record dataName="AssignedCashDrawer">
+                         <refFmt refId="AssignedCashDrawerFmt"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="cashDrawerValidationFmt">
+          <record>
+               <fString dataName="BranchId"/>
+               <delim delimChar="@"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="@"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="@"/>
+               <fString dataName="transactionOperationData.amount"/>
+               <delim delimChar="@"/>
+               <iCollF dataName="AssignedCashDrawers" times="*">
+                    <record dataName="AssignedCashDrawer">
+                         <refFmt refId="AssignedCashDrawerFmt"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 					Withdrawal	 	        		      -->
+     <!-- ================================================================== -->
+     <fmtDef id="withdrawalRequestFmt">
+          <record>
+               <refFmt refId="transactionAccountRequestFmt"/>
+               <refFmt refId="transactionOperationRequestFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="withdrawalReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <refFmt refId="transactionAccountReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="withdrawalToEjFmt">
+          <record>
+               <fString dataName="transactionOperationData.operationCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.sessionId"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.transitNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="Customer.Id"/>
+               <delim delimChar="#"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="#"/>
+               <fTimestamp dataName="timestamp"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="fromWithdrawalEJFmt">
+          <record>
+               <fString dataName="EJData.opCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.sessionID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.accountID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.accountCurr"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="EJData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.currency"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="EJData.cashOut"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.customerID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.userID"/>
+               <delim delimChar="#"/>
+               <fTimestamp dataName="EJData.postingTime"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="foreignExchangeWithdrawalRequestFmt">
+          <record>
+               <fString dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="#"/>
+               <fString dataName="DbUserId"/>
+               <delim delimChar="#"/>
+               <fString dataName="DbPassword"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="storeWithdrawalFmt">
+          <record>
+               <refFmt refId="storeFromTransactionFmt"/>
+               <refFmt refId="withdrawalHostSendFmt"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 						Deposit		     	            -->
+     <!-- ================================================================== -->
+     <fmtDef id="chequeItemsFmt">
+          <record>
+               <fString dataName="checkType"/>
+               <delim delimChar="#"/>
+               <fString dataName="amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transitNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="auxillary"/>
+               <delim delimChar="#"/>
+               <fString dataName="serial"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositRequestFmt">
+          <record>
+               <refFmt refId="transactionAccountRequestFmt"/>
+               <refFmt refId="transactionOperationRequestFmt"/>
+               <fString dataName="cashIn"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="cashOut"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <iCollF dataName="chequeItemsCollection" times="*">
+                    <record dataName="chequeItemData">
+                         <refFmt refId="chequeItemsFmt"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <refFmt refId="transactionAccountReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositToEjFmt">
+          <record>
+               <fString dataName="transactionOperationData.operationCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.sessionId"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.transitNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="cashIn"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="cashOut"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="Customer.Id"/>
+               <delim delimChar="#"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="#"/>
+               <fTimestamp dataName="timestamp"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="fromDepositEJFmt">
+          <record>
+               <fString dataName="EJData.opCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.sessionID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.accountID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.accountCurr"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="EJData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.currency"/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="EJData.cashIn"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="EJData.cashOut"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.customerID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.userID"/>
+               <delim delimChar="#"/>
+               <fTimestamp dataName="EJData.postingTime"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="foreignExchangeDepositRequestFmt">
+          <record>
+               <fString dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <delim delimChar="#"/>
+               <fString dataName="DbUserId"/>
+               <delim delimChar="#"/>
+               <fString dataName="DbPassword"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="storeDepositFmt">
+          <record>
+               <refFmt refId="storeFromTransactionFmt"/>
+               <refFmt refId="depositHostSendFmt"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 					Bill Payment	         			-->
+     <!-- ================================================================== -->
+     <fmtDef id="billPaymentRequestFmt">
+          <record>
+               <refFmt refId="billPaymentAccountRequestFmt"/>
+               <refFmt refId="transactionOperationRequestFmt"/>
+               <refFmt refId="serviceChargeRequestFmt"/>
+               <fString dataName="billAccountNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="referenceNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="billType"/>
+               <delim delimChar="#"/>
+               <fString dataName="billCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="paymentFromAccount"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="billPaymentAccountRequestFmt">
+          <record dataName="transactionAccount">
+               <fString dataName="ID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="bankID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transitNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="internationalBankID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="accountCurrency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="billPaymentReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <refFmt refId="transactionAccountReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="withdrawalServiceChargeRequestFmt">
+          <record>
+               <refFmt refId="transactionAccountRequestFmt"/>
+               <fString dataName="transactionOperationData.sessionId"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="serviceCharge.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.exchangeAmount"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.operationId"/>
+               <delim delimChar="#"/>
+               <fString dataName="serviceCharge.type"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.transactionSequenceNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.overrideUserId"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="bpToEjFmt">
+          <record>
+               <fString dataName="transactionOperationData.operationCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.sessionId"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.transitNumber"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionAccount.accountCurrency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="transactionOperationData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.currency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionOperationData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="Customer.Id"/>
+               <delim delimChar="#"/>
+               <fString dataName="UserId"/>
+               <delim delimChar="#"/>
+               <fTimestamp dataName="timestamp"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="fromBPEJFmt">
+          <record>
+               <fString dataName="EJData.opCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.sessionID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.accountID"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.accountCurr"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fTxnAmount dataName="EJData.amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.currency"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.effectiveDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.customerID"/>
+               <delim delimChar="#"/>
+               <fString dataName="EJData.userID"/>
+               <delim delimChar="#"/>
+               <fTimestamp dataName="EJData.postingTime"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="storeBillPaymentFmt">
+          <record>
+               <refFmt refId="storeFromTransactionFmt"/>
+               <refFmt refId="billPaymentHostSendFmt"/>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 						Account List	                  -->
+     <!-- ================================================================== -->
+     <fmtDef id="signorItemsFmt">
+          <record>
+               <fString dataName="name"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountListItemsFmt">
+          <record>
+               <fString dataName="ID"/>
+               <delim delimChar="#"/>
+               <fString dataName="bankID"/>
+               <delim delimChar="#"/>
+               <fString dataName="transitNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="internationalBankID"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountType"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountBalance"/>
+               <delim delimChar="#"/>
+               <fString dataName="dateOpened"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountLimit"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountCurrency"/>
+               <delim delimChar="#"/>
+               <iCollF dataName="signors" times="*">
+                    <record dataName="signorName">
+                         <refFmt refId="signorItemsFmt"/>
+                    </record>
+               </iCollF>
+               <delim delimChar="+"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountListRequestFmt">
+          <record>
+               <fString dataName="customerNumber"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountListReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <iCollF dataName="AccountListItemsCollection" times="*">
+                    <record dataName="transactionAccount">
+                         <refFmt refId="accountListItemsFmt"/>
+                    </record>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!-- ================================================================== -->
+     <!-- 					Account History				      -->
+     <!-- ================================================================== -->
+     <fmtDef id="accountHistoryItemsFmt">
+          <record>
+               <fString dataName="transactionID"/>
+               <delim delimChar="#"/>
+               <fString dataName="transactionType"/>
+               <delim delimChar="#"/>
+               <fString dataName="date"/>
+               <delim delimChar="#"/>
+               <fString dataName="amount"/>
+               <delim delimChar="#"/>
+               <fString dataName="accountBalance"/>
+               <delim delimChar="#"/>
+               <fString dataName="debitType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="creditType"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountHistoryRequestFmt">
+          <record>
+               <refFmt refId="transactionAccountRequestFmt"/>
+               <fString dataName="searchFromDate"/>
+               <delim delimChar="#"/>
+               <fString dataName="searchToDate"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountHistoryReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <iCollF dataName="accountHistoryItemsCollection" times="*">
+                    <record dataName="accountHistoryItems">
+                         <refFmt refId="accountHistoryItemsFmt"/>
+                    </record>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!--*********************************************************************-->
+     <!--    Host Send-Receive formats used in the operations                 -->
+     <!--*********************************************************************-->
+     <fmtDef id="withdrawalHostSendFmt">
+          <record>
+               <constant value="STWI"/>
+               <refFmt refId="transactionAccountRequestFmt"/>
+               <refFmt refId="transactionOperationRequestFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="withdrawalHostReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <refFmt refId="transactionAccountReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositHostSendFmt">
+          <record>
+               <constant value="STDE"/>
+               <refFmt refId="transactionAccountRequestFmt"/>
+               <refFmt refId="transactionOperationRequestFmt"/>
+               <fString dataName="cashIn"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <fString dataName="cashOut"/>
+               <nullCheck/>
+               <delim delimChar="#"/>
+               <iCollF dataName="chequeItemsCollection" times="*">
+                    <record dataName="chequeItemData">
+                         <refFmt refId="chequeItemsFmt"/>
+                    </record>
+                    <delim delimChar="@"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositHostReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <refFmt refId="transactionAccountReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="depositStoreFmt">
+          <hashtable>
+               <refFmt refId="depositHostSendFmt"/>
+          </hashtable>
+     </fmtDef>
+     <fmtDef id="billPaymentHostSendFmt">
+          <record>
+               <constant value="STBP"/>
+               <fString dataName="billAccountNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="referenceNumber"/>
+               <delim delimChar="#"/>
+               <fString dataName="billType"/>
+               <delim delimChar="#"/>
+               <fString dataName="billCode"/>
+               <delim delimChar="#"/>
+               <fString dataName="paymentFromAccount"/>
+               <delim delimChar="#"/>
+               <refFmt refId="billPaymentAccountRequestFmt"/>
+               <refFmt refId="transactionOperationRequestFmt"/>
+               <refFmt refId="serviceChargeRequestFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="billPaymentHostReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountListHostSendFmt">
+          <record>
+               <constant value="STAL"/>
+               <fString dataName="customerNumber"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountListHostReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <iCollF dataName="AccountListItemsCollection" times="*">
+                    <record dataName="transactionAccount">
+                         <refFmt refId="accountListItemsFmt"/>
+                         <nullCheck/>
+                    </record>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountHistoryHostSendFmt">
+          <record>
+               <constant value="STAH"/>
+               <refFmt refId="transactionAccountRequestFmt"/>
+          </record>
+     </fmtDef>
+     <fmtDef id="accountHistoryHostReplyFmt">
+          <record>
+               <refFmt refId="serverMessageReplyFmt"/>
+               <iCollF dataName="accountHistoryItemsCollection" times="*">
+                    <record dataName="accountHistoryItems">
+                         <refFmt refId="accountHistoryItemsFmt"/>
+                    </record>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <!--/DWGroupDef-->
+</Formats>

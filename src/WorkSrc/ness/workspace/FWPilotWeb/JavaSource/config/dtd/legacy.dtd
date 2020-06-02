@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Root elements -->
+
+<!ELEMENT root (LegacyCommand | Record | Structure)*>
+
+<!ELEMENT LegacyCommand (CallArgument*,LegacyObjectGraph)>
+<!ATTLIST LegacyCommand
+	commandName CDATA #REQUIRED
+	commandType (SP | OS400) #REQUIRED
+	sqlStatement CDATA #IMPLIED
+	connectionManagerName CDATA #IMPLIED
+	activityType (readWrite | readOnly) #IMPLIED
+	libraryName CDATA #IMPLIED
+	programName CDATA #IMPLIED
+>
+
+<!ELEMENT CallArgument EMPTY>
+<!ATTLIST CallArgument
+	name CDATA #REQUIRED
+	type  (integer | long | double | decimal | float | string | date | timestamp | time) #REQUIRED
+	inputType (in | out | inout) #REQUIRED
+	inputContainerGetter CDATA #IMPLIED
+	resultAs (simple | structure) #IMPLIED
+	simpleResultSetter CDATA #IMPLIED
+>
+
+<!ELEMENT LegacyObjectGraph (NodeRecord*, ArgumentStructureDefinition*)>
+<!ATTLIST LegacyObjectGraph
+	className CDATA #REQUIRED
+>
+
+<!ELEMENT NodeRecord (NodeRecord*)>
+<!ATTLIST NodeRecord
+	id CDATA #REQUIRED
+	resultSetNumber CDATA #REQUIRED
+	adder CDATA #IMPLIED
+	parentIdAttribute CDATA #IMPLIED
+>
+
+<!ELEMENT ArgumentStructureDefinition (NodeStructure+)>
+<!ATTLIST ArgumentStructureDefinition
+	name CDATA #REQUIRED
+	structureIdLength CDATA #REQUIRED
+>
+
+<!ELEMENT NodeStructure (NodeStructure*)>
+<!ATTLIST NodeStructure
+	id CDATA #REQUIRED
+	adder CDATA #IMPLIED
+>
+
+<!ELEMENT Record (RecordField+)>
+<!ATTLIST Record
+	id CDATA #REQUIRED
+	className CDATA #REQUIRED
+>
+
+<!ELEMENT RecordField EMPTY>
+<!ATTLIST RecordField
+	columnId CDATA #REQUIRED
+	columnType (integer | long | double | decimal | float | string | date | timestamp | time) #IMPLIED
+	attributeId CDATA #REQUIRED
+	attributeType (integer | long | double | decimal | float | string | date | timestamp | time) #IMPLIED
+	fromMask CDATA #IMPLIED
+	uniqueId (true | false) #IMPLIED
+	setter CDATA #IMPLIED
+>
+
+<!ELEMENT Structure (StructureField+)>
+<!ATTLIST Structure
+	id CDATA #REQUIRED
+	className CDATA #REQUIRED
+	length CDATA #REQUIRED
+>
+
+<!ELEMENT StructureField EMPTY>
+<!ATTLIST StructureField
+	startPosition CDATA #REQUIRED
+	length CDATA #REQUIRED
+	fromMask CDATA #IMPLIED
+	attributeId CDATA #REQUIRED
+	attributeType (integer | long | double | decimal | float | string | date | timestamp | time) #REQUIRED
+	setter CDATA #IMPLIED
+>
+

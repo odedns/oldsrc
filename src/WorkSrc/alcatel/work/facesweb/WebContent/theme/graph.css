@@ -1,0 +1,114 @@
+.graphDraw_tooltip {
+    background-color: #fcffd5;
+	border-color: black;
+	color: black;
+    font-size: 11px;
+	font-weight: bold;
+	font-style: normal;
+	font-indent: 2px;
+	margin-left:4px;
+	margin-right:3px;
+	text-align:left;
+	font-family: Verdana;
+}
+
+.graphDraw_title {
+ 	color: black;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 18px;
+	font-weight: bold;
+	font-style: normal;
+	font-indent: 2px;
+	margin-left:2px;
+	margin-right:3px;
+	text-align:center;
+}
+
+.graphDraw_xAxisTitle {
+    color: black;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+	font-indent: 2px;
+	margin-left:2px;
+	margin-right:3px;
+	text-decoration:none;
+	text-align:center;
+}
+.graphDraw_xAxisLabels {
+    color: black;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-indent: 2px;
+	margin-left:2px;
+	margin-right:3px;
+	text-align:center;
+}
+
+.graphDraw_yAxisTitle {
+    color: black;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+	font-indent: 2px;
+	margin-left:2px;
+	margin-right:3px;
+	text-decoration:none;
+	text-align:center;
+}
+.graphDraw_y1AxisLabels {
+    font-family:Arial, Verdana,  Helvetica, sans-serif;
+    color: black;
+    font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-indent: 0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-decoration:none;
+	text-align:right;
+}
+.graphDraw_y2AxisLabels {
+    font-family: Arial, Verdana,  Helvetica, sans-serif;
+    color: black;
+    font-size: 11px;
+	font-weight: normal;
+	font-style: normal;
+	font-indent: 0px;
+	margin-left:0px;
+	margin-right:0px;
+	text-decoration:none;
+	text-align:left;
+}
+.graphDraw_legend {
+	color: black;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	font-indent: 2px;
+	margin-left:2px;
+	margin-right:3px;
+	text-decoration:none;
+	text-align:left;
+
+	background-color: #F0F0F0;
+    border-color: #F0F0F0;
+	border-width: 0px;
+	transparent-ratio: 100;
+}
+
+.graphDraw {
+	background-color: #F0F0F0;
+    transparent-ratio: 100;
+}
+
+.graphDraw_border {
+    border-width: 1px;
+    border-color: #000000;
+	transparent-ratio: 100;
+}

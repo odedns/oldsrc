@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<loginData userID="1234" authorizationUserID="1234" 
+	           userType="1" authenticationType="1"/>
+</root>

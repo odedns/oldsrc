@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="foo">
+		<property name="show_sql">true</property>
+		<property name="connection.driver_class">com.ibm.db2j.jdbc.DB2jDriver
+		</property>
+		<property name="connection.url">
+		jdbc:db2j:c:/ibm/cloudscape/mydb;create=false
+		</property>
+		<property name="dialect">
+		org.hibernate.dialect.DB2Dialect
+		</property>
+		<mapping resource="tables.hbm.xml"/>		
+	</session-factory>
+</hibernate-configuration>
+
+

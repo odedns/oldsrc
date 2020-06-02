@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="facesWeb">
+<wb-resource deploy-path="/" source-path="/WebContent"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-beanutils-1.7.0.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-codec-1.3.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-collections-3.1.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-digester-1.6.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-el-1.0.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-lang-2.1.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/commons-logging-1.0.4.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/jstl-1.1.0.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/myfaces-api-1.1.4.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/dev/lib/myfaces-core-1.1.4/lib/myfaces-impl-1.1.4.jar">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<property name="java-output-path" value="build/classes"/>
+<property name="context-root" value="facesWeb"/>
+</wb-module>
+</project-modules>

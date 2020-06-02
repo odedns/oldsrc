@@ -1,0 +1,143 @@
+#ifndef _OMG_COSNAMING_IDL_
+#define _OMG_COSNAMING_IDL_
+
+//
+//
+//  NamingService.idl
+//
+//  ART Naming Service
+//  OMG Interoperable Naming Service:v1.0
+//
+//
+// (c) Copyright IONA Technologies PLC. 1996-1999. All rights reserved.
+//
+// This is unpublished proprietary source code of Iona Technologies
+//
+// The copyright notice above does not evidence any actual or intended
+// publication of such source code.
+//
+//
+//
+
+#pragma IT_SystemSpecification
+
+#pragma prefix "omg.org"
+
+#pragma IT_BeginCBESpecific AllJava                             "@@\
+@module CosNaming=org.omg"
+module CosNaming
+{
+	typedef string Istring;
+
+	struct NameComponent {
+	   Istring id;
+	   Istring kind;
+	};
+
+	typedef sequence<NameComponent> Name;
+
+	enum BindingType {nobject, ncontext};
+
+	struct Binding {
+	   //NameComponent binding_name;
+	   Name		 binding_name;
+	   BindingType   binding_type;
+	};
+
+	typedef sequence <Binding> BindingList;
+
+
+	interface BindingIterator;
+	interface NamingContext;
+
+	interface NamingContext {
+
+	    enum NotFoundReason {missing_node, not_context, not_object};
+
+	    exception NotFound {
+	         NotFoundReason   why;
+	         Name             rest_of_name;
+            };
+
+
+	    exception CannotProceed {
+	         NamingContext  cxt;
+	         Name           rest_of_name;
+	    };
+
+	    exception InvalidName {};
+	    exception AlreadyBound {};
+	    exception NotEmpty {};
+
+
+
+            void bind (in Name n, in Object obj)
+	              raises (NotFound, CannotProceed, 
+   	                            InvalidName, AlreadyBound);
+
+            void rebind (in Name n, in Object obj)
+	              raises (NotFound, CannotProceed, 
+	                            InvalidName);
+
+	    void bind_context (in Name n, in NamingContext nc)
+	              raises (NotFound, CannotProceed, 
+	                            InvalidName, AlreadyBound);
+
+	    void rebind_context (in Name n, in NamingContext nc)
+	              raises (NotFound, CannotProceed, 
+	                            InvalidName);
+
+	    Object resolve (in Name n)
+	              raises (NotFound, CannotProceed, 
+	                            InvalidName);
+
+	    void unbind (in Name n)
+	              raises (NotFound, CannotProceed, 
+	                            InvalidName);
+
+	    NamingContext new_context ();
+
+	    NamingContext bind_new_context (in Name n)
+	              raises (NotFound, CannotProceed, 
+	                            InvalidName, AlreadyBound);
+
+	    void destroy () raises (NotEmpty);
+
+	    void list (in unsigned long how_many,
+	                 out BindingList bl, out BindingIterator bi);
+  	};
+
+	
+	interface BindingIterator {
+	   
+	    boolean next_one (out Binding b);
+
+            boolean next_n (in unsigned long how_many,
+	                     out BindingList bl);
+
+	    void destroy ();
+	};
+
+
+	interface NamingContextExt : NamingContext {
+	    typedef string StringName;
+	    typedef string Address;
+	    typedef string URLString;
+
+	    StringName to_string (in Name n)
+			raises (InvalidName);
+	    Name to_name (in StringName sn)
+			raises (InvalidName);
+
+	    exception InvalidAddress {};
+
+	    URLString to_url (in Address addr,
+			      in StringName sn)
+			raises (InvalidAddress, InvalidName);
+	    Object resolve_str (in StringName sn)
+			raises (NotFound, CannotProceed, InvalidName);
+
+	};
+};
+
+#endif  /*!_OMG_COSNAMING_IDL_*/

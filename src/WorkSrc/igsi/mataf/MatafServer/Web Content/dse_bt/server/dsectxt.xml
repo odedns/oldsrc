@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Contexts>
+     <!--DWGroupDef:Test Bank Teller.Server.Contexts-->
+     <!-- ******************************************************************************** -->
+     <!-- 	START CONTEXT DEFINITIONS SAMPLE FOR THE SERVER		        			  -->
+     <!-- ******************************************************************************** -->
+     <!-- ================================================================== -->
+     <!-- 				Static Contexts			         	      -->
+     <!-- ================================================================== -->
+     <context id="branchServer" parent="nil" type="branch">
+          <refKColl refId="branchServerData"/>
+          <refService alias="CSServer" refId="realCSServer" type="cs"/>
+          <refService alias="Journal" refId="realJournal" type="journal"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Workstations type A			         	-->
+     <!-- ================================================================== -->
+     <context id="typeACtx" parent="branchServer" type="wks">
+          <refKColl refId="typeAData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Workstations type HTML		               	-->
+     <!-- ================================================================== -->
+     <!-- Context definition for workstations type HTML-->
+     <context id="typeHTMLCtx" parent="branchServer" type="wks">
+          <refKColl refId="typeHTMLData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Any Client Workstation		                  -->
+     <!-- ================================================================== -->
+     <context id="clientWorkstationCtx" type="wks">
+          <refKColl refId="clientWorkstation"/>
+          <refService alias="Journal" refId="dummyJournal" type="dummy"/>
+          <refService alias="host" refId="transactionDummyHost" type="dummy"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				 Startup Operation			         	-->
+     <!-- ================================================================== -->
+     <context id="startupServerCtx" parent="branchServer" type="op">
+          <refKColl refId="startupServerData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				End Session Operation		         	      -->
+     <!-- ================================================================== -->
+     <context id="endSessionServerCtx" type="op">
+          <refKColl refId="endSessionServerData"/>
+     </context>
+     <!-- ******************************************************************************** -->
+     <!-- 	END CONTEXT DEFINITIONS SAMPLE FOR THE SERVER		        			  -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 	START BTF CORE EXTENSION CONTEXT DEFINITION FOR THE SERVER	        		  -->
+     <!-- ******************************************************************************** -->
+
+     <context id="AuthorizationContext" type="op">
+          <refKColl refId="AuthorizationData"/>
+     </context>
+     <!--used by change own password op-->
+     <context id="ChangeOwnPasswordCtx" parent="BranchContext" type="op">
+          <refKColl refId="ChangeOwnPassword"/>
+     </context>
+     <!-- used by query user profiles op-->
+     <context id="UserProfilesCtx" type="op">
+          <refKColl refId="UserProfiles"/>
+     </context>
+     <!-- used by query roles op-->
+     <context id="RolesCtx" type="op">
+          <refKColl refId="Roles"/>
+     </context>
+     <!-- used by query rights op-->
+     <context id="RightsCtx" type="op">
+          <refKColl refId="Rights"/>
+     </context>
+     <!-- used by create/update/remove role op-->
+     <context id="RoleCtx" type="op">
+          <refKColl refId="UserRole"/>
+     </context>
+     <!-- used by creat/remove right op-->
+     <context id="RightCtx" type="op">
+          <refKColl refId="UserRight"/>
+     </context>
+     <!-- used by create/update/remove user profile op-->
+     <context id="SecurityUserCtx" type="op">
+          <refKColl refId="SecurityUser"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Electronic Journal				      -->
+     <!-- ================================================================== -->
+     <context id="retrieveSchemaInfoServerCtx" type="op">
+          <refKColl refId="retrieveSchemaInfoServerData"/>
+     </context>
+     <!-- Context definition for the Electronic Jouranl Query operation-->
+     <context id="ejServerCtx" type="op">
+          <refKColl refId="ejServerData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 					Forwarding			 		      -->
+     <!-- ================================================================== -->
+     <context id="forwardCtx" type="op">
+          <!--refService refId=dummyStore alias=dummyStore type=store-->
+          <!-- just for dummy testing-->
+          <refKColl refId="forwardData"/>
+     </context>
+     <!-- ******************************************************************************** -->
+     <!-- 	END BTF CORE EXTENSIONS CONTEXT DEFINITIONS FOR THE SERVER		        	  -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- START BTF TELLER EXTENSIONS CONTEXT DEFINITIONS FOR THE SERVER	      	  -->
+     <!-- ******************************************************************************** -->
+
+     <!-- ================================================================== -->
+     <!-- 				Agent Admin				         	-->
+     <!-- ================================================================== -->
+
+     <context id="UserContext" type="wks">
+          <refKColl refId="UserData"/>
+          <refService alias="CDM" refId="CashDrawerService" type="cdm"/>
+          <refService alias="host" refId="transactionDummyHost" type="dummy"/>
+          <refService alias="dummyStore" refId="dummyStore" type="store"/>
+          <refService alias="UserStatusService" refId="UserStatusService" type="statusService"/>
+     </context>
+     <!-- Logon -->
+     <context id="LogonContext" parent="BranchContext" type="op">
+          <refKColl refId="LogonData"/>
+     </context>
+     <!-- Forced Logon -->
+     <context id="ForcedLogonContext" type="op" parent="BranchContext">
+	     <refKColl refId="ForcedLogonData"/>
+     </context>
+     <!-- Logoff -->
+     <context id="LogoffContext" type="op">
+          <refKColl refId="LogoffData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Branch Admin				         	-->
+     <!-- ================================================================== -->
+     <context id="BranchContext" parent="branchServer" type="branch">
+          <refKColl refId="BranchData"/>
+          <refService alias="SecurityAccessService"
+               refId="SecurityAccess" type="cs"/>
+          <refService alias="SecurityAdministrationService"
+               refId="SecurityAdministration" type="cs"/>
+          <refService alias="BranchStatusService"
+               refId="BranchStatusService" type="statusService"/>
+          <refService alias="BranchTotalsService"
+               refId="BranchTotalsService" type="totalsService"/>
+          <refService alias="BranchSpecificationsService"
+               refId="BranchSpecificationsService" type="specificationsService"/>
+          <refService alias="ForeignExchange" refId="ForeignExchange" type="teller"/>
+     </context>
+     <!-- Branch Settlement-->
+     <context id="branchSettlementServerCtx" type="op">
+          <refKColl refId="BranchSettlementData"/>
+     </context>
+     <context id="qryBrSttlmntCurrenciesCtx" type="op">
+          <refKColl refId="BranchSettlementQueryData"/>
+     </context>
+     <!-- Query Branch Currencies-->
+     <context id="queryBranchCurrenciesCtx" type="op">
+          <refKColl refId="BranchCurrenciesQueryData"/>
+     </context>
+     <!-- Cash Settlement -->
+     <context id="cashSettlementCtx" type="op">
+          <refKColl refId="cashSettlementData"/>
+     </context>
+     <context id="cashSettlementQueryCtx" type="op">
+          <refKColl refId="cashSettlementQueryData"/>
+     </context>
+     <!--  End Of Business Day Operations -->
+     <context id="TellerEODCtx" type="op">
+          <refKColl refId="TellerEODData"/>
+     </context>
+     <context id="TellerQueryEODCtx" type="op">
+          <refKColl refId="TellerQueryEODData"/>
+     </context>
+     <!--  Post Over Short -->
+     <context id="PostOverShortCtx" type="op">
+          <refKColl refId="PostOverShortData"/>
+     </context>
+     <!--  Teller Exchange -->
+     <context id="QueryTXDrawerDataCtx" type="op">
+          <refKColl refId="QueryTXDrawerDataData"/>
+     </context>
+     <context id="TXPostDataCtx" type="op">
+          <refKColl refId="TXPostDataData"/>
+     </context>
+     <context id="QueryTXReconcileCtx" type="op">
+          <refKColl refId="QueryTXReconcileData"/>
+     </context>
+     <context id="TXPostReconcileCtx" type="op">
+          <refKColl refId="TXPostReconcileData"/>
+     </context>
+     <!-- TESTING ONLY-->
+     <!-- Branch and User Context-->
+     <context id="branchInitializationContext" type="op">
+          <refKColl refId="Status"/>
+     </context>
+     <context id="branchCloseContext" type="op">
+          <refKColl refId="Status"/>
+     </context>
+     <!--  ================================================================== -->
+     <!--     				Cash Drawer Management             	   	 -->
+     <!--  ================================================================== -->
+     <context id="InitializeCDMCtx" type="op">
+          <refKColl refId="InitializeCDMData"/>
+     </context>
+     <context id="CloseDBConnectionCtx" type="op">
+          <refKColl refId="CloseDBConnectionData"/>
+     </context>
+     <context id="QueryNextIdsCtx" type="op">
+          <refKColl refId="QueryNextIdsData"/>
+     </context>
+     <context id="CreateCashDrawerCtx" type="op">
+          <refKColl refId="CreateCashDrawerData"/>
+     </context>
+     <context id="QueryUserIdsAndUserNamesCtx" type="op">
+          <refKColl refId="QueryUserIdsAndUserNamesData"/>
+     </context>
+     <context id="AssignCashDrawerCtx" type="op">
+          <refKColl refId="AssignCashDrawerData"/>
+     </context>
+     <context id="QueryCashDrawersCtx" type="op">
+          <refKColl refId="QueryCashDrawersData"/>
+     </context>
+     <context id="UnAssignCashDrawerCtx" type="op">
+          <refKColl refId="UnAssignCashDrawerData"/>
+     </context>
+     <context id="DeleteCashDrawerCtx" type="op">
+          <refKColl refId="DeleteCashDrawerData"/>
+     </context>
+     <context id="ModifyCashDrawerLocationCtx" type="op">
+          <refKColl refId="ModifyCashDrawerLocationData"/>
+     </context>
+     <context id="QueryTrapsAndBaitsCtx" type="op">
+          <refKColl refId="TrapsAndBaitsData"/>
+     </context>
+     <context id="ModifyTrapsAndBaitsCtx" type="op">
+          <refKColl refId="TrapsAndBaitsData"/>
+     </context>
+     <context id="QueryCashDrawerIdsCtx" type="op">
+          <refKColl refId="QueryCashDrawerIdsData"/>
+     </context>
+     <context id="QueryBinsCtx" type="op">
+          <refKColl refId="QueryBinsData"/>
+     </context>
+     <context id="CloseBatchCtx" type="op">
+          <refKColl refId="CloseBatchData"/>
+     </context>
+     <context id="SetHoldoverCtx" type="op">
+          <refKColl refId="SetHoldoverData"/>
+     </context>
+     <context id="QueryBatchIdsCtx" type="op">
+          <refKColl refId="QueryBatchIdsData"/>
+     </context>
+     <context id="QueryBatchItemsCtx" type="op">
+          <refKColl refId="QueryBatchItemsData"/>
+     </context>
+     <context id="QueryCashDrawerTotalsCtx" type="op">
+          <refKColl refId="QueryCashDrawerTotalsData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Customer Session				         	-->
+     <!-- ================================================================== -->
+     <context id="CustomerSessionCtx" type="cs">
+          <refKColl refId="CustomerSessionData"/>
+     </context>
+     <context id="StartCustomerSessionCtx" type="op">
+          <refKColl refId="StartCustomerSessionRequestData"/>
+     </context>
+     <context id="EndCustomerSessionCtx" type="op">
+          <refKColl refId="EndCustomerSessionRequestData"/>
+     </context>
+     <context id="TestOpInfoCtx" type="op">
+          <refKColl refId="OpInfoData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Overrides	         	 	  	      	-->
+     <!-- ================================================================== -->
+     <context id="overrideServerCtx" type="op">
+          <refKColl refId="overrideServerData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Query Store	   				  	      -->
+     <!-- ================================================================== -->
+     <context id="queryStoreCtx" type="op">
+          <refKColl refId="queryStoreData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Sample Transactions			         	-->
+     <!-- ================================================================== -->
+     <!-- ================================================================== -->
+     <!-- 				Withdrawal	 	        		         	-->
+     <!-- ================================================================== -->
+     <context id="serverWithdrawalCtx" type="op">
+          <refKColl refId="serverWithdrawalData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Deposit		         			      -->
+     <!-- ================================================================== -->
+     <context id="serverDepositCtx" type="op">
+          <refKColl refId="serverDepositData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Bill Payment	         			      -->
+     <!-- ================================================================== -->
+     <context id="serverBillPaymentCtx" type="op">
+          <refKColl refId="serverBillPaymentData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Account List	         			      -->
+     <!-- ================================================================== -->
+     <context id="serverAccountListCtx" type="op">
+          <refKColl refId="serverAccountListData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Account History				         	-->
+     <!-- ================================================================== -->
+     <context id="serverAccountHistoryCtx" type="op">
+          <refKColl refId="serverAccountHistoryData"/>
+     </context>
+     <!--/DWGroupDef-->
+</Contexts>

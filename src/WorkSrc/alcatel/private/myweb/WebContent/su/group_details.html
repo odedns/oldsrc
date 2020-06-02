@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type"
+	content="text/html; charset=windows-1255">
+<META name="GENERATOR" content="IBM Software Development Platform">
+<META http-equiv="Content-Style-Type" content="text/css">
+<LINK href="../theme/Master.css" rel="stylesheet" type="text/css">
+<TITLE>Server Groups</TITLE>
+</HEAD>
+
+<SCRIPT language=JavaScript src="myjs.js">
+</SCRIPT>
+
+<body>
+<H2> Group-1</H2> .
+
+<table>
+<tr>
+<td>
+Name: 
+</td>
+<td>
+<input type="text" name="name" value="Group-1" />
+</td>
+</tr>
+<tr>
+<td>
+Group type: 
+ </td>
+<td>
+ 		<SELECT name="groupType">
+			<OPTION value="1" selected>Weblogic 8.1 </OPTION>
+			<OPTION value="2">WebSphere 6.0 </OPTION>
+			<OPTION value="3">WebSphere 5.1 </OPTION>
+			<OPTION value="4">JBoss 4.0.3 </OPTION>
+		</SELECT>
+		</td>
+</tr>
+
+</table>
+
+<p> Group Members:
+
+<TABLE>
+<FORM name=listForm action="#">
+<TR>
+<TD>
+<SELECT size="5" name="leftBox" style="width: 150px" >
+	<OPTION value="1">WAS-1</OPTION>
+	<OPTION value="2">WAS-2</OPTION>
+	<OPTION value="3">WAS-3</OPTION>
+	<OPTION value="4">WAS-4</OPTION>
+	<OPTION value="5">WAS-5</OPTION>
+</SELECT>
+</TD>
+
+<TD>
+<TABLE>
+<TR>
+<INPUT type="button" name="left" value="-->" onClick="moveList(leftBox,rightBox);">
+</TR>
+<TR>
+<INPUT type="button" name="right" value="<--"  onClick="moveList(rightBox,leftBox);">
+</TR>
+</TD>
+</table>
+<TD>
+<SELECT size="5" name="rightBox"  style="width: 150px">
+	
+</SELECT>
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT type="submit" name="save" value="Save" >
+</TD>
+<TD>
+<INPUT type="button" name="close" value="Close" >
+</TD>
+</TR>
+</FORM>
+</TABLE>
+</body>

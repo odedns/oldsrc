@@ -1,0 +1,8 @@
+[General]
+Tab Style=Tab Menu 8
+Active Tab=-1
+[Tabs]
+General=#
+JVM=#
+Applications=#
+DataSources=#

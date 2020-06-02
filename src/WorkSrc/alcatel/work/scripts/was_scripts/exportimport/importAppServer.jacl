@@ -1,0 +1,97 @@
+#----------------------------------------------------------------------------------
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+#----------------------------------------------------------------------------------
+
+#-----------------------------------------------------------
+# Update serverindex.xml for the specified node to include
+# the imported server
+# The script is not intentionally to run it alone as need
+# some dependency with other files, it will be executed part
+# of export/import an application server process only.
+#-----------------------------------------------------------
+
+proc loadProperties {propFileName} {
+   java::import java.io.FileInputStream
+   java::import java.util.Properties
+
+   set fileprop [java::new Properties]
+   set fileStream [java::new FileInputStream $propFileName]
+
+   puts "Property file will be loaded is $propFileName"
+   $fileprop load $fileStream
+   return $fileprop
+}
+
+
+proc updateServerIndex {importDir cell node appServer} {
+   global AdminConfig
+ 
+   set Nametag Name
+   set EPtag EPName
+   set Hosttag Host
+   set Porttag Port
+   set Counttag Count
+
+   puts "Importing appServer $appServer on cell $cell, node $node by updating server index"
+   # create a new serverEntry for the imported server
+   set temp [catch {$AdminConfig getid /Node:$node/ServerIndex:/} si]
+   puts "Server index is $si"
+   set nameAttr [list serverName $appServer]
+   set displayAttr [list serverDisplayName $appServer]
+   set typeAttr [list serverType APPLICATION_SERVER]
+   set attrs [list $nameAttr $displayAttr $typeAttr]
+   
+   # check if there is an entry already for the appserver, if not then create one
+   # and then modify the special end point and end point value from the source machine
+   set temp [catch {$AdminConfig getid /ServerEntry:$appServer/} serverEntry]
+   puts "Server entry is $serverEntry"
+   if {$serverEntry == "" || $serverEntry == {}} {
+      puts "Creating a new ServerEntry in $si with attributes $attrs"
+      set temp [catch {$AdminConfig create ServerEntry $si $attrs} serverEntry]
+      puts "New server entry is $serverEntry"
+   }
+  
+   # get the datas from the properties file
+   puts "Loading appserver.properties file from $importDir"
+   set props [loadProperties $importDir/appserver.properties]
+   set serverName [$props getProperty $appServer$Nametag]
+   set count [$props getProperty $appServer$EPtag$Counttag]
+   puts "ServerName is $serverName and count is $count"
+
+   for {set i 0} {$i < $count} {incr i} {
+      set epName [$props getProperty $appServer$EPtag$i]
+      set hostName [$props getProperty $appServer$Hosttag$epName]
+      set portNum [$props getProperty $appServer$Porttag$epName]
+      puts "Entry point is $epName, host is $hostName and port is $portNum"
+      set endPointAttrs [list [list host $hostName] [list port $portNum]]
+      # get the match one and then modify
+      set seps [lindex [$AdminConfig showAttribute $serverEntry specialEndpoints] 0]
+      foreach sep $seps {
+         set epn [$AdminConfig showAttribute $sep endPointName]
+         if {$epName == $epn} {
+            # get the endpoint id
+            set ep [lindex [$AdminConfig showAttribute $sep endPoint] 0]
+            puts "Modifying $ep endPoint with $endPointAttrs"
+            set temp [catch {$AdminConfig modify $ep $endPointAttrs} modResult]
+            puts "Modify result $modResult"
+            break
+         }
+      }
+   }
+}
+
+if {$argc != 4} {
+   puts "importAppServer: This script requires 4 parameters: import directory, cell, node, and application server"
+   puts "eg: importAppServer /importDir testCell testNode server1"
+} else {
+   set importDir [lindex $argv 0]
+   set cell [lindex $argv 1]
+   set node [lindex $argv 2]
+   set appServer [lindex $argv 3]
+   puts "Importing AppServer $appServer on cell $cell node $node"
+   updateServerIndex $importDir $cell $node $appServer
+   set temp [catch {$AdminConfig save} saveResult]
+   puts "Save result $saveResult"
+}
+

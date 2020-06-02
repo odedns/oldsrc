@@ -1,0 +1,98 @@
+
+<HTML>
+<BODY>
+<!-- TWO STEPS TO INSTALL COOKIE - NAME - BROWSER INFO:
+
+   1.  Put the designated script into the HEAD of your HTML document
+   2.  Copy the last script into the BODY of your HTML document  -->
+
+<!-- STEP ONE: Copy this code into the HEAD of your HTML document  -->
+
+<HEAD>
+
+<SCRIPT LANGUAGE = "JavaScript">
+<!-- Original:  Mattias Sjoberg
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var username = GetCookie('username');
+if (username == null) {
+username = prompt('Please enter your name (otherwise press cancel)',"WebSurfer");
+if (username == null) {
+alert('Its ok if you dont want to tell me your name');
+username = 'WebSurfer';
+} else {
+pathname = location.pathname;
+myDomain = pathname.substring(0,pathname.lastIndexOf('/')) +'/';
+var largeExpDate = new Date ();
+largeExpDate.setTime(largeExpDate.getTime() + (365 * 24 * 3600 * 1000));
+SetCookie('username',username,largeExpDate,myDomain);
+   }
+}
+function getCookieVal (offset) {
+var endstr = document.cookie.indexOf (";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+var arg = name + "=";
+var alen = arg.length;
+var clen = document.cookie.length;
+var i = 0;
+while (i < clen) {
+var j = i + alen;
+if (document.cookie.substring(i, j) == arg)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0)
+break;
+}
+return null;
+}
+function SetCookie (name, value) {
+var argv = SetCookie.arguments;
+var argc = SetCookie.arguments.length;
+var expires = (argc > 2) ? argv[2] : null;
+var path = (argc > 3) ? argv[3] : null;
+var domain = (argc > 4) ? argv[4] : null;
+var secure = (argc > 5) ? argv[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" +
+expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+// End -->
+</SCRIPT>
+
+<!-- STEP TWO: Copy this code into the BODY of your HTML document  -->
+
+<BODY>
+
+<CENTER>
+<SCRIPT>
+<!-- Begin
+document.write('<font size="+3">Hey '+username+'!</font>');
+if (username == "WebSurfer") {
+document.write('</font><br><small><a href="http://cookies.javascriptsource.com/n-browser.html" target="_top">personalize</A> your greeting!</small>')
+
+<!-- Remember to change the URL in the previous line to your page URL -->
+}
+// End -->
+</SCRIPT>
+<font size="+3">You're Using:</font>
+<SCRIPT>
+<!-- Begin
+document.write('<br> '+ navigator.appName + ' (<i>' + navigator.appCodeName + '</i>) version ' + navigator.appVersion + '.')
+// End -->
+</SCRIPT>
+</CENTER>
+
+<!-- Script Size:  2.75 KB  -->
+
+</HTML>
+</BODY>

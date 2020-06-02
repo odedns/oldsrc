@@ -1,0 +1,1130 @@
+
+====== CLASS `DBEquipment' ====== [beddda74]
+superclasses:
+    `DBEquipmentBasic'
+attributes:
+  * 
+  DBAbstrBase::o_ts_timestamp    :  o_4b
+  DBBase::m_NavTailLink          -> NavTailBase
+  DBEquipmentBasic::m_ObjectDN   :  char[]
+  DBEquipmentBasic::m_UserLabel  :  char[]
+  DBEquipmentBasic::m_NativeName :  char[]
+  DBEquipmentBasic::m_Owner      :  char[]
+  DBEquipmentBasic::m_AlarmReportIndicator :  o_u1b
+  DBEquipmentBasic::m_AddInfo    -> VString[]
+  DBEquipmentBasic::m_ActExcState :  o_u1b
+  DBEquipmentBasic::m_OwnerLink  -> DBBase
+  DBEquipment::m_ServiceState    :  o_4b
+  DBEquipment::m_ExpectedEquipmentObjectType :  char[]
+  DBEquipment::m_InstalledEquipmentObjectType :  char[]
+  DBEquipment::m_InstalledPartNumber :  char[]
+  DBEquipment::m_InstalledVersion :  char[]
+  DBEquipment::m_InstalledSerialNumber :  char[]
+
+Instances of class 'DBEquipment' :
+
+## L {=0x1003b1218;c_l_();;0} #0x1003b1218[3.0.46011:DBEquipment]  T=0x1003d8020 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="PW1 xINF_H " 
+## 	DBEquipmentBasic::m_NativeName   12="PW1 xINF_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17d0[3.0.46010:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xINF_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xINF_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.5(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30998595" 
+
+## L {=0x1003b1230;c_l_();;0} #0x1003b1230[3.0.46187:DBEquipment]  T=0x1003d80e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=14/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.46186:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="TMU" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   6="10003" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW A.3(10), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30225736" 
+
+## L {=0x1003b1248;c_l_();;0} #0x1003b1248[3.0.46188:DBEquipment]  T=0x1003d81a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=14@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 HLXC_384 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 HLXC_384 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1800[3.0.46170:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   9="HLXC_384" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   9="HLXC_384" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   21="HW A.2(13), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30224410" 
+
+## L {=0x1003b1260;c_l_();;0} #0x1003b1260[3.0.46306:DBEquipment]  T=0x1003d8260 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   4 
+## 	DBBase::m_NavTailLink   #0x1003b1818[3.0.47862:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OM16_1 1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OM16_1 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b1830[3.0.219869:] #0x1003b1848[3.0.224132:] #0x1003b1860[3.0.224133:] #0x1003b1878[3.0.224134:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1890[3.0.46305:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="OM16_1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   1="" 
+## 	DBEquipment::m_InstalledSerialNumber   12="4290750992
+" 
+
+## L {=0x1003b1278;c_l_();;0} #0x1003b1278[3.0.46310:DBEquipment]  T=0x1003d8320 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #0x1003b18a8[3.0.47866:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=33@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OT16 1-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OT16 1-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b18c0[3.0.224135:] #0x1003b18d8[3.0.224136:] #0x1003b18f0[3.0.224137:] #0x1003b1908[3.0.224138:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1920[3.0.46309:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="OT16" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1290;c_l_();;0} #0x1003b1290[3.0.46494:DBEquipment]  T=0x1003d83e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="PW2 xINF_H " 
+## 	DBEquipmentBasic::m_NativeName   12="PW2 xINF_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1938[3.0.46493:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xINF_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xINF_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.5(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="31213079" 
+
+## L {=0x1003b12a8;c_l_();;0} #0x1003b12a8[3.0.46553:DBEquipment]  T=0x1003d84a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   4 
+## 	DBBase::m_NavTailLink   #0x1003b1950[3.0.47873:] 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=20@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="I6 PIO2_84 " 
+## 	DBEquipmentBasic::m_NativeName   12="I6 PIO2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b1968[3.0.89706:] #0x1003b1980[3.0.89707:] #0x1003b1998[3.0.89708:] #0x1003b19b0[3.0.89709:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46495:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   8="PIO2_84" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   8="PIO2_84" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   4="F.0" 
+## 	DBEquipment::m_InstalledSerialNumber   12="4290750992
+" 
+
+## L {=0x1003b12c0;c_l_();;0} #0x1003b12c0[3.0.46560:DBEquipment]  T=0x1003d8560 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=21@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   9="C3 MECP " 
+## 	DBEquipmentBasic::m_NativeName   9="C3 MECP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19e0[3.0.46554:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="MECP" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="MECP" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW E.1(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30430940" 
+
+## L {=0x1003b12d8;c_l_();;0} #0x1003b12d8[3.0.46563:DBEquipment]  T=0x1003d8620 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19f8[3.0.46562:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b12f0;c_l_();;0} #0x1003b12f0[3.0.46565:DBEquipment]  T=0x1003d86e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1a10[3.0.46564:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xCOM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1308;c_l_();;0} #0x1003b1308[3.0.46566:DBEquipment]  T=0x1003d87a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_NativeName   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1a28[3.0.46561:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xMCP" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xMCP" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   22="HW F.3(143), SW 62.46" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30440479" 
+
+## L {=0x1003b1320;c_l_();;0} #0x1003b1320[3.0.46569:DBEquipment]  T=0x1003d8860 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1a40[3.0.46568:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1338;c_l_();;0} #0x1003b1338[3.0.46571:DBEquipment]  T=0x1003d8920 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1a58[3.0.46570:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xCOM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xCOM" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   26="HW F.3(143), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30431375" 
+
+## L {=0x1003b1350;c_l_();;0} #0x1003b1350[3.0.46572:DBEquipment]  T=0x1003d89e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_NativeName   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1a70[3.0.46567:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   8="xMCP_SB" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xMCP" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   24="HW F.3(143), SW 255.255" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30431375" 
+
+## L {=0x1003b1368;c_l_();;0} #0x1003b1368[3.0.46636:DBEquipment]  T=0x1003d8aa0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1a88[3.0.47958:] 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=24@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="I7 PIO2_84 " 
+## 	DBEquipmentBasic::m_NativeName   12="I7 PIO2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1aa0[3.0.46573:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   8="PIO2_84" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   8="PIO2_84" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   21="HW F.0(13), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30521647" 
+
+## L {=0x1003b1380;c_l_();;0} #0x1003b1380[3.0.46990:DBEquipment]  T=0x1003d8b60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=30/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1ab8[3.0.46989:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="TMU" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   6="10003" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW A.3(10), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30872299" 
+
+## L {=0x1003b1398;c_l_();;0} #0x1003b1398[3.0.46991:DBEquipment]  T=0x1003d8c20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=30@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X2 HLXC_384 " 
+## 	DBEquipmentBasic::m_NativeName   13="X2 HLXC_384 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1ad0[3.0.46973:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   9="HLXC_384" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   9="HLXC_384" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   21="HW A.2(13), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30872762" 
+
+## L {=0x1003b13b0;c_l_();;0} #0x1003b13b0[3.0.46993:DBEquipment]  T=0x1003d8ce0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=31@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1ae8[3.0.46992:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.2(23), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="31328195" 
+
+## L {=0x1003b13c8;c_l_();;0} #0x1003b13c8[3.0.46995:DBEquipment]  T=0x1003d8da0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=32@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b1b00[3.0.89712:] #0x1003b1b18[3.0.89713:] #0x1003b1b30[3.0.89714:] #0x1003b1b48[3.0.89715:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1b60[3.0.46994:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   4="B.2" 
+## 	DBEquipment::m_InstalledSerialNumber   12="4290750992
+" 
+
+## L {=0x1003b13e0;c_l_();;0} #0x1003b13e0[3.0.46997:DBEquipment]  T=0x1003d8e60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=33@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1b78[3.0.46996:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.2(23), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="31328194" 
+
+## L {=0x1003b13f8;c_l_();;0} #0x1003b13f8[3.0.47187:DBEquipment]  T=0x1003d8f20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=8@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="M6 M2_84 " 
+## 	DBEquipmentBasic::m_NativeName   10="M6 M2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1b90[3.0.47156:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   6="M2_84" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   6="M2_84" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW C.0(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30522319" 
+
+## L {=0x1003b1410;c_l_();;0} #0x1003b1410[3.0.47233:DBEquipment]  T=0x1003d8fe0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=9@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="M7 M2_84 " 
+## 	DBEquipmentBasic::m_NativeName   10="M7 M2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1ba8[3.0.47188:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   6="M2_84" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="M2_84P" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW C.0(33), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30468085" 
+
+## L {=0x1003b1428;c_l_();;0} #0x1003b1428[3.0.47234:DBEquipment]  T=0x1003d90a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   91="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   20="BackPlane MBP-1000 " 
+## 	DBEquipmentBasic::m_NativeName   20="BackPlane MBP-1000 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1bc0[3.0.46009:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   9="MBP-1000" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1440;c_l_();;0} #0x1003b1440[3.0.47266:DBEquipment]  T=0x1003d9160 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="PW1 xINF " 
+## 	DBEquipmentBasic::m_NativeName   10="PW1 xINF " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1bd8[3.0.47265:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xINF" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xINF" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.5(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30636162" 
+
+## L {=0x1003b1458;c_l_();;0} #0x1003b1458[3.0.47298:DBEquipment]  T=0x1003d9220 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=10@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="MC1 M2_84 " 
+## 	DBEquipmentBasic::m_NativeName   11="MC1 M2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1bf0[3.0.47267:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   6="M2_84" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   6="M2_84" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW C.0(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="31005080" 
+
+## L {=0x1003b1470;c_l_();;0} #0x1003b1470[3.0.47388:DBEquipment]  T=0x1003d92e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=13@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="MC4 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="MC4 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1c08[3.0.47358:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="M2_84P" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW C.0(33), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30468041" 
+
+## L {=0x1003b1488;c_l_();;0} #0x1003b1488[3.0.47561:DBEquipment]  T=0x1003d93a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1c20[3.0.47560:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="TMU" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   6="10003" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW A.3(10), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30437820" 
+
+## L {=0x1003b14a0;c_l_();;0} #0x1003b14a0[3.0.47565:DBEquipment]  T=0x1003d9460 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1c38[3.0.48367:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_NativeName   13="X2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1c50[3.0.47564:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="OM16_1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="OM16_1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   26="HW C.4(233), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30439982" 
+
+## L {=0x1003b14b8;c_l_();;0} #0x1003b14b8[3.0.47574:DBEquipment]  T=0x1003d9520 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1c68[3.0.48369:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=34@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="X2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1c80[3.0.47573:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="OT16" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="OT16" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b14d0;c_l_();;0} #0x1003b14d0[3.0.47581:DBEquipment]  T=0x1003d95e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1c98[3.0.48382:] 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="X2 XIO192 " 
+## 	DBEquipmentBasic::m_NativeName   11="X2 XIO192 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1cb0[3.0.47557:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="XIO192" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="XIO" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   22="HW B.3(113), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30439807" 
+
+## L {=0x1003b14e8;c_l_();;0} #0x1003b14e8[3.0.47583:DBEquipment]  T=0x1003d96a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=18@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1cc8[3.0.47582:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.2(23), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30636129" 
+
+## L {=0x1003b1500;c_l_();;0} #0x1003b1500[3.0.47585:DBEquipment]  T=0x1003d9760 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=19@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1ce0[3.0.47584:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.2(23), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30636140" 
+
+## L {=0x1003b1518;c_l_();;0} #0x1003b1518[3.0.47587:DBEquipment]  T=0x1003d9820 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="PW2 xINF " 
+## 	DBEquipmentBasic::m_NativeName   10="PW2 xINF " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1cf8[3.0.47586:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xINF" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xINF" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.5(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30636161" 
+
+## L {=0x1003b1530;c_l_();;0} #0x1003b1530[3.0.47589:DBEquipment]  T=0x1003d98e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=20@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1d10[3.0.47588:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="xFCU_H" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.2(23), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30636141" 
+
+## L {=0x1003b1548;c_l_();;0} #0x1003b1548[3.0.47594:DBEquipment]  T=0x1003d99a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1d28[3.0.47593:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="TMU" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   6="10003" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW A.3(10), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30225622" 
+
+## L {=0x1003b1560;c_l_();;0} #0x1003b1560[3.0.47596:DBEquipment]  T=0x1003d9a60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1d40[3.0.48388:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=131@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-4 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-4 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1d58[3.0.47595:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1578;c_l_();;0} #0x1003b1578[3.0.47598:DBEquipment]  T=0x1003d9b20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1d70[3.0.48390:] 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 OM16_1 2 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 OM16_1 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1d88[3.0.47597:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="OM16_1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1590;c_l_();;0} #0x1003b1590[3.0.47605:DBEquipment]  T=0x1003d9be0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1da0[3.0.48396:] 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=3@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 OM01_4 3 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 OM01_4 3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1db8[3.0.47599:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="OM01_4" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="OM01_4" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.3(15), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="27852077" 
+
+## L {=0x1003b15a8;c_l_();;0} #0x1003b15a8[3.0.47607:DBEquipment]  T=0x1003d9ca0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b1dd0[3.0.48392:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=34@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 OT16 2-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 OT16 2-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1de8[3.0.47606:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="OT16" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b15c0;c_l_();;0} #0x1003b15c0[3.0.47609:DBEquipment]  T=0x1003d9d60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b2000[3.0.48394:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=35@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-1 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2018[3.0.47608:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b15d8;c_l_();;0} #0x1003b15d8[3.0.47611:DBEquipment]  T=0x1003d9e20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b2030[3.0.48401:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=67@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-2 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2048[3.0.47610:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b15f0;c_l_();;0} #0x1003b15f0[3.0.47613:DBEquipment]  T=0x1003dc020 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b2060[3.0.48403:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=99@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-3 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2078[3.0.47612:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1608;c_l_();;0} #0x1003b1608[3.0.47614:DBEquipment]  T=0x1003dc0e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003b2090[3.0.48405:] 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="X1 XIO192 " 
+## 	DBEquipmentBasic::m_NativeName   11="X1 XIO192 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b20a8[3.0.47590:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="XIO192" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="XIO" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   22="HW B.3(113), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30439651" 
+
+## L {=0x1003b1620;c_l_();;0} #0x1003b1620[3.0.47621:DBEquipment]  T=0x1003dc1a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=4@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   9="C3 MECP " 
+## 	DBEquipmentBasic::m_NativeName   9="C3 MECP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b20c0[3.0.47615:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="MECP" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="MECP" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW E.1(13), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30763084" 
+
+## L {=0x1003b1638;c_l_();;0} #0x1003b1638[3.0.47624:DBEquipment]  T=0x1003dc260 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b20d8[3.0.47623:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1650;c_l_();;0} #0x1003b1650[3.0.47626:DBEquipment]  T=0x1003dc320 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b20f0[3.0.47625:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xCOM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1668;c_l_();;0} #0x1003b1668[3.0.47627:DBEquipment]  T=0x1003dc3e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_NativeName   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2108[3.0.47622:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xMCP" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xMCP" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   22="HW F.3(143), SW 62.46" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30440401" 
+
+## L {=0x1003b1680;c_l_();;0} #0x1003b1680[3.0.47630:DBEquipment]  T=0x1003dc4a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2120[3.0.47629:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="NVM" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1698;c_l_();;0} #0x1003b1698[3.0.47632:DBEquipment]  T=0x1003dc560 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2138[3.0.47631:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="xCOM" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xCOM" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   26="HW F.3(143), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30440183" 
+
+## L {=0x1003b16b0;c_l_();;0} #0x1003b16b0[3.0.47633:DBEquipment]  T=0x1003dc620 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_NativeName   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2150[3.0.47628:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   8="xMCP_SB" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="xMCP" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   22="HW F.3(143), SW 62.46" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30440183" 
+
+## L {=0x1003b16c8;c_l_();;0} #0x1003b16c8[3.0.47678:DBEquipment]  T=0x1003dc6e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003b2168[3.0.48411:] 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=7@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="IC1 PIO2_84 " 
+## 	DBEquipmentBasic::m_NativeName   13="IC1 PIO2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2180[3.0.47634:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   8="PIO2_84" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   8="PIO2_84" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   21="HW F.0(13), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="30521714" 
+
+## L {=0x1003b16e0;c_l_();;0} #0x1003b16e0[3.0.47817:DBEquipment]  T=0x1003dc7a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   91="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   21="BackPlane MBP-500X4 " 
+## 	DBEquipmentBasic::m_NativeName   21="BackPlane MBP-500X4 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2198[3.0.47264:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   10="MBP-500X4" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b16f8;c_l_();;0} #0x1003b16f8[3.0.46308:DBEquipment]  T=0x1003dc860 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   7 
+## 	DBBase::m_NavTailLink   #0x1003b21b0[3.0.47864:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b21c8[3.0.46307:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="OM16_1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1710;c_l_();;0} #0x1003b1710[3.0.46312:DBEquipment]  T=0x1003dc920 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   6 
+## 	DBBase::m_NavTailLink   #0x1003b21e0[3.0.47868:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=34@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b21f8[3.0.62971:] #0x1003b2210[3.0.62972:] #0x1003b2228[3.0.62973:] #0x1003b2240[3.0.62974:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2258[3.0.46311:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   5="OT16" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   5="NONE" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1728;c_l_();;0} #0x1003b1728[3.0.46313:DBEquipment]  T=0x1003dc9e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   9 
+## 	DBBase::m_NavTailLink   #0x1003b2270[3.0.47870:] 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 SIO16M_2 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 SIO16M_2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b2288[3.0.167695:] #0x1003b22a0[3.0.167696:] #0x1003b22b8[3.0.167697:] #0x1003b22d0[3.0.167698:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b22e8[3.0.46247:] 
+## 	DBEquipment::m_ServiceState   1 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   9="SIO16M_2" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="SIO16M" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   4="B.6" 
+## 	DBEquipment::m_InstalledSerialNumber   12="4290750992
+" 
+
+## L {=0x1003b1740;c_l_();;0} #0x1003b1740[3.0.69741:DBEquipment]  T=0x1003dcaa0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   7 
+## 	DBBase::m_NavTailLink   #0x1003b2300[3.0.75731:] 
+## 	DBEquipmentBasic::m_ObjectDN   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I4 OM01_4 1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I4 OM01_4 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2318[3.0.69733:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   7="OM01_4" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   7="OM01_4" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   25="HW B.3(15), SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   9="27852078" 
+
+## L {=0x1003b1758;c_l_();;0} #0x1003b1758[3.0.75566:DBEquipment]  T=0x1003dcb60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   4 
+## 	DBBase::m_NavTailLink   #0x1003b2330[3.0.75742:] 
+## 	DBEquipmentBasic::m_ObjectDN   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   15="I4 SIO1n4M_16 " 
+## 	DBEquipmentBasic::m_NativeName   15="I4 SIO1n4M_16 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2348[3.0.46377:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   11="SIO1n4M_16" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   8="SIO1&4M" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   22="HW C.5(113), SW 62.43" 
+## 	DBEquipment::m_InstalledSerialNumber   9="31881401" 
+
+## L {=0x1003b1770;c_l_();;0} #0x1003b1770[3.0.75663:DBEquipment]  T=0x1003dcc20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #0x1003b2360[3.0.75729:] 
+## 	DBEquipmentBasic::m_ObjectDN   112="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=129@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-4 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-4 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b2378[3.0.153953:] #0x1003b2390[3.0.153954:] #0x1003b23a8[3.0.153955:] #0x1003b23c0[3.0.153956:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b23d8[3.0.75662:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b1788;c_l_();;0} #0x1003b1788[3.0.75665:DBEquipment]  T=0x1003dcce0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #0x1003b23f0[3.0.75736:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=33@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-1 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b2408[3.0.153941:] #0x1003b2420[3.0.153942:] #0x1003b2438[3.0.153943:] #0x1003b2450[3.0.153944:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2468[3.0.75664:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b17a0;c_l_();;0} #0x1003b17a0[3.0.75667:DBEquipment]  T=0x1003dcda0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #0x1003b2480[3.0.75738:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=65@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-2 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b2498[3.0.153945:] #0x1003b24b0[3.0.153946:] #0x1003b24c8[3.0.153947:] #0x1003b24e0[3.0.153948:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b24f8[3.0.75666:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+## L {=0x1003b17b8;c_l_();;0} #0x1003b17b8[3.0.75669:DBEquipment]  T=0x1003dce60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #0x1003b2510[3.0.75740:] 
+## 	DBEquipmentBasic::m_ObjectDN   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=97@@Equipment~~1" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-3 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   4=( #0x1003b2528[3.0.153949:] #0x1003b2540[3.0.153950:] #0x1003b2558[3.0.153951:] #0x1003b2570[3.0.153952:] ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b2588[3.0.75668:] 
+## 	DBEquipment::m_ServiceState   0 
+## 	DBEquipment::m_ExpectedEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledEquipmentObjectType   4="OT1" 
+## 	DBEquipment::m_InstalledPartNumber   2=" " 
+## 	DBEquipment::m_InstalledVersion   27="HW Undefined, SW Undefined" 
+## 	DBEquipment::m_InstalledSerialNumber   4="N/A" 
+
+
+****** Total 61 instances of class 'DBEquipment' ******
+

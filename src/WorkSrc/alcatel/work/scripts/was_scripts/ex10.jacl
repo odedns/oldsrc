@@ -1,0 +1,118 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex10.jacl - Jacl implementation of example script 10
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate the creation and 
+#  use of a variable.  The variable created is used in the creation
+#  of a URLProvider object. 
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex10.jacl mynode 
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex10.jacl
+#     wsadmin> ex10.jacl mynode 
+# 
+#  The script expects 1 parameter:
+#    node name
+#
+#  This example demonstrates these wsadmin features:
+#
+#   - The use of the AdminConfig object to locate configuration objects        
+#   - The use of the AdminConfig object to create configuration objects 
+#-----------------------------------------------------------------
+#
+proc ex10 {nodeName} {
+  
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminConfig
+  set url_name                Quote
+  set jar_name                QuoteURLProvider.jar
+  set streamhandlerclass_name com.ibm.ejs.sm.fvt.url.QuoteURLStreamHandler
+  set protocol_name           quote 
+
+  #---------------------------------------------------------
+  # Get the config id for the node
+  #---------------------------------------------------------
+  puts "ex10: getting the config id for the node"
+  set node [$AdminConfig getid /Node:$nodeName/]
+  if {[llength $node] == 0} {
+     puts "ex10: could not find a Node object called $nodeName"
+     return
+  } 
+
+  #---------------------------------------------------------
+  # Get the config id for the node's variable map
+  #---------------------------------------------------------
+  puts "ex10: getting the config id for the variable map object on node $nodeName" 
+  set varmap [$AdminConfig getid /Node:$nodeName/VariableMap:/]
+  if {[llength $varmap] == 0} {
+     puts "ex10: could not find a VariableMap object in node $nodeName"
+     return
+  } 
+
+  #---------------------------------------------------------
+  # Create a mapping 
+  #---------------------------------------------------------
+  puts "ex10: create a variable in the variable map" 
+  set nameattr [list symbolicName WAS_CLASSES_DIR] 
+  set valattr  [list value        "\${WAS_INSTALL_ROOT}/classes"] 
+  set attrs [list $nameattr $valattr]
+  $AdminConfig create VariableSubstitutionEntry $varmap $attrs 
+
+  #---------------------------------------------------------
+  # Create a new URLProvider using this variable in the classpath attribute 
+  #---------------------------------------------------------
+  puts "ex10: create a new URLProvider object using this variable" 
+  set name_attr [list name $url_name]
+  set cp_attr   [list classpath \${WAS_CLASSES_DIR}/$jar_name]
+  set sh_attr   [list streamHandlerClassName $streamhandlerclass_name]
+  set prot_attr [list protocol $protocol_name]
+  set attrs [list $name_attr $cp_attr $sh_attr $prot_attr]
+  set urlp [$AdminConfig create URLProvider $node $attrs]
+
+  #---------------------------------------------------------
+  # Create new URLs using this URLProvider 
+  #---------------------------------------------------------
+  puts "ex10: create new URL objects using this URLProvider" 
+  set name_attr     [list name MyCompany]
+  set jndiName_attr [list jndiName url/MyCompany]
+  set spec_attr     [list spec quote://MyCompany]
+  set attrs         [list $name_attr $jndiName_attr $spec_attr]
+  $AdminConfig create URL $urlp $attrs 
+
+  set name_attr     [list name YourCompany]
+  set jndiName_attr [list jndiName url/YourCompany]
+  set spec_attr     [list spec quote://YourCompany]
+  set attrs         [list $name_attr $jndiName_attr $spec_attr]
+  $AdminConfig create URL $urlp $attrs 
+
+
+  #--------------------------------------------------------------
+  # Save all the changes 
+  #--------------------------------------------------------------
+  puts "ex10: saving the configuration"
+  $AdminConfig save
+
+}
+ 
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 1) } {
+   puts "ex10: this script requires 1 parameters: " 
+   puts "       1) the name of the node under which to create resources"
+   puts ""
+   puts "e.g.:     ex10 mynode" 
+} else { 
+   set nodeName      [lindex $argv 0]  
+   ex10 $nodeName 
+}

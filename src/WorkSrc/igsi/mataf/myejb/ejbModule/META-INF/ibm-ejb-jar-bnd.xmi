@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejbbnd:EJBJarBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ejbbnd="ejbbnd.xmi" xmlns:ejb="ejb.xmi" xmi:id="EJBJarBinding_1044259050625" currentBackendId="DB2UDBNT_V8_1">
+  <ejbJar href="META-INF/ejb-jar.xml#EJBJar_1044259050688"/>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1044259050797" jndiName="jndi.mytest">
+    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#Session_1044259050797"/>
+  </ejbBindings>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1044259543438" jndiName="ejb/com/ibm/ejs/container/testHome">
+    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#test"/>
+  </ejbBindings>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1046703631156" jndiName="ejb/onjlib/ejb/mysession/MysessionHome">
+    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#Mysession"/>
+  </ejbBindings>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1046705189703" jndiName="ejb/onjlib/ejb/mycmp/MycmpHome">
+    <enterpriseBean xmi:type="ejb:ContainerManagedEntity" href="META-INF/ejb-jar.xml#Mycmp"/>
+    <cmpConnectionFactory xmi:id="CMPConnectionFactoryBinding_1046706016594" jndiName="jdbc/mydb" resAuth="Per_Connection_Factory"/>
+  </ejbBindings>
+</ejbbnd:EJBJarBinding>

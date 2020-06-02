@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hoshen" default="idl2java" basedir=".">
+
+<property name="temp" value="temp"></property>
+<property name="basePath" location=".." />
+<property name="destdir"  value="." />
+<property name="idldir"  value="lightsoft" />
+<property name="destPkg" value="hoshen.xsm.lightsoft.corba" />
+<property name="idlj" value="c:\Program Files\IBM\SDP70\jdk\bin\idlj.exe" />
+
+<target name="idl2java">
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-pkgPrefix HelloWorld corba -td ${destdir} -fall ${idldir}/hello.idl" />
+	</exec>			
+</target>
+
+<target name="lightsoftIdl">
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/common.idl" />
+	</exec>		
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line=" -td ${destdir} -i ${idldir} -fall ${idldir}/CosEventChannelAdmin.idl" />
+	</exec>		
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fall ${idldir}/CosEventComm.idl" />
+	</exec>		
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fall ${idldir}/CosNaming.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fall ${idldir}/CosNotification.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fall ${idldir}/CosNotifyChannelAdmin.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fallTIE ${idldir}/CosNotifyComm.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fall ${idldir}/CosNotifyFilter.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fall ${idldir}/CosTrading.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/emsMgr.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/emsSession.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/emsSessionFactory.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/equipment.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/globaldefs.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/guiCutThrough.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/maintenanceOps.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/managedElement.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/managedElementManager.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/mtnmVersion.idl" />
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/multiLayerSubnetwork.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fallTIE ${idldir}/nmsSession.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/notifications.idl" />	  
+	</exec>			
+		<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/orb.idl" />	  
+	</exec>			
+		<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/performance.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/protection.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/session.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/subnetworkConnection.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/terminationPoint.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/topologicalLink.idl" />	  
+	</exec>			
+	<exec dir="." executable="${idlj}" os="Windows XP" >
+	  <arg line="-td ${destdir} -i ${idldir} -fclient ${idldir}/transmissionParameters.idl" />	  
+	</exec>			
+</target>
+
+
+
+</project>

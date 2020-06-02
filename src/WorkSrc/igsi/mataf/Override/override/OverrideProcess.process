@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Flowmodel="Flowmodel.xmi" xmlns:OCM="OCM.xmi" xmlns:FCM="FCM.xmi" xmlns:WSDL="WSDL.xmi" xmlns:ecore="ecore.xmi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Flowmodel:FlowComposition xmi:id="Composition1">
+    <annotations xmi:id="Annotation_1" annotates="FlowNode_1">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_1" string="Input"/>
+      <visualInfo xmi:type="FCM:FCMVisualLocation" xmi:id="FCMVisualLocation_1" isHidden="false">
+        <keyedValues xmi:type="OCM:KeyedLocation" xmi:id="KeyedLocation_6" key="com.ibm.etools.ocm.model.visualconstraintkey" value="34,54"/>
+        <keyedValues xmi:type="OCM:KeyedString" xmi:id="KeyedString_1" key="com.ibm.etools.ctc.flow.ui.centeredkey" value="true"/>
+        <image xmi:id="FCMGIFGraphic_1" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/nodes/interminal30.gif"/>
+        <terminalVisualInfo xmi:id="FCMTerminalVisualInfo_1" terminalName="out">
+          <feedbackText xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_2" string="Input"/>
+        </terminalVisualInfo>
+        <smallImage xmi:id="FCMGIFGraphic_2" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/clcl16/inputTool.gif"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_2" annotates="FlowNode_2">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_3" string="Output"/>
+      <visualInfo xmi:type="FCM:FCMVisualLocation" xmi:id="FCMVisualLocation_2" isHidden="false">
+        <keyedValues xmi:type="OCM:KeyedLocation" xmi:id="KeyedLocation_7" key="com.ibm.etools.ocm.model.visualconstraintkey" value="463,54"/>
+        <keyedValues xmi:type="OCM:KeyedString" xmi:id="KeyedString_2" key="com.ibm.etools.ctc.flow.ui.centeredkey" value="true"/>
+        <image xmi:id="FCMGIFGraphic_3" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/nodes/outterminal30.gif"/>
+        <terminalVisualInfo xmi:id="FCMTerminalVisualInfo_2" terminalName="in">
+          <feedbackText xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_4" string="Output"/>
+        </terminalVisualInfo>
+        <smallImage xmi:id="FCMGIFGraphic_4" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/clcl16/outputTool.gif"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_3" annotates="FlowConditionalControlConnection_1">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_9" string="FlowConditionalControlConnection_1"/>
+      <visualInfo xmi:type="FCM:FCMConnectionVisualInfo" xmi:id="FCMConnectionVisualInfo_1" style="SOLID" thickness="1" isHidden="false" endStyle="TRIANGLE">
+        <color xmi:id="FCMRGB_1" red="23" green="45" blue="246"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_4" annotates="FlowNode_3">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_5" string="chooseManager"/>
+      <visualInfo xmi:type="FCM:FCMVisualLocation" xmi:id="FCMVisualLocation_3">
+        <keyedValues xmi:type="OCM:KeyedLocation" xmi:id="KeyedLocation_8" key="com.ibm.etools.ocm.model.visualconstraintkey" value="138,136"/>
+        <keyedValues xmi:type="OCM:KeyedString" xmi:id="KeyedString_3" key="com.ibm.etools.ctc.flow.ui.centeredkey" value="true"/>
+        <image xmi:id="FCMGIFGraphic_5" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/nodes/staff.gif"/>
+        <terminalVisualInfo xmi:id="FCMTerminalVisualInfo_3" terminalName="in">
+          <feedbackText xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_6" string="in"/>
+        </terminalVisualInfo>
+        <smallImage xmi:id="FCMGIFGraphic_6" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/clcl16/staff.gif"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_5" annotates="FlowNode_4">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_7" string="overrideConfirm"/>
+      <visualInfo xmi:type="FCM:FCMVisualLocation" xmi:id="FCMVisualLocation_4">
+        <keyedValues xmi:type="OCM:KeyedLocation" xmi:id="KeyedLocation_9" key="com.ibm.etools.ocm.model.visualconstraintkey" value="292,136"/>
+        <keyedValues xmi:type="OCM:KeyedString" xmi:id="KeyedString_4" key="com.ibm.etools.ctc.flow.ui.centeredkey" value="true"/>
+        <image xmi:id="FCMGIFGraphic_7" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/nodes/staff.gif"/>
+        <terminalVisualInfo xmi:id="FCMTerminalVisualInfo_4" terminalName="in">
+          <feedbackText xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_8" string="in"/>
+        </terminalVisualInfo>
+        <smallImage xmi:id="FCMGIFGraphic_8" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/clcl16/staff.gif"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_6" annotates="FlowConditionalControlConnection_2">
+      <visualInfo xmi:type="FCM:FCMConnectionVisualInfo" xmi:id="FCMConnectionVisualInfo_2" style="SOLID" thickness="1" endStyle="TRIANGLE">
+        <color xmi:id="FCMRGB_2" red="23" green="45" blue="246"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_7" annotates="FlowConditionalControlConnection_3">
+      <visualInfo xmi:type="FCM:FCMConnectionVisualInfo" xmi:id="FCMConnectionVisualInfo_3" style="SOLID" thickness="1" endStyle="TRIANGLE">
+        <color xmi:id="FCMRGB_3" red="23" green="45" blue="246"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_8" annotates="FlowConditionalControlConnection_4">
+      <visualInfo xmi:type="FCM:FCMConnectionVisualInfo" xmi:id="FCMConnectionVisualInfo_4" style="SOLID" thickness="1" endStyle="TRIANGLE">
+        <color xmi:id="FCMRGB_4" red="23" green="45" blue="246"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_9" annotates="FlowNode_5">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_10" string="afterOverride"/>
+      <visualInfo xmi:type="FCM:FCMVisualLocation" xmi:id="FCMVisualLocation_5">
+        <keyedValues xmi:type="OCM:KeyedLocation" xmi:id="KeyedLocation_10" key="com.ibm.etools.ocm.model.visualconstraintkey" value="347,54"/>
+        <keyedValues xmi:type="OCM:KeyedString" xmi:id="KeyedString_5" key="com.ibm.etools.ctc.flow.ui.centeredkey" value="true"/>
+        <image xmi:id="FCMGIFGraphic_9" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/nodes/javasnippet30.gif"/>
+        <terminalVisualInfo xmi:id="FCMTerminalVisualInfo_5" terminalName="in">
+          <feedbackText xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_11" string="in"/>
+        </terminalVisualInfo>
+        <smallImage xmi:id="FCMGIFGraphic_10" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/clcl16/javasnippet16.gif"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_10" annotates="FlowConditionalControlConnection_5">
+      <visualInfo xmi:type="FCM:FCMConnectionVisualInfo" xmi:id="FCMConnectionVisualInfo_5" style="SOLID" thickness="1" endStyle="TRIANGLE">
+        <color xmi:id="FCMRGB_5" red="23" green="45" blue="246"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_11" annotates="FlowNode_6">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_12" string="initVars"/>
+      <visualInfo xmi:type="FCM:FCMVisualLocation" xmi:id="FCMVisualLocation_6">
+        <keyedValues xmi:type="OCM:KeyedLocation" xmi:id="KeyedLocation_11" key="com.ibm.etools.ocm.model.visualconstraintkey" value="90,54"/>
+        <keyedValues xmi:type="OCM:KeyedString" xmi:id="KeyedString_6" key="com.ibm.etools.ctc.flow.ui.centeredkey" value="true"/>
+        <image xmi:id="FCMGIFGraphic_11" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/nodes/javasnippet30.gif"/>
+        <terminalVisualInfo xmi:id="FCMTerminalVisualInfo_6" terminalName="in">
+          <feedbackText xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_13" string="in"/>
+        </terminalVisualInfo>
+        <smallImage xmi:id="FCMGIFGraphic_12" resourcename="platform:/plugin/com.ibm.etools.ctc.flow.ui/icons/full/clcl16/javasnippet16.gif"/>
+      </visualInfo>
+    </annotations>
+    <annotations xmi:id="Annotation_12" annotates="FlowConditionalControlConnection_6">
+      <nameInComposition xmi:type="OCM:OCMConstantString" xmi:id="OCMConstantString_14" string="FlowConditionalControlConnection_6"/>
+      <visualInfo xmi:type="FCM:FCMConnectionVisualInfo" xmi:id="FCMConnectionVisualInfo_6" style="SOLID" thickness="1" endStyle="TRIANGLE">
+        <color xmi:id="FCMRGB_6" red="23" green="45" blue="246"/>
+      </visualInfo>
+    </annotations>
+    <nodes xmi:type="Flowmodel:FlowNode" xmi:id="FlowNode_1">
+      <FlowImplementation xmi:type="Flowmodel:FlowInputImplementation" xmi:id="FlowInputImplementation_1" outputContainer="FlowContainer_9">
+        <PortType href="platform:/resource/Override/override/OverrideProcessInterface.wsdl#PortType:http://override/:OverrideProcessPortType"/>
+        <Operation href="platform:/resource/Override/override/OverrideProcessInterface.wsdl#Operation:PortType:http://override/:OverrideProcessPortType:InputOperation(InputOperationRequest,InputOperationResponse)"/>
+      </FlowImplementation>
+    </nodes>
+    <nodes xmi:type="Flowmodel:FlowNode" xmi:id="FlowNode_2">
+      <FlowImplementation xmi:type="Flowmodel:FlowOutputImplementation" xmi:id="FlowOutputImplementation_1" inputContainer="FlowContainer_10">
+        <PortType href="platform:/resource/Override/override/OverrideProcessInterface.wsdl#PortType:http://override/:OverrideProcessPortType"/>
+        <Operation href="platform:/resource/Override/override/OverrideProcessInterface.wsdl#Operation:PortType:http://override/:OverrideProcessPortType:InputOperation(InputOperationRequest,InputOperationResponse)"/>
+      </FlowImplementation>
+    </nodes>
+    <nodes xmi:type="Flowmodel:FlowNode" xmi:id="FlowNode_3">
+      <FlowImplementation xmi:type="Flowmodel:FlowPersonImplementation" xmi:id="FlowPersonImplementation_1" inputContainer="FlowContainer_3" outputContainer="FlowContainer_3">
+        <potentialOwner xmi:id="FlowStaffQuery_1">
+          <verb>Users by user ID</verb>
+          <flowParameters xmi:id="FlowParameter_1" name="UserID" value="%wf:process.starter%"/>
+          <flowParameters xmi:id="FlowParameter_2" name="AlternativeID1">
+            <value xsi:nil="true"/>
+          </flowParameters>
+          <flowParameters xmi:id="FlowParameter_3" name="AlternativeID2">
+            <value xsi:nil="true"/>
+          </flowParameters>
+        </potentialOwner>
+      </FlowImplementation>
+    </nodes>
+    <nodes xmi:type="Flowmodel:FlowNode" xmi:id="FlowNode_4">
+      <FlowImplementation xmi:type="Flowmodel:FlowPersonImplementation" xmi:id="FlowPersonImplementation_2" inputContainer="FlowContainer_4" outputContainer="FlowContainer_4">
+        <potentialOwner xmi:id="FlowStaffQuery_2" verb="Everybody"/>
+      </FlowImplementation>
+    </nodes>
+    <nodes xmi:type="Flowmodel:FlowNode" xmi:id="FlowNode_5">
+      <FlowImplementation xmi:type="Flowmodel:FlowJavaSnippetImplementation" xmi:id="FlowJavaSnippetImplementation_1"/>
+    </nodes>
+    <nodes xmi:type="Flowmodel:FlowNode" xmi:id="FlowNode_6">
+      <FlowImplementation xmi:type="Flowmodel:FlowJavaSnippetImplementation" xmi:id="FlowJavaSnippetImplementation_2"/>
+    </nodes>
+    <views xmi:type="FCM:FCMView" xmi:id="Composition1_FCBFlowView" visualInfos="FCMVisualLocation_1 FCMVisualLocation_2 FCMConnectionVisualInfo_1 FCMVisualLocation_3 FCMVisualLocation_4 FCMConnectionVisualInfo_2 FCMConnectionVisualInfo_3 FCMConnectionVisualInfo_4 FCMVisualLocation_5 FCMConnectionVisualInfo_5 FCMVisualLocation_6 FCMConnectionVisualInfo_6"/>
+    <connections xmi:type="Flowmodel:FlowConditionalControlConnection" xmi:id="FlowConditionalControlConnection_3" sourceTerminalName="out" targetTerminalName="in" transitionCondition="builtin:true" targetNode="FlowNode_4" sourceNode="FlowNode_3"/>
+    <connections xmi:type="Flowmodel:FlowConditionalControlConnection" xmi:id="FlowConditionalControlConnection_4" sourceTerminalName="out" targetTerminalName="in" transitionCondition="builtin:true" targetNode="FlowNode_5" sourceNode="FlowNode_4"/>
+    <connections xmi:type="Flowmodel:FlowConditionalControlConnection" xmi:id="FlowConditionalControlConnection_5" sourceTerminalName="out" targetTerminalName="in" transitionCondition="builtin:true" targetNode="FlowNode_2" sourceNode="FlowNode_5"/>
+    <connections xmi:type="Flowmodel:FlowConditionalControlConnection" xmi:id="FlowConditionalControlConnection_1" sourceTerminalName="out" targetTerminalName="in" targetNode="FlowNode_5" sourceNode="FlowNode_6"/>
+    <connections xmi:type="Flowmodel:FlowConditionalControlConnection" xmi:id="FlowConditionalControlConnection_2" sourceTerminalName="out" targetTerminalName="in" transitionCondition="builtin:otherwise" targetNode="FlowNode_3" sourceNode="FlowNode_6"/>
+    <connections xmi:type="Flowmodel:FlowConditionalControlConnection" xmi:id="FlowConditionalControlConnection_6" sourceTerminalName="out" targetTerminalName="in" transitionCondition="builtin:true" targetNode="FlowNode_6" sourceNode="FlowNode_1"/>
+  </Flowmodel:FlowComposition>
+  <ecore:EPackage xmi:id="fcmcomposite_package" nsURI="platform:/resource/Override/override/OverrideProcess.process" nsName="_resource_Override_override_OverrideProcess.process">
+    <eMetaObjects xmi:type="Flowmodel:FlowWorkflowComposite" xmi:id="OverrideProcess" interruptable="false" synchronous="true" specifiedBy="Composition1">
+      <validFrom>2004 01 01  12 00 00</validFrom>
+      <eSuper xmi:type="ecore:EClass" href="FCM.xmi#FCMBlock"/>
+      <flowContainers xmi:id="FlowContainer_1" name="input">
+        <description>Interface variable</description>
+        <Message href="platform:/plugin/com.ibm.etools.ctc.services/wsdl/org/xmlsoap/schemas/wsdl/wsadie/messages/BuiltinMessages.wsdl#Message:http://schemas.xmlsoap.org/wsdl/wsadie/messages/:Int"/>
+      </flowContainers>
+      <flowContainers xmi:id="FlowContainer_2" name="output">
+        <description>Interface variable</description>
+        <Message href="platform:/plugin/com.ibm.etools.ctc.services/wsdl/org/xmlsoap/schemas/wsdl/wsadie/messages/BuiltinMessages.wsdl#Message:http://schemas.xmlsoap.org/wsdl/wsadie/messages/:Int"/>
+      </flowContainers>
+      <flowContainers xmi:id="FlowContainer_3" name="chosenManager" automaticallyDefinedFor="0">
+        <description>The manager chosen for override</description>
+        <Message href="platform:/plugin/com.ibm.etools.ctc.services/wsdl/org/xmlsoap/schemas/wsdl/wsadie/messages/BuiltinMessages.wsdl#Message:http://schemas.xmlsoap.org/wsdl/wsadie/messages/:String"/>
+      </flowContainers>
+      <flowContainers xmi:id="FlowContainer_4" name="overrideResult" automaticallyDefinedFor="0">
+        <description>The result of the override operation</description>
+        <Message href="platform:/plugin/com.ibm.etools.ctc.services/wsdl/org/xmlsoap/schemas/wsdl/wsadie/messages/BuiltinMessages.wsdl#Message:http://schemas.xmlsoap.org/wsdl/wsadie/messages/:Boolean"/>
+      </flowContainers>
+      <flowContainers xmi:id="FlowContainer_5" name="sum" automaticallyDefinedFor="0">
+        <description>sum of the transaction</description>
+        <Message href="platform:/plugin/com.ibm.etools.ctc.services/wsdl/org/xmlsoap/schemas/wsdl/wsadie/messages/BuiltinMessages.wsdl#Message:http://schemas.xmlsoap.org/wsdl/wsadie/messages/:Float"/>
+      </flowContainers>
+      <flowContainers xmi:id="FlowContainer_9" name="overrideInput" description="" automaticallyDefinedFor="0">
+        <Message href="platform:/resource/Override/override/OverrideProcessInterface.wsdl#Message:http://override/:overrideInput"/>
+      </flowContainers>
+      <flowContainers xmi:id="FlowContainer_10" name="overrideOutput" description="" automaticallyDefinedFor="0">
+        <Message href="platform:/resource/Override/override/OverrideProcessInterface.wsdl#Message:http://override/:overrideOutput"/>
+      </flowContainers>
+    </eMetaObjects>
+  </ecore:EPackage>
+</xmi:XMI>

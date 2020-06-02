@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Harel" default="Total" basedir=".">
+<!-- Set user properties  Important(!!!) each programmer sholud change this variables-->
+<property name="currentProject" value="GuidanceWeb" />
+<property name="fwWeb" value="FWWeb"/>
+<property name="fwCore" value="FWCore"/>
+<property name="catalogProject" value="FWXCatalog"/>
+
+<!-- Set global properties -->
+<property name="jar" value="fw" />
+<property name="srcjar" value="fwsrc" />
+<property name="catalogjar" value="catalog" />
+<property name="type" value="full" />
+<property name="debug" value="false" />
+<property name="basePath" location=".." />
+<property name="temp" value="temp"></property>
+<property name="flower_javadoc" value="javadoc/flower" />
+
+<target name="buildCurrent">
+	<!-- Builds the common project -->
+	<projectBuild ProjectName="${currentProject}" BuildType="${type}"
+	DebugCompilation="${debug}" />
+</target>
+
+<target name="exportFrameWork">
+	<mkdir dir="${temp}"/>
+	<!-- Exports the fw-->
+	
+	<jar jarfile="${temp}/${jar}.jar">
+	    <fileset dir="${basePath}/${fwCore}/classes">
+	    	<include name="**/*.class"/>
+    	 	<include name="**/*.properties"/>
+	    </fileset>
+	     <fileset dir="${basePath}/${fwWeb}/config/dtd"/>
+	</jar>
+	
+	<jar jarfile="${temp}/${srcjar}.jar">
+	    <fileset dir="${basePath}/${fwCore}/">
+	    	<include name="**/*.java"/>    	
+	    </fileset>
+	</jar>
+
+	<jar jarfile="${temp}/${catalogjar}.jar">
+	    <fileset dir="${basePath}/${catalogProject}/">
+	    	<include name="**/*.class"/>    	
+	    </fileset>
+	</jar>
+
+	
+	<!--
+	<javadoc packagenames="com.ness.fw.*"
+           sourcepath="${basePath}/${fwWeb}/JavaSource"
+           defaultexcludes="yes"
+           destdir="${flower_javadoc}/"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="Test API">
+     </javadoc>
+     -->
+</target>
+
+
+<target name="copyResources">
+	<!-- copy properties files -->
+	<copy todir="javasource">
+   
+	     <fileset dir="${basePath}\${fwWeb}\resources\localized\output">
+	    	<include name="**/*.properties"/>
+	    </fileset>
+	   
+   	<fileset dir="${basePath}\${fwWeb}\resources\workflow">
+	    	<include name="**/*.properties"/>
+    	</fileset>
+
+	    <fileset dir="${basePath}\${fwWeb}\resources\ui">
+    		<include name="**/*.properties"/>
+	    </fileset>    
+
+	    <fileset dir="${basePath}\${fwWeb}\resources\batch">
+    		<include name="**/*.properties"/>
+	    </fileset>    
+	    
+	    <!--
+	    <fileset dir="${basePath}\${fwWeb}\resources\system">
+    		<include name="**/*.properties"/>
+	    </fileset>    
+-->
+	</copy>
+
+	<!-- copy tld to web-inf\tld folder -->
+	<copy file="${basePath}\${fwWeb}\WebContent\WEB-INF\tld\taglib.tld" todir="WebContent/WEB-INF/tld"/> 
+
+	<!-- copy javascript -->
+	<copy todir="WebContent/scripts/">
+		<fileset dir="${basePath}\${fwWeb}\WebContent\scripts">
+			<include name="**/*.js"/>
+		</fileset>
+	</copy>
+
+	<!-- copy html -->
+	<copy todir="WebContent/html/">
+		<fileset dir="${basePath}\${fwWeb}\WebContent\html">
+    		<include name="**/*.html"/>
+		</fileset>
+	</copy>
+
+	<!-- copy images -->
+	<copy todir="WebContent/images/">
+    	<fileset dir="${basePath}\${fwWeb}\WebContent\images"/>
+	</copy>
+
+	<!-- copy theme -->
+	<copy todir="WebContent/theme/">
+    	<fileset dir="${basePath}\${fwWeb}\WebContent\theme"/>
+	</copy>
+
+	<!-- copy jsp -->
+	<copy todir="WebContent/jsp/">
+    	<fileset dir="${basePath}\${fwWeb}\WebContent\jsp"/>
+	</copy>
+
+
+ <!-- copy xml to conf folder -->
+ <copy todir="javasource\config" >
+	<fileset dir="${basePath}\${fwWeb}\config">
+		<exclude name="*.xml"/>
+	</fileset>
+ </copy>
+
+	<!-- copy jar to the lib folder -->
+	<copy file="${temp}/${jar}.jar" todir="WebContent\WEB-INF\lib"/>
+	<!-- copy the source jar -->
+	<copy file="${temp}/${srcjar}.jar" todir="jars"/>
+
+	
+	<!-- copy ReleaseNotes -->
+	<copy todir="ReleaseNotes">
+    	<fileset dir="${basePath}\${fwWeb}\ReleaseNotes"/>
+	</copy>
+
+</target>
+
+<target name="clean">
+	<!-- delete the jar -->
+	<delete dir="${temp}"></delete>
+</target>
+
+<target name="Total" depends="exportFrameWork,copyResources,clean">
+	<!-- Buidl all projects and exports all files -->
+	<echo message="Total finished" />
+</target>
+
+</project>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type"
+	content="text/html; charset=windows-1255">
+<META name="GENERATOR" content="IBM Software Development Platform">
+<META http-equiv="Content-Style-Type" content="text/css">
+<LINK href="../theme/Master.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+	.hiddenText {
+		display: none;		
+	}
+	.normalText {
+		display: block;
+		border-collapse: collapse; 
+	    border-style: solid solid none solid;  
+        border-color: black; 
+        border-width: 1px 1px 0px 1px;		
+        border: solid 1px black; 
+        background-color: white; 
+        padding: 5px; 
+        height: 300px; 
+        overflow: auto;
+	}
+	
+	.mymenu {
+      width: 100%;
+      margin: 1em 0;
+      padding: 0px 0.5em;   
+      background: #fff none;
+    }
+	.mymenu ul {
+	  margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+     .mymenu li {
+      margin: 0;
+      padding: 0; 
+      float: left;
+      padding-right: 1em;
+      width: 7em;
+      margin-right: 1em;
+      background: #eee none;
+      text-align: center;
+      border-collapse: collapse; 
+      border-style: solid solid none solid;  
+      border-color: black; 
+      border-width: 1px 1px 0px 1px;
+      
+    }
+    
+     .menu3, .menu4 {
+      padding: 0;
+      background: #fff none;
+    }
+    .menu3 li, .menu4 li {
+      width: 7em;
+      margin-right: 1em;
+      background: #eee none;
+      text-align: center;
+    }
+         
+    
+  </style>
+    
+<TITLE>lists.html</TITLE>
+</HEAD>
+<SCRIPT language=JavaScript >
+
+var oldPanel = "";
+function showTab(name)
+{
+
+	var panel = document.getElementById(name);
+	//alert("panel =" + panel.className);
+	if(oldPanel != "") {
+		oldPanel.className="hiddenText";
+	}
+	oldPanel = panel;
+	panel.className="normalText";
+	//alert("oldPanel =" + oldPanel.className);
+//	document.forms.details.rowName.value=elem;
+}
+</SCRIPT>
+
+
+<BODY>
+<P>This is the lists page.</P>
+<h3> This is a bullet list</h3>
+<UL>
+	<LI>First item</LI>
+	<LI>Second item</LI>
+	<LI>Third item</LI>
+</UL>
+
+<h3> This is an Ordered list</h3>
+
+<OL type="1" start="1">
+	<LI>First item</LI>
+	<LI>Second item</LI>
+	<LI>Third item</LI>
+</OL>
+
+<div class="mymenu">
+<UL>
+	<LI><a href="#" onclick="showTab('tab1');"> item-1</a></LI>
+	<LI><a href="#" onclick="showTab('tab2');"> item-2</a></LI>
+	<LI><a href="#" onclick="showTab('tab3');" > item-3</a></LI>
+</UL>
+</div>
+
+
+<div id="tab1" class="normalText">
+<p> this is tab1
+</div>
+
+<div id="tab2" class="hiddenText">
+<p> this is tab2
+ </div>
+
+<div id="tab3" class="hiddenText">
+<p> this is tab3
+ </div>
+
+
+</BODY>
+</HTML>

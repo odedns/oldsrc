@@ -1,0 +1,241 @@
+<html>
+<head>
+<link href="../theme/system.css" rel="stylesheet" type="text/css">
+<script src="../scripts/UIConstants.js"></script>
+<script src="../scripts/UIComponents.js"></script>
+<script src="../scripts/UIListToList.js"></script>
+<script src="../scripts/UIUtil.js"></script>
+<script>
+//setting the title
+if (window.dialogArguments["title"] == null) self.close();
+document.write("<title>"  + getDialogFixedTitle(window.dialogArguments["title"]) + "</title>");
+
+var objectType =  window.dialogArguments["objectType"];
+var searchIn =  window.dialogArguments["searchIn"];
+var searchType =  window.dialogArguments["searchType"];
+var searchAction =  window.dialogArguments["searchAction"];
+var isActionSelect = window.dialogArguments["isActionSelect"];
+var isTypeSelect = window.dialogArguments["isTypeSelect"];
+var isOrderButtons = window.dialogArguments["isOrderButtons"];
+
+var srcArr = window.dialogArguments["srcArr"];
+var trgArr = window.dialogArguments["trgArr"];
+var labels = window.dialogArguments["labels"];
+var L2L_MESSAGES = window.dialogArguments["messages"];
+var l2l;
+function init()
+{
+	initLabels();
+	
+	initListTitlesAndSearch(searchIn,labels[13],labels[14],isSourcSearchRendered(searchIn),isTargetSearchRendered(searchIn));
+
+	initSelect();
+
+	if (!isOrderButtons)
+	{
+		hide(orderButtonsRow);	
+	}
+	
+	l2l = new ListToList(srcArr,trgArr,"",objectType,searchIn,searchType,searchAction);
+	l2l.bindControls();
+	document.body.dir = window.dialogArguments["dir"];
+	l2l.arrayToList(l2l.srcList,"",l2l.srcArray,l2l.sourceSearchAction,l2l.sourceSearchType,false);
+	l2l.arrayToList(l2l.tgtList,"",l2l.tgtArray,l2l.targetSearchAction,l2l.targetSearchType,false);
+}
+
+function initLabels()
+{
+	SrcToTrg.value = labels[0];
+	SrcToTrgAll.value = labels[1];
+	TrgToSrc.value = labels[2];
+	TrgToSrcAll.value = labels[3];
+	TrgDown.value = labels[4];
+	TrgUp.value = labels[5];
+	approveButton.value = labels[6];
+	cancelButton.value = labels[7];	
+}
+
+function initSelect()
+{
+	addToSelect(SrcSearchAction,new Option(labels[8],LIST_SEARCH_ACTION_SEARCH,false,(searchAction == LIST_SEARCH_ACTION_SEARCH)));
+	addToSelect(SrcSearchAction,new Option(labels[9],LIST_SEARCH_ACTION_FILTER,false,(searchAction == LIST_SEARCH_ACTION_FILTER)));
+	addToSelect(TrgSearchAction,new Option(labels[8],LIST_SEARCH_ACTION_SEARCH,false,(searchAction == LIST_SEARCH_ACTION_SEARCH)));
+	addToSelect(TrgSearchAction,new Option(labels[9],LIST_SEARCH_ACTION_FILTER,false,(searchAction == LIST_SEARCH_ACTION_FILTER)));
+	SrcSearchType.add(new Option(labels[10],LIST_SEARCH_TYPE_START,false,searchType == LIST_SEARCH_TYPE_START));
+	SrcSearchType.add(new Option(labels[11],LIST_SEARCH_TYPE_CONTAINS,false,searchType == LIST_SEARCH_TYPE_CONTAINS));
+	SrcSearchType.add(new Option(labels[12],LIST_SEARCH_TYPE_END,false,searchType == LIST_SEARCH_TYPE_END));
+	TrgSearchType.add(new Option(labels[10],LIST_SEARCH_TYPE_START,false,searchType == LIST_SEARCH_TYPE_START));
+	TrgSearchType.add(new Option(labels[11],LIST_SEARCH_TYPE_CONTAINS,false,searchType == LIST_SEARCH_TYPE_CONTAINS));
+	TrgSearchType.add(new Option(labels[12],LIST_SEARCH_TYPE_END,false,searchType == LIST_SEARCH_TYPE_END));
+}
+
+function isSourcSearchRendered(searchIn)
+{
+	return searchIn == LIST_SEARCH_IN_ALL || searchIn == LIST_SEARCH_IN_SOURCE;
+}
+
+function isTargetSearchRendered(searchIn)
+{
+	return searchIn == LIST_SEARCH_IN_ALL || searchIn == LIST_SEARCH_IN_TARGET;
+}
+
+function initListTitlesAndSearch(searchIn,sourceTitle,targetTitle,sourcSearchRendered,targetSearchRendered)
+{
+	//no search
+	if (!sourcSearchRendered && !targetSearchRendered)
+	{
+		//no search
+		hide(searchSourceRow);
+		hide(searchTargetRow);
+
+		//no titles
+		if (sourceTitle == null && targetTitle == null)
+		{
+			hide(titles);
+		}
+		
+		//at least one title
+		else
+		{
+			srcTitle1.innerHTML = (sourceTitle != null ? sourceTitle : "&nbsp;"); 
+			trgTitle1.innerHTML = (targetTitle != null ? targetTitle : "&nbsp;");
+		}
+	}
+	else 
+	{
+		if (!sourcSearchRendered)
+		{
+			hide(searchSourceRow);
+		}
+		else if (!targetSearchRendered)
+		{
+			hide(searchTargetRow);
+		}
+		
+		if (sourceTitle == null && targetTitle == null)
+		{
+			hide(titles);
+		}
+		else
+		{
+			srcTitle1.innerHTML = (sourceTitle != null ? sourceTitle : "&nbsp;"); 
+			trgTitle1.innerHTML = (targetTitle != null ? targetTitle : "&nbsp;");				
+		}
+		
+		if (!isActionSelect)
+		{
+			hide(SrcSearchActionTd);
+			hide(TrgSearchActionTd);
+		}
+
+		if (!isTypeSelect)
+		{
+			hide(SrcSearchTypeTd);
+			hide(TrgSearchTypeTd);
+		}
+	}
+}
+
+function returnValues()
+{
+	arr = new Array();
+	arr["srcArr"] = l2l.srcArray;
+	arr["trgArr"] = l2l.tgtArray;	
+	window.returnValue = arr;
+	self.close();		
+}
+
+</script>
+</head>
+<body onload="init();" class="bodyDialog">
+<script>document.body.dir = window.dialogArguments["dir"];</script>  
+<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+	<tr height="1">
+		<td class="popupMainLayout" align="center">
+		
+			<table width="100%" height="100%" cellpadding="0" cellspacing="2">
+				<tr id="titles" height="1">
+					<td width="50%" class="srcTitle" id="srcTitle1"></td>
+					<td width="50">&nbsp;</td>
+					<td width="50%" id="trgTitle1" class="trgTitle"></td>
+				</tr>
+				<tr>
+					<td width="50%">
+						<table height="100%" width="100%" cellspacing="0">
+							<tr id="searchSourceRow">
+								<td height="1">
+									<table height="100%" width="100%" cellspacing="0">
+										<tr>
+											<td width="1" id="SrcSearchActionTd"><select id="SrcSearchAction" onchange="l2l.doEvents(event)" class="listToListCombo"></select></td>							
+											<td width="1" id="SrcSearchTypeTd"><select id="SrcSearchType" onchange="l2l.doEvents(event)" class="listToListCombo"></select></td>
+											<td width="100%"><input type="text" id="SrcText" onkeydown="l2l.doEvents(event)" onkeyup="l2l.doEvents(event)" class="listToListSearchText" style="width: 100%;"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="100%">
+									<select id="SrcList" ondblclick="l2l.doEvents(event)" class="listToListNormalClass" size="2" multiple="multiple" style="height: 100%; width: 100%"></select>						
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td valign="middle" class="popupMainLayout">
+						<table cellspacing="3" cellspacing="0">
+							<tr><td height="15"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="SrcToTrg" onclick="l2l.doEvents(event)" value="десу-&gt;"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="SrcToTrgAll" onclick="l2l.doEvents(event)"></td></tr>
+							<tr><td height="20"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="TrgToSrc" onclick="l2l.doEvents(event)"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="TrgToSrcAll" onclick="l2l.doEvents(event)"></td></tr>
+						</table>
+					</td>
+					<td width="50%">
+						<table height="100%" width="100%" cellspacing="0">
+							<tr id="searchTargetRow">
+								<td height="1">
+									<TABLE height="100%" width="100%" cellspacing="0">
+										<tr>
+											<td id="TrgSearchActionTd" width="1"><select id="TrgSearchAction" onchange="l2l.doEvents(event)" class="listToListCombo"></select></td>
+											<td id="TrgSearchTypeTd" width="1"><select id="TrgSearchType" onchange="l2l.doEvents(event)" class="listToListCombo"></select></td>
+											<td width="100%"><input type="text" id="TrgText" onkeydown="l2l.doEvents(event)" onkeyup="l2l.doEvents(event)" class="listToListSearchText" style="width: 100%;"></td>
+										</tr>
+									</TABLE>
+								</td>
+							</tr>
+							<tr>
+								<td height="100%">
+									<select id="TrgList" ondblclick="l2l.doEvents(event)" size="2" class="listToListNormalClass" multiple="multiple" style="height: 100%; width: 100%"></select>
+								</td>
+							</tr>
+							
+						</table>
+					</td>
+				</tr>
+				<tr id="orderButtonsRow">
+					<td align="center"></td>
+					<td align="center"></td>
+					<td align="center" valign="top">
+						<TABLE width="90%" cellspacing="0">
+							<tr>
+								<td width="45%"></td>
+								<td><input type="button" id="TrgDown" class="listToListButton" onclick="l2l.doEvents(event)"></td>
+								<td width="1"></td>
+								<td><input type="button" id="TrgUp" class="listToListButton" onclick="l2l.doEvents(event)"></td>
+								<td width="45%"></td>
+							</tr>
+						</TABLE>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="3">
+					<input type="button" id="approveButton" onclick="returnValues();" class="listToListSearchButton">
+					<input type="button" id="cancelButton" onclick="self.close()" class="listToListSearchButton">	
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

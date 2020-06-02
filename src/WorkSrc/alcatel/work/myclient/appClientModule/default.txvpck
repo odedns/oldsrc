@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.0">
+	<view uin="V574ng9dxippw7yl7945f">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="Package Diagram"/>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.MenuNode">
+			<property name="bounds" value="510,390,199,172"/>
+			<property name="hideOperation" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.MenuActivity:systemActivityRef">
+				<property name="sourceAnchor" value="404,550"/>
+				<property name="targetAnchor" value="404,430"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.MenuNode:systemActivityRef">
+				<property name="sourceAnchor" value="709,417"/>
+				<property name="targetAnchor" value="720,417"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.MenuActivityNode:systemActivityRef">
+				<property name="sourceAnchor" value="404,550"/>
+				<property name="targetAnchor" value="404,430"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.PermissionRoleActivityDAO">
+			<property name="bounds" value="440,230,153,150"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="hideOperation" value="true"/>
+			<property name="hideAttribute" value="false"/>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.PermissionRoleActivity.updateUser">
+				<property name="bounds" value="0,60,212,50"/>
+				<property name="bounds_setted_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionGroupActivity:activityPermissionRef">
+				<property name="sourceAnchor" value="579,360"/>
+				<property name="targetAnchor" value="579,420"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.PermissionRoleActivity.updateDate">
+				<property name="bounds" value="103,8,0,0"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleActivityDAO:activityPermissionDao">
+				<property name="sourceAnchor" value="516,230"/>
+				<property name="targetAnchor" value="306,197"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleActivity:activityPermissionRef">
+				<property name="sourceAnchor" value="579,270"/>
+				<property name="targetAnchor" value="579,300"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.PermissionGroupActivity.field1">
+				<property name="bounds" value="25,9,0,0"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleActivityDAO:activityPermissionRef">
+				<property name="sourceAnchor" value="516,230"/>
+				<property name="targetAnchor" value="306,184"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.Item">
+			<property name="bounds" value="290,10,158,150"/>
+			<property name="hideOperation" value="true"/>
+			<property name="hideProperty" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.Item.description">
+				<property name="bounds" value="0,0,0,0"/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.Item.updateUser">
+				<property name="bounds" value="67,1,0,0"/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.Item.updateDate">
+				<property name="bounds" value="0,60,153,50"/>
+				<property name="bounds_setted_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.Item.field1">
+				<property name="bounds" value="47,-15,0,0"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ItemDAO">
+			<property name="bounds" value="0,670,178,279"/>
+			<property name="hideOperation" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.ItemDAO:lnkItemLimitationLinkDAO">
+				<property name="sourceAnchor" value="87,670"/>
+				<property name="targetAnchor" value="87,637"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.OrganizationRoleDAO">
+			<property name="bounds" value="917,7,146,224"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ItemLimitationDAO">
+			<property name="bounds" value="10,350,155,188"/>
+			<property name="hideOperation" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ApplicationActivityConstants">
+			<property name="bounds" value="0,0,200,133"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ItemLimitationLinkDAO">
+			<property name="bounds" value="10,530,200,149"/>
+			<property name="hideOperation" value="true"/>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.ItemLimitationLinkDAO.field1">
+				<property name="bounds" value="54,11,0,0"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.ItemLimitationLinkDAO:itemLimitationDAO">
+				<property name="sourceAnchor" value="10,559"/>
+				<property name="targetAnchor" value="10,538"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.ItemLimitationLinkDAO:lnkItemLimitationDAO">
+				<property name="sourceAnchor" value="10,540"/>
+				<property name="targetAnchor" value="10,540"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ActionTypeDAO">
+			<property name="bounds" value="190,890,200,302"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.PermissionRoleItemDAO">
+			<property name="bounds" value="340,650,167,159"/>
+			<property name="hideOperation" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleItemDAO:item">
+				<property name="sourceAnchor" value="340,773"/>
+				<property name="targetAnchor" value="178,773"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleItemDAO:lnkRoleItemLimitationLink">
+				<property name="sourceAnchor" value="423,650"/>
+				<property name="targetAnchor" value="80,292"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleItemDAO:itemRef">
+				<property name="sourceAnchor" value="340,739"/>
+				<property name="targetAnchor" value="178,739"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.UserTypeDAO">
+			<property name="bounds" value="520,780,200,315"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.UserDAO">
+			<property name="bounds" value="617,7,146,198"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.PermissionRoleDAO">
+			<property name="bounds" value="200,190,190,253"/>
+			<property name="hideOperation" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleDAO:permissionRoleActivityRef">
+				<property name="sourceAnchor" value="400,305"/>
+				<property name="targetAnchor" value="440,305"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.PermissionRoleDAO:permissionRoleItemRef">
+				<property name="sourceAnchor" value="377,401"/>
+				<property name="targetAnchor" value="377,650"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:ofek.auth.dao.PermissionRoleDAO.permissionRoleActivityRef">
+				<property name="bounds" value="0,0,0,0"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.AuthGroupTypeDAO">
+			<property name="bounds" value="740,780,200,302"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.userTypeDAO">
+			<property name="bounds" value="810,460,200,302"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.RoleItemLimitationLink">
+			<property name="bounds" value="6,146,148,146"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ActivityNodeDAO">
+			<property name="bounds" value="720,230,178,214"/>
+			<property name="hideOperation" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:ofek.auth.dao.ActivityNodeDAO:lnkApplicationActivityDAO">
+				<property name="sourceAnchor" value="820,230"/>
+				<property name="targetAnchor" value="522,143"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ActivityNodeConstants">
+			<property name="bounds" value="600,630,200,133"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:ofek.auth.dao.ApplicationActivityDAO">
+			<property name="bounds" value="450,10,155,188"/>
+			<property name="hideOperation" value="true"/>
+		</reference>
+	</view>
+</nodeSet>

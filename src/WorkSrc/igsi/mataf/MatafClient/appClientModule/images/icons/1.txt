@@ -1,0 +1,44 @@
+#define CANV_jpg       183
+#define CANV_L_jpg     184
+#define CANV_R_jpg     185
+#define CANV_CEN_jpg   186
+
+// ICONS & BITMAPS FOR SUBJECTS
+SHEILTOT  1000 SHEILTOT         ICON    "OPENQRY.jpg"
+TELLER    2000 TELLER           ICON    "SHEKEL.jpg"
+MAHATZ    3000 MAHATZ           ICON    "bou_mhz.jpg"
+PIKDONOT  4000 PIKDONOT         ICON    "DOLLAR7.jpg"
+ASHRAI    5000 ASHRAI           ICON    "ASHRAY.jpg"
+TVUNA     6000 TVUNA            ICON    "TVUNA.jpg"
+PRATIM    7000 PRATIM           ICON    "DATA2.jpg"
+PTIHOT    8000 PTIHOT           ICON    "OPEN_CH.jpg"
+DINAMI    9000 DINAMI           ICON    "SHIVUK.jpg"
+ISHI     10000 ISHI             ICON    "CHECK.jpg"
+TIFUL    11000 TIFUL            ICON    "DB_TOOL.jpg"
+SHIABUD  14000 SHIABUD          ICON    "STOP_04.jpg"
+OBLIGO   13000 OBLIGO           ICON    "ASHRAY.jpg"
+HAMMEUT  12000 HAMMEUT          ICON    "SHEKEL.jpg"
+MAHAZONL 16000 MAHAZONL         ICON    "bou_mhz.jpg"
+SLIKA    18000 SLIKA            ICON    "SHEKEL.jpg"
+
+
+// ICONS FOR STATUS LINE
+//CANV_jpg         ICON    "CANV.jpg"
+//CANV_L_jpg       ICON    "CANV_L.jpg"
+//CANV_R_jpg       ICON    "CANV_R.jpg"
+//CANV_CEN_jpg     ICON    "CANV_CEN.jpg"
+DOORWAY_jpg  	 171 DOORWAY_jpg      ICON    "DOORWAY.jpg"
+DOOR1_jpg     	 172 DOOR1_jpg        ICON    "SNIFCL.jpg"
+SPEED_jpg     	 173 SPEED_jpg        ICON    "SPEED.jpg"
+X02_jpg       	 174 X02_jpg          ICON    "noKesher.jpg"
+COMM_X_jpg     	 175 COMM_X_jpg       ICON    "DISCON30.jpg"
+ICON196_jpg 	 176 ICON196_jpg      ICON    "ICON196.jpg"
+NETW_jpg         177 NETW_jpg         ICON    "NETW.jpg"
+LOCK08_jpg       178 LOCK08_jpg       ICON    "LOCK_08.jpg"
+ENGLISH_jpg      179 ENGLISH_jpg      ICON    "ENGLISH.jpg"
+HEBREW_jpg       180 HEBREW_jpg       ICON    "HEBREW.jpg"
+INSERT_jpg       181 INSERT_jpg       ICON    "INSERT.jpg"
+MAIL_jpg         182 MAIL_jpg         ICON    "MAIL-01.jpg"
+ID_CLOSED_jpg    226 ID_CLOSED_jpg    ICON    "snifcl.jpg"
+ID_MORNING_jpg   223 ID_MORNING_jpg   ICON    "TDAYSUN.jpg"
+ID_AFTERNOON_jpg 224 ID_AFTERNOON_jpg ICON    "TDAYMOON.jpg"

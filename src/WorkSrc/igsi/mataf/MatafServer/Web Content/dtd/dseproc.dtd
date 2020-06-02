@@ -1,0 +1,213 @@
+<!ELEMENT dseproc.xml ((processor | flow | operationProcessor | opProcessor | serverOpProcessor | syncProcState | htmlProcessor)*)>
+
+<!ELEMENT processor ((state | operationState | syncProcState | htmlState)*,(iniValue)*,(refFormat)*)*>
+<!ATTLIST processor 
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context IDREF #REQUIRED
+	refFlow IDREF #IMPLIED
+    cleanEventsQueueOnSwitch (false |true ) "true"	
+>
+
+<!ELEMENT opProcessor ((state | operationState | syncProcState | htmlState)*,(iniValue)*,(refFormat)*)*>
+<!ATTLIST opProcessor 
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #IMPLIED
+	refFlow IDREF #IMPLIED
+    cleanEventsQueueOnSwitch (false |true ) "true"	
+>
+
+<!ELEMENT serverOpProcessor ((state | operationState | syncProcState | htmlState)*,(iniValue)*,(refFormat)*)*>
+<!ATTLIST serverOpProcessor 
+	id ID #REQUIRED
+	implClass CDATA #IMPLIED
+	context CDATA #REQUIRED
+	refFlow IDREF #IMPLIED
+    cleanEventsQueueOnSwitch (false |true ) "true"	
+>
+
+<!ELEMENT refFormat EMPTY>
+<!ATTLIST refFormat 
+    name CDATA #REQUIRED
+    refId CDATA #REQUIRED
+>
+
+<!ELEMENT iniValue EMPTY>
+<!ATTLIST iniValue 
+    name IDREF #REQUIRED
+    value CDATA #REQUIRED
+>
+
+<!ELEMENT closeView ((conditions)?)*>
+<!ATTLIST closeView 
+    implClass CDATA #IMPLIED
+    context IDREF #IMPLIED
+    outputMapFmt IDREF #IMPLIED
+    id ID #REQUIRED
+>
+
+<!ELEMENT flow ((state | operationState | syncProcState | htmlState)+)+>
+<!ATTLIST flow 
+     implClass CDATA #IMPLIED
+	 id ID #REQUIRED
+>
+
+<!ELEMENT state ((entryActions)?,(transitions)?)*>
+<!ATTLIST state 
+     implClass CDATA #IMPLIED
+     type (final |initial |operation |processor |session) #IMPLIED
+     typeIdInfo CDATA #IMPLIED
+     id CDATA #REQUIRED
+>
+
+<!ELEMENT transitions ((transition | htmlTransition)+)+>
+
+<!ELEMENT operationProcessor ((state | operationState | syncProcState | htmlState)*,(iniValue)*,(refFormat)*)*>
+<!ATTLIST operationProcessor 
+      implClass CDATA #IMPLIED
+      context IDREF #REQUIRED
+      refFlow IDREF #IMPLIED
+      id ID #REQUIRED
+      cleanEventsQueueOnSwitch (false |true ) "true"
+>
+
+<!ELEMENT condition EMPTY>
+<!ATTLIST condition 
+      implClass CDATA #IMPLIED
+      onTrue CDATA "continue"
+      onFalse CDATA "continue"
+>
+
+<!ELEMENT actions ((openView | closeView | Step | executeSubflowAct | executeOperationAct)*)*>
+
+<!ELEMENT htmlTransition ((actions)?,(refFormat)*)*>
+<!ATTLIST htmlTransition 
+      id ID #REQUIRED
+      skipValidation (false |true ) #IMPLIED
+      context IDREF #IMPLIED
+      inputMapFmt IDREF #IMPLIED
+      targetState IDREF #IMPLIED
+      ignoreEntryActions (false |true ) "false"
+      implClass CDATA #IMPLIED
+      outputMapFmt IDREF #IMPLIED
+      propagateEvent (false |true ) "false"
+      conseq (false |true ) #IMPLIED
+      delegateValAssessment (false |true ) "false"
+>
+
+<!ELEMENT operationState ((entryActions)?,(transitions)?,(refFormat)*)*>
+<!ATTLIST operationState 
+      implClass CDATA #IMPLIED
+      type (final |initial |operation |processor ) #IMPLIED
+      typeIdInfo CDATA #IMPLIED
+      id ID #REQUIRED
+>
+
+<!ELEMENT Step ((conditions)?)*>
+<!ATTLIST Step 
+      implClass CDATA #IMPLIED
+      context IDREF #IMPLIED
+      id ID #REQUIRED
+>
+
+<!ELEMENT labs.JournalHostRequestStep ((conditions)?)*>
+<!ATTLIST labs.JournalHostRequestStep 
+      implClass CDATA #IMPLIED
+      context IDREF #IMPLIED
+      id CDATA #REQUIRED
+>
+
+<!ELEMENT labs.SendHostStep ((conditions)?)*>
+<!ATTLIST labs.SendHostStep 
+      implClass CDATA #IMPLIED
+      context IDREF #IMPLIED
+      id CDATA #REQUIRED
+>
+
+<!ELEMENT labs.JournalHostReplyStep ((conditions)?)*>
+<!ATTLIST labs.JournalHostReplyStep 
+      implClass CDATA #IMPLIED
+      context IDREF #IMPLIED
+      id CDATA #REQUIRED
+>
+
+<!ELEMENT syncProcState ((entryActions)?,(transitions)?,(refFormat)*)*>
+<!ATTLIST syncProcState 
+      implClass CDATA #IMPLIED
+      type (final |initial |operation |processor ) #IMPLIED
+      typeIdInfo CDATA #IMPLIED
+      id ID #REQUIRED
+>
+
+<!ELEMENT htmlState ((entryActions)?,(transitions)?,(refFormat)*)*>
+<!ATTLIST htmlState 
+      finalPage CDATA #IMPLIED
+      implClass CDATA #IMPLIED
+      type (final |initial |operation |page |processor |subFlow ) #IMPLIED
+      outputMapFmt IDREF #IMPLIED
+      typeIdInfo CDATA #IMPLIED
+      conseq (false |true ) #IMPLIED
+      inputMapFmt IDREF #IMPLIED
+      id CDATA #REQUIRED
+>
+
+<!ELEMENT htmlProcessor ((state | operationState | syncProcState | htmlState)*,(iniValue)*,(refFormat)*)*>
+<!ATTLIST htmlProcessor 
+      implClass CDATA #IMPLIED
+      xValidation CDATA #IMPLIED
+      processorTimeout CDATA #IMPLIED
+      context CDATA #REQUIRED
+      refFlow IDREF #IMPLIED
+      conseqErrorPage CDATA #IMPLIED
+      id ID #REQUIRED
+      cleanEventsQueueOnSwitch (false |true ) "true"
+> 
+
+<!ELEMENT openView ((conditions)?)*>
+<!ATTLIST openView 
+      navigation (child |none |peer ) "none"
+      implClass CDATA #IMPLIED
+      context IDREF #IMPLIED
+      linkContextTo (activeView |parentActiveView |processor ) "processor"
+      viewName CDATA #REQUIRED
+      inputMapFmt IDREF #IMPLIED
+      viewSource CDATA #IMPLIED
+      id ID #REQUIRED
+ >
+
+<!ELEMENT entryActions ((openView | closeView | Step | executeSubflowAct | executeOperationAct | labs.JournalHostRequestStep | labs.SendHostStep | labs.JournalHostReplyStep)*)*>
+
+<!ELEMENT conditions ((condition)*)*>
+
+<!ELEMENT transition ((actions)?)*>
+<!ATTLIST transition 
+       implClass CDATA #IMPLIED
+       targetState CDATA #IMPLIED
+       propagateEvent (false |true ) "false"
+       id CDATA #REQUIRED
+       ignoreEntryActions (false |true ) "false"
+>
+
+<!ELEMENT executeSubflowAct ((conditions)?,(refFormat)*)*>
+<!ATTLIST executeSubflowAct 
+       implClass CDATA #IMPLIED
+       context IDREF #IMPLIED
+       processor IDREF #REQUIRED
+       outputMapFmt CDATA #IMPLIED
+       inputMapFmt CDATA #IMPLIED
+       id ID #REQUIRED
+>
+
+<!ELEMENT executeOperationAct ((conditions)?,(refFormat)*)*>
+<!ATTLIST executeOperationAct 
+       operationName IDREF #REQUIRED
+       implClass CDATA #IMPLIED
+       context IDREF #IMPLIED
+       outputMapFmt IDREF #IMPLIED
+       refreshActiveView (false |true ) "false"
+       linkContextTo (activeView |parentActiveView |processor ) "processor"
+       inputMapFmt IDREF #IMPLIED
+       id ID #REQUIRED
+>
+

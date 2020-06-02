@@ -1,0 +1,239 @@
+*1* 17:34:47 KRprocinit.cc:: Descriptors limit soft:<1024> Hard:<1024>
+*1* 17:34:47 KRDDebug.cc:247: Multi Threaded Process identified 
+*4* 17:34:48 ERHSessionFactory.cc:827: KR loop started...
+*1* 17:34:49 ERHParams.cc:395: Environment variables values:
+*1* 17:34:49 ERHParams.cc:397: ENBARH_SIMULATOR = 0
+*1* 17:34:49 ERHParams.cc:407: ENBARH_NUMBER_OF_SESSIONS = 4
+*1* 17:34:49 ERHParams.cc:408: ENBARH_LSNSESSION_TIMEOUT = 600
+*1* 17:34:49 ERHParams.cc:409: ENBARH_MAX_ITERATORS = 200
+*1* 17:34:49 ERHParams.cc:410: ENBARH_HEALTHCHECK_INTERVAL = 60
+*1* 17:34:49 ERHParams.cc:412: ENBARH_ITERATORS_TIMEOUT = 3600
+*1* 17:34:49 ERHParams.cc:415: ENBARH_NAMESERV_PARAMS = N755:2810:1
+*1* 17:34:49 ERHParams.cc:131: ----- Binding map content: -----
+*1* 17:34:49 ERHParams.cc:133: N755:2810:1	-	6eea10 N755:2810:1
+*1* 17:34:49 ERHParams.cc:134: --------------------------------
+*1* 17:34:49 ERHParams.cc:420: IOR = /var/opt/iona/orbixE2A/IOR
+*1* 17:34:49 ERHParams.cc:425: ENBARH_EMS_TYPE = EMS_XDM_1
+*1* 17:34:49 ERHParams.cc:427: ENBARH_MAX_EVENTS = 10000
+*1* 17:34:49 ERHParams.cc:428: ENBARH_DISCARD_POLICY = FifoOrder
+*1* 17:34:49 ERHParams.cc:430: ENBAEF_BATCH_SIZE = 100
+*1* 17:34:49 ERHParams.cc:431: ENBAEF_Q_SIZE = 10000
+*1* 17:34:49 ERHParams.cc:432: ENBAEF_Q_TIMEOUT = 5
+*1* 17:34:49 ERHParams.cc:434: ENBAEF_MTNM_MAX_RETRIES = 86400
+*1* 17:34:49 ERHParams.cc:435: ENBAEF_MTNM_RETRY_TIMEOUT = 1
+*1* 17:34:49 ERHParams.cc:436: ENBAEF_MTNM_RETRY_MULTIPLIER = 1
+*1* 17:34:49 ERHParams.cc:437: ENBAEF_MTNM_MAX_RETRY_TIMEOUT = 60
+*1* 17:34:49 ERHParams.cc:438: ENBAEF_MTNM_MAX_Q_LEN = 10000
+*1* 17:34:49 ERHParams.cc:440: ENBAEF_D2_MAX_RETRIES = 600
+*1* 17:34:49 ERHParams.cc:441: ENBAEF_D2_RETRY_TIMEOUT = 1
+*1* 17:34:49 ERHParams.cc:442: ENBAEF_D2_RETRY_MULTIPLIER = 1
+*1* 17:34:49 ERHParams.cc:443: ENBAEF_D2_MAX_RETRY_TIMEOUT = 60
+*1* 17:34:49 ERHParams.cc:445: ENBA_REQUEST_TIMEOUT = 1800
+*1* 17:34:49 ERHParams.cc:446: ENBAEF_EVENTS_TIMEOUT_SUPPORTED = 1
+*1* 17:34:49 ERHParams.cc:447: ENBAEF_DIFF_EVENT_DROPPING = 1
+*1* 17:34:49 ERHSessionFactory.cc:202: Local object's IOR: IOR:000000000000003f49444c3a6d746e6d2e746d666f72756d2e6f72672f656d7353657373696f6e466163746f72792f456d7353657373696f6e466163746f72795f493a312e300000000000010000000000000092000102000000000a31302e31392e392e34000c03000000453a3e023231116f726269784532412e373566303730306415656e626172685f322e305f454d535f58444d5f310017456d7353657373696f6e466163746f72795f495f322e30000000000000020000000100000018000000000001000100000000000101040000000100010109000000060000000600000000002c
+*1* 17:34:49 ERHSessionFactory.cc:580: --- Registering EmsSessionFactory in remote NamingServices ---
+*1* 17:34:49 ERHSessionFactory.cc:591: registerFactory(): Binding in NMS #0 - N755:2810:1...
+*1* 17:34:49 ERHSessionFactory.cc:245: NameService IOR file path: /var/opt/iona/orbixE2A/IOR/N755_2810.ior
+*1* 17:34:49 ERHSessionFactory.cc:254: NameService IOR from file: IOR:000000000000003149444c3a636f6d2e69626d2f57736e4f7074696d697a65644e616d696e672f4e616d696e67436f6e746578743a312e300000000000000001000000000000010000010200000000184e3735352e6465762e62616d612e65792e6d696c2e696c000afa0000000000654a4d4249000000124773e3aa37643062633737336533616166633334000000240000004149454a50010007736572766572311a57736e44697374436f734f626a65637441646170746572574c4d000000146c6f63616c686f73742f70657273697374656e74000000000000070000000100000014000000000501000100000000000101000000000049424d0a00000008000000001410000300000026000000020002000049424d040000000500050101020000000000001f0000000400000003000000200000000400000001000000250000000400000003
+*1* ERH-ERROR 0 Mon May  2 17:34:49 ERHSessionFactory.cc:334: retrieveNS() CORBA exception: IDL:omg.org/CORBA/CODESET_INCOMPATIBLE:1.0: minor = 0x49540100 (IT_Core:NEGOTIATION_FAILED), completion status = NO
+*1* 17:34:49 ERHSessionFactory.cc:597: registerFactory(): Can't connect to N755:2810:1 NamingService. Skipped...
+*1* 17:34:49 ERHSessionFactory.cc:628: --- End of registering EmsSessionFactory ---
+*1* 17:34:49 FCOInit.cc:: Entry...
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 108 and value 111
+*1* 17:34:49 envClass.cc:82: found entry 108with name ENM_MAX_XDM_NES
+*1* 17:34:49 envClass.cc:97: the data ENM_MAX_XDM_NESrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for ENM_MAX_XDM_NES from  to 111
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 107 and value 011
+*1* 17:34:49 envClass.cc:82: found entry 107with name ENM_MAX_PM_USERS
+*1* 17:34:49 envClass.cc:97: the data ENM_MAX_PM_USERSrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for ENM_MAX_PM_USERS from  to 011
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 129 and value 005
+*1* 17:34:49 envClass.cc:82: found entry 129with name ENM_MTNM_SESSION
+*1* 17:34:49 envClass.cc:97: the data ENM_MTNM_SESSIONrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for ENM_MTNM_SESSION from  to 005
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 137 and value 111
+*1* 17:34:49 envClass.cc:82: found entry 137with name EMS_EIS_MAX_NUM
+*1* 17:34:49 envClass.cc:97: the data EMS_EIS_MAX_NUMrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for EMS_EIS_MAX_NUM from  to 111
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 138 and value 111
+*1* 17:34:49 envClass.cc:82: found entry 138with name EMS_EIS_MAX_PORT_NUM
+*1* 17:34:49 envClass.cc:97: the data EMS_EIS_MAX_PORT_NUMrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for EMS_EIS_MAX_PORT_NUM from  to 111
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 153 and value 000
+*1* 17:34:49 envClass.cc:82: found entry 153with name EMS_MAX_HYBRID_XDM
+*1* 17:34:49 envClass.cc:86: changing data for EMS_MAX_HYBRID_XDM from  to 000
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 106 and value yes
+*1* 17:34:49 envClass.cc:82: found entry 106with name ENM_CURR_ALARM_EXPORT
+*1* 17:34:49 envClass.cc:97: the data ENM_CURR_ALARM_EXPORTrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for ENM_CURR_ALARM_EXPORT from  to yes
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 110 and value yes
+*1* 17:34:49 envClass.cc:82: found entry 110with name EMS_XML_ON
+*1* 17:34:49 envClass.cc:97: the data EMS_XML_ONrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for EMS_XML_ON from  to yes
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 141 and value Y
+*1* 17:34:49 envClass.cc:82: found entry 141with name EMS_AUTO_MANAGMENT
+*1* 17:34:49 envClass.cc:97: the data EMS_AUTO_MANAGMENTrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for EMS_AUTO_MANAGMENT from  to Y
+*1* 17:34:49 envClass.cc:63: ENVUpdateData Entry with id 141 and value Y
+*1* 17:34:49 envClass.cc:82: found entry 141with name EMS_AUTO_MANAGMENT
+*1* 17:34:49 envClass.cc:97: the data EMS_AUTO_MANAGMENTrequire passwd
+*1* 17:34:49 envClass.cc:103: changing data for EMS_AUTO_MANAGMENT from Y to Y
+*1* 17:34:49 ERHSessionsServer.cc:91: Number of Sessions from Licence = 5
+*1* 17:34:49 ENBAConfig.cc:80: 4 gateways established.
+*1* 17:34:49 ERHSessionFactory.cc:934: ***** Waiting for requests... *****
+*4* 17:35:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:35:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:35:52 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:36:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:36:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:36:56 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:37:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:37:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:38:00 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:38:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:38:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:39:05 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:39:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:39:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:40:09 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:40:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:40:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:41:13 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:41:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:41:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:42:17 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:42:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:42:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:43:22 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:43:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:43:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:44:26 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:44:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:44:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:45:30 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:45:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:45:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:46:35 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:46:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:46:49 ERHSessionsServer.cc:154: No clients to ping.
+*4* 17:47:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 17:47:39 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 17:47:49 ERHSessionsServer.cc:154: No clients to ping.
+*4* 17:48:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 17:48:43 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 17:48:49 ERHSessionsServer.cc:154: No clients to ping.
+*4* 17:49:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 17:49:48 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 17:49:49 ERHSessionsServer.cc:154: No clients to ping.
+*4* 17:50:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:50:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:50:52 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:51:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:51:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:51:56 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:52:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:52:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:53:01 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:53:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:53:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:54:05 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:54:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:54:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:55:09 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:55:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:55:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:56:14 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:56:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:56:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:57:18 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:57:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:57:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:58:22 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:58:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:58:49 ERHSessionsServer.cc:154: No clients to ping.
+*31* 17:59:27 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 17:59:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 17:59:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:00:31 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:00:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:00:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:01:35 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:01:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:01:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:02:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 18:02:40 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 18:02:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:03:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 18:03:44 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 18:03:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:04:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 18:04:48 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 18:04:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:05:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:05:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:05:53 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:06:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:06:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:06:57 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:07:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:07:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:08:01 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:08:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:08:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:09:06 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:09:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:09:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:10:10 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:10:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:10:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:11:14 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:11:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:11:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:12:19 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:12:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:12:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:13:23 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:13:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:13:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:14:27 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:14:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:14:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:15:31 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:15:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:15:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:16:36 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:16:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:16:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:17:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 18:17:40 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 18:17:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:18:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 18:18:44 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 18:18:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:19:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*31* 18:19:49 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*32* 18:19:50 ERHSessionsServer.cc:154: No clients to ping.
+*4* 18:20:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:20:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:20:53 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:21:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:21:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:21:57 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:22:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:22:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:23:02 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:23:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:23:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:24:06 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:24:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:24:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:25:10 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:25:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:25:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:26:15 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:26:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:26:50 ERHSessionsServer.cc:154: No clients to ping.
+*31* 18:27:19 ERHSessionsServer.cc:191: sessionsMonitor: Max=5, Free=5
+*4* 18:27:36 ENBACallback.cc:288: EF_setDBSignature() rejected - no LSN clients.
+*32* 18:27:50 ERHSessionsServer.cc:154: No clients to ping.

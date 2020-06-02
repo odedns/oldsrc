@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="appClientModule"/>
+    <classpathentry kind="var"
+        path="SERVERJDK_50_PLUGINDIR/jre/lib/rt.jar"
+        rootpath="SERVERJDK_SRCROOT" sourcepath="SERVERJDK_50_PLUGINDIR/src.jar"/>
+    <classpathentry kind="var" path="WAS_50_PLUGINDIR/lib/ivjejb35.jar"/>
+    <classpathentry kind="var" path="WAS_50_PLUGINDIR/lib/j2ee.jar"/>
+    <classpathentry kind="lib" path="D:/dev/lib/junit3.8.1/junit.jar"/>
+    <classpathentry kind="lib" path="D:/IBM/SQLLIB/java/db2jcc.jar"/>
+    <classpathentry kind="lib" path="D:/IBM/SQLLIB/java/db2java.zip"/>
+    <classpathentry kind="lib" path="D:/dev/lib/Jess61p4/jess.jar"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/wstools/eclipse/plugins/com.ibm.websphere.v5_5.0.2.1/implfactory.jar"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/runtimes/base_v5/lib/namingclient.jar"/>
+    <classpathentry kind="lib" path="C:/sqlserver/msutil.jar"/>
+    <classpathentry kind="lib" path="C:/sqlserver/mssqlserver.jar"/>
+    <classpathentry kind="lib" path="C:/sqlserver/msbase.jar"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/runtimes/base_v5/mqjms/Java/lib/com.ibm.mq.jar"/>
+    <classpathentry kind="src" path="/myejb"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/runtimes/base_v5/mqjms/Java/lib/com.ibm.mqbind.jar"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/runtimes/base_v5/mqjms/Java/lib/connector.jar"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/runtimes/base_v5/lib/messagingClient.jar"/>
+    <classpathentry kind="lib" path="C:/Program Files/IBM/WebSphere Studio/runtimes/base_v5/lib/messaging.jar"/>
+    <classpathentry kind="output" path="classes"/>
+</classpath>

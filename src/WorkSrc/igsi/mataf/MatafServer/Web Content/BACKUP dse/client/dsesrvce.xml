@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsesrvce.xml>
+	<!--DWGroupDef:client.Services-->
+	<!-- CLIENT SERVICE DEFs.=================================================== -->
+	<!--=========================================================================-->
+	<!-- Real client-server client service                                       -->
+	<!--=========================================================================-->
+	<CSClient id="realCSClient" />
+	<Monitor id="Monitor" layout="Vertical" />
+	<!--ApplicationTables id="appTablesService" classNameForTableAccess="myApplicationTablesAccessImplementation">
+		<table id="snif" inMemory="true">
+			<tableColumn id="snifCode" type="VARCHAR(3)" isKey="true" />
+			<tableColumn id="snifName" type="VARCHAR(20)" />
+		</table>
+	</ApplicationTables-->
+	<!--/DWGroupDef-->
+</dsesrvce.xml>

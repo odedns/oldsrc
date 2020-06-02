@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+<!-- DOCTYPE management SYSTEM "./dtd/am.dtd" -->
+
+<accessManager>
+
+	<action id="DEFAULT" defaultPolicies="CUSTOM">
+		<accessPolicy implementor="com.ibm.dse.dw.am.SameUserPolicy"/>
+		<accessPolicy implementor="com.ibm.dse.dw.am.UserInUsersGroupPolicy"/>
+		<accessPolicy implementor="com.ibm.dse.dw.am.UserInUsersGroupPolicy" params="PowerUsers"/>
+	</action>
+	
+	<action id="ALWAYS" defaultPolicies="CUSTOM">
+		<accessPolicy implementor="com.ibm.dse.dw.am.AlwaysPolicy"/>
+	</action>
+	
+	<action id="NEVER" defaultPolicies="CUSTOM">
+		<accessPolicy implementor="com.ibm.dse.dw.am.NeverPolicy"/>
+	</action>
+
+	<!-- GUI ACTIONS -->
+	
+	<!-- REPOSITORY EXPLORER -->
+
+	<action id="[GUI_RepositoryExplorer] user_can_remove_groups" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_remove_instances" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_remove_entities" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_remove_domains" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_remove_projects" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_remove_users" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_remove_users_groups" defaultPolicies="ALWAYS"/>
+
+	<action id="[GUI_RepositoryExplorer] user_can_add_groups_to_workspace" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_add_instances_to_workspace" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_add_entities_to_workspace" defaultPolicies="ALWAYS"/>	
+	<action id="[GUI_RepositoryExplorer] user_can_add_domains_to_workspace" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_add_projects_to_workspace" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_add_users_to_workspace" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_add_users_groups_to_workspace" defaultPolicies="ALWAYS"/>
+	
+	<action id="[GUI_RepositoryExplorer] user_can_export_to_repository_file" defaultPolicies="ALWAYS"/>
+	<action id="[GUI_RepositoryExplorer] user_can_import_a_repository_file" defaultPolicies="ALWAYS"/>
+					
+</accessManager>

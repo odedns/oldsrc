@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ======================================== -->
+	<!-- Java Data Types Declarations -->
+	<!-- ======================================== -->
+
+	<typeDefinition>
+
+		<type name="object" class="java.lang.Object"></type>
+
+		<!-- Set type -->
+		<type name="set" class="java.util.Set"/>
+
+		<!-- Generic Number type -->
+		<type name="number" class="java.lang.Number"/>
+
+		<!-- Generic String array type -->
+		<type name="stringArray" class="[Ljava.lang.String;"/>
+
+		<!-- Generic Object array type -->
+		<type name="objectArray" class="[Ljava.lang.Object;"/>
+
+	</typeDefinition>
+
+</root>

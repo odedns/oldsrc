@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="WSBeanBinding"
+    targetNamespace="http://webservices.wsdl/WSBeanBinding/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:interface="http://webservices.wsdl/WSBean/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.wsdl/WSBeanBinding/">
+    <import location="WSBean.wsdl" namespace="http://webservices.wsdl/WSBean/"/>
+    <binding name="WSBeanBinding" type="interface:WSBean">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getData">
+            <soap:operation soapAction="" style="rpc"/>
+            <input name="getDataRequest">
+                <soap:body
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                    namespace="http://tempuri.org/webservices.WSBean" use="encoded"/>
+            </input>
+            <output name="getDataResponse">
+                <soap:body
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                    namespace="http://tempuri.org/webservices.WSBean" use="encoded"/>
+            </output>
+        </operation>
+        <operation name="setData">
+            <soap:operation soapAction="" style="rpc"/>
+            <input name="setDataRequest">
+                <soap:body
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                    namespace="http://tempuri.org/webservices.WSBean"
+                    parts="data" use="encoded"/>
+            </input>
+            <output name="setDataResponse">
+                <soap:body
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                    namespace="http://tempuri.org/webservices.WSBean" use="encoded"/>
+            </output>
+        </operation>
+    </binding>
+</definitions>

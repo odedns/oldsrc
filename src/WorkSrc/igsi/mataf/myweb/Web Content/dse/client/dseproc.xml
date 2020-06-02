@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dseproc.xml>
+     <!--DWGroupDef:DSE Sample application.Server.Processor-->
+     <flow id="genFlow">
+          <state id="initial" type="initial">
+               <entryActions>
+                    <Step  id="dummyJournalAct" implClass="com.ibm.dse.samples.appl.JournalHostRequestDataStep"/>
+               </entryActions>
+               <transitions>
+                    <transition id="dummyJournalAct.ok" targetState="state2"/>
+                    <transition id="dummyJournalAct.error" targetState="finalNotOk"/>
+               </transitions>
+          </state>
+          <state id="state2">
+               <entryActions>
+                    <Step implClass="com.ibm.dse.samples.appl.SendHostStep" id="dummyHostAct"/>
+               </entryActions>
+               <transitions>
+                    <transition id="dummyHostAct.ok" targetState="state3"/>
+                    <transition id="dummyHostAct.error" targetState="finalNotOk"/>
+               </transitions>
+          </state>
+          <state id="state3">
+               <entryActions>
+                    <Step implClass="com.ibm.dse.samples.appl.JournalHostReplyDataStep" id="dummyJournalAct"/>
+               </entryActions>
+               <transitions>
+                    <transition id="dummyJournalAct.ok" targetState="finalOk"/>
+                    <transition id="dummyJournalAct.error" targetState="finalNotOk"/>
+               </transitions>
+          </state>
+          <state id="finalOk" type="final" typeIdInfo="ok"/>
+          <state id="finalNotOk" type="final" typeIdInfo="error"/>
+     </flow>
+     <opProcessor id="genericFlow" refFlow="genFlow"/>
+     <operationProcessor context="withdrawalServerCtx"
+          id="withdrawalServerOp"
+          implClass="com.ibm.dse.samples.appl.DSEServerOperationProcessor" refFlow="genFlow">
+          <refFormat name="csReplyFormat" refId="withdrawalRepFmt"/>
+          <refFormat name="hostSendFormat" refId="withdrawalSendFmt"/>
+          <refFormat name="hostReceiveFormat" refId="withdrawalRecFmt"/>
+     </operationProcessor>
+     <operationProcessor context="depositServerCtx" id="depositServerOp"
+          implClass="com.ibm.dse.samples.appl.DSEServerOperationProcessor" refFlow="genFlow">
+          <refFormat name="csReplyFormat" refId="depositRepFmt"/>
+          <refFormat name="hostSendFormat" refId="depositSendFmt"/>
+          <refFormat name="hostReceiveFormat" refId="depositRecFmt"/>
+     </operationProcessor>
+     <operationProcessor context="customerSearchServerCtx"
+          id="customerSearchServerOp"
+          implClass="com.ibm.dse.samples.appl.DSEServerOperationProcessor" refFlow="genFlow">
+          <refFormat name="csReplyFormat" refId="customerSearchRepFmt"/>
+          <refFormat name="hostSendFormat" refId="customerSearchSendFmt"/>
+          <refFormat name="hostReceiveFormat" refId="customerSearchRecFmt"/>
+     </operationProcessor>
+     <operationProcessor context="accountStatementServerCtx"
+          id="accountStatementServerOp"
+          implClass="com.ibm.dse.samples.appl.DSEServerOperationProcessor" refFlow="genFlow">
+          <refFormat name="csReplyFormat" refId="accountStatementRepFmt"/>
+          <refFormat name="hostSendFormat" refId="accountStatementSendFmt"/>
+          <refFormat name="hostReceiveFormat" refId="accountStatementRecFmt"/>
+     </operationProcessor>
+     <htmlProcessor context="htmlPresentationCtx" id="sampleHtmlFlow">
+          <htmlState id="initial" type="initial">
+               <transitions>
+                    <htmlTransition id="initial.start" targetState="customerSearchPage"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="customerSearchPage" type="page" typeIdInfo="customerSearch.jsp">
+               <transitions>
+                    <htmlTransition id="customerSearchPage.ok" targetState="customerSearchOpState"/>
+                    <!-- htmlTransition id="customerSearchPage.ok" targetState="customerSearchOpState" skipValidation="false"/ -->
+                    <htmlTransition id="customerSearchPage.cancel" targetState="finalNotOk"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="withdrawalOpState" type="operation">
+               <entryActions>
+                    <executeSubflowAct context="htmlSessionCtx"
+                         id="execSubflowAct"
+                         inputMapFmt="withdrawalInputMapFmt"
+                         outputMapFmt="withdrawalOutputMapFmt" processor="withdrawalServerOp"/>
+               </entryActions>
+               <transitions>
+                    <htmlTransition id="execSubflowAct.ok"
+                         skipValidation="false" targetState="transactionPage"/>
+                    <htmlTransition id="execSubflowAct.error"
+                         skipValidation="false" targetState="userErrorInfoPage"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="accountStatementOpState" type="operation">
+               <entryActions>
+                    <executeSubflowAct context="htmlSessionCtx"
+                         id="execSubflowAct"
+                         inputMapFmt="accountStatementInputMapFmt"
+                         outputMapFmt="accountStatementOutputMapFmt" processor="accountStatementServerOp"/>
+               </entryActions>
+               <transitions>
+                    <htmlTransition id="execSubflowAct.ok" targetState="accountStatementPage"/>
+                    <!-- htmlTransition id="execSubflowAct.ok" targetState="accountStatementPage" skipValidation="false"/ -->
+                    <htmlTransition id="execSubflowAct.error" targetState="userErrorInfoPage"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="accountStatementPage" type="page" typeIdInfo="accountStatement.jsp">
+               <transitions>
+                    <htmlTransition id="accountStatementPage.ok" targetState="customerSearchOpState"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="userErrorInfoPage" type="operation" typeIdInfo="error.jsp">
+               <transitions>
+                    <htmlTransition id="userErrorInfoPage.ok" targetState="finalNotOk"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="finalNotOk" type="final" typeIdInfo="notOk"/>
+          <htmlState id="finalOk" type="final" typeIdInfo="ok"/>
+          <htmlState id="customerSearchOpState" type="operation">
+               <entryActions>
+                    <executeSubflowAct id="execSubflowAct"
+                         outputMapFmt="customerSearchOutputMapFmt" processor="customerSearchServerOp"/>
+               </entryActions>
+               <transitions>
+                    <htmlTransition id="execSubflowAct.ok" targetState="transactionPage"/>
+                    <!-- htmlTransition id="execSubflowAct.ok" targetState="transactionPage" skipValidation="false"/ -->
+                    <htmlTransition id="execSubflowAct.error" targetState="userErrorInfoPage"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="transactionPage" type="page" typeIdInfo="txn.jsp">
+               <transitions>
+                    <htmlTransition id="transactionPage.deposit" targetState="depositOpState"/>
+                    <!-- htmlTransition id="transactionPage.deposit" targetState="depositOpState" skipValidation="false"/ -->
+                    <htmlTransition id="transactionPage.withdrawal" targetState="withdrawalOpState"/>
+                    <!-- htmlTransition id="transactionPage.withdrawal" targetState="withdrawalOpState" skipValidation="false"/ -->
+                    <htmlTransition
+                         id="transactionPage.accountStatement" targetState="accountStatementOpState"/>
+                    <!-- htmlTransition id="transactionPage.accountStatement" targetState="accountStatementOpState" skipValidation="false"/ -->
+                    <htmlTransition id="transactionPage.close" targetState="finalOk"/>
+                    <!-- htmlTransition id="transactionPage.close" targetState="finalOk" skipValidation="false"/ -->
+                    <htmlTransition id="endSessionServerOp.ok" targetState="finalOk"/>
+                    <!-- htmlTransition id="endSessionServerOp.ok" targetState="finalOk" skipValidation="false"/ -->
+                    <htmlTransition id="endSessionServerOp.error" targetState="userErrorInfoPage"/>
+               </transitions>
+          </htmlState>
+          <htmlState id="depositOpState" type="operation">
+               <entryActions>
+                    <executeSubflowAct context="htmlSessionCtx"
+                         id="execSubflowAct"
+                         inputMapFmt="depositInputMapFmt"
+                         outputMapFmt="depositOutputMapFmt" processor="depositServerOp"/>
+               </entryActions>
+               <transitions>
+                    <htmlTransition id="execSubflowAct.ok"
+                         skipValidation="false" targetState="transactionPage"/>
+                    <htmlTransition id="execSubflowAct.error"
+                         skipValidation="false" targetState="userErrorInfoPage"/>
+               </transitions>
+          </htmlState>
+     </htmlProcessor>
+     <!--/DWGroupDef-->
+</dseproc.xml>

@@ -1,0 +1,55 @@
+#ifndef _OMG_CONV_FRAME_IDL_
+#define _OMG_CONV_FRAME_IDL_
+
+//
+//	Copyright (c) 1999 IONA Technologies PLC. All Rights Reserved.
+//
+//   THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF IONA Technologies PLC
+//	    The copyright notice above does not evidence any
+//	    actual or intended publication of such source code.
+//
+
+#pragma IT_SystemSpecification
+
+#include <omg/orb.idl>
+
+#pragma IT_BeginCBESpecific Cplusplus					"@@\
+@switch -xProxies -xDispatch"
+
+#pragma IT_BeginCBESpecific AllJava					"@@\
+@module CONV_FRAME=org.omg"
+
+#pragma prefix "omg.org"
+
+module CONV_FRAME
+{
+    typedef unsigned long       CodeSetId;
+
+    //typedef sequence<CodeSetId> CodeSetIdSeq;
+    typedef CORBA::ULongSeq       CodeSetIdSeq;
+
+    // TAG_CODE_SETS component
+    //
+    struct CodeSetComponent 
+    {
+        CodeSetId     native_code_set;
+        CodeSetIdSeq  conversion_code_sets;
+    };
+    struct CodeSetComponentInfo 
+    {
+        CodeSetComponent ForCharData;
+        CodeSetComponent ForWcharData;
+    };
+
+    // Codeset service information, identified by 
+    // IOP::ServiceID CodeSets. This is used in service contexts
+    // to identify transmission codesets.
+    //
+    struct CodeSetContext 
+    {
+        CodeSetId char_data;
+        CodeSetId wchar_data;
+    };
+};
+
+#endif  /*!_OMG_CONV_FRAME_IDL_*/

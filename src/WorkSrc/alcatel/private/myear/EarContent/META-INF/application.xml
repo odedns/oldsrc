@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application id="Application_ID" version="1.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application_1_4.xsd">
+	<display-name>
+	myear</display-name>
+	<module id="WebModule_1161874160585">
+		<web>
+			<web-uri>myweb.war</web-uri>
+			<context-root>myweb</context-root>
+		</web>
+	</module>
+	<module id="EjbModule_1167816880868">
+		<ejb>myejb3.jar</ejb>
+	</module>
+	<module id="WebModule_1170144232568">
+		<web>
+			<web-uri>facesWeb.war</web-uri>
+			<context-root>facesWeb</context-root>
+		</web>
+	</module>
+</application>

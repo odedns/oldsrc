@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="WSBean"
+    targetNamespace="http://webservices.wsdl/WSBean/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:tns="http://webservices.wsdl/WSBean/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <message name="getDataRequest"/>
+    <message name="getDataResponse">
+        <part name="result" type="xsd:string"/>
+    </message>
+    <message name="setDataRequest">
+        <part name="data" type="xsd:string"/>
+    </message>
+    <message name="setDataResponse"/>
+    <portType name="WSBean">
+        <operation name="getData">
+            <input message="tns:getDataRequest" name="getDataRequest"/>
+            <output message="tns:getDataResponse" name="getDataResponse"/>
+        </operation>
+        <operation name="setData" parameterOrder="data">
+            <input message="tns:setDataRequest" name="setDataRequest"/>
+            <output message="tns:setDataResponse" name="setDataResponse"/>
+        </operation>
+    </portType>
+</definitions>

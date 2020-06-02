@@ -1,0 +1,300 @@
+
+Ultimate NFL Coaches Club Football       Team Information               Page  1
+                       Copyright 1994 Microprose Software
+
+
+Team Info:
+
+Team City: Washington
+Team Name: Redskins
+ Playbook: ODED00.PBK
+  Uniform: Redskins (16)
+     Year: 1995
+
+
+      Off Pnlty ----------------------(50)---------------------- Off Pnlty
+      Def Pnlty -------------------(43)------------------------- Def Pnlty
+       Kick Ret -----------------------(52)--------------------- Kick Ret
+       Punt Ret -----------------(39)--------------------------- Punt Ret
+     Punt Block -----------------------(53)--------------------- Punt Block
+     Kick Block --------------------------(59)------------------ Kick Block
+       Punt Def --------------------(45)------------------------ Punt Def
+       Kick Def --------------------(47)------------------------ Kick Def
+
+
+Coach Info:
+
+Coach's Name: Norv Turner
+
+            Run -------------------(43)------------------------- Pass
+       Safe Off --------------------(45)------------------------ Daring Off
+   Man Coverage --------------------------(60)------------------ Zone Coverage
+       Safe Def --------------------(47)------------------------ Blitz Def
+            3-4 --------------------------------(74)------------ 4-3
+       Fullback ---------------------------(61)----------------- Halfback
+   2 Tight Ends -----------------------(52)--------------------- 4 Wide Rcvrs
+   Short Passes ------------------(41)-------------------------- Deep Passes
+
+Ultimate NFL Coaches Club Football       Team Information               Page  2
+                       Copyright 1994 Microprose Software
+
+
+Roster Data:
+
+Position: Center
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Unger,Hubert                       52 290  75  85   87   87   46    59    75  83
+                                   20  20  20  20   87   87   20    20    20
+                                  Snap:23 
+Vinas,Mark                         61 300  75  84   82   82   48    66    75  75
+                                   20  20  20  20   82   85   20    20    20
+                                  Snap:20 
+
+Position: Guard
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Davidson,Dustin                    72 335  76  85   91   90   90    53    82  82
+                                   20  20  20  20   89   87   20    20    20
+                                  Snap:20 
+Brudin,Benjammin                   77 295  76  90   92   89   45    65    83  83
+                                   35  20  20  20   91   92   35    20    35
+                                  Snap:35 
+Darden,Mark                        72 335  76  84   90   91   90    96    82  82
+                                   20  20  20  20   84   84   20    20    20
+                                  Snap:26 
+Foell,Larry                        69 288  75  91   93   91   42    63    83  81
+                                   85  20  20  35   92   91   35    20    20
+                                  Snap:29 
+
+Position: Tackle
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Tromberg,Wade                      71 335  79  89   87   85   45    79    82  85
+                                   35  20  20  20   90   88   35    20    35
+                                  Snap:29 
+Hunt,John                          78 284  76  84   82   88   40    76    79  78
+                                   35  20  20  20   83   85   35    20    35
+                                  Snap:26 
+Gregory,Harvey                     64 295  77  89   85   87   85    52    78  78
+                                   20  20  20  20   87   89   20    20    20
+                                  Snap:23 
+Perleoni,Franklin                  75 285  77  80   80   80   80    50    75  75
+                                   20  20  20  20   85   85   20    20    20
+                                  Snap:20 
+
+Position: Tight End
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Morrison,Chiante                   88 250  76  86   92   91   50    69    87  84
+                                   86  80  80  30   80   80   30    20    20
+                                  Rts:88 Tyds:91 
+
+Ultimate NFL Coaches Club Football       Team Information               Page  3
+                       Copyright 1994 Microprose Software
+
+
+Brady,Kyle                         81 260  78  94   91   92   53    99    87  86
+                                   96  85  75  40   76   75   40    50    50
+                                  Rts:94 Tyds:77 
+Knabe,Amin                         49 240  74  82   84   84   47    53    84  82
+                                   86  80  80  20   80   80   20    20    20
+                                  Rts:84 Tyds:84 
+
+Position: Qtrback
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Vlk,Andy                            8 205  74  80   86   80   47    74    85  87
+                                   85  85  75  86   20   20   20    20    20
+                                  Pres:92 RCvr:85 RolR:85 RolL:82 
+Walker,Derrick                     14 210  76  85   91   90   41    56    84  85
+                                   90  80  70  91   20   20   20    20    20
+                                  Pres:89 RCvr:85 RolR:84 RolL:76 
+Bishop,Anthony                     15 205  74  85   89   85   40    76    85  87
+                                   85  85  45  89   20   20   20    20    20
+                                  Pres:97 RCvr:93 RolR:90 RolL:76 
+
+Position: Runningback
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Fiero,Mitch                        23 213  72  80   80   80   45    52    89  89
+                                   91  90  83  20   73   70   20    20    20
+                                  Rts:84 Tyds:80 
+Francis,Edward                     27 212  73  82   75   76   42    83    88  88
+                                   85  88  81  20   82   80   20    20    20
+                                  Rts:88 Tyds:79 
+O'Keith,Clark                      34 198  70  88   90   90   44    50    83  85
+                                   76  83  95  20   84   82   20    20    20
+                                  Rts:90 Tyds:82 
+
+Position: Fullback
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Cohn,Dick                          29 230  75  78   80   80   46    69    87  83
+                                   87  95  80  20   82   82   20    20    20
+                                  Rts:80 Tyds:75 
+Renna,Gus                          45 225  70  82   82   82   46    96    86  85
+                                   91  82  79  20   87   83   20    20    20
+                                  Rts:90 Tyds:82 
+
+Position: Wide Rcrv
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Fuhr,Bart                          82 217  76  95   99   95   60    74    98  96
+                                   91  90  87  20   75   75   20    20    20
+                                  Rts:94 Tyds:87 
+
+Ultimate NFL Coaches Club Football       Team Information               Page  4
+                       Copyright 1994 Microprose Software
+
+
+Waugh,Teddy                        87 215  77  84   98   96   63    56    91  93
+                                   84  85  80  20   80   80   20    20    20
+                                  Rts:91 Tyds:73 
+Waltman,Dwayne                     80 193  72  91   99   98   56    58    92  96
+                                   92  90  90  20   85   85   20    20    20
+                                  Rts:92 Tyds:92 
+                                  Specialty: Kick Returner - 73
+Pyle,Dave                          84 185  72  88   91   90   34    95    97  96
+                                   86  80  75  20   75   75   20    20    20
+                                  Rts:90 Tyds:80 
+                                  Specialty: Kick Returner - 80
+
+Position: Punter
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Botsford,Aaron                      5 220  73  91   83   72   72    91    87  92
+                                   92  20  20  20   20   20   20    20    20
+                                  Klen:92 Acc:91 Htmn:96 Rels:95 
+
+Position: Kicker
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Ellis,Maxwell                      13 200  72  85   79   70   70    77    89  89
+                                   80  20  20  20   20   20   20    20    20
+                                  Klen:91 Acc:87 Rels:86 Onsd:91 
+
+Position: DefTack
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Boone,Sam                          93 290  74  85   91   91   52    68    81  81
+                                   85  20  20  20   20   20   91    87    86
+                                  MCvr:85 ZCvr:85 
+Waugh,Randall                      95 277  77  82   85   87   42    59    78  81
+                                   20  20  20  20   20   20   87    80    87
+                                  MCvr:20 ZCvr:20 
+Cost,Jake                          72 305  79  82   92   92   51    59    78  78
+                                   20  20  20  20   20   20   87    82    80
+                                  MCvr:20 ZCvr:20 
+Ryan,Patrick                       98 313  77  90   87   87   48    55    79  83
+                                   20  20  20  20   20   20   91    84    91
+                                  MCvr:20 ZCvr:20 
+
+Position: DefEnd
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Kim,Oliver                         96 275  79  93   94   95   49    70    83  83
+                                   60  20  20  20   20   20   95    87    93
+                                  MCvr:80 ZCvr:80 
+D'Addario,Fred                     94 265  78  83   89   87   57    59    77  82
+                                   20  20  20  20   20   20   87    84    84
+                                  MCvr:20 ZCvr:20 
+
+Ultimate NFL Coaches Club Football       Team Information               Page  5
+                       Copyright 1994 Microprose Software
+
+
+Crossley,Darryl                    96 256  75  83   84   80   47    62    77  79
+                                   60  20  20  20   20   20   84    79    83
+                                  MCvr:78 ZCvr:77 
+Hollier,Dwight                     50 257  74  95   87   92   49    97    85  86
+                                   85  85  50  50   50   50   96    91    94
+                                  MCvr:86 ZCvr:86 
+
+Position: Outside LB
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Valencia,Terry                     51 232  76  89   85   85   51    66    85  80
+                                   60  20  20  20   20   20   91    86    91
+                                  MCvr:85 ZCvr:86 Intcp:74 
+Jude,Victor                        55 252  77  90   84   84   49    71    84  80
+                                   72  20  20  20   20   20   93    91    90
+                                  MCvr:89 ZCvr:87 Intcp:67 
+Lefferts,Nathaniel                 58 230  74  85   87   87   87    64    80  84
+                                   60  20  20  20   20   20   85    89    87
+                                  MCvr:84 ZCvr:84 Intcp:58 
+
+Position: Mid LB
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Kleiner,Gus                        57 240  71  84   80   85   40    53    82  77
+                                   60  20  20  20   20   20   82    84    86
+                                  MCvr:86 ZCvr:84 Intcp:63 
+Olrick,Walt                        56 240  74  99   85   85   55    83    86  85
+                                   92  20  20  20   20   20   99    99    99
+                                  MCvr:99 ZCvr:99 Intcp:95 
+Scott,Anthony                      52 255  76  80   80   80   80    56    78  78
+                                   20  20  20  20   20   20   85    80    80
+                                  MCvr:80 ZCvr:80 Intcp:20 
+
+Position: Corner Back
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Watson,Tremaine                    26 178  71  94   90   90   50    72    96  95
+                                   85  20  20  27   20   20   93    91    89
+                                  MCvr:93 ZCvr:96 Intcp:91 
+Turley,Terry                       25 178  71  91   90   90   43    53    94  95
+                                   85  20  20  20   20   20   90    82    85
+                                  MCvr:91 ZCvr:91 Intcp:87 
+Green,Darrell                      28 170  68  98   92   85   40    95    99  98
+                                   92  50  50  50   50   50   96    97    96
+                                  MCvr:99 ZCvr:99 Intcp:98 
+Hollis,Harrison                    48 185  72  86   85   85   52    58    91  90
+                                   65  20  20  20   20   20   84    80    79
+                                  MCvr:88 ZCvr:88 Intcp:74 
+De Santis,Aaron                    38 180  72  85   80   80   47    76    93  90
+                                   20  20  20  20   20   20   81    79    82
+                                  MCvr:82 ZCvr:86 Intcp:71 
+
+Ultimate NFL Coaches Club Football       Team Information               Page  6
+                       Copyright 1994 Microprose Software
+
+
+
+Position: Strong Safety
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Case,Glenn                         46 215  74  94   90   90   34    65    93  90
+                                   85  20  20  30   20   20   90    86    91
+                                  MCvr:92 ZCvr:99 Intcp:91 
+Wexler,Howard                      43 188  71  90   90   90   44    55    87  87
+                                   85  20  20  20   20   20   87    89    85
+                                  MCvr:92 ZCvr:92 Intcp:87 
+
+Position: Free Safety
+             Name                 Num Wgt  Ht Pos Athl  Fit  Inj   Exp   Spd Qck
+                                  Hds Fmb Rsh Pas BlkP BlkR Tack PsRsh FtBlk
+--------------------------------- --- --- --- --- ---- ---- ---- ----- ----- ---
+Dearth,Adrian                      36 185  74  84   80   85   53    59    90  90
+                                   70  20  20  20   20   20   86    79    73
+                                  MCvr:88 ZCvr:83 Intcp:80 
+Bielat,Gil                         41 210  73  87   90   90   46    61    91  90
+                                   85  20  20  20   20   20   85    88    85
+                                  MCvr:89 ZCvr:87 Intcp:74 
+

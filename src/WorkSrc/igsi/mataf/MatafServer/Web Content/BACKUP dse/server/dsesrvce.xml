@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsesrvce.xml>
+     <!--DWGroupDef:Server.Services-->
+     <CSServer id="realCSServer" inactivityClientTimeout="0" timeBetweenSessionCheck="600000"/>
+     <!--/DWGroupDef-->
+</dsesrvce.xml>

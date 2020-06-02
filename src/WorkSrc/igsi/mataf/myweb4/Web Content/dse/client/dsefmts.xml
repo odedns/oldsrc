@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsefmts.xml>
+     <!--DWGroupDef:DSE Sample application.Client.Formats-->
+     <!-- CLIENT FORMAT DEFs.    ================================================ -->
+     <!--=========================================================================-->
+     <!-- StarUp Operation Formats                                                -->
+     <!--=========================================================================-->
+     <fmtDef id="startupReqFmt">
+          <record>
+               <fString dataName="TID"/>
+               <delim delimChar="#"/>
+               <fString dataName="WKSContext"/>
+               <delim delimChar="#"/>
+               <fString dataName="WKSParentContext"/>
+               <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+
+ <!-- my cs formats -->
+	 <fmtDef id="myReqFmt">
+          <record>
+               <fString dataName="BranchId"/>
+          </record>
+     </fmtDef>
+	 <fmtDef id="myReplyFmt">
+          <record>
+               <fString dataName="BranchId"/>
+          </record>
+     </fmtDef>
+     
+     
+      <fmtDef id="genReqFmt">
+          <record>
+               <fString dataName="opName"/>
+                <delim delimChar="#"/>
+               <fString dataName="ctxName"/>
+                <delim delimChar="#"/>
+               <fString dataName="ctxData"/>
+               <compress/>
+                <delim delimChar="#"/>
+          </record>
+      </fmtDef>
+     
+	 <fmtDef id="genReplyFmt">
+          <record>
+           <fString dataName="opName"/>
+            <delim delimChar="#"/>
+            <fString dataName="ctxName"/>
+             <delim delimChar="#"/>
+             <fString dataName="ctxData"/>
+             <compress/>
+              <delim delimChar="#"/>
+          </record>
+     </fmtDef>
+
+     <!--======================================================================================-->
+     <!-- DO NOT MODIFY!! Event Manager Formats                                                -->
+     <!--======================================================================================-->
+     <fmtDef id="EventManagerCSFormat">
+          <record>
+               <fString dataName="operationType"/>
+               <delim delimChar="+"/>
+               <iCollF dataName="eventList">
+                    <refFmt refId="eventPair"/>
+               </iCollF>
+          </record>
+     </fmtDef>
+     <fmtDef id="eventPair">
+          <record dataName="eventPair">
+               <fString dataName="eventName"/>
+               <delim delimChar="+"/>
+               <fString dataName="notifierName"/>
+               <delim delimChar="+"/>
+          </record>
+     </fmtDef>
+     
+     <fmtDef id="applicationTablesRequestFormat">
+		  <fdXML kCollInsertedOnFormat="no" createKCollOnUnformat="no"/>
+	</fmtDef>
+	<fmtDef id="applicationTablesReplyFormat">
+		  <fdXML kCollInsertedOnFormat="no" createKCollOnUnformat="no"/>
+	</fmtDef>
+
+
+<!-- reftables format -->
+	 <fmtDef id="refTablesReqFmt">	 
+	  <fdXML kCollInsertedOnFormat="no" createKCollOnUnformat="no"/>
+     </fmtDef>
+	
+
+	<fmtDef id="refTablesReplyFmt">
+	  <fdXML kCollInsertedOnFormat="no" createKCollOnUnformat="no"/>
+	</fmtDef>
+     
+
+</dsefmts.xml>

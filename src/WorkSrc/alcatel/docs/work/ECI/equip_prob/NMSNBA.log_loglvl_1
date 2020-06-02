@@ -1,0 +1,380 @@
+==== ILSLog: Max Log File Size is 5000000
+      [6153:1    13/06/07 09:01:41 Preferences.cc:20] > Preferences get/put operations search order: AppIni->SysIni->VirtualIni.
+      [6153:1    13/06/07 09:01:41 Preferences.cc:58] > Applictaion's ini file '/opt/NMS/server/etc/NMSNBA.ini' was loaded successfully.
+      [6153:1    13/06/07 09:01:41 Preferences.cc:75] > System ini file '/opt/NMS/server/etc/NMS.ini' was loaded successfully.
+==== ILSLog: Redirect cout and cerr to this log file
+==== ILSLog: Debug Level is Low
+      [6153:1    13/06/07 09:01:49 AdminToolsSrv.cc:27] > Initializing the AdminTools Servant
+      [6153:1    13/06/07 09:01:49 COMDPOAFactory.cc:119] > PersistentSTPOA is is creating, name=NMSNBA_WS1PersistentSTPOA
+      [6153:1    13/06/07 09:01:51 AdminToolsSrv.cc:58] > AdminTools Servant successfully started
+      [6153:1    13/06/07 09:01:51 Initializer.cc:42] > 
+==============Init TLR Support Prototypes======
+      [6153:1    13/06/07 09:01:51 NmsFactorySupport.cc:15] > NmsObjectsFactory instance was created
+      [6153:1    13/06/07 09:01:51 Initializer.cc:44] > 
+==============Init Misc Prototypes======
+      [6153:1    13/06/07 09:01:51 Initializer.cc:46] > 
+==============Init Security Prototypes======
+      [6153:1    13/06/07 09:01:51 Initializer.cc:48] > 
+==============Init Resource Prototypes======
+      [6153:1    13/06/07 09:01:51 ResourceFactory.cc:30] > ResourceFactory instance was created
+      [6153:1    13/06/07 09:01:51 Initializer.cc:50] > 
+==============Init Event Prototypes======
+      [6153:1    13/06/07 09:01:51 Initializer.cc:52] > 
+==============Init Action Log Prototypes======
+      [6153:1    13/06/07 09:01:51 Initializer.cc:54] > 
+==============Init PMHistory Prototypes======
+      [6153:1    13/06/07 09:01:51 Initializer.cc:56] > 
+==============Init Finished======
+      [6153:1    13/06/07 09:01:55 DBSessionHandler.cc:558] > Session Handler has initialized 11 sessions in nms_db@dev190sun07
+      [6153:1    13/06/07 09:01:55 NotifServiceClientGenericMethod.cc:29] > NotifServiceClientGenericMethod created.
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:33] > ConsumerAPI::start starts...
+      [6153:1    13/06/07 09:01:55 COMDPOAFactory.cc:90] > TransientMTPOA is is creating, name=NMSNBA_WS1TransientMTPOA
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:107] > ConsumerAPI::createPoaForTriggerPullingConsumer is OK
+      [6153:1    13/06/07 09:01:55 INSConsumerAPI.cc:40] > Creating servant NotifTriggerPullingConsumer
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:72] > Connect with default Service
+      [6153:1    13/06/07 09:01:55 ConnectionContainer.cc:40] > New Connection is added, serviceId=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:124] > Try to connect to service=INS_WS1
+      [6153:1    13/06/07 09:01:55 ConsumerPullBatch.cc:9] > Constructor ConsumerPullBatch is OK
+      [6153:1    13/06/07 09:01:55 ConsumerPullBatch.cc:9] > Constructor ConsumerPullBatch is OK
+      [6153:62   13/06/07 09:01:55 ConsumerPullBatch.cc:68] > pullBatch thread begins for serviceId=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:143] > ClientProxy is created for INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:79] > startKeepAliveTimer begins for service=INS_WS1
+      [6153:63   13/06/07 09:01:55 ConsumerPullBatch.cc:68] > pullBatch thread begins for serviceId=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:110] > Timer is started. id=1 kaPeriod=60 serviceId=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:170] > Connection is OK for service=INS_WS1
+WARN :[6153:1    13/06/07 09:01:55 ConnectionContainer.cc:530] > Regular and Urgents filter lists are empty for service=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:246] > connectWithDefaultService is OK for service=INS_WS1
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:92] > ConsumerAPI::start returns OK
+      [6153:1    13/06/07 09:01:55 SupplierAPI.cc:11] > Constructor SupplierAPI is OK
+      [6153:1    13/06/07 09:01:55 INSSupplierAPI.cc:15] > Constructor INSSupplierAPI is OK
+      [6153:1    13/06/07 09:01:55 SupplierAPI.cc:29] > SupplierAPI::start starts...
+      [6153:1    13/06/07 09:01:55 SupplierAPI.cc:39] > Creating Thread Queue for Regulars...
+      [6153:1    13/06/07 09:01:55 NotifThreadQueueCB.cc:9] > Constructor NotifThreadQueueCB is OK
+      [6153:1    13/06/07 09:01:55 NotifRegularThreadQueueCB.cc:13] > Constructor NotifRegularThreadQueueCB is OK
+      [6153:1    13/06/07 09:01:55 SupplierAPI.cc:50] > Creating Thread Queue for Urgents...
+      [6153:1    13/06/07 09:01:55 NotifThreadQueueCB.cc:9] > Constructor NotifThreadQueueCB is OK
+      [6153:1    13/06/07 09:01:55 NotifUrgentThreadQueueCB.cc:10] > Constructor NotifUrgentThreadQueueCB is OK
+      [6153:1    13/06/07 09:01:55 ConnectionContainer.cc:40] > New Connection is added, serviceId=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:124] > Try to connect to service=INS_WS1
+      [6153:1    13/06/07 09:01:55 INSSupplierAPI.cc:45] > getPushConsumerProxy is done, applName=_Supplier_NMSNBA_WS1_16
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:143] > ClientProxy is created for INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:79] > startKeepAliveTimer begins for service=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:110] > Timer is started. id=2 kaPeriod=60 serviceId=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:170] > Connection is OK for service=INS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:246] > connectWithDefaultService is OK for service=INS_WS1
+      [6153:1    13/06/07 09:01:55 SupplierAPI.cc:65] > SupplierAPI::start returns OK
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:33] > ConsumerAPI::start starts...
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:107] > ConsumerAPI::createPoaForTriggerPullingConsumer is OK
+      [6153:1    13/06/07 09:01:55 AMSConsumerAPI.cc:40] > Creating servant AlarmTriggerPullingConsumer
+      [6153:1    13/06/07 09:01:55 ConsumerAPI.cc:72] > Connect with default Service
+      [6153:1    13/06/07 09:01:55 ConnectionContainer.cc:40] > New Connection is added, serviceId=AMS_WS1
+      [6153:1    13/06/07 09:01:55 NotifClientAPI.cc:124] > Try to connect to service=AMS_WS1
+      [6153:1    13/06/07 09:01:56 AMSConsumerAPI.cc:82] > getTriggerPullingSupplierProxy is OK, applName=_Consumer_NMSNBA_WS1_3 serviceId=AMS_WS1
+      [6153:1    13/06/07 09:01:56 ConsumerPullBatch.cc:9] > Constructor ConsumerPullBatch is OK
+      [6153:1    13/06/07 09:01:56 ConsumerPullBatch.cc:9] > Constructor ConsumerPullBatch is OK
+      [6153:70   13/06/07 09:01:56 ConsumerPullBatch.cc:68] > pullBatch thread begins for serviceId=AMS_WS1
+      [6153:1    13/06/07 09:01:56 NotifClientAPI.cc:143] > ClientProxy is created for AMS_WS1
+      [6153:1    13/06/07 09:01:56 NotifClientAPI.cc:79] > startKeepAliveTimer begins for service=AMS_WS1
+      [6153:71   13/06/07 09:01:56 ConsumerPullBatch.cc:68] > pullBatch thread begins for serviceId=AMS_WS1
+      [6153:1    13/06/07 09:01:56 NotifClientAPI.cc:110] > Timer is started. id=3 kaPeriod=60 serviceId=AMS_WS1
+      [6153:1    13/06/07 09:01:56 NotifClientAPI.cc:170] > Connection is OK for service=AMS_WS1
+WARN :[6153:1    13/06/07 09:01:56 ConnectionContainer.cc:530] > Regular and Urgents filter lists are empty for service=AMS_WS1
+      [6153:1    13/06/07 09:01:56 NotifClientAPI.cc:246] > connectWithDefaultService is OK for service=AMS_WS1
+      [6153:1    13/06/07 09:01:56 ConsumerAPI.cc:92] > ConsumerAPI::start returns OK
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/AdminToolsMgr.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/AdminToolsMgr.ManagerClass/MAIN.ManagerInstance
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/GenReqManager.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/GenReqManager.ManagerClass/GenReqManager_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/VpnSecurityManager.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/VpnSecurityManager.ManagerClass/MAIN.ManagerInstance
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/LicenseManager.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/LicenseManager.ManagerClass/MAIN.ManagerInstance
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/CurrentAlarm.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/CurrentAlarm.ManagerClass/CurrentAlarm_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:142] > CurrentAlarmProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/GCTManager.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/GCTManager.ManagerClass/GCTManager_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:151] > GCTManagerProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMPerform.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMPerform.ManagerClass/SBAMPerform_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:159] > SBAMPerformProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMManagedElement.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMManagedElement.ManagerClass/SBAMManagedElement_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:166] > SBAMManagedElementProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMMaintenance.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMMaintenance.ManagerClass/SBAMMaintenance_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:173] > SBAMMaintenanceProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TopologyManager.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TopologyManager.ManagerClass/TopologyManager_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:180] > TopologyManagerProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMProtect.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/SBAMProtect.ManagerClass/SBAMProtect_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:188] > SBAMProtectProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TrailInventoryManager.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TrailInventoryManager.ManagerClass/TrailInventoryManager_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:196] > TrailInventoryManagerProxy was initialized
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TrailNBAMgr.ManagerClass
+      [6153:1    13/06/07 09:01:56 COMDStartup.cc:379] > resolving manager: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TrailNBAMgr.ManagerClass/TrailNBAMgr_WS1.ManagerInstance
+      [6153:1    13/06/07 09:01:56 SNBAHandler.cc:204] > TrailNBAMgrProxy was initialized
+      [6153:1    13/06/07 09:01:56 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=1
+      [6153:22   13/06/07 09:01:56 ConnectionContainer.cc:442] > setFilter Regular is OK for service=INS_WS1 length=1
+      [6153:1    13/06/07 09:01:56 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=1
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:521] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 LicenseManagerProxy.cc:1076] > Sending request to: MAIN
+      [6153:1    13/06/07 09:01:56 CostOpUtil.cc:183] > 5348 days remains to cost options' expired date: 02/02/22
+      [6153:1    13/06/07 09:01:56 COMDProxyBase.cc:108] > Proxy already initialized 
+      [6153:1    13/06/07 09:01:56 NBARequestHandler.cc:20] > NBARequestHandler ctor
+      [6153:1    13/06/07 09:01:56 COMDProxyBase.cc:108] > Proxy already initialized 
+      [6153:1    13/06/07 09:01:56 OMPreferences.cc:79] > Section: "Db" Key: "LoadRetryMax" Value: 5
+      [6153:1    13/06/07 09:01:56 OMPreferences.cc:82] > Section: "Db" Key: "DeleteRetryMax" Value: 5
+      [6153:1    13/06/07 09:01:56 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=2
+      [6153:22   13/06/07 09:01:56 ConnectionContainer.cc:442] > setFilter Regular is OK for service=INS_WS1 length=2
+      [6153:1    13/06/07 09:01:56 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=2
+      [6153:1    13/06/07 09:01:56 SNBADbProxy.cc:438] > Registered callbackID = 2 is enabled.
+      [6153:1    13/06/07 09:01:56 SNBADbProxy.cc:449] > INSConsumerAPI started OK!
+      [6153:1    13/06/07 09:01:56 SNBAIMOMMapperUtil.cc:1600] > EmsDN: EMS~~ECI/LightSoft_1
+      [6153:1    13/06/07 09:01:56 DbLoadModelCreator.cc:19] > Created a new load model with autoincrement ID 21
+      [6153:1    13/06/07 09:01:56 DbLoadModelCreator.cc:19] > Created a new load model with autoincrement ID 22
+      [6153:1    13/06/07 09:01:56 DbLoadModelCreator.cc:19] > Created a new load model with autoincrement ID 23
+      [6153:1    13/06/07 09:01:56 DbLoadModelCreator.cc:19] > Created a new load model with autoincrement ID 24
+      [6153:1    13/06/07 09:01:56 DbLoadModelCreator.cc:19] > Created a new load model with autoincrement ID 25
+      [6153:1    13/06/07 09:01:56 SNBAIMOMMapperUtil.cc:1272] > Start initTpgLinkDNsTable()
+ERROR:[6153:1    13/06/07 09:01:57 TopologyManagerProxy.cc:6889] > Caught an unexpected CORBA SystemException: IDL:omg.org/CORBA/TRANSIENT:1.0: minor = 0x49540C00 (IT_POA_LOCATOR:SERVER_NOT_READY), completion status = NO
+      [6153:1    13/06/07 09:01:57 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TopologyManager.ManagerClass
+ERROR:[6153:1    13/06/07 09:01:58 TopologyManagerProxy.cc:6871] > getVirtualLinks() failed. Reason: All managers are busy/invalid! Try later.; AddInfo: 
+ERROR:[6153:1    13/06/07 09:01:58 SNBAIMOMMapperUtil.cc:1316] > TopologyManagerProxy::synGetVirtualLinks() failed for techType=SDH_LAYER
+ERROR:[6153:1    13/06/07 09:01:58 TopologyManagerProxy.cc:6889] > Caught an unexpected CORBA SystemException: IDL:omg.org/CORBA/TRANSIENT:1.0: minor = 0x49540C00 (IT_POA_LOCATOR:SERVER_NOT_READY), completion status = NO
+      [6153:1    13/06/07 09:01:58 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TopologyManager.ManagerClass
+ERROR:[6153:1    13/06/07 09:01:58 TopologyManagerProxy.cc:6871] > getVirtualLinks() failed. Reason: All managers are busy/invalid! Try later.; AddInfo: 
+ERROR:[6153:1    13/06/07 09:01:58 SNBAIMOMMapperUtil.cc:1316] > TopologyManagerProxy::synGetVirtualLinks() failed for techType=SONET_LAYER
+ERROR:[6153:1    13/06/07 09:01:59 TopologyManagerProxy.cc:6889] > Caught an unexpected CORBA SystemException: IDL:omg.org/CORBA/TRANSIENT:1.0: minor = 0x49540C00 (IT_POA_LOCATOR:SERVER_NOT_READY), completion status = NO
+      [6153:1    13/06/07 09:01:59 COMDStartup.cc:333] > resolving manager context: LightScape.Vendor/V_3.NMS_Version/Managers.Category/TopologyManager.ManagerClass
+ERROR:[6153:1    13/06/07 09:01:59 TopologyManagerProxy.cc:6871] > getVirtualLinks() failed. Reason: All managers are busy/invalid! Try later.; AddInfo: 
+ERROR:[6153:1    13/06/07 09:01:59 SNBAIMOMMapperUtil.cc:1316] > TopologyManagerProxy::synGetVirtualLinks() failed for techType=OTN_LAYER
+      [6153:1    13/06/07 09:02:00 SNBAIMOMMapperUtil.cc:1279] > Finish initTpgLinkDNsTable()
+      [6153:1    13/06/07 09:02:00 SNBAIMOMMapperUtil.cc:1560] > m_SNMSInstanceNumber = 1  m_NMSId = 1
+WARN :[6153:1    13/06/07 09:02:00 NotifApplFilter.cc:97] > setInternalEventType: type=0 is already existed
+WARN :[6153:1    13/06/07 09:02:00 NotifApplFilter.cc:97] > setInternalEventType: type=1 is already existed
+      [6153:1    13/06/07 09:02:00 NBAEventForwarder.cc:119] > NotifProducer was attached to NBAEventForwarder
+      [6153:1    13/06/07 09:02:00 SNBAHandler.cc:211] > Starting SNBAMgr...
+      [6153:1    13/06/07 09:02:00 COMDPOAFactory.cc:151] > PersistentMTPOA is is creating, name=NMSNBA_WS1PersistentMTPOA
+      [6153:1    13/06/07 09:02:01 COMDServantBase.cc:196] > SNBAMgr.SNBAMgr_WS1 was registered at the naming service
+      [6153:1    13/06/07 09:02:01 AdminToolsMgrProxy.cc:2725] > Sending request to: MAIN
+      [6153:1    13/06/07 09:02:01 SNBAHandler.cc:305] > SNBA is starting as the active process...
+      [6153:1    13/06/07 09:02:01 RHSessionFactory.cc:443] > Local object's IOR: IOR:000000000000003f49444c3a6d746e6d2e746d666f72756d2e6f72672f656d7353657373696f6e466163746f72792f456d7353657373696f6e466163746f72795f493a312e3000000000000100000000000000c6000102000000000c64657631393073756e30370013d30000000000513a3e0232311673616d706c652d646f6d61696e2e6c6f636174696f6e204c534e5f4e42415f325f305f4543493a4c69676874536f66745f315f5753310013456d7353657373696f6e466163746f72795f490000000000000400000014000000080000007f000113d449545f410000001a0000007f000100000000000c64657631393073756e30370013d4000000000000000000080000000049545f41000000060000000600000000003c
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:46] > --- Binding map content: ---
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:50] > N813:9100:1
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:50] > N815:9100:1
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:50] > hsn-hsn-01-190r:9200:1
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:50] > hsn-hsn-02-190r:9200:1
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:50] > hsn-hsn-02-190r:9900:1
+      [6153:1    13/06/07 09:02:01 RHNmsBindInfo.cc:52] > --- End of binding map ---
+      [6153:1    13/06/07 09:02:01 RHSessionFactory.cc:101] > Start binding EmsSessionFactory_I reference in 5 clients (NMSes)...
+      [6153:1    13/06/07 09:02:01 RHSessionFactory.cc:197] > Binding in 'N813:9100:1'
+      [6153:1    13/06/07 09:02:06 RHSessionFactory.cc:230] > 'N813:9100:1' was bound successfuly.
+      [6153:1    13/06/07 09:02:06 RHSessionFactory.cc:197] > Binding in 'N815:9100:1'
+ERROR:[6153:1    13/06/07 09:02:06 RHNmsBindInfo.cc:171] > getNSRootContext() failed to narrow NameService: IDL:omg.org/CORBA/TRANSIENT:1.0: minor = 0x495403D8 (IT_ATLI2_IP:CONNECTION_REFUSED), completion status = NO
+WARN:[6153:1    13/06/07 09:02:06 RHSessionFactory.cc:203] > bind(): Can't connect to 'N815:9100:1' NamingService.
+      [6153:1    13/06/07 09:02:06 RHSessionFactory.cc:197] > Binding in 'hsn-hsn-01-190r:9200:1'
+ERROR:[6153:1    13/06/07 09:02:06 RHNmsBindInfo.cc:248] > Error reading IOR file '/var/opt/iona/orbix63/IOR/hsn-hsn-01-190r_9200.ior'.
+WARN:[6153:1    13/06/07 09:02:06 RHSessionFactory.cc:203] > bind(): Can't connect to 'hsn-hsn-01-190r:9200:1' NamingService.
+      [6153:1    13/06/07 09:02:06 RHSessionFactory.cc:197] > Binding in 'hsn-hsn-02-190r:9200:1'
+ERROR:[6153:1    13/06/07 09:02:06 RHNmsBindInfo.cc:248] > Error reading IOR file '/var/opt/iona/orbix63/IOR/hsn-hsn-02-190r_9200.ior'.
+WARN:[6153:1    13/06/07 09:02:06 RHSessionFactory.cc:203] > bind(): Can't connect to 'hsn-hsn-02-190r:9200:1' NamingService.
+      [6153:1    13/06/07 09:02:06 RHSessionFactory.cc:197] > Binding in 'hsn-hsn-02-190r:9900:1'
+ERROR:[6153:1    13/06/07 09:02:07 RHNmsBindInfo.cc:171] > getNSRootContext() failed to narrow NameService: IDL:omg.org/CORBA/TRANSIENT:1.0: minor = 0x495403D8 (IT_ATLI2_IP:CONNECTION_REFUSED), completion status = NO
+WARN:[6153:1    13/06/07 09:02:07 RHSessionFactory.cc:203] > bind(): Can't connect to 'hsn-hsn-02-190r:9900:1' NamingService.
+      [6153:1    13/06/07 09:02:07 RHSessionFactory.cc:113] > Finished binding EmsSessionFactory_I reference.
+      [6153:1    13/06/07 09:02:07 RHSessionFactory.cc:70] > *** RH is waiting for requests... ***
+      [6153:1    13/06/07 09:02:07 NMSNBAMain.cc:39] > *** Active SNBA is ready ***
+      [6153:105  13/06/07 09:03:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=5
+      [6153:32   13/06/07 09:03:34 RHSessionFactory.cc:472] > A client tries to establish a session...
+      [6153:32   13/06/07 09:03:34 RHSessionsHandler.cc:202] > addSession() starts...
+      [6153:32   13/06/07 09:03:34 RHSessionCreator.cc:125] > RHGCSessionCreator ctor
+      [6153:32   13/06/07 09:03:34 SNBASecurityHandler.cc:53] > Checking permissions for 'hoshen3'...
+      [6153:32   13/06/07 09:03:34 VpnSecurityManagerProxy.cc:5787] > Sending request to: MAIN
+      [6153:32   13/06/07 09:03:35 RHSessionsHandler.cc:271] > GC session established.
+      [6153:31   13/06/07 09:03:39 RHSession.cc:399] > NMS (session 0) asks for manager: EMS
+      [6153:31   13/06/07 09:03:39 NBA_emsMgr_EMSMgr_I_Impl.cc:152] > Session's 0 'getAllTopLevelSubnetworks' begins...
+      [6153:31   13/06/07 09:03:39 SNBA_EMSMgrMediator.cc:56] >  ****** SNBA_EMSMgrMediator::getAllTopLevelSubnetworks start ****** 
+      [6153:31   13/06/07 09:03:39 SNBARequests.cc:49] > Start getAllTopLevelSubnetworks
+      [6153:31   13/06/07 09:03:39 SNBARequests.cc:53] > Finish getAllTopLevelSubnetworks
+      [6153:31   13/06/07 09:03:39 SNBA_EMSMgrMediator.cc:66] >  ****** SNBA_EMSMgrMediator::getAllTopLevelSubnetworks finish ****** 
+      [6153:31   13/06/07 09:03:39 RHSession.h:178] > 'getAllTopLevelSubnetworks' had added a new iterator to session 0. (Total = 1).
+      [6153:31   13/06/07 09:03:39 NBA_emsMgr_EMSMgr_I_Impl.cc:234] > Session's 0 'getAllTopLevelSubnetworks' finished.
+      [6153:32   13/06/07 09:03:39 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:44] > it#0 (session 0) next_n(how_many=100) starts...
+      [6153:32   13/06/07 09:03:39 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:73] > it#0 (session 0) next_n(): No more data. Releasing...
+      [6153:32   13/06/07 09:03:39 RHSession.cc:488] > Iterator removed from session 0. (Total = 0).
+      [6153:32   13/06/07 09:03:39 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:90] > it#0 (session 0) next_n() finished
+      [6153:31   13/06/07 09:03:40 RHGCSession.cc:37] > Session 0 getEventChannel() begins...
+      [6153:31   13/06/07 09:03:40 EFChannelContainer.cc:91] > EventChannel was created
+      [6153:22   13/06/07 09:03:40 EFENSNotifSupplier.cc:229] > EFENSNotifSupplier::run() begin
+      [6153:31   13/06/07 09:03:40 RHSessionsHandler.cc:388] > GC addConsumer (new = 1)
+      [6153:31   13/06/07 09:03:40 RHSessionsHandler.cc:394] > First consumer of its type - calling startSending()
+      [6153:31   13/06/07 09:03:40 EFENSNotifSupplier.cc:365] > EFENSNotifSupplier::setActive() begin
+      [6153:31   13/06/07 09:03:40 EFENSNotifSupplier.cc:389] > EFENSNotifSupplier::setActive() end
+      [6153:31   13/06/07 09:03:40 SNBAINSAndAMSCb.cc:9] > Ctor SNBAINSAndAMSCb::SNBAINSAndAMSCb()
+      [6153:31   13/06/07 09:03:40 SNBAINSAndAMSCb.cc:41] > Ctor SNBAINSCb::SNBAINSCb()
+      [6153:31   13/06/07 09:03:40 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=3
+      [6153:21   13/06/07 09:03:40 ConnectionContainer.cc:442] > setFilter Regular is OK for service=INS_WS1 length=3
+      [6153:31   13/06/07 09:03:40 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=3
+      [6153:31   13/06/07 09:03:40 SNBAINSAndAMSCb.cc:9] > Ctor SNBAINSAndAMSCb::SNBAINSAndAMSCb()
+      [6153:31   13/06/07 09:03:40 SNBAINSAndAMSCb.cc:82] > Ctor SNBAAMSCb::SNBAAMSCb() begins
+      [6153:31   13/06/07 09:03:40 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=1
+      [6153:21   13/06/07 09:03:40 ConnectionContainer.cc:442] > setFilter Regular is OK for service=AMS_WS1 length=1
+      [6153:31   13/06/07 09:03:40 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=1
+      [6153:31   13/06/07 09:03:40 RHGCSession.cc:63] > Session 0 returned a valid event channel.
+      [6153:129  13/06/07 09:03:41 SNBAINSAndAMSCb.cc:58] > Mapped list is empty
+      [6153:105  13/06/07 09:04:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:32   13/06/07 09:04:11 RHSession.cc:322] > Session 0 was ended by the NMS
+      [6153:32   13/06/07 09:04:11 RHSession.cc:498] > Removing all session's 0 iterators...
+      [6153:32   13/06/07 09:04:11 VpnSecurityManagerProxy.cc:5528] > Sending request to: MAIN
+      [6153:32   13/06/07 09:04:11 RHSessionsHandler.cc:431] > GC consumerRemoved (current = 0)
+      [6153:32   13/06/07 09:04:11 RHSessionsHandler.cc:437] > Last consumer of its type - calling stopSending()
+      [6153:32   13/06/07 09:04:11 EFENSNotifSupplier.cc:400] > EFENSNotifSupplier::setInactive() begin
+      [6153:32   13/06/07 09:04:11 EFENSNotifSupplier.cc:420] > EFENSNotifSupplier::setInactive() end
+      [6153:32   13/06/07 09:04:11 EFENSNotifSupplier.cc:99] > EFENSNotifSupplier::terminate() begin
+      [6153:32   13/06/07 09:04:11 EFENSNotifSupplier.cc:400] > EFENSNotifSupplier::setInactive() begin
+      [6153:32   13/06/07 09:04:11 EFENSNotifSupplier.cc:420] > EFENSNotifSupplier::setInactive() end
+      [6153:22   13/06/07 09:04:11 EFENSNotifSupplier.cc:242] > EFENSNotifSupplier::run() end
+      [6153:32   13/06/07 09:04:11 EFENSNotifSupplier.cc:141] > EFENSNotifSupplier::terminate() end
+      [6153:32   13/06/07 09:04:11 ClientApplCB.cc:12] > Destructor ClientApplCB is done, cbId=1
+      [6153:32   13/06/07 09:04:11 ClientApplCB.cc:12] > Destructor ClientApplCB is done, cbId=2
+      [6153:32   13/06/07 09:04:11 SNBAINSAndAMSCb.cc:46] > Dtor SNBAINSCb::~SNBAINSCb()
+      [6153:32   13/06/07 09:04:11 SNBAINSAndAMSCb.cc:14] > Dtor SNBAINSAndAMSCb::SNBAINSAndAMSCb()
+      [6153:32   13/06/07 09:04:11 ClientApplCB.cc:12] > Destructor ClientApplCB is done, cbId=3
+WARN :[6153:22   13/06/07 09:04:11 ConnectionContainer.cc:396] > Regular and Urgents filter lists are empty for service=INS_WS1
+      [6153:32   13/06/07 09:04:11 SNBAINSAndAMSCb.cc:87] > Dtor SNBAAMSCb::~SNBAAMSCb()
+      [6153:32   13/06/07 09:04:11 SNBAINSAndAMSCb.cc:14] > Dtor SNBAINSAndAMSCb::SNBAINSAndAMSCb()
+      [6153:32   13/06/07 09:04:11 ClientApplCB.cc:12] > Destructor ClientApplCB is done, cbId=1
+WARN :[6153:22   13/06/07 09:04:11 ConnectionContainer.cc:396] > Regular and Urgents filter lists are empty for service=AMS_WS1
+      [6153:105  13/06/07 09:05:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=5
+      [6153:29   13/06/07 09:05:33 RHSessionFactory.cc:472] > A client tries to establish a session...
+      [6153:29   13/06/07 09:05:34 RHSessionsHandler.cc:202] > addSession() starts...
+      [6153:29   13/06/07 09:05:34 SNBASecurityHandler.cc:53] > Checking permissions for 'hoshen3'...
+      [6153:29   13/06/07 09:05:34 VpnSecurityManagerProxy.cc:5787] > Sending request to: MAIN
+      [6153:29   13/06/07 09:05:34 RHSessionsHandler.cc:271] > GC session established.
+      [6153:32   13/06/07 09:05:39 RHSession.cc:399] > NMS (session 1) asks for manager: EMS
+      [6153:32   13/06/07 09:05:41 NBA_emsMgr_EMSMgr_I_Impl.cc:152] > Session's 1 'getAllTopLevelSubnetworks' begins...
+      [6153:32   13/06/07 09:05:41 SNBA_EMSMgrMediator.cc:56] >  ****** SNBA_EMSMgrMediator::getAllTopLevelSubnetworks start ****** 
+      [6153:32   13/06/07 09:05:41 SNBARequests.cc:49] > Start getAllTopLevelSubnetworks
+      [6153:32   13/06/07 09:05:41 SNBARequests.cc:53] > Finish getAllTopLevelSubnetworks
+      [6153:32   13/06/07 09:05:41 SNBA_EMSMgrMediator.cc:66] >  ****** SNBA_EMSMgrMediator::getAllTopLevelSubnetworks finish ****** 
+      [6153:32   13/06/07 09:05:41 RHSession.h:178] > 'getAllTopLevelSubnetworks' had added a new iterator to session 1. (Total = 1).
+      [6153:32   13/06/07 09:05:41 NBA_emsMgr_EMSMgr_I_Impl.cc:234] > Session's 1 'getAllTopLevelSubnetworks' finished.
+      [6153:29   13/06/07 09:05:41 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:44] > it#1 (session 1) next_n(how_many=100) starts...
+      [6153:29   13/06/07 09:05:41 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:73] > it#1 (session 1) next_n(): No more data. Releasing...
+      [6153:29   13/06/07 09:05:41 RHSession.cc:488] > Iterator removed from session 1. (Total = 0).
+      [6153:29   13/06/07 09:05:41 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:90] > it#1 (session 1) next_n() finished
+      [6153:32   13/06/07 09:05:42 RHGCSession.cc:37] > Session 1 getEventChannel() begins...
+ERROR:[6153:32   13/06/07 09:05:42 EFChannelContainer.cc:193] > Existing EventChannel is invalid
+      [6153:32   13/06/07 09:05:42 EFChannelContainer.cc:91] > EventChannel was created
+ERROR:[6153:32   13/06/07 09:05:42 EFChannelContainer.cc:193] > Existing EventChannel is invalid
+      [6153:32   13/06/07 09:05:42 RHSessionsHandler.cc:388] > GC addConsumer (new = 1)
+      [6153:32   13/06/07 09:05:42 RHSessionsHandler.cc:394] > First consumer of its type - calling startSending()
+      [6153:32   13/06/07 09:05:42 EFENSNotifSupplier.cc:365] > EFENSNotifSupplier::setActive() begin
+      [6153:22   13/06/07 09:05:42 EFENSNotifSupplier.cc:229] > EFENSNotifSupplier::run() begin
+      [6153:32   13/06/07 09:05:42 EFENSNotifSupplier.cc:389] > EFENSNotifSupplier::setActive() end
+      [6153:32   13/06/07 09:05:42 SNBAINSAndAMSCb.cc:9] > Ctor SNBAINSAndAMSCb::SNBAINSAndAMSCb()
+      [6153:32   13/06/07 09:05:42 SNBAINSAndAMSCb.cc:41] > Ctor SNBAINSCb::SNBAINSCb()
+      [6153:32   13/06/07 09:05:42 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=4
+      [6153:21   13/06/07 09:05:42 ConnectionContainer.cc:442] > setFilter Regular is OK for service=INS_WS1 length=1
+      [6153:32   13/06/07 09:05:42 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=4
+      [6153:32   13/06/07 09:05:42 SNBAINSAndAMSCb.cc:9] > Ctor SNBAINSAndAMSCb::SNBAINSAndAMSCb()
+      [6153:32   13/06/07 09:05:42 SNBAINSAndAMSCb.cc:82] > Ctor SNBAAMSCb::SNBAAMSCb() begins
+      [6153:32   13/06/07 09:05:42 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=2
+      [6153:21   13/06/07 09:05:42 ConnectionContainer.cc:442] > setFilter Regular is OK for service=AMS_WS1 length=1
+      [6153:32   13/06/07 09:05:42 ClientApplCB.cc:18] > ClientApplCB is registered, cbId=2
+      [6153:32   13/06/07 09:05:42 RHGCSession.cc:63] > Session 1 returned a valid event channel.
+      [6153:138  13/06/07 09:05:43 SNBAINSAndAMSCb.cc:58] > Mapped list is empty
+      [6153:105  13/06/07 09:06:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:133  13/06/07 09:06:34 RHSession.cc:300] > pinging the NMS of session 1
+      [6153:105  13/06/07 09:07:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:08:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:09:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:10:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:11:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:12:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:13:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:14:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:15:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:105  13/06/07 09:16:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1
+      [6153:29   13/06/07 09:16:40 RHSessionFactory.cc:472] > A client tries to establish a session...
+      [6153:29   13/06/07 09:16:40 RHSessionsHandler.cc:202] > addSession() starts...
+      [6153:29   13/06/07 09:16:40 SNBASecurityHandler.cc:53] > Checking permissions for 'hoshen2'...
+      [6153:29   13/06/07 09:16:40 VpnSecurityManagerProxy.cc:5787] > Sending request to: MAIN
+      [6153:29   13/06/07 09:16:41 RHSessionsHandler.cc:271] > GC session established.
+      [6153:30   13/06/07 09:16:45 RHSession.cc:399] > NMS (session 2) asks for manager: EMS
+      [6153:30   13/06/07 09:16:45 NBA_emsMgr_EMSMgr_I_Impl.cc:152] > Session's 2 'getAllTopLevelSubnetworks' begins...
+      [6153:30   13/06/07 09:16:45 SNBA_EMSMgrMediator.cc:56] >  ****** SNBA_EMSMgrMediator::getAllTopLevelSubnetworks start ****** 
+      [6153:30   13/06/07 09:16:45 SNBARequests.cc:49] > Start getAllTopLevelSubnetworks
+      [6153:30   13/06/07 09:16:45 SNBARequests.cc:53] > Finish getAllTopLevelSubnetworks
+      [6153:30   13/06/07 09:16:45 SNBA_EMSMgrMediator.cc:66] >  ****** SNBA_EMSMgrMediator::getAllTopLevelSubnetworks finish ****** 
+      [6153:30   13/06/07 09:16:45 RHSession.h:178] > 'getAllTopLevelSubnetworks' had added a new iterator to session 2. (Total = 1).
+      [6153:30   13/06/07 09:16:45 NBA_emsMgr_EMSMgr_I_Impl.cc:234] > Session's 2 'getAllTopLevelSubnetworks' finished.
+      [6153:29   13/06/07 09:16:46 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:44] > it#2 (session 2) next_n(how_many=100) starts...
+      [6153:29   13/06/07 09:16:46 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:73] > it#2 (session 2) next_n(): No more data. Releasing...
+      [6153:29   13/06/07 09:16:46 RHSession.cc:488] > Iterator removed from session 2. (Total = 0).
+      [6153:29   13/06/07 09:16:46 NBA_multiLayerSubnetwork_SubnetworkIterator_I_Impl.cc:90] > it#2 (session 2) next_n() finished
+      [6153:30   13/06/07 09:16:46 RHSession.cc:331] > Session 2 was pinged by the NMS
+      [6153:30   13/06/07 09:16:46 RHSession.cc:399] > NMS (session 2) asks for manager: EquipmentInventory
+      [6153:30   13/06/07 09:16:46 NBA_equipment_EquipmentInventoryMgr_I_Impl.cc:584] > Session's 2 'getAllEquipment' begins...
+      [6153:30   13/06/07 09:16:46 SNBA_EquipmentInventoryMediator.cc:50] >  ****** SNBA_EquipmentInventoryMediator::getAllEquipment start ****** 
+      [6153:30   13/06/07 09:16:46 SNBAMngElementRequests.cc:91] > Start getAllEquipment
+      [6153:30   13/06/07 09:16:46 DbLoadModelCreator.cc:19] > Created a new load model with autoincrement ID 26
+      [6153:30   13/06/07 09:16:46 SNBAMngElementRequests.cc:95] > Finish getAllEquipment
+      [6153:30   13/06/07 09:16:46 SNBA_EquipmentInventoryMediator.cc:62] >  ****** SNBA_EquipmentInventoryMediator::getAllEquipment finish ****** 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+WARN :[6153:30   13/06/07 09:16:46 IMOMCMap_StdClasses.cc:1658] > IMOMCMap_NVSList::mapToMTNM_: Parameter:expectedOrInstalledEquipment isn't initialized 
+      [6153:30   13/06/07 09:16:46 NBA_equipment_EquipmentInventoryMgr_I_Impl.cc:671] > Session's 2 'getAllEquipment' finished.
+      [6153:33   13/06/07 09:16:47 RHSession.cc:322] > Session 2 was ended by the NMS
+      [6153:33   13/06/07 09:16:47 RHSession.cc:498] > Removing all session's 2 iterators...
+      [6153:33   13/06/07 09:16:47 VpnSecurityManagerProxy.cc:5528] > Sending request to: MAIN
+      [6153:105  13/06/07 09:17:01 RHSessionsHandler.cc:362] > Sessions: Max=5, Free=4, GC=1

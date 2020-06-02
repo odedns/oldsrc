@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE QuerySet SYSTEM "ejview.dtd">
+<QuerySet name="JournalQueries">
+  <Query name="TxnsByCustomerId" label="Transactions by customer ID" description="Get EJ entries related to the given customer ID">
+    	<Input name="customerID" type="String" label="Customer id" widget="textField" />
+	<Result>
+		<Column name="customerID" label= "Customer Id" type="String"/>
+		<Column name="opCode" label= "Txn Type" type="String"/>
+	</Result>
+	<Statement>
+		CUSTOMERID = :customerID
+	</Statement>
+  </Query>
+    <Query name="TxnsBy12" label="Transactions by 12">
+    	<Input name="customerID" type="String" label="Customer id" defaultValue="" widget="textField" />
+	<Input name="opCode" type="String" label="Transaction type" defaultValue="DEPOSIT" widget="comboBox" >
+		<Param name="Param" label="DEPOSIT"/>
+		<Param name="Param" label="WITHDRAWAL"/>
+		<Param name="Param" label="BILLPAYMENT"/>
+    	</Input>
+    	<Input name="sessionID" type="String" label="Session id" widget="textField" />
+    	<Input name="userID" type="String" label="User id" widget="textField" />
+    	<Input name="accountID" type="String" label="Account id" widget="textField" />
+	<Input name="accountCurr" type="String" label="Account currency" defaultValue="USD" widget="comboBox" >
+		<Param name="Param" label="USD"/>
+		<Param name="Param" label="CAD"/>
+		<Param name="Param" label="ITL"/>
+    	</Input>
+    	<Input name="amount" type="float2" label="Amount" widget="textField" />
+	<Input name="currency" type="String" label="Currency" defaultValue="USD" widget="comboBox" >
+		<Param name="Param" label="USD"/>
+		<Param name="Param" label="CAD"/>
+		<Param name="Param" label="ITL"/>
+    	</Input>
+    	<Input name="cashIn" type="float2" label="Cash in" widget="textField" />
+    	<Input name="cashOut" type="float2" label="Cash out" widget="textField" />
+    	<Input name="status" type="String" label="Status" widget="textField" />
+    	<Input name="effectiveDate" type="date" label="Effective date (dd-MM-yyyy)" widget="textField" />
+	<Result>
+		<Column name="customerID" label= "Customer Id" type="String"/>
+		<Column name="opCode" label= "Txn Type" type="String"/>
+		<Column name="userID" label= "User Id" type="String"/>
+		<Column name="sessionID" label= "Session Id" type="String"/>
+		<Column name="accountID" label= "Account Id" type="String"/>
+		<Column name="amount" label= "Amount" type="float2"/>
+		<Column name="postingTime" label= "Posting Time" type="date"/>
+		<Column name="status" label= "Status" type="String"/>
+	</Result>
+	<Statement>
+		CUSTOMERID = :customerID AND OPCODE = :opCode 
+		AND SESSIONID = :sessionID AND ACCOUNTID = :accountID 
+		AND AMOUNT = :amount AND USERID = :userID 
+		AND CASHIN = :cashIn AND CASHOUT = :cashOut 
+		AND STATUS = :status AND EFFECTIVEDATE = :effectiveDate 
+		AND CURRENCY = :currency AND ACCOUNTCURR = :accountCurr 
+	</Statement>
+  </Query>
+  <Query name="TxnsByCustomerIdAndType" label="Transactions by customer ID and type" description="Get EJ entries related to the given customer ID and transaction type">
+    	<Input name="customerID" type="String" label="Customer id" defaultValue="" widget="textField" />
+	<Input name="opCode" type="String" label="Transaction type" defaultValue="DEPOSIT" widget="comboBox" >
+		<Param name="Param" label="DEPOSIT"/>
+		<Param name="Param" label="WITHDRAWAL"/>
+		<Param name="Param" label="BILLPAYMENT"/>
+    	</Input>
+	<Result>
+		<Column name="customerID" label= "Customer Id" type="String"/>
+		<Column name="opCode" label= "Txn Type" type="String"/>
+		<Column name="amount" label= "Txn Amount" type="float2"/>
+	</Result>
+	<Statement>
+		CUSTOMERID = :customerID AND OPCODE = :opCode
+	</Statement>
+  </Query>
+</QuerySet> 

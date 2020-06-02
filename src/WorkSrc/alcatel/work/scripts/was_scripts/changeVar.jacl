@@ -1,0 +1,33 @@
+proc replaceVar { symbolicName newValue newDescription } {
+  global AdminConfig
+  global AdminControl
+#  global aNodeName
+
+  set aNodeName [$AdminControl getNode]
+  set varMap [$AdminConfig getid /Node:$aNodeName/VariableMap:/]
+  set entries [$AdminConfig list VariableSubstitutionEntry $varMap]
+
+  foreach entry $entries {
+    set l [$AdminConfig show $entry]
+    set search [list symbolicName $symbolicName]
+    set x [lsearch $l $search]
+    if { !($x == -1) } {
+      puts "Varible $symbolicName not found !" 
+      $AdminConfig remove $entry
+    }
+  }
+  set nameattr [list symbolicName $symbolicName]
+  set valattr  [list value        $newValue]
+  set descattr [list description  $newDescription]
+  set attrs [list $nameattr $valattr $descattr]
+  $AdminConfig create VariableSubstitutionEntry $varMap $attrs
+  puts "Varible $symbolicName created ..." 
+
+}
+
+#source createVariables.jacl
+# replaceVar DB2AS400_TOOLBOX_JDBC_DRIVER_PATH   \${USER_INSTALL_ROOT}/lib
+
+replaceVar DB2_JDBC_DRIVER_PATH "foo" "mydesc"
+$AdminConfig save
+

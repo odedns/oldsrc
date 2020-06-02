@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<strucl>
+	<group name="TGL.Records" />
+	<entity name="TGL record" />
+	<btfield name="colors" length="1" ignore="true" />
+	<btfield name="compressType" length="1" ignore="true" />
+	<btfield name="conversion" length="1" ignore="false" />
+	<btfield name="dictCode" length="1" ignore="true" />
+	<btfield name="baseVer" length="1" ignore="true" />
+	<btfield name="devStatus" length="1" ignore="true" />
+	<btfield name="type" length="2" ignore="false" />
+	<btfield name="shortName" length="8" ignore="false" />
+	<btfield name="description" length="50" ignore="false" />
+	<btfield name="id" length="20" ignore="false" />
+	<btfield name="idNumber" length="5" ignore="false" />
+</strucl>

@@ -1,0 +1,6 @@
+fields {
+  integer name number_of_record 3
+  filler 1
+  string name text 36
+}
+name test_data_for_c++_excercize

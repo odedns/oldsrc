@@ -1,0 +1,186 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex5.jacl - Jacl implementation of example script 5
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate the invocation  
+#  of various application install commands.
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex5.jacl c:/WebSphere/AppServer/installableApps mynode 
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex5.jacl
+#     wsadmin> ex5.jacl c:/WebSphere/AppServer/installableApps mynode 
+# 
+#  The script expects one parameter:
+#      arg1 - location of application
+#      arg2 - node name
+#
+#  This example demonstrates many wsadmin features:
+#
+#   - The use of the AdminApp object to install and uninstall applications 
+#-----------------------------------------------------------------
+#
+proc ex5 {location nodeName} {
+
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminApp
+  global AdminControl
+  global AdminConfig
+  global Help
+
+  #--------------------------------------------------------------
+  # do some sanity checking 
+  #     -- do we have a node by this name? 
+  #--------------------------------------------------------------
+  set cellname [$AdminControl getCell]
+  set node [$AdminConfig getid /Node:$nodeName/]
+  puts "ex5: checking for existence of node $nodeName"
+  if {[llength $node] == 0} {
+     puts "ex5: Error -- node not found for name $nodeName"
+     return 
+  }
+
+  #---------------------------------------------------------
+  # First, list the existing applications 
+  #---------------------------------------------------------
+  set apps [$AdminApp list]
+  puts "Installed applications: "
+  puts $apps 
+
+  #---------------------------------------------------------
+  # Here is the ear file we'll be dealing with... 
+  #---------------------------------------------------------
+  set defapp $location/DefaultApplication.ear
+
+  #---------------------------------------------------------
+  # A very simple install command 
+  #---------------------------------------------------------
+  puts "----------------------------------------------------------"
+  puts "A simple install command first..."
+  set nameopt [list -appname app1]
+  append opts " " $nameopt 
+  $AdminApp install $defapp $opts
+
+  #---------------------------------------------------------
+  # Demonstrate the default bindings capabilities
+  # This example could include -usedefaultbindings by itself, but
+  # we provide some additional options 
+  #---------------------------------------------------------
+  puts "----------------------------------------------------------"
+  puts "Use the defaultbindings options..."
+  set nameopt [list -appname app2]
+  unset opts
+  append opts " " $nameopt 
+  set bindopt [list -usedefaultbindings -defaultbinding.datasource.jndi ds1 -defaultbinding.datasource.username user1 -defaultbinding.datasource.password pw1 -defaultbinding.cf.jndi ds1 -defaultbinding.ejbjndi.prefix ds2 -defaultbinding.virtual.host myvh]
+  append opts " " $bindopt 
+  $AdminApp install $defapp $opts
+ 
+
+  #---------------------------------------------------------
+  # Demonstrate installation on a different server.  We will specify
+  # server2, but override that setting for one module so that it will
+  # be deployed on server1.
+  # 
+  #---------------------------------------------------------
+  puts "----------------------------------------------------------"
+  puts "Use a different server..."
+  $AdminConfig create Server $node {{name server2}}
+  unset opts
+  set nameopt [list -appname app3]
+  append opts " " $nameopt 
+  
+  set serveropt [list -server server2]
+  append opts " " $serveropt  
+  set nodeopt [list -node $nodeName]
+  append opts " " $nodeopt
+
+  set serv WebSphere:cell=$cellname,node=$nodeName,server=server1
+  set mapping [list "Increment Enterprise Java Bean" Increment.jar,META-INF/ejb-jar.xml $serv] 
+  set mapserveropt [list -MapModulesToServers [list $mapping]] 
+  append opts " " $mapserveropt 
+  $AdminApp install $defapp $opts
+
+  #---------------------------------------------------------
+  # Demonstrate installation with a number of different settings.
+  # Although this can get complex, note that you can always perform
+  # an interactive install, then examine the wsadmin.traceout file, looking
+  # for WASX7278I -- this message should include install options generated
+  # from the interactive install that can be cut and pasted into scripts. 
+  # 
+  #---------------------------------------------------------
+  puts "----------------------------------------------------------"
+  puts "Specify several options."
+  unset opts
+  set nameopt [list -appname app4]
+  append opts " " $nameopt 
+
+  set mapping [list "Increment Enterprise Java Bean" Increment Increment.jar,META-INF/ejb-jar.xml Increment]
+  set mapjndibindopt [list -BindJndiForEJBNonMessageBinding [list $mapping]] 
+  append opts " " $mapjndibindopt 
+
+  set mapping [list "Default Web Application" "" DefaultWebApplication.war,WEB-INF/web.xml Increment com.ibm.defaultapplication.Increment Increment]
+  set mapejbrefopt [list -MapEJBRefToEJB [list $mapping]] 
+  append opts " " $mapejbrefopt 
+
+  set mapping [list "Increment Enterprise Java Bean" Increment.jar,META-INF/ejb-jar.xml DefaultDatasource cmpBinding.perConnectionFactory]
+  set mapdsejbopt [list -DataSourceFor20EJBModules [list $mapping]] 
+  append opts " " $mapdsejbopt 
+
+  set mapping [list "Increment Enterprise Java Bean" Increment Increment.jar,META-INF/ejb-jar.xml DefaultDatasource cmpBinding.perConnectionFactory]
+  set mapdscmpopt [list -DataSourceFor20CMPBeans [list $mapping]] 
+  append opts " " $mapdscmpopt 
+
+  set mapping [list "Default Web Application" DefaultWebApplication.war,WEB-INF/web.xml default_host]
+  set mapVHopt [list -MapWebModToVH [list $mapping]] 
+  append opts " " $mapVHopt 
+
+  set serv WebSphere:cell=$cellname,node=$nodeName,server=server1
+  set mapping1 [list "Increment Enterprise Java Bean" Increment.jar,META-INF/ejb-jar.xml $serv] 
+  set mapping2 [list "Default Web Application" DefaultWebApplication.war,WEB-INF/web.xml $serv] 
+  set mapserveropt [list -MapModulesToServers [list $mapping1 $mapping2]]
+  append opts " " $mapserveropt 
+
+  set miscopts [list -nopreCompileJSPs -distributeApp -nouseMetaDataFromBinary -nodeployejb]
+  append opts " " $miscopts 
+
+  $AdminApp install $defapp $opts
+
+  #---------------------------------------------------------
+  # Demonstrate ejb deploy options.
+  # 
+  #---------------------------------------------------------
+  puts "----------------------------------------------------------"
+  puts "Specify ejb deploy options."
+  unset opts
+  set nameopt [list -appname app5]
+  append opts " " $nameopt 
+
+  set depopt [list -deployejb -deployejb.dbtype DB2UDB_V72]
+  append opts " " $depopt
+ 
+  $AdminApp install $defapp $opts
+
+}
+ 
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 2) } {
+   puts "ex5: this script requires 2 parameters: location of DefaultApplication.ear,"
+   puts "     node name."
+   puts ""
+   puts "e.g.:     ex5  c:/WebSphere/AppServer/installableApps mynode" 
+} else { 
+   set location      [lindex $argv 0]  
+   set nodeName      [lindex $argv 1]  
+   ex5 $location $nodeName
+}

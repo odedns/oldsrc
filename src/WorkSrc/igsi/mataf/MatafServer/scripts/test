@@ -1,0 +1,8 @@
+<!-- mq queue for log messages -->
+	<MQConnection id="MQ_LOG" QMgrName="Q283US00" sendToQ="QS1" 
+			replyToQ="QS1" synchronousMode="enabled" 
+			messageOrCorrelation="correlation"		
+			serverOrClient="client" hostName=matafserver
+			port="1414" automaticConnectionEstablishment="disabled" 
+			establishConnectionRetries="3" />
+		

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ======================================== -->
+	<!-- Business Logic Data Types Declarations -->
+	<!-- ======================================== -->
+
+	<typeDefinition>
+		<type name="valueObject" class="com.ness.fw.bl.ValueObject"></type>
+		<type name="valueObjectList" class="com.ness.fw.bl.ValueObjectList"></type>	
+	</typeDefinition>
+
+</root>

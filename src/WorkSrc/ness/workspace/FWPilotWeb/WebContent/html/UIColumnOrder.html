@@ -1,0 +1,81 @@
+<LINK href="theme/system.css" rel="stylesheet" type="text/css">
+<script src="scripts/UIUtil.js"></script>
+<script src="scripts/UITable.js"></script>
+<script src="scripts/UIColumnOrder.js"></script>
+<script src="scripts/UIConstants.js"></script>
+<script src="scripts/UIListToList.js"></script>
+
+<body class="bodyDialog" style="overflow: hidden;" topmargin="0" rightmargin="0" leftmargin="0" bottommargin="0">
+<input type=hidden name="returnFieldName" id="returnFieldName" value="">
+<input type=hidden name="eventName" id="eventName" value="">
+<input type=hidden name="flowState" id="flowState" value="">
+<input type=hidden name="flowPath" id="flowPath" value="">
+<input type=button id="initButton" style="display:none" onclick="initColumnOrder()">
+
+<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+	<tr id="titles" height="1">
+		<td class="popupMainLayout" align="center">
+		
+			<table width="100%" height="100%" cellpadding="0" cellspacing="2">
+				<tr height="1">
+					<td width="50%" class="srcTitle" id="srcTitle"></td>
+					<td width="50">&nbsp;</td>
+					<td width="50%" id="trgTitle" class="trgTitle"></td>
+				</tr>
+				<tr>
+					<td width="50%">
+						<table height="100%" width="100%" cellspacing="0">
+							<tr>
+								<td height="100%">
+									<select id="SrcList" ondblclick="listToListAction(l2l,true);" class="listToListNormalClass" size="2" multiple="multiple" style="height: 100%; width: 100%"></select>						
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td valign="middle" class="popupMainLayout">
+						<table cellspacing="3" cellspacing="0">
+							<tr><td height="15"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="SrcToTrg" onclick="listToListAction(l2l,true);"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="SrcToTrgAll" onclick="listToListAction(l2l,true);"></td></tr>
+							<tr><td height="20"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="TrgToSrc" onclick="if (isColumnMovementLegal(false)) listToListAction(l2l,false);"></td></tr>
+							<tr><td><input style="width: 80;" type="button" class="listToListButton" id="TrgToSrc" onclick="if (isColumnMovementLegal(true)) listToListAction(l2l,false);"></td></tr>
+						</table>
+					</td>
+					<td width="50%">
+						<table height="100%" width="100%" cellspacing="0">
+							<tr>
+								<td height="100%">
+									<select id="TrgList" ondblclick="if (isColumnMovementLegal(false)) listToListAction(l2l,false);" size="2" class="listToListNormalClass" multiple="multiple" style="height: 100%; width: 100%"></select>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center" valign="top">					
+						<table width="90%" cellspacing="0">
+							<tr>
+								<td width="45%"></td>
+								<td><input type="button" id="TrgDown" class="listToListButton" onclick="listToListAction(l2l,true);"></td>
+								<td width="1"></td>
+								<td><input type="button" id="TrgUp" class="listToListButton" onclick="listToListAction(l2l,true);"></td>
+								<td width="45%"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="3">
+						<input type="button" id="approveButton" onclick="submitColumnOrder();" class="listToListSearchButton">
+						<input type="button" id="cancelButton" onclick="parent.columnOrderPopup.hide()" class="listToListSearchButton">	
+					</td>
+				</tr>
+				<tr><td height="1" colspan="3" id="messagesCell" style="display:none;"></td></tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>

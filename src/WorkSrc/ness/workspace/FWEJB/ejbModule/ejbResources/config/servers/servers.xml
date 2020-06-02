@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM  "server.dtd">
+<root>
+   	<serverDefinition name="localServer" type="local" default="true"/>
+   	<serverDefinition name="server1" type="ejb" url="iiop://10.1.18.234:2810" jndiName="ejb/bl/proxy/BPOEJBFacadeHome" refName="bpoRef"  />
+<!--	<serverDefinition name="server2" type="ejb" url="iiop://10.1.10.94:2810" jndiName="ejb/bl/proxy/BPOEJBFacadeHome" refName="bpoRef" /> 	-->
+</root>

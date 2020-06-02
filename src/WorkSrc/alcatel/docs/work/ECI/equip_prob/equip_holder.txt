@@ -1,0 +1,1895 @@
+
+====== CLASS `DBEquipmentHolder' ====== [2dc40368]
+superclasses:
+    `DBEquipmentBasic'
+attributes:
+  * 
+  DBAbstrBase::o_ts_timestamp    :  o_4b
+  DBBase::m_NavTailLink          -> NavTailBase
+  DBEquipmentBasic::m_ObjectDN   :  char[]
+  DBEquipmentBasic::m_UserLabel  :  char[]
+  DBEquipmentBasic::m_NativeName :  char[]
+  DBEquipmentBasic::m_Owner      :  char[]
+  DBEquipmentBasic::m_AlarmReportIndicator :  o_u1b
+  DBEquipmentBasic::m_AddInfo    -> VString[]
+  DBEquipmentBasic::m_ActExcState :  o_u1b
+  DBEquipmentBasic::m_OwnerLink  -> DBBase
+  DBEquipmentHolder::m_HolderType :  o_2b
+  DBEquipmentHolder::m_HolderState :  o_4b
+  DBEquipmentHolder::m_ExpectedOrInstalledEquipment :  char[]
+  DBEquipmentHolder::m_AcceptableEquipmentTypeList -> VString[]
+
+Instances of class 'DBEquipmentHolder' :
+
+## L {=0x1003b11e8;c_l_();;0} #0x1003b11e8[3.0.46008:DBEquipmentHolder]  T=0x1003c8160 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003b1aa0[3.0.47235:] 
+## 	DBEquipmentBasic::m_ObjectDN   69="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1" 
+## 	DBEquipmentBasic::m_UserLabel   9="XD10-B01" 
+## 	DBEquipmentBasic::m_NativeName   9="XD10-B01" 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1ab8[3.0.42192:] 
+## 	DBEquipmentHolder::m_HolderType   0 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1200;c_l_();;0} #0x1003b1200[3.0.46009:DBEquipmentHolder]  T=0x1003c8200 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003b1ad0[3.0.47236:] 
+## 	DBEquipmentBasic::m_ObjectDN   77="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1" 
+## 	DBEquipmentBasic::m_UserLabel   9="XD10-B01" 
+## 	DBEquipmentBasic::m_NativeName   9="XD10-B01" 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b11e8[3.0.46008:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   1 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1218;c_l_();;0} #0x1003b1218[3.0.46010:DBEquipmentHolder]  T=0x1003c82a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003b1ae8[3.0.47237:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   12="PW1 xINF_H " 
+## 	DBEquipmentBasic::m_NativeName   12="PW1 xINF_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1230;c_l_();;0} #0x1003b1230[3.0.46012:DBEquipmentHolder]  T=0x1003c8340 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=10" 
+## 	DBEquipmentBasic::m_UserLabel   9="M8 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M8 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003b1b00[3.0.46013:] #0x1003b1b18[3.0.46014:] #0x1003b1b30[3.0.46015:] #0x1003b1b48[3.0.46016:] 
+## 		4... #0x1003b1b60[3.0.46017:] #0x1003b1b78[3.0.46018:] #0x1003b1b90[3.0.46019:] #0x1003b1ba8[3.0.46020:] 
+## 		8... #0x1003b1bc0[3.0.46021:] #0x1003b1bd8[3.0.46022:] #0x1003b1bf0[3.0.46023:] #0x1003b1c08[3.0.46024:] 
+## 		12... #0x1003b1c20[3.0.46025:] #0x1003b1c38[3.0.46026:] #0x1003b1c50[3.0.46027:] #0x1003b1c68[3.0.46028:] 
+## 		16... #0x1003b1c80[3.0.46029:] #0x1003b1c98[3.0.46030:] #0x1003b1cb0[3.0.46031:] #0x1003b1cc8[3.0.46032:] 
+## 		20... #0x1003b1ce0[3.0.46033:] #0x1003b1cf8[3.0.46034:] #0x1003b1d10[3.0.46035:] #0x1003b1d28[3.0.46036:] 
+## 		24... #0x1003b1d40[3.0.46037:] #0x1003b1d58[3.0.46038:] #0x1003b1d70[3.0.46039:] #0x1003b1d88[3.0.46040:] 
+## 		28... #0x1003b1da0[3.0.46041:] #0x1003b1db8[3.0.46042:] #0x1003b1dd0[3.0.46043:] #0x1003b1de8[3.0.46044:] 
+## 		32... #0x1003b2000[3.0.46045:] #0x1003b2018[3.0.46046:] #0x1003b2030[3.0.46047:] #0x1003b2048[3.0.46048:] 
+## 		36... #0x1003b2060[3.0.46049:] #0x1003b2078[3.0.46050:] #0x1003b2090[3.0.46051:] #0x1003b20a8[3.0.46052:] 
+## 		40... #0x1003b20c0[3.0.46053:] #0x1003b20d8[3.0.46054:] ) 
+
+## L {=0x1003b1248;c_l_();;0} #0x1003b1248[3.0.46055:DBEquipmentHolder]  T=0x1003c83e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=11" 
+## 	DBEquipmentBasic::m_UserLabel   9="M9 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M9 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003b20f0[3.0.46056:] #0x1003b2108[3.0.46057:] #0x1003b2120[3.0.46058:] #0x1003b2138[3.0.46059:] 
+## 		4... #0x1003b2150[3.0.46060:] #0x1003b2168[3.0.46061:] #0x1003b2180[3.0.46062:] #0x1003b2198[3.0.46063:] 
+## 		8... #0x1003b21b0[3.0.46064:] #0x1003b21c8[3.0.46065:] #0x1003b21e0[3.0.46066:] #0x1003b21f8[3.0.46067:] 
+## 		12... #0x1003b2210[3.0.46068:] #0x1003b2228[3.0.46069:] #0x1003b2240[3.0.46070:] #0x1003b2258[3.0.46071:] 
+## 		16... #0x1003b2270[3.0.46072:] #0x1003b2288[3.0.46073:] #0x1003b22a0[3.0.46074:] #0x1003b22b8[3.0.46075:] 
+## 		20... #0x1003b22d0[3.0.46076:] #0x1003b22e8[3.0.46077:] #0x1003b2300[3.0.46078:] #0x1003b2318[3.0.46079:] 
+## 		24... #0x1003b2330[3.0.46080:] #0x1003b2348[3.0.46081:] #0x1003b2360[3.0.46082:] #0x1003b2378[3.0.46083:] 
+## 		28... #0x1003b2390[3.0.46084:] #0x1003b23a8[3.0.46085:] #0x1003b23c0[3.0.46086:] #0x1003b23d8[3.0.46087:] 
+## 		32... #0x1003b23f0[3.0.46088:] #0x1003b2408[3.0.46089:] #0x1003b2420[3.0.46090:] #0x1003b2438[3.0.46091:] 
+## 		36... #0x1003b2450[3.0.46092:] #0x1003b2468[3.0.46093:] #0x1003b2480[3.0.46094:] #0x1003b2498[3.0.46095:] 
+## 		40... #0x1003b24b0[3.0.46096:] #0x1003b24c8[3.0.46097:] ) 
+
+## L {=0x1003b1260;c_l_();;0} #0x1003b1260[3.0.46098:DBEquipmentHolder]  T=0x1003c8480 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=12" 
+## 	DBEquipmentBasic::m_UserLabel   10="M10 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="M10 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003b24e0[3.0.46099:] #0x1003b24f8[3.0.46100:] #0x1003b2510[3.0.46101:] #0x1003b2528[3.0.46102:] 
+## 		4... #0x1003b2540[3.0.46103:] #0x1003b2558[3.0.46104:] #0x1003b2570[3.0.46105:] #0x1003b2588[3.0.46106:] 
+## 		8... #0x1003b25a0[3.0.46107:] #0x1003b25b8[3.0.46108:] #0x1003b25d0[3.0.46109:] #0x1003b25e8[3.0.46110:] 
+## 		12... #0x1003b2600[3.0.46111:] #0x1003b2618[3.0.46112:] #0x1003b2630[3.0.46113:] #0x1003b2648[3.0.46114:] 
+## 		16... #0x1003b2660[3.0.46115:] #0x1003b2678[3.0.46116:] #0x1003b2690[3.0.46117:] #0x1003b26a8[3.0.46118:] 
+## 		20... #0x1003b26c0[3.0.46119:] #0x1003b26d8[3.0.46120:] #0x1003b26f0[3.0.46121:] #0x1003b2708[3.0.46122:] 
+## 		24... #0x1003b2720[3.0.46123:] #0x1003b2738[3.0.46124:] #0x1003b2750[3.0.46125:] #0x1003b2768[3.0.46126:] 
+## 		28... #0x1003b2780[3.0.46127:] #0x1003b2798[3.0.46128:] #0x1003b27b0[3.0.46129:] #0x1003b27c8[3.0.46130:] 
+## 		32... #0x1003b27e0[3.0.46131:] #0x1003b27f8[3.0.46132:] #0x1003b2810[3.0.46133:] #0x1003b2828[3.0.46134:] 
+## 		36... #0x1003b2840[3.0.46135:] #0x1003b2858[3.0.46136:] #0x1003b2870[3.0.46137:] #0x1003b2888[3.0.46138:] 
+## 		40... #0x1003b28a0[3.0.46139:] #0x1003b28b8[3.0.46140:] ) 
+
+## L {=0x1003b1278;c_l_();;0} #0x1003b1278[3.0.46141:DBEquipmentHolder]  T=0x1003c8520 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=13" 
+## 	DBEquipmentBasic::m_UserLabel   10="M11 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="M11 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   28=( #0x1003b28d0[3.0.46142:] #0x1003b28e8[3.0.46143:] #0x1003b2900[3.0.46144:] #0x1003b2918[3.0.46145:] 
+## 		4... #0x1003b2930[3.0.46146:] #0x1003b2948[3.0.46147:] #0x1003b2960[3.0.46148:] #0x1003b2978[3.0.46149:] 
+## 		8... #0x1003b2990[3.0.46150:] #0x1003b29a8[3.0.46151:] #0x1003b29c0[3.0.46152:] #0x1003b29d8[3.0.46153:] 
+## 		12... #0x1003b29f0[3.0.46154:] #0x1003b2a08[3.0.46155:] #0x1003b2a20[3.0.46156:] #0x1003b2a38[3.0.46157:] 
+## 		16... #0x1003b2a50[3.0.46158:] #0x1003b2a68[3.0.46159:] #0x1003b2a80[3.0.46160:] #0x1003b2a98[3.0.46161:] 
+## 		20... #0x1003b2ab0[3.0.46162:] #0x1003b2ac8[3.0.46163:] #0x1003b2ae0[3.0.46164:] #0x1003b2af8[3.0.46165:] 
+## 		24... #0x1003b2b10[3.0.46166:] #0x1003b2b28[3.0.46167:] #0x1003b2b40[3.0.46168:] #0x1003b2b58[3.0.46169:] ) 
+
+## L {=0x1003b1290;c_l_();;0} #0x1003b1290[3.0.46170:DBEquipmentHolder]  T=0x1003c85c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003b2b70[3.0.47239:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=14" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 HLXC_384 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 HLXC_384 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=14@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   15=( #0x1003b2b88[3.0.46171:] #0x1003b2ba0[3.0.46172:] #0x1003b2bb8[3.0.46173:] #0x1003b2bd0[3.0.46174:] 
+## 		4... #0x1003b2be8[3.0.46175:] #0x1003b2c00[3.0.46176:] #0x1003b2c18[3.0.46177:] #0x1003b2c30[3.0.46178:] 
+## 		8... #0x1003b2c48[3.0.46179:] #0x1003b2c60[3.0.46180:] #0x1003b2c78[3.0.46181:] #0x1003b2c90[3.0.46182:] 
+## 		12... #0x1003b2ca8[3.0.46183:] #0x1003b2cc0[3.0.46184:] #0x1003b2cd8[3.0.46185:] ) 
+
+## L {=0x1003b12a8;c_l_();;0} #0x1003b12a8[3.0.46186:DBEquipmentHolder]  T=0x1003c8660 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003b2cf0[3.0.47240:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=14/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1290[3.0.46170:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=14/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b12c0;c_l_();;0} #0x1003b12c0[3.0.46189:DBEquipmentHolder]  T=0x1003c8700 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=15" 
+## 	DBEquipmentBasic::m_UserLabel   9="I1 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="I1 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003b2d08[3.0.46190:] #0x1003b2d20[3.0.46191:] #0x1003b2d38[3.0.46192:] #0x1003b2d50[3.0.46193:] 
+## 		4... #0x1003b2d68[3.0.46194:] #0x1003b2d80[3.0.46195:] #0x1003b2d98[3.0.46196:] #0x1003b2db0[3.0.46197:] 
+## 		8... #0x1003b2dc8[3.0.46198:] #0x1003b2de0[3.0.46199:] #0x1003b2df8[3.0.46200:] #0x1003b2e10[3.0.46201:] 
+## 		12... #0x1003b2e28[3.0.46202:] #0x1003b2e40[3.0.46203:] #0x1003b2e58[3.0.46204:] #0x1003b2e70[3.0.46205:] 
+## 		16... #0x1003b2e88[3.0.46206:] #0x1003b2ea0[3.0.46207:] #0x1003b2eb8[3.0.46208:] #0x1003b2ed0[3.0.46209:] 
+## 		20... #0x1003b2ee8[3.0.46210:] #0x1003b2f00[3.0.46211:] #0x1003b2f18[3.0.46212:] #0x1003b2f30[3.0.46213:] 
+## 		24... #0x1003b2f48[3.0.46214:] #0x1003b2f60[3.0.46215:] #0x1003b2f78[3.0.46216:] #0x1003b2f90[3.0.46217:] 
+## 		28... #0x1003b2fa8[3.0.46218:] #0x1003b2fc0[3.0.46219:] #0x1003b2fd8[3.0.46220:] #0x1003b2ff0[3.0.46221:] 
+## 		32... #0x1003b3008[3.0.46222:] #0x1003b3020[3.0.46223:] #0x1003b3038[3.0.46224:] #0x1003b3050[3.0.46225:] 
+## 		36... #0x1003b3068[3.0.46226:] #0x1003b3080[3.0.46227:] #0x1003b3098[3.0.46228:] #0x1003b30b0[3.0.46229:] 
+## 		40... #0x1003b30c8[3.0.46230:] #0x1003b30e0[3.0.46231:] #0x1003b30f8[3.0.46232:] #0x1003b3110[3.0.46233:] 
+## 		44... #0x1003b3128[3.0.46234:] #0x1003b3140[3.0.46235:] #0x1003b3158[3.0.46236:] #0x1003b3170[3.0.46237:] 
+## 		48... #0x1003b3188[3.0.46238:] #0x1003b31a0[3.0.46239:] #0x1003b31b8[3.0.46240:] #0x1003b31d0[3.0.46241:] 
+## 		52... #0x1003b31e8[3.0.46242:] #0x1003b3200[3.0.46243:] #0x1003b3218[3.0.46244:] #0x1003b3230[3.0.46245:] 
+## 		56... #0x1003b3248[3.0.46246:] ) 
+
+## L {=0x1003b12d8;c_l_();;0} #0x1003b12d8[3.0.46247:DBEquipmentHolder]  T=0x1003c87a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   5 
+## 	DBBase::m_NavTailLink   #0x1003b3260[3.0.47241:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 SIO16M_2 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 SIO16M_2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003b3278[3.0.46248:] #0x1003b3290[3.0.46249:] #0x1003b32a8[3.0.46250:] #0x1003b32c0[3.0.46251:] 
+## 		4... #0x1003b32d8[3.0.46252:] #0x1003b32f0[3.0.46253:] #0x1003b3308[3.0.46254:] #0x1003b3320[3.0.46255:] 
+## 		8... #0x1003b3338[3.0.46256:] #0x1003b3350[3.0.46257:] #0x1003b3368[3.0.46258:] #0x1003b3380[3.0.46259:] 
+## 		12... #0x1003b3398[3.0.46260:] #0x1003b33b0[3.0.46261:] #0x1003b33c8[3.0.46262:] #0x1003b33e0[3.0.46263:] 
+## 		16... #0x1003b33f8[3.0.46264:] #0x1003b3410[3.0.46265:] #0x1003b3428[3.0.46266:] #0x1003b3440[3.0.46267:] 
+## 		20... #0x1003b3458[3.0.46268:] #0x1003b3470[3.0.46269:] #0x1003b3488[3.0.46270:] #0x1003b34a0[3.0.46271:] 
+## 		24... #0x1003b34b8[3.0.46272:] #0x1003b34d0[3.0.46273:] #0x1003b34e8[3.0.46274:] #0x1003b3500[3.0.46275:] 
+## 		28... #0x1003b3518[3.0.46276:] #0x1003b3530[3.0.46277:] #0x1003b3548[3.0.46278:] #0x1003b3560[3.0.46279:] 
+## 		32... #0x1003b3578[3.0.46280:] #0x1003b3590[3.0.46281:] #0x1003b35a8[3.0.46282:] #0x1003b35c0[3.0.46283:] 
+## 		36... #0x1003b35d8[3.0.46284:] #0x1003b35f0[3.0.46285:] #0x1003b3608[3.0.46286:] #0x1003b3620[3.0.46287:] 
+## 		40... #0x1003b3638[3.0.46288:] #0x1003b3650[3.0.46289:] #0x1003b3668[3.0.46290:] #0x1003b3680[3.0.46291:] 
+## 		44... #0x1003b3698[3.0.46292:] #0x1003b36b0[3.0.46293:] #0x1003b36c8[3.0.46294:] #0x1003b36e0[3.0.46295:] 
+## 		48... #0x1003b36f8[3.0.46296:] #0x1003b3710[3.0.46297:] #0x1003b3728[3.0.46298:] #0x1003b3740[3.0.46299:] 
+## 		52... #0x1003b3758[3.0.46300:] #0x1003b3770[3.0.46301:] #0x1003b3788[3.0.46302:] #0x1003b37a0[3.0.46303:] 
+## 		56... #0x1003b37b8[3.0.46304:] ) 
+
+## L {=0x1003b12f0;c_l_();;0} #0x1003b12f0[3.0.46305:DBEquipmentHolder]  T=0x1003c8840 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   3 
+## 	DBBase::m_NavTailLink   #0x1003b37d0[3.0.47242:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OM16_1 1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OM16_1 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b12d8[3.0.46247:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   131073 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1308;c_l_();;0} #0x1003b1308[3.0.46307:DBEquipmentHolder]  T=0x1003c88e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   6 
+## 	DBBase::m_NavTailLink   #0x1003b37e8[3.0.47243:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b12d8[3.0.46247:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   2 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1320;c_l_();;0} #0x1003b1320[3.0.46309:DBEquipmentHolder]  T=0x1003c8980 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003b3800[3.0.47244:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=33" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OT16 1-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OT16 1-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b12d8[3.0.46247:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   131073 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=33@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1338;c_l_();;0} #0x1003b1338[3.0.46311:DBEquipmentHolder]  T=0x1003c8a20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   5 
+## 	DBBase::m_NavTailLink   #0x1003b3818[3.0.47245:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=34" 
+## 	DBEquipmentBasic::m_UserLabel   13="I2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b12d8[3.0.46247:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   131073 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=16/sub_slot=34@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1350;c_l_();;0} #0x1003b1350[3.0.46314:DBEquipmentHolder]  T=0x1003c8ac0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=17" 
+## 	DBEquipmentBasic::m_UserLabel   9="I3 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="I3 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003b3830[3.0.46315:] #0x1003b3848[3.0.46316:] #0x1003b3860[3.0.46317:] #0x1003b3878[3.0.46318:] 
+## 		4... #0x1003b3890[3.0.46319:] #0x1003b38a8[3.0.46320:] #0x1003b38c0[3.0.46321:] #0x1003b38d8[3.0.46322:] 
+## 		8... #0x1003b38f0[3.0.46323:] #0x1003b3908[3.0.46324:] #0x1003b3920[3.0.46325:] #0x1003b3938[3.0.46326:] 
+## 		12... #0x1003b3950[3.0.46327:] #0x1003b3968[3.0.46328:] #0x1003b3980[3.0.46329:] #0x1003b3998[3.0.46330:] 
+## 		16... #0x1003b39b0[3.0.46331:] #0x1003b39c8[3.0.46332:] #0x1003b39e0[3.0.46333:] #0x1003b39f8[3.0.46334:] 
+## 		20... #0x1003b3a10[3.0.46335:] #0x1003b3a28[3.0.46336:] #0x1003b3a40[3.0.46337:] #0x1003b3a58[3.0.46338:] 
+## 		24... #0x1003b3a70[3.0.46339:] #0x1003b3a88[3.0.46340:] #0x1003b3aa0[3.0.46341:] #0x1003b3ab8[3.0.46342:] 
+## 		28... #0x1003b3ad0[3.0.46343:] #0x1003b3ae8[3.0.46344:] #0x1003b3b00[3.0.46345:] #0x1003b3b18[3.0.46346:] 
+## 		32... #0x1003b3b30[3.0.46347:] #0x1003b3b48[3.0.46348:] #0x1003b3b60[3.0.46349:] #0x1003b3b78[3.0.46350:] 
+## 		36... #0x1003b3b90[3.0.46351:] #0x1003b3ba8[3.0.46352:] #0x1003b3bc0[3.0.46353:] #0x1003b3bd8[3.0.46354:] 
+## 		40... #0x1003b3bf0[3.0.46355:] #0x1003b3c08[3.0.46356:] #0x1003b3c20[3.0.46357:] #0x1003b3c38[3.0.46358:] 
+## 		44... #0x1003b3c50[3.0.46359:] #0x1003b3c68[3.0.46360:] #0x1003b3c80[3.0.46361:] #0x1003b3c98[3.0.46362:] 
+## 		48... #0x1003b3cb0[3.0.46363:] #0x1003b3cc8[3.0.46364:] #0x1003b3ce0[3.0.46365:] #0x1003b3cf8[3.0.46366:] 
+## 		52... #0x1003b3d10[3.0.46367:] #0x1003b3d28[3.0.46368:] #0x1003b3d40[3.0.46369:] #0x1003b3d58[3.0.46370:] 
+## 		56... #0x1003b3d70[3.0.46371:] ) 
+
+## L {=0x1003b1368;c_l_();;0} #0x1003b1368[3.0.46435:DBEquipmentHolder]  T=0x1003c8b60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=19" 
+## 	DBEquipmentBasic::m_UserLabel   9="I5 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="I5 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003b3d88[3.0.46436:] #0x1003b3da0[3.0.46437:] #0x1003b3db8[3.0.46438:] #0x1003b3dd0[3.0.46439:] 
+## 		4... #0x1003b3de8[3.0.46440:] #0x1003de000[3.0.46441:] #0x1003de018[3.0.46442:] #0x1003de030[3.0.46443:] 
+## 		8... #0x1003de048[3.0.46444:] #0x1003de060[3.0.46445:] #0x1003de078[3.0.46446:] #0x1003de090[3.0.46447:] 
+## 		12... #0x1003de0a8[3.0.46448:] #0x1003de0c0[3.0.46449:] #0x1003de0d8[3.0.46450:] #0x1003de0f0[3.0.46451:] 
+## 		16... #0x1003de108[3.0.46452:] #0x1003de120[3.0.46453:] #0x1003de138[3.0.46454:] #0x1003de150[3.0.46455:] 
+## 		20... #0x1003de168[3.0.46456:] #0x1003de180[3.0.46457:] #0x1003de198[3.0.46458:] #0x1003de1b0[3.0.46459:] 
+## 		24... #0x1003de1c8[3.0.46460:] #0x1003de1e0[3.0.46461:] #0x1003de1f8[3.0.46462:] #0x1003de210[3.0.46463:] 
+## 		28... #0x1003de228[3.0.46464:] #0x1003de240[3.0.46465:] #0x1003de258[3.0.46466:] #0x1003de270[3.0.46467:] 
+## 		32... #0x1003de288[3.0.46468:] #0x1003de2a0[3.0.46469:] #0x1003de2b8[3.0.46470:] #0x1003de2d0[3.0.46471:] 
+## 		36... #0x1003de2e8[3.0.46472:] #0x1003de300[3.0.46473:] #0x1003de318[3.0.46474:] #0x1003de330[3.0.46475:] 
+## 		40... #0x1003de348[3.0.46476:] #0x1003de360[3.0.46477:] #0x1003de378[3.0.46478:] #0x1003de390[3.0.46479:] 
+## 		44... #0x1003de3a8[3.0.46480:] #0x1003de3c0[3.0.46481:] #0x1003de3d8[3.0.46482:] #0x1003de3f0[3.0.46483:] 
+## 		48... #0x1003de408[3.0.46484:] #0x1003de420[3.0.46485:] #0x1003de438[3.0.46486:] #0x1003de450[3.0.46487:] 
+## 		52... #0x1003de468[3.0.46488:] #0x1003de480[3.0.46489:] #0x1003de498[3.0.46490:] #0x1003de4b0[3.0.46491:] 
+## 		56... #0x1003de4c8[3.0.46492:] ) 
+
+## L {=0x1003b1380;c_l_();;0} #0x1003b1380[3.0.46493:DBEquipmentHolder]  T=0x1003c8c00 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003de4e0[3.0.47246:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   12="PW2 xINF_H " 
+## 	DBEquipmentBasic::m_NativeName   12="PW2 xINF_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1398;c_l_();;0} #0x1003b1398[3.0.46495:DBEquipmentHolder]  T=0x1003c8ca0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003de4f8[3.0.47247:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=20" 
+## 	DBEquipmentBasic::m_UserLabel   12="I6 PIO2_84 " 
+## 	DBEquipmentBasic::m_NativeName   12="I6 PIO2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=20@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003de510[3.0.46496:] #0x1003de528[3.0.46497:] #0x1003de540[3.0.46498:] #0x1003de558[3.0.46499:] 
+## 		4... #0x1003de570[3.0.46500:] #0x1003de588[3.0.46501:] #0x1003de5a0[3.0.46502:] #0x1003de5b8[3.0.46503:] 
+## 		8... #0x1003de5d0[3.0.46504:] #0x1003de5e8[3.0.46505:] #0x1003de600[3.0.46506:] #0x1003de618[3.0.46507:] 
+## 		12... #0x1003de630[3.0.46508:] #0x1003de648[3.0.46509:] #0x1003de660[3.0.46510:] #0x1003de678[3.0.46511:] 
+## 		16... #0x1003de690[3.0.46512:] #0x1003de6a8[3.0.46513:] #0x1003de6c0[3.0.46514:] #0x1003de6d8[3.0.46515:] 
+## 		20... #0x1003de6f0[3.0.46516:] #0x1003de708[3.0.46517:] #0x1003de720[3.0.46518:] #0x1003de738[3.0.46519:] 
+## 		24... #0x1003de750[3.0.46520:] #0x1003de768[3.0.46521:] #0x1003de780[3.0.46522:] #0x1003de798[3.0.46523:] 
+## 		28... #0x1003de7b0[3.0.46524:] #0x1003de7c8[3.0.46525:] #0x1003de7e0[3.0.46526:] #0x1003de7f8[3.0.46527:] 
+## 		32... #0x1003de810[3.0.46528:] #0x1003de828[3.0.46529:] #0x1003de840[3.0.46530:] #0x1003de858[3.0.46531:] 
+## 		36... #0x1003de870[3.0.46532:] #0x1003de888[3.0.46533:] #0x1003de8a0[3.0.46534:] #0x1003de8b8[3.0.46535:] 
+## 		40... #0x1003de8d0[3.0.46536:] #0x1003de8e8[3.0.46537:] #0x1003de900[3.0.46538:] #0x1003de918[3.0.46539:] 
+## 		44... #0x1003de930[3.0.46540:] #0x1003de948[3.0.46541:] #0x1003de960[3.0.46542:] #0x1003de978[3.0.46543:] 
+## 		48... #0x1003de990[3.0.46544:] #0x1003de9a8[3.0.46545:] #0x1003de9c0[3.0.46546:] #0x1003de9d8[3.0.46547:] 
+## 		52... #0x1003de9f0[3.0.46548:] #0x1003dea08[3.0.46549:] #0x1003dea20[3.0.46550:] #0x1003dea38[3.0.46551:] 
+## 		56... #0x1003dea50[3.0.46552:] ) 
+
+## L {=0x1003b13b0;c_l_();;0} #0x1003b13b0[3.0.46554:DBEquipmentHolder]  T=0x1003c8d40 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003dea68[3.0.47248:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=21" 
+## 	DBEquipmentBasic::m_UserLabel   9="C3 MECP " 
+## 	DBEquipmentBasic::m_NativeName   9="C3 MECP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=21@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b13c8;c_l_();;0} #0x1003b13c8[3.0.46555:DBEquipmentHolder]  T=0x1003c8de0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=21/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   11="C3 NONE 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C3 NONE 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b13b0[3.0.46554:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   4=( #0x1003dea80[3.0.46556:] #0x1003dea98[3.0.46557:] #0x1003deab0[3.0.46558:] #0x1003deac8[3.0.46559:] ) 
+
+## L {=0x1003b13e0;c_l_();;0} #0x1003b13e0[3.0.46561:DBEquipmentHolder]  T=0x1003c8e80 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deae0[3.0.47238:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22" 
+## 	DBEquipmentBasic::m_UserLabel   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_NativeName   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b13f8;c_l_();;0} #0x1003b13f8[3.0.46562:DBEquipmentHolder]  T=0x1003c8f20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deaf8[3.0.47250:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b13e0[3.0.46561:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1410;c_l_();;0} #0x1003b1410[3.0.46564:DBEquipmentHolder]  T=0x1003c8fc0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deb10[3.0.47251:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b13e0[3.0.46561:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   2 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=22/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1428;c_l_();;0} #0x1003b1428[3.0.46567:DBEquipmentHolder]  T=0x1003c9060 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deb28[3.0.47252:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23" 
+## 	DBEquipmentBasic::m_UserLabel   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_NativeName   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1440;c_l_();;0} #0x1003b1440[3.0.46568:DBEquipmentHolder]  T=0x1003c9100 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deb40[3.0.47253:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1428[3.0.46567:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1458;c_l_();;0} #0x1003b1458[3.0.46570:DBEquipmentHolder]  T=0x1003c91a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deb58[3.0.47254:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1428[3.0.46567:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=23/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1470;c_l_();;0} #0x1003b1470[3.0.46573:DBEquipmentHolder]  T=0x1003c9240 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003deb70[3.0.47255:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=24" 
+## 	DBEquipmentBasic::m_UserLabel   12="I7 PIO2_84 " 
+## 	DBEquipmentBasic::m_NativeName   12="I7 PIO2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=24@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   62=( #0x1003deb88[3.0.46574:] #0x1003deba0[3.0.46575:] #0x1003debb8[3.0.46576:] #0x1003debd0[3.0.46577:] 
+## 		4... #0x1003debe8[3.0.46578:] #0x1003dec00[3.0.46579:] #0x1003dec18[3.0.46580:] #0x1003dec30[3.0.46581:] 
+## 		8... #0x1003dec48[3.0.46582:] #0x1003dec60[3.0.46583:] #0x1003dec78[3.0.46584:] #0x1003dec90[3.0.46585:] 
+## 		12... #0x1003deca8[3.0.46586:] #0x1003decc0[3.0.46587:] #0x1003decd8[3.0.46588:] #0x1003decf0[3.0.46589:] 
+## 		16... #0x1003ded08[3.0.46590:] #0x1003ded20[3.0.46591:] #0x1003ded38[3.0.46592:] #0x1003ded50[3.0.46593:] 
+## 		20... #0x1003ded68[3.0.46594:] #0x1003ded80[3.0.46595:] #0x1003ded98[3.0.46596:] #0x1003dedb0[3.0.46597:] 
+## 		24... #0x1003dedc8[3.0.46598:] #0x1003dede0[3.0.46599:] #0x1003dedf8[3.0.46600:] #0x1003dee10[3.0.46601:] 
+## 		28... #0x1003dee28[3.0.46602:] #0x1003dee40[3.0.46603:] #0x1003dee58[3.0.46604:] #0x1003dee70[3.0.46605:] 
+## 		32... #0x1003dee88[3.0.46606:] #0x1003deea0[3.0.46607:] #0x1003deeb8[3.0.46608:] #0x1003deed0[3.0.46609:] 
+## 		36... #0x1003deee8[3.0.46610:] #0x1003def00[3.0.46611:] #0x1003def18[3.0.46612:] #0x1003def30[3.0.46613:] 
+## 		40... #0x1003def48[3.0.46614:] #0x1003def60[3.0.46615:] #0x1003def78[3.0.46616:] #0x1003def90[3.0.46617:] 
+## 		44... #0x1003defa8[3.0.46618:] #0x1003defc0[3.0.46619:] #0x1003defd8[3.0.46620:] #0x1003deff0[3.0.46621:] 
+## 		48... #0x1003df008[3.0.46622:] #0x1003df020[3.0.46623:] #0x1003df038[3.0.46624:] #0x1003df050[3.0.46625:] 
+## 		52... #0x1003df068[3.0.46626:] #0x1003df080[3.0.46627:] #0x1003df098[3.0.46628:] #0x1003df0b0[3.0.46629:] 
+## 		56... #0x1003df0c8[3.0.46630:] #0x1003df0e0[3.0.46631:] #0x1003df0f8[3.0.46632:] #0x1003df110[3.0.46633:] 
+## 		60... #0x1003df128[3.0.46634:] #0x1003df140[3.0.46635:] ) 
+
+## L {=0x1003b1488;c_l_();;0} #0x1003b1488[3.0.46637:DBEquipmentHolder]  T=0x1003c92e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=25" 
+## 	DBEquipmentBasic::m_UserLabel   9="I8 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="I8 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003df158[3.0.46638:] #0x1003df170[3.0.46639:] #0x1003df188[3.0.46640:] #0x1003df1a0[3.0.46641:] 
+## 		4... #0x1003df1b8[3.0.46642:] #0x1003df1d0[3.0.46643:] #0x1003df1e8[3.0.46644:] #0x1003df200[3.0.46645:] 
+## 		8... #0x1003df218[3.0.46646:] #0x1003df230[3.0.46647:] #0x1003df248[3.0.46648:] #0x1003df260[3.0.46649:] 
+## 		12... #0x1003df278[3.0.46650:] #0x1003df290[3.0.46651:] #0x1003df2a8[3.0.46652:] #0x1003df2c0[3.0.46653:] 
+## 		16... #0x1003df2d8[3.0.46654:] #0x1003df2f0[3.0.46655:] #0x1003df308[3.0.46656:] #0x1003df320[3.0.46657:] 
+## 		20... #0x1003df338[3.0.46658:] #0x1003df350[3.0.46659:] #0x1003df368[3.0.46660:] #0x1003df380[3.0.46661:] 
+## 		24... #0x1003df398[3.0.46662:] #0x1003df3b0[3.0.46663:] #0x1003df3c8[3.0.46664:] #0x1003df3e0[3.0.46665:] 
+## 		28... #0x1003df3f8[3.0.46666:] #0x1003df410[3.0.46667:] #0x1003df428[3.0.46668:] #0x1003df440[3.0.46669:] 
+## 		32... #0x1003df458[3.0.46670:] #0x1003df470[3.0.46671:] #0x1003df488[3.0.46672:] #0x1003df4a0[3.0.46673:] 
+## 		36... #0x1003df4b8[3.0.46674:] #0x1003df4d0[3.0.46675:] #0x1003df4e8[3.0.46676:] #0x1003df500[3.0.46677:] 
+## 		40... #0x1003df518[3.0.46678:] #0x1003df530[3.0.46679:] #0x1003df548[3.0.46680:] #0x1003df560[3.0.46681:] 
+## 		44... #0x1003df578[3.0.46682:] #0x1003df590[3.0.46683:] #0x1003df5a8[3.0.46684:] #0x1003df5c0[3.0.46685:] 
+## 		48... #0x1003df5d8[3.0.46686:] #0x1003df5f0[3.0.46687:] #0x1003df608[3.0.46688:] #0x1003df620[3.0.46689:] 
+## 		52... #0x1003df638[3.0.46690:] #0x1003df650[3.0.46691:] #0x1003df668[3.0.46692:] #0x1003df680[3.0.46693:] 
+## 		56... #0x1003df698[3.0.46694:] ) 
+
+## L {=0x1003b14a0;c_l_();;0} #0x1003b14a0[3.0.46695:DBEquipmentHolder]  T=0x1003c9380 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=26" 
+## 	DBEquipmentBasic::m_UserLabel   9="I9 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="I9 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   62=( #0x1003df6b0[3.0.46696:] #0x1003df6c8[3.0.46697:] #0x1003df6e0[3.0.46698:] #0x1003df6f8[3.0.46699:] 
+## 		4... #0x1003df710[3.0.46700:] #0x1003df728[3.0.46701:] #0x1003df740[3.0.46702:] #0x1003df758[3.0.46703:] 
+## 		8... #0x1003df770[3.0.46704:] #0x1003df788[3.0.46705:] #0x1003df7a0[3.0.46706:] #0x1003df7b8[3.0.46707:] 
+## 		12... #0x1003df7d0[3.0.46708:] #0x1003df7e8[3.0.46709:] #0x1003df800[3.0.46710:] #0x1003df818[3.0.46711:] 
+## 		16... #0x1003df830[3.0.46712:] #0x1003df848[3.0.46713:] #0x1003df860[3.0.46714:] #0x1003df878[3.0.46715:] 
+## 		20... #0x1003df890[3.0.46716:] #0x1003df8a8[3.0.46717:] #0x1003df8c0[3.0.46718:] #0x1003df8d8[3.0.46719:] 
+## 		24... #0x1003df8f0[3.0.46720:] #0x1003df908[3.0.46721:] #0x1003df920[3.0.46722:] #0x1003df938[3.0.46723:] 
+## 		28... #0x1003df950[3.0.46724:] #0x1003df968[3.0.46725:] #0x1003df980[3.0.46726:] #0x1003df998[3.0.46727:] 
+## 		32... #0x1003df9b0[3.0.46728:] #0x1003df9c8[3.0.46729:] #0x1003df9e0[3.0.46730:] #0x1003df9f8[3.0.46731:] 
+## 		36... #0x1003dfa10[3.0.46732:] #0x1003dfa28[3.0.46733:] #0x1003dfa40[3.0.46734:] #0x1003dfa58[3.0.46735:] 
+## 		40... #0x1003dfa70[3.0.46736:] #0x1003dfa88[3.0.46737:] #0x1003dfaa0[3.0.46738:] #0x1003dfab8[3.0.46739:] 
+## 		44... #0x1003dfad0[3.0.46740:] #0x1003dfae8[3.0.46741:] #0x1003dfb00[3.0.46742:] #0x1003dfb18[3.0.46743:] 
+## 		48... #0x1003dfb30[3.0.46744:] #0x1003dfb48[3.0.46745:] #0x1003dfb60[3.0.46746:] #0x1003dfb78[3.0.46747:] 
+## 		52... #0x1003dfb90[3.0.46748:] #0x1003dfba8[3.0.46749:] #0x1003dfbc0[3.0.46750:] #0x1003dfbd8[3.0.46751:] 
+## 		56... #0x1003dfbf0[3.0.46752:] #0x1003dfc08[3.0.46753:] #0x1003dfc20[3.0.46754:] #0x1003dfc38[3.0.46755:] 
+## 		60... #0x1003dfc50[3.0.46756:] #0x1003dfc68[3.0.46757:] ) 
+
+## L {=0x1003b14b8;c_l_();;0} #0x1003b14b8[3.0.46758:DBEquipmentHolder]  T=0x1003c9420 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=27" 
+## 	DBEquipmentBasic::m_UserLabel   10="I10 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="I10 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003dfc80[3.0.46759:] #0x1003dfc98[3.0.46760:] #0x1003dfcb0[3.0.46761:] #0x1003dfcc8[3.0.46762:] 
+## 		4... #0x1003dfce0[3.0.46763:] #0x1003dfcf8[3.0.46764:] #0x1003dfd10[3.0.46765:] #0x1003dfd28[3.0.46766:] 
+## 		8... #0x1003dfd40[3.0.46767:] #0x1003dfd58[3.0.46768:] #0x1003dfd70[3.0.46769:] #0x1003dfd88[3.0.46770:] 
+## 		12... #0x1003dfda0[3.0.46771:] #0x1003dfdb8[3.0.46772:] #0x1003dfdd0[3.0.46773:] #0x1003dfde8[3.0.46774:] 
+## 		16... #0x1003e8000[3.0.46775:] #0x1003e8018[3.0.46776:] #0x1003e8030[3.0.46777:] #0x1003e8048[3.0.46778:] 
+## 		20... #0x1003e8060[3.0.46779:] #0x1003e8078[3.0.46780:] #0x1003e8090[3.0.46781:] #0x1003e80a8[3.0.46782:] 
+## 		24... #0x1003e80c0[3.0.46783:] #0x1003e80d8[3.0.46784:] #0x1003e80f0[3.0.46785:] #0x1003e8108[3.0.46786:] 
+## 		28... #0x1003e8120[3.0.46787:] #0x1003e8138[3.0.46788:] #0x1003e8150[3.0.46789:] #0x1003e8168[3.0.46790:] 
+## 		32... #0x1003e8180[3.0.46791:] #0x1003e8198[3.0.46792:] #0x1003e81b0[3.0.46793:] #0x1003e81c8[3.0.46794:] 
+## 		36... #0x1003e81e0[3.0.46795:] #0x1003e81f8[3.0.46796:] #0x1003e8210[3.0.46797:] #0x1003e8228[3.0.46798:] 
+## 		40... #0x1003e8240[3.0.46799:] #0x1003e8258[3.0.46800:] #0x1003e8270[3.0.46801:] #0x1003e8288[3.0.46802:] 
+## 		44... #0x1003e82a0[3.0.46803:] #0x1003e82b8[3.0.46804:] #0x1003e82d0[3.0.46805:] #0x1003e82e8[3.0.46806:] 
+## 		48... #0x1003e8300[3.0.46807:] #0x1003e8318[3.0.46808:] #0x1003e8330[3.0.46809:] #0x1003e8348[3.0.46810:] 
+## 		52... #0x1003e8360[3.0.46811:] #0x1003e8378[3.0.46812:] #0x1003e8390[3.0.46813:] #0x1003e83a8[3.0.46814:] 
+## 		56... #0x1003e83c0[3.0.46815:] ) 
+
+## L {=0x1003b14d0;c_l_();;0} #0x1003b14d0[3.0.46816:DBEquipmentHolder]  T=0x1003c94c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=28" 
+## 	DBEquipmentBasic::m_UserLabel   10="I11 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="I11 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   62=( #0x1003e83d8[3.0.46817:] #0x1003e83f0[3.0.46818:] #0x1003e8408[3.0.46819:] #0x1003e8420[3.0.46820:] 
+## 		4... #0x1003e8438[3.0.46821:] #0x1003e8450[3.0.46822:] #0x1003e8468[3.0.46823:] #0x1003e8480[3.0.46824:] 
+## 		8... #0x1003e8498[3.0.46825:] #0x1003e84b0[3.0.46826:] #0x1003e84c8[3.0.46827:] #0x1003e84e0[3.0.46828:] 
+## 		12... #0x1003e84f8[3.0.46829:] #0x1003e8510[3.0.46830:] #0x1003e8528[3.0.46831:] #0x1003e8540[3.0.46832:] 
+## 		16... #0x1003e8558[3.0.46833:] #0x1003e8570[3.0.46834:] #0x1003e8588[3.0.46835:] #0x1003e85a0[3.0.46836:] 
+## 		20... #0x1003e85b8[3.0.46837:] #0x1003e85d0[3.0.46838:] #0x1003e85e8[3.0.46839:] #0x1003e8600[3.0.46840:] 
+## 		24... #0x1003e8618[3.0.46841:] #0x1003e8630[3.0.46842:] #0x1003e8648[3.0.46843:] #0x1003e8660[3.0.46844:] 
+## 		28... #0x1003e8678[3.0.46845:] #0x1003e8690[3.0.46846:] #0x1003e86a8[3.0.46847:] #0x1003e86c0[3.0.46848:] 
+## 		32... #0x1003e86d8[3.0.46849:] #0x1003e86f0[3.0.46850:] #0x1003e8708[3.0.46851:] #0x1003e8720[3.0.46852:] 
+## 		36... #0x1003e8738[3.0.46853:] #0x1003e8750[3.0.46854:] #0x1003e8768[3.0.46855:] #0x1003e8780[3.0.46856:] 
+## 		40... #0x1003e8798[3.0.46857:] #0x1003e87b0[3.0.46858:] #0x1003e87c8[3.0.46859:] #0x1003e87e0[3.0.46860:] 
+## 		44... #0x1003e87f8[3.0.46861:] #0x1003e8810[3.0.46862:] #0x1003e8828[3.0.46863:] #0x1003e8840[3.0.46864:] 
+## 		48... #0x1003e8858[3.0.46865:] #0x1003e8870[3.0.46866:] #0x1003e8888[3.0.46867:] #0x1003e88a0[3.0.46868:] 
+## 		52... #0x1003e88b8[3.0.46869:] #0x1003e88d0[3.0.46870:] #0x1003e88e8[3.0.46871:] #0x1003e8900[3.0.46872:] 
+## 		56... #0x1003e8918[3.0.46873:] #0x1003e8930[3.0.46874:] #0x1003e8948[3.0.46875:] #0x1003e8960[3.0.46876:] 
+## 		60... #0x1003e8978[3.0.46877:] #0x1003e8990[3.0.46878:] ) 
+
+## L {=0x1003b14e8;c_l_();;0} #0x1003b14e8[3.0.46879:DBEquipmentHolder]  T=0x1003c9560 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=29" 
+## 	DBEquipmentBasic::m_UserLabel   10="I12 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="I12 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   50=( #0x1003e89a8[3.0.46880:] #0x1003e89c0[3.0.46881:] #0x1003e89d8[3.0.46882:] #0x1003e89f0[3.0.46883:] 
+## 		4... #0x1003e8a08[3.0.46884:] #0x1003e8a20[3.0.46885:] #0x1003e8a38[3.0.46886:] #0x1003e8a50[3.0.46887:] 
+## 		8... #0x1003e8a68[3.0.46888:] #0x1003e8a80[3.0.46889:] #0x1003e8a98[3.0.46890:] #0x1003e8ab0[3.0.46891:] 
+## 		12... #0x1003e8ac8[3.0.46892:] #0x1003e8ae0[3.0.46893:] #0x1003e8af8[3.0.46894:] #0x1003e8b10[3.0.46895:] 
+## 		16... #0x1003e8b28[3.0.46896:] #0x1003e8b40[3.0.46897:] #0x1003e8b58[3.0.46898:] #0x1003e8b70[3.0.46899:] 
+## 		20... #0x1003e8b88[3.0.46900:] #0x1003e8ba0[3.0.46901:] #0x1003e8bb8[3.0.46902:] #0x1003e8bd0[3.0.46903:] 
+## 		24... #0x1003e8be8[3.0.46904:] #0x1003e8c00[3.0.46905:] #0x1003e8c18[3.0.46906:] #0x1003e8c30[3.0.46907:] 
+## 		28... #0x1003e8c48[3.0.46908:] #0x1003e8c60[3.0.46909:] #0x1003e8c78[3.0.46910:] #0x1003e8c90[3.0.46911:] 
+## 		32... #0x1003e8ca8[3.0.46912:] #0x1003e8cc0[3.0.46913:] #0x1003e8cd8[3.0.46914:] #0x1003e8cf0[3.0.46915:] 
+## 		36... #0x1003e8d08[3.0.46916:] #0x1003e8d20[3.0.46917:] #0x1003e8d38[3.0.46918:] #0x1003e8d50[3.0.46919:] 
+## 		40... #0x1003e8d68[3.0.46920:] #0x1003e8d80[3.0.46921:] #0x1003e8d98[3.0.46922:] #0x1003e8db0[3.0.46923:] 
+## 		44... #0x1003e8dc8[3.0.46924:] #0x1003e8de0[3.0.46925:] #0x1003e8df8[3.0.46926:] #0x1003e8e10[3.0.46927:] 
+## 		48... #0x1003e8e28[3.0.46928:] #0x1003e8e40[3.0.46929:] ) 
+
+## L {=0x1003b1500;c_l_();;0} #0x1003b1500[3.0.46930:DBEquipmentHolder]  T=0x1003c9600 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=3" 
+## 	DBEquipmentBasic::m_UserLabel   9="M1 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M1 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003e8e58[3.0.46931:] #0x1003e8e70[3.0.46932:] #0x1003e8e88[3.0.46933:] #0x1003e8ea0[3.0.46934:] 
+## 		4... #0x1003e8eb8[3.0.46935:] #0x1003e8ed0[3.0.46936:] #0x1003e8ee8[3.0.46937:] #0x1003e8f00[3.0.46938:] 
+## 		8... #0x1003e8f18[3.0.46939:] #0x1003e8f30[3.0.46940:] #0x1003e8f48[3.0.46941:] #0x1003e8f60[3.0.46942:] 
+## 		12... #0x1003e8f78[3.0.46943:] #0x1003e8f90[3.0.46944:] #0x1003e8fa8[3.0.46945:] #0x1003e8fc0[3.0.46946:] 
+## 		16... #0x1003e8fd8[3.0.46947:] #0x1003e8ff0[3.0.46948:] #0x1003e9008[3.0.46949:] #0x1003e9020[3.0.46950:] 
+## 		20... #0x1003e9038[3.0.46951:] #0x1003e9050[3.0.46952:] #0x1003e9068[3.0.46953:] #0x1003e9080[3.0.46954:] 
+## 		24... #0x1003e9098[3.0.46955:] #0x1003e90b0[3.0.46956:] #0x1003e90c8[3.0.46957:] #0x1003e90e0[3.0.46958:] 
+## 		28... #0x1003e90f8[3.0.46959:] #0x1003e9110[3.0.46960:] #0x1003e9128[3.0.46961:] #0x1003e9140[3.0.46962:] 
+## 		32... #0x1003e9158[3.0.46963:] #0x1003e9170[3.0.46964:] #0x1003e9188[3.0.46965:] #0x1003e91a0[3.0.46966:] 
+## 		36... #0x1003e91b8[3.0.46967:] #0x1003e91d0[3.0.46968:] #0x1003e91e8[3.0.46969:] #0x1003e9200[3.0.46970:] 
+## 		40... #0x1003e9218[3.0.46971:] #0x1003e9230[3.0.46972:] ) 
+
+## L {=0x1003b1518;c_l_();;0} #0x1003b1518[3.0.46973:DBEquipmentHolder]  T=0x1003c96a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003e9248[3.0.47256:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=30" 
+## 	DBEquipmentBasic::m_UserLabel   13="X2 HLXC_384 " 
+## 	DBEquipmentBasic::m_NativeName   13="X2 HLXC_384 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=30@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   15=( #0x1003e9260[3.0.46974:] #0x1003e9278[3.0.46975:] #0x1003e9290[3.0.46976:] #0x1003e92a8[3.0.46977:] 
+## 		4... #0x1003e92c0[3.0.46978:] #0x1003e92d8[3.0.46979:] #0x1003e92f0[3.0.46980:] #0x1003e9308[3.0.46981:] 
+## 		8... #0x1003e9320[3.0.46982:] #0x1003e9338[3.0.46983:] #0x1003e9350[3.0.46984:] #0x1003e9368[3.0.46985:] 
+## 		12... #0x1003e9380[3.0.46986:] #0x1003e9398[3.0.46987:] #0x1003e93b0[3.0.46988:] ) 
+
+## L {=0x1003b1530;c_l_();;0} #0x1003b1530[3.0.46989:DBEquipmentHolder]  T=0x1003c9740 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003e93c8[3.0.47257:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=30/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1518[3.0.46973:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=30/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1548;c_l_();;0} #0x1003b1548[3.0.46992:DBEquipmentHolder]  T=0x1003c97e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003e93e0[3.0.47258:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=31" 
+## 	DBEquipmentBasic::m_UserLabel   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=31@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1560;c_l_();;0} #0x1003b1560[3.0.46994:DBEquipmentHolder]  T=0x1003c9880 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003e93f8[3.0.47259:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=32" 
+## 	DBEquipmentBasic::m_UserLabel   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=32@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1578;c_l_();;0} #0x1003b1578[3.0.46996:DBEquipmentHolder]  T=0x1003c9920 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003e9410[3.0.47249:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=33" 
+## 	DBEquipmentBasic::m_UserLabel   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=33@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1590;c_l_();;0} #0x1003b1590[3.0.46998:DBEquipmentHolder]  T=0x1003c99c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=4" 
+## 	DBEquipmentBasic::m_UserLabel   9="M2 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M2 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003e9428[3.0.46999:] #0x1003e9440[3.0.47000:] #0x1003e9458[3.0.47001:] #0x1003e9470[3.0.47002:] 
+## 		4... #0x1003e9488[3.0.47003:] #0x1003e94a0[3.0.47004:] #0x1003e94b8[3.0.47005:] #0x1003e94d0[3.0.47006:] 
+## 		8... #0x1003e94e8[3.0.47007:] #0x1003e9500[3.0.47008:] #0x1003e9518[3.0.47009:] #0x1003e9530[3.0.47010:] 
+## 		12... #0x1003e9548[3.0.47011:] #0x1003e9560[3.0.47012:] #0x1003e9578[3.0.47013:] #0x1003e9590[3.0.47014:] 
+## 		16... #0x1003e95a8[3.0.47015:] #0x1003e95c0[3.0.47016:] #0x1003e95d8[3.0.47017:] #0x1003e95f0[3.0.47018:] 
+## 		20... #0x1003e9608[3.0.47019:] #0x1003e9620[3.0.47020:] #0x1003e9638[3.0.47021:] #0x1003e9650[3.0.47022:] 
+## 		24... #0x1003e9668[3.0.47023:] #0x1003e9680[3.0.47024:] #0x1003e9698[3.0.47025:] #0x1003e96b0[3.0.47026:] 
+## 		28... #0x1003e96c8[3.0.47027:] #0x1003e96e0[3.0.47028:] #0x1003e96f8[3.0.47029:] #0x1003e9710[3.0.47030:] 
+## 		32... #0x1003e9728[3.0.47031:] #0x1003e9740[3.0.47032:] #0x1003e9758[3.0.47033:] #0x1003e9770[3.0.47034:] 
+## 		36... #0x1003e9788[3.0.47035:] #0x1003e97a0[3.0.47036:] #0x1003e97b8[3.0.47037:] #0x1003e97d0[3.0.47038:] 
+## 		40... #0x1003e97e8[3.0.47039:] #0x1003e9800[3.0.47040:] ) 
+
+## L {=0x1003b15a8;c_l_();;0} #0x1003b15a8[3.0.47041:DBEquipmentHolder]  T=0x1003c9a60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=5" 
+## 	DBEquipmentBasic::m_UserLabel   9="M3 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M3 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003e9818[3.0.47042:] #0x1003e9830[3.0.47043:] #0x1003e9848[3.0.47044:] #0x1003e9860[3.0.47045:] 
+## 		4... #0x1003e9878[3.0.47046:] #0x1003e9890[3.0.47047:] #0x1003e98a8[3.0.47048:] #0x1003e98c0[3.0.47049:] 
+## 		8... #0x1003e98d8[3.0.47050:] #0x1003e98f0[3.0.47051:] #0x1003e9908[3.0.47052:] #0x1003e9920[3.0.47053:] 
+## 		12... #0x1003e9938[3.0.47054:] #0x1003e9950[3.0.47055:] #0x1003e9968[3.0.47056:] #0x1003e9980[3.0.47057:] 
+## 		16... #0x1003e9998[3.0.47058:] #0x1003e99b0[3.0.47059:] #0x1003e99c8[3.0.47060:] #0x1003e99e0[3.0.47061:] 
+## 		20... #0x1003e99f8[3.0.47062:] #0x1003e9a10[3.0.47063:] #0x1003e9a28[3.0.47064:] #0x1003e9a40[3.0.47065:] 
+## 		24... #0x1003e9a58[3.0.47066:] #0x1003e9a70[3.0.47067:] #0x1003e9a88[3.0.47068:] #0x1003e9aa0[3.0.47069:] 
+## 		28... #0x1003e9ab8[3.0.47070:] #0x1003e9ad0[3.0.47071:] #0x1003e9ae8[3.0.47072:] #0x1003e9b00[3.0.47073:] 
+## 		32... #0x1003e9b18[3.0.47074:] #0x1003e9b30[3.0.47075:] #0x1003e9b48[3.0.47076:] #0x1003e9b60[3.0.47077:] 
+## 		36... #0x1003e9b78[3.0.47078:] #0x1003e9b90[3.0.47079:] #0x1003e9ba8[3.0.47080:] #0x1003e9bc0[3.0.47081:] 
+## 		40... #0x1003e9bd8[3.0.47082:] #0x1003e9bf0[3.0.47083:] ) 
+
+## L {=0x1003b15c0;c_l_();;0} #0x1003b15c0[3.0.47084:DBEquipmentHolder]  T=0x1003c9b00 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=6" 
+## 	DBEquipmentBasic::m_UserLabel   9="M4 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M4 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   42=( #0x1003e9c08[3.0.47085:] #0x1003e9c20[3.0.47086:] #0x1003e9c38[3.0.47087:] #0x1003e9c50[3.0.47088:] 
+## 		4... #0x1003e9c68[3.0.47089:] #0x1003e9c80[3.0.47090:] #0x1003e9c98[3.0.47091:] #0x1003e9cb0[3.0.47092:] 
+## 		8... #0x1003e9cc8[3.0.47093:] #0x1003e9ce0[3.0.47094:] #0x1003e9cf8[3.0.47095:] #0x1003e9d10[3.0.47096:] 
+## 		12... #0x1003e9d28[3.0.47097:] #0x1003e9d40[3.0.47098:] #0x1003e9d58[3.0.47099:] #0x1003e9d70[3.0.47100:] 
+## 		16... #0x1003e9d88[3.0.47101:] #0x1003e9da0[3.0.47102:] #0x1003e9db8[3.0.47103:] #0x1003e9dd0[3.0.47104:] 
+## 		20... #0x1003e9de8[3.0.47105:] #0x1003ea000[3.0.47106:] #0x1003ea018[3.0.47107:] #0x1003ea030[3.0.47108:] 
+## 		24... #0x1003ea048[3.0.47109:] #0x1003ea060[3.0.47110:] #0x1003ea078[3.0.47111:] #0x1003ea090[3.0.47112:] 
+## 		28... #0x1003ea0a8[3.0.47113:] #0x1003ea0c0[3.0.47114:] #0x1003ea0d8[3.0.47115:] #0x1003ea0f0[3.0.47116:] 
+## 		32... #0x1003ea108[3.0.47117:] #0x1003ea120[3.0.47118:] #0x1003ea138[3.0.47119:] #0x1003ea150[3.0.47120:] 
+## 		36... #0x1003ea168[3.0.47121:] #0x1003ea180[3.0.47122:] #0x1003ea198[3.0.47123:] #0x1003ea1b0[3.0.47124:] 
+## 		40... #0x1003ea1c8[3.0.47125:] #0x1003ea1e0[3.0.47126:] ) 
+
+## L {=0x1003b15d8;c_l_();;0} #0x1003b15d8[3.0.47127:DBEquipmentHolder]  T=0x1003c9ba0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=7" 
+## 	DBEquipmentBasic::m_UserLabel   9="M5 NONE " 
+## 	DBEquipmentBasic::m_NativeName   9="M5 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   28=( #0x1003ea1f8[3.0.47128:] #0x1003ea210[3.0.47129:] #0x1003ea228[3.0.47130:] #0x1003ea240[3.0.47131:] 
+## 		4... #0x1003ea258[3.0.47132:] #0x1003ea270[3.0.47133:] #0x1003ea288[3.0.47134:] #0x1003ea2a0[3.0.47135:] 
+## 		8... #0x1003ea2b8[3.0.47136:] #0x1003ea2d0[3.0.47137:] #0x1003ea2e8[3.0.47138:] #0x1003ea300[3.0.47139:] 
+## 		12... #0x1003ea318[3.0.47140:] #0x1003ea330[3.0.47141:] #0x1003ea348[3.0.47142:] #0x1003ea360[3.0.47143:] 
+## 		16... #0x1003ea378[3.0.47144:] #0x1003ea390[3.0.47145:] #0x1003ea3a8[3.0.47146:] #0x1003ea3c0[3.0.47147:] 
+## 		20... #0x1003ea3d8[3.0.47148:] #0x1003ea3f0[3.0.47149:] #0x1003ea408[3.0.47150:] #0x1003ea420[3.0.47151:] 
+## 		24... #0x1003ea438[3.0.47152:] #0x1003ea450[3.0.47153:] #0x1003ea468[3.0.47154:] #0x1003ea480[3.0.47155:] ) 
+
+## L {=0x1003b15f0;c_l_();;0} #0x1003b15f0[3.0.47156:DBEquipmentHolder]  T=0x1003c9c40 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ea498[3.0.47260:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=8" 
+## 	DBEquipmentBasic::m_UserLabel   10="M6 M2_84 " 
+## 	DBEquipmentBasic::m_NativeName   10="M6 M2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=8@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   30=( #0x1003ea4b0[3.0.47157:] #0x1003ea4c8[3.0.47158:] #0x1003ea4e0[3.0.47159:] #0x1003ea4f8[3.0.47160:] 
+## 		4... #0x1003ea510[3.0.47161:] #0x1003ea528[3.0.47162:] #0x1003ea540[3.0.47163:] #0x1003ea558[3.0.47164:] 
+## 		8... #0x1003ea570[3.0.47165:] #0x1003ea588[3.0.47166:] #0x1003ea5a0[3.0.47167:] #0x1003ea5b8[3.0.47168:] 
+## 		12... #0x1003ea5d0[3.0.47169:] #0x1003ea5e8[3.0.47170:] #0x1003ea600[3.0.47171:] #0x1003ea618[3.0.47172:] 
+## 		16... #0x1003ea630[3.0.47173:] #0x1003ea648[3.0.47174:] #0x1003ea660[3.0.47175:] #0x1003ea678[3.0.47176:] 
+## 		20... #0x1003ea690[3.0.47177:] #0x1003ea6a8[3.0.47178:] #0x1003ea6c0[3.0.47179:] #0x1003ea6d8[3.0.47180:] 
+## 		24... #0x1003ea6f0[3.0.47181:] #0x1003ea708[3.0.47182:] #0x1003ea720[3.0.47183:] #0x1003ea738[3.0.47184:] 
+## 		28... #0x1003ea750[3.0.47185:] #0x1003ea768[3.0.47186:] ) 
+
+## L {=0x1003b1608;c_l_();;0} #0x1003b1608[3.0.47188:DBEquipmentHolder]  T=0x1003c9ce0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003ea780[3.0.47261:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=9" 
+## 	DBEquipmentBasic::m_UserLabel   10="M7 M2_84 " 
+## 	DBEquipmentBasic::m_NativeName   10="M7 M2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=9@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   44=( #0x1003ea798[3.0.47189:] #0x1003ea7b0[3.0.47190:] #0x1003ea7c8[3.0.47191:] #0x1003ea7e0[3.0.47192:] 
+## 		4... #0x1003ea7f8[3.0.47193:] #0x1003ea810[3.0.47194:] #0x1003ea828[3.0.47195:] #0x1003ea840[3.0.47196:] 
+## 		8... #0x1003ea858[3.0.47197:] #0x1003ea870[3.0.47198:] #0x1003ea888[3.0.47199:] #0x1003ea8a0[3.0.47200:] 
+## 		12... #0x1003ea8b8[3.0.47201:] #0x1003ea8d0[3.0.47202:] #0x1003ea8e8[3.0.47203:] #0x1003ea900[3.0.47204:] 
+## 		16... #0x1003ea918[3.0.47205:] #0x1003ea930[3.0.47206:] #0x1003ea948[3.0.47207:] #0x1003ea960[3.0.47208:] 
+## 		20... #0x1003ea978[3.0.47209:] #0x1003ea990[3.0.47210:] #0x1003ea9a8[3.0.47211:] #0x1003ea9c0[3.0.47212:] 
+## 		24... #0x1003ea9d8[3.0.47213:] #0x1003ea9f0[3.0.47214:] #0x1003eaa08[3.0.47215:] #0x1003eaa20[3.0.47216:] 
+## 		28... #0x1003eaa38[3.0.47217:] #0x1003eaa50[3.0.47218:] #0x1003eaa68[3.0.47219:] #0x1003eaa80[3.0.47220:] 
+## 		32... #0x1003eaa98[3.0.47221:] #0x1003eaab0[3.0.47222:] #0x1003eaac8[3.0.47223:] #0x1003eaae0[3.0.47224:] 
+## 		36... #0x1003eaaf8[3.0.47225:] #0x1003eab10[3.0.47226:] #0x1003eab28[3.0.47227:] #0x1003eab40[3.0.47228:] 
+## 		40... #0x1003eab58[3.0.47229:] #0x1003eab70[3.0.47230:] #0x1003eab88[3.0.47231:] #0x1003eaba0[3.0.47232:] ) 
+
+## L {=0x1003b1620;c_l_();;0} #0x1003b1620[3.0.47263:DBEquipmentHolder]  T=0x1003c9d80 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eabb8[3.0.47818:] 
+## 	DBEquipmentBasic::m_ObjectDN   69="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1" 
+## 	DBEquipmentBasic::m_UserLabel   9="XD05-A01" 
+## 	DBEquipmentBasic::m_NativeName   9="XD05-A01" 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003eabd0[3.0.42194:] 
+## 	DBEquipmentHolder::m_HolderType   0 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1638;c_l_();;0} #0x1003b1638[3.0.47264:DBEquipmentHolder]  T=0x1003c9e20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eabe8[3.0.47820:] 
+## 	DBEquipmentBasic::m_ObjectDN   77="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1" 
+## 	DBEquipmentBasic::m_UserLabel   9="XD05-A01" 
+## 	DBEquipmentBasic::m_NativeName   9="XD05-A01" 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1620[3.0.47263:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   1 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1650;c_l_();;0} #0x1003b1650[3.0.47265:DBEquipmentHolder]  T=0x1003c9ec0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eac00[3.0.47821:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="PW1 xINF " 
+## 	DBEquipmentBasic::m_NativeName   10="PW1 xINF " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1668;c_l_();;0} #0x1003b1668[3.0.47267:DBEquipmentHolder]  T=0x1003ee020 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eac18[3.0.47822:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=10" 
+## 	DBEquipmentBasic::m_UserLabel   11="MC1 M2_84 " 
+## 	DBEquipmentBasic::m_NativeName   11="MC1 M2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=10@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   30=( #0x1003eac30[3.0.47268:] #0x1003eac48[3.0.47269:] #0x1003eac60[3.0.47270:] #0x1003eac78[3.0.47271:] 
+## 		4... #0x1003eac90[3.0.47272:] #0x1003eaca8[3.0.47273:] #0x1003eacc0[3.0.47274:] #0x1003eacd8[3.0.47275:] 
+## 		8... #0x1003eacf0[3.0.47276:] #0x1003ead08[3.0.47277:] #0x1003ead20[3.0.47278:] #0x1003ead38[3.0.47279:] 
+## 		12... #0x1003ead50[3.0.47280:] #0x1003ead68[3.0.47281:] #0x1003ead80[3.0.47282:] #0x1003ead98[3.0.47283:] 
+## 		16... #0x1003eadb0[3.0.47284:] #0x1003eadc8[3.0.47285:] #0x1003eade0[3.0.47286:] #0x1003eadf8[3.0.47287:] 
+## 		20... #0x1003eae10[3.0.47288:] #0x1003eae28[3.0.47289:] #0x1003eae40[3.0.47290:] #0x1003eae58[3.0.47291:] 
+## 		24... #0x1003eae70[3.0.47292:] #0x1003eae88[3.0.47293:] #0x1003eaea0[3.0.47294:] #0x1003eaeb8[3.0.47295:] 
+## 		28... #0x1003eaed0[3.0.47296:] #0x1003eaee8[3.0.47297:] ) 
+
+## L {=0x1003b1680;c_l_();;0} #0x1003b1680[3.0.47299:DBEquipmentHolder]  T=0x1003ee0c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=11" 
+## 	DBEquipmentBasic::m_UserLabel   10="MC2 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="MC2 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   28=( #0x1003eaf00[3.0.47300:] #0x1003eaf18[3.0.47301:] #0x1003eaf30[3.0.47302:] #0x1003eaf48[3.0.47303:] 
+## 		4... #0x1003eaf60[3.0.47304:] #0x1003eaf78[3.0.47305:] #0x1003eaf90[3.0.47306:] #0x1003eafa8[3.0.47307:] 
+## 		8... #0x1003eafc0[3.0.47308:] #0x1003eafd8[3.0.47309:] #0x1003eaff0[3.0.47310:] #0x1003eb008[3.0.47311:] 
+## 		12... #0x1003eb020[3.0.47312:] #0x1003eb038[3.0.47313:] #0x1003eb050[3.0.47314:] #0x1003eb068[3.0.47315:] 
+## 		16... #0x1003eb080[3.0.47316:] #0x1003eb098[3.0.47317:] #0x1003eb0b0[3.0.47318:] #0x1003eb0c8[3.0.47319:] 
+## 		20... #0x1003eb0e0[3.0.47320:] #0x1003eb0f8[3.0.47321:] #0x1003eb110[3.0.47322:] #0x1003eb128[3.0.47323:] 
+## 		24... #0x1003eb140[3.0.47324:] #0x1003eb158[3.0.47325:] #0x1003eb170[3.0.47326:] #0x1003eb188[3.0.47327:] ) 
+
+## L {=0x1003b1698;c_l_();;0} #0x1003b1698[3.0.47328:DBEquipmentHolder]  T=0x1003ee160 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=12" 
+## 	DBEquipmentBasic::m_UserLabel   10="MC3 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="MC3 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   29=( #0x1003eb1a0[3.0.47329:] #0x1003eb1b8[3.0.47330:] #0x1003eb1d0[3.0.47331:] #0x1003eb1e8[3.0.47332:] 
+## 		4... #0x1003eb200[3.0.47333:] #0x1003eb218[3.0.47334:] #0x1003eb230[3.0.47335:] #0x1003eb248[3.0.47336:] 
+## 		8... #0x1003eb260[3.0.47337:] #0x1003eb278[3.0.47338:] #0x1003eb290[3.0.47339:] #0x1003eb2a8[3.0.47340:] 
+## 		12... #0x1003eb2c0[3.0.47341:] #0x1003eb2d8[3.0.47342:] #0x1003eb2f0[3.0.47343:] #0x1003eb308[3.0.47344:] 
+## 		16... #0x1003eb320[3.0.47345:] #0x1003eb338[3.0.47346:] #0x1003eb350[3.0.47347:] #0x1003eb368[3.0.47348:] 
+## 		20... #0x1003eb380[3.0.47349:] #0x1003eb398[3.0.47350:] #0x1003eb3b0[3.0.47351:] #0x1003eb3c8[3.0.47352:] 
+## 		24... #0x1003eb3e0[3.0.47353:] #0x1003eb3f8[3.0.47354:] #0x1003eb410[3.0.47355:] #0x1003eb428[3.0.47356:] 
+## 		28... #0x1003eb440[3.0.47357:] ) 
+
+## L {=0x1003b16b0;c_l_();;0} #0x1003b16b0[3.0.47358:DBEquipmentHolder]  T=0x1003ee200 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eb458[3.0.47823:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=13" 
+## 	DBEquipmentBasic::m_UserLabel   10="MC4 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="MC4 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   3 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=13@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   29=( #0x1003eb470[3.0.47359:] #0x1003eb488[3.0.47360:] #0x1003eb4a0[3.0.47361:] #0x1003eb4b8[3.0.47362:] 
+## 		4... #0x1003eb4d0[3.0.47363:] #0x1003eb4e8[3.0.47364:] #0x1003eb500[3.0.47365:] #0x1003eb518[3.0.47366:] 
+## 		8... #0x1003eb530[3.0.47367:] #0x1003eb548[3.0.47368:] #0x1003eb560[3.0.47369:] #0x1003eb578[3.0.47370:] 
+## 		12... #0x1003eb590[3.0.47371:] #0x1003eb5a8[3.0.47372:] #0x1003eb5c0[3.0.47373:] #0x1003eb5d8[3.0.47374:] 
+## 		16... #0x1003eb5f0[3.0.47375:] #0x1003eb608[3.0.47376:] #0x1003eb620[3.0.47377:] #0x1003eb638[3.0.47378:] 
+## 		20... #0x1003eb650[3.0.47379:] #0x1003eb668[3.0.47380:] #0x1003eb680[3.0.47381:] #0x1003eb698[3.0.47382:] 
+## 		24... #0x1003eb6b0[3.0.47383:] #0x1003eb6c8[3.0.47384:] #0x1003eb6e0[3.0.47385:] #0x1003eb6f8[3.0.47386:] 
+## 		28... #0x1003eb710[3.0.47387:] ) 
+
+## L {=0x1003b16c8;c_l_();;0} #0x1003b16c8[3.0.47389:DBEquipmentHolder]  T=0x1003ee2a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #0x1003eb728[3.0.47824:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=14" 
+## 	DBEquipmentBasic::m_UserLabel   10="IC4 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="IC4 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   1="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   56=( #0x1003eb740[3.0.47390:] #0x1003eb758[3.0.47391:] #0x1003eb770[3.0.47392:] #0x1003eb788[3.0.47393:] 
+## 		4... #0x1003eb7a0[3.0.47394:] #0x1003eb7b8[3.0.47395:] #0x1003eb7d0[3.0.47396:] #0x1003eb7e8[3.0.47397:] 
+## 		8... #0x1003eb800[3.0.47398:] #0x1003eb818[3.0.47399:] #0x1003eb830[3.0.47400:] #0x1003eb848[3.0.47401:] 
+## 		12... #0x1003eb860[3.0.47402:] #0x1003eb878[3.0.47403:] #0x1003eb890[3.0.47404:] #0x1003eb8a8[3.0.47405:] 
+## 		16... #0x1003eb8c0[3.0.47406:] #0x1003eb8d8[3.0.47407:] #0x1003eb8f0[3.0.47408:] #0x1003eb908[3.0.47409:] 
+## 		20... #0x1003eb920[3.0.47410:] #0x1003eb938[3.0.47411:] #0x1003eb950[3.0.47412:] #0x1003eb968[3.0.47413:] 
+## 		24... #0x1003eb980[3.0.47414:] #0x1003eb998[3.0.47415:] #0x1003eb9b0[3.0.47416:] #0x1003eb9c8[3.0.47417:] 
+## 		28... #0x1003eb9e0[3.0.47418:] #0x1003eb9f8[3.0.47419:] #0x1003eba10[3.0.47420:] #0x1003eba28[3.0.47421:] 
+## 		32... #0x1003eba40[3.0.47422:] #0x1003eba58[3.0.47423:] #0x1003eba70[3.0.47424:] #0x1003eba88[3.0.47425:] 
+## 		36... #0x1003ebaa0[3.0.47426:] #0x1003ebab8[3.0.47427:] #0x1003ebad0[3.0.47428:] #0x1003ebae8[3.0.47429:] 
+## 		40... #0x1003ebb00[3.0.47430:] #0x1003ebb18[3.0.47431:] #0x1003ebb30[3.0.47432:] #0x1003ebb48[3.0.47433:] 
+## 		44... #0x1003ebb60[3.0.47434:] #0x1003ebb78[3.0.47435:] #0x1003ebb90[3.0.47436:] #0x1003ebba8[3.0.47437:] 
+## 		48... #0x1003ebbc0[3.0.47438:] #0x1003ebbd8[3.0.47439:] #0x1003ebbf0[3.0.47440:] #0x1003ebc08[3.0.47441:] 
+## 		52... #0x1003ebc20[3.0.47442:] #0x1003ebc38[3.0.47443:] #0x1003ebc50[3.0.47444:] #0x1003ebc68[3.0.47445:] ) 
+
+## L {=0x1003b16e0;c_l_();;0} #0x1003b16e0[3.0.47455:DBEquipmentHolder]  T=0x1003ee340 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=15" 
+## 	DBEquipmentBasic::m_UserLabel   10="IC5 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="IC5 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003ebc80[3.0.47456:] #0x1003ebc98[3.0.47457:] #0x1003ebcb0[3.0.47458:] #0x1003ebcc8[3.0.47459:] 
+## 		4... #0x1003ebce0[3.0.47460:] #0x1003ebcf8[3.0.47461:] #0x1003ebd10[3.0.47462:] #0x1003ebd28[3.0.47463:] 
+## 		8... #0x1003ebd40[3.0.47464:] #0x1003ebd58[3.0.47465:] #0x1003ebd70[3.0.47466:] #0x1003ebd88[3.0.47467:] 
+## 		12... #0x1003ebda0[3.0.47468:] #0x1003ebdb8[3.0.47469:] #0x1003ebdd0[3.0.47470:] #0x1003ebde8[3.0.47471:] 
+## 		16... #0x1003ec000[3.0.47472:] #0x1003ec018[3.0.47473:] #0x1003ec030[3.0.47474:] #0x1003ec048[3.0.47475:] 
+## 		20... #0x1003ec060[3.0.47476:] #0x1003ec078[3.0.47477:] #0x1003ec090[3.0.47478:] #0x1003ec0a8[3.0.47479:] 
+## 		24... #0x1003ec0c0[3.0.47480:] #0x1003ec0d8[3.0.47481:] #0x1003ec0f0[3.0.47482:] #0x1003ec108[3.0.47483:] 
+## 		28... #0x1003ec120[3.0.47484:] #0x1003ec138[3.0.47485:] #0x1003ec150[3.0.47486:] #0x1003ec168[3.0.47487:] 
+## 		32... #0x1003ec180[3.0.47488:] #0x1003ec198[3.0.47489:] #0x1003ec1b0[3.0.47490:] #0x1003ec1c8[3.0.47491:] 
+## 		36... #0x1003ec1e0[3.0.47492:] #0x1003ec1f8[3.0.47493:] #0x1003ec210[3.0.47494:] #0x1003ec228[3.0.47495:] 
+## 		40... #0x1003ec240[3.0.47496:] #0x1003ec258[3.0.47497:] #0x1003ec270[3.0.47498:] #0x1003ec288[3.0.47499:] 
+## 		44... #0x1003ec2a0[3.0.47500:] #0x1003ec2b8[3.0.47501:] #0x1003ec2d0[3.0.47502:] #0x1003ec2e8[3.0.47503:] 
+## 		48... #0x1003ec300[3.0.47504:] #0x1003ec318[3.0.47505:] #0x1003ec330[3.0.47506:] #0x1003ec348[3.0.47507:] 
+## 		52... #0x1003ec360[3.0.47508:] #0x1003ec378[3.0.47509:] #0x1003ec390[3.0.47510:] #0x1003ec3a8[3.0.47511:] 
+## 		56... #0x1003ec3c0[3.0.47512:] ) 
+
+## L {=0x1003b16f8;c_l_();;0} #0x1003b16f8[3.0.47513:DBEquipmentHolder]  T=0x1003ee3e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=16" 
+## 	DBEquipmentBasic::m_UserLabel   10="IC6 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="IC6 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   43=( #0x1003ec3d8[3.0.47514:] #0x1003ec3f0[3.0.47515:] #0x1003ec408[3.0.47516:] #0x1003ec420[3.0.47517:] 
+## 		4... #0x1003ec438[3.0.47518:] #0x1003ec450[3.0.47519:] #0x1003ec468[3.0.47520:] #0x1003ec480[3.0.47521:] 
+## 		8... #0x1003ec498[3.0.47522:] #0x1003ec4b0[3.0.47523:] #0x1003ec4c8[3.0.47524:] #0x1003ec4e0[3.0.47525:] 
+## 		12... #0x1003ec4f8[3.0.47526:] #0x1003ec510[3.0.47527:] #0x1003ec528[3.0.47528:] #0x1003ec540[3.0.47529:] 
+## 		16... #0x1003ec558[3.0.47530:] #0x1003ec570[3.0.47531:] #0x1003ec588[3.0.47532:] #0x1003ec5a0[3.0.47533:] 
+## 		20... #0x1003ec5b8[3.0.47534:] #0x1003ec5d0[3.0.47535:] #0x1003ec5e8[3.0.47536:] #0x1003ec600[3.0.47537:] 
+## 		24... #0x1003ec618[3.0.47538:] #0x1003ec630[3.0.47539:] #0x1003ec648[3.0.47540:] #0x1003ec660[3.0.47541:] 
+## 		28... #0x1003ec678[3.0.47542:] #0x1003ec690[3.0.47543:] #0x1003ec6a8[3.0.47544:] #0x1003ec6c0[3.0.47545:] 
+## 		32... #0x1003ec6d8[3.0.47546:] #0x1003ec6f0[3.0.47547:] #0x1003ec708[3.0.47548:] #0x1003ec720[3.0.47549:] 
+## 		36... #0x1003ec738[3.0.47550:] #0x1003ec750[3.0.47551:] #0x1003ec768[3.0.47552:] #0x1003ec780[3.0.47553:] 
+## 		40... #0x1003ec798[3.0.47554:] #0x1003ec7b0[3.0.47555:] #0x1003ec7c8[3.0.47556:] ) 
+
+## L {=0x1003b1710;c_l_();;0} #0x1003b1710[3.0.47557:DBEquipmentHolder]  T=0x1003ee480 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec7e0[3.0.47830:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17" 
+## 	DBEquipmentBasic::m_UserLabel   11="X2 XIO192 " 
+## 	DBEquipmentBasic::m_NativeName   11="X2 XIO192 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   2=( #0x1003ec7f8[3.0.47558:] #0x1003ec810[3.0.47559:] ) 
+
+## L {=0x1003b1728;c_l_();;0} #0x1003b1728[3.0.47560:DBEquipmentHolder]  T=0x1003ee520 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec828[3.0.47832:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X2 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1710[3.0.47557:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1740;c_l_();;0} #0x1003b1740[3.0.47564:DBEquipmentHolder]  T=0x1003ee5c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec840[3.0.47835:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   13="X2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_NativeName   13="X2 OM16_1 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1710[3.0.47557:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1758;c_l_();;0} #0x1003b1758[3.0.47566:DBEquipmentHolder]  T=0x1003ee660 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003ec858[3.0.47836:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=3" 
+## 	DBEquipmentBasic::m_UserLabel   11="X2 NONE 3 " 
+## 	DBEquipmentBasic::m_NativeName   11="X2 NONE 3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1710[3.0.47557:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   1="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   5=( #0x1003ec870[3.0.47567:] #0x1003ec888[3.0.47568:] #0x1003ec8a0[3.0.47569:] #0x1003ec8b8[3.0.47570:] 
+## 		4... #0x1003ec8d0[3.0.47571:] ) 
+
+## L {=0x1003b1770;c_l_();;0} #0x1003b1770[3.0.47573:DBEquipmentHolder]  T=0x1003ee700 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec8e8[3.0.47819:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=34" 
+## 	DBEquipmentBasic::m_UserLabel   13="X2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="X2 OT16 2-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1710[3.0.47557:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=17/sub_slot=34@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1788;c_l_();;0} #0x1003b1788[3.0.47582:DBEquipmentHolder]  T=0x1003ee7a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec900[3.0.47840:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=18" 
+## 	DBEquipmentBasic::m_UserLabel   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F1 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=18@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b17a0;c_l_();;0} #0x1003b17a0[3.0.47584:DBEquipmentHolder]  T=0x1003ee840 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec918[3.0.47841:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=19" 
+## 	DBEquipmentBasic::m_UserLabel   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F2 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=19@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b17b8;c_l_();;0} #0x1003b17b8[3.0.47586:DBEquipmentHolder]  T=0x1003ee8e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec930[3.0.47842:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   10="PW2 xINF " 
+## 	DBEquipmentBasic::m_NativeName   10="PW2 xINF " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b17d0;c_l_();;0} #0x1003b17d0[3.0.47588:DBEquipmentHolder]  T=0x1003ee980 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec948[3.0.47843:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=20" 
+## 	DBEquipmentBasic::m_UserLabel   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_NativeName   11="F3 xFCU_H " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=20@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b17e8;c_l_();;0} #0x1003b17e8[3.0.47590:DBEquipmentHolder]  T=0x1003eea20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec960[3.0.47844:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3" 
+## 	DBEquipmentBasic::m_UserLabel   11="X1 XIO192 " 
+## 	DBEquipmentBasic::m_NativeName   11="X1 XIO192 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   2=( #0x1003ec978[3.0.47591:] #0x1003ec990[3.0.47592:] ) 
+
+## L {=0x1003b1800;c_l_();;0} #0x1003b1800[3.0.47593:DBEquipmentHolder]  T=0x1003eeac0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec9a8[3.0.47845:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_NativeName   10="X1 TMU 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1818;c_l_();;0} #0x1003b1818[3.0.47595:DBEquipmentHolder]  T=0x1003eeb60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec9c0[3.0.47846:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=131" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-4 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-4 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=131@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1830;c_l_();;0} #0x1003b1830[3.0.47597:DBEquipmentHolder]  T=0x1003eec00 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec9d8[3.0.47831:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 OM16_1 2 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 OM16_1 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   2 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1848;c_l_();;0} #0x1003b1848[3.0.47599:DBEquipmentHolder]  T=0x1003eeca0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ec9f0[3.0.47847:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=3" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 OM01_4 3 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 OM01_4 3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=3@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   5=( #0x1003eca08[3.0.47600:] #0x1003eca20[3.0.47601:] #0x1003eca38[3.0.47602:] #0x1003eca50[3.0.47603:] 
+## 		4... #0x1003eca68[3.0.47604:] ) 
+
+## L {=0x1003b1860;c_l_();;0} #0x1003b1860[3.0.47606:DBEquipmentHolder]  T=0x1003eed40 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eca80[3.0.47848:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=34" 
+## 	DBEquipmentBasic::m_UserLabel   13="X1 OT16 2-1 " 
+## 	DBEquipmentBasic::m_NativeName   13="X1 OT16 2-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   2 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=34@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1878;c_l_();;0} #0x1003b1878[3.0.47608:DBEquipmentHolder]  T=0x1003eede0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003eca98[3.0.47849:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=35" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-1 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=35@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1890;c_l_();;0} #0x1003b1890[3.0.47610:DBEquipmentHolder]  T=0x1003eee80 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecab0[3.0.47850:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=67" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-2 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=67@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b18a8;c_l_();;0} #0x1003b18a8[3.0.47612:DBEquipmentHolder]  T=0x1003eef20 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecac8[3.0.47851:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=99" 
+## 	DBEquipmentBasic::m_UserLabel   12="X1 OT1 3-3 " 
+## 	DBEquipmentBasic::m_NativeName   12="X1 OT1 3-3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b17e8[3.0.47590:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=3/sub_slot=99@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b18c0;c_l_();;0} #0x1003b18c0[3.0.47615:DBEquipmentHolder]  T=0x1003eefc0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecae0[3.0.47852:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=4" 
+## 	DBEquipmentBasic::m_UserLabel   9="C3 MECP " 
+## 	DBEquipmentBasic::m_NativeName   9="C3 MECP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=4@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b18d8;c_l_();;0} #0x1003b18d8[3.0.47616:DBEquipmentHolder]  T=0x1003ef060 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=4/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   11="C3 NONE 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C3 NONE 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b18c0[3.0.47615:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   4=( #0x1003ecaf8[3.0.47617:] #0x1003ecb10[3.0.47618:] #0x1003ecb28[3.0.47619:] #0x1003ecb40[3.0.47620:] ) 
+
+## L {=0x1003b18f0;c_l_();;0} #0x1003b18f0[3.0.47622:DBEquipmentHolder]  T=0x1003ef100 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecb58[3.0.47853:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5" 
+## 	DBEquipmentBasic::m_UserLabel   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_NativeName   9="C1 xMCP " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1908;c_l_();;0} #0x1003b1908[3.0.47623:DBEquipmentHolder]  T=0x1003ef1a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecb70[3.0.47854:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C1 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b18f0[3.0.47622:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1920;c_l_();;0} #0x1003b1920[3.0.47625:DBEquipmentHolder]  T=0x1003ef240 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecb88[3.0.47855:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C1 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b18f0[3.0.47622:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   2 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=5/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1938;c_l_();;0} #0x1003b1938[3.0.47628:DBEquipmentHolder]  T=0x1003ef2e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecba0[3.0.47828:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6" 
+## 	DBEquipmentBasic::m_UserLabel   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_NativeName   12="C2 xMCP_SB " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1950;c_l_();;0} #0x1003b1950[3.0.47629:DBEquipmentHolder]  T=0x1003ef380 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecbb8[3.0.47856:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_NativeName   10="C2 NVM 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1938[3.0.47628:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1968;c_l_();;0} #0x1003b1968[3.0.47631:DBEquipmentHolder]  T=0x1003ef420 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecbd0[3.0.47857:] 
+## 	DBEquipmentBasic::m_ObjectDN   95="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_NativeName   11="C2 xCOM 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1938[3.0.47628:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   109="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=6/sub_slot=2@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1980;c_l_();;0} #0x1003b1980[3.0.47634:DBEquipmentHolder]  T=0x1003ef4c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #0x1003ecbe8[3.0.47858:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=7" 
+## 	DBEquipmentBasic::m_UserLabel   13="IC1 PIO2_84 " 
+## 	DBEquipmentBasic::m_NativeName   13="IC1 PIO2_84 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=7@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   43=( #0x1003ecc00[3.0.47635:] #0x1003ecc18[3.0.47636:] #0x1003ecc30[3.0.47637:] #0x1003ecc48[3.0.47638:] 
+## 		4... #0x1003ecc60[3.0.47639:] #0x1003ecc78[3.0.47640:] #0x1003ecc90[3.0.47641:] #0x1003ecca8[3.0.47642:] 
+## 		8... #0x1003eccc0[3.0.47643:] #0x1003eccd8[3.0.47644:] #0x1003eccf0[3.0.47645:] #0x1003ecd08[3.0.47646:] 
+## 		12... #0x1003ecd20[3.0.47647:] #0x1003ecd38[3.0.47648:] #0x1003ecd50[3.0.47649:] #0x1003ecd68[3.0.47650:] 
+## 		16... #0x1003ecd80[3.0.47651:] #0x1003ecd98[3.0.47652:] #0x1003ecdb0[3.0.47653:] #0x1003ecdc8[3.0.47654:] 
+## 		20... #0x1003ecde0[3.0.47655:] #0x1003ecdf8[3.0.47656:] #0x1003ece10[3.0.47657:] #0x1003ece28[3.0.47658:] 
+## 		24... #0x1003ece40[3.0.47659:] #0x1003ece58[3.0.47660:] #0x1003ece70[3.0.47661:] #0x1003ece88[3.0.47662:] 
+## 		28... #0x1003ecea0[3.0.47663:] #0x1003eceb8[3.0.47664:] #0x1003eced0[3.0.47665:] #0x1003ecee8[3.0.47666:] 
+## 		32... #0x1003ecf00[3.0.47667:] #0x1003ecf18[3.0.47668:] #0x1003ecf30[3.0.47669:] #0x1003ecf48[3.0.47670:] 
+## 		36... #0x1003ecf60[3.0.47671:] #0x1003ecf78[3.0.47672:] #0x1003ecf90[3.0.47673:] #0x1003ecfa8[3.0.47674:] 
+## 		40... #0x1003ecfc0[3.0.47675:] #0x1003ecfd8[3.0.47676:] #0x1003ecff0[3.0.47677:] ) 
+
+## L {=0x1003b1998;c_l_();;0} #0x1003b1998[3.0.47679:DBEquipmentHolder]  T=0x1003ef560 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   1 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=8" 
+## 	DBEquipmentBasic::m_UserLabel   10="IC2 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="IC2 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   62=( #0x1003ed008[3.0.47680:] #0x1003ed020[3.0.47681:] #0x1003ed038[3.0.47682:] #0x1003ed050[3.0.47683:] 
+## 		4... #0x1003ed068[3.0.47684:] #0x1003ed080[3.0.47685:] #0x1003ed098[3.0.47686:] #0x1003ed0b0[3.0.47687:] 
+## 		8... #0x1003ed0c8[3.0.47688:] #0x1003ed0e0[3.0.47689:] #0x1003ed0f8[3.0.47690:] #0x1003ed110[3.0.47691:] 
+## 		12... #0x1003ed128[3.0.47692:] #0x1003ed140[3.0.47693:] #0x1003ed158[3.0.47694:] #0x1003ed170[3.0.47695:] 
+## 		16... #0x1003ed188[3.0.47696:] #0x1003ed1a0[3.0.47697:] #0x1003ed1b8[3.0.47698:] #0x1003ed1d0[3.0.47699:] 
+## 		20... #0x1003ed1e8[3.0.47700:] #0x1003ed200[3.0.47701:] #0x1003ed218[3.0.47702:] #0x1003ed230[3.0.47703:] 
+## 		24... #0x1003ed248[3.0.47704:] #0x1003ed260[3.0.47705:] #0x1003ed278[3.0.47706:] #0x1003ed290[3.0.47707:] 
+## 		28... #0x1003ed2a8[3.0.47708:] #0x1003ed2c0[3.0.47709:] #0x1003ed2d8[3.0.47710:] #0x1003ed2f0[3.0.47711:] 
+## 		32... #0x1003ed308[3.0.47712:] #0x1003ed320[3.0.47713:] #0x1003ed338[3.0.47714:] #0x1003ed350[3.0.47715:] 
+## 		36... #0x1003ed368[3.0.47716:] #0x1003ed380[3.0.47717:] #0x1003ed398[3.0.47718:] #0x1003ed3b0[3.0.47719:] 
+## 		40... #0x1003ed3c8[3.0.47720:] #0x1003ed3e0[3.0.47721:] #0x1003ed3f8[3.0.47722:] #0x1003ed410[3.0.47723:] 
+## 		44... #0x1003ed428[3.0.47724:] #0x1003ed440[3.0.47725:] #0x1003ed458[3.0.47726:] #0x1003ed470[3.0.47727:] 
+## 		48... #0x1003ed488[3.0.47728:] #0x1003ed4a0[3.0.47729:] #0x1003ed4b8[3.0.47730:] #0x1003ed4d0[3.0.47731:] 
+## 		52... #0x1003ed4e8[3.0.47732:] #0x1003ed500[3.0.47733:] #0x1003ed518[3.0.47734:] #0x1003ed530[3.0.47735:] 
+## 		56... #0x1003ed548[3.0.47736:] #0x1003ed560[3.0.85343:] #0x1003ed578[3.0.85344:] #0x1003ed590[3.0.85345:] 
+## 		60... #0x1003ed5a8[3.0.85346:] #0x1003ed5c0[3.0.85347:] ) 
+
+## L {=0x1003b19b0;c_l_();;0} #0x1003b19b0[3.0.47737:DBEquipmentHolder]  T=0x1003ef600 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003ed5d8[3.0.47859:] 
+## 	DBEquipmentBasic::m_ObjectDN   84="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1200@@EquipmentHolder~~/rack=1/shelf=1/slot=9" 
+## 	DBEquipmentBasic::m_UserLabel   10="IC3 NONE " 
+## 	DBEquipmentBasic::m_NativeName   10="IC3 NONE " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1638[3.0.47264:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   1="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   51=( #0x1003ed5f0[3.0.47738:] #0x1003ed608[3.0.47739:] #0x1003ed620[3.0.47740:] #0x1003ed638[3.0.47741:] 
+## 		4... #0x1003ed650[3.0.47742:] #0x1003ed668[3.0.47743:] #0x1003ed680[3.0.47744:] #0x1003ed698[3.0.47745:] 
+## 		8... #0x1003ed6b0[3.0.47746:] #0x1003ed6c8[3.0.47747:] #0x1003ed6e0[3.0.47748:] #0x1003ed6f8[3.0.47749:] 
+## 		12... #0x1003ed710[3.0.47750:] #0x1003ed728[3.0.47751:] #0x1003ed740[3.0.47752:] #0x1003ed758[3.0.47753:] 
+## 		16... #0x1003ed770[3.0.47754:] #0x1003ed788[3.0.47755:] #0x1003ed7a0[3.0.47756:] #0x1003ed7b8[3.0.47757:] 
+## 		20... #0x1003ed7d0[3.0.47758:] #0x1003ed7e8[3.0.47759:] #0x1003ed800[3.0.47760:] #0x1003ed818[3.0.47761:] 
+## 		24... #0x1003ed830[3.0.47762:] #0x1003ed848[3.0.47763:] #0x1003ed860[3.0.47764:] #0x1003ed878[3.0.47765:] 
+## 		28... #0x1003ed890[3.0.47766:] #0x1003ed8a8[3.0.47767:] #0x1003ed8c0[3.0.47768:] #0x1003ed8d8[3.0.47769:] 
+## 		32... #0x1003ed8f0[3.0.47770:] #0x1003ed908[3.0.47771:] #0x1003ed920[3.0.47772:] #0x1003ed938[3.0.47773:] 
+## 		36... #0x1003ed950[3.0.47774:] #0x1003ed968[3.0.47775:] #0x1003ed980[3.0.47776:] #0x1003ed998[3.0.47777:] 
+## 		40... #0x1003ed9b0[3.0.47778:] #0x1003ed9c8[3.0.47779:] #0x1003ed9e0[3.0.47780:] #0x1003ed9f8[3.0.47781:] 
+## 		44... #0x1003eda10[3.0.47782:] #0x1003eda28[3.0.47783:] #0x1003eda40[3.0.47784:] #0x1003eda58[3.0.47785:] 
+## 		48... #0x1003eda70[3.0.47786:] #0x1003eda88[3.0.47787:] #0x1003edaa0[3.0.47788:] ) 
+
+## L {=0x1003b19c8;c_l_();;0} #0x1003b19c8[3.0.46377:DBEquipmentHolder]  T=0x1003ef6a0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   7 
+## 	DBBase::m_NavTailLink   #0x1003edab8[3.0.75568:] 
+## 	DBEquipmentBasic::m_ObjectDN   85="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18" 
+## 	DBEquipmentBasic::m_UserLabel   15="I4 SIO1n4M_16 " 
+## 	DBEquipmentBasic::m_NativeName   15="I4 SIO1n4M_16 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b1200[3.0.46009:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   3 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   99="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   57=( #0x1003edad0[3.0.46378:] #0x1003edae8[3.0.46379:] #0x1003edb00[3.0.46380:] #0x1003edb18[3.0.46381:] 
+## 		4... #0x1003edb30[3.0.46382:] #0x1003edb48[3.0.46383:] #0x1003edb60[3.0.46384:] #0x1003edb78[3.0.46385:] 
+## 		8... #0x1003edb90[3.0.46386:] #0x1003edba8[3.0.46387:] #0x1003edbc0[3.0.46388:] #0x1003edbd8[3.0.46389:] 
+## 		12... #0x1003edbf0[3.0.46390:] #0x1003edc08[3.0.46391:] #0x1003edc20[3.0.46392:] #0x1003edc38[3.0.46393:] 
+## 		16... #0x1003edc50[3.0.46394:] #0x1003edc68[3.0.46395:] #0x1003edc80[3.0.46396:] #0x1003edc98[3.0.46397:] 
+## 		20... #0x1003edcb0[3.0.46398:] #0x1003edcc8[3.0.46399:] #0x1003edce0[3.0.46400:] #0x1003edcf8[3.0.46401:] 
+## 		24... #0x1003edd10[3.0.46402:] #0x1003edd28[3.0.46403:] #0x1003edd40[3.0.46404:] #0x1003edd58[3.0.46405:] 
+## 		28... #0x1003edd70[3.0.46406:] #0x1003edd88[3.0.46407:] #0x1003edda0[3.0.46408:] #0x1003eddb8[3.0.46409:] 
+## 		32... #0x1003eddd0[3.0.46410:] #0x1003edde8[3.0.46411:] #0x1003f4000[3.0.46412:] #0x1003f4018[3.0.46413:] 
+## 		36... #0x1003f4030[3.0.46414:] #0x1003f4048[3.0.46415:] #0x1003f4060[3.0.46416:] #0x1003f4078[3.0.46417:] 
+## 		40... #0x1003f4090[3.0.46418:] #0x1003f40a8[3.0.46419:] #0x1003f40c0[3.0.46420:] #0x1003f40d8[3.0.46421:] 
+## 		44... #0x1003f40f0[3.0.46422:] #0x1003f4108[3.0.46423:] #0x1003f4120[3.0.46424:] #0x1003f4138[3.0.46425:] 
+## 		48... #0x1003f4150[3.0.46426:] #0x1003f4168[3.0.46427:] #0x1003f4180[3.0.46428:] #0x1003f4198[3.0.46429:] 
+## 		52... #0x1003f41b0[3.0.46430:] #0x1003f41c8[3.0.46431:] #0x1003f41e0[3.0.46432:] #0x1003f41f8[3.0.46433:] 
+## 		56... #0x1003f4210[3.0.46434:] ) 
+
+## L {=0x1003b19e0;c_l_();;0} #0x1003b19e0[3.0.69733:DBEquipmentHolder]  T=0x1003ef740 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   6 
+## 	DBBase::m_NavTailLink   #0x1003f4228[3.0.75567:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=1" 
+## 	DBEquipmentBasic::m_UserLabel   13="I4 OM01_4 1 " 
+## 	DBEquipmentBasic::m_NativeName   13="I4 OM01_4 1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   110="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=1@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   7=( #0x1003f4240[3.0.69734:] #0x1003f4258[3.0.69735:] #0x1003f4270[3.0.69736:] #0x1003f4288[3.0.69737:] 
+## 		4... #0x1003f42a0[3.0.69738:] #0x1003f42b8[3.0.69739:] #0x1003f42d0[3.0.69740:] ) 
+
+## L {=0x1003b19f8;c_l_();;0} #0x1003b19f8[3.0.69742:DBEquipmentHolder]  T=0x1003ef7e0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   14 
+## 	DBBase::m_NavTailLink   #0x1003f42e8[3.0.150933:] 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=2" 
+## 	DBEquipmentBasic::m_UserLabel   11="I4 NONE 2 " 
+## 	DBEquipmentBasic::m_NativeName   11="I4 NONE 2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   1="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   7=( #0x1003f4300[3.0.69743:] #0x1003f4318[3.0.69744:] #0x1003f4330[3.0.69745:] #0x1003f4348[3.0.69746:] 
+## 		4... #0x1003f4360[3.0.69747:] #0x1003f4378[3.0.69748:] #0x1003f4390[3.0.69749:] ) 
+
+## L {=0x1003b1a10;c_l_();;0} #0x1003b1a10[3.0.69750:DBEquipmentHolder]  T=0x1003ef880 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   6 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=3" 
+## 	DBEquipmentBasic::m_UserLabel   11="I4 NONE 3 " 
+## 	DBEquipmentBasic::m_NativeName   11="I4 NONE 3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   1 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   7=( #0x1003f43a8[3.0.69751:] #0x1003f43c0[3.0.69752:] #0x1003f43d8[3.0.69753:] #0x1003f43f0[3.0.69754:] 
+## 		4... #0x1003f4408[3.0.69755:] #0x1003f4420[3.0.69756:] #0x1003f4438[3.0.69757:] ) 
+
+## L {=0x1003b1a28;c_l_();;0} #0x1003b1a28[3.0.69758:DBEquipmentHolder]  T=0x1003ef920 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   0 
+## 	DBBase::m_NavTailLink   #NIL 
+## 	DBEquipmentBasic::m_ObjectDN   96="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=4" 
+## 	DBEquipmentBasic::m_UserLabel   11="I4 NONE 4 " 
+## 	DBEquipmentBasic::m_NativeName   11="I4 NONE 4 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   0 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   0="" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   7=( #0x1003f4450[3.0.69759:] #0x1003f4468[3.0.69760:] #0x1003f4480[3.0.69761:] #0x1003f4498[3.0.69762:] 
+## 		4... #0x1003f44b0[3.0.69763:] #0x1003f44c8[3.0.69764:] #0x1003f44e0[3.0.69765:] ) 
+
+## L {=0x1003b1a40;c_l_();;0} #0x1003b1a40[3.0.75662:DBEquipmentHolder]  T=0x1003ef9c0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003f44f8[3.0.75670:] 
+## 	DBEquipmentBasic::m_ObjectDN   98="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=129" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-4 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-4 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   112="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=129@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1a58;c_l_();;0} #0x1003b1a58[3.0.75664:DBEquipmentHolder]  T=0x1003efa60 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003f4510[3.0.75671:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=33" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-1 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-1 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=33@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1a70;c_l_();;0} #0x1003b1a70[3.0.75666:DBEquipmentHolder]  T=0x1003efb00 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003f4528[3.0.75672:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=65" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-2 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-2 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=65@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+## L {=0x1003b1a88;c_l_();;0} #0x1003b1a88[3.0.75668:DBEquipmentHolder]  T=0x1003efba0 {reg} (nms_db)
+## 	DBAbstrBase::o_ts_timestamp   2 
+## 	DBBase::m_NavTailLink   #0x1003f4540[3.0.75673:] 
+## 	DBEquipmentBasic::m_ObjectDN   97="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=97" 
+## 	DBEquipmentBasic::m_UserLabel   12="I4 OT1 1-3 " 
+## 	DBEquipmentBasic::m_NativeName   12="I4 OT1 1-3 " 
+## 	DBEquipmentBasic::m_Owner   0="" 
+## 	DBEquipmentBasic::m_AlarmReportIndicator   1="\001" 
+## 	DBEquipmentBasic::m_AddInfo   0=( ) 
+## 	DBEquipmentBasic::m_ActExcState   1="\001" 
+## 	DBEquipmentBasic::m_OwnerLink   #0x1003b19c8[3.0.46377:DBEquipmentHolder] 
+## 	DBEquipmentHolder::m_HolderType   4 
+## 	DBEquipmentHolder::m_HolderState   65537 
+## 	DBEquipmentHolder::m_ExpectedOrInstalledEquipment   111="EMS~~LSN/EMS_XDM_182@@ManagedElement~~1100@@EquipmentHolder~~/rack=1/shelf=1/slot=18/sub_slot=97@@Equipment~~1" 
+## 	DBEquipmentHolder::m_AcceptableEquipmentTypeList   0=( ) 
+
+
+****** Total 93 instances of class 'DBEquipmentHolder' ******
+

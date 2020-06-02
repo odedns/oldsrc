@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>		
+	<flow name="searchCustomerFlow" context="searchCustomerContext">	
+		<state name="initState" type="simple" initial="true">
+			<transition default="true" targetState="viewState">
+				<actions>
+			   		<action type="operation" refName="initSearchCustomer"/>	
+				</actions>					
+			</transition>
+ 		</state> 
+ 
+		<state name="viewState" type="complex" page="app/customer/jsp/searchCustomer.jsp" buttonSet="searchCustomerButtons">			
+			<transition internal="true" event="search">
+				<actions>
+                    <action type="operation" refName="PLFillCustomerSearchResultsOP"/>
+					<action refName="PLSetCustomerButtonsPagingState" type="operation"/>
+		        </actions>
+		    </transition>	
+
+			<transition internal="true" event="clearFields">
+				<actions>
+					<action type="operation" refName="clearSearchCustomerFields"></action>
+				</actions>
+			</transition> 
+					
+			<transition event="searchResultTableModel|sort" internal="true"/>
+			<transition event="searchResultTableModel|order" internal="true"/>
+
+			<transition event="searchResultTableModel|link" targetState="customerDetailsState">
+				<actions>
+					<action type="operation" refName="PLLoadCustomerIdOP"></action>
+				</actions>
+			</transition>
+						
+			<transition event="new" internal="true">
+				<subFlowData flowName="chooseCustomerFlow" inFormatter="customerTypeInFormatter" outFormatter="customerTypeOutFormatter" goodFinalStates="okClick"></subFlowData>				
+			</transition>
+
+			<!-- handling the return from the choose customer -->
+			<transition event="okClick" targetState="customerDetailsState"></transition>
+			<transition event="cancelClick" internal="true"></transition>
+			<transition event="close" targetState="finalScreen"></transition>										
+
+			<!-- start handling paging -->
+			<transition event="searchResultTableModel|first" internal="true">
+				<actions>
+					<action refName="PLCustomersGetPage" type="operation"/>
+					<action refName="PLSetCustomerButtonsPagingState" type="operation"></action>
+				</actions> 
+			</transition>
+			
+			<transition event="searchResultTableModel|last" internal="true">
+				<actions>
+					<action refName="PLCustomersGetPage" type="operation"/>
+					<action refName="PLSetCustomerButtonsPagingState" type="operation"></action>
+				</actions> 
+			</transition>
+			
+			<transition event="searchResultTableModel|next" internal="true">
+				<actions>
+					<action refName="PLCustomersGetPage" type="operation"/>
+					<action refName="PLSetCustomerButtonsPagingState" type="operation"/>
+				</actions> 
+			</transition>
+						
+			<transition event="searchResultTableModel|prev" internal="true">
+				<actions>
+					<action refName="PLCustomersGetPage" type="operation"/>
+					<action refName="PLSetCustomerButtonsPagingState" type="operation"/>
+				</actions> 
+			</transition>		
+
+			<transition event="searchResultTableModel|specificPage" internal="true">
+				<actions>
+					<action refName="PLCustomersGetPage" type="operation"/>
+					<action refName="PLSetCustomerButtonsPagingState" type="operation"/>
+				</actions> 
+			</transition>		
+
+
+
+			<!-- end handling paging -->
+		</state>
+		
+		<state name="finalScreen" type="final" />
+		
+		<state name="customerDetailsState" type="complex">
+			<subFlowData flowName="buildCustomerFlow" inFormatter="customerTypeFormatter"/>		
+
+			<transition event="finalScreen" targetState="initState"></transition>
+		</state>  
+						
+					
+	</flow>
+		
+	<flow name="chooseCustomerFlow" context="chooseCustomerContext" independent="true">
+		<state name="initPage" initial="true" type="complex" page="app/customer/jsp/chooseCustomer.jsp">
+			<transition targetState="okClick" event="ok" >
+				<actions>
+					<action refName="newCustomer" type="operation"/>
+				</actions>
+			</transition>
+			<transition event="cancel" targetState="cancelClick" />
+		</state>
+		
+		<state name="okClick" type="final"/>		
+		<state name="cancelClick" type="final"/>
+	</flow>					
+</root>

@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+
+<script>if( self == top ){ window.location.replace( "../../../../../?topic=/com.ibm.websphere.nd.doc/info/ae/ae/trun_svr_nonroot.html");}</script>
+<script language="JavaScript">
+<!--
+var keywords = new Array ("non", "root");
+-->
+</script>
+<script language="JavaScript" src="tins_prepare_data/highlight.js"></script>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="copyright" content="(C) Copyright IBM Corporation 2005">
+<meta content="public" name="security">
+<meta content="index,follow" name="Robots">
+<meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))">
+<meta name="DC.Description.abstract" content=""><meta name="DC.Type" content="task"><meta name="DC.Title" content="Running application servers from a non-root user"><meta name="DC.Format" content="XHTML"><!-- All rights reserved. Licensed Materials Property of IBM --><!-- US Government Users Restricted Rights --><!-- Use, duplication or disclosure restricted by --><!-- GSA ADP Schedule Contract with IBM Corp. -->
+
+
+
+<link href="tins_prepare_data/ibmdita.css" type="text/css" rel="stylesheet">
+<link href="tins_prepare_data/swg_info_common.css" type="text/css" rel="stylesheet"><title>Running application servers from a non-root user</title>
+
+<style type="text/css">
+        span.stealth { visibility:hidden; }
+   </style></head><body id="trun_svr_nonroot"><a name="trun_svr_nonroot"><!-- --></a>
+<img style="border: 0pt none ; vertical-align: middle;" alt="WebSphere" src="tins_prepare_data/IC-ws-sm.gif"> <span class="runningheader"><strong>Application Server Network Deployment, Version 6.0.x</strong>
+         &nbsp;&nbsp;&nbsp;
+         Operating Systems: <strong>AIX, HP-UX, Linux, Solaris, Windows</strong></span><br><hr align="left">
+
+<h1 class="topictitle1"><span>Running application servers from a <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user</span></span></h1>
+
+
+
+<div><p><span><span>By default, the <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user ID is used to run all application server
+processes on a Linux and UNIX platform. However, you can run all application
+server processes under the same </span><span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user and user group. This task describes
+how to run an application server process from a </span><span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user.</span></span></p>
+<div class="p"><p class="sectiontitle">Before you begin</p><span>If global security is enabled, the user registry must not be Local
+OS. Using the Local OS user registry requires the application server to run
+as <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>. Refer to </span><a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/csec_localos.html">Local
+operating system user registries</a> for details.<p>If you are using the
+Tivoli Access Manager (TAM) to perform authentication or authorization for
+WebSphere Application Server, it is important to be aware of potential permissions
+problems. For more information, see <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/rsec_config_JACC_interface.html">Tivoli Access Manager JACC provider configuration</a>.</p>
+<p>When WebSphere Application Server is run as
+a UNIX user, it can only access files owned by its primary group. If it tries
+to access files by its secondary group, a java.io.FileNotFoundException: will
+occur because the file access permissions do not allow this type of access.</p>
+</div>
+
+<div class="p"><p class="sectiontitle">Why and when to perform this task</p><span>Run your application servers as <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> when you no longer want
+to use <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> authority. For security or administrative reasons, you may want
+to change to </span><span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user IDs. Perform this task at any time to change the
+permissions of an application server. You must restart the application server
+in order for the changes to take effect. </span></span><p>If your application
+server is part of a cell, see <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/trun_svr_msg_nonroot.html"><span>Running an application server from a <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user and the node agent
+from <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span></span></span></a> or <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/trun_nodeagent_nonroot.html"><span>Running an Application Server and node agent from a <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user</span></span></a>.</p>
+<div class="p">For the following steps,
+assume that:<ul>
+<li><span style="font-family: monospace;">was1</span> is the user to run the application server</li>
+
+<li><span style="font-family: monospace;">wasgroup</span> is the primary user group for user was1</li>
+
+<li><span style="font-family: monospace;">wasnode</span> is the node name</li>
+
+<li><span style="font-family: monospace;">server1</span> is the application server</li>
+
+<li><span style="font-family: monospace;">/opt/WebSphere/AppServer</span><span> is the installation <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span></span></li>
+
+<li><span style="font-family: monospace;">nodeProfile1</span> is the profile name. </li>
+
+</ul>
+</div>
+<p>For information about creating a profile,
+see <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/rxml_wasprofile.html">wasprofile command</a>.</p>
+<p><span>To
+configure an application server to run as <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>, complete the following
+steps.</span></span></p>
+</div>
+<p class="sectiontitle">Steps for this task</p><ol>
+<li class="skipspace"><span><span>Log on to the application server system as the <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user.</span></span>
+</li>
+
+<li class="skipspace"><span>Create the user ID <span style="font-family: monospace;">was1</span> with a primary user group of <span style="font-family: monospace;">wasgroup</span>.</span>
+  The user ID, <span style="font-family: monospace;">was1</span>, is an example. You can name the user something
+else. </li>
+
+<li class="skipspace"><span><span>Log off and back on as <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>.</span></span></li>
+
+<li class="skipspace"><span><span>Start server1 as <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>.</span></span>  Run the <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/rxml_startserver.html"><span style="font-family: monospace;">startServer.sh</span> script</a> from the <span style="font-family: monospace;">/bin</span><span> directory
+of the installation <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>:</span><pre><span style="font-family: monospace;">startServer.sh server1</span></pre>
+ 
+</li>
+
+<li class="skipspace"><span>Specify user and group ID values for the <b>Run As User</b> and <b>Run
+As Group</b> settings for a server:</span>
+<ol type="a">
+<li class="skipspace"><span>Start the administrative console.</span></li>
+
+<li class="skipspace"><span>Go to the <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/urun_rprocexec.html">Process
+execution page</a> of the administrative console.</span>  You must
+define all three properties in the following table. In the administrative
+console, click  <b>Servers &gt; Application Servers &gt;</b>  <i>server</i> <b>&gt;
+Server Infrastructure &gt; Java and Process Management &gt; Process Execution</b> and
+change all of the following values:<div class="skipspace"><table summary="" border="1" cellpadding="4" cellspacing="0" frame="border" rules="all">
+
+
+<thead align="left" valign="bottom">
+<tr>
+<th id="N101E4" align="left" valign="top">Property</th>
+<th id="N101EC" align="left" valign="top">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr>
+<td headers="N101E4 " align="left" valign="top"><b>Run As User</b></td>
+<td headers="N101EC " align="left" valign="top">was1</td>
+</tr>
+<tr>
+<td headers="N101E4 " align="left" valign="top"><b>Run As Group</b></td>
+<td headers="N101EC " align="left" valign="top">wasgroup</td>
+</tr>
+<tr>
+<td headers="N101E4 " align="left" valign="top"><b>UMASK</b></td>
+<td headers="N101EC " align="left" valign="top">022<p>The value <tt>022</tt> means
+the files the process creates are writable by the group and by others as defined
+on the Linux or UNIX platforms.</p>
+</td>
+</tr>
+</tbody>
+
+</table></div>
+</li>
+
+<li class="skipspace"><span>Click <b>OK</b>.</span></li>
+
+<li class="skipspace"><span>Save the configuration.</span></li>
+
+</ol>
+
+</li>
+
+<li class="skipspace"><span>Stop the application server.</span>  Use the <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/rxml_stopserver.html"><span style="font-family: monospace;">stopServer.sh</span> script</a> from the <span style="font-family: monospace;">/bin</span><span> directory
+of the installation <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>:</span><pre><span style="font-family: monospace;">stopServer.sh server1</span></pre>
+
+</li>
+
+<li class="skipspace"><span><span>Change file permissions as the <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user.</span></span><span>  The following
+example assumes that the installation <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> directory for WebSphere Application
+Server is </span><span style="font-family: monospace;">/opt/WebSphere/AppServer</span>:<pre><span style="font-family: monospace;">
+chgrp wasgroup /opt/WebSphere
+chgrp wasgroup /opt/WebSphere/AppServer
+chgrp -R wasgroup /opt/WebSphere/AppServer/cloudscape
+chgrp -R wasgroup /opt/WebSphere/AppServer/profiles/nodeProfile1
+chmod g+wr /opt/WebSphere
+chmod g+wr /opt/WebSphere/AppServer
+chmod -R g+wr /opt/WebSphere/AppServer/cloudscape
+chmod -R g+wr /opt/WebSphere/AppServer/recoveryLogs
+chmod -R g+wr /opt/WebSphere/AppServer/profiles/nodeProfile1
+</span></pre>
+ </li>
+
+<li class="skipspace"><span>Log on to the application server system as <span style="font-family: monospace;">was1</span>.</span>
+</li>
+
+<li class="skipspace"><span>Start server1 as <span style="font-family: monospace;">was1</span>.</span>  Run the <a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/rxml_startserver.html"><span style="font-family: monospace;">startServer.sh</span> script</a>  from the <span style="font-family: monospace;">/bin</span><span> directory
+of the installation <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>:</span><pre><span style="font-family: monospace;">startServer.sh server1</span></pre>
+ 
+</li>
+
+<li class="skipspace"><span>If creating another server with a different user ID, follow this
+procedure again for the new user ID and server name.</span> <p>The two
+user IDs must share the same group, <span style="font-family: monospace;">wasgroup</span>.</p>
+</li>
+
+</ol>
+
+<div class="p"><p class="sectiontitle">Result</p><span>You can start an application server from a <span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span>-<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span> user.</span></span></div>
+</div>
+
+<br><br><hr align="left"><div><p><b class="reltaskshd">Related tasks</b><br><a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/trun_svr_start.html">Starting an application server</a><br><a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/tcon_console.html">Using the administrative console</a><br><a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/ae/ae/trun_svr_manage.html">Managing application servers</a><br></p></div>
+<span class="runningfooter"><img style="border: 0pt none ;" alt="" src="tins_prepare_data/task_obj.gif"> <strong>Task topic</strong></span>
+      &nbsp;&nbsp;&nbsp;
+   <br><hr align="left"><a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/topic/com.ibm.websphere.nd.doc/info/terms_of_use.html" class="runningfooter"><strong>Terms of Use</strong></a> |
+<a target="_blank" href="mailto:wasdoc@us.ibm.com" class="runningfooter"><strong>Feedback</strong></a>
+<br><br><img style="border: 0pt none ;" alt="" src="tins_prepare_data/timestamp.gif"><span class="runningfooter">Last updated: Dec 11, 2005 4:07:15 PM CST </span><br>
+<span class="runningfooter"><span>http://publib.boulder.ibm.com/infocenter/wasinfo/v6r0/index.jsp?topic=/com.ibm.websphere.nd.doc/info/ae/ae/trun_svr_<span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">non</span><span><span style="background: highlight none repeat scroll 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: highlighttext;">root</span>.html</span></span></span><br><br>
+<span class="runningfooter">
+      © Copyright IBM Corporation 2005. All Rights Reserved.<br>This information center is powered by Eclipse technology.  (http://www.eclipse.org)
+</span>
+</body></html>

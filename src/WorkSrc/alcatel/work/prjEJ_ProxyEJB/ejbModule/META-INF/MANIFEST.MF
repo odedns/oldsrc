@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: prjEJ_ProxyEJBClient.jar 
+ prjEJ_Utils.jar 
+ prjEJ_Model.jar 
+ prjEJ_ServicesImpl.jar
+

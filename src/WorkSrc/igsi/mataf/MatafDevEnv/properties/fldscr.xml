@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<fldscr>
+
+		<group name="TGL.Fields" />
+		<entity name="TGL field screen attributes" relation="TGL data field" 
+				pk="engName" />			
+		<btfield name="rangeName2" length="20" ignore="true" />
+		<btfield name="rangeName" length="20" ignore="true" />
+		<btfield name="select2Filter" length="1" ignore="false" />
+		<btfield name="select2Slice" length="4" ignore="false" />
+		<btfield name="isRangeTable2" length="1" ignore="true" />
+		<btfield name="select2Field" length="20" ignore="false" />
+		<btfield name="select2Table" length="20" ignore="false" />
+		<btfield name="useTable2" length="1" ignore="true" />
+		<btfield name="commaEdit" length="1" ignore="false" yn="true"/>
+		<btfield name="slashEdit" length="1" ignore="false" yn="true"/>
+		<btfield name="intableSlice" length="4" ignore="false" />
+		<btfield name="intableFilter" length="1" ignore="false" />
+		<btfield name="isRangeCheck" length="1" ignore="true" />
+		<btfield name="select1Slice" length="4" ignore="false" />
+		<btfield name="select1Filter" length="1" ignore="false" />
+		<btfield name="isRangeChoice" length="1" ignore="true" />
+		<btfield name="intableCheck" length="1" ignore="false" />
+		<btfield name="rangeFieldTo" length="20" ignore="false" />
+		<btfield name="rangeFieldStructTo" length="20" ignore="false" />
+		<btfield name="rangeStructTo" length="20" ignore="false" />
+		<btfield name="rangeFieldFrom" length="20" ignore="false" />
+		<btfield name="rangeFieldStructFrom" length="20" ignore="false" />
+		<btfield name="rangeStructFrom" length="20" ignore="false" />
+		<btfield name="flagField" length="20" ignore="false" />
+		<btfield name="flagStructFldName" length="20" ignore="false" />
+		<btfield name="flagStructName" length="20" ignore="false" />
+		<btfield name="isFlag" length="1" ignore="true" />
+		<btfield name="isRangeOnFields" length="1" ignore="true" />
+		<btfield name="checkAlways" length="1" ignore="false" yn="true"/>
+		<btfield name="checkEmpty" length="1" ignore="false" yn="true"/>
+		<btfield name="helpPanel" length="20" ignore="false" />
+		<btfield name="intableTable" length="20" ignore="false" />
+		<btfield name="isTableCheck" length="1" ignore="true" />
+		<btfield name="checksumFields" length="80" ignore="false" />
+		<btfield name="checksum" length="2" ignore="false" />
+		<btfield name="checkBikoret" length="1" ignore="true" />
+		<btfield name="displayOnly" length="1" ignore="false" yn="true" />
+		<btfield name="mashovFieldLen" length="2" ignore="false" />
+		<btfield name="isMashovField" length="1" ignore="false" yn="true" />
+		<btfield name="select1Field" length="20" ignore="false" />
+		<btfield name="select1Table" length="20" ignore="false" />
+		<btfield name="chooseFromTable" length="1" ignore="true" />
+		<btfield name="listOfValues" length="80" ignore="false" />
+		<btfield name="isChoiceValues" length="1" ignore="true" />
+		<btfield name="fillChar" length="1" ignore="true" />
+		<btfield name="minChars" length="2" ignore="false" />
+		<btfield name="externDevice" length="2" ignore="false" />
+		<btfield name="externDevOnly" length="1" ignore="false" yn="true"/>
+		<btfield name="externDeviceInput" length="1" ignore="true" />
+		<btfield name="chain" length="1" ignore="false" yn="true"/>
+		<btfield name="align" length="1" ignore="true" />
+		<btfield name="autotab" length="1" ignore="false" yn="true"/>
+		<btfield name="displayFormat" length="30" ignore="true" />
+		<btfield name="isHelpWin" length="1" ignore="true" />
+		<btfield name="helpText" length="40" ignore="false" />
+		<btfield name="isHelpLine" length="1" ignore="true" />
+		<btfield name="rangeValues" length="130" ignore="false" />
+		<btfield name="isRange" length="1" ignore="true" />
+		<btfield name="defaultValue" length="80" ignore="true" />
+		<btfield name="isDefaultField" length="1" ignore="true" />
+		<btfield name="isDefault" length="1" ignore="true" />
+		<btfield name="validFuncLang" length="2" ignore="true" />
+		<btfield name="exitFunc" length="20" ignore="false" />
+		<btfield name="isValidFunc" length="1" ignore="true" />
+		<btfield name="entryFuncLang" length="2" ignore="true" />
+		<btfield name="entryFunc" length="20" ignore="false" />
+		<btfield name="isEntryFunc" length="1" ignore="true" />
+		<btfield name="screenTitle" length="20" ignore="true" />
+		<btfield name="engName" length="20" ignore="false" />
+		<btfield name="dictCode" length="1" ignore="false" />
+</fldscr>

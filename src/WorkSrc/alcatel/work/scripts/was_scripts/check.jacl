@@ -1,0 +1,39 @@
+set node [$AdminControl getNode]
+
+set prov [$AdminConfig getid /Node:$node/JDBCProvider:/]
+set res [regexp "HoshenProvider" $prov]
+if { $res > 0 } {
+	puts "HoshenProvider exists"
+} else {
+	puts "HoshenProvider does not exist"
+}
+
+
+set ent [$AdminConfig list JAASAuthData]
+set i 0 
+puts $ent
+while { $i < [llength $ent] } {
+	set res [lsearch [lindex  [$AdminConfig show [lindex $ent $i] ] 0] "hoshenDB"]
+	if { $res > 0 } {
+		break
+		puts "res : $res"
+	}
+	incr i
+}
+
+if { $res > 0 } { 
+	puts "hoshenDB exists"
+} else {
+	puts "hoshenDB does not exist"
+}
+
+
+set ds [$AdminConfig getid /Node:$node/JDBCProvider:HoshenProvider/DataSource:/]
+set res [regexp "HoshenJdbc" $ds]
+if { $res > 0 } {
+	puts "HoshenJdbc exists"
+} else {
+	puts "HoshenJdbc does not exist"
+}
+
+

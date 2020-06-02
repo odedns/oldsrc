@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsetype.xml>
+     <!--DWGroupDef:DSE Sample application.Server.Types-->
+     <type id="String" implClass="com.ibm.dse.base.DataField">
+          <descriptor id="typeDefault" implClass="com.ibm.dse.base.types.ext.StringPropertyDescriptor">
+               <param id="initialValue" value="null"/>
+               <Converter convTypes="default,host" implClass="com.ibm.dse.base.types.ext.StringConverter"/>
+               <Validator implClass="com.ibm.dse.base.types.ext.StringValidator">
+                    <param id="minLength" value="0"/>
+                    <param id="maxLength" value="30"/>
+               </Validator>
+          </descriptor>
+     </type>
+     <type id="Float" implClass="com.ibm.dse.base.DataField">
+          <descriptor id="typeDefault" implClass="com.ibm.dse.base.types.ext.FloatPropertyDescriptor">
+               <param id="initialValue" value="null"/>
+               <Converter convTypes="default,host" implClass="com.ibm.dse.base.types.ext.FloatConverter">
+                    <param id="size" value="4"/>
+               </Converter>
+               <Validator implClass="com.ibm.dse.base.types.ext.FloatValidator"/>
+          </descriptor>
+     </type>
+     <type id="Date" implClass="com.ibm.dse.base.DataField">
+          <descriptor id="typeDefault" implClass="com.ibm.dse.base.types.ext.DatePropertyDescriptor">
+               <param id="initialValue" value="null"/>
+               <Converter convTypes="default" implClass="com.ibm.dse.base.types.ext.DateConverter">
+                    <param id="mask" value="ddmmyy"/>
+               </Converter>
+               <Validator implClass="com.ibm.dse.base.types.ext.DateValidator">
+                    <param id="mask" value="ddmmyy"/>
+               </Validator>
+          </descriptor>
+     </type>
+     <type id="Double" implClass="com.ibm.dse.base.DataField">
+          <descriptor id="typeDefault" implClass="com.ibm.dse.base.types.ext.DoublePropertyDescriptor">
+               <param id="initialValue" value="null"/>
+               <Converter convTypes="default" implClass="com.ibm.dse.base.types.ext.FloatConverter">
+                    <param id="size" value="8"/>
+               </Converter>
+               <Validator implClass="com.ibm.dse.base.types.ext.DoubleValidator"/>
+          </descriptor>
+     </type>
+     <!--/DWGroupDef-->
+</dsetype.xml>

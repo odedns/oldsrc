@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ====================================================== -->
+	<!-- The pre defined implemented flows supplied with Flower -->
+	<!-- ====================================================== -->
+
+	<flowImplementations>
+		<implementation name="default" class="com.ness.fw.flower.core.SimpleFlow"/>
+		<implementation name="menuFlow" class="com.ness.fw.flower.core.MenuFlow"/>
+	</flowImplementations>
+
+</root>

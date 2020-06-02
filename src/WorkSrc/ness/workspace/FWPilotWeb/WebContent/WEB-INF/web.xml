@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp">
+	<display-name>FrameWorkPilotWeb</display-name>
+
+	<servlet>
+		<servlet-name>ControllerServlet</servlet-name>
+		<display-name>ControllerServlet</display-name>
+		<servlet-class>com.ness.fw.flower.servlet.ControllerServlet</servlet-class>
+
+		<init-param>
+			<param-name>servletConfigurationLocation</param-name>
+			<param-value>config/controller_servlet.xml</param-value>
+		</init-param>
+	
+		<init-param>
+			<param-name>systemConfigurationLocation</param-name>
+			<param-value>config/systemInit.xml</param-value>
+		</init-param>
+
+		<load-on-startup>-1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>JobServlet</servlet-name>
+		<display-name>JobServlet</display-name>
+		<servlet-class>com.ness.fw.job.servlet.JobServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControllerServlet</servlet-name>
+		<url-pattern>/cs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JobServlet</servlet-name>
+		<url-pattern>/JobServlet</url-pattern>
+	</servlet-mapping> 
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<resource-ref id="ResourceRef_1107104983265">
+		<res-ref-name>jdbc/harelds</res-ref-name>
+		<res-type>java.lang.Object</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+</web-app>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsedata.xml>
+     <!--DWGroupDef:DSE Sample application.Server.Data-->
+     <!-- SERVER DATA DEFs.====================================================== -->
+     <!--=========================================================================-->
+     <!-- Common Data fields                                                      -->
+     <!--=========================================================================-->
+     <hostField hostId="DT" id="Date"/>
+     <field id="AccountBalance"/>
+     <hostField hostId="AN" id="AccountNumber"/>
+     <field id="Type"/>
+     <field id="Name"/>
+     <field id="Balance"/>
+     <field id="MaxAmount"/>
+     <hostField hostId="CU" id="CustomerId"/>
+     <field id="CustomerName"/>
+     <field id="TrxId"/>
+     <hostField hostId="AM" id="Amount"/>
+	 <!-- <hostField hostId="BR" id="BranchId" value="1005"/> -->
+     <field id="BranchId" value="1005"/>
+     <field id="OpnDate"/>
+     <field id="OpnDescription"/>
+     <field id="OpnAmount"/>
+     <field id="OpnBalance"/>
+     <field id="TID"/>
+     <field id="UserId"/>
+     <field id="TrxReplyCode"/>
+     <field id="TrxErrorMessage"/>
+     <field id="HostBuff"/>
+     <field id="clientType"/>
+     <field id="sessionID"/>
+     <field id="dse_sessionId"/>
+     <field id="dse_pageId"/>
+     <field id="dse_replyPage"/>
+     <!--=========================================================================-->
+     <!-- Branch Data                                                             -->
+     <!--=========================================================================-->
+     <kColl id="branchData">
+          <refData refId="BranchId"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Java Channel Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="javaChannelData">
+          <refData refId="clientType"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Java Session Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="javaSessionData">
+          <refData refId="TID"/>
+          <refData refId="UserId"/>
+          <refData refId="CustomerId"/>
+          <refData refId="CustomerName"/>
+          <refData refId="AccountListData"/>
+          <refData refId="HostBuff"/>
+          <refData refId="sessionID"/>
+     </kColl>
+     <iColl id="AccountListData">
+          <refData refId="AccountRecordData"/>
+     </iColl>
+     <kColl id="AccountRecordData">
+          <refData refId="AccountNumber"/>
+          <refData refId="Type"/>
+          <refData refId="Name"/>
+          <refData refId="Balance"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- HTML Channel Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="htmlChannelData">
+          <refData refId="clientType"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- HTML Session Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="htmlSessionData">
+          <!--refData refId="TID"/-->
+          <refData refId="CustomerId"/>
+          <refData refId="CustomerName"/>
+          <refData refId="AccountListData"/>
+          <refData refId="HostBuff"/>
+          <!--refData refId="sessionID"/-->
+          <refData refId="dse_sessionId"/>
+          <refData refId="dse_pageId"/>
+          <refData refId="dse_replyPage"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Startup Operation Data                                                  -->
+     <!--=========================================================================-->
+     <kColl id="startupServerData">
+          <refData refId="TID"/>
+          <field id="WKSContext"/>
+          <field id="WKSParentContext"/>
+          <refData refId="sessionID"/>
+          <refData refId="UserId"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- End session Operation Data                                              -->
+     <!--=========================================================================-->
+     <kColl id="endSessionServerData"/>
+     <!--=========================================================================-->
+     <!-- Withdrawal Operation Data                                               -->
+     <!--=========================================================================-->
+     <kColl id="withdrawalData">
+          <refData refId="TrxId" value="Tx02"/>
+          <refData refId="Date"/>
+          <refData refId="AccountNumber"/>
+          <refData refId="BranchId"/>
+          <refData refId="Amount"/>
+          <refData refId="MaxAmount"/>
+          <refData refId="TrxReplyCode"/>
+          <refData refId="TrxErrorMessage"/>
+          <refData refId="AccountBalance"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Deposit Operation Data                                                  -->
+     <!--=========================================================================-->
+     <kColl id="depositData">
+          <refData refId="TrxId" value="Tx01"/>
+          <refData refId="Date"/>
+          <refData refId="AccountNumber"/>
+          <refData refId="BranchId"/>
+          <refData refId="Amount"/>
+          <refData refId="TrxReplyCode"/>
+          <refData refId="TrxErrorMessage"/>
+          <refData refId="AccountBalance"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Customer Search Operation Data                                          -->
+     <!--=========================================================================-->
+     <kColl id="customerSearchData">
+          <refData refId="TrxId" value="Tx00"/>
+          <refData refId="TrxReplyCode"/>
+          <refData refId="TrxErrorMessage"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Account Statement Operation Data                                        -->
+     <!--=========================================================================-->
+     <kColl id="accountStatementData">
+          <refData refId="TrxId" value="Tx04"/>
+          <refData refId="AccountNumber"/>
+          <refData refId="accountStatementDetails"/>
+          <refData refId="TrxReplyCode"/>
+          <refData refId="TrxErrorMessage"/>
+     </kColl>
+     <iColl id="accountStatementDetails">
+          <refData refId="accountStatementLine"/>
+     </iColl>
+     <kColl id="accountStatementLine">
+          <refData refId="OpnDate"/>
+          <refData refId="OpnDescription"/>
+          <refData refId="OpnAmount"/>
+          <refData refId="OpnBalance"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Html Presentation Processor Data                                        -->
+     <!--=========================================================================-->
+     <kColl id="htmlPresentationData">
+          <!--refData refId="TrxId"/-->
+          <data id="Date" refType="Date"/>
+          <refData refId="AccountNumber"/>
+          <data id="AccountBalance" refType="Double"/>
+          <data id="Amount" refType="Double"/>
+          <refData refId="accountStatementDetails"/>
+          <refData refId="TrxReplyCode"/>
+          <refData refId="TrxErrorMessage"/>
+     </kColl>
+     <!--/DWGroupDef-->
+</dsedata.xml>

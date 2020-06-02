@@ -1,0 +1,20 @@
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:palette="palettecde.xmi" xmlns:cdm="cdm.xmi" xmlns:utility="utilitycde.xmi">
+	<palette:CategoryCmp xmi:id="cat1">
+		<categoryLabel xsi:type="utility:ConstantString" xmi:id="string0" string="Mataf VisualBeans" />
+		<cmpGroups xsi:type="palette:GroupCmp" xmi:id="group1">
+			<cmpEntries xsi:type="palette:AnnotatedCreationEntry" xmi:id="entry1" icon16Name="platform:/plugin/mataf.guibeans/icons/Butt16.gif">
+				<objectCreationEntry xsi:type="palette:EMFCreationToolEntry" xmi:id="entry1obj" creationClassURI="java:/mataf.types#MatafButton" />
+				<values xmi:type="cdm:KeyedString" xmi:id="stringname1" key="com.ibm.etools.cde.nameincomposition" value="aMatafButton" />
+				<entryLabel xsi:type="utility:ConstantString" xmi:id="string1" string="MatafButton" />
+			</cmpEntries>
+		</cmpGroups>
+
+		<cmpGroups xsi:type="palette:GroupCmp" xmi:id="group1">
+			<cmpEntries xsi:type="palette:AnnotatedCreationEntry" xmi:id="entry1" icon16Name="platform:/plugin/mataf.guibeans/icons/Txtfld16.gif">
+				<objectCreationEntry xsi:type="palette:EMFCreationToolEntry" xmi:id="entry1obj" creationClassURI="java:/mataf.types#MatafTextField" />
+				<values xmi:type="cdm:KeyedString" xmi:id="stringname1" key="com.ibm.etools.cde.nameincomposition" value="aMatafTextField" />
+				<entryLabel xsi:type="utility:ConstantString" xmi:id="string1" string="MatafTextField" />
+			</cmpEntries>
+		</cmpGroups>
+	</palette:CategoryCmp>
+</xmi:XMI>

@@ -1,0 +1,26 @@
+#ifndef _OMG_SECURITYLEVEL1_IDL_
+#define _OMG_SECURITYLEVEL1_IDL_
+
+#pragma IT_SystemSpecification
+
+#include <omg/Security.idl>
+
+#pragma IT_BeginCBESpecific AllJava "@@\
+@module SecurityLevel1=org.omg"
+
+#pragma prefix "omg.org"
+
+module SecurityLevel1 {
+
+# pragma version SecurityLevel1 1.5
+    local interface Current : CORBA::Current {// Locality Constrained
+
+    // thread specific operations
+
+        Security::AttributeList get_attributes (
+            in Security::AttributeTypeList attributes
+        );
+    };
+};
+
+#endif  /*!_OMG_SECURITYLEVEL1_IDL_*/

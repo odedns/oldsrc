@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dseoper.xml>
+     <!--DWGroupDef:client.Operations-->
+     <!-- CLIENT OPERATION DEFs.================================================= -->
+     <!--=========================================================================-->
+     <!-- StartUp Operation                                                       -->
+     <!--=========================================================================-->
+     <operation context="startupClientCtx" id="startupClientOp"
+          implClass="com.mataf.operations.StartupClientOp" serverOperation="startupServerOp">
+          <refFormat name="csRequestFormat" refId="startupReqFmt"/>
+     </operation>
+     <!--=========================================================================-->
+     <!-- End Session Operation                                                   -->
+     <!--=========================================================================-->
+     <operation context="endSessionClientCtx" id="endSessionClientOp"
+          implClass="com.mataf.operations.EndSessionClientOp" serverOperation="endSessionServerOp"/>
+     <!--A generic client operation-->
+     
+     <operation context="initOpenHlCtx" id="initOpenHlClientOp"
+          implClass="com.mataf.operations.InitOpenHlClientOp" serverOperation="initOpenHlServerOp">
+          <refFormat name="csRequestFormat" refId="HLinitReqFmt"/>
+     </operation>
+     
+     <operation context="confirmOpenHlCtx" id="confirmOpenHlClientOp"
+          implClass="com.mataf.operations.ConfirmOpenHlClientOp" serverOperation="confirmOpenHlServerOp">
+          <refFormat name="csRequestFormat" refId="HLConfirmOpenReqFmt"/>
+     </operation>
+     <!--/DWGroupDef-->
+</dseoper.xml>

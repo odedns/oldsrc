@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsesrvce.xml>
+     <!--DWGroupDef:DSE Sample application.Client.Services-->
+     <!-- CLIENT SERVICE DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Real client-server client service                                       -->
+     <!--=========================================================================-->
+     <CSClient id="realCSClient" usedForServerToClientEventNotification="true" />
+     <!--/DWGroupDef-->
+     <ApplicationTables id="myapplTables" searchRemotelly="true">
+		  <table id="branches" inMemory="false" loadAllTables="true" />
+	 </ApplicationTables>
+
+		<ApplicationTables id="appTablesService" 
+			 externalSourceURL="http://localhost/myweb4/dse/server/tables.xml"
+			 changesControl="false"
+			 controlTableSourceURL="http://localhost/myweb4/dse/server/controltable.xml"
+			 timeBetweenCheckingsInControlTable="10000" >			
+  			  <table id="holidays" inMemory="false" >
+  				  <tableColumn id="CODE" type="CHAR(3)" isKey="true" />
+  			  	<tableColumn id="DATE" type="VARCHAR(50)" />
+  			  </table>
+  			  <table id="errorMessages" inMemory="true" >
+  				  <tableColumn id="ERRCOD" type="CHAR(5)" isKey="true" />
+				  <tableColumn id="ERRDESC" type="VARCHAR(100)" />
+			  </table>  
+			   
+		</ApplicationTables>
+		<RefTablesClientService id="refTables" loadAll="true" />
+</dsesrvce.xml>

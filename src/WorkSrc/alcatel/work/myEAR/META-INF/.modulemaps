@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulemap:EARProjectMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:application="application.xmi" xmlns:modulemap="modulemap.xmi" xmi:id="EARProjectMap_1120666090663">
+  <mappings xmi:id="ModuleMapping_1120666122709" projectName="myejb">
+    <module xmi:type="application:EjbModule" href="META-INF/application.xml#EjbModule_1120666122709"/>
+  </mappings>
+  <mappings xmi:id="ModuleMapping_1120666176788" projectName="myweb">
+    <module xmi:type="application:WebModule" href="META-INF/application.xml#WebModule_1120666176788"/>
+  </mappings>
+  <mappings xmi:id="ModuleMapping_1125576752843" projectName="myclient">
+    <module xmi:type="application:JavaClientModule" href="META-INF/application.xml#JavaClientModule_1125576752843"/>
+  </mappings>
+  <utilityJARMappings xmi:id="UtilityJARMapping_1121175490100" projectName="onjlib" uri="onjlib.jar"/>
+</modulemap:EARProjectMap>

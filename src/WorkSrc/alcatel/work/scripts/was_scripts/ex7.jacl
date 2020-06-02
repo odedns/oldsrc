@@ -1,0 +1,149 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex7.jacl - Jacl implementation of example script 7
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate the creation of a 
+#  JDBCProvider object using a template.
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex7.jacl mynode me secret
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex7.jacl
+#     wsadmin> ex7.jacl mynode me secret
+# 
+#  The script expects 3 parameters:
+#    node name
+#    user 
+#    password
+#  In addition, the script sets several constants that can be customized,
+#  or this script could be adapted to take some or all of these as 
+#  parameters:
+#    the name of the new JDBCProvider object
+#    the name of the new DataSource object
+#    a string to be used when searching for an appropriate template
+#    the path to the driver needed for this JDBCProvider
+#
+#  This example demonstrates many wsadmin features:
+#
+#   - The use of the AdminConfig object to locate configuration objects        
+#   - The use of the AdminConfig object to modify configuration objects
+#   - The use of the AdminConfig listTemplates and createUsingTemplate commands to create configuration objects
+#-----------------------------------------------------------------
+#
+proc ex7 {nodeName username password} {
+  
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminConfig
+
+  set newJDBCname newjdbc
+  set newDSname newds
+  set templName   "DB2 Universal JDBC Driver Provider (XA)"
+  set driverPath  C:/SQLLIB/java 
+
+  #---------------------------------------------------------
+  # Get the config id for a JDBC Template 
+  #---------------------------------------------------------
+  puts "ex7: getting the JDBCProvider template whose name includes $templName" 
+  set template [lindex [$AdminConfig listTemplates JDBCProvider $templName] 0]
+  puts "the template is: $template"
+
+  #---------------------------------------------------------
+  # Create a new JDBCProvider using this template 
+  #---------------------------------------------------------
+  puts "ex7: create a new JDBCProvider object named $newJDBCname" 
+  set name_attr [list name $newJDBCname]
+  set attrs [list $name_attr]
+  set serv1 [$AdminConfig getid /Node:$nodeName/Server:server1/]
+  if {($template == "")} {
+     puts "ex7: Error -- template not found for name $templName"
+     return 
+  } else {
+     set new1 [$AdminConfig createUsingTemplate JDBCProvider $serv1  $attrs $template]
+  }
+  puts "the new1 is: $new1"
+
+  #---------------------------------------------------------
+  # For this example, we do not need the WAS40DataSource object, but
+  # we do want to modify the DataSource object. 
+  # Note that the template for this JDBCProvider does not give
+  # names to the WAS40DataSource and DataSource objects associated with
+  # it.  We can use "getid" to retrieve ids for objects that do not have
+  # names as shown below.
+  #---------------------------------------------------------
+  puts "ex7: remove the WAS40DataSource object created via the template"
+  set was40ds [$AdminConfig getid /JDBCProvider:$newJDBCname/WAS40DataSource:/]
+  $AdminConfig remove $was40ds
+   
+  #--------------------------------------------------------------
+  # Modify the DataSource as appropriate.  In particular for this
+  # example, we give the DataSource a name, a jndiName, and we set 
+  # user and password properties.
+  #--------------------------------------------------------------
+  puts "ex7: modify the datasource object -- name, jndiName, properties."
+  set ds [$AdminConfig getid /JDBCProvider:$newJDBCname/DataSource:/]
+  set name_attr [list name $newDSname]
+  set jndiName_attr [list jndiName $newDSname]
+  set user_attr     [list [list name user]     [list value $username] [list type java.lang.String]] 
+  set password_attr [list [list name password] [list value $password] [list type java.lang.String]]
+  set newprops      [list $user_attr $password_attr]
+  set resprops      [list resourceProperties $newprops]
+  set ps_attr       [list propertySet [list $resprops]]
+  set attrs [list $name_attr $jndiName_attr $ps_attr]
+  $AdminConfig modify $ds $attrs
+   
+  #--------------------------------------------------------------
+  # Modify the DataSource to give it a relational resource adapter.
+  # We just use the first one we find for this server, but other
+  # schemes are possible. 
+  #--------------------------------------------------------------
+  puts "ex7: modify the datasource object -- relationalResourceAdapter" 
+  set rra      [lindex [$AdminConfig list J2CResourceAdapter $serv1] 0]
+  set rra_attr [list relationalResourceAdapter $rra]
+  set attrs [list $rra_attr]
+  $AdminConfig modify $ds $attrs
+   
+  #--------------------------------------------------------------
+  # Update the variable map -- this JDBCProvider introduced a 
+  # new variable: 
+  #--------------------------------------------------------------
+  puts "ex7: update the variable map."
+  set vm [$AdminConfig getid /Node:$nodeName/VariableMap:/]
+  set symname [list symbolicName DB2_JDBC_DRIVER_PATH]
+  set value   [list value C:/SQLLIB/java]
+  set desc    [list description "Path to DB2"]
+  set new1    [list $symname $value $desc]
+  set entries_attr  [list entries [list $new1]]
+  set attrs   [list $entries_attr]
+  $AdminConfig modify $vm $attrs
+
+  #--------------------------------------------------------------
+  # Save all the changes 
+  #--------------------------------------------------------------
+  puts "ex7: saving the configuration"
+  $AdminConfig save
+
+}
+ 
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 3) } {
+   puts "ex7: this script requires 3 parameters: the name of the node under which to create resources,"
+   puts "     the name of a database user, and the password for that user."
+   puts ""
+   puts "e.g.:     ex7  mynode me secret" 
+} else { 
+   set nodeName      [lindex $argv 0]  
+   set username      [lindex $argv 1]  
+   set password      [lindex $argv 2]  
+   ex7 $nodeName $username $password
+}

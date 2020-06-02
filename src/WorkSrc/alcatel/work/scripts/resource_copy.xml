@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+
+<!-- 
+	Copy all resource files from resource/locale and its subdirs 
+	to the JavaSource directory, so that the property files will 
+	be put in the classpath.
+-->
+   <project name="ResourceCopy" default="message" basedir=".">
+   
+   	<target name="message" >
+   		<echo> No need to run resource copy </echo>
+   	</target>
+      <target name="res_copy">
+		<native2ascii src="resources/locale/" dest="resources/temp/" 
+			includes="**/*.properties" ext="_he_IL.properties" encoding="cp1255"/>
+		 <!-- copy properties files -->
+		 <copy todir="WebContent\WEB-INF\classes" includeEmptyDirs="false" flatten="true" >
+    		<fileset dir="${basedir}\resources\temp\">
+    			<include name="**/*.properties"/>
+		    </fileset>    		    
+		  </copy>
+		  <delete dir="resources/temp"></delete>		  
+      </target>
+   </project>

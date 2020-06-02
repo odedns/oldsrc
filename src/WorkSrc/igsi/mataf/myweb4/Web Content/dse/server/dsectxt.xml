@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsectxt.xml>
+     <!--DWGroupDef:DSE Sample application.Server.Contexts-->
+     <!-- SERVER CONTEXT DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Branch Context                                                          -->
+     <!--=========================================================================-->
+     <context id="branchServer" parent="nil" type="branch">
+          <refKColl refId="branchData"/>
+          <refService alias="CSServer" refId="realCSServer" type="cs"/>
+     </context>
+
+			 
+     <!--=========================================================================-->
+     <!-- Java Channel Context                                                    -->
+     <!--=========================================================================-->
+     <context id="javaChannelCtx" parent="branchServer" type="op">
+          <refKColl refId="javaChannelData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Java Session Context                                                    -->
+     <!--=========================================================================-->
+     <!--context id="javaSessionCtx" type="op" parent="javaChannelCtx"-->
+     <context id="javaSessionCtx" type="op">
+          <refKColl refId="javaSessionData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- HTML Channel Context                                                    -->
+     <!--=========================================================================-->
+     <context id="htmlChannelCtx" parent="branchServer" type="op">
+          <refKColl refId="htmlChannelData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- HTML Session Context                                                    -->
+     <!--=========================================================================-->
+     <context id="htmlSessionCtx" type="op">
+          <refKColl refId="htmlSessionData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Startup Operation Context                                               -->
+     <!--=========================================================================-->
+     <context id="startupServerCtx" parent="branchServer" type="op">
+          <refKColl refId="startupServerData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- End session Operation Context                                           -->
+     <!--=========================================================================-->
+     <context id="endSessionServerCtx" type="op">
+          <refKColl refId="endSessionServerData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- HTML Presentation Context                                               -->
+     <!--=========================================================================-->
+     <context id="htmlPresentationCtx" type="op">
+          <refKColl refId="htmlPresentationData"/>
+     </context>
+     <!--/DWGroupDef-->
+
+	 <context id="transCtx" type="op">
+          <refKColl refId="mydata"/>
+          
+     </context>
+
+	<context id="emptyCtx" type="op"/>
+		
+	
+	 <context id="genSrvOpCtx" type="op">
+          <refKColl refId="genOpData"/>          
+     </context>
+     
+      <context id="genOpCtx" type="op">
+          <refKColl refId="genOpData"/>          
+     </context>
+
+   	 <context id="overrideCtx" type="op">
+ 	      <refKColl refId="overrideData"/>
+     </context>     	 
+	 <context id="myCtx" type="op">
+          <refKColl refId="mydata"/>
+          <!--
+          <refService alias="jdbcSrv" refId="jdbcConnectionService" type="host"/>
+          -->
+          <refService alias="mqconn" refId="MQC" type="host"/>
+
+     </context>
+     <context id="myStoreContext" type="op">
+	    <refKColl refId="myStoreOperationData">
+    	</refKColl>
+	    <refService refId="myStoreName" alias="store"
+            type="store" />
+	</context>
+			  	
+	<context id="applicationTablesServerOpCtxt" type="op">
+	  <refKColl refId="applicationTablesServerOpData"/>
+	</context>
+	
+	
+
+	<context id ="branch" type="branch" parent ="nil"/>
+
+	<context id="myOperationContext" type="op"
+            parent="branch">
+    	<refKColl refId="myOperationData"/>	    
+    	<refService refId="myJournalName" alias="myJournal"
+        	type="journal"/> 
+	</context>
+	<!-- for ref tables  -->
+	<context id="refTablesCtx" type="op" >
+		<refKColl refId="refTablesData" />		
+		<refService refId="refTables" alias="refTablesService" type="cs"/>			
+	</context>
+
+	<!-- context for Messaging service -->
+	 <context id="mqServiceCtx" type="op">
+          <refService alias="mqsrv" refId="MQS" type="host"/>
+     </context>
+   	 <context id="mqSrvCtx" type="op">
+          <refService alias="mqconn" refId="MQC2" type="host"/>
+     </context>
+
+	<context id="messagingServiceCtx" type="op">
+          <refService alias="mqsrv" refId="MQC" type="host"/>
+     </context>
+	<context id="matafOverrideTableCtx" type="op">
+          <refKColl refId="matafOverrideTableData" />
+          <refService alias="connectionManager" refId="JDBCServicesConnMgr" type="cs" />
+     </context>
+     
+     	<!-- override context -->
+	<context id="overrideCtx" type="view">
+		<refKColl refId="overrideData" />
+	</context>
+
+</dsectxt.xml>

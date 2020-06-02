@@ -1,0 +1,35 @@
+#ifndef _OMG_COS_TYPED_EVENT_COMM_IDL_
+#define _OMG_COS_TYPED_EVENT_COMM_IDL_
+
+//
+//	Copyright (c) 1999 IONA Technologies PLC. All Rights Reserved.
+//
+//   THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF IONA Technologies PLC
+//	    The copyright notice above does not evidence any
+//	    actual or intended publication of such source code.
+//
+
+#pragma IT_SystemSpecification
+
+#include <omg/CosEventComm.idl>
+
+#pragma prefix "omg.org"
+
+module CosTypedEventComm
+{
+
+    interface TypedPushConsumer : CosEventComm::PushConsumer
+    {
+        Object
+        get_typed_consumer();
+    };
+
+    interface TypedPullSupplier : CosEventComm::PullSupplier
+    {
+        Object 
+        get_typed_supplier();
+    };
+
+};
+
+#endif  /*!_OMG_COS_TYPED_EVENT_COMM_IDL_*/

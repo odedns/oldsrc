@@ -1,0 +1,13 @@
+llist.obj
+hash.obj
+stk.obj
+inifile.obj
+network.obj
+initst.obj
+queue.obj
+path.obj
+regexp.obj
+getopt.obj
+vector.obj
+sort.obj
+str.obj

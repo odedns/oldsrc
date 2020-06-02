@@ -1,0 +1,10 @@
+
+[Hoshen]
+class      = !hoshen\..*
+method     = !.*
+signature  = !.*
+deep_mode  = hard
+layer   = HoshenLayer
+~
+~
+~

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "toc_1_0.dtd">
+
+<toc version="1.0">
+  <tocitem text="Teller online help" image="toplevelfolder">
+    <tocitem text="Introduction" target="intro"/>
+    <tocitem text=" Operations">
+
+      <tocitem text="Amount">
+        <tocitem text="Withdrawal" target="withdrawal">
+		<tocitem text="Account number" target="withaccnumber"/>
+		<tocitem text="Amount" target="withamount"/>
+		<tocitem text="Date" target="withdate"/>
+	  </tocitem>
+
+        <tocitem text="Deposit" target="deposit">
+		<tocitem text="Account number" target="depaccnumber"/>
+		<tocitem text="Amount" target="depamount"/>
+		<tocitem text="Date" target="depdate"/>
+	  </tocitem>
+
+        <tocitem text="Transfer" target="transfer">
+		<tocitem text="Origin account" target="transoriacc"/>
+		<tocitem text="Destination account" target="transdestacc"/>
+		<tocitem text="Date" target="transdate"/>
+	  </tocitem>
+
+      </tocitem>
+
+      <tocitem text="Credit cards">
+        <tocitem text="New card" target="newcard">
+		<tocitem text="Card type" target="newcardtype"/>
+		<tocitem text="Limit" target="newcardlimit"/>
+		<tocitem text="Owner name" target="newcardowner"/>
+	  </tocitem>
+
+	  <tocitem text="Cancel card" target="cancelcard">	
+		<tocitem text="Card number" target="cancardnum"/>
+	  </tocitem>
+
+        <tocitem text="New limit" target="newlimitcard">
+		<tocitem text="Card number" target="newlimitnum"/>
+		<tocitem text="Limit" target="newlimitlimit"/>
+		<tocitem text="Date" target="newlimitdate"/>
+	  </tocitem>
+
+      </tocitem>
+    </tocitem>
+  </tocitem>
+</toc>
+
+

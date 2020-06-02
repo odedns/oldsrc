@@ -1,0 +1,1 @@
+c:\j2sdk1.4.2\bin\native2ascii -encoding iso8859-8 desktopsample_heb.properties desktopsample.properties

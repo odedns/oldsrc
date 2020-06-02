@@ -1,0 +1,143 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex8.jacl - Jacl implementation of example script 8
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate J2C Security configuration,
+#  including the installation of a J2CResourceAdapter and creation of a J2CConnectionFactory.
+#
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex8.jacl mynode c:/mystuff/cicseci.rar anonymous pw1 anonymous pw2
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex8.jacl
+#     wsadmin> ex8.jacl mynode c:/mystuff/cicseci.rar anonymous pw1 anonymous pw2 
+# 
+#  The script expects 6 parameters:
+#    node name
+#    path name for rar file to be used when installing J2CResourceAdapter
+#    user id for component-managed authentication 
+#    password for above
+#    user id for container-managed authentication 
+#    password for above
+#
+#  In addition, the script sets several constants that can be customized,
+#  or this script could be adapted to take some or all of these as 
+#  parameters:
+#    the alias names for authentication 
+#    the name of the new J2CConnectionFactory 
+#    the jndiName of the new J2CConnectionFactory 
+#    a string to be used when searching for an appropriate template
+#    the path to the driver needed for this JDBCProvider
+#
+#  This example demonstrates these wsadmin features:
+#
+#   - The use of the AdminConfig object to locate configuration objects        
+#   - The use of the AdminConfig object to create configuration objects
+#   - The use of the AdminConfig object to modify configuration objects
+#   - The use of the AdminConfig installResourceAdapter command to install J2CResourceAdapter objects 
+#-----------------------------------------------------------------
+#
+proc ex8 {nodeName rarpath component_username component_password container_username container_password} {
+  
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminConfig
+  global AdminControl
+
+  set COMP_ALIAS     my-applicationAuth-Alias
+  set CONT_ALIAS     my-containerAuth-Alias
+  set newCFname      ECI_CF 
+  set newCFjndiName  eis/becashacctECIConnection
+  set DEFAULT_PRINCIPAL_MAPPING  DefaultPrincipalMapping
+
+  #---------------------------------------------------------
+  # Get the config id for the Cell's Security object 
+  #---------------------------------------------------------
+  puts "ex8: get the cell's Security object" 
+  set cell [$AdminControl getCell]
+  set sec [$AdminConfig getid /Cell:$cell/Security:/]
+
+  #---------------------------------------------------------
+  # Install a J2CResourceAdapter using the provided rar file 
+  #---------------------------------------------------------
+  puts "ex8: install resource adapter"
+  set ra [$AdminConfig installResourceAdapter $rarpath $nodeName {-rar.desc "New Resource Adapter"}]
+
+  #---------------------------------------------------------
+  # Create a JAASAuthData object for component-managed authentication 
+  #---------------------------------------------------------
+  puts "ex8: create JAASAuthData object for component-managed authentication" 
+
+  set alias_attr    [list alias $COMP_ALIAS]
+  set desc_attr     [list description "authentication information when component-managed"]
+  set userid_attr   [list userId $component_username]
+  set password_attr [list password $component_password]
+  set attrs [list $alias_attr $desc_attr $userid_attr $password_attr]
+
+  set appauthdata [$AdminConfig  create JAASAuthData $sec $attrs] 
+
+  #---------------------------------------------------------
+  # Create a JAASAuthData object for container-managed authentication 
+  #---------------------------------------------------------
+  puts "ex8: create JAASAuthData object for container-managed authentication" 
+
+  set alias_attr    [list alias $CONT_ALIAS]
+  set desc_attr     [list description "authentication information when container-managed"]
+  set userid_attr   [list userId $container_username]
+  set password_attr [list password $container_password]
+  set attrs [list $alias_attr $desc_attr $userid_attr $password_attr]
+
+  set contauthdata [$AdminConfig  create JAASAuthData $sec $attrs] 
+
+  #---------------------------------------------------------
+  # Create a J2CConnectionFactory 
+  #---------------------------------------------------------
+  puts "ex8: create a J2CConnectionFactory named $newCFname" 
+  set name_attr     [list name $newCFname]
+  set jndi_attr     [list jndiName $newCFjndiName]
+  set authmech_attr [list authMechanismPreference BASIC_PASSWORD]
+  set authdata_attr [list authDataAlias $COMP_ALIAS]
+  set map_auth_attr [list authDataAlias $CONT_ALIAS] 
+  set map_configalias_attr [list mappingConfigAlias $DEFAULT_PRINCIPAL_MAPPING] 
+  set map_attrs     [list $map_auth_attr $map_configalias_attr]
+  set mapping_attr  [list mapping $map_attrs]
+  set attrs [list $name_attr $jndi_attr $authmech_attr $authdata_attr $mapping_attr]
+
+  set cf [$AdminConfig create J2CConnectionFactory $ra $attrs]
+
+  #--------------------------------------------------------------
+  # Save all the changes 
+  #--------------------------------------------------------------
+  puts "ex8: saving the configuration"
+  $AdminConfig save
+
+}
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 6) } {
+   puts "ex8: this script requires 6 parameters: "
+   puts "     the name of the node under which to create resources,"
+   puts "     the path to the rar file, "
+   puts "     the user name to be used for component-managed authorization,"
+   puts "     the password to be used for component-managed authorization,"
+   puts "     the user name to be used for container-managed authorization,"
+   puts "     and the password to be used for container-managed authorization,"
+   puts ""
+   puts "e.g.:   ex8.jacl mynode c:/mystuff/cicseci.rar anonymous pw1 anonymous pw2"
+} else { 
+   set nodeName            [lindex $argv 0]  
+   set rarpath             [lindex $argv 1]  
+   set component_username  [lindex $argv 2]  
+   set component_password  [lindex $argv 3]  
+   set container_username  [lindex $argv 4]  
+   set container_password  [lindex $argv 5]
+   ex8 $nodeName $rarpath $component_username $component_password $container_username $container_password
+}

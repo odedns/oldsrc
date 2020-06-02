@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT dseview.xml (view+)>
+
+<!ELEMENT Button EMPTY>
+<!ATTLIST Button 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    font CDATA #IMPLIED
+    visible CDATA "true"
+    toolTipText CDATA #IMPLIED
+    enabled CDATA "true"
+    icon CDATA #IMPLIED
+    text CDATA #IMPLIED
+>
+
+<!ELEMENT ButtonGroup EMPTY>
+<!ATTLIST ButtonGroup 
+    beanName CDATA #IMPLIED
+>
+
+<!ELEMENT CheckBox EMPTY>
+<!ATTLIST CheckBox 
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    background CDATA "204,204,204"
+    selected CDATA "false"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT ComboBox EMPTY>
+<!ATTLIST ComboBox 
+    selectedIndex CDATA "-1"
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    background CDATA "204,204,204"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT DSEPanel ((Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*,(Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*)*>
+<!ATTLIST DSEPanel 
+     classForHelpImplementation CDATA #IMPLIED
+     visible CDATA "true"
+     executeWhenOpen CDATA "false"
+     iconName CDATA #IMPLIED
+     bounds CDATA #IMPLIED
+     activatedOkKey CDATA "true"
+     enabled CDATA "true"
+     validationMethod CDATA #IMPLIED
+     helpID CDATA #IMPLIED
+     operationName IDREF #IMPLIED
+     font CDATA #IMPLIED
+     instanceContext CDATA "true"
+     isInEuros CDATA "false"
+     editable CDATA "true"
+     disableWhileOperationRunning CDATA "false"
+     EMUCurrency (Austrian_Schilling|Belgian_Franc|Dutch_Guilder|Euro|Finnish_Markka|French_Franc |German_Mark|Irish_Punt|Italian_Lira|Pesetas|Portuguese_Escudo) "Euro"
+     background CDATA "204,204,204"
+     instanceOperation CDATA "true"
+     contextName IDREF #IMPLIED
+     name CDATA #IMPLIED
+     title CDATA #IMPLIED
+>
+
+<!ELEMENT EmbeddedPanel ((Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*,(Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*)*>
+<!ATTLIST EmbeddedPanel 
+     bounds CDATA #IMPLIED
+     background CDATA "204,204,204"
+     name CDATA #IMPLIED
+     activatedOkKey CDATA "true"
+     editable CDATA "true"
+     font CDATA #IMPLIED
+     visible CDATA "true"
+     nesting CDATA "true"
+     enabled CDATA "true"
+     helpID CDATA #IMPLIED
+>
+
+<!ELEMENT Label EMPTY>
+<!ATTLIST Label 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     bounds CDATA #IMPLIED
+     text CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT List EMPTY>
+<!ATTLIST List 
+     selectedIndex CDATA "-1"
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT Menu EMPTY>
+<!ATTLIST Menu 
+     font CDATA #IMPLIED
+     enabled CDATA "true"
+     name CDATA #IMPLIED
+     background CDATA "204,204,204"
+     icon CDATA #IMPLIED
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+     text CDATA #IMPLIED
+>
+
+<!ELEMENT MenuBar EMPTY>
+<!ATTLIST MenuBar 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+
+<!ELEMENT MenuItem EMPTY>
+<!ATTLIST MenuItem 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     icon CDATA #IMPLIED
+     bounds CDATA #IMPLIED
+     text CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT OperationPanel ((Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*,(Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*)*>
+<!ATTLIST OperationPanel 
+     classForHelpImplementation CDATA #IMPLIED
+     visible CDATA "true"
+     executeWhenOpen CDATA "false"
+     iconName CDATA #IMPLIED
+     bounds CDATA #IMPLIED
+     activatedOkKey CDATA "true"
+     enabled CDATA "true"
+     validationMethod CDATA #IMPLIED
+     helpID CDATA #IMPLIED
+     operationName IDREF #IMPLIED
+     font CDATA #IMPLIED
+     isInEuros CDATA "false"
+     editable CDATA "true"
+     disableWhileOperationRunning CDATA "false"
+     EMUCurrency (Austrian_Schilling |Belgian_Franc |Dutch_Guilder |Euro |Finnish_Markka |French_Franc |German_Mark |Irish_Punt |Italian_Lira |Pesetas |Portuguese_Escudo ) "Euro"
+     background CDATA "204,204,204"
+     instanceOperation CDATA "true"
+     name CDATA #IMPLIED
+     title CDATA #IMPLIED
+>
+
+<!ELEMENT Panel ((Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*,(Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*)*>
+<!ATTLIST Panel 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT PasswordField EMPTY>
+<!ATTLIST PasswordField 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     echoChar CDATA "*"
+     background CDATA "204,204,204"
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT PopupMenu EMPTY>
+<!ATTLIST PopupMenu 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT RadioButton EMPTY>
+<!ATTLIST RadioButton 
+     font CDATA #IMPLIED
+     name CDATA #IMPLIED
+     enabled CDATA "true"
+     background CDATA "204,204,204"
+     selected CDATA "false"
+     bounds CDATA #IMPLIED
+     visible CDATA "true"
+>
+
+<!ELEMENT ScrollPane ((Table | SpTable)*)*>
+<!ATTLIST ScrollPane 
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    background CDATA "204,204,204"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT SpButton EMPTY>
+<!ATTLIST SpButton 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    activatedOkKey CDATA "false"
+    font CDATA #IMPLIED
+    dataToClear (BOTH |INPUT |INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT |OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+    visible CDATA "true"
+    toolTipText CDATA #IMPLIED
+    enabled CDATA "true"
+    navigationParameters CDATA #IMPLIED
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    disableExecuteButton CDATA "true"
+    icon CDATA #IMPLIED
+    text CDATA #IMPLIED
+    helpID CDATA #IMPLIED
+>
+
+<!ELEMENT SpButtonGroup EMPTY>
+<!ATTLIST SpButtonGroup 
+    dateName IDREF #IMPLIED
+    dataDirection (BOTH |INPUT |OUTPUT ) "BOTH"
+    alternativeDataName IDREF #IMPLIED
+    required CDATA "false"
+    beansReactions CDATA #IMPLIED
+    beanName CDATA #IMPLIED
+>
+
+<!ELEMENT SpCheckBox EMPTY>
+<!ATTLIST SpCheckBox 
+    visible CDATA "true"
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    dataToClear (BOTH |INPUT |INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT |OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+    bounds CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    enabled CDATA "true"
+    alternativeDataName IDREF #IMPLIED
+    helpID CDATA #IMPLIED
+    selectedValue CDATA #IMPLIED
+    dataName IDREF #IMPLIED
+    font CDATA #IMPLIED
+    selected CDATA "false"
+    background CDATA "204,204,204"
+    beansReactions CDATA #IMPLIED
+    unSelectedValue CDATA #IMPLIED
+    dataDirection (BOTH |INPUT |OUTPUT ) "BOTH"
+    navigationParameters CDATA #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT SpComboBox EMPTY>
+<!ATTLIST SpComboBox 
+    useKeyValues CDATA "false"
+    visible CDATA "true"
+    selectedIndex CDATA "-1"
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    dataToClear (BOTH |INPUT |INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT |OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+    bounds CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    enabled CDATA "true"
+    colors CDATA #IMPLIED
+    required CDATA "false"
+    alternativeDataName IDREF #IMPLIED
+    helpID CDATA #IMPLIED
+    dataName IDREF #IMPLIED
+    font CDATA #IMPLIED
+    dataNameForList IDREF #IMPLIED
+    background CDATA "204,204,204"
+    beansReactions CDATA #IMPLIED
+    dataDirection (BOTH |INPUT |OUTPUT ) "BOTH"
+    valueInContext CDATA "value"
+    navigationParameters CDATA #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT SpErrorLabel EMPTY>
+<!ATTLIST SpErrorLabel 
+   font CDATA #IMPLIED
+   enabled CDATA "true"
+   name CDATA #IMPLIED
+   background CDATA "204,204,204"
+   bounds CDATA #IMPLIED
+   visible CDATA "true"
+   text CDATA #IMPLIED
+>
+
+<!ELEMENT SpErrorList ((Table | SpTable)*)*>
+<!ATTLIST SpErrorList 
+   font CDATA #IMPLIED
+   enabled CDATA "true"
+   name CDATA #IMPLIED
+   background CDATA "204,204,204"
+   bounds CDATA #IMPLIED
+   visible CDATA "true"
+>
+
+<!ELEMENT SpLabel EMPTY>
+<!ATTLIST SpLabel 
+   bounds CDATA #IMPLIED
+   background CDATA "204,204,204"
+   name CDATA #IMPLIED
+   activatedOkKey CDATA "true"
+   dataName IDREF #IMPLIED
+   font CDATA #IMPLIED
+   visible CDATA "true"
+   enabled CDATA "true"
+   formatter CDATA "null"
+   text CDATA #IMPLIED
+>
+
+<!ELEMENT SpList EMPTY>
+<!ATTLIST SpList 
+   useKeyValues CDATA "false"
+   visible CDATA "true"
+   selectedIndex CDATA "-1"
+   type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+   dataToClear (BOTH |INPUT |INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT|OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+   bounds CDATA #IMPLIED
+   activatedOkKey CDATA "true"
+   enabled CDATA "true"
+   alternativeDataName IDREF #IMPLIED
+   helpID CDATA #IMPLIED
+   allColors CDATA #IMPLIED
+   dataName IDREF #IMPLIED
+   font CDATA #IMPLIED
+   dataNameForList IDREF #IMPLIED
+   mandatory CDATA "false"
+   background CDATA "204,204,204"
+   beansReactions CDATA #IMPLIED
+   dataDirection (BOTH |INPUT |OUTPUT ) "BOTH"
+   valueInContext CDATA "value"  
+   navigationParameters CDATA #IMPLIED
+   name CDATA #IMPLIED
+>
+
+<!ELEMENT SpMenu EMPTY>
+<!ATTLIST SpMenu 
+   font CDATA #IMPLIED
+   name CDATA #IMPLIED
+   enabled CDATA "true"
+   background CDATA "204,204,204"
+   icon CDATA #IMPLIED
+   bounds CDATA #IMPLIED
+   text CDATA #IMPLIED
+   visible CDATA "true"
+>
+
+<!ELEMENT SpMenuBar EMPTY>
+<!ATTLIST SpMenuBar 
+    font CDATA #IMPLIED
+    enabled CDATA "true"
+    name CDATA #IMPLIED
+    background CDATA "204,204,204"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT SpMenuItem EMPTY>
+<!ATTLIST SpMenuItem 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    font CDATA #IMPLIED
+    dataToClear (BOTH |INPUT |INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT |OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+    visible CDATA "true"
+    enabled CDATA "true"
+    navigationParameters CDATA #IMPLIED
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    icon CDATA #IMPLIED
+    text CDATA #IMPLIED
+>
+
+<!ELEMENT SpPasswordField EMPTY>
+<!ATTLIST SpPasswordField 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    dataName IDREF #IMPLIED
+    activatedOkKey CDATA "true"
+    font CDATA #IMPLIED
+    dataToClear (BOTH |INPUT |INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT |OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+    visible CDATA "true"
+    echoChar CDATA "*"
+    beansReactions CDATA #IMPLIED
+    dataDirection (BOTH |INPUT |OUTPUT ) "BOTH"
+    alternativeDataName IDREF #IMPLIED
+    enabled CDATA "true"
+    navigationParameters CDATA #IMPLIED
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    helpID CDATA #IMPLIED
+>
+
+<!ELEMENT SpPopupMenu EMPTY>
+<!ATTLIST SpPopupMenu 
+   font CDATA #IMPLIED
+   enabled CDATA "true"
+   name CDATA #IMPLIED
+   background CDATA "204,204,204"
+   bounds CDATA #IMPLIED
+   visible CDATA "true"
+>
+
+<!ELEMENT SpRadioButton EMPTY>
+<!ATTLIST SpRadioButton 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    font CDATA #IMPLIED
+    visible CDATA "true"
+    selected CDATA "false"
+    enabled CDATA "true"
+    navigationParameters CDATA #IMPLIED
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    value CDATA #IMPLIED
+    helpID CDATA #IMPLIED
+>
+
+<!ELEMENT SpTabbedPane EMPTY>
+<!ATTLIST SpTabbedPane 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    tabPlacement CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    font CDATA #IMPLIED
+    visible CDATA "true"
+    enabled CDATA "true"
+    helpID CDATA #IMPLIED
+>
+
+<!ELEMENT SpTable EMPTY>
+<!ATTLIST SpTable 
+    rowSelectionAllowed CDATA "true"
+    visible CDATA "true"
+    type (Cancel |Clear |Close |Close_Navigation |Default |EMU_Currency |Euro |Execute_Operation |Help |Next_View |none |Ok |Open_View |Previous_View |Repeat |Undo ) "Default"
+    dataNameAndColumns CDATA #IMPLIED
+    dataToClear (BOTH|INPUT|INPUT_BOTH|INPUT_OUTPUT|INPUT_OUTPUT_BOTH|OUTPUT|OUTPUT_BOTH) "INPUT_OUTPUT_BOTH"
+    bounds CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    enabled CDATA "true"
+    alternativeDataName IDREF #IMPLIED
+    helpID CDATA #IMPLIED
+    allColors CDATA #IMPLIED
+    dataName IDREF #IMPLIED
+    font CDATA #IMPLIED
+    cellSelectionEnabled CDATA "false"
+    columnSelectionAllowed CDATA "false"
+    selectionRequired CDATA "false"
+    background CDATA "204,204,204"
+    beansReactions CDATA #IMPLIED
+    dataDirection (BOTH |INPUT |OUTPUT) "BOTH"
+    navigationParameters CDATA #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT SpTextField EMPTY>
+<!ATTLIST SpTextField 
+    visible CDATA "true"
+    type (Cancel|Clear|Close|Close_Navigation|Default|Euro|EMU_Currency|Execute_Operation|Help|Next_View|none |Ok|Open_View|Previous_View|Repeat|Undo) "Default"
+    dataToClear (BOTH |INPUT|INPUT_BOTH |INPUT_OUTPUT |INPUT_OUTPUT_BOTH |OUTPUT |OUTPUT_BOTH ) "INPUT_OUTPUT_BOTH"
+    bounds CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    enabled CDATA "true"
+    keystroke CDATA "false"
+    required CDATA "false"
+    alternativeDataName IDREF #IMPLIED
+    helpID CDATA #IMPLIED
+    minChars CDATA "0"
+    allColors CDATA #IMPLIED
+    dataName IDREF #IMPLIED
+    font CDATA #IMPLIED
+    autoClear CDATA "true"
+    autoTab CDATA "false"
+    editable CDATA "true"
+    formatter CDATA #IMPLIED
+    maxChars CDATA "1000"
+    background CDATA "204,204,204"
+    beansReactions CDATA #IMPLIED
+    dataDirection (BOTH |INPUT |OUTPUT ) "BOTH"
+    navigationParameters CDATA #IMPLIED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT SpToggleButton EMPTY>
+<!ATTLIST SpToggleButton 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    font CDATA #IMPLIED
+    visible CDATA "true"
+    selected CDATA "false"
+    enabled CDATA "true"
+    helpID CDATA #IMPLIED
+>
+
+<!ELEMENT TabbedPane EMPTY>
+<!ATTLIST TabbedPane 
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    background CDATA "204,204,204"
+    tabPlacement CDATA #IMPLIED
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT Table EMPTY>
+<!ATTLIST Table 
+    bounds CDATA #IMPLIED
+    rowSelectionAllowed CDATA "true"
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    font CDATA #IMPLIED
+    visible CDATA "true"
+    columnSelectionAllowed CDATA "false"
+    enabled CDATA "true"
+    cellSelectionEnabled CDATA "false"
+>
+
+<!ELEMENT TextArea EMPTY>
+<!ATTLIST TextArea 
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    columns CDATA "0"
+    editable CDATA "true"
+    background CDATA "204,204,204"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT TextField EMPTY>
+<!ATTLIST TextField 
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    editable CDATA "true"
+    background CDATA "204,204,204"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT TitledEmbeddedPanel ((Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*,(Button | SpButton | Label | SpErrorLabel | SpLabel | ComboBox | SpComboBox | TextArea | MenuItem | Menu | SpMenu | SpMenuItem | Panel | EmbeddedPanel | TitledEmbeddedPanel | OperationPanel | DSEPanel | List | SpList | TextField | SpTextField | ToggleButton | SpToggleButton | Table | SpTable | TabbedPane | SpTabbedPane | PasswordField | SpPasswordField | RadioButton | SpRadioButton | PopupMenu | SpPopupMenu | MenuBar | SpMenuBar | ScrollPane | SpErrorList | CheckBox | SpCheckBox)*)*>
+<!ATTLIST TitledEmbeddedPanel 
+    bounds CDATA #IMPLIED
+    background CDATA "204,204,204"
+    name CDATA #IMPLIED
+    activatedOkKey CDATA "true"
+    editable CDATA "true"
+    font CDATA #IMPLIED
+    visible CDATA "true"
+    nesting CDATA "true"
+    enabled CDATA "true"
+    title CDATA #IMPLIED
+    helpID CDATA #IMPLIED
+>
+
+<!ELEMENT ToggleButton EMPTY>
+<!ATTLIST ToggleButton 
+    font CDATA #IMPLIED
+    name CDATA #IMPLIED
+    enabled CDATA "true"
+    background CDATA "204,204,204"
+    selected CDATA "false"
+    bounds CDATA #IMPLIED
+    visible CDATA "true"
+>
+
+<!ELEMENT view EMPTY>
+<!ATTLIST view 
+    implClass CDATA #IMPLIED
+    context IDREF #IMPLIED
+    defaultOperation IDREF #IMPLIED
+    id ID #REQUIRED
+>
+
+
+
+
+
+

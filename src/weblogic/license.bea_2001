@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<bea-licenses>
+    <license-group format="1.0" product="WebLogic Server" release="6.1">
+        <license
+            component="Connector"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="8cdPZVa2S59aOx2+xFFXbfcySP8=0MC0CFQCeYWHv58/uT4uY9B8J+wm5VGl70wIUK1AvACRSKCye1wl8XiR2RGztSAQ="
+        />
+        <license
+            component="QASuite"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="jOWUuhKG4waY0fEFwhjRr2po2AU=0MC0CFQC33d7T520UMjfP14+K5CuwVsZzUQIUC5w4hCJh4fEHJyPuRgLMaBqLRes="
+        />
+        <license
+            component="jDriver/Oracle"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="0n8gQzG+dFAOX4BkNWSnu+4kSK0=0MC0CFQCBUtbvUI8RAchvuxZe5tt7IIvr9gIUPUQ9UOBvibGaAUCRT+iSlf4dEqk="
+        />
+        <license
+            component="jDriver/Informix4"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="vJpraDI3N7z0okE7CsEvA/SiUyI=0MCwCFHZDrnG60oKpuGp2kOpFB0reraiFAhQPzzUAKIKsyRjQQP01z33vQAYiZA=="
+        />
+        <license
+            component="jDriver/MSSQLServer4"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="ojp9jcx6cByGOre1v1qYuc8rC7Q=0MC0CFF/CxA9dGoZdujYodDWKwLt0v/A1AhUAq4w5RMri48XKchIEk7kh5MVWeVY="
+        />
+        <license
+            component="Clustered JMS"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="7B929gYK2CtxbTdC84RqnVnSVLY=0MCwCFDe5yMxiUO3axG5AEFUWwgt5AW36AhQ4CWDMe4xiOCr5e4CSzQewUOUnTA=="
+        />
+        <license
+            component="Cluster"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="9eHY3se8zFeDbbjnf9pURo+Yb98=0MCwCFBKzVu1xk2p1768bN3BGW7PPcuyFAhQgerd84nnqaA7NCHBt54BBJqfVZQ=="
+        />
+        <license
+            component="JMS"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="f8IGxPJHUWF2Oh5LWWiiefUdRe0=0MC0CFQCZ9QWk5iqm0z7g7Pu8seEJg8uzOAIUS8c7HKOw+shdN5RKsU0hrIH9kcA="
+        />
+        <license
+            component="EJB 2.0"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="7IDunTS/jqMaxzrsVikX8YFdPPI=0MC4CFQCUCMBjFPHkTr+anQ5MSw9ZP/UdIQIVAN4IiAIB6mUBdwhdl+Iwt/H/vcty"
+        />
+        <license
+            component="EJB 1.1"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="G8BJhBLye4I/1pDCopTF7NIRei4=0MC0CFQDFBsUQ5h70BD/yrwBZEf2wkkz7dwIUJNC8y4k9WLQkE6iwYXUdz7gz2No="
+        />
+        <license
+            component="2PC"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="7GJHnhv+DeJT/SNS0dbbDdeAwZo=0MCwCFEcuXf+mBlEOIrSnxeq7BiuthzgtAhQF0FKHbIZ/qdoRZCIAh8NLvvWEQQ=="
+        />
+        <license
+            component="In-memory Replication - EJB"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="eraVFc6pAE0tYzayyHkKdKVo2qc=0MCwCFCffFhpnqVX6KMBwjv1rHJeZrhODAhR4v+xiXb2HvNlUvR1z+gSQqHsPsQ=="
+        />
+        <license
+            component="In-memory Replication - Servlet"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="XsS7YFdIvMeoSj4Jp7gM+mQTwWc=0MC0CFByULbURBJbsH6xbL2ClMlZWT3xxAhUA1pWTIApD8th1CwR0cYVhTfAaezM="
+        />
+        <license
+            component="SSL/Export"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="8ALx1XD4BRzteQdqg5nlszB9oa4=0MCwCFGfl8XX9+pwKcTht0mvXwB/Ip9lDAhQieuoSZLoaPftzWVcTKYURbEWypg=="
+        />
+        <license
+            component="WebLogic"
+            expiration="2001-11-02"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="F3HS4szgy4MQC1bzCCA4kLe7Gr4=0MCwCFG5Awt819hjicDcrEs2W4DwrBzaxAhQPOsf1nCJNLb8h3I8ejlQFmruBZA=="
+        />
+    </license-group>
+    <license-group format="1.0" product="WebLogic Server" release="*">
+        <license
+            component="WebLogic"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MCwCFHEmXibALR7x4Swe8kT8kJtz6gXSAhRGhaxrRO0h2fqFXkgjnfgqdZzY4A=="
+        />
+        <license
+            component="SSL/Export"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC0CFQDA8IdSOctG+4AVNkoRKwqOQWKG4wIUPLPqcA0ljdDMQQDX85eiFI4/LVU="
+        />
+        <license
+            component="2PC"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MCwCFAI0pEYXex6GYQRGmLhmbUCRDGW0AhR1eZldLTMFqNmcORxclyQYHYcu1A=="
+        />
+        <license
+            component="In-memory Replication - Servlet"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC4CFQCESj1BFmFOxvxFrsMf1Bh/yBSNWgIVANrQF3rnJxKj0PljgOfUA0U6uKya"
+        />
+        <license
+            component="In-memory Replication - EJB"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC0CFQCgyEx0Z2PBkA5u/B/SAOh+fDUEIwIUYIAq4vWf8LyBq/PB1oCFx3H9lZQ="
+        />
+        <license
+            component="EJB 1.1"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC4CFQDhYZed5E5ZFcmQOOcC04A3EOfi3QIVALLdmOliOEN+3zVGeyT/o/CMIdaE"
+        />
+        <license
+            component="EJB 2.0"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC4CFQCLx06pvrfnY2fqnzO3ItBAbZzmPgIVAOOX7hdb6plP72YiBILwo0p9OKkK"
+        />
+        <license
+            component="JMS"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MCwCFC6ryfa9OzrTtbxr8pTe1N5S2qHLAhQiY41+0yCkoeF1bcLzR1yy/sZvwA=="
+        />
+        <license
+            component="Cluster"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC4CFQDiXCG1eanDsgUnXQ1nlAGylpOSIQIVAMCoUjZfA0PgHEvlKFi0F13K8QhM"
+        />
+        <license
+            component="Clustered JMS"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC0CFDCyBMs5ALbFbRr0eG43s8sw29/MAhUAtTgEYBGVuOa0k/lVd80YRy6u6Jk="
+        />
+        <license
+            component="jDriver/MSSQLServer4"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC0CFQC77JB9lQtCktajc9iAe1exOQFD0AIUelaK5fGiol5x9KkiHeXjGskOfPc="
+        />
+        <license
+            component="jDriver/Informix4"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC0CFQChQkrE+d/5FNQRmoExM6OywYwIqAIUIOWEfJ//GWhZXqE5N14bkGi5evc="
+        />
+        <license
+            component="jDriver/Oracle"
+            expiration="2001-02-13"
+            ip="*"
+            licensee="WebLogic Evaluation Customer"
+            type="RTK"
+            units="3"
+            signature="MC0CFGupOfyPViiwCtU3Zsq9+CSJ6k25AhUAv4YYvxfTxxpg/KazobTCZ6XcGfo="
+        />
+    </license-group>
+</bea-licenses>

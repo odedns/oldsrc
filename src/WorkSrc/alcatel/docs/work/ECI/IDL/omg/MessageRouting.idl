@@ -1,0 +1,205 @@
+#ifndef _OMG_MESSAGEROUTING_IDL_
+#define _OMG_MESSAGEROUTING_IDL_
+
+//
+//	Copyright (c) 1999 IONA Technologies PLC. All Rights Reserved.
+//
+//   THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF IONA Technologies PLC
+//	    The copyright notice above does not evidence any
+//	    actual or intended publication of such source code.
+//
+
+#pragma IT_SystemSpecification
+
+#pragma prefix "omg.org"
+
+#include <omg/GIOP.idl>
+#include <omg/IOP.idl>
+#include <omg/Messaging.idl>
+
+#pragma IT_BeginCBESpecific AllJava                             "@@\
+@module MessageRouting=org.omg"
+
+module MessageRouting
+{
+    const IOP::ComponentId TAG_MESSAGE_ROUTERS = 3;
+
+    interface RouterAdmin;
+    interface Router;
+    typedef sequence<Router> RouterList;
+
+    struct MessageBody
+    {
+	sequence<octet> body;
+	boolean         byte_order;
+    };
+
+    struct RequestMessage
+    {
+	GIOP::Version           giop_version;
+	IOP::ServiceContextList service_contexts;
+	octet                   response_flags;
+	octet                   reserved[3];
+	sequence<octet>         object_key;
+	string                  operation;
+	MessageBody             body;
+    };
+
+    enum ReplyDisposition
+    {
+	TYPED,
+	UNTYPED
+    };
+
+    struct ReplyDestination
+    {
+	ReplyDisposition        handler_type;
+	Messaging::ReplyHandler handler;
+	sequence<string>        typed_excep_holder_repids;
+    };
+
+    struct RequestInfo
+    {
+	RouterList                visited;
+	RouterList                to_visit;
+	Object                    target;
+	unsigned short            profile_index;
+	ReplyDestination          reply_destination;
+	Messaging::PolicyValueSeq selected_qos;
+	RequestMessage            payload;
+    };
+
+    typedef sequence<RequestInfo> RequestInfoSeq;
+
+    interface Router
+    {
+	void
+	send_request(
+	    in RequestInfo req
+	);
+
+	void
+	send_multiple_requests(
+	    in RequestInfoSeq request_seq
+	);
+
+	readonly attribute RouterAdmin admin;
+    };
+
+    interface UntypedReplyHandler : Messaging::ReplyHandler
+    {
+	void
+	reply(
+	    in string                operation_name,
+	    in GIOP::ReplyStatusType reply_type,
+	    in MessageBody           reply_body
+	);
+    };
+
+    exception ReplyNotAvailable {};
+
+    interface PersistentRequest
+    {
+	readonly attribute boolean reply_available;
+
+	GIOP::ReplyStatusType
+	get_reply(
+	    in boolean       blocking,
+	    in unsigned long timeout,
+	    out MessageBody  reply_body
+	) raises (ReplyNotAvailable);
+
+	attribute Messaging::ReplyHandler associated_handler;
+    };
+
+    interface PersistentRequestRouter
+    {
+	PersistentRequest
+	create_persistent_request(
+	    in unsigned short    profile_index,
+	    in RouterList        to_visit,
+	    in Object            target,
+	    in CORBA::PolicyList current_qos,
+	    in RequestMessage    payload
+	);
+    };
+
+    typedef short RegistrationState;
+    const RegistrationState NOT_REGISTERED = 0;
+    const RegistrationState ACTIVE         = 1;
+    const RegistrationState SUSPENDED      = 2;
+
+    exception InvalidState
+    {
+	RegistrationState registration_state;
+    };
+
+    const CORBA::PolicyType IMMEDIATE_SUSPEND_POLICY_TYPE = 50;
+    const CORBA::PolicyType UNLIMITED_PING_POLICY_TYPE    = 51;
+    const CORBA::PolicyType LIMITED_PING_POLICY_TYPE      = 52;
+    const CORBA::PolicyType DECAY_POLICY_TYPE             = 53;
+    const CORBA::PolicyType RESUME_POLICY_TYPE            = 54;
+
+#pragma IT_BeginCBESpecific POACxx					"@@\
+@switch -xDispatch -xPOAInterfaces"
+
+    valuetype RetryPolicy supports CORBA::Policy {};
+
+    valuetype ImmediateSuspend : RetryPolicy {};
+
+    valuetype UnlimitedPing : RetryPolicy
+    {
+	public short         max_backoffs;
+	public float         backoff_factory;
+	public unsigned long base_interval_seconds;
+    };
+
+    valuetype LimitedPing : UnlimitedPing
+    {
+	public unsigned long interval_limit;
+    };
+
+    valuetype DecayPolicy supports CORBA::Policy
+    {
+	public unsigned long decay_seconds;
+    };
+
+    valuetype ResumePolicy supports CORBA::Policy
+    {
+	public unsigned long resume_seconds;
+    };
+
+#pragma IT_BeginCBESpecific POACxx					"@@\
+@switch +xDispatch +xPOAInterfaces"
+
+    interface RouterAdmin
+    {
+	void
+	register_destination(
+	    in Object      dest,
+	    in boolean     is_router,
+	    in RetryPolicy retry,
+	    in DecayPolicy decay
+	);
+
+	void
+	suspend_destination(
+	    in Object dest,
+	    in ResumePolicy resumption
+	) raises (InvalidState);
+
+	void
+	resume_destination(
+	    in Object dest
+	) raises (InvalidState);
+
+	void
+	unregister_destination(
+	    in Object dest
+	) raises (InvalidState);
+    };
+
+
+};
+
+#endif  /*!_OMG_MESSAGEROUTING_IDL_*/

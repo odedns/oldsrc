@@ -1,0 +1,16 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+            xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ 
+ <service name="BankService" provider="java:RPC">
+  <parameter name="className" value="ex7.services.BankService"/>
+  <parameter name="allowedMethods" value="*"/>
+  <parameter name="allowedRoles" value="Bill"/>
+  
+  <requestFlow name="checks">
+      <handler type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+      <handler type="java:org.apache.axis.handlers.SimpleAuthorizationHandler"/>
+  </requestFlow>
+  
+ </service>
+
+</deployment>

@@ -1,0 +1,8 @@
+<ns1:message xmlns:ns1="http://courses.ws" xmlns="http://courses.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://courses.ws
+message.xsd">
+	<ns1:destination>Recp1</ns1:destination>
+	<ns1:subject>Test message</ns1:subject>
+	<ns1:content>
+		This is a test message	
+	</ns1:content>
+</ns1:message>

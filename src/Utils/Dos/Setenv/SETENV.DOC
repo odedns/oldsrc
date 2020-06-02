@@ -1,0 +1,292 @@
+
+
+
+
+
+	    SETENV utility V2.5 (c) 18-Sep-1995 
+The SETENV program for a DOS version 2 allows setting an 
+environment variable.  SETENV utility will run under DOS 3.30 
+thru 4.0, 5.0, 6.2 and Windows95.  I have not seen DOS V1.x.  
+
+SETENV : Copyright (c) 1988 to 1995 by John Wolchak.  
+  I give permission to alter the code, but not to copy 
+  or redistribute the altered code without my explicit 
+  permission.  If you alter the code, please document 
+  changes and send me a copy, so all can have it.  
+  This document must always accompany the SETENV 
+  program when a copy is made for another machine.  
+  This code, to the best of my knowledge works well.  
+  I disclaim any responsibility for the codes actions 
+  (use at your own risk).  
+						John 
+
+The syntax of the command is: 
+
+	SETENV <variable> <value> 
+
+<variable> is any valid environment variable you wish to 
+define or re-define.  
+
+<value> is a string of printable characters.  Keys can be 
+embedded in the character string.  The Keys are: 
+  %cwd will return the current working directory.  ie. \bin 
+  %cfd will return the current full directory specification.  ie. \bin\ 
+  %date will return the curent date.  
+  %dosv will return the DOS major version.  
+  %dosm will return the DOS minor version.  
+  %drive will return the current disk drive letter.  
+  %time will return the cuurent time.  
+  %-n will return the current disk drive minus 'n' letter(s).  
+  %+n will return the current disk drive plus 'n' letter(s).  
+
+<value> can have special keys embedded in the character string.  
+Special Keys are keys that have arguments, and they are: 
+  %chr<del><number><del> will return the character for ascii code.  
+  %loc<del><number><del><variable><del><text><del> will return the location 
+	for <text> in an environment <variable> starting at postion <number>.  
+  %mid<del><variable><del><number1><del><number2><del> will return a string 
+	of length <number2> in an environment <variable> starting at <number1>.
+  %elem<del><number><del><character><del><variable><del> will return the 
+	<number> element in a string of elements from environment <variable>.  
+  %len<del><variable><del> will return the length of the data portion of 
+	environment <variable>.  
+  %sum<del><variable><del><number><del> will return the sum of an 
+	environment <variable> and a <number>.  
+
+
+
+
+
+
+<value> can be '%<operator> [<string>|<variable>]  [<string>|<variable>]' 
+For example:	setenv ans %eq 'JOHN' name	setenv ans %eq name "JOHN" 
+The returned environment value is T for true and F for false, and if there 
+is an error, then E is returned.  The arguments can be a quoted string of 
+characters, or a variable name.  Leading spaces will be trimed from the 
+arguments before testing.  Strings are quoted with single or double quotes.  
+<operator> can be: 
+  %eq will test if two arguments are equal.  
+  %lt will test if argument one is less than argument two.  
+  %le will test if argument one is less than or equal to argument two.  
+  %gt will test if argument one is greater than argument two.  
+  %ge will test if argument one is greater than or equal to argument two. 
+
+
+<value> can be '%rep<del><text1><del><text2><del>', where <text1> 
+	will replace <text2> in the environment variable value.
+
+<value> can be '%chgup' which will uppercase the existing 
+	environment <variable>.  
+
+<value> can be '%chglo' which will lowercase the existing 
+	environment <variable>.  
+
+<value> can be '%prompt <message>'.  
+<value> can be '%prompt %readkey <message>'.  
+<value> can be '%prompt %def<del><text><del> <message>'.  
+<value> can be '%prompt %def<del><text><del> %timo=hh:mm:ss <message>'.  
+<value> can be '%prompt %upper %def<del><text><del> %trim <message>'.  
+<value> can be '%prompt %noecho %lower %def<del><text><del> <message>',  
+where the <message> is displayed on the console and the response is set 
+into the <variable>.  %def is optional, and <text> is the <value> used, 
+if just a return is given.  <del> is a one character delimter, to quote 
+the <text>.  %noecho is optional meaning not to display the response on 
+the screen (ie. passwords).  %upper is optional meaning to convert the 
+lower case letters to upper case letters.  %lower is optional meaning 
+to convert the upper case letters to lower case letters.  %trim is optional 
+meaning to trim leading and trailing spaces.  %timo is optional meaning 
+to time out the prompt message and exit after hh:mm:ss.  %readkey is to 
+read one key stroke without needing the carriage return.
+
+<message> is the message display for a prompt.  <message> can have 
+%/<number>/ embedded in the string to create a character that DOS will 
+not allow you to enter on the command line directly. ie for <number> 
+60 will create < and 124 creates | and 62 creates >.  
+
+No %timo means to prompt forever.  No %def and a %timo will assume %def//.  
+The time out is for the first character entered, after the first character 
+is entered you have forever to enter the rest of the text.  
+
+
+
+Note: In batch (BAT files) use %% to represent a single % for use 
+to SETENV.   ie. SETENV DRV_DIR %%drive:%%cwd 
+
+
+
+
+
+
+Note:  SETENV can not expand the environment space.  The DOS SET 
+command can do that, by creating temporary variables with long 
+values and then removing them before any resident program is run.  
+Resident programs are PRINT, MODE.  Documentation is available for 
+versions of DOS 2 thru 3.20 that modify DOS to have a larger 
+environment area beyond the normal 160 bytes.  For DOS 3.30 and 
+above use the shell /E:xxxx option, of Config.Sys.  
+
+
+
+SETENV terminates with int 21h, AH=4ch, the intention is that SETENV can 
+be called from another program, and the return codes can be tested.  
+
+
+SETENV returns errorlevel codes, which are: 
+
+	no command, help issued		00h 
+	root environment set		01h 
+	environment variable erased	02h 
+	environment variable created	03h 
+	don't know about MS-DOS V1.x	04h 
+	environment variable updated	05h 
+	unmatched delimiter		06h 
+	not a valid argument		07h 
+	environment variable not found	08h 
+	offset of drive will be invalid	09h 
+	environment space is full	10h 
+
+Code 04h has changed to report that we are using MS-DOS 
+version one.  Code 07h has been changed to report that 
+the argument used is not the valid type for use.  Usually 
+that will mean that the argument is not numeric.  
+
+
+
+Example uasge: 
+
+This example batch file can demonstrate the usage of SETENV.  
+
+setenv version MS-DOS V%%dosv.%%dosm in %%drive:%%cwd drv/dir. 
+setenv drvs Drive is %%+0:, with %%-1: prev and %%+1: next. 
+setenv first %%prompt Your First Name: 
+setenv last %%prompt %first% Your Last Name: 
+setenv answer %%prompt %%def/Y/ %first% %last% [Y/N] <Y>: 
+set 
+
+First note the %% for a single % in batch.  In batch you can 
+use %<environ_var>% to reflect the value of a previous 
+environment variable.  Make sure you have enough environment 
+space to store this amount of data.  
+
+
+
+
+
+
+History: 
+
+At work we have Disk and File Serving using DOS version 3.  
+When a machine optionally has or hasn't a hard disk, one or 
+more hard disk partitions and maybe a ramdisk, locating the 
+disk or file server is a little tricky.  The disk and file 
+servers are located after your hard disk partitions.  To find 
+them we copy a file, to a redefined disk.  Then test to see if 
+the file exists.  If the file exists, then what drive are we on.  
+Example is: 
+	assign b=g >nul 
+	assign b=h >nul 
+	assign b=i >nul 
+	assign b=j >nul 
+	assign b=k >nul 
+	copy command.com b:\ 
+	assign b=b >nul 
+	if not exist k:\command.com goto jdrv 
+	... 
+	jdrv: 
+	if not exist j:\command.com goto idrv 
+	... 
+	idrv: 
+	... 
+	... 
+
+(We no longer do this now that we have SETENV.) 
+
+
+I wrote a program called CURDRV.  This program would put the 
+current disk drive letter in an environment variable called 
+CURDRV.  The first problem was that when I set the environment 
+variable, then exited the program it was gone, because a 
+program has a copy of the environment space.  
+
+Then we went looking for a program that would return the current 
+disk drive, we came across a program written in C by Richard 
+Marks called SETENV.  He says that his program would not work 
+under DoubleDOS, so this program as well will not work under 
+DoubleDOS.  From Richard Marks's program I used the idea of 
+getting at the environment space by finding the program segment 
+prefix (PSP) of Command.Com.  This is where the real environment 
+space lies.  
+
+For the users of DOS version 3 or higher there is int 21h, and 
+register AH=52h, call to find the PSP.  It is definitely alot 
+easier then what Richard Mark layed out, but his way is the only 
+way to find the PSP under DOS version 2 (to my knowledge).  
+This method still works under DOS version 3.0 thru version 6.0, 
+but future releases may prove to be a problem.  
+
+
+
+
+
+
+Special section: 
+
+If SETENV is called from within a shell there is sometimes a need 
+to set the environment variable into the most root environment space.  
+The means to set the root environment space is use %rce after the 
+program name followed by the usual arguments.  
+Example is: 
+
+	SETENV %rce <variable> <value> 
+
+A special note about calling Command.Com a second time is that all 
+environment variables are duplicated for the second call and that 
+changing any environment variable at this local call will not change 
+the original variable.  That is purpose of the special argument.  
+When the exit command is used the original environment varialables 
+are restored.  
+
+Also note that environment space is allocated in 16 byte segments and 
+that when the environment space is copied only the necessary segments 
+are copied.  (DOS V3.30 thru DOS V6.0 allow you to set the size of the 
+environment space.)  So for DOS V2 if only one byte is in the last segment 
+then you have only 15 bytes to use.  In the 15 bytes you also have to count 
+the variable name space as well.  A way to get around this restriction 
+is to create a environment variable with a large environment space 
+before you call Command.Com, then remove the dummy environment variable.  
+This should give you some elbow room at the local Command.Com.  
+
+
+
+Restrictions: 
+
+SETENV program traces the program segment prefix to find the environment 
+space, but when it finds the environment space SETENV first checks if one 
+of PATH=, PROMPT= or COMSPEC= exists at the first segment boundary.  I 
+am finding that there can be allot of changes to these variables, which 
+causes SETENV to search for ever looking for this arrangement.  So SETENV 
+can now sinc to a new variable SETENV=.  Remember that when you type SET to 
+DOS PATH=, PROMPT=, COMSPEC=, CONFIG=, SETENV= must be the first varible.  
+The new variables winbootdir=, TEMP=, and TMP= where added because of 
+Windows95.  The program will terminate with a message if one of the above 
+variables is not found at the top of the environment space.
+
+
+
+Acknowledgement: 
+
+Richard Marks's C program because without it, I would not have found the 
+true system environment.  
+I wrote this program on a Rainbow, because that is what I have.  At work 
+I use SEDT as my editor by Anker Berg-Sonne, (also runs on IBM PC's) but 
+at home it is a little large for a diskette based system.  So at home I 
+use KEDT by Jay Jervey.  I would like to thank these people because without 
+a good editor it can become near impossible to write any program.  
+
+
+John Wolchak 
+56 Physics Building 
+University of Saskatchewan	Phone: (306) 966-4852 
+Saskatoon, Saskatchewan		NetNorth (BITNET): Wolchak@Sask 
+Canada     S7K 0W0		Inter_Network:	Wolchak@Admin.Usask.CA 
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!-- DOCTYPE management SYSTEM "./dtd/db2repository.dtd" -->
+
+<repository>
+
+	<driver						implementor="sun.jdbc.odbc.JdbcOdbcDriver"/>
+	<driver						implementor="COM.ibm.db2.jdbc.net.DB2Driver"/>
+	<driver						implementor="COM.ibm.db2.jdbc.app.DB2Driver"/>
+	
+	<modelFactory			implementor="com.ibm.dse.dw.model.db2.Db2RepositoryModelFactory"/>
+	
+	<versionManager		implementor="com.ibm.dse.dw.model.db2.Db2VersionManager"/>
+	
+	<accessManager		implementor="com.ibm.dse.dw.am.RepositoryAccessManager"/>
+	
+</repository>

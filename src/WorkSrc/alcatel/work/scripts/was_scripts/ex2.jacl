@@ -1,0 +1,123 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex2.jacl - Jacl implementation of example script 1 
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to show a potentially useful
+#  sequence of common actions using the scripting client wsadmin.
+#  This example is the reverse of example ex1, albeit somewhat simpler.
+#  It stops a server on a given node, uninstalls the given application,
+#  and removes the server from the configuration.
+#
+#  We assume an environment
+#  in which the scripting client is attached to the Network Deployment
+#  manager, but much of this script could be used in a base install.
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     wsadmin -f ex2.jacl serverX nodeY myapp
+#
+#  or the script can be sourced from the wsadmin command line if:
+#     wsadmin> source ex2.jacl
+#     wsadmin> ex2 serverX nodeY myapp
+# 
+#  The script expects some parameters:
+#      arg1 - server name
+#      arg2 - node name
+#      arg3 - application name
+#
+#  This example demonstrates many wsadmin features:
+#
+#   - The use of the AdminApp object to uninstall an application
+#   - The use of the AdminControl object to locate running MBeans 
+#   - The use of the AdminControl object's "stopServer" command
+#   - The use of the AdminConfig object to remove objects from the configuration
+#   - The use of the AdminConfig object to find objects in the configuration
+#   - The use of the AdminConfig object to save the configuration
+#-----------------------------------------------------------------
+
+proc ex2 {serverName nodeName args} {
+
+   #--------------------------------------------------------------
+   # check for optional argument 
+   #--------------------------------------------------------------
+   set app [lindex $args 0]
+   if {[llength $args] > 1} {
+      set appName [lindex $args 1]
+   } else {
+      set appName ""
+   }
+
+   #--------------------------------------------------------------
+   # set up globals
+   #--------------------------------------------------------------
+   global AdminConfig
+   global AdminControl
+   global AdminApp
+
+   #--------------------------------------------------------------
+   # do some sanity checking 
+   #     -- do we have a node by this name? 
+   #--------------------------------------------------------------
+   set node [$AdminConfig getid /Node:$nodeName/]
+   puts "ex2: checking for existence of node $nodeName"
+   if {[llength $node] == 0} {
+      puts "ex2: Error -- node not found for name $nodeName"
+      return 
+   }
+
+   #--------------------------------------------------------------
+   #     -- is a server by this name already running on the node? 
+   #--------------------------------------------------------------
+   puts "ex2: checking to see if server $serverName is running on node $nodeName"
+   set runningServer [$AdminControl completeObjectName type=Server,node=$nodeName,process=$serverName,*]
+   if {[llength $runningServer] < 0} {
+      puts "ex2: Error -- Server $serverName not running on node $nodeName"
+      return 
+   }
+
+   #--------------------------------------------------------------
+   # stop the server 
+   #--------------------------------------------------------------
+   puts "ex2: stopping server $serverName ..."
+   $AdminControl stopServer $serverName
+   puts "ex2: done."
+
+   #--------------------------------------------------------------
+   # Uninstall the application 
+   #--------------------------------------------------------------
+   puts "ex2: uninstalling the application"
+   $AdminApp uninstall $app
+
+   #--------------------------------------------------------------
+   # Find the configuration object 
+   #--------------------------------------------------------------
+   set server [$AdminConfig getid /Node:$nodeName/Server:$serverName/]
+
+   #--------------------------------------------------------------
+   # Remove it 
+   #--------------------------------------------------------------
+   $AdminConfig remove $server 
+
+   #--------------------------------------------------------------
+   # Save all the changes 
+   #--------------------------------------------------------------
+   puts "ex2: saving the configuration"
+   $AdminConfig save
+}
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 3) } {
+   puts "ex2: this script requires 3 parameters: server name, node name, and application name"
+   puts "e.g.:     ex2  server2 mynode myapp1" 
+} else { 
+   set serverName       [lindex $argv 0]  
+   set nodeName         [lindex $argv 1]  
+   set appName          [lindex $argv 2]
+
+   ex2 $serverName $nodeName $appName
+}

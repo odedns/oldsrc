@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ejbModule"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.generic.runtimeTarget/JBoss v4.0"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/jboss-4.0.5.GA/server/default/deploy/ejb3.deployer/jboss-annotations-ejb3.jar"/>
+	<classpathentry kind="lib" path="C:/jboss-4.0.5.GA/server/default/deploy/ejb3.deployer/jboss-ejb3.jar"/>
+	<classpathentry kind="lib" path="C:/jboss-4.0.5.GA/server/default/deploy/ejb3.deployer/jboss-ejb3x.jar"/>
+	<classpathentry kind="lib" path="C:/jboss-4.0.5.GA/client/jboss-aop-jdk50-client.jar"/>
+	<classpathentry kind="lib" path="C:/jboss-4.0.5.GA/client/jboss-aspect-jdk50-client.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/myear/log4j-1.2.14.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/onjlib"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

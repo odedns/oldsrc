@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsedata.xml>
+     <!--DWGroupDef:DSE Sample application.Server.Data-->
+     <!-- SERVER DATA DEFs.====================================================== -->
+     <!--=========================================================================-->
+     <!-- Common Data fields                                                      -->
+     <!--=========================================================================-->
+     <hostField hostId="DT" id="Date"/>
+     <field id="AccountBalance"/>
+     <hostField hostId="AN" id="AccountNumber"/>
+     <field id="Type"/>
+     <field id="Name"/>
+     <field id="Balance"/>
+     <field id="MaxAmount"/>
+     <hostField hostId="CU" id="CustomerId"/>
+     <field id="CustomerName"/>
+     <field id="TrxId"/>
+     <hostField hostId="AM" id="Amount"/>
+	 <!-- <hostField hostId="BR" id="BranchId" value="1005"/> -->
+     <field id="BranchId" value="1005"/>
+     <field id="OpnDate"/>
+     <field id="OpnDescription"/>
+     <field id="OpnAmount"/>
+     <field id="OpnBalance"/>
+     <field id="TID"/>
+     <field id="UserId"/>
+     <field id="TrxReplyCode"/>
+     <field id="TrxErrorMessage"/>
+     <field id="HostBuff"/>
+     <field id="clientType"/>
+     <field id="sessionID"/>
+     <field id="dse_sessionId"/>
+     <field id="dse_pageId"/>
+     <field id="dse_replyPage"/>
+     <field id="ctxData"/>
+     <field id="opName"/>
+     <field id="ctxName"/>
+     
+     
+	 <kColl id="mydata">
+			 <refData refId="UserId"/>
+			 <refData refId="Name"/>
+			 <refData refId="Balance"/>
+		     <refData refId="MaxAmount"/>
+	 </kColl>
+	 	<field id="managerName" />
+	<field id="chosenManagerName" />
+
+	<iColl id="managersList">
+		<refData refId="managerData" />
+	</iColl>
+	<kColl id="managerData">
+		<field id="managerId" />
+		<refData refId="managerName" />
+	</kColl>
+
+	<iColl id="managersComboList">
+		<refData refId="managerName" />
+	</iColl>
+
+	<!-- override data -->
+	<kColl id="overrideData">
+		<field id="tellerUserId" />		
+		<field id="mgrUserId" />
+		<field id="trxId" />
+		<field id="trxName" />
+		<field id="ctxData" />
+		<field id="status" />
+		<field id="reason" />
+		<field id="comment" />
+		<refData refId="managersList" />
+		<refData refId="managersComboList" />
+		<refData refId="chosenManagerName" />
+	</kColl>
+
+
+ 
+	 
+      <kColl id="genOpData">
+     	<refData refId="opName"/>
+     	<refData refId="ctxName"/>
+     	<refData refId="ctxData"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Branch Data                                                             -->
+     <!--=========================================================================-->
+     <kColl id="branchData">
+          <refData refId="BranchId"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Java Channel Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="javaChannelData">
+          <refData refId="clientType"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Java Session Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="javaSessionData">
+          <refData refId="TID"/>
+          <refData refId="UserId"/>
+          <refData refId="CustomerId"/>
+          <refData refId="CustomerName"/>
+          <refData refId="HostBuff"/>
+          <refData refId="sessionID"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- HTML Channel Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="htmlChannelData">
+          <refData refId="clientType"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- HTML Session Data                                                       -->
+     <!--=========================================================================-->
+     <kColl id="htmlSessionData">
+          <!--refData refId="TID"/-->
+          <refData refId="CustomerId"/>
+          <refData refId="CustomerName"/>
+          <refData refId="HostBuff"/>
+          <!--refData refId="sessionID"/-->
+          <refData refId="dse_sessionId"/>
+          <refData refId="dse_pageId"/>
+          <refData refId="dse_replyPage"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- Startup Operation Data                                                  -->
+     <!--=========================================================================-->
+     <kColl id="startupServerData">
+          <refData refId="TID"/>
+          <field id="WKSContext"/>
+          <field id="WKSParentContext"/>
+          <refData refId="sessionID"/>
+          <refData refId="UserId"/>
+     </kColl>
+     <!--=========================================================================-->
+     <!-- End session Operation Data                                              -->
+     <!--=========================================================================-->
+     <kColl id="endSessionServerData"/>
+     <!--=========================================================================-->
+     <!-- Html Presentation Processor Data                                        -->
+     <!--=========================================================================-->
+     <kColl id="htmlPresentationData">
+          <!--refData refId="TrxId"/-->
+          <data id="Date" refType="Date"/>
+          <refData refId="TrxReplyCode"/>
+          <refData refId="TrxErrorMessage"/>
+     </kColl>
+		<counter id="counterA" description="Withdrawals" > 
+			  <counterElement id="total" maxLimit="100000" value="5000"/> 
+			  <counterElement id="increment" maxLimit="100000" minLimit="5000" value="5000"/> 
+			  <counterElement id="totIncrs" minLimit="0" maxLimit="100"/> 
+		</counter> 
+
+		<kColl id="myStoreOperationData"> 
+		    <field id="account_number" />
+		    <field id="amount" />
+		    <field id="date" />
+		    <field id="DESCRIPTION" /> 
+		</kColl> 
+		
+		<kColl id="applicationTablesServerOpData"/>
+		
+		<!-- Operation data definition that will be used by the journal service-->
+		<field id="branchNumber"/>
+		<field id="agreementNumber"/>
+		<kColl id="accountNumber">
+		    <refData refId="branchNumber"/>
+		    <refData refId="agreementNumber"/>
+		</kColl>
+		<kColl id="myOperationData">
+		    <refData refId="accountNumber"/>
+		    <field id="dueDate"/> 
+		</kColl>
+
+	 <!-- for referance tables -->
+		 <kColl id="refTablesRecord" dynamic="true" />
+		 
+		<iColl id="refTablesList" >
+			 <refData refId="refTablesRecord"/>
+		</iColl>
+		<kColl id="refTablesSearch" >
+			<field id="tableName" />
+			<field id="key" />
+			<field id="value" />
+		</kColl>
+		
+		<kColl id="refTablesData" >
+			 <refData refId="refTablesSearch" />
+			 <refData refId="refTablesRecord"/>
+ 			 <refData refId="refTablesList"/>
+		</kColl>
+
+		<kColl id="matafOverrideTableData" >
+		    <field id="IDNUMBER"/>
+   		    <field id="TRXID"/>
+		    <field id="STATUS"/> 
+		    <field id="REASON"/>
+   		    <field id="OR_DATE"/>
+		</kColl>
+		
+		
+			<field id="managerName" />	
+	<field id="chosenManagerName" />
+	<field id="chosenManagerId" />	
+	
+	<iColl id="managersList" size="0" >
+		<refData refId="managerData" />
+	</iColl>
+	<kColl id="managerData">
+		<field id="managerId"  value="" />
+		<refData refId="managerName" value="" />	
+	</kColl>
+	
+	<iColl id="managersComboList" size="0" >
+		<refData refId="managerName" value = "" />	
+	</iColl>
+
+	<iColl id="answerList" size="0" dynamic="true" />
+
+	<kColl id="trxORData">
+		<field id="trxUuid" />
+		<field id="viewName" />
+		<field id="trxId" />
+		<field id="trxName" />
+		<field id="ctxName" />	
+		<field id="overrideResult" value="false"/>	
+		<field id="mgrUserId" value="000000"/>
+		<field id="samchutMeasheret" value="00"/>
+		<field id="answerCode" />
+		<field id="answerTxt" />
+	</kColl>
+		
+	<!-- override data -->
+	<kColl id="overrideData">
+		<field id="tellerUserId"  />
+		<field id="mgrUserId" value="" />
+		<field id="samchutMeasheret" />
+		<field id="trxUuid" />
+		<field id="trxId" />
+		<field id="trxName" />
+		<field id="ctxName" />	
+		<field id="ctxData" />	
+		<field id="status" />	
+		<field id="reason" />
+		<field id="comment" />	
+		<field id="viewName" />	
+		<field id="requestTs" />			
+		<refData refId="managersList" />
+		<!--
+		<refData refId="answerList" />
+		-->
+		<refData refId="managersComboList" />		
+		<refData refId="chosenManagerName" />
+		<refData refId="chosenManagerId" />
+		<field id="answerCode" />
+		<field id="answerTxt" />
+	</kColl>
+	
+
+     <!--/DWGroupDef-->
+</dsedata.xml>

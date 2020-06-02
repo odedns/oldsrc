@@ -1,0 +1,185 @@
+<html>
+<head>
+<link href="../theme/system.css" rel="stylesheet" type="text/css">
+<script src="../scripts/UIConstants.js"></script>
+<script src="../scripts/UIComponents.js"></script>
+<script src="../scripts/UIListToList.js"></script>
+<script src="../scripts/UIUtil.js"></script>
+<script>
+document.write("<title>"  + getDialogFixedTitle(window.dialogArguments["title"]) + "</title>");
+
+var objectType =  window.dialogArguments["objectType"];
+var searchIn =  window.dialogArguments["searchIn"];
+var searchType =  window.dialogArguments["searchType"];
+var searchAction =  window.dialogArguments["searchAction"];
+var isActionSelect = window.dialogArguments["isActionSelect"];
+var isTypeSelect = window.dialogArguments["isTypeSelect"];
+
+var srcArr = window.dialogArguments["srcArr"];
+var labels = window.dialogArguments["labels"];
+var searchStr = window.dialogArguments["searchStr"];
+var l2l;
+function init()
+{
+	initLabels();
+	initSelect();
+	
+	l2l = new ListToList(srcArr,new Array(),"",objectType,searchIn,searchType,searchAction);
+	l2l.bindControls();
+	l2l.arrayToList(l2l.srcList,"",l2l.srcArray,l2l.sourceSearchAction,l2l.sourceSearchType,false);
+
+	initListTitlesAndSearch(searchIn,labels[8],isSourcSearchRendered(searchIn));
+}
+
+function isSourcSearchRendered(searchIn)
+{
+	return searchIn != LIST_SEARCH_IN_NONE;
+}
+
+function initLabels()
+{
+	approveButton.value = labels[0];
+	cancelSelectionButton.value = labels[1];	
+	cancelButton.value = labels[2];		
+}
+
+function initSelect()
+{
+	var o = new Option(labels[3],LIST_SEARCH_ACTION_SEARCH,false,(searchAction == LIST_SEARCH_ACTION_SEARCH));
+	SrcSearchAction.options[0] = o;
+	o = new Option(labels[4],LIST_SEARCH_ACTION_FILTER,false,(searchAction == LIST_SEARCH_ACTION_FILTER));
+	SrcSearchAction.options[1] = o;
+	SrcSearchType.add(new Option(labels[5],LIST_SEARCH_TYPE_START,false,searchType == LIST_SEARCH_TYPE_START));
+	SrcSearchType.add(new Option(labels[6],LIST_SEARCH_TYPE_CONTAINS,false,searchType == LIST_SEARCH_TYPE_CONTAINS));
+	SrcSearchType.add(new Option(labels[7],LIST_SEARCH_TYPE_END,false,searchType == LIST_SEARCH_TYPE_END));
+}
+
+
+function initListTitlesAndSearch(searchIn,sourceTitle,sourceSearchRendered)
+{
+	//no search
+	if (!sourceSearchRendered)
+	{
+		hide(searchSourceRow);
+		if (sourceTitle == null)
+		{
+			hide(titles);
+		}
+		else
+		{
+			srcTitle1.innerHTML = sourceTitle;
+		}
+	}
+	else
+	{
+		if (sourceTitle == null)
+		{
+			hide(titles);
+		}
+		else
+		{
+			srcTitle2.innerHTML = sourceTitle;
+		}		
+		if (searchStr != null)
+		{
+			SrcText.value = searchStr;
+			SrcText.fireEvent("onkeyup");
+		}		
+	}
+
+	if (!isActionSelect)
+	{
+		hide(SrcSearchActionTd);
+	}
+	if (!isTypeSelect)
+	{
+		hide(SrcSearchTypeTd);
+	}
+}
+
+
+function returnValues(cancelSelection)
+{
+	var arr = new Array(); 
+	if (cancelSelection)
+	{
+		for (index = 0;index < srcArr.length;index++)
+		{
+			srcArr[index].isSelected = true;
+		}
+		arr["srcArr"]  = srcArr;
+		arr["key"] = "";
+		arr["value"] = "";
+		window.returnValue = arr;
+	}
+	else
+	{
+		if (SrcList.selectedIndex != -1) 
+		{
+			for (index = 0;index < srcArr.length;index++)
+			{
+				if (srcArr[index].value == SrcList.value) 
+				{
+					srcArr[index].isSelected = false;
+					arr["key"] = srcArr[index].value;
+					arr["value"] = srcArr[index].text;		
+				}
+				else
+				{
+					srcArr[index].isSelected = true;
+				}
+			}
+			arr["srcArr"]  = srcArr;			
+			window.returnValue = arr;
+		}
+	}
+	self.close();		
+}
+</script>
+</head>
+<body onload="init()" class="bodyDialog">
+<script>document.body.dir = window.dialogArguments["dir"];</script> 
+<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+	<tr height="1">
+		<td class="popupMainLayout" align="center" >
+
+			<table width="100%" height="100%" cellpadding="0" cellspacing="2">
+				<tr id="titles" height="1"><td width="50%" class="srcTitle" id="srcTitle1"></td></tr>
+				<tr>
+					<td>
+						<table width="100%" height="100%" cellpadding="0">
+							<tr id="searchSourceRow">
+								<td height="1">
+									<table height="100%" width="100%" cellspacing="0">
+										<tr>
+											<td id="srcTitle2"></td>
+											<td width="1" id="SrcSearchActionTd"><select id="SrcSearchAction" onchange="l2l.doEvents(event)"></select></td>
+											<td width="1" id="SrcSearchTypeTd"><select id="SrcSearchType" onchange="l2l.doEvents(event)"></select></td>
+											<td width="100%"><input type="text" tabindex="1" id="SrcText" onkeydown="l2l.doEvents(event)" onkeyup="l2l.doEvents(event)" class="listToListSearchText" style="width: 100%;"></td>										
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td height="100%">
+									<select id="SrcList" size="4" class="listNormalClass" style="width:100%;height:100%" ondblclick="returnValues(false)"></select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" align="center" height="1">
+									<input type="button" id="approveButton" onclick="returnValues(false);" class="listToListSearchButton">
+									<input type="button" id="cancelButton"  onclick="self.close()" class="listToListSearchButton">
+									<input type="button" id="cancelSelectionButton"  onclick="returnValues(true)" class="listToListSearchButton" >
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

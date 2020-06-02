@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Desktop SYSTEM "desktop.dtd" >
+<Desktop finalizerClass="com.ibm.dse.samples.aa.desktop.OpenTellerDesktop" finalizerMethod="exit" helpFileURL="http://localhost:9080/DSE_TellerSampleApplicationWeb/dse/onlineinfo/onlinehelp.hs" width="977" height="630">
+  <ScenarioArea>
+    <Scenario label="Sessions" hotKey="CTRL+1">
+      <ButtonRow>
+        <TaskLauncherButton label="Change_password"     	toolTipText="Teller_change_password"   	mnemonic="P" taskName="CHGPW"/>
+        <TaskLauncherButton label="Start_customer_session" 	toolTipText="Start_customer_session" 	mnemonic="S" taskName="SCUST"/>
+        <TaskLauncherButton label="User_Profiles" 		toolTipText="Teller_user_profile"  	mnemonic="U" taskName="USRP"/>
+        <TaskLauncherButton label="User_Roles"        		toolTipText="Teller_roles"      	mnemonic="R" taskName="ROLES"/>
+      </ButtonRow>
+      <ButtonRow>
+	<TaskLauncherButton label="End_Of_Day"        	toolTipText="End_Of_Day"          	mnemonic="A" taskName="EODO"/>
+        <TaskLauncherButton label="Logon"         	toolTipText="Teller_logon"           	mnemonic="O" taskName="LGON"/>
+        <TaskLauncherButton label="Logoff"        	toolTipText="Teller_logoff"          	mnemonic="F" taskName="LGOFF"/>  
+        <TaskLauncherButton label="ForcedLogon"      	toolTipText="Teller_forced_logon"      	mnemonic="G" taskName="FLGON"/>
+      </ButtonRow>
+      <MenuButtonRow>
+        <MenuButton hotKey="CTRL+T" toolTipText="Teller_session" iconName="/images/969.gif">
+          <MenuItem label="Teller_user_profile" mnemonic="U" taskName="USRP"/>
+          <Separator/>
+          <MenuItem label="Teller_roles" mnemonic="R" taskName="ROLES"/>
+          <Separator/>
+          <MenuItem label="Teller_change_password" mnemonic="P" taskName="CHGPW"/>
+          <Separator/>
+          <MenuItem label="Teller_logon" mnemonic="O" taskName="LGON"/>
+          <Separator/>
+          <MenuItem label="Teller_forced_logon" mnemonic="G" taskName="FLGON"/>
+          <Separator/>
+          <MenuItem label="Teller_logoff" mnemonic="F" taskName="LGOFF"/>
+          <Separator/>
+          <MenuItem label="End_Of_Day" mnemonic="A" taskName="EODO"/>
+        </MenuButton>
+        <MenuButton hotKey="CTRL+C" toolTipText="Customer_session" iconName="/images/055.gif">
+           <MenuItem label="Start_customer_session" mnemonic="S" taskName="SCUST"/>
+        </MenuButton>
+      </MenuButtonRow>
+    </Scenario>
+    <Scenario label="TellerOperations" hotKey="CTRL+2">
+      <ButtonRow>
+        <TaskLauncherButton label="Deposit"      toolTipText="Deposit"      mnemonic="D" taskName="DEPO"/>
+        <TaskLauncherButton label="Withdrawal"   toolTipText="Withdrawal"   mnemonic="W" taskName="WITH"/>
+        <TaskLauncherButton label="Bill_payment" toolTipText="Bill_payment" mnemonic="B" taskName="BILL"/>
+      </ButtonRow>
+      <ButtonRow>
+        <TaskLauncherButton label="Accounts_List"    toolTipText="Accounts_List"    mnemonic="L" taskName="ACLS"/>
+        <TaskLauncherButton label="Accounts_History" toolTipText="Accounts_History" mnemonic="H" taskName="ACHS"/>
+	    <TaskLauncherButton label="Teller_Reconcile_Query" toolTipText="Teller_Reconcile_Query" mnemonic="R" taskName="TRQO"/>	
+      </ButtonRow>
+      <MenuButtonRow>
+        <MenuButton hotKey="CTRL+F" toolTipText="Financial_operations" iconName="/images/963.gif">
+          <MenuItem label="Accounts_List"    mnemonic="L" taskName="ACLS"/>
+          <MenuItem label="Accounts_History" mnemonic="H" taskName="ACHS"/>
+	    
+        </MenuButton>
+        <MenuButton hotKey="CTRL+Q" toolTipText="Account_Queries" iconName="/images/1300.gif">
+          <MenuItem label="Withdrawal" 		mnemonic="W" taskName="WITH"/>
+          <MenuItem label="Deposit"    		mnemonic="D" taskName="DEPO"/>
+          <MenuItem label="Bill_payment"        mnemonic="B" taskName="BILL"/>
+        </MenuButton>
+      </MenuButtonRow>
+    </Scenario>
+    <Scenario label="Teller" hotKey="CTRL+3">
+      <ButtonRow>
+        <TaskLauncherButton label="Electronic_journal"    toolTipText="Electronic_journal" mnemonic="J" taskName="EJRN"/>
+        <TaskLauncherButton label="Teller_Exchange_Query" toolTipText="Teller_Exchange_Query" mnemonic="T" taskName="EXCH"/>
+      </ButtonRow>
+      <ButtonRow>
+        <TaskLauncherButton label="Branch_Totals"       toolTipText="Branch_Totals"     mnemonic="L" taskName="TOTS"/>
+        <TaskLauncherButton label="Branch_settle" 	toolTipText="Branch_settle"   	mnemonic="B" taskName="BSTL"/>
+	<TaskLauncherButton label="CashSettleQuery" 	toolTipText="Cash_Settlement_Query"   	mnemonic="C" taskName="CSTL"/>
+      </ButtonRow>
+      <MenuButtonRow width="180">
+        <MenuButton toolTipText="Electronic_journal" iconName="/images/075.gif">
+          <MenuItem label="Electronic_journal" mnemonic="J" taskName="EJRN"/>
+        </MenuButton>
+        <MenuButton toolTipText="Exchanges" iconName="/images/906.gif">
+          <MenuItem label="Teller_exchange" mnemonic="X" taskName="EXCH"/>
+        </MenuButton>
+        <MenuButton toolTipText="Administration" iconName="/images/355.gif">
+          <MenuItem label="Branch_Totals"   mnemonic="T" taskName="TOTS"/>
+          <MenuItem label="Branch_settle"   mnemonic="B" taskName="BSTL"/>
+          <Separator/>
+          <MenuItem label="Cash_Settlement_Query" mnemonic="C" taskName="CSTL"/>
+        </MenuButton>
+      </MenuButtonRow>
+    </Scenario>
+    <Scenario label="Cash_drawers" hotKey="CTRL+4">
+      <ButtonRow width="462">
+	    <TaskLauncherButton label="CD_Management"  toolTipText="CD_Management"    mnemonic="M" taskName="CDMGT"/>
+      </ButtonRow>
+      <ButtonRow width="462">
+        <TaskLauncherButton label="Bins/Batches" toolTipText="Bins/Batches" mnemonic="B" taskName="BBADM"/>
+	    <TaskLauncherButton label="CD_Totals"    toolTipText="CD_Totals"          mnemonic="T" taskName="CDTOT"/>
+      </ButtonRow>
+      <MenuButtonRow width="70">
+        <MenuButton width="32" toolTipText="Cash_drawers" iconName="/images/036.gif">
+          <MenuItem label="CD_Management" mnemonic="M" taskName="CDMGT"/>
+          <Separator/>
+          <MenuItem label="Bins/Batches"  mnemonic="B" taskName="BBADM"/>
+          <MenuItem label="CD_Totals"	  mnemonic="T" taskName="CDTOT"/>
+        </MenuButton>
+      </MenuButtonRow>
+    </Scenario>
+  </ScenarioArea>
+  <CustomizableArea width="297" height="82" name="CA1">
+    <Label width="100" height="20" label="Client_Name" y="0" x="15"/>
+    <TextField width="100" height="20" text="IBM" focusTraversable="false" name="CLIENT_NAME" y="17" x="15"/>
+    <Label width="100" height="20" label="Client_ID" y="35" x="15"/>
+    <TextField width="100" height="20" text="13234" focusTraversable="false" name="CLIENT_ID" y="53" x="15"/>
+    <IconLabel width="112" height="20" y="35" x="150" iconName="/images/452.gif"/>
+    <IconLabel height="32" onClick="reBuild()" y="2" x="260" iconName="/images/rebuild.gif"/>
+  </CustomizableArea>
+  <CustomizableArea width="80" height="82" name="CA2">
+    <IconLabel height="27" y="2" x="24" iconName="/images/logo.gif"/>
+    <MenuButton y="32" x="24" toolTipText="Operations" iconName="/images/954.gif">
+      <MenuItem label="Teller_user_profile" mnemonic="U" taskName="USRP"/>
+      <Separator/>
+      <MenuItem label="Teller_roles" mnemonic="R" taskName="ROLES"/>
+      <Separator/>
+      <MenuItem label="Teller_change_password" mnemonic="P" taskName="CHGPW"/>
+      <Separator/>
+      <MenuItem label="Teller_logon" mnemonic="O" taskName="LGON"/>
+      <Separator/>
+      <MenuItem label="Teller_forced_logon" mnemonic="G" taskName="FLGON"/>
+      <Separator/>
+      <MenuItem label="Teller_logoff" mnemonic="F" taskName="LGOFF"/>
+      <Separator/>
+      <MenuItem label="End_Of_Day" mnemonic="A" taskName="EODO"/>
+      <Separator/>
+      <MenuItem label="Start_customer_session" mnemonic="S" taskName="SCUST"/>
+    </MenuButton>
+  </CustomizableArea>
+  <SplitArea orientation="HORIZONTAL" width="977" height="457">
+  <CustomizableArea width="247" height="457" name="TreeArea">
+    <Tree label="TellerOperations" hotKey="CTRL+H" backgroundSelectionColor="white" iconName="/images/336.gif">
+      <TreeNode label="Sessions" backgroundSelectionColor="yellow" toolTipText="Teller/Customer_sessions" iconName="/images/355.gif">
+        <LeafTreeNode label="User_Profiles"	toolTipText="Teller_user_profile"	iconName="/images/051.gif" taskName="USRP"/>
+        <LeafTreeNode label="User_Roles"	toolTipText="Teller_roles"		iconName="/images/051.gif" taskName="ROLES"/>
+        <LeafTreeNode label="Change_password"	toolTipText="Teller_change_password"	iconName="/images/051.gif" taskName="CHGPW"/>
+        <LeafTreeNode label="Logon"         	toolTipText="Teller_logon"           	iconName="/images/051.gif" taskName="LGON"/>
+        <LeafTreeNode label="ForcedLogon"      	toolTipText="Teller_forced_logon"      	iconName="/images/051.gif" taskName="FLGON"/>
+        <LeafTreeNode label="Logoff"        	toolTipText="Teller_logoff"          	iconName="/images/051.gif" taskName="LGOFF"/>
+        <LeafTreeNode label="End_Of_Day"        	toolTipText="End_Of_Day"          	iconName="/images/051.gif" taskName="EODO"/>
+        <LeafTreeNode label="Start_customer_session" 	toolTipText="Start_customer_session" 	iconName="/images/051.gif" taskName="SCUST"/>
+      </TreeNode>
+      <TreeNode label="Operations" backgroundSelectionColor="yellow" toolTipText="Financial/Query_operations" iconName="/images/355.gif">
+        <LeafTreeNode label="Deposit"          toolTipText="Deposit"      iconName="/images/051.gif" taskName="DEPO"/>
+        <LeafTreeNode label="Withdrawal"       toolTipText="Withdrawal"   iconName="/images/051.gif" taskName="WITH"/>
+        <LeafTreeNode label="Bill_payment"     toolTipText="Bill_payment" iconName="/images/051.gif" taskName="BILL"/>
+        <LeafTreeNode label="Accounts_List"    toolTipText="Accounts_List"          iconName="/images/051.gif" taskName="ACLS"/>
+        <LeafTreeNode label="Accounts_History" toolTipText="Accounts_History"       iconName="/images/051.gif" taskName="ACHS"/>
+      </TreeNode>
+      <TreeNode label="Teller" backgroundSelectionColor="yellow" toolTipText="Teller_administration" iconName="/images/355.gif">
+        <LeafTreeNode label="Electronic_journal"     toolTipText="Electronic_journal"  iconName="/images/051.gif" taskName="EJRN"/>
+        <LeafTreeNode label="Teller_exchange"  toolTipText="Teller_exchange"     iconName="/images/051.gif" taskName="EXCH"/>
+        <LeafTreeNode label="Branch_Totals" toolTipText="Branch_Totals"      iconName="/images/051.gif" taskName="TOTS"/>
+        <LeafTreeNode label="Branch_settle" toolTipText="Branch_settle"   iconName="/images/051.gif" taskName="BSTL"/>
+	<LeafTreeNode label="Cash_Settle"   toolTipText="Cash_Settle"     iconName="/images/051.gif" taskName="CSTL"/>
+       </TreeNode>
+      <TreeNode label="Cash_drawers" backgroundSelectionColor="yellow" toolTipText="Cash_drawers" iconName="/images/355.gif">
+        <LeafTreeNode label="CD_Management"  toolTipText="CD_Management"  iconName="/images/051.gif" taskName="CDMGT"/>
+        <LeafTreeNode label="Bins/Batches"   toolTipText="Bins/Batches"  iconName="/images/051.gif" taskName="BBADM"/>
+        <LeafTreeNode label="CD_Totals"      toolTipText="CD_Totals"   iconName="/images/051.gif" taskName="CDTOT"/>
+      </TreeNode>
+    </Tree>
+  </CustomizableArea>
+  <WorkingArea defaultIcon="/images/logo.gif" iconName="/images/backgroundsample.gif"/>
+ </SplitArea>
+ <CustomizableArea width="488" height="30" name="TextFieldArea">
+    <TaskLauncherTextField width="194" height="19" hotKey="CTRL+SHIFT+A" horizontalAlignment="2" onInitialize="this.setForeground(new java.awt.Color(255,0,0))" name="Launcher" y="5" x="48"/>
+    <MessageArea width="200" height="19" showMessageArea="false" informationLevel = "3" hotKey="CTRL+SHIFT+B" onInitialize="this.setForeground(new java.awt.Color(255,0,0))" name="MessageText" y="5" x="250"/>
+ </CustomizableArea>
+ <TaskArea maxNumberOfTasks="20"/>
+  <CustomizableArea width="488" height="30" name="ExternalApplicationArea">
+    <LanguageBox y="2" x="48" languages="English,Spanish"/>
+    <ExternalApplicationButton command="calc" y="2" x="146" toolTipText="Calculator" iconName="/images/056.gif"/>
+    <ExternalApplicationButton command="welcome" y="2" x="179" toolTipText="Information" iconName="/images/040.gif"/>
+    <ExternalApplicationButton command="notepad" y="2" x="212" toolTipText="notepad" iconName="/images/969.gif"/>
+    <ExternalApplicationButton command="explorer" y="2" x="245" toolTipText="explorer" iconName="/images/078.gif"/>
+  </CustomizableArea>
+  <CustomizableArea width="489" height="30" name="CharacteristicArea">
+    <TextField width="90" height="20" focusTraversable="false" name="USERNAME" y="5" x="15"/>
+    <TextField width="90" height="20" focusTraversable="false" name="BRANCHID" y="5" x="120"/>
+    <DateField focusTraversable="false" name="DateField" y="5" x="225"/>
+    <Timer focusTraversable="false" name="Timer" y="5" x="315"/>
+    <MultipleStateIconLabel width="11" name="SEMAPHORE" y="5" x="365">
+      <IconState icon="/images/green_semaphore.gif" name="ON"/>
+      <IconState icon="/images/red_semaphore.gif" name="OFF"/>
+    </MultipleStateIconLabel>
+    <ExitButton y="5" x="420" toolTipText="Close_application" iconName="/images/exit.gif"/>
+  </CustomizableArea>
+  <!-- Teller extensions tasks definitions -->
+  <!-- Administration -->
+  <TaskInfo	taskName="USRP"  code="0.7" operation="QueryRightsRolesUsersClientOp" operationPanel="com.ibm.dse.samples.aa.client.UserProfileView" shortDescription="User_Profiles" longDescription="Teller_user_profile" executeOperation="true" 
+    widthNavigationArea="700" heightNavigationArea="450"/>
+  <TaskInfo	taskName="ROLES" code="0.6" operation="QueryRightsAndRolesClientOp" operationPanel="com.ibm.dse.samples.aa.client.RolesView" shortDescription="User_Roles" longDescription="Teller_roles" executeOperation="true" />
+  <TaskInfo	taskName="CHGPW" code="0.5" operation="ChangeOwnPasswordClientOp" operationPanel="com.ibm.dse.samples.aa.client.ChangeOwnPasswordView" shortDescription="Change_password"       longDescription="Teller_change_password" />
+  <TaskInfo	taskName="LGON"  code="0.1" operation="LogonClientOp" operationPanel="com.ibm.dse.samples.aa.client.LogonView" shortDescription="Logon"       longDescription="Teller_logon" />
+  <TaskInfo	taskName="FLGON" code="0.8" operation="ForcedLogonClientOp" operationPanel="com.ibm.dse.samples.aa.client.ForcedLogonView" shortDescription="ForcedLogon"       longDescription="Teller_forced_logon" />
+  <TaskInfo	taskName="LGOFF" code="0.2" operation="LogoffClientOp" operationPanel="com.ibm.dse.samples.aa.client.LogoffView" shortDescription="Logoff"      longDescription="Teller_logoff" />
+  <TaskInfo	taskName="EODO"  code="0.4" operation="tellerEODClientOp" operationPanel="com.ibm.dse.appl.ba.client.TellerEndOfDayView" shortDescription="End_Of_Day"      longDescription="End_Of_Day" />
+  <TaskInfo	taskName="SCUST" code="0.3" operation="StartCustomerSessionClientOp" operationPanel="com.ibm.dse.samples.cs.client.StartCustomerSessionView" shortDescription="New_Session" longDescription="Start_customer_session" />
+  <TaskInfo	taskName="CSTL"  code="2.7" operation="cashSettlementQueryOp" operationPanel="com.ibm.dse.appl.to.client.CashSettleQueryView" shortDescription="CashSettleQuery"   longDescription="Cash_Settlement_Query" />
+   <!-- Financial operations / Customer related operations -->
+  <TaskInfo	taskName="DEPO" code="1.1" operation="ClientDepositOperation" operationPanel="com.ibm.dse.samples.txn.view.DepositTransactionView" shortDescription="Deposit" longDescription="Deposit" />
+  <TaskInfo	taskName="WITH" code="1.2" operation="ClientWithdrawalOperation" operationPanel="com.ibm.dse.samples.txn.view.WithdrawalTransactionView" shortDescription="Withdrawal" longDescription="Withdrawal" />
+  <TaskInfo	taskName="BILL" code="1.3" operation="ClientBillPaymentOperation" operationPanel="com.ibm.dse.samples.txn.view.BillPaymentTransactionView" shortDescription="Bill_payment" longDescription="Bill_payment" />
+  <TaskInfo	taskName="ACLS" code="1.4" operation="ClientAccountListOperation" operationPanel="com.ibm.dse.samples.txn.view.AccountListTransactionView" shortDescription="Accounts_List" longDescription="Accounts_List" />
+  <TaskInfo	taskName="ACHS" code="1.5" operation="ClientAccountHistoryOperation" operationPanel="com.ibm.dse.samples.txn.view.AccountHistoryTransactionView" shortDescription="Accounts_History" longDescription="Accounts_History" />
+  <TaskInfo	taskName="TRQO" code="1.7" operation="tlrExchReconcileQryOp" operationPanel="com.ibm.dse.appl.to.client.TlrExchReconcileQryView" shortDescription="Teller_Reconcile_Query" longDescription="Teller_Reconcile_Query" />
+  <!-- Teller administration operations -->
+  <TaskInfo	taskName="EJRN" code="2.1" operation="ejClientOp" operationPanel="com.ibm.dse.appl.ej.client.EJViewer" shortDescription="Electronic_journal"     longDescription="Electronic_journal" />
+  <TaskInfo	taskName="EXCH" code="2.2" operation="tlrExchDrawerQryOp" operationPanel="com.ibm.dse.appl.to.client.TlrExchDrawerQryView" shortDescription="Teller_Exchange_Query" longDescription="Teller_Exchange_Query" />
+  <TaskInfo	taskName="TOTS" code="2.5" operation="QryBrSttlmntCurrenciesClientOp" executeOperation="true" operationPanel="com.ibm.dse.appl.ba.client.BranchTotalsQueryView" shortDescription="Branch_Totals" longDescription="Branch_Totals" />
+  <TaskInfo	taskName="BSTL" code="2.6" operation="QueryBranchCurrenciesClientOp" executeOperation="true" operationPanel="com.ibm.dse.appl.ba.client.BranchSettlementView" shortDescription="Branch_settle" longDescription="Branch_settle" />
+    <!-- Cash drawer administration operations -->
+  <TaskInfo	taskName="CDMGT" code="3.1" operation="QueryCashDrawersOperation" executeOperation="true" operationPanel="com.ibm.dse.samples.cm.client.QueryCashDrawersView" shortDescription="CD_Management"  longDescription="CD_Management" />
+  <TaskInfo	taskName="BBADM" code="3.2" operation="QueryCashDrawerIdsOperation" executeOperation="true" operationPanel="com.ibm.dse.samples.cm.client.QueryBinsBatchesView" shortDescription="Bins/Batches"    longDescription="Bins/Batches" />
+  <TaskInfo	taskName="CDTOT" code="3.3" operation="QueryCashDrawerIdsOperation" executeOperation="true" operationPanel="com.ibm.dse.samples.cm.client.QueryCashDrawerTotalsView" shortDescription="CD_Totals"      longDescription="CD_Totals" />
+</Desktop>

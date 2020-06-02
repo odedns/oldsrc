@@ -1,0 +1,36 @@
+name: neTime value:
+name: edgePointRelated value:TRUE
+name: attributeList value:
+        name: LayeredParameterList value:
+                name: LayerRate value:5
+                name: TransmissionParams value:
+                name: ServiceState value:IN_SERVICE
+
+*************************************************************
+END OF NT_ATTRIBUTE_VALUE_CHANGE
+*************************************************************
+      [18714:21  02/07/07 11:29:22 EFENSNotifSupplier.cc:337] > ################
+###################################
+      [18714:21  02/07/07 11:29:22 EFENSNotifSupplier.cc:338] > END PRINTING THE
+ BATCH OF NOTIFICATIONS
+ERROR:[18714:21  02/07/07 11:29:22 EFENSNotifSupplier.cc:345] > Exception was ca
+ught during pushing EventBatch : IDL:omg.org/CORBA/OBJECT_NOT_EXIST:1.0: minor =
+ 0x49540100 (IT_Core:OBJECT_NOT_FOUND), completion status = NO
+      [18714:21  02/07/07 11:29:22 EFENSNotifSupplier.cc:334] > START PRINTING T
+HE BATCH OF NOTIFICATIONS
+      [18714:21  02/07/07 11:29:22 EFENSNotifSupplier.cc:335] > ################
+###################################
+      [18714:21  02/07/07 11:29:22 EMEventPrint.cc:168] >
+****************************************************
+START OF NT_ATTRIBUTE_VALUE_CHANGE
+*****************************************************
+name: notificationId value:1
+name: objectName value:
+                name: EMS value:ECI/LightSoft_1
+                name: ManagedElement value:LSN/EMS_XDM_182/1100
+                name: EquipmentHolder value:/rack=1/shelf=1/slot=24
+                name: Equipment value:1
+name: objectType value:OT_EQUIPMENT
+name: emsTime value:20070702112748.0
+name: neTime value:
+

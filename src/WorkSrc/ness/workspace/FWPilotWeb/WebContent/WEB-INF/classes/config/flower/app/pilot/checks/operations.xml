@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+	<operationDefinition name="PLInitCheckScreenOP" class="fwpilot.screen.operations.PLInitScreenOP" />
+	<operationDefinition name="PLFillCheckScreenOP" class="fwpilot.screen.operations.PLFillResultsOP" />
+</root>

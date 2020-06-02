@@ -1,0 +1,145 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex4.jacl - Jacl implementation of example script 4
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate the invocation  
+#  of some useful problem-determination actions involving traces 
+#  and thread dumps.
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex4.jacl server1 mynode
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex4.jacl
+#     wsadmin> ex4.jacl server1 mynode
+# 
+#  The script expects two parameters:
+#      arg1 - server name
+#      arg2 - node name
+#
+#  This example demonstrates many wsadmin features:
+#
+#   - The use of the AdminControl object to locate running MBeans 
+#   - The use of the AdminControl object to getAttributes from running MBeans 
+#   - The use of the AdminControl object to invoke operations on running MBeans 
+#   - The use of the Help object to display MBean information
+#-----------------------------------------------------------------
+#
+proc ex4 {serverName nodeName} {
+
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminControl
+  global Help
+
+
+  #---------------------------------------------------------
+  # We assume that there is only one node, and we are on it
+  #---------------------------------------------------------
+  set node [$AdminConfig getid /Node:$nodeName/]
+  if {[llength $node] == 0} {
+     puts "ex1: Error -- node not found for name $nodeName"
+     return
+  }
+  puts "node name: $nodeName" 
+  #---------------------------------------------------------
+  # Get the TraceService MBean for this server 
+  #---------------------------------------------------------
+  set traceServ [$AdminControl completeObjectName type=TraceService,node=$nodeName,process=$serverName,*]
+  puts "server name: $serverName"
+  #---------------------------------------------------------
+  # Display the help information for this MBean 
+  # 
+  #---------------------------------------------------------
+  if {!($traceServ == "")} {
+      set info [$Help all $traceServ]
+      puts $info
+  } else {
+      puts "TraceService is not available on server $serverName node $nodeName"
+      return         
+  } 
+
+  #---------------------------------------------------------
+  # Get the current value of traceSpecification 
+  # 
+  #---------------------------------------------------------
+  set spec [$AdminControl getAttribute $traceServ traceSpecification]
+  puts "Current trace specification is $spec"
+
+  #---------------------------------------------------------
+  # Set it to something else 
+  # 
+  #---------------------------------------------------------
+  $AdminControl setAttribute $traceServ traceSpecification com.ibm.ws.management.*=all=enabled
+
+  #---------------------------------------------------------
+  # Append to it              
+  # 
+  #---------------------------------------------------------
+  $AdminControl invoke $traceServ appendTraceString com.ibm.websphere.management.*=all=enabled
+
+  #---------------------------------------------------------
+  # Now get the current value of traceSpecification again 
+  # 
+  #---------------------------------------------------------
+  set spec [$AdminControl getAttribute $traceServ traceSpecification]
+  puts "Current trace specification is now $spec"
+
+  #---------------------------------------------------------
+  # Set it back 
+  # 
+  #---------------------------------------------------------
+  $AdminControl setAttribute $traceServ traceSpecification $spec 
+  puts "Current trace specification is now $spec"
+
+  #---------------------------------------------------------
+  # Get the JVM MBean for this server 
+  #---------------------------------------------------------
+  set jvm [$AdminControl completeObjectName type=JVM,node=$nodeName,process=$serverName,*]
+
+  #---------------------------------------------------------
+  # Display the help information for this MBean 
+  # 
+  #---------------------------------------------------------
+  set info [$Help all $jvm]
+  puts $info
+  set info [$Help operations $jvm getProperty]
+  puts $info
+
+  #---------------------------------------------------------
+  # invoke an action: getProperty 
+  # 
+  #---------------------------------------------------------
+  set jversion [$AdminControl invoke $jvm getProperty java.fullversion]
+  puts "java.fullversion is $jversion"
+
+  #---------------------------------------------------------
+  # invoke an action: dumpThreads 
+  # 
+  #---------------------------------------------------------
+  puts "About to dump threads for this jvm..."
+  $AdminControl invoke $jvm dumpThreads 
+  puts "... done"
+
+}
+ 
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 2) } {
+   puts "ex4: this script requires 2 parameters: server name, node name"
+   puts ""
+   puts "e.g.:     ex4  server1 mymode" 
+} else { 
+   set serverName      [lindex $argv 0]  
+   set nodeName        [lindex $argv 1]
+  
+   ex4 $serverName $nodeName 
+}

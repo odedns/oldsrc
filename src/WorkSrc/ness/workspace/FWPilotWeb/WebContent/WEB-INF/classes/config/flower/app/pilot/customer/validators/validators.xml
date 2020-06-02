@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+
+	<validationCheckDefinition name="checkCustomerExistance"  method="check" class="fwpilot.validators.CheckCustomerExistance">
+		<checkParamDefinition name="customerID" type="integer" multiplicity="1"/>
+	</validationCheckDefinition>
+
+	<!-- address details -->
+	<validationCheck name="isCityExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="city" caption="city" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="addressCityRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="city" caption="city" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="addressStreetRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="street" caption="street" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+
+	<validator name="addressDetailsValidator" type="complex">
+		<check validationCheckName="isCityExists"/>
+		<check validationCheckName="isMultyMainAddress"/>			
+		<check validationCheckName="addressCityRange"/>
+		<check validationCheckName="addressStreetRange"/>			
+	</validator>
+
+
+	<!--customer-->
+	<validationCheck name="isIdentificationExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="identification" caption="customerID" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isLastNameExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="lastName" caption="lastName" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isTelephoneExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="telephone" caption="telephone" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isBirthDateExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="birthDate" caption="birthDate" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isSexExists" validationCheckDef="listSelectionCheck">
+		<checkParam name="field" fieldName="customerSexModel" caption="sex" setFieldErrorState="true"/>
+	</validationCheck>
+
+
+	<validationCheck name="nameRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="firstName" caption="name" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="familyRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="lastName" caption="lastName" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="nameEnglishRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="englishFirstName" caption="englishName" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="familyEnglishRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="englishLastName" caption="englishLastName" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="numberOfChildsRange" validationCheckDef="numberRange">
+		<checkParam name="number" fieldName="numberOfChilds" caption="numberOfChilds" setFieldErrorState="true"/>
+		<checkParam name="minValue" value="0"/>
+		<checkParam name="maxValue" value="25"/>
+	</validationCheck>
+
+
+
+	<validationCheck name="birthDate" validationCheckDef="dateIsBefore">
+		<checkParam name="date1" fieldName="birthDate" caption="birthDate" setFieldErrorState="true"/>
+		<checkParam name="date2" fieldName="currentDate" caption="currDate" setFieldErrorState="true"/>
+	</validationCheck>
+
+
+	<validationCheck name="isMultyMainAddress" validationCheckDef="multyMainAddressCheck">
+		<checkParam name="table" fieldName="addressTableModel"/>
+		<checkParam name="list" fieldName="addressMainModel" caption="main"/>
+	</validationCheck>
+
+
+	<validationCheckSet name="customerSet">
+		<check validationCheckName="isIdentificationExists" />
+		<check validationCheckName="isLastNameExists"/>
+		<check validationCheckName="isTelephoneExists" />
+		<check validationCheckName="isBirthDateExists"/>
+		<check validationCheckName="nameRange"/>
+		<check validationCheckName="familyRange"/>
+		<check validationCheckName="nameEnglishRange"/>
+		<check validationCheckName="familyEnglishRange"/>
+		<check validationCheckName="birthDate"/>
+		<check validationCheckName="isSexExists"/>	
+		<check validationCheckName="numberOfChildsRange" stopOnError="true"/>
+	</validationCheckSet>
+
+	<validator name="customerValidator" type="complex">
+		<checkSet validationCheckSetName="customerSet"/>
+	</validator>
+
+	<!--related-->
+
+	<validationCheck name="isRelatedIdentificationExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="relatedIdentification" caption="id" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isRelatedFirstNameExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="relatedFirstName" caption="name" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isRelatedLastNameExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="relatedLastName" caption="lastName" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isRelatedBirthDateExists" validationCheckDef="fieldExistsCheck">
+		<checkParam name="field" fieldName="relatedBirthDate" caption="birthDate" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isRelatedSexExists" validationCheckDef="listSelectionCheck">
+		<checkParam name="field" fieldName="relatedSexModel" caption="sex" setFieldErrorState="true"/>
+	</validationCheck>
+
+	<validationCheck name="isRelatedTypeExists" validationCheckDef="listSelectionCheck">
+		<checkParam name="field" fieldName="customerRelatedTypeModel" caption="relationType" setFieldErrorState="true"/>
+	</validationCheck>
+
+
+	<validationCheck name="relatedNameRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="relatedFirstName" caption="name" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="relatedFamilyRange" validationCheckDef="stringMaxLength">
+		<checkParam name="str" fieldName="relatedLastName" caption="lastName" setFieldErrorState="true"/>
+		<checkParam name="maxLength" value="50"/>
+	</validationCheck>
+
+	<validationCheck name="relatedBirthDate" validationCheckDef="dateIsBefore">
+		<checkParam name="date1" fieldName="relatedBirthDate" caption="birthDate" setFieldErrorState="true"/>
+		<checkParam name="date2" fieldName="currentDate" caption="currDate" setFieldErrorState="true"/>
+	</validationCheck>
+
+
+	<validationCheck name="isMultyRelation" validationCheckDef="multyRelationCheck">
+		<checkParam name="table" fieldName="relatedTableModel"/>
+		<checkParam name="list" fieldName="customerRelatedTypeModel"/>
+	</validationCheck>
+
+
+	<validationCheckSet name="relatedSet">
+		<check validationCheckName="isRelatedIdentificationExists" />
+		<check validationCheckName="isRelatedFirstNameExists"/>
+		<check validationCheckName="isRelatedLastNameExists"/>
+		<check validationCheckName="isRelatedBirthDateExists"/>
+		<check validationCheckName="relatedNameRange"/>
+		<check validationCheckName="relatedFamilyRange"/>
+		<check validationCheckName="relatedBirthDate"/>		
+		<check validationCheckName="isRelatedSexExists"/>		
+		<check validationCheckName="isRelatedTypeExists"/>	
+		<check validationCheckName="isMultyRelation"/>	
+			
+	</validationCheckSet>
+
+	<validator name="relatedValidator" type="complex">
+		<checkSet validationCheckSetName="relatedSet"/>
+	</validator>
+		
+</root>

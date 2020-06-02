@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+	<operationDefinition name="initSearchCustomer"  activityType="readOnly" class="fwpilot.customer.operations.PLCustomerSearchInitOP"/>
+    <operationDefinition name="PLFillCustomerSearchResultsOP"  activityType="readOnly" class="fwpilot.customer.operations.PLFillCustomerSearchResultsOP"/>
+    <operationDefinition name="clearSearchCustomerFields"  activityType="readOnly" class="fwpilot.customer.operations.PLClearCustomerFieldsOP"/>
+    <operationDefinition name="PLLoadCustomerIdOP"  activityType="readOnly" class="fwpilot.customer.operations.PLLoadCustomerIdOP"/>
+    <operationDefinition name="newCustomer"  activityType="readWrite" class="fwpilot.customer.operations.PLNewCustomerOP"/>
+    <operationDefinition name="PLCustomersGetPage"  activityType="readWrite" class="fwpilot.customer.operations.PLCustomersGetPage"/>
+	<operationDefinition name="PLSetCustomerButtonsPagingState"  activityType="readWrite" class="fwpilot.customer.operations.PLSetCustomerButtonsPagingState"/>
+</root>

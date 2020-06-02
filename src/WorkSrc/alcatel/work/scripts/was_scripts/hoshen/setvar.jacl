@@ -1,0 +1,13 @@
+
+
+# Set the ORACLE_JDBC_DRIVER_PATH var
+set node [$AdminControl getNode]
+set varmap [$AdminConfig getid /Node:$node/VariableMap:/]
+set name [list symbolicName "DB2390_JDBC_DRIVER_PATH"]
+set val  [list value "c:\\oracle\\ora10g\\jdbc\\lib"]
+set myvar [list $name $val]
+set my_entry [list entries [list $myvar]]
+set en [list $my_entry]
+# $AdminConfig modify $varmap $en
+puts "Succesfully created variable"
+

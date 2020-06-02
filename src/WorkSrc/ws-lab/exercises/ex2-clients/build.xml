@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+
+<project name="ex2-clients" default="deploy" basedir=".">
+
+
+<property file="../build.properties"/> 
+
+<property name="wsdl.url" value="http://localhost:8080/axis/services/WeatherService?wsdl"/>
+
+<path id="axis.classpath">
+  <fileset dir="${axis.home}/lib">
+    <include name="**/*.jar" />
+  </fileset>
+</path>
+
+<taskdef resource="axis-tasks.properties"
+  classpathref="axis.classpath" />
+
+<target name="deploy" depends="copyWebApp">
+	<axis-admin
+	    port="${target.port}"
+	    hostname="${target.server}"
+	    failonerror="true"
+		servletpath="axis/services/AdminService"	    
+	    debug="true"
+	    xmlfile="src/deploy.wsdd"/>
+</target>
+
+
+<target name="copyWebApp">
+	<copy todir="${axis.webapp}/WEB-INF/classes">
+		<fileset dir="bin">
+  			<include name="**/*.*"/>
+  			<exclude name="**/*.wsdd"/>
+  		</fileset>
+	</copy>	
+</target>
+
+<target name="createStub">
+	<axis-wsdl2java
+  		output="src"
+  		verbose="true"
+  		url="${wsdl.url}" >
+  			<mapping
+      			namespace="http://localhost:8080/axis/services/WeatherService"
+      			package="ex2.stub" />
+  		
+    </axis-wsdl2java>
+
+
+</target>
+
+</project>

@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<bea-licenses>
+    <license-group format="1.0" product="WebLogic Server" release="6.1">
+        <license
+            component="WebLogic"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="CNF50gMU7ofappI7tpTzNvGuuFI=0MCwCFG5Awt819hjicDcrEs2W4DwrBzaxAhQPOsf1nCJNLb8h3I8ejlQFmruBZA=="
+        />
+        <license
+            component="SSL/Export"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="6jsr8kcqs8LLQIpj3ShRuXeMz0s=0MCwCFGfl8XX9+pwKcTht0mvXwB/Ip9lDAhQieuoSZLoaPftzWVcTKYURbEWypg=="
+        />
+        <license
+            component="In-memory Replication - Servlet"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="URQs8kPe8mrEOm9PqCTaIAUvaQM=0MC0CFByULbURBJbsH6xbL2ClMlZWT3xxAhUA1pWTIApD8th1CwR0cYVhTfAaezM="
+        />
+        <license
+            component="In-memory Replication - EJB"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="rFLfs66BxQ5O2X2cLDa5B17XU6s=0MCwCFCffFhpnqVX6KMBwjv1rHJeZrhODAhR4v+xiXb2HvNlUvR1z+gSQqHsPsQ=="
+        />
+        <license
+            component="2PC"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="LKD4A8kwUgjzY4wO9uS0AFbwFn8=0MCwCFEcuXf+mBlEOIrSnxeq7BiuthzgtAhQF0FKHbIZ/qdoRZCIAh8NLvvWEQQ=="
+        />
+        <license
+            component="EJB 1.1"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="qmd7AG/hJMBwLSa6I+2rjZZzcgs=0MC0CFQDFBsUQ5h70BD/yrwBZEf2wkkz7dwIUJNC8y4k9WLQkE6iwYXUdz7gz2No="
+        />
+        <license
+            component="EJB 2.0"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="jLawAyGldRU4kfTx8X/XlfJk9+M=0MC4CFQCUCMBjFPHkTr+anQ5MSw9ZP/UdIQIVAN4IiAIB6mUBdwhdl+Iwt/H/vcty"
+        />
+        <license
+            component="JMS"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="ENOst3luCkXcwts6I2Tiasx3DBA=0MC0CFQCZ9QWk5iqm0z7g7Pu8seEJg8uzOAIUS8c7HKOw+shdN5RKsU0hrIH9kcA="
+        />
+        <license
+            component="Cluster"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="kArB+CKgGsGpyaQTPY4AL4GVdCo=0MCwCFBKzVu1xk2p1768bN3BGW7PPcuyFAhQgerd84nnqaA7NCHBt54BBJqfVZQ=="
+        />
+        <license
+            component="Clustered JMS"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="e3nexeV8tJkdVuvdrLlXKVaEUcQ=0MCwCFDe5yMxiUO3axG5AEFUWwgt5AW36AhQ4CWDMe4xiOCr5e4CSzQewUOUnTA=="
+        />
+        <license
+            component="jDriver/MSSQLServer4"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="72YsgloTv6hmKXXNrqSKxvYaKSU=0MC0CFF/CxA9dGoZdujYodDWKwLt0v/A1AhUAq4w5RMri48XKchIEk7kh5MVWeVY="
+        />
+        <license
+            component="jDriver/Informix4"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="as2++JqE5oFj7A4D1vKy2kdeOf4=0MCwCFHZDrnG60oKpuGp2kOpFB0reraiFAhQPzzUAKIKsyRjQQP01z33vQAYiZA=="
+        />
+        <license
+            component="jDriver/Oracle"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="bZ0+J5Zsc2qhxbUogXQKZLWcXp0=0MC0CFQCBUtbvUI8RAchvuxZe5tt7IIvr9gIUPUQ9UOBvibGaAUCRT+iSlf4dEqk="
+        />
+        <license
+            component="QASuite"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="n6xTE6gYa/cD1JFI92MjxxdyUSs=0MC0CFQC33d7T520UMjfP14+K5CuwVsZzUQIUC5w4hCJh4fEHJyPuRgLMaBqLRes="
+        />
+        <license
+            component="Connector"
+            expiration="2002-04-06"
+            ip="any"
+            licensee="BEA Evaluation Customer"
+            type="EVAL"
+            units="5"
+            signature="mwtJ0+VkS/i4KJMC+gitAIYKsvM=0MC0CFQCeYWHv58/uT4uY9B8J+wm5VGl70wIUK1AvACRSKCye1wl8XiR2RGztSAQ="
+        />
+    </license-group>
+</bea-licenses>

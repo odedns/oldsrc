@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+	<formatterDefinition name="loginFormatter" type="simple">
+		<format fromName="inputUserId" toName="userId"/>
+	</formatterDefinition>
+
+	<formatterDefinition name="nonMenuEventFRM" type="simple">
+		<format fromValue="false" toName="eventFromMenu"/>
+	</formatterDefinition>
+
+	<formatterDefinition name="menuEventFRM" type="simple">
+		<format fromValue="true" toName="eventFromMenu"/>
+	</formatterDefinition>
+
+ </root>

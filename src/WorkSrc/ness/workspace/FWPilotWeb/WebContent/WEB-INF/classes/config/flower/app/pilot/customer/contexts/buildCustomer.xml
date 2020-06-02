@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<context name="pirteyCustomerContext">
+
+		<field name="custID" type="string"  />
+		<field name="title" type="xiString"  />
+		<field name="customer" type="fwpilot.customer.vo.Customer"  />
+		<field name="customerTypeModel" type="listModel"  />
+
+		<field name="customerType" type="integer" childAccess="full" />
+
+		<field name="customerStatusModel" type="listModel"  />	
+		<field name="customerSexModel" type="listModel"  />
+		<field name="customerSmokingModel" type="listModel"  />
+		<field name="customerProfessionModel" type="listModel"  />
+	
+		<!--TABS field-->
+			
+		<!--general-->
+		<field name="identification" type="xiInteger" childAccess="full"/>
+		<field name="firstName" type="xiString" childAccess="full"/>
+		<field name="lastName" type="xiString" childAccess="full"/>
+		<field name="englishFirstName" type="xiString" childAccess="full"/>
+		<field name="englishLastName" type="xiString" childAccess="full"/>
+		<field name="birthDate" type="xiDate" childAccess="full"/>
+		<field name="telephone" type="xiInteger" childAccess="full"/>
+		<field name="fax" type="xiInteger" childAccess="full"/>
+		<field name="mobilePhone" type="xiInteger" childAccess="full"/>
+		<field name="numberOfChilds" type="xiInteger" childAccess="full"/>
+	
+		<!--address-->
+		<field name="addressTableModel" type="tableModel" childAccess="full"/>
+		<field name="addressMainModel" type="listModel"  />
+		<field name="city" type="xiString" childAccess="full"/>
+		<field name="street" type="xiString" childAccess="full"/>
+		<field name="streetNumber" type="xiInteger" childAccess="full"/>
+		<field name="addressTelephone" type="xiInteger" childAccess="full"/>
+		<field name="addressFax" type="xiInteger" childAccess="full"/>
+
+		<!--related-->
+		<field name="relatedIdentification" type="xiInteger"  />
+		<field name="relatedFirstName" type="xiString" childAccess="full"/>
+		<field name="relatedLastName" type="xiString" childAccess="full"/>
+		<field name="relatedBirthDate" type="xiDate" childAccess="full"/>
+		<field name="relatedTableModel" type="tableModel" childAccess="full"/>
+		<field name="customerRelatedTypeModel" type="listModel"  />
+		<field name="relatedSexModel" type="listModel"  />
+
+	</context>
+</root>

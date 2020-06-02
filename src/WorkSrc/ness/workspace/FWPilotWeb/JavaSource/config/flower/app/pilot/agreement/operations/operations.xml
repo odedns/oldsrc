@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<operationDefinition name="PLInitSearchAgreementOP"  activityType="readOnly" class="fwpilot.agreement.operations.PLInitSearchAgreementOP"/>
+    <operationDefinition name="PLFillAgreementSearchResultsOP" activityType="readOnly"  class="fwpilot.agreement.operations.PLFillAgreementSearchResults"/>
+    <operationDefinition name="PLClearAgreementCriteriaOP" activityType="readOnly" class="fwpilot.agreement.operations.PLClearAgreementCriteriaOP"/>
+    <operationDefinition name="PLGetLinkAgreementIdOP" activityType="readOnly" class="fwpilot.agreement.operations.PLGetLinkAgreementIdOP"/>
+    <operationDefinition name="PLGetMenuAgreementIdOP" activityType="readOnly" class="fwpilot.agreement.operations.PLGetMenuAgreementIdOP"/>
+    <operationDefinition name="PLGetAgreementsPage" activityType="readOnly" class="fwpilot.agreement.operations.PLAgreementGetPage"/>
+    <operationDefinition name="resetTabModel" activityType="readOnly" class="fwpilot.agreement.operations.PLResetTabModel"/>
+
+ 
+ 
+ 	<!-- pacakges & programs operations-->
+ 	<operationDefinition name="PLInitPackageOP"  activityType="readOnly" class="fwpilot.agreement.operations.PLInitPackageOP"/>
+    <operationDefinition name="PLInitProgramOP"  activityType="readOnly" class="fwpilot.agreement.operations.PLInitProgramOP"/>
+
+
+ 	<!-- Documents tab operations-->
+ 	<operationDefinition name="PLInitAgreement"  activityType="readOnly" class="fwpilot.agreement.operations.PLInitAgreement"/>
+    <operationDefinition name="PLInitGeneralTab"  activityType="readOnly" class="fwpilot.agreement.operations.PLInitGeneralTab"/>
+	<operationDefinition name="PLInitDocumentsOP"  activityType="readOnly" class="fwpilot.agreement.operations.PLInitDocumentsOP"/>
+	<operationDefinition name="PLNewDocumentOP"  class="fwpilot.agreement.operations.PLNewDocumentOP"/>
+	<operationDefinition name="PLUpdateDocumentOP"   class="fwpilot.agreement.operations.PLUpdateDocumentOP"/>
+	<operationDefinition name="PLDeleteDocumentOP"   class="fwpilot.agreement.operations.PLDeleteDocumentOP"/>
+	<operationDefinition name="PLDeleteAllDocumentOP"   class="fwpilot.agreement.operations.PLDeleteAllDocumentOP"/>
+	<operationDefinition name="PLDocumentsLoadOP"  activityType="readOnly" class="fwpilot.agreement.operations.PLDocumentsLoadOP"/>
+    <operationDefinition name="PLDeletePackageOP"   class="fwpilot.agreement.operations.PLDeletePackageOP"/>
+    <operationDefinition name="PLSaveAgreementOP"   class="fwpilot.agreement.operations.PLSaveAgreementOP"/>
+    <operationDefinition name="PLFillCatalogOP"  activityType="readOnly" class="fwpilot.agreement.operations.PLFillCatalogOP"/>
+    <operationDefinition name="PLAddPackageOP"   class="fwpilot.agreement.operations.PLAddPackageOP"/>
+    <operationDefinition name="checkExistance"  activityType="readOnly" class="fwpilot.customer.operations.CheckCustomerExistance"/>
+</root>

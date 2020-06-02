@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="OverrideProcessInterface"
+	targetNamespace="http://override/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:interface="http://schemas.xmlsoap.org/wsdl/wsadie/messages/"
+	xmlns:tns="http://override/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<import namespace="http://schemas.xmlsoap.org/wsdl/wsadie/messages/"
+		location="/org/xmlsoap/schemas/wsdl/wsadie/messages/BuiltinMessages.wsdl"></import>
+	<message name="overrideInput">
+		<part name="sum" type="xsd:float"></part>
+	</message>
+	<message name="overrideOutput">
+		<part name="sum" type="xsd:float"></part>
+		<part name="overrideResult" type="xsd:boolean"></part>
+		<part name="chosenManager" type="xsd:string"></part>
+	</message>
+	<portType name="OverrideProcessPortType">
+		<operation name="InputOperation">
+			<input name="InputOperationRequest" message="tns:overrideInput"></input>
+			<output name="InputOperationResponse" message="tns:overrideOutput"></output>
+		</operation>
+	</portType>
+</definitions>

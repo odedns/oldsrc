@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="Java Source"/>
+    <classpathentry kind="var" path="SERVERJDK_PLUGINDIR/jre/lib/rt.jar" sourcepath="SERVERJDK_PLUGINDIR/src.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/j2ee.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/webcontainer.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/ivjejb35.jar"/>
+    <classpathentry kind="var" path="WAS_PLUGINDIR/lib/websphere.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/kunststoff.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseb.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/DSEBase.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsetde.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesut.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseampcr.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dselu0jcaplugin.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsefmppsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejdbtsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsewopjxds.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsenotsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsefrwsvr.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseevclt4.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesci.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejcasvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/axis.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsewebsa4.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejspt.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsewojxdsi.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejdbssvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsefmpsi.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsed4.jar"/>
+    <classpathentry kind="lib"
+        path="Web Content/WEB-INF/lib/dsesncsi.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/samples/DSESnaLu0CommsSample.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsepsi.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/DSEBase.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejspb.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseflp.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesn62svc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsehcon.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/uddi4j.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejseib.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-logging.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesym.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsewossvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejxcsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dselu0.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsexcon4.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesvrm.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseflpeclt.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejdbmt.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseifx4.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsegb.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/DSEGuiBeans.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesn0svc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/jaxrpc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/commons-discovery.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsej2eesec.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesymtvl.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsecicsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseaccsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejxbsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/log4j-1.2.4.jar"/>
+    <classpathentry kind="lib"
+        path="Web Content/WEB-INF/lib/dsejdbsi.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/DSEEjbAccess.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejdbjsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseldapsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dselansvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/wsdl4j.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejxmsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsecou.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseaccadm.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseejba4.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsecss.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsewomjxds.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejetpsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseapptsvc4.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/saaj.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsemql4.jar"/>
+    <classpathentry kind="lib"
+        path="Web Content/WEB-INF/lib/dsejcon.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/DSEJavaConnector.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsecsm.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseflpe.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseapptsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsesn0dummy.jar"/>
+    <classpathentry kind="lib"
+        path="Web Content/WEB-INF/lib/dseevsvr.jar" sourcepath="C:/Program Files/IBM/WebSphere Studio/Branch Transformation Toolkit/source/DSEEjViewerServer.zip"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsejxpsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dsemqsvc.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/dseportal.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/jhall.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/xerces.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/sslight.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/junit.jar" sourcepath="C:/Documents and Settings/eyalbz/Desktop/junit3.8.1/src.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/iwsorb.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/ns.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/xalan.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/websphere.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/msutil.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/mssqlserver.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/msbase.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/ctgclient.jar"/>
+    <classpathentry kind="var" path="DB2_DRIVER_PATH"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/MockCreator.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/com.ibm.mq.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/com.ibm.mqbind.jar"/>
+    <classpathentry kind="lib" path="Web Content/WEB-INF/lib/connector.jar"/>
+    <classpathentry kind="lib" path="Web Content/Client Jars/OceanLNF.jar"/>
+    <classpathentry kind="output" path="Web Content/WEB-INF/classes"/>
+</classpath>

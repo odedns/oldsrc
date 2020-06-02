@@ -1,0 +1,231 @@
+************ Start Display Current Environment ************
+WebSphere Platform 6.1 [BASE 6.1.0.5 cf50652.12]  running with process name N814Node03Cell\N814Node03\server1 and process id 5592
+Host Operating System is Windows XP, version 5.1 build 2600 Service Pack 2
+Java version = J2RE 1.5.0 IBM J9 2.3 Windows XP x86-32 j9vmwi3223-20060504 (JIT enabled)
+J9VM - 20060501_06428_lHdSMR
+JIT  - 20060428_1800_r8
+GC   - 20060501_AA, Java Compiler = j9jit23, Java VM name = IBM J9 VM
+was.install.root = C:\Program Files\IBM\SDP70_1\runtimes\base_v61
+user.install.root = C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01
+Java Home = C:\Program Files\IBM\SDP70_1\runtimes\base_v61\java\jre
+ws.ext.dirs = C:\Program Files\IBM\SDP70_1\runtimes\base_v61/java/lib;C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01/classes;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/classes;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/installedChannels;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib/ext;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/web/help;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/deploytool/itp/plugins/com.ibm.etools.ejbdeploy/runtime
+Classpath = C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01/properties;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/properties;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib/startup.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib/bootstrap.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib/j2ee.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib/lmproxy.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/lib/urlprotocols.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/deploytool/itp/batchboot.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/deploytool/itp/batch2.jar;C:\Program Files\IBM\SDP70_1\runtimes\base_v61/java/lib/tools.jar
+Java Library path = C:\Program Files\IBM\SDP70_1\runtimes\base_v61\java\jre\bin;.;C:\Program Files\IBM\SDP70_1\runtimes\base_v61\java\jre\bin;C:\Program Files\IBM\SDP70_1\runtimes\base_v61\bin;C:\Program Files\IBM\SDP70_1\runtimes\base_v61\java\bin;C:\Program Files\IBM\SDP70_1\runtimes\base_v61\java\jre\bin;C:\Program Files\CA\SharedComponents\CAWIN\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\hoshentools\.;c:\Oracle\Ora10g\bin;C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322;C:\Program Files\Microsoft Visual Studio .NET 2003\SDK\v1.1\bin;C:\Program Files\IBM\Rational\SDP\6.0\runtimes\base_v6\java\bin;C:\Dependencies\apache-ant\1.6.5\bin;C:\Dependencies\ikvm\0.22.0.0\bin;C:\Program Files\IBM\Rational\SDP\6.0;C:\Program Files\IBM\Rational\SDP\6.0\bin;C:\Program Files\IBM\Rational\SDP\6.0\eclipse;C:\Program Files\IBM\Rational\SDP\6.0\runtimes\base_v6\bin;C:\Program Files\CA\SharedComponents\CAM\bin;C:\CA_APPSW;C:\Program Files\CA\Unicenter DSM\bin;C:\Program Files\Rational\common;C:\Program Files\Rational\ClearCase\bin
+************* End Display Current Environment *************
+[15:43:14:702 GMT+02:00 16/07/07] 0000000a ManagerAdmin  I   TRAS0017I: The startup trace state is *=info:SIBProcessor=all:SIBMessageStore=all:SIBMfp=all.
+[15:43:16:233 GMT+02:00 16/07/07] 0000000a ManagerAdmin  I   TRAS0111I: The message IDs that are in use are deprecated
+[15:43:16:515 GMT+02:00 16/07/07] 0000000a AdminInitiali A   ADMN0015I: The administration service is initialized.
+[15:43:17:749 GMT+02:00 16/07/07] 0000000a PluginConfigS I   PLGC0057I: The plug-in configuration service started successfully.
+[15:43:17:796 GMT+02:00 16/07/07] 0000000a ManagedObject I   Processing extension point com.ibm.wsspi.extension.managed-object-metadata-collector
+[15:43:17:952 GMT+02:00 16/07/07] 0000000a SSLComponentI I   CWPKI0001I: SSL service is initializing the configuration
+[15:43:18:015 GMT+02:00 16/07/07] 0000000a WSKeyStore    W   CWPKI0041W: One or more key stores are using the default password.
+[15:43:18:046 GMT+02:00 16/07/07] 0000000a SSLConfigMana I   CWPKI0027I: Disabling default hostname verification for HTTPS URL connections.
+[15:43:18:124 GMT+02:00 16/07/07] 0000000a SSLDiagnostic I   CWPKI0014I: The SSL component's FFDC Diagnostic Module com.ibm.ws.ssl.core.SSLDiagnosticModule registered successfully: true.
+[15:43:18:140 GMT+02:00 16/07/07] 0000000a SSLComponentI I   CWPKI0002I: SSL service initialization completed successfully
+[15:43:18:155 GMT+02:00 16/07/07] 0000000a DiagnosticCon I com.ibm.wsspi.rasdiag.DiagnosticConfigHome setStateCollectionSpec RASD0012I: Updating State Collection Spec from Uninitialized Value to .*:.*=0
+[15:43:18:202 GMT+02:00 16/07/07] 0000000a PMIImpl       A   CWPMI1001I: PMI is enabled
+[15:43:19:233 GMT+02:00 16/07/07] 0000000a SibMessage    I   [:] CWSIU0000I: Release: WAS61.SIB Level: o0649.17
+[15:43:19:452 GMT+02:00 16/07/07] 0000000a SecurityDM    I   SECJ0231I: The Security component's FFDC Diagnostic Module com.ibm.ws.security.core.SecurityDM registered successfully: true.
+[15:43:19:530 GMT+02:00 16/07/07] 0000000a AuditServiceI A   SECJ6004I: Security Auditing is disabled. 
+[15:43:19:530 GMT+02:00 16/07/07] 0000000a distSecurityC I   SECJ0309I: Java 2 Security is disabled.
+[15:43:19:546 GMT+02:00 16/07/07] 0000000a Configuration A   SECJ0215I: Successfully set JAAS login provider configuration class to com.ibm.ws.security.auth.login.Configuration.
+[15:43:19:608 GMT+02:00 16/07/07] 0000000a distSecurityC I   SECJ0212I: WCCM JAAS configuration information successfully pushed to login provider class.
+[15:43:19:640 GMT+02:00 16/07/07] 0000000a distSecurityC I   SECJ0240I: Security service initialization completed successfully
+[15:43:19:765 GMT+02:00 16/07/07] 0000000a ServiceLogger I com.ibm.ws.ffdc.IncidentStreamImpl initialize FFDC0009I: FFDC opened incident stream file C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01\logs\ffdc\server1_1420142_07.07.16_15.43.19_0.txt
+[15:43:19:843 GMT+02:00 16/07/07] 0000000a ServiceLogger I com.ibm.ws.ffdc.IncidentStreamImpl resetIncidentStream FFDC0010I: FFDC closed incident stream file C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01\logs\ffdc\server1_1420142_07.07.16_15.43.19_0.txt
+[15:43:20:077 GMT+02:00 16/07/07] 0000000a ObjectPoolSer I   OBPL0007I: Object Pool Manager service is disabled.
+[15:43:20:233 GMT+02:00 16/07/07] 0000000a J2EEServiceMa I   ASYN0059I: Work Manager service initialized successfully.
+[15:43:20:437 GMT+02:00 16/07/07] 0000000a CScopeCompone I   CSCP0002I: Compensation service is disabled.
+[15:43:20:858 GMT+02:00 16/07/07] 0000000a SibMessage    I   [:] CWSID0021I: Configuration reload is enabled for bus busHOSHEN.
+[15:43:21:187 GMT+02:00 16/07/07] 0000000a SibMessage    I   [:] CWSIS1569I: Messaging engine N814Node03.server1-busHOSHEN is using a file store.
+[15:43:21:640 GMT+02:00 16/07/07] 0000000a ActivitySessi I   WACS0045I: ActivitySession service is disabled.
+[15:43:21:702 GMT+02:00 16/07/07] 0000000a SOAPContainer I   WSWS1062I: The SOAP Container service has been initialized.
+[15:43:21:921 GMT+02:00 16/07/07] 0000000a SchedulerServ I   SCHD0036I: The Scheduler Service is initializing.
+[15:43:21:968 GMT+02:00 16/07/07] 0000000a SchedulerServ I   SCHD0037I: The Scheduler Service has been initialized.
+[15:43:22:562 GMT+02:00 16/07/07] 0000000a WebsphereComm I WebsphereCommonLauncher  CWSCT0332I: SIP Container was launched successfully but will only be initialized when first SIP application is loaded
+[15:43:22:655 GMT+02:00 16/07/07] 0000000a StartUpServic I   STUP0011I: The Startup Beans service started successfully.
+[15:43:22:687 GMT+02:00 16/07/07] 0000000a I18nService   I   I18N0010I: The Internationalization service is created on server1.
+[15:43:22:718 GMT+02:00 16/07/07] 0000000a I18nServiceSe I   I18N0010I: The Internationalization service is disabled on server1.
+[15:43:22:999 GMT+02:00 16/07/07] 0000000a ThreadPoolMgr W   WSVR0626W: The ThreadPool setting on the ObjectRequestBroker service is deprecated.
+[15:43:23:030 GMT+02:00 16/07/07] 0000000a SSLComponentI I   CWPKI0003I: SSL service is starting
+[15:43:23:046 GMT+02:00 16/07/07] 0000000a SSLComponentI I   CWPKI0004I: SSL service started successfully
+[15:43:23:687 GMT+02:00 16/07/07] 0000000a CoordinatorIm I   HMGR0206I: The Coordinator is an Active Coordinator for core group DefaultCoreGroup.
+[15:43:23:812 GMT+02:00 16/07/07] 0000000a DCSPluginSing I   HMGR0005I: The Single Server DCS Core Stack transport has been started for core group DefaultCoreGroup.
+[15:43:24:109 GMT+02:00 16/07/07] 0000000a NameServerImp A   NMSV0018I: Name server available on bootstrap port 2811.
+[15:43:24:827 GMT+02:00 16/07/07] 00000011 ServiceLogger I com.ibm.ws.ffdc.IncidentStreamImpl initialize FFDC0009I: FFDC opened incident stream file C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01\logs\ffdc\server1_4e3a4e3a_07.07.16_15.43.24_0.txt
+[15:43:24:984 GMT+02:00 16/07/07] 00000011 ServiceLogger I com.ibm.ws.ffdc.IncidentStreamImpl resetIncidentStream FFDC0010I: FFDC closed incident stream file C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01\logs\ffdc\server1_4e3a4e3a_07.07.16_15.43.24_0.txt
+[15:43:25:265 GMT+02:00 16/07/07] 0000000a TreeBuilder   I   INIT 125 ms. nodes:14 edges:14
+[15:43:25:812 GMT+02:00 16/07/07] 0000000a JMXSoapAdapte A   ADMC0013I: The SOAP connector is available at port 8882
+[15:43:25:812 GMT+02:00 16/07/07] 0000000a distSecurityC I   SECJ0243I: Security service started successfully
+[15:43:25:827 GMT+02:00 16/07/07] 0000000a distSecurityC I   SECJ0210I: Security enabled false
+[15:43:25:921 GMT+02:00 16/07/07] 0000000a J2EEServiceMa I   ASYN0055I: The Work Manager service started successfully.
+[15:43:26:093 GMT+02:00 16/07/07] 0000000a RecoveryDirec I   CWRLS0010I: Performing recovery processing for local WebSphere server (N814Node03Cell\N814Node03\server1).
+[15:43:26:124 GMT+02:00 16/07/07] 0000000a RecoveryDirec I   CWRLS0012I: All persistent services have been directed to perform recovery processing for this WebSphere server (N814Node03Cell\N814Node03\server1).
+[15:43:26:202 GMT+02:00 16/07/07] 00000013 RecoveryManag A   WTRN0028I: Transaction service recovering 0 transactions.
+[15:43:26:984 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding EventsConnectionFactory as jms/EventsConnectionFactory
+[15:43:27:046 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding qcfHOSHEN as jms/qcfHOSHEN
+[15:43:27:093 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding HoshenJdbc as jdbc/hoshenJdbc
+[15:43:27:109 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding HoshenWM as wm/HoshenWM
+[15:43:27:140 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding EventsWM as res/EventsWM
+[15:43:27:202 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding DefaultEJBTimerDataSource as jdbc/DefaultEJBTimerDataSource
+[15:43:27:234 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding Default_CF as eis/DefaultDatasource_CMP
+[15:43:27:280 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding qcfTest as jms/qcfTest
+[15:43:27:312 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding Default Datasource as DefaultDatasource
+[15:43:27:359 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding DefaultWorkManager as wm/default
+[15:43:27:374 GMT+02:00 16/07/07] 0000000a ResourceMgrIm I   WSVR0049I: Binding DefaultTimerManager as tm/default
+[15:43:27:546 GMT+02:00 16/07/07] 0000000a TCPChannel    I   TCPC0001I: TCP Channel SIB_TCP_JFAP is listening on host *  (IPv4) port 7278. 
+[15:43:27:562 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain InboundBasicMessaging.
+[15:43:27:624 GMT+02:00 16/07/07] 0000000a TCPChannel    I   TCPC0001I: TCP Channel SIB_TCP_JFAP_SSL is listening on host *  (IPv4) port 7288. 
+[15:43:27:624 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain InboundSecureMessaging.
+[15:43:27:671 GMT+02:00 16/07/07] 0000000a SibMessage    A   [:] CWSIC2001I: Messaging connections are being accepted.
+[15:43:28:077 GMT+02:00 16/07/07] 00000012 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSID0016I: Messaging engine N814Node03.server1-busHOSHEN is in state Joined.
+[15:43:28:156 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSID0016I: Messaging engine N814Node03.server1-busHOSHEN is in state Starting.
+[15:43:29:077 GMT+02:00 16/07/07] 00000014 ObjectManager I   CWSOM0002I: ObjectManager using logFile C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01\filestores\com.ibm.ws.sib\N814Node03.server1-busHOSHEN-82F8A0F1979DB2CE\log\Log was warm started logFileType=FILE.
+[15:43:29:281 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIS1551I: The current minimum reserved size of the permanent store file is 209,715,200 bytes. The current maximum size is 524,288,000 bytes.
+[15:43:29:281 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIS1555I: The current minimum reserved size of the temporary store file is 209,715,200 bytes. The current maximum size is 524,288,000 bytes.
+[15:43:29:296 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIS1550I: The current size of the log file is 104,857,600 bytes. The size in the configuration information of the log file is 104,857,600 bytes.
+[15:43:29:327 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIS1564I: The messaging engine, ME_UUID=82F8A0F1979DB2CE, INC_UUID=4EEC4EECCF44F270, is attempting to obtain an exclusive lock on the file store.
+[15:43:29:406 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIS1566I: A single previous owner was found in the messaging engine's file store, ME_UUID=82F8A0F1979DB2CE, INC_UUID=2EFE2EFECF313F31
+[15:43:29:452 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIS1563I: The messaging engine, ME_UUID=82F8A0F1979DB2CE, INC_UUID=4EEC4EECCF44F270, has acquired an exclusive lock on the file store.
+[15:43:30:093 GMT+02:00 16/07/07] 0000000a AppProfileCom I   ACIN0007I: The application profiling service started successfully.
+[15:43:30:265 GMT+02:00 16/07/07] 0000000a WorkAreaServi A   ACWA0002I: WorkArea service not enabled on server1.
+[15:43:30:327 GMT+02:00 16/07/07] 0000000a SOAPAcceptorC I   WSSC1019I: The SOAP Acceptor Channel has been configured.
+[15:43:30:812 GMT+02:00 16/07/07] 0000000a CacheServiceI I   DYNA0048I: WebSphere Dynamic Cache initialized successfully.
+[15:43:31:202 GMT+02:00 16/07/07] 0000000a SchedulerServ I   SCHD0031I: The Scheduler Service is starting.
+[15:43:31:218 GMT+02:00 16/07/07] 0000000a SchedulerServ I   SCHD0001I: The Scheduler Service has started.
+[15:43:31:406 GMT+02:00 16/07/07] 0000000a RegistryConfi I   CWXRS0017I: Extension Registry objects storage: C:\Program Files\IBM\SDP70_1\runtimes\base_v61\profiles\AppSrv01\temp\N814Node03\server1\_extensionregistry
+[15:43:31:562 GMT+02:00 16/07/07] 0000000a CacheServiceI I   DYNA1001I: WebSphere Dynamic Cache instance named ws/com.ibm.workplace/ExtensionRegistryCache1184593411531 initialized successfully.
+[15:43:31:593 GMT+02:00 16/07/07] 0000000a RegistryCache I   CWXRS0002I: DynaCache instance for Extension Registry created with CACHE_SIZE: 5000
+[15:43:32:452 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0239I: Extension Factory [class com.ibm.ws.portletcontainer.webextension.PortletExtensionFactory] was registered successfully.
+[15:43:32:468 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0240I: Extension Factory [class com.ibm.ws.portletcontainer.webextension.PortletExtensionFactory] has been associated with patterns [""].
+[15:43:32:468 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0239I: Extension Factory [class com.ibm.ws.portletcontainer.portletserving.PortletServingExtensionFactory] was registered successfully.
+[15:43:32:484 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0240I: Extension Factory [class com.ibm.ws.portletcontainer.portletserving.PortletServingExtensionFactory] has been associated with patterns [""].
+[15:43:32:515 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0239I: Extension Factory [class com.ibm.ws.jsf.extprocessor.JSFExtensionFactory] was registered successfully.
+[15:43:32:562 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0240I: Extension Factory [class com.ibm.ws.jsf.extprocessor.JSFExtensionFactory] has been associated with patterns [""].
+[15:43:32:593 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0239I: Extension Factory [class com.ibm.ws.jsp.webcontainerext.ws.WASJSPExtensionFactory] was registered successfully.
+[15:43:32:609 GMT+02:00 16/07/07] 0000000a WebContainer  I   SRVE0240I: Extension Factory [class com.ibm.ws.jsp.webcontainerext.ws.WASJSPExtensionFactory] has been associated with patterns [*.jsp *.jspx *.jsw *.jsv ].
+[15:43:34:437 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0200I: Starting application: DefaultApplication
+[15:43:34:437 GMT+02:00 16/07/07] 00000020 ApplicationMg A   WSVR0200I: Starting application: isclite
+[15:43:34:437 GMT+02:00 16/07/07] 00000021 ApplicationMg A   WSVR0200I: Starting application: ivtApp
+[15:43:34:437 GMT+02:00 16/07/07] 00000021 ApplicationMg A   WSVR0203I: Application: ivtApp  Application build level: WAS61.SERV1 [cf20633.22]
+[15:43:34:453 GMT+02:00 16/07/07] 00000020 ApplicationMg A   WSVR0203I: Application: isclite  Application build level: WAS61.WSC [cf20632.12]
+[15:43:34:468 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0204I: Application: DefaultApplication  Application build level: Unknown
+[15:43:35:031 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIP0212I: Messaging engine N814Node03.server1-busHOSHEN on bus busHOSHEN is starting to reconcile the WCCM destination and link configuration.
+[15:43:35:281 GMT+02:00 16/07/07] 00000021 EJBContainerI I   WSVR0037I: Starting EJB jar: ivtEJB.jar
+[15:43:35:281 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0037I: Starting EJB jar: Increment.jar
+[15:43:35:515 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0057I: EJB jar started: Increment.jar
+[15:43:35:515 GMT+02:00 16/07/07] 00000021 EJBContainerI I   WSVR0057I: EJB jar started: ivtEJB.jar
+[15:43:35:593 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSIP0213I: Messaging engine N814Node03.server1-busHOSHEN on bus busHOSHEN has finished reconciling the WCCM destination and link configuration.
+[15:43:35:749 GMT+02:00 16/07/07] 0000001f WebContainer  A   SRVE0161I: IBM WebSphere Application Server - Web Container.  Copyright IBM Corp. 1998-2006
+[15:43:35:765 GMT+02:00 16/07/07] 0000001f WebContainer  A   SRVE0162I: Servlet Specification Level: 2.4
+[15:43:35:781 GMT+02:00 16/07/07] 0000001f WebContainer  A   SRVE0163I: Supported JSP Specification Level: 2.0
+[15:43:35:984 GMT+02:00 16/07/07] 0000001f WebContainer  A   SRVE0239I: Extension Factory [class com.ibm.ws.webcontainer.extension.ExtHandshakeVHostExtensionFactory] was registered successfully.
+[15:43:36:031 GMT+02:00 16/07/07] 0000001f WebContainer  A   SRVE0240I: Extension Factory [class com.ibm.ws.webcontainer.extension.ExtHandshakeVHostExtensionFactory] has been associated with patterns [VH:_WS_EH* ].
+[15:43:36:140 GMT+02:00 16/07/07] 0000001f WebGroup      A   SRVE0169I: Loading Web Module: Default Web Application.
+[15:43:36:999 GMT+02:00 16/07/07] 0000001f ServletWrappe I   SRVE0242I: [DefaultApplication] [/] [Hello Pervasive Servlet]: Initialization successful.
+[15:43:37:062 GMT+02:00 16/07/07] 0000001f ServletWrappe I   SRVE0242I: [DefaultApplication] [/] [Hit Count Servlet]: Initialization successful.
+[15:43:37:109 GMT+02:00 16/07/07] 0000001f ServletWrappe I   SRVE0242I: [DefaultApplication] [/] [Snoop Servlet]: Initialization successful.
+[15:43:37:140 GMT+02:00 16/07/07] 0000001f VirtualHost   I   SRVE0250I: Web Module Default Web Application has been bound to default_host[*:9082,*:80,*:9445,*:5065,*:5064,*:443].
+[15:43:37:140 GMT+02:00 16/07/07] 00000014 SibMessage    I   [busHOSHEN:N814Node03.server1-busHOSHEN] CWSID0016I: Messaging engine N814Node03.server1-busHOSHEN is in state Started.
+[15:43:37:156 GMT+02:00 16/07/07] 00000021 WebGroup      A   SRVE0169I: Loading Web Module: IVT Application.
+[15:43:37:296 GMT+02:00 16/07/07] 00000021 VirtualHost   I   SRVE0250I: Web Module IVT Application has been bound to default_host[*:9082,*:80,*:9445,*:5065,*:5064,*:443].
+[15:43:37:374 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0221I: Application started: DefaultApplication
+[15:43:37:390 GMT+02:00 16/07/07] 00000021 ApplicationMg A   WSVR0221I: Application started: ivtApp
+[15:43:37:515 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0200I: Starting application: query
+[15:43:37:562 GMT+02:00 16/07/07] 00000021 ApplicationMg A   WSVR0200I: Starting application: IBMUTC
+[15:43:37:578 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0204I: Application: query  Application build level: Unknown
+[15:43:37:593 GMT+02:00 16/07/07] 00000020 WebGroup      A   SRVE0169I: Loading Web Module: isclite.
+[15:43:37:609 GMT+02:00 16/07/07] 00000021 ApplicationMg A   WSVR0204I: Application: IBMUTC  Application build level: Unknown
+[15:43:37:999 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0037I: Starting EJB jar: querybean.jar
+[15:43:38:140 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0057I: EJB jar started: querybean.jar
+[15:43:38:156 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0221I: Application started: query
+[15:43:38:187 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0200I: Starting application: JmsTestEAR
+[15:43:38:234 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0204I: Application: JmsTestEAR  Application build level: Unknown
+[15:43:38:578 GMT+02:00 16/07/07] 0000001f ResourceMgrIm I   WSVR0049I: Binding DefaultEJBTimerDataSource as jdbc/DefaultEJBTimerDataSource
+[15:43:38:640 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0037I: Starting EJB jar: JmsTestEjb.jar
+[15:43:38:718 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0057I: EJB jar started: JmsTestEjb.jar
+[15:43:38:734 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0221I: Application started: JmsTestEAR
+[15:43:38:765 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0200I: Starting application: ManagementEJB
+[15:43:38:859 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0204I: Application: ManagementEJB  Application build level: Unknown
+[15:43:38:921 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0037I: Starting EJB jar: mejb.jar
+[15:43:38:999 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0057I: EJB jar started: mejb.jar
+[15:43:39:015 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0221I: Application started: ManagementEJB
+[15:43:39:093 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0200I: Starting application: filetransfer
+[15:43:39:093 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0204I: Application: filetransfer  Application build level: Unknown
+[15:43:39:484 GMT+02:00 16/07/07] 00000020 ServletWrappe I   SRVE0242I: [isclite] [/ibm/console] [EventInitializer]: Initialization successful.
+[15:43:39:499 GMT+02:00 16/07/07] 00000020 VirtualHost   I   SRVE0250I: Web Module isclite has been bound to admin_host[*:9062,*:9045].
+[15:43:39:499 GMT+02:00 16/07/07] 0000001f WebGroup      A   SRVE0169I: Loading Web Module: WebSphere Admin File Transfer Application.
+[15:43:39:562 GMT+02:00 16/07/07] 0000001f ServletWrappe I   SRVE0242I: [filetransfer] [/FileTransfer] [transfer]: Initialization successful.
+[15:43:39:578 GMT+02:00 16/07/07] 0000001f VirtualHost   I   SRVE0250I: Web Module WebSphere Admin File Transfer Application has been bound to admin_host[*:9062,*:9045].
+[15:43:39:640 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0221I: Application started: filetransfer
+[15:43:39:640 GMT+02:00 16/07/07] 00000021 WebGroup      A   SRVE0169I: Loading Web Module: Universal Test Client.
+[15:43:39:656 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0200I: Starting application: SchedulerCalendars
+[15:43:39:703 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0204I: Application: SchedulerCalendars  Application build level: Unknown
+[15:43:39:812 GMT+02:00 16/07/07] 00000021 VirtualHost   I   SRVE0250I: Web Module Universal Test Client has been bound to default_host[*:9082,*:80,*:9445,*:5065,*:5064,*:443].
+[15:43:39:843 GMT+02:00 16/07/07] 00000020 WebGroup      A   SRVE0169I: Loading Web Module: adminconsole redirector.
+[15:43:39:843 GMT+02:00 16/07/07] 00000021 ApplicationMg A   WSVR0221I: Application started: IBMUTC
+[15:43:39:859 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0037I: Starting EJB jar: Calendars.jar
+[15:43:39:953 GMT+02:00 16/07/07] 0000001f EJBContainerI I   WSVR0057I: EJB jar started: Calendars.jar
+[15:43:39:968 GMT+02:00 16/07/07] 00000020 VirtualHost   I   SRVE0250I: Web Module adminconsole redirector has been bound to admin_host[*:9062,*:9045].
+[15:43:39:999 GMT+02:00 16/07/07] 0000001f ApplicationMg A   WSVR0221I: Application started: SchedulerCalendars
+[15:43:40:031 GMT+02:00 16/07/07] 00000020 WebGroup      A   SRVE0169I: Loading Web Module: EHS3.01.
+[15:43:40:171 GMT+02:00 16/07/07] 00000020 VirtualHost   I   SRVE0250I: Web Module EHS3.01 has been bound to admin_host[*:9062,*:9045].
+[15:43:40:781 GMT+02:00 16/07/07] 00000020 WebGroup      A   SRVE0169I: Loading Web Module: Integrated Solutions Console.
+[15:43:40:921 GMT+02:00 16/07/07] 00000020 VirtualHost   I   SRVE0250I: Web Module Integrated Solutions Console has been bound to admin_host[*:9062,*:9045].
+[15:43:41:046 GMT+02:00 16/07/07] 00000020 WebGroup      A   SRVE0169I: Loading Web Module: WIM.
+[15:43:41:093 GMT+02:00 16/07/07] 00000020 VirtualHost   I   SRVE0250I: Web Module WIM has been bound to admin_host[*:9062,*:9045].
+[15:43:41:203 GMT+02:00 16/07/07] 00000020 WebGroup      A   SRVE0169I: Loading Web Module: WebSphere Application Server.
+[15:43:41:281 GMT+02:00 16/07/07] 00000020 VirtualHost   I   SRVE0250I: Web Module WebSphere Application Server has been bound to admin_host[*:9062,*:9045].
+[15:43:41:296 GMT+02:00 16/07/07] 00000020 ApplicationMg A   WSVR0221I: Application started: isclite
+[15:43:41:343 GMT+02:00 16/07/07] 0000000a TCPChannel    I   TCPC0001I: TCP Channel TCP_1 is listening on host *  (IPv4) port 9062. 
+[15:43:41:359 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundAdmin.
+[15:43:41:421 GMT+02:00 16/07/07] 0000000a TCPChannel    I   TCPC0001I: TCP Channel TCP_2 is listening on host *  (IPv4) port 9082. 
+[15:43:41:421 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundDefault.
+[15:43:41:437 GMT+02:00 16/07/07] 0000000a TCPChannel    I   TCPC0001I: TCP Channel TCP_3 is listening on host *  (IPv4) port 9045. 
+[15:43:41:453 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundAdminSecure.
+[15:43:41:546 GMT+02:00 16/07/07] 0000000a TCPChannel    I   TCPC0001I: TCP Channel TCP_4 is listening on host *  (IPv4) port 9445. 
+[15:43:41:546 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain WCInboundDefaultSecure.
+[15:43:41:562 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain1.
+[15:43:41:562 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain2.
+[15:43:41:609 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain3.
+[15:43:41:625 GMT+02:00 16/07/07] 0000000a WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain SOAPAcceptorChain4.
+[15:43:41:625 GMT+02:00 16/07/07] 00000021 SchedulerServ I   SCHD0077I: The Scheduler Service is starting the Schedulers.
+[15:43:41:640 GMT+02:00 16/07/07] 00000021 SchedulerServ I   SCHD0078I: The Scheduler Service has completed starting the Schedulers.
+[15:43:41:703 GMT+02:00 16/07/07] 0000000a RMIConnectorC A   ADMC0026I: The RMI Connector is available at port 2811
+[15:43:41:984 GMT+02:00 16/07/07] 00000022 WorkSpaceMana A   WKSP0500I: Workspace configuration consistency check is false.
+[15:43:42:500 GMT+02:00 16/07/07] 0000000a WsServerImpl  A   WSVR0001I: Server server1 open for e-business
+[16:00:14:862 GMT+02:00 16/07/07] 00000010 ComponentName W   CNTR0076W: A reference to an ResourceRef could not be found in the deployment descriptor for the WebApp or EnterpriseBean with the display name JmsTestSender : resRefBindings jndiName="jms/qcfTest".
+[16:00:14:878 GMT+02:00 16/07/07] 00000010 ComponentName W   CNTR0076W: A reference to an ResourceRef could not be found in the deployment descriptor for the WebApp or EnterpriseBean with the display name JmsTestSender : resRefBindings jndiName="jms/queueTest".
+[16:00:15:472 GMT+02:00 16/07/07] 00000010 SystemOut     O before lookup to qcf = qcfTest
+[16:00:15:472 GMT+02:00 16/07/07] 00000010 SystemOut     O before createQueueconnection
+[16:00:15:472 GMT+02:00 16/07/07] 00000010 PrivExAction  W   J2CA0144W: No mappingConfigAlias found for connection factory or datasource jms/qcfTest.
+[16:00:15:612 GMT+02:00 16/07/07] 00000010 PrivExAction  W   J2CA0114W: No container-managed authentication alias found for connection factory or datasource jms/qcfTest.
+[16:00:16:112 GMT+02:00 16/07/07] 00000010 SystemOut     O before start session
+[16:00:16:112 GMT+02:00 16/07/07] 00000010 SystemOut     O before createQueueSession
+[16:00:16:144 GMT+02:00 16/07/07] 00000010 SystemOut     O before create queuename
+[16:00:16:144 GMT+02:00 16/07/07] 00000010 SystemOut     O before create sender
+[16:00:16:612 GMT+02:00 16/07/07] 00000010 SystemOut     O loop for send 4 messages
+[16:00:16:612 GMT+02:00 16/07/07] 00000010 SystemOut     O before Send
+[16:00:16:612 GMT+02:00 16/07/07] 00000010 SystemOut     O after  Send
+[16:04:06:279 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [initializeServlet]: Initialization successful.
+[16:04:11:466 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/index.jsp]: Initialization successful.
+[16:04:11:857 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/banner.jsp]: Initialization successful.
+[16:04:11:935 GMT+02:00 16/07/07] 0000002d ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/navigation.jsp]: Initialization successful.
+[16:04:12:247 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/details.jsp]: Initialization successful.
+[16:04:12:450 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/detail/welcome.jsp]: Initialization successful.
+[16:04:16:278 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/detail/jndi.jsp]: Initialization successful.
+[16:04:18:544 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [treeExpansionServlet]: Initialization successful.
+[16:04:22:762 GMT+02:00 16/07/07] 0000002c ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [jndiLookupServlet]: Initialization successful.
+[16:04:23:512 GMT+02:00 16/07/07] 0000002d ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/detail/parameter.jsp]: Initialization successful.
+[16:04:23:637 GMT+02:00 16/07/07] 0000002d ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [/html/detail/results.jsp]: Initialization successful.
+[16:04:26:075 GMT+02:00 16/07/07] 0000002d ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [selectMemberServlet]: Initialization successful.
+[16:04:27:356 GMT+02:00 16/07/07] 0000002d ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [invokeServlet]: Initialization successful.
+[16:04:29:184 GMT+02:00 16/07/07] 0000002d ServletWrappe I   SRVE0242I: [IBMUTC] [/UTC] [addObjectServlet]: Initialization successful.
+[16:05:44:665 GMT+02:00 16/07/07] 0000002e SystemOut     O Connect with url
+[16:05:44:665 GMT+02:00 16/07/07] 0000002e SystemOut     O before lookup to qcf = qcfTest
+[16:05:44:712 GMT+02:00 16/07/07] 0000002e SystemOut     O before createQueueconnection
+[16:05:44:712 GMT+02:00 16/07/07] 0000002e SystemOut     O before start session
+[16:05:44:712 GMT+02:00 16/07/07] 0000002e SystemOut     O before createQueueSession
+[16:05:44:712 GMT+02:00 16/07/07] 0000002e SystemOut     O before create temporary-queue
+[16:05:45:103 GMT+02:00 16/07/07] 0000002e SystemOut     O > lookUpHome
+[16:05:45:103 GMT+02:00 16/07/07] 0000002e SystemOut     O < lookUpHome

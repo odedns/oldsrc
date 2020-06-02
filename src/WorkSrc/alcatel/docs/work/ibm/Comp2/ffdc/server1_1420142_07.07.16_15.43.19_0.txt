@@ -1,0 +1,138 @@
+------Start of DE processing------ = [15:43:19:702 GMT+02:00 16/07/07] , key = java.lang.IllegalArgumentException com.ibm.wsspi.runtime.component.WsComponentImpl 470
+Exception = java.lang.IllegalArgumentException
+Source = com.ibm.wsspi.runtime.component.WsComponentImpl
+probeid = 470
+Stack Dump = java.lang.IllegalArgumentException: undefined variable: MQ_INSTALL_VERSION
+	at com.ibm.ws.runtime.component.VariableMapImpl.referenceVariable(VariableMapImpl.java:383)
+	at com.ibm.ws.runtime.component.VariableMapImpl.expand(VariableMapImpl.java:316)
+	at com.ibm.ws.runtime.component.VariableMapImpl.substitute(VariableMapImpl.java:396)
+	at com.ibm.ws.runtime.component.VariableMapImpl.expand(VariableMapImpl.java:235)
+	at com.ibm.wsspi.runtime.component.WsComponentImpl.expandVariable(WsComponentImpl.java:468)
+	at com.ibm.ejs.jms.JMSRegistration.getMinimumVersion(JMSRegistration.java:464)
+	at com.ibm.ejs.jms.JMSRegistration.checkVersion(JMSRegistration.java:427)
+	at com.ibm.ejs.jms.JMSRegistration.initialize(JMSRegistration.java:176)
+	at com.ibm.ws.runtime.component.ContainerImpl.initializeComponent(ContainerImpl.java:1338)
+	at com.ibm.ws.runtime.component.ContainerImpl.initializeComponents(ContainerImpl.java:1136)
+	at com.ibm.ws.runtime.component.ServerImpl.initialize(ServerImpl.java:347)
+	at com.ibm.ws.runtime.WsServerImpl.bootServerContainer(WsServerImpl.java:178)
+	at com.ibm.ws.runtime.WsServerImpl.start(WsServerImpl.java:140)
+	at com.ibm.ws.runtime.WsServerImpl.main(WsServerImpl.java:461)
+	at com.ibm.ws.runtime.WsServer.main(WsServer.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:615)
+	at com.ibm.wsspi.bootstrap.WSLauncher.launchMain(WSLauncher.java:183)
+	at com.ibm.wsspi.bootstrap.WSLauncher.main(WSLauncher.java:90)
+	at com.ibm.wsspi.bootstrap.WSLauncher.run(WSLauncher.java:72)
+	at org.eclipse.core.internal.runtime.PlatformActivator$1.run(PlatformActivator.java:78)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:92)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:68)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:400)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:615)
+	at org.eclipse.core.launcher.Main.invokeFramework(Main.java:336)
+	at org.eclipse.core.launcher.Main.basicRun(Main.java:280)
+	at org.eclipse.core.launcher.Main.run(Main.java:977)
+	at com.ibm.wsspi.bootstrap.WSPreLauncher.launchEclipse(WSPreLauncher.java:321)
+	at com.ibm.wsspi.bootstrap.WSPreLauncher.main(WSPreLauncher.java:89)
+
+Dump of callerThis = 
+Object type = com.ibm.ejs.jms.JMSRegistration
+com.ibm.ejs.jms.JMSRegistration@e2c0e2c
+
+Exception = java.lang.IllegalArgumentException
+Source = com.ibm.wsspi.runtime.component.WsComponentImpl
+probeid = 470
+Dump of callerThis = 
+Object type = com.ibm.ejs.jms.JMSRegistration
+  WMQ_JMS_CLIENT_DETAILS = WMQ_JMS_CLIENT_DETAILS
+  WMQ_JMS_BUNDLE_NAME = com.ibm.ws.runtime.mqjms
+  tc = 
+    defaultMessageFile = com.ibm.ejs.resources.seriousMessages
+    EXTENSION_NAME_DPID = DiagnosticProvider
+    ivDumpEnabled = false
+    ivResourceBundleName = com.ibm.ejs.jms.messaging
+    ivLogger = null
+    ivDiagnosticProviderID = null
+    anyTracingEnabled = true
+    ivLevel = 10
+    ivName = com.ibm.ejs.jms.JMSRegistration
+    ivDebugEnabled = false
+    ivEventEnabled = false
+    ivEntryEnabled = false
+    ivDetailEnabled = false
+    ivConfigEnabled = false
+    ivInfoEnabled = true
+    ivServiceEnabled = true
+    ivWarningEnabled = true
+    ivErrorEnabled = true
+    ivFatalEnabled = true
+  WMQ_JAVA_VAR = ${MQ_INSTALL_ROOT}
+  WMQ_JAVA_VERSION_VAR = ${MQ_INSTALL_VERSION}
+  ALL_FILES = /-
+  _ma88RegistrationSucceeded = false
+  _failureException = null
+  _minimumVersion = null
+  _currentVersion = null
+  _instance = this
+  _failureKey = null
+  _failureInserts = {}
+  class$com$ibm$ejs$jms$JMSRegistration = 
+    serialVersionUID = 3206093459760846163
+    AllPermissionsPD = 
+      codesource = null
+      classloader = null
+      principals = {}
+      permissions = java.security.Permissions@7b3c7b3c
+      staticPermissions = true
+      debug = null
+      loopingToString = false
+    classNameMap = 
+      serialVersionUID = 1978198479659022715
+      m = java.util.WeakHashMap@5ef65ef6
+      mutex = this.class$com$ibm$ejs$jms$JMSRegistration.classNameMap
+      keySet = null
+      entrySet = null
+      values = null
+    SYNTHETIC = 4096
+    ANNOTATION = 8192
+    ENUM = 16384
+    j9Version = 33686065
+    j9Config = 8314596479310233600
+    EmptyParameters = {}
+  name = null
+  state = null
+  propertyChangeSupport = null
+  inhibitMultiThreadedBehavior = false
+  inhibtMultiThreadedBehaviorGlobally = false
+  join = null
+  latchedAsynchronousException = null
+  initializers = com.ibm.ws.util.ThreadPool@4a564a56
+  threadContextHelper = null
+  class$com$ibm$wsspi$runtime$component$WsComponentImpl = 
+    serialVersionUID = 3206093459760846163
+    AllPermissionsPD = this.class$com$ibm$ejs$jms$JMSRegistration.AllPermissionsPD
+    classNameMap = this.class$com$ibm$ejs$jms$JMSRegistration.classNameMap
+    SYNTHETIC = 4096
+    ANNOTATION = 8192
+    ENUM = 16384
+    j9Version = 33686065
+    j9Config = 8314596479310233600
+    EmptyParameters = this.class$com$ibm$ejs$jms$JMSRegistration.EmptyParameters
+  class$com$ibm$ws$runtime$component$ThreadContextHelper = null
+  class$com$ibm$ws$runtime$service$VariableMap = 
+    serialVersionUID = 3206093459760846163
+    AllPermissionsPD = this.class$com$ibm$ejs$jms$JMSRegistration.AllPermissionsPD
+    classNameMap = this.class$com$ibm$ejs$jms$JMSRegistration.classNameMap
+    SYNTHETIC = 4096
+    ANNOTATION = 8192
+    ENUM = 16384
+    j9Version = 33686065
+    j9Config = 8314596479310233600
+    EmptyParameters = this.class$com$ibm$ejs$jms$JMSRegistration.EmptyParameters
+  class$com$ibm$ws$runtime$service$Server = null
+

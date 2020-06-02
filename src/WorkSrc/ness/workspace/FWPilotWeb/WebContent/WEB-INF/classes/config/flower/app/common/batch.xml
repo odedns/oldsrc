@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM  "flower.dtd">
+<root>
+
+
+	<flow name="batchFlow"> 
+	 	<state name="init" type="simple" initial="true">
+			<transition targetState="main" default="true">
+				<actions>
+					<action type="operation" refName="batchOP"/>
+				</actions>	 			
+			</transition> 
+	 	</state>
+	  
+	 	<state name="main" type="complex" page="app/general/jsp/empty.jsp"/>
+	</flow>	 
+ </root>

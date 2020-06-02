@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsectxt.xml>
+     <!--DWGroupDef:client.Contexts-->
+     <!-- CLIENT CONTEXT DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Branch Context                                                          -->
+     <!--=========================================================================-->
+     <context id="branchClientCtx" parent="nil" type="branch">
+          <refKColl refId="branchData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- WorkStation Context                                                     -->
+     <!--=========================================================================-->
+     <context id="workstationCtx" parent="branchClientCtx" type="branch">
+          <refKColl refId="workstationData"/>
+          <refService alias="CSClient" refId="realCSClient" type="cs"/>
+          <!--refService alias="appTablesService" refId="appTablesService"/-->
+     </context>
+     
+     <!--=========================================================================-->
+     <!-- StartUp Operation Context                                               -->
+     <!--=========================================================================-->
+     <context id="startupClientCtx" parent="workstationCtx" type="op">
+          <refKColl refId="startupClientData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- End Session Operation Context                                           -->
+     <!--=========================================================================-->
+     <context id="endSessionClientCtx" parent="workstationCtx" type="op">
+          <refKColl refId="endSessionClientData"/>
+     </context>
+     
+     <!--=========================================================================-->
+     <!-- Open HL View Context                                       -->
+     <!--=========================================================================-->
+     <context id="openHlViewCtx" parent="initOpenHlCtx" type="view">
+          <refKColl refId="openHlViewData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- Open HL Operation Context                                       -->
+     <!--=========================================================================-->
+     <context id="initOpenHlCtx" parent="workstationCtx" type="op">
+          <refKColl refId="initHlData"/>
+     </context>
+     
+     <!--=========================================================================-->
+     <!-- Confirm Open HL Operation Context                                       -->
+     <!--=========================================================================-->
+     <context id="confirmOpenHlCtx" type="op">
+          <refKColl refId="confirmOpenHlData"/>
+     </context>
+     <!--/DWGroupDef-->
+</dsectxt.xml>

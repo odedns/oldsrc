@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsesrvce.xml>
+     <!--DWGroupDef:DSE Sample application.Client.Services-->
+     <!-- CLIENT SERVICE DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Real client-server client service                                       -->
+     <!--=========================================================================-->
+     <CSClient id="realCSClient"/>
+     <!--/DWGroupDef-->
+</dsesrvce.xml>

@@ -1,0 +1,146 @@
+//                     WEBLOGIC POLICY FILE
+// // // // // // // // // // // // // // // // // // // // // // // //
+// This file, which conforms to the java.security.Policy file
+// definition, configures WebLogic Server for Java 2 security.
+// WebLogic Server cannot run without the policies specified here. 
+// 
+// Before you can use these policies, edit the URL paths that point to
+// your WebLogic installation. The paths you must change are in the 
+// first two lines following this comment block. 
+//
+// A second grant entry provides an example of setting the permissions 
+// for your own Java classes.  Modify the URL paths in the first two 
+// lines of that grant entry to point to the location of your classes or
+// any third party Java classes you want to use with WebLogic Server. 
+// You can copy this entry to protect additional class locations you
+// may create. 
+//
+// If WebLogic is not installed in a root directory, you must only 
+// list the first component of the path in the "file:" URL. This is
+// because of a bug in JavaSoft JDK 1.2.1. For example, if you 
+// install WebLogic in the "c:/test/weblogic" directory, the first
+// two lines below must be:
+//
+// grant codeBase "file:/c:/test/-" {
+//   permission java.io.FilePermission "c:${/}test${/}weblogic${/}-", "read,write,delete,execute";
+// 
+// See http://www.weblogic.com/docs51/install/startserver.html for
+// more information about using this policy file. 
+//
+grant codeBase "file:C:/weblogic/-" {
+  permission java.io.FilePermission "C:${/}weblogic${/}-", "read,write,delete,execute";
+  permission java.net.SocketPermission "localhost:1-9000", "connect,accept,listen,resolve";
+  permission java.awt.AWTPermission "accessClipboard";
+  permission java.awt.AWTPermission "accessEventQueue";
+  permission java.awt.AWTPermission "showWindowWithoutWarningBanner";
+  permission java.io.SerializablePermission "enableSubclassImplementation";
+  permission java.io.SerializablePermission "enableSubstitution";
+  permission java.lang.RuntimePermission "accessClassInPackage.*";
+  permission java.lang.RuntimePermission "accessDeclaredMembers.*";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "createSecurityManager";
+  permission java.lang.RuntimePermission "defineClassInPackage.*";
+  permission java.lang.RuntimePermission "exitVM";
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "getProtectionDomain";
+  permission java.lang.RuntimePermission "loadLibrary.*";
+  permission java.lang.RuntimePermission "modifyThread";
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission java.lang.RuntimePermission "readFileDescriptor";
+  permission java.lang.RuntimePermission "setContextClassLoader";
+  permission java.lang.RuntimePermission "setFactory";
+  permission java.lang.RuntimePermission "setIO";
+  permission java.lang.RuntimePermission "setProtectionDomain";
+  permission java.lang.RuntimePermission "setSecurityManager";
+  permission java.lang.RuntimePermission "writeFileDescriptor";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.net.NetPermission "requestPasswordAuthentication";
+  permission java.net.NetPermission "setDefaultAuthenticator";
+  permission java.security.SecurityPermission "getPolicy";
+  permission java.security.SecurityPermission "setPolicy";
+  permission java.util.PropertyPermission "*", "read,write";
+};
+
+//
+// Modify the URLs in the two lines below to point to the location of 
+// additional classes you want to use with WebLogic Server. These could 
+// include classes you develop or third-party classes you want to use. 
+// You can copy this grant entry and modify the URLs for additional 
+// class locations.  
+// 
+grant codeBase "file:/c:/classes/-" {
+  permission java.io.FilePermission "c:${/}classes${/}-", "read,write,delete,execute";
+  permission java.net.SocketPermission "localhost:1-9000", "connect,accept,listen,resolve";
+  permission java.awt.AWTPermission "accessClipboard";
+  permission java.awt.AWTPermission "accessEventQueue";
+  permission java.awt.AWTPermission "showWindowWithoutWarningBanner";
+  permission java.io.SerializablePermission "enableSubclassImplementation";
+  permission java.io.SerializablePermission "enableSubstitution";
+  permission java.lang.RuntimePermission "accessClassInPackage.*";
+  permission java.lang.RuntimePermission "accessDeclaredMembers.*";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "createSecurityManager";
+  permission java.lang.RuntimePermission "defineClassInPackage.*";
+  permission java.lang.RuntimePermission "exitVM";
+  permission java.lang.RuntimePermission "getClassLoader";
+  permission java.lang.RuntimePermission "createClassLoader";
+  permission java.lang.RuntimePermission "getProtectionDomain";
+  permission java.lang.RuntimePermission "loadLibrary.*";
+  permission java.lang.RuntimePermission "modifyThread";
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission java.lang.RuntimePermission "readFileDescriptor";
+  permission java.lang.RuntimePermission "setContextClassLoader";
+  permission java.lang.RuntimePermission "setFactory";
+  permission java.lang.RuntimePermission "setIO";
+  permission java.lang.RuntimePermission "setProtectionDomain";
+  permission java.lang.RuntimePermission "setSecurityManager";
+  permission java.lang.RuntimePermission "writeFileDescriptor";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.net.NetPermission "requestPasswordAuthentication";
+  permission java.net.NetPermission "setDefaultAuthenticator";
+  permission java.security.SecurityPermission "getPolicy";
+  permission java.security.SecurityPermission "setPolicy";
+  permission java.util.PropertyPermission "*", "read,write";
+};
+
+
+grant codeBase "file:${java.home}/lib/ext/-" {
+	permission java.security.AllPermission;
+};
+
+grant { 
+  // Permission "enableSubstitution" needed to run the WebLogic console
+  permission java.io.SerializablePermission "enableSubstitution";
+  // Permission "modifyThreadGroup" required to run the WebLogic Server
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission java.lang.RuntimePermission "setContextClassLoader"; 
+  // Permission "setIO" needed to start a server from the WebLogic console
+  permission java.lang.RuntimePermission "setIO";
+  // Permission "getClassLoader" needed for many EJB clients
+  permission java.lang.RuntimePermission "getClassLoader";
+
+  permission java.lang.RuntimePermission "stopThread";
+  permission java.net.SocketPermission "localhost:1024-", "listen";
+  permission java.util.PropertyPermission "java.version", "read";
+  permission java.util.PropertyPermission "java.vendor", "read";
+  permission java.util.PropertyPermission "java.vendor.url", "read";
+  permission java.util.PropertyPermission "java.class.version", "read";
+  permission java.util.PropertyPermission "os.name", "read";
+  permission java.util.PropertyPermission "os.version", "read";
+  permission java.util.PropertyPermission "os.arch", "read";
+  permission java.util.PropertyPermission "file.separator", "read";
+  permission java.util.PropertyPermission "path.separator", "read";
+  permission java.util.PropertyPermission "line.separator", "read";
+  permission java.util.PropertyPermission "java.specification.version", "read";
+  permission java.util.PropertyPermission "java.specification.vendor", "read";
+  permission java.util.PropertyPermission "java.specification.name", "read";
+  permission java.util.PropertyPermission "java.vm.specification.version", "read";
+  permission java.util.PropertyPermission "java.vm.specification.vendor", "read";
+  permission java.util.PropertyPermission "java.vm.specification.name", "read";
+  permission java.util.PropertyPermission "java.vm.version", "read";
+  permission java.util.PropertyPermission "java.vm.vendor", "read";
+  permission java.util.PropertyPermission "java.vm.name", "read";
+  permission java.util.PropertyPermission "*", "read,write";
+};
+

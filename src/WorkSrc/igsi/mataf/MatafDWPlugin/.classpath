@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <classpathentry kind="src" path="src"/>
+    <classpathentry kind="var"
+        path="ECLIPSE_HOME/plugins/org.eclipse.core.runtime_2.0.2/runtime.jar" sourcepath="_ORG_ECLIPSE_PLATFORM_SOURCE/org.eclipse.core.runtime_2.0.2/runtimesrc.zip"/>
+    <classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.core.runtime.nl1_2.0.0/nl1.jar"/>
+    <classpathentry kind="var"
+        path="ECLIPSE_HOME/plugins/org.eclipse.core.boot_2.0.2.1/boot.jar" sourcepath="_ORG_ECLIPSE_PLATFORM_SOURCE/org.eclipse.core.boot_2.0.2.1/bootsrc.zip"/>
+    <classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.core.boot.nl1_2.0.0/nl1.jar"/>
+    <classpathentry kind="var" path="JRE_LIB" rootpath="JRE_SRCROOT" sourcepath="JRE_SRC"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/Branch Transformation Toolkit/jars/dseb.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/eclipse/plugins/org.apache.xerces_4.0.7/xmlParserAPIs.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/eclipse/plugins/org.apache.xerces_4.0.7/xercesImpl.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/eclipse/plugins/org.eclipse.ui_2.0.2/workbench.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/eclipse/plugins/org.eclipse.swt.win32_2.0.2/ws/win32/swt.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/wstools/eclipse/plugins/com.ibm.dse.dw.model_4.3.0/dwmodel.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/wstools/eclipse/plugins/com.ibm.dse.dw.impl_4.3.0/dwimpl.jar"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/wstools/eclipse/plugins/com.ibm.dse.dw.impl_4.3.0/db2java.zip"/>
+    <classpathentry kind="lib" path="C:/IBM/WebSphere Studio/wstools/eclipse/plugins/com.ibm.dse.dw.gui_4.3.0/dwgui.jar"/>
+    <classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dbproj" default="schema" basedir=".">
+
+
+<property name="hibernate.home" value="c:/dev/lib/hibernate-3.0"/>
+
+ <!-- Set up the class path for compilation and execution -->
+
+ 
+<path id="project.jars">
+	<fileset dir="${hibernate.home}/lib" >
+		<include name="*.jar" />
+	</fileset>
+</path>
+
+
+<taskdef name="schemaexport" classname="org.hibernate.tool.hbm2ddl.SchemaExportTask" 
+	classpathref="project.jars" />
+
+<target name="schema" description="Generate DB schema from the O/R mapping files">
+	
+	<schemaexport properties="src/hibernate.properties"
+		quiet="no" text="no" drop="no" delimiter=";"
+		output="schema-export.sql" >
+		<fileset dir="src">
+			<include name="src/tables.hbm.xml"/>
+		</fileset>
+	</schemaexport>
+</target>
+
+</project>

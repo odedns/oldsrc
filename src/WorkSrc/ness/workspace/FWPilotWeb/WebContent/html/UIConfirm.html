@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="Content-Type"	content="text/html; charset=UTF-8">
+<script src="../scripts/UIConstants.js"></script>
+<script src="../scripts/UIUtil.js"></script>
+<script>
+function init()
+{
+	var messages = window.dialogArguments["messages"];
+	var messagesArray = tokenizer(messages,"|");
+	for (index = 0;index < messagesArray.length;index++)
+	{
+		messagesTable.insertRow();
+		messagesTable.rows[index].insertCell();
+		messagesTable.rows[index].cells[0].innerText = messagesArray[index];
+	}
+}
+</script>
+
+</head>
+<body onload="init()">
+<table border width="100%" height="100%">
+<tr><td>
+<table id="messagesTable" cellspacing="0" cellpadding="0" width="100%" height="100%" border=3>
+</table>
+</td></tr>
+<tr><td height="1" align="center">
+<table><tr>
+<td><input type="button" value="confirm" onclick="window.returnValue=true;self.close()"></td>
+<td><input type="button" value="cancel" onclick="window.returnValue=false;self.close()"></td>
+</tr></table>
+</td></tr>
+</table>
+</body>
+</html>

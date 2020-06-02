@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<strucd>
+	<group name="TGL.Records" />
+	<entity name="TGL data reference" relation="TGL record" 
+				pk="engStructName" />			
+	<btfield name="entryFunc" length="8" ignore="false" />
+	<btfield name="evsActive" length="1" ignore="true" />
+	<btfield name="exitFunc" length="8" ignore="false" />
+	<btfield name="fvsActive" length="1" ignore="true" />
+	<btfield name="checkType" length="1" ignore="true" />
+	<btfield name="blankZero" length="1" ignore="false" />
+	<btfield name="trimZero" length="1" ignore="false" />
+	<btfield name="isEbcedic" length="1" ignore="true" />
+	<btfield name="nullEnded" length="1" ignore="false" />
+	<btfield name="mashovFld" length="1" ignore="false" yn="true" />
+	<btfield name="type" length="2" ignore="false" />
+	<btfield name="lenAfterDot" length="1" ignore="false" />
+	<btfield name="lenBeforeDot" length="4" ignore="false" />
+	<btfield name="order" length="3" ignore="false" />
+	<btfield name="refId" length="20" ignore="false" />
+	<btfield name="engStructName" length="20" ignore="false" />
+	<btfield name="dictCode" length="1" ignore="false" />
+</strucd>

@@ -1,0 +1,23 @@
+Agents.DOC
+___________
+
+This is a program that simulates parallel operations on the same account.
+
+A Father process initiate an account file with a start sum, and
+sends some Agents to perform independent operations.
+Every agent updates the account after each operation, and list his
+operation in a personal log file.
+
+There is  also a Controller who checks if the data in the log files is
+consistent with the amount written in the account file.
+ 
+If it isn't it will state "Thieves in the system!" and will end
+the program.
+
+
+Syntax: agents N
+                  N is the number of parallel agents (actually: 0 < N <= 8 ).
+
+The program generates the following files:
+account  - The situation of the common account.
+a,b,c... - Each file is the log tracing the operation of each agent.

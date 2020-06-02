@@ -1,0 +1,156 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d68e008, pid=1900, tid=2456
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0-beta-b32c mixed mode)
+# Problematic frame:
+# V  [jvm.dll+0x5e008]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x007e83b8):  JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_vm, id=2456]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x02dd01cb
+
+Registers:
+EAX=0x000002de, EBX=0x00865014, ECX=0x738f8dc8, EDX=0x00865018
+ESP=0x0166f95c, EBP=0x0166f97c, ESI=0x02dd01c7, EDI=0x00000008
+EIP=0x6d68e008, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x0166f95c)
+0x0166f95c:   73722d38 6d6a400f 000002de 007e83b8
+0x0166f96c:   73722b38 0074d8c8 08200021 00000028
+0x0166f97c:   0166f9a8 6d703a10 00865010 73722ce8
+0x0166f98c:   007e83b8 6d6e8b79 73722ce8 0166f9c0
+0x0166f99c:   0166f9d4 008436a8 0085f401 0166f9c4
+0x0166f9ac:   6d354228 007e83b8 008436a8 0166f9c0
+0x0166f9bc:   0166fb70 0166fb40 0166fb70 6d35ab37
+0x0166f9cc:   0166fb40 0166f9e0 00000001 007e83b8 
+
+Instructions: (pc=0x6d68e008)
+0x6d68dff8:   03 00 00 5e c2 08 00 8b 44 24 04 56 8b 74 81 18
+0x6d68e008:   8b 46 04 8d 48 08 8b 40 08 ff 50 7c 85 c0 74 05 
+
+
+Stack: [0x01570000,0x01670000),  sp=0x0166f95c,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5e008]
+V  [jvm.dll+0xd3a10]
+C  [jdwp.dll+0x4228]
+C  [jdwp.dll+0xab37]
+C  [jdwp.dll+0x16c19]
+V  [jvm.dll+0x11eba7]
+V  [jvm.dll+0x11eb75]
+C  [MSVCRT.dll+0x60ce]
+C  [KERNEL32.DLL+0x87dd]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0086c380 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2156]
+  0x0086a968 JavaThread "CompilerThread0" daemon [_thread_blocked, id=1796]
+  0x00869b98 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1680]
+  0x00866cf0 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=1076]
+  0x008660f0 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=788]
+=>0x007e83b8 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_in_vm, id=2456]
+  0x00844c70 JavaThread "Finalizer" daemon [_thread_blocked, id=1536]
+  0x00843798 JavaThread "Reference Handler" daemon [_thread_blocked, id=1364]
+  0x007e7b68 JavaThread "main" [_thread_blocked, id=2136]
+
+Other Threads:
+  0x00840ea8 VMThread [id=1576]
+  0x0087e940 WatcherThread [id=1168]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 421K [0x6f570000, 0x6f610000, 0x6fa50000)
+  eden space 512K,  82% used [0x6f570000, 0x6f5d8fe8, 0x6f5f0000)
+  from space 64K,   2% used [0x6f600000, 0x6f600778, 0x6f610000)
+  to   space 64K,   0% used [0x6f5f0000, 0x6f5f0000, 0x6f600000)
+ tenured generation   total 1408K, used 727K [0x6fa50000, 0x6fbb0000, 0x73570000)
+   the space 1408K,  51% used [0x6fa50000, 0x6fb05cd0, 0x6fb05e00, 0x6fbb0000)
+ compacting perm gen  total 8192K, used 3635K [0x73570000, 0x73d70000, 0x77570000)
+   the space 8192K,  44% used [0x73570000, 0x738fcd90, 0x738fce00, 0x73d70000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040b000 	C:\j2sdk1.5.0\bin\javaw.exe
+0x77f80000 - 0x77ffb000 	C:\WINNT\System32\ntdll.dll
+0x77db0000 - 0x77e0d000 	C:\WINNT\system32\ADVAPI32.dll
+0x77e80000 - 0x77f36000 	C:\WINNT\system32\KERNEL32.DLL
+0x77d30000 - 0x77da1000 	C:\WINNT\system32\RPCRT4.DLL
+0x77e10000 - 0x77e75000 	C:\WINNT\system32\USER32.dll
+0x77f40000 - 0x77f7c000 	C:\WINNT\system32\GDI32.DLL
+0x78000000 - 0x78046000 	C:\WINNT\system32\MSVCRT.dll
+0x6ca60000 - 0x6ca68000 	C:\WINNT\System32\LPK.DLL
+0x66650000 - 0x666a4000 	C:\WINNT\System32\USP10.dll
+0x6d630000 - 0x6d7d7000 	C:\j2sdk1.5.0\jre\bin\client\jvm.dll
+0x77570000 - 0x775a0000 	C:\WINNT\System32\WINMM.dll
+0x6d270000 - 0x6d277000 	C:\j2sdk1.5.0\jre\bin\hpi.dll
+0x690a0000 - 0x690ab000 	C:\WINNT\System32\PSAPI.DLL
+0x6d350000 - 0x6d384000 	C:\j2sdk1.5.0\jre\bin\jdwp.dll
+0x6d600000 - 0x6d60b000 	C:\j2sdk1.5.0\jre\bin\verify.dll
+0x6d2e0000 - 0x6d2fc000 	C:\j2sdk1.5.0\jre\bin\java.dll
+0x6d620000 - 0x6d62e000 	C:\j2sdk1.5.0\jre\bin\zip.dll
+0x6d210000 - 0x6d216000 	C:\j2sdk1.5.0\jre\bin\dt_socket.dll
+0x00dc0000 - 0x00dd3000 	C:\WINNT\System32\WS2_32.dll
+0x00de0000 - 0x00de8000 	C:\WINNT\System32\WS2HELP.DLL
+0x782c0000 - 0x782cc000 	C:\WINNT\System32\rnr20.dll
+0x77980000 - 0x779a4000 	C:\WINNT\System32\DNSAPI.DLL
+0x00df0000 - 0x00df8000 	C:\WINNT\System32\WSOCK32.DLL
+0x00e00000 - 0x00e13000 	C:\WINNT\System32\iphlpapi.dll
+0x00e20000 - 0x00e25000 	C:\WINNT\System32\ICMP.DLL
+0x00e30000 - 0x00e47000 	C:\WINNT\System32\MPRAPI.DLL
+0x00e50000 - 0x00e60000 	C:\WINNT\System32\SAMLIB.DLL
+0x00e60000 - 0x00eaf000 	C:\WINNT\System32\NETAPI32.DLL
+0x77be0000 - 0x77bef000 	C:\WINNT\System32\SECUR32.DLL
+0x00eb0000 - 0x00eb6000 	C:\WINNT\System32\NETRAP.DLL
+0x77950000 - 0x7797a000 	C:\WINNT\system32\WLDAP32.DLL
+0x77a50000 - 0x77b45000 	C:\WINNT\system32\OLE32.DLL
+0x779b0000 - 0x77a4b000 	C:\WINNT\system32\OLEAUT32.DLL
+0x00ec0000 - 0x00eee000 	C:\WINNT\System32\ACTIVEDS.DLL
+0x00ef0000 - 0x00f12000 	C:\WINNT\System32\ADSLDPC.DLL
+0x77830000 - 0x7783e000 	C:\WINNT\System32\RTUTILS.DLL
+0x77880000 - 0x7790d000 	C:\WINNT\System32\SETUPAPI.DLL
+0x77c10000 - 0x77c6e000 	C:\WINNT\System32\USERENV.DLL
+0x00f20000 - 0x00f52000 	C:\WINNT\System32\RASAPI32.DLL
+0x00f60000 - 0x00f71000 	C:\WINNT\System32\RASMAN.DLL
+0x00f80000 - 0x00fa2000 	C:\WINNT\System32\TAPI32.DLL
+0x00fb0000 - 0x01034000 	C:\WINNT\system32\COMCTL32.DLL
+0x01040000 - 0x010a5000 	C:\WINNT\system32\SHLWAPI.DLL
+0x010b0000 - 0x010c9000 	C:\WINNT\System32\DHCPCSVC.DLL
+0x777e0000 - 0x777e8000 	C:\WINNT\System32\winrnr.dll
+0x777f0000 - 0x777f5000 	C:\WINNT\System32\rasadhlp.dll
+0x01540000 - 0x0155d000 	C:\WINNT\system32\msafd.dll
+0x01560000 - 0x01567000 	C:\WINNT\System32\wshtcpip.dll
+0x10000000 - 0x1001b000 	C:\j2sdk1.5.0\jre\bin\bridge2java.dll
+0x6d4a0000 - 0x6d4b3000 	C:\j2sdk1.5.0\jre\bin\net.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,suspend=y,address=localhost:10076
+java_command: com.mataf.dse.appl.OpenDesktop
+
+Environment Variables:
+CLASSPATH=.;C:\PROGRA~1\IBM\SQLLIB\java\db2java.zip;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc.jar;C:\PROGRA~1\IBM\SQLLIB\java\sqlj.zip;C:\PROGRA~1\IBM\SQLLIB\bin;C:\PROGRA~1\IBM\SQLLIB\java\common.jar;C:\j2sdk1.5.0\jre\bin;
+PATH=C:\PROGRA~1\RATIONAL\RATION~1\NUTCROOT\bin;C:\PROGRA~1\RATIONAL\RATION~1\NUTCROOT\bin\x11;C:\PROGRA~1\RATIONAL\RATION~1\NUTCROOT\mksnt;C:\Program Files\CA\pec\bin;C:\Program Files\SNA\system;c:\Oracle\Ora81\bin;C:\Program Files\Oracle\jre\1.1.7\bin;C:\WINNT\system32;C:\WINNT;C:\WINNT\System32\Wbem;C:\Program Files\IBM\Trace Facility;C:\MCESM\EXE;c:\Oracle\Ora8030\BIN;C:\ORANT80\BIN;C:\ORANT8\BIN;T:\;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\PROGRA~1\IBM\SQLLIB\SAMPLES\REPL;L:\DLL;C:\j2sdk1.5.0\jre\bin;c:\Prorgam Files\ZipApps;L:\DLL;L:\DLLW;C:\j2sdk1.5.0\jre\bin\;c:\j2sdk1.5.0\bin;C:\Program Files\CA\CCC_Harvest;C:\CSNTAPI;C:\Program Files\cvsnt;I:\CVSNT;C:\Program Files\Rational\common
+USERNAME=Nati
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 2 Stepping 7, GenuineIntel
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 2000 Build 2195 Service Pack 3
+
+CPU:total 1(active 1) family 15, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 777200k(235792k free), swap 1911868k(1429864k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0-beta-b32c) for windows-x86, built on Jan 23 2004 01:52:20 by "java_re" with MS VC++ 6.0
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="NFW_JARS/ejbClient.jar"/>
+	<classpathentry kind="var" path="NFW_JARS/js.jar"/>
+	<classpathentry kind="var" path="NFW_JARS/log4j-1.2.9.jar"/>
+	<classpathentry kind="var" path="NFW_JARS/commons-collections-3.1.jar"/>
+	<classpathentry kind="var" path="NFW_JARS/commons-pool-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/ibm/SDP/6.0/runtimes/base_v51/lib/j2ee.jar"/>
+	<classpathentry kind="lib" path="C:/ibm/SDP/6.0/runtimes/base_v51/java/lib/tools.jar"/>
+	<classpathentry kind="lib" path="C:/ibm/jars/fmcjapi.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

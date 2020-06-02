@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sibresources="http://www.ibm.com/websphere/appserver/schemas/6.0/sibresources.xmi">
+  <sibresources:SIBTopicSpace xmi:id="SIBTopicSpace_1183908996892" identifier="Default.Topic.Space" uuid="0FE6D99BBA60CE42D627BB7A" description="" sendAllowed="true" receiveAllowed="true">
+    <localizationPointRefs xmi:id="SIBLocalizationPointRef_1183909028627" node="N814Node03" server="server1" engineUuid="82F8A0F1979DB2CE"/>
+  </sibresources:SIBTopicSpace>
+  <sibresources:SIBQueue xmi:id="SIBQueue_1183909028580" identifier="_SYSTEM.Exception.Destination.N814Node03.server1-busHOSHEN" uuid="40AA4AD5C039317648190D02">
+    <localizationPointRefs xmi:id="SIBLocalizationPointRef_1183909028595" node="N814Node03" server="server1" engineUuid="82F8A0F1979DB2CE"/>
+  </sibresources:SIBQueue>
+  <sibresources:SIBQueue xmi:id="SIBQueue_1184155936593" identifier="queueTest" uuid="6975D3F8F11F9A5106034660" description="" overrideOfQOSByProducerAllowed="true" exceptionDestination="$DEFAULT_EXCEPTION_DESTINATION" sendAllowed="true" receiveAllowed="true">
+    <localizationPointRefs xmi:id="SIBLocalizationPointRef_1184155936687" node="N814Node03" server="server1" engineUuid="82F8A0F1979DB2CE"/>
+  </sibresources:SIBQueue>
+</xmi:XMI>

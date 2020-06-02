@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>FWEar</name>
+	<comment></comment>
+	<projects>
+		<project>FWPilotWeb</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.ibm.wtp.migration.MigrationBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.etools.validation.validationbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.sse.model.structuredbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.wtp.j2ee.EARNature</nature>
+		<nature>com.tssap.j2ee.core.ear.earNature</nature>
+		<nature>com.ibm.etools.j2ee.EAR13Nature</nature>
+	</natures>
+</projectDescription>

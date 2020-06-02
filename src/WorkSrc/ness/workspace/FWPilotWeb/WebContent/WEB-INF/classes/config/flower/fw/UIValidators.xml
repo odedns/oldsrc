@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<!-- ========================== -->
+	<!-- List Model Existance check -->
+	<!-- ========================== -->
+	
+	<!-- Check if the list model contains selected values (for mandatory fields) -->
+	<validationCheckDefinition name="listSelectionCheck" method="isSelectionExists" class="com.ness.fw.shared.validation.ui.ListValidator">
+		<checkParamDefinition name="field" type="com.ness.fw.ui.ListModel" multiplicity="1"/>
+	</validationCheckDefinition>
+
+	<!-- ========================== -->
+	<!-- Editable List Model Existance check -->
+	<!-- ========================== -->
+	
+	<!-- Check if the list model contains selected values (for mandatory fields) -->
+	<validationCheckDefinition name="editableListSelectionCheck" method="isEditableSelectionExists" class="com.ness.fw.shared.validation.ui.ListValidator">
+		<checkParamDefinition name="field" type="com.ness.fw.ui.ListModel" multiplicity="1"/>
+	</validationCheckDefinition>
+
+
+</root>

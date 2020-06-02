@@ -1,0 +1,10 @@
+set node [$AdminControl getNode]
+set serverName "server1"
+set encoding "cp1255"
+set s1 [$AdminConfig getid /Node:$node/Server:$serverName/]
+set procDef [$AdminConfig list JavaProcessDef]
+set jvm [$AdminConfig list JavaVirtualMachine $procDef]
+$AdminConfig  modify $jvm {{systemProperties {{{description "Hebrew char set"}{name file.encoding } {required true} {value $encoding}}}}}
+$AdminConfig save
+puts "Updated systemProperties"
+

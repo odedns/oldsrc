@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!-- STD less than or equal to 2, with bins and batches/-->
+<!-- VLT less than or equal to 2, no bins and batches/-->
+<branch>
+ <branchId>0000000001</branchId>
+ <!-- Cash drawer definition/-->
+ <cashDrawer currency="USD" type="STD" scale="2">
+  <baitbills denomination="1" no="5" />
+  <trays>WRK RS1 RS2</trays>
+  <totals>CASH_IN CASH_OUT CHECK_BATCH HOLDOVER_CHECK_BATCH TRANSIT ON_US_CHECK WITHDRAWAL DEPOSIT TX_DEBIT TX_CREDIT</totals>
+<!-- bins can be empty/-->
+  <bins>TRANSIT ON_US</bins>
+  <closeLimit>9000</closeLimit>
+  <overShortLimit>9</overShortLimit>
+  <drawerHighWorkingLimit>1000000</drawerHighWorkingLimit>
+  <drawerLowWorkingLimit>100000</drawerLowWorkingLimit>
+  <!-- Tray definition/-->
+  <tray type="WRK">
+<!-- trayHighLimit can be empty /-->
+   <trayHighLimit>1100000</trayHighLimit>
+<!-- trayLowLimit can be empty /-->
+   <trayLowLimit>11000</trayLowLimit>
+  </tray>
+  <tray type="RS1">
+   <trayHighLimit>2200000</trayHighLimit>
+   <trayLowLimit>220000</trayLowLimit>
+  </tray>
+  <tray type="RS2">
+   <trayHighLimit>3300000</trayHighLimit>
+   <trayLowLimit>330000</trayLowLimit>
+  </tray>
+
+  <!-- Bin definition /-->
+<!-- bin can have various bin /-->
+  <bin type="TRANSIT">
+<!-- binCountLimit can be empty/-->
+   <binCountLimit>40</binCountLimit>
+<!-- binAmountLimit can be empty/-->
+   <binAmountLimit>1000000</binAmountLimit>
+  </bin>
+  <bin type="ON_US">
+   <binCountLimit>40</binCountLimit>
+   <binAmountLimit>1000000</binAmountLimit>
+  </bin>
+ </cashDrawer>
+
+ <cashDrawer currency="CAD" type="STD" scale="2">
+  <baitbills denomination="1" no="5" />
+  <trays>WRK RS1 RS2</trays>
+  <totals>CASH_IN CASH_OUT CHECK_BATCH HOLDOVER_CHECK_BATCH TRANSIT ON_US_CHECK WITHDRAWAL DEPOSIT TX_DEBIT TX_CREDIT</totals>
+<!-- bins can be empty/-->
+  <bins>TRANSIT ON_US</bins>
+  <closeLimit>9000</closeLimit>
+  <overShortLimit>9</overShortLimit>
+  <drawerHighWorkingLimit>10000000</drawerHighWorkingLimit>
+  <drawerLowWorkingLimit>1000000</drawerLowWorkingLimit>
+  <!-- Tray definition /-->
+  <tray type="WRK">
+<!-- trayHighLimit can be empty/-->
+   <trayHighLimit>1010000</trayHighLimit>
+<!-- trayLowLimit can be empty/-->
+   <trayLowLimit>101000</trayLowLimit>
+  </tray>
+  <tray type="RS1">
+   <trayHighLimit>1020000</trayHighLimit>
+   <trayLowLimit>102000</trayLowLimit>
+  </tray>
+  <tray type="RS2">
+   <trayHighLimit>1030000</trayHighLimit>
+   <trayLowLimit>103000</trayLowLimit>
+  </tray>
+
+  <!-- Bin definition/-->
+<!-- bin can have various bin/-->
+  <bin type="TRANSIT">
+<!-- binCountLimit can be empty/-->
+   <binCountLimit>55</binCountLimit>
+<!-- binAmountLimit can be empty/-->
+   <binAmountLimit>1000000</binAmountLimit>
+  </bin>
+  <bin type="ON_US">
+   <binCountLimit>50</binCountLimit>
+   <binAmountLimit>1000000</binAmountLimit>
+  </bin>
+ </cashDrawer>
+
+
+ <cashDrawer currency="CAD" type="VLT" scale="2">
+  <baitbills denomination="2" no="3" />
+  <trays>WRK RS1 RS2</trays>
+  <totals>CASH_IN CASH_OUT GL_DEBIT GL_CREDIT TX_DEBIT TX_CREDIT</totals>
+  <bins></bins>
+  <closeLimit>8000</closeLimit>
+  <overShortLimit>8</overShortLimit>
+  <drawerHighWorkingLimit>100000000</drawerHighWorkingLimit>
+  <drawerLowWorkingLimit>1000000</drawerLowWorkingLimit>
+  <!-- Tray definition/-->
+  <tray type="WRK">
+   <trayHighLimit>1001000</trayHighLimit>
+   <trayLowLimit>100100</trayLowLimit>
+  </tray>
+  <tray type="RS1">
+   <trayHighLimit>1002000</trayHighLimit>
+   <trayLowLimit>100200</trayLowLimit>
+  </tray>
+  <tray type="RS2">
+   <trayHighLimit>1003000</trayHighLimit>
+   <trayLowLimit>100300</trayLowLimit>
+  </tray>
+
+  <!-- Bin definition/-->
+  <bin type="TRANSIT">
+   <binCountLimit>25</binCountLimit>
+   <binAmountLimit>600000</binAmountLimit>
+  </bin>
+  <bin type="ON_US">
+   <binCountLimit>35</binCountLimit>
+   <binAmountLimit>900000</binAmountLimit>
+  </bin>
+ </cashDrawer>
+
+ <cashDrawer currency="USD" type="VLT" scale="2">
+  <baitbills denomination="2" no="3" />
+  <trays>WRK RS1 RS2</trays>
+  <totals>CASH_IN CASH_OUT GL_DEBIT GL_CREDIT TX_DEBIT TX_CREDIT</totals>
+  <bins></bins>
+  <closeLimit>8000</closeLimit>
+  <overShortLimit>8</overShortLimit>
+  <drawerHighWorkingLimit>1000000</drawerHighWorkingLimit>
+  <drawerLowWorkingLimit>10000</drawerLowWorkingLimit>
+  <!-- Tray definition/-->
+  <tray type="WRK">
+   <trayHighLimit>2010000</trayHighLimit>
+   <trayLowLimit>201000</trayLowLimit>
+  </tray>
+  <tray type="RS1">
+   <trayHighLimit>2020000</trayHighLimit>
+   <trayLowLimit>202000</trayLowLimit>
+  </tray>
+  <tray type="RS2">
+   <trayHighLimit>2030000</trayHighLimit>
+   <trayLowLimit>203000</trayLowLimit>
+  </tray>
+
+  <!-- Bin definition/-->
+  <bin type="TRANSIT">
+   <binCountLimit>20</binCountLimit>
+   <binAmountLimit>800000</binAmountLimit>
+  </bin>
+  <bin type="ON_US">
+   <binCountLimit>30</binCountLimit>
+   <binAmountLimit>1000000</binAmountLimit>
+  </bin>
+ </cashDrawer>
+
+  <!-- cash Drawer ID Range /-->
+ <idRange>
+<!-- std can be empty /-->
+  <std min="0000000001" max="0000000300" />
+<!-- vlt can be empty /-->
+  <vlt min="0000000500" max="0000000550" />
+ </idRange>
+
+ <!-- Totaling Rule/-->
+ <txnCode code="DEPOSIT">
+  <totalingRule action="INCREMENT" affects="DEPOSIT" txnAmountName="DEPOSIT" />
+  <totalingRule action="INCREMENT" affects="CASH_IN" txnAmountName="CASH_IN" />
+  <totalingRule action="INCREMENT" affects="CASH_OUT" txnAmountName="CASH_OUT" />
+  <totalingRule action="INCREMENT" affects="TRANSIT" txnAmountName="TRANSIT" />
+  <totalingRule action="INCREMENT" affects="ON_US_CHECK" txnAmountName="ON_US_CHECK" />
+  <totalingRule action="ADD_BATCH_ITEM" affects="TRANSIT" txnAmountName="TRANSIT" />
+  <totalingRule action="ADD_BATCH_ITEM" affects="ON_US" txnAmountName="ON_US_CHECK" />
+ </txnCode>
+ <txnCode code="WITHDRAWAL">
+  <totalingRule action="INCREMENT" affects="WITHDRAWAL" txnAmountName="WITHDRAWAL" />
+  <totalingRule action="INCREMENT" affects="CASH_OUT" txnAmountName="CASH_OUT" />
+ </txnCode>
+
+ <!-- Teller Exchange Totalling Rules/-->
+
+ <txnCode code="TX_IN">
+  <totalingRule action="INCREMENT" affects="CASH_IN" txnAmountName="CASH_IN" />
+  <totalingRule action="INCREMENT" affects="TX_CREDIT" txnAmountName="CASH_IN" />
+ </txnCode>
+
+ <txnCode code="TX_OUT">
+  <totalingRule action="INCREMENT" affects="CASH_OUT" txnAmountName="CASH_OUT" />
+  <totalingRule action="INCREMENT" affects="TX_DEBIT" txnAmountName="CASH_OUT" />
+ </txnCode>
+
+ <!-- Post Over/Short Totalling Rules/-->
+
+ <txnCode code="POSTSHORT">
+  <totalingRule action="INCREMENT" affects="CASH_IN" txnAmountName="CASH_IN" />
+  <totalingRule action="INCREMENT" affects="TX_CREDIT" txnAmountName="CASH_IN" />
+ </txnCode>
+
+ <txnCode code="POSTOVER">
+  <totalingRule action="INCREMENT" affects="CASH_OUT" txnAmountName="CASH_OUT" />
+  <totalingRule action="INCREMENT" affects="TX_DEBIT" txnAmountName="CASH_OUT" />
+ </txnCode>
+
+
+</branch>
+

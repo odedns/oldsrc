@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE map
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN"
+         "map_1_0.dtd">
+
+<map version="1.0">
+	<mapID target="toplevelfolder" url="images/toplevel.gif" />
+	<mapID target="intro" url="help/intro.html" />
+
+	<mapID target="withdrawal" url="help/withdrawal.html" />
+	<mapID target="withaccnumber" url="help/withaccnumber.html" />
+	<mapID target="withamount" url="help/withamount.html" />
+	<mapID target="withdate" url="help/withdate.html" />
+
+	<mapID target="deposit" url="help/deposit.html" />
+	<mapID target="depaccnumber" url="help/depaccnumber.html" />
+	<mapID target="depamount" url="help/depamount.html" />
+	<mapID target="depdate" url="help/depdate.html" />
+
+	<mapID target="transfer" url="help/transfer.html" />
+	<mapID target="transoriacc" url="help/transoriacc.html" />
+	<mapID target="transdestacc" url="help/transdestacc.html" />
+	<mapID target="transdate" url="help/transdate.html" />
+
+	<mapID target="newcard" url="help/newcard.html" />
+	<mapID target="newcardtype" url="help/newcardtype.html" />
+	<mapID target="newcardlimit" url="help/newcardlimit.html" />
+	<mapID target="newcardowner" url="help/newcardowner.html" />
+
+	<mapID target="cancelcard" url="help/cancelcard.html" />
+	<mapID target="cancardnum" url="help/cancardnum.html" />
+
+	<mapID target="newlimitcard" url="help/newlimitcard.html" />
+	<mapID target="newlimitnum" url="help/newlimitnum.html" />
+	<mapID target="newlimitlimit" url="help/newlimitlimit.html" />
+	<mapID target="newlimitdate" url="help/newlimitdate.html" />
+</map>

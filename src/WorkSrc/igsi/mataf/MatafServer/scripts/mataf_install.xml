@@ -1,0 +1,166 @@
+<!-- 
+Ant install file for the mataf teller application.
+Oded Nissan 17/01/2004
+-->
+<project name="mataf-install" default="install" basedir="." >
+	<description>
+		install mataf application 
+	</description>	
+	<!-- set global properties for this build -->
+	<property name="wks_dir" location="d:/workspace"/>	
+	<property name="dist_dir" location="d:/work/proj"/>	
+	<property name="server" value="${wks_dir}/MatafServer"/>
+	<property name="client" value="${wks_dir}/MatafClient/appClientModule"/>
+	<property name="desktop" value="${wks_dir}/DesktopProject/appClientModule"/>
+	<property name="bridge2java"  value="${wks_dir}/Bridge 2 Java/appClientModule" />
+	<property name="tellerproject"  value="${wks_dir}/TellerProject/src" />
+	<property name="client_dest" value="${dist_dir}/mataf_client"/>
+	<property name="server_dest" value="${dist_dir}/mataf_server"/>
+	
+	<property name="target_server" value="10.11.103.216:9080"/>
+	<property name="orig_server" value="127.0.0.1:9080"/>
+	
+	<property name="target_mq_server" value="10.11.103.216"/>
+	<property name="orig_mq_server" value="10.11.103.216"/>
+	<property name="target_qmgr" value="Q283US00"/>
+	<property name="orig_qmgr" value="Q283US00"/>
+
+	<target name="show-vars" description="show script variables" >
+		 <echo message="basedir= ${basedir}"/>
+         <echo message="dist_dir= ${dist_dir}"/>
+       	 <echo message="client= ${client}"/>    
+         <echo message="client_dest= ${client_dest}"/>
+         <echo message="server_dest= ${server_dest}"/>
+	</target>
+	<!-- build the installation directory tree and 
+		install the client and server applications.
+	-->
+	
+	
+	<target name="change_files" description="change configuration files" >
+		<!-- now modify the configuration files -->		
+		<replaceregexp file="${server}/Web Content/dse/dse.ini"
+                         match="http://${orig_server}/MatafServer"
+                         replace="http://${target_server}/MatafServer"
+                         byline="true"/>
+
+        <!-- hosname attribute in MQ service -->
+        <replaceregexp file="${server}/Web Content/dse/client/dsesrvce.xml"
+                         match="hostName=&quot;${orig_mq_server}&quot;"
+                         replace="hostName=&quot;${target_mq_server}&quot;"
+                         byline="true"/>
+                         
+	  <replaceregexp file="${server}/Web Content/dse/server/dsesrvce.xml"
+                         match="hostName=&quot;${orig_mq_server}&quot;"
+                         replace="hostName=&quot;${target_mq_server}&quot;"
+                         byline="true"/>
+                                                  
+		<!-- mqueue queue manager name in MQ Service-->                         
+        <replaceregexp file="${server}/Web Content/dse/client/dsesrvce.xml"
+                         match="QMgrName=&quot;${orig_qmgr}&quot;"
+                         replace="QMgrName=&quot;${target_qmgr}&quot;"
+                         byline="true"/>
+
+		 <replaceregexp file="${server}/Web Content/dse/server/dsesrvce.xml"
+                         match="QMgrName=&quot;${orig_qmgr}&quot;"
+                         replace="QMgrName=&quot;${target_qmgr}&quot;"
+                         byline="true"/>
+
+	</target>
+	
+	<target name="restore_files" description="change configuration files" >
+		<!-- now modify the configuration files -->		
+		<replaceregexp file="${server}/Web Content/dse/dse.ini"
+                         match="http://${target_server}/MatafServer"
+                         replace="http://${orig_server}/MatafServer"
+                         byline="true"/>
+
+        <!-- hosname attribute in MQ service -->
+        <replaceregexp file="${server}/Web Content/dse/client/dsesrvce.xml"
+                         match="hostName=&quot;${target_mq_server}&quot;"
+                         replace="hostName=&quot;${orig_mq_server}&quot;"
+                         byline="true"/>
+                         
+	  <replaceregexp file="${server}/Web Content/dse/server/dsesrvce.xml"
+                         match="hostName=&quot;${target_mq_server}&quot;"
+                         replace="hostName=&quot;${orig_mq_server}&quot;"
+                         byline="true"/>
+                                                  
+		<!-- mqueue queue manager name in MQ Service-->                         
+        <replaceregexp file="${server}/Web Content/dse/client/dsesrvce.xml"
+                         match="QMgrName=&quot;${target_qmgr}&quot;"
+                         replace="QMgrName=&quot;${orig_qmgr}&quot;"
+                         byline="true"/>
+
+		 <replaceregexp file="${server}/Web Content/dse/server/dsesrvce.xml"
+                         match="QMgrName=&quot;${target_qmgr}&quot;"
+                         replace="QMgrName=&quot;${orig_qmgr}&quot;"
+                         byline="true"/>
+
+	</target>
+	
+	<target name="install" depends="change_files" description="build the instalation dir" >
+		<!-- Create the distribution directory -->
+		<mkdir dir="${client_dest}"/>
+		<mkdir dir="${server_dest}"/>
+		<mkdir dir="${client_dest}/jars"/>
+		<mkdir dir="${client_dest}/lib"/>
+		<!-- create the jar files for the projects -->
+		<jar jarfile="${client_dest}/jars/MatafClient.jar" basedir="${client}"
+		  excludes="**/*.java" />
+  		<jar jarfile="${client_dest}/jars/Bridge_2_Java.jar" basedir="${bridge2java}"
+		  excludes="**/*.java" />
+
+  		<jar jarfile="${client_dest}/jars/TellerProject.jar" basedir="${tellerproject}"
+		  excludes="**/*.java" />
+
+  		<jar jarfile="${client_dest}/jars/DesktopProject.jar" basedir="${desktop}"
+		  excludes="**/*.java" />
+
+		
+		<!-- the MatafServer project -->
+		<jar jarfile="${client_dest}/jars/MatafServer.jar" basedir="${server}/Web Content/WEB-INF/classes" />
+		<!-- copy jars from the server's client Jars directory -->
+		<copy todir="${client_dest}/jars" >
+		    <fileset dir="${server}/Web Content/Client Jars" />
+	    </copy>
+	    <copy todir="${client_dest}/lib" >
+		    <fileset dir="${client}/../lib" />
+	    </copy>
+	    <copy file="${server}/scripts/run_desktop.cmd" 
+	    	todir="${client_dest}"/>
+	    	
+	    	
+	    <copy todir="${server_dest}" >
+		    <fileset dir="${server}/dll" />
+	    </copy>
+		
+		<!-- copy tellerproject.jar to the web application -->
+	    <copy file="${client_dest}/jars/TellerProject.jar" 
+	    	todir="${server}/Web Content/WEB-INF/lib"/>
+
+		<!-- create the WAR file for the server project. -->
+		<war warfile="${client_dest}/jars/MatafServer.war" basedir="${server}/Web Content" 
+			webxml="${server}/Web Content/WEB-INF/web.xml" 
+			excludes="${server}/Web Content/Client Jars/*" />
+
+		<!-- now delete the TellerProject.jar file 
+			from the web application -->
+	    <delete file="${server}/Web Content/WEB-INF/lib/TellerProject.jar" />
+
+		<!-- the ear file for the server -->			
+		<ear earfile="${server_dest}/MatafEAR.ear" appxml="${wks_dir}/MatafEAR/meta-inf/application.xml">
+		    <fileset dir="${client_dest}/jars" includes="Bridge_2_Java.jar,MatafClient.jar,DesktopProject.jar,TellerProject.jar,MatafServer.war"/>
+	    </ear>
+	    <!-- now delete the war file from the client dir -->
+	    <delete file="${client_dest}/jars/MatafServer.war" />
+	</target>
+
+	<!-- cleanup -->
+	<target name="clean" description="clean up" >
+	    <!-- Delete the ${build} and ${dist} directory trees -->
+	    <delete dir="${client_dest}"/>
+	    <delete dir="${server_dest}"/>
+    </target>
+
+</project>

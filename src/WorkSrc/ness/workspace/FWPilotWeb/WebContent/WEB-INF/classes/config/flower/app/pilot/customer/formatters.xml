@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+	<formatterDefinition name="customerTypeFormatter" type="simple">
+		<format fromName="selectedCustomerTypeModel" toName="customerTypeModel" />
+		<format fromName="selectedType" toName="customerType" />
+		<format fromName="custID" toName="custID" />
+	</formatterDefinition>
+
+	<formatterDefinition name="customerTypeInFormatter" type="simple">
+		<format fromName="customerTypeModel" toName="customerTypeModel" />
+	</formatterDefinition>
+
+	<formatterDefinition name="customerTypeOutFormatter" type="simple">
+		<format fromName="customerTypeModel" toName="selectedCustomerTypeModel" />
+		<format fromName="customerType" toName="selectedType" />
+	</formatterDefinition>
+</root>

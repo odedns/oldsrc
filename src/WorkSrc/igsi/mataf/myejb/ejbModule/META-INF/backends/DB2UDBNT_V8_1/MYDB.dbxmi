@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDBSchema:RDBDatabase xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:RDBSchema="RDBSchema.xmi" xmi:id="RDBDatabase_1046705402766" name="MYDB">
+  <schemata href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP.schxmi#RDBSchema_1046705402781"/>
+  <tableGroup xmi:type="RDBSchema:RDBTable" href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP_MYCMP.tblxmi#RDBTable_1046705402734"/>
+  <domain href="DB2UDBNT_V8_Domain.xmi#SQLVendor_1"/>
+</RDBSchema:RDBDatabase>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd" >
+
+<faces-config>
+	<application>
+		<variable-resolver>
+		jsfdemo.MyVariableResolver
+		</variable-resolver>
+	</application>
+	<!-- managed beans of the simple hello world app -->
+	<managed-bean>
+		<managed-bean-name>helloWorldBacking</managed-bean-name>
+		<managed-bean-class>org.apache.myfaces.blank.HelloWorldBacking</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>testBean</managed-bean-name>
+		<managed-bean-class>jsfdemo.TestBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>movieBean</managed-bean-name>
+		<managed-bean-class>jsfdemo.MovieBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+	      <property-name>context</property-name>
+    		  <value>movieList</value>
+	   </managed-property>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>movieDetails</managed-bean-name>
+		<managed-bean-class>jsfdemo.Movie</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	
+	<!-- navigation rules for helloWorld.jsp -->
+	<navigation-rule>
+		<from-view-id>/jsfdemo/index.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>selections</from-outcome>
+			<to-view-id>/jsfdemo/selections.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>input</from-outcome>
+			<to-view-id>/jsfdemo/input.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>output</from-outcome>
+			<to-view-id>/jsfdemo/output.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>catalog</from-outcome>
+			<to-view-id>/jsfdemo/catalog.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>tabs</from-outcome>
+			<to-view-id>/jsfdemo/tabs.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>popup</from-outcome>
+			<to-view-id>/jsfdemo/opener.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dynamic</from-outcome>
+			<to-view-id>/jsfdemo/dynamic.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>masterdetail</from-outcome>
+			<to-view-id>/jsfdemo/master_detail.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>tomahawk</from-outcome>
+			<to-view-id>/jsfdemo/tomahawk.jsp</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+  <navigation-rule>
+	<from-view-id>/jsfdemo/catalog.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>movieDetails</from-outcome>
+      <to-view-id>/jsfdemo/movieDetails.jsp</to-view-id>
+    </navigation-case>   
+  </navigation-rule>
+
+ <navigation-rule>
+    <from-view-id>/jsfdemo/movieDetails.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>closeDetails</from-outcome>
+      <to-view-id>/jsfdemo/catalog.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>saveDetails</from-outcome>
+      <to-view-id>/jsfdemo/catalog.jsp</to-view-id>
+    </navigation-case>
+ 	
+  </navigation-rule>
+	
+	
+	<!-- navigation rules for index.jsp -->
+	<navigation-rule>
+		<from-view-id>/jsfdemo/*</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/jsfdemo/index.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	
+</faces-config>

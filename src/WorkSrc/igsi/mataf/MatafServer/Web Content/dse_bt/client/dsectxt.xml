@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Contexts>
+     <!--DWGroupDef:Test Bank Teller.Client.Contexts-->
+     <!-- ******************************************************************************** -->
+     <!-- 	START CONTEXT DEFINITIONS SAMPLE FOR THE CLIENT		        	   -->
+     <!-- ******************************************************************************** -->
+     <!-- ================================================================== -->
+     <!-- 				Static Contexts			     -->
+     <!-- ================================================================== -->
+     <context id="branch" parent="nil" type="branch">
+          <refKColl refId="branch"/>
+     </context>
+     <context id="workstation" parent="branch" type="wks">
+          <refKColl refId="workstation"/>
+          <refService alias="CSClient" refId="realCSClient" type="cs"/>
+     </context>
+     <context id="UserContext" parent="workstation" type="wks">
+          <refKColl refId="UserData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				 Startup Operation		     -->
+     <!-- ================================================================== -->
+     <context id="startupClientCtx" parent="workstation" type="op">
+          <refKColl refId="startupClientData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Customer Session		     -->
+     <!-- ================================================================== -->
+     <context id="customerSession" parent="workstation" type="cust">
+          <refKColl refId="customerSession"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				End Session Operation		     -->
+     <!-- ================================================================== -->
+     <context id="endSessionClientCtx" parent="workstation" type="op">
+          <refKColl refId="endSessionClientData"/>
+     </context>
+     <!-- ******************************************************************************** -->
+     <!-- 		END CONTEXT DEFINITIONS SAMPLE FOR THE CLIENT		           -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 	START BTF CORE EXTENSION CONTEXT DEFINITIONS  FOR THE CLIENT		   -->
+     <!-- ******************************************************************************** -->
+
+
+     <!-- ================================================================== -->
+     <!-- 				Forced Logon 		             -->
+     <!-- ================================================================== -->
+	
+     <context id="ForcedLogonClientCtx" type="op" parent="workstation">
+	     <refKColl refId="ForcedLogonData"/>
+     </context>
+
+     <!-- ================================================================== -->
+     <!-- 					Logon 		             -->
+     <!-- ================================================================== -->
+	
+     <context id="LogonClientCtx" parent="workstation" type="op">
+          <refKColl refId="LogonData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 					Logoff			     -->
+     <!-- ================================================================== -->
+     <context id="LogoffClientCtx" parent="workstation" type="op">
+          <refKColl refId="LogoffData"/>
+     </context>
+
+     <!-- ================================================================== -->
+     <!-- 				Teller End Of Day		     -->
+     <!-- ================================================================== -->
+     <context id="TellerEODCtx" parent="workstation" type="op">
+   		<refKColl refId="tellerEODData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 					Agent Admin		     -->
+     <!-- ================================================================== -->
+     <!--used by change own password op-->
+     <context id="ChangeOwnPasswordCtx" parent="workstation" type="op">
+          <refKColl refId="ChangeOwnPassword"/>
+     </context>
+     <!-- used by query user profiles op-->
+     <context id="UserProfilesCtx" parent="workstation" type="op">
+          <refKColl refId="UserProfiles"/>
+     </context>
+     <!-- used by query rights and roles and users op-->
+     <context id="RightsAndRolesAndUsersCtx" parent="workstation" type="op">
+          <refKColl refId="RightsAndRolesAndUsers"/>
+     </context>
+     <!-- used by query rights and roles op-->
+     <context id="RightsAndRolesCtx" parent="workstation" type="op">
+          <refKColl refId="RightsAndRoles"/>
+     </context>
+     <!-- used by query roles op-->
+     <context id="RolesCtx" parent="workstation" type="op">
+          <refKColl refId="Roles"/>
+     </context>
+     <!-- used by query rights op-->
+     <context id="RightsCtx" parent="workstation" type="op">
+          <refKColl refId="Rights"/>
+     </context>
+     <!-- used by create/update/remove role op-->
+     <context id="RoleCtx" parent="workstation" type="op">
+          <refKColl refId="UserRole"/>
+     </context>
+     <!-- used by creat/remove right op-->
+     <context id="RightCtx" parent="workstation" type="op">
+          <refKColl refId="UserRight"/>
+     </context>
+     <!-- used by create/update/remove user profile op-->
+     <context id="SecurityUserCtx" parent="workstation" type="op">
+          <refKColl refId="SecurityUser"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Electronic Journal		     -->
+     <!-- ================================================================== -->
+     <!-- Context DEFINITIONS for the Electronic Jouranl Query operation-->
+     <context id="ejClientCtx" parent="workstation" type="op">
+          <refKColl refId="ejClientData"/>
+     </context>
+     <!-- Context DEFINITIONS for the Electronic Jouranl Schema Info operation-->
+     <context id="retrieveSchemaInfoClientCtx" parent="workstation" type="op">
+          <refKColl refId="retrieveSchemaInfoClientData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 					Forwarding			         		-->
+     <!-- ================================================================== -->
+     <context id="forwardClientCtx" parent="workstation" type="operation">
+          <refKColl refId="forwardData"/>
+     </context>
+     <!-- ******************************************************************************** -->
+     <!-- 	END BTF CORE EXTENSION CONTEXT DEFINITIONS  FOR THE CLIENT		   -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 	START TELLER EXTENSIONS CONTEXT DEFINITIONS  FOR THE CLIENT		        	  -->
+     <context id="AssignCashDrawerCtx" parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="AssignCashDrawerData"/>
+     </context>
+     <context id="CloseDBConnectionCtx" parent="workstation" type="op">
+          <refKColl refId="CloseDBConnectionData"/>
+     </context>
+     <context id="CreateCashDrawerCtx" parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="CreateCashDrawerData"/>
+     </context>
+     <context id="DeleteCashDrawerCtx" parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="DeleteCashDrawerData"/>
+     </context>
+     <context id="InitializeCDMCtx" parent="workstation" type="op">
+          <refKColl refId="InitializeCDMData"/>
+     </context>
+     <context id="ModifyCashDrawerLocationCtx"
+          parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="ModifyCashDrawerLocationData"/>
+     </context>
+     <context id="ModifyTrapsAndBaitsCtx" parent="QueryTrapsAndBaitsCtx" type="op"/>
+     <context id="QueryBinsCtx" parent="QueryCashDrawerIdsCtx" type="op">
+          <refKColl refId="QueryBinsData"/>
+     </context>
+     <context id="QueryBatchIdsCtx" parent="QueryCashDrawerIdsCtx" type="op">
+          <refKColl refId="QueryBatchIdsData"/>
+     </context>
+     <context id="QueryBatchItemsCtx" parent="QueryBatchIdsCtx" type="op">
+          <refKColl refId="QueryBatchItemsData"/>
+     </context>
+     <context id="QueryCashDrawersCtx" parent="workstation" type="op">
+          <refKColl refId="QueryCashDrawersData"/>
+     </context>
+     <context id="QueryCashDrawerIdsCtx" parent="workstation" type="op">
+          <refKColl refId="QueryCashDrawerIdsData"/>
+     </context>
+     <context id="QueryCashDrawerTotalsCtx"
+          parent="QueryCashDrawerIdsCtx" type="op">
+          <refKColl refId="QueryCashDrawerTotalsData"/>
+     </context>
+     <context id="CloseBatchCtx" parent="QueryBinsCtx" type="op">
+          <refKColl refId="CloseBatchData"/>
+     </context>
+     <context id="QueryNextIdsCtx" parent="workstation" type="op">
+          <refKColl refId="QueryNextIdsData"/>
+     </context>
+     <context id="QueryTrapsAndBaitsCtx" parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="TrapsAndBaitsData"/>
+     </context>
+     <context id="QueryUserIdsAndUserNamesCtx"
+          parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="QueryUserIdsAndUserNamesData"/>
+     </context>
+     <context id="SetHoldoverCtx" parent="QueryBinsCtx" type="op">
+          <refKColl refId="SetHoldoverData"/>
+     </context>
+     <context id="UnAssignCashDrawerCtx" parent="QueryCashDrawersCtx" type="op">
+          <refKColl refId="UnAssignCashDrawerData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Customer Session		     -->
+     <!-- ================================================================== -->
+     <context id="CustomerSessionCtx" parent="UserContext" type="cs">
+          <refKColl refId="CustomerSessionData"/>
+     </context>
+     <context id="StartCustomerSessionOpCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="StartCustomerSessionRequestData"/>
+     </context>
+     <context id="EndCustomerSessionOpCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="EndCustomerSessionRequestData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!--            Context DEFINITIONS for Branch Admin operation          -->
+     <!-- ================================================================== -->
+     <context id="qryBrSttlmntCurrenciesClientCtx" parent="workstation" type="op">
+          <refKColl refId="BranchSettlementQueryData"/>
+     </context>
+     <context id="branchSettlementClientCtx" type="op">
+          <refKColl refId="BranchSettlementData"/>
+     </context>
+     <context id="queryBranchCurrenciesClientCtx" parent="workstation" type="op">
+          <refKColl refId="BranchCurrenciesQueryData"/>
+     </context>
+     <!-- Cash Settlement -->
+     <context id="cashSettlementQueryCtx" parent="workstation" type="op">
+          <refKColl refId="cashSettlementQueryData"/>
+     </context>
+     <!--  ================================================================== -->
+     <!--     				Branch Administration                 -->
+     <!--  ================================================================== -->
+     <!--  Teller Exchange -->
+     <context id="QueryTXDrawerDataCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="QueryTXDrawerDataData"/>
+     </context>
+     <context id="TXPostDataCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="TXPostDataData"/>
+     </context>
+     <context id="QueryTXReconcileCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="QueryTXReconcileData"/>
+     </context>
+     <context id="TXPostReconcileCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="TXPostReconcileData"/>
+     </context>
+     <context id="cashSettlementCtx" parent="workstation" type="op">
+          <refKColl refId="cashSettlementData"/>
+     </context>
+     <context id="PostOverShortCtx" parent="workstation" type="op">
+          <refKColl refId="PostOverShortData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Overrides	         	     -->
+     <!-- ================================================================== -->
+     <context id="overrideServerCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="overrideClientData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Store query			     -->
+     <!-- ================================================================== -->
+     <context id="queryStoreCtx" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="queryStoreData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Sample Transactions		     -->
+     <!-- ================================================================== -->
+     <!-- ================================================================== -->
+     <!-- 				Withdrawal	 	             -->
+     <!-- ================================================================== -->
+     <context id="clientWithdrawalContext" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="clientWithdrawalData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Deposit		         	     -->
+     <!-- ================================================================== -->
+     <context id="clientDepositContext" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="clientDepositData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Bill Payment	         	     -->
+     <!-- ================================================================== -->
+     <context id="clientBillPaymentContext" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="clientBillPaymentData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Account List	         	     -->
+     <!-- ================================================================== -->
+     <context id="clientAccountListContext" parent="CustomerSessionCtx" type="op">
+          <refKColl refId="clientAccountListData"/>
+     </context>
+     <!-- ================================================================== -->
+     <!-- 				Account History			     -->
+     <!-- ================================================================== -->
+     <context id="clientAccountHistoryContext"
+          parent="CustomerSessionCtx" type="op">
+          <refKColl refId="clientAccountHistoryData"/>
+     </context>
+     <!--/DWGroupDef-->
+</Contexts>

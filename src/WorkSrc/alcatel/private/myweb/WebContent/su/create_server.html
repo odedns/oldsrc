@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type"
+	content="text/html; charset=windows-1255">
+<META name="GENERATOR" content="IBM Software Development Platform">
+<META http-equiv="Content-Style-Type" content="text/css">
+<LINK href="../theme/Master.css" rel="stylesheet" type="text/css">
+<TITLE>Cluster</TITLE>
+</HEAD>
+
+<SCRIPT language=JavaScript src="myjs.js">
+</SCRIPT>
+
+<body>
+<H2> Create Server</H2> .
+
+<table>
+<tr>
+<td>
+Machine Name: 
+</td>
+<td>
+<input type="text" name="host" value="" />
+</td>
+</tr>
+
+<tr>
+<td>
+Name: 
+</td>
+<td>
+<input type="text" name="name" value="" />
+</td>
+</tr>
+<tr>
+<td>
+Server type: 
+ </td>
+<td>
+ 		<SELECT name="serverType">
+			<OPTION value="1" selected>Weblogic 8.1</OPTION>
+			<OPTION value="2">WebSphere 6.0</OPTION>
+			<OPTION value="3">WebSphere 5.1</OPTION>
+			<OPTION value="4">JBoss 4.0.3 </OPTION>
+		</SELECT>
+		</td>
+</tr>
+<td>
+Choose Configuration template: 
+ </td>
+<td>
+ 		<SELECT name="configTemplate">
+			<OPTION value="1" selected>Config-1</OPTION>
+			<OPTION value="2">Config-2</OPTION>
+			<OPTION value="2">Config-3</OPTION>
+		</SELECT>
+		</td>
+</tr>
+<td>
+Generate unique ports:
+ </td>
+<td>
+<input type="checkbox" id="ports" />
+</tr>
+
+
+
+<TR>
+<TD>
+<INPUT type="submit" name="save" value="Save" >
+</TD>
+<TD>
+<INPUT type="button" name="close" value="Close" >
+</TD>
+</TR>
+</FORM>
+</TABLE>
+</body>

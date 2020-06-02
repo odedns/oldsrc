@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="branchSpecifications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="branchOperationMode"/>
+				<xs:element ref="branchWeeklyOpenTimeLimits"/>
+				<xs:element ref="branchHolidays"/>
+				<xs:element ref="branchScheduledEvents"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="branchOperationMode">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxExclusive value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="branchWeeklyOpenTimeLimits">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="branchOpenTimeLimit" maxOccurs="8"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="branchOpenTimeLimit">
+		<xs:complexType>
+			<xs:attribute name="dayOfWeek">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:maxExclusive value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="timeOfDay" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="branchHolidays">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="weekdayHolidays"/>
+				<xs:element ref="allMonthsHolidays"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="weekdayHolidays">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dayOfWeek" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dayOfWeek">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:maxExclusive value="8"/>
+				<xs:minExclusive value="0"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="allMonthsHolidays">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="monthlyHolidays" maxOccurs="unbounded"/>
+				<xs:element ref="endMonthlyHolidays"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="monthlyHolidays">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="daysOfMonth" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="monthlyDaysOfWeek"/>
+			</xs:sequence>
+			<xs:attribute name="monthValue" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="daysOfMonth">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dayOfMonth" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dayOfMonth">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minExclusive value="0"/>
+				<xs:maxExclusive value="32"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="monthlyDaysOfWeek">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="monthlyDayOfWeek" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="monthlyDayOfWeek">
+		<xs:complexType>
+			<xs:attribute name="value" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:maxExclusive value="8"/>
+						<xs:minExclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="order" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="endMonthlyHolidays"/>
+	<xs:element name="branchScheduledEvents">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="scheduledEvent" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="scheduledEvent">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="dayOfWeek" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:maxExclusive value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="timeOfDay" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

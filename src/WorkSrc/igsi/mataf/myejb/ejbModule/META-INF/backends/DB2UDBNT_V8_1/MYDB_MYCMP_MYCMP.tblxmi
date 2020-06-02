@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDBSchema:RDBTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:RDBSchema="RDBSchema.xmi" xmi:id="RDBTable_1046705402734" name="MYCMP" primaryKey="SQLReference_1046705402781">
+  <database href="META-INF/backends/DB2UDBNT_V8_1/MYDB.dbxmi#RDBDatabase_1046705402766"/>
+  <schema href="META-INF/backends/DB2UDBNT_V8_1/MYDB_MYCMP.schxmi#RDBSchema_1046705402781"/>
+  <columns xmi:type="RDBSchema:RDBColumn" xmi:id="RDBColumn_1046705402750" name="ID" allowNull="false">
+    <type xmi:type="RDBSchema:SQLExactNumeric" xmi:id="SQLExactNumeric_1046705402781">
+      <originatingType xmi:type="RDBSchema:SQLExactNumeric" href="DB2UDBNT_V8_Primitives.xmi#SQLExactNumeric_1"/>
+    </type>
+  </columns>
+  <columns xmi:type="RDBSchema:RDBColumn" xmi:id="RDBColumn_1046705402751" name="NAME" allowNull="true">
+    <type xmi:type="RDBSchema:SQLCharacterStringType" xmi:id="SQLCharacterStringType_1046705402781" length="250">
+      <originatingType xmi:type="RDBSchema:SQLCharacterStringType" href="JavatoDB2UDBNT_V8TypeMaps.xmi#SQLCharacterStringType_250"/>
+    </type>
+  </columns>
+  <columns xmi:type="RDBSchema:RDBColumn" xmi:id="RDBColumn_1046705402766" name="DESCRIPTION" allowNull="true">
+    <type xmi:type="RDBSchema:SQLCharacterStringType" xmi:id="SQLCharacterStringType_1046705402782" length="250">
+      <originatingType xmi:type="RDBSchema:SQLCharacterStringType" href="JavatoDB2UDBNT_V8TypeMaps.xmi#SQLCharacterStringType_250"/>
+    </type>
+  </columns>
+  <namedGroup xmi:type="RDBSchema:SQLReference" xmi:id="SQLReference_1046705402781" name="PK_MYCMP" members="RDBColumn_1046705402750" constraint="SQLConstraint_1046705402781"/>
+  <constraints xmi:id="SQLConstraint_1046705402781" name="PK_MYCMP" type="PRIMARYKEY" primaryKey="SQLReference_1046705402781"/>
+</RDBSchema:RDBTable>

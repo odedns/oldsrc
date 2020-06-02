@@ -1,0 +1,7 @@
+<ns1:message xmlns:ns1="http://courses.ws">
+	<ns1:destination>Recp1</ns1:destination>	
+	<ns1:subject>Test message</ns1:subject>
+	<ns1:content>
+		This is a test message	
+	</ns1:content>
+</ns1:message>

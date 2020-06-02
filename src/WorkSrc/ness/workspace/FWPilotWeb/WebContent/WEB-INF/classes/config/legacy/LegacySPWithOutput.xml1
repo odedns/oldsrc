@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE root SYSTEM "legacy.dtd">
+
+<root>
+
+	
+	<Structure id="customerST" className="com.ness.test.legacy2.Customer2" length="41">
+	        <StructureField startPosition="0"  length="3" attributeId="id" attributeType="integer"/>
+	        <StructureField startPosition="3" length="10" attributeId="firstName" attributeType="string" />
+	        <StructureField startPosition="13" length="10" attributeId="lastName" attributeType="string" />
+	        <StructureField startPosition="23" length="10" attributeId="telephone" attributeType="integer" setter="setHomeTelephone"/>
+	        <StructureField startPosition="33" length="8"  attributeId="birthDate" attributeType="date" fromMask="ddMMyyyy" />
+	</Structure>      
+
+	<Structure id="Profession" className="com.ness.test.legacy2.CustomerProfession2" length="6">
+	        <StructureField startPosition="0"  length="3" attributeType="integer" attributeId="customerId"/>
+	        <StructureField startPosition="3"  length="3" attributeType="integer" attributeId="professionId"/>
+	</Structure>      
+
+	<Structure id="AddressSTR" className="com.ness.test.legacy2.CustomerAddress2" length="24">
+	        <StructureField startPosition="0"  length="3" attributeType="integer" attributeId="id"/>
+	        <StructureField startPosition="3"  length="10" attributeType="string" attributeId="city"/>
+	        <StructureField startPosition="13"  length="10" attributeType="string" attributeId="street"/>
+	        <StructureField startPosition="23"  length="1" attributeType="integer" attributeId="main"/>
+	</Structure>      
+
+	<Structure id="TelephoneS" className="com.ness.test.legacy2.Telephone2" length="21">
+	        <StructureField startPosition="0"  length="3" attributeType="integer" attributeId="customerId"/>
+	        <StructureField startPosition="3"  length="9" attributeType="string" attributeId="telephone"/>
+	        <StructureField startPosition="12"  length="9" attributeType="integer" attributeId="fax"/>
+	</Structure>      
+
+	<LegacyCommand commandName="testCMD4" commandType="SP" sqlStatement="call SP_LEGACY4(?,?,?)"  >
+	
+	        <CallArgument name="VAR01" type="integer" inputType="in" inputContainerGetter="getArg1Value"/>
+	        
+	        <CallArgument name="VAR02" type="integer" inputType="out" resultAs="simple" simpleResultSetter="setOutArg1"/>
+	        
+	        <CallArgument name="VAR03" type="string" inputType="out" resultAs="structure"/>
+	
+	        <LegacyObjectGraph className="com.ness.test.legacy2.LegacyObjectGraph2">
+
+				<ArgumentStructureDefinition name="VAR03" structureIdLength="10">
+					<NodeStructure id="customerST" adder="addCustomer" >
+						<NodeStructure id="Profession" adder="addProfession"/>
+						<NodeStructure id="AddressSTR" adder="addAddress">
+							<NodeStructure id="TelephoneS" adder="addTelephone"/>
+						</NodeStructure>
+						
+					</NodeStructure>
+				</ArgumentStructureDefinition>	
+				
+	         </LegacyObjectGraph>
+	         
+	</LegacyCommand>
+
+</root>

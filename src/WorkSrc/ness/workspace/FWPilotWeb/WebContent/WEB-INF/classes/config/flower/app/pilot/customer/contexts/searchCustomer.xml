@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+	<buttonSet name="searchCustomerButtons">
+		<button name="close" eventName="close" group="left"/>
+	</buttonSet>
+
+	<context name="chooseCustomerContext">	
+		<field name="customerTypeModel" type="listModel"  />
+		<field name="customerType" type="integer"  />
+	</context>
+
+	<context name="fillResultContext" addOnDemand="true" ></context>
+
+	<context name="searchCustomerContext">	
+
+		<!-- search fields -->
+		<field name="searchResultTableModel" type="tableModel"  />
+		<field name="customerTypeModel" type="listModel"  />
+		<field name="id" type="xiInteger"  />
+		<field name="firstName" type="xiString"  />
+		<field name="telephone" type="xiString"  />
+		<field name="city" type="xiString"  />
+
+		<!-- seleced id from table-->
+		<field name="custID" type="string"  />		
+
+		<!-- selected customer type -->
+		<field name="selectedCustomerTypeModel" type="listModel"  />
+		<field name="selectedType" type="integer"  />
+
+		<!-- ??? check if necesssary -->
+		<field name="customerId" type="xiInteger" childAccess="full"/>
+		<field name="customerName" type="xiString" childAccess="full"/>			
+
+		<field name="pagingService" type="com.ness.fw.persistence.PagingService"/>
+
+	</context>
+</root>

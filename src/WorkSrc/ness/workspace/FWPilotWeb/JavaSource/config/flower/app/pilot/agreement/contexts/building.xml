@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+
+	<context name="AgreementCTX">
+	
+		<!-- will be format to the customerFlow when clicking the link -->
+		<field name="custID" type="integer" childAccess="full"/>
+
+		<!-- the choosen package from the catalog -->
+		<field name="selectedPackage" type="xiInteger" childAccess="full"/>		
+		<field name="addedPackage" type="fwpilot.agreement.vo.AgreementPackage" childAccess="full"/>
+		<field name="addedPackageNodeId" type="xiString" childAccess="full"/>
+
+
+		<!-- ======================================== -->
+		<!-- General Agreeemnt fields -->
+		<!-- ======================================== -->
+		<field name="agreementId" type="xiInteger" childAccess="full"/>
+		<field name="agreement" type="fwpilot.agreement.vo.Agreement" childAccess="full"/>
+		<field name="title" type="xiString" childAccess="full"/>
+		<field name="mode" type="xiString" childAccess="full"/>
+		<field name="agreementDisplayStateModel" type="displayStateModel" childAccess="full"/>
+		<field name="customerLinkModel" type="buttonModel" childAccess="full" />
+
+
+		<!-- ======================================== -->
+		<!-- Agreeemnt Details fields -->
+		<!-- ======================================== -->
+		<field name="agreementDetailsTreeModel" type="treeModel" childAccess="readOnly"/>
+		<field name="catalogTableModel" type="treeModel" childAccess="readOnly"/>
+		<field name="name" type="xiString" childAccess="readOnly"/>
+		<field name="description" type="xiString" childAccess="readOnly"/>
+		<field name="identification" type="xiInteger" childAccess="readOnly"/>
+		<field name="startDate" type="xiDate" childAccess="readOnly"/>
+		<field name="endDate" type="xiDate" childAccess="readOnly"/>
+		<field name="minimalPeriod" type="xiInteger" childAccess="readOnly"/>
+		<field name="minimalPeriodTextModel" type="textModel" childAccess="readOnly"/>
+		<field name="statusModel" type="listModel" childAccess="readOnly"/>
+		<field name="automaticCheckBoxModel" type="listModel" childAccess="readOnly"/>
+		<field name="canBeCanceledCheckBoxModel" type="listModel" childAccess="readOnly"/>
+		<field name="agreementTypeModel" type="listModel" childAccess="readOnly"/>
+		<field name="customerTypeModel" type="listModel" childAccess="readOnly"/>
+		<field name="deleteModel" type="buttonModel" childAccess="readOnly"/>
+
+		<!-- temporary patch. inorder to support dialog errors-->
+		<field name="customerId" type="xiString" childAccess="readOnly"/>
+		<field name="customerName" type="xiString" childAccess="readOnly"/>
+
+
+		<!-- ======================================== -->
+		<!-- Attributes tab fields -->
+		<!-- ======================================== -->
+		
+		<field name="generalTabModel" type="tabModel"/>
+		
+		<field name="attributesModel" type="listModel" childAccess="full"/>
+
+
+		<!-- ======================================== -->
+		<!-- Program tab fields -->
+		<!-- ======================================== -->
+		<field name="progId" type="xiInteger" childAccess="readOnly"/>
+		<field name="progName" type="xiString" childAccess="readOnly"/>
+		<field name="progMinimalStartAge" type="xiInteger" childAccess="readOnly"/>
+		<field name="progMaximalStartAge" type="xiInteger" childAccess="readOnly"/>
+		<field name="progEndAge" type="xiInteger" childAccess="readOnly"/>
+		<field name="progDescription" type="xiString" childAccess="readOnly"/>
+
+		<!-- ======================================== -->
+		<!-- Package tab fields -->
+		<!-- ======================================== -->
+		<field name="packId" type="xiInteger" childAccess="readOnly"/>
+		<field name="packName" type="xiString" childAccess="readOnly"/>
+		<field name="packMinimalStartAge" type="xiInteger" childAccess="readOnly"/>
+		<field name="packMaximalStartAge" type="xiInteger" childAccess="readOnly"/>
+		<field name="packEndAge" type="xiInteger" childAccess="readOnly"/>
+		<field name="packDescription" type="xiString" childAccess="readOnly"/>
+		<field name="packType" type="xiInteger" childAccess="readOnly"/>
+		<field name="packInsuranceSum" type="xiDouble" childAccess="readOnly"/>
+		<field name="packAfterDiscount" type="xiDouble" childAccess="readOnly"/>
+		<field name="packPremia" type="xiDouble" childAccess="readOnly"/>
+
+	
+		<!-- ======================================== -->
+		<!-- Document tab fields -->
+		<!-- ======================================== -->
+		<field name="documentsTableModel" type="tableModel" childAccess="full"/>
+		<field name="documentTypeModel" type="listModel" childAccess="full"/>
+		<field name="docId" type="xiInteger" childAccess="full"/>
+		<field name="systemCode" type="xiInteger" childAccess="full"/>
+		<field name="system" type="xiString" childAccess="full"/>
+		<field name="attachDate" type="xiDate" childAccess="full"/>
+		<field name="docDescription" type="xiString" childAccess="full"/>
+		<field name="numDocs" type="xiInteger" childAccess="full"/>								
+
+		<!-- ======================================== -->
+		<!-- Temporary field until tab model will contain the information -->
+		<!-- ======================================== -->
+		<field name="lastTabState" type="string" childAccess="full" defaultValue="generalTabsDetailsState"/>
+
+
+	</context>
+
+</root>

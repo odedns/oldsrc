@@ -1,0 +1,441 @@
+
+
+
+
+
+setenv command line syntax:
+
+<prog>	%rce	<variable>	<options>
+
+setenv		<variable>	<no value>
+				<value>
+				%chgup
+				%chglo
+				%rep<del><text1><del><text2><del>
+				%prompt	<prompt options> <message>
+				%<operator> [<string>|<var>] [<string>|<var>]
+
+<prog>
+	setenv program to handle environment variables
+
+<variable> or <var>
+	the name, the environment variable name
+	any valid environment variable you wish to define or re-define
+
+<options>
+	functions to preform for an environment variable
+
+<no value>
+	no data entered, so as to erase the variable
+
+<value>
+	a string of printable characters
+	the data portion for the environment variable
+	any number of <keys> can be imbedded in the character string
+
+<del>
+	any one character, to delimit or to quote <text>
+	the delimiter must be consistent for the option used
+
+<text>
+	a string of printable characters
+	any variable length text {maximum length 100}
+
+<text1>
+	a string of printable characters
+	any variable length text {maximum length 100}
+
+<text2>
+	a string of printable characters
+	any variable length text {maximum length 100}
+
+<string>
+	a string of printable characters, enclosed by single or double quotes
+	any variable length text {maximum length 100}
+
+<number> or <n>
+	a string of digits that can be considered a number
+	there usually is maximum numeric size for the number's function
+
+
+
+
+setenv command line syntax continued:
+
+<message>
+	a string of printable characters
+	is displayed and the response is set into the <variable>
+	can have embedded %/<number>/ to create characters
+
+<operator>
+	any one of the follow logical operators: eq, lt, le, gt, ge
+
+<prompt options>
+	subfunctions to perform for %prompt
+
+<keys>
+	special names that are imbedded in <value>
+	usually begining  with a % {percent sign}
+	a key will denote a special function like %time
+
+<special keys>
+	special names that are imbedded in <value>, but have arguments
+	usually begining  with a % {percent sign}
+	a key will denote a special function like %len
+
+%rce
+	is used when command.com has been called a second time
+	to set the environment variable in the root environment space
+
+<options>
+
+	<no value>
+		no data entered
+		environment variable by it's self to erase it
+
+	<value>
+		any length data for the environment variable
+		any number of <keys> can be imbedded in the data
+
+	%chgup
+		change the existing environment variable's data to uppercase
+
+	%chglo
+		change the existing environment variable's data to lowercase
+
+	%rep<del><text1><del><text2><del>
+		replace any occurence  of <text1> with any occurence of 
+		<text2> in the  existing environment variable
+
+	%prompt	<prompt options> <message>
+		prompt the display with <messsage> for <variable>'s data
+
+
+
+
+setenv command line syntax continued:
+
+<options>
+
+	%eq [<string>|<variable>] [<string>|<variable>]
+		tests if two values are equal
+		the value can be a string or variable's content
+		a string is a quoted with single or double quotes.
+		returns T for true, F for false, or E for error
+
+	%lt [<string>|<variable>] [<string>|<variable>]
+		tests if value one is less than value two
+		the value can be a string or variable's content
+		returns T for true, F for false, or E for error
+
+	%le [<string>|<variable>] [<string>|<variable>]
+		tests if value one is less than or equal value two
+		the value can be a string or variable's content
+		returns T for true, F for false, or E for error
+
+	%gt [<string>|<variable>] [<string>|<variable>]
+		tests if value one is greater than value two
+		the value can be a string or variable's content
+		returns T for true, F for false, or E for error
+
+	%ge [<string>|<variable>] [<string>|<variable>]
+		tests if value one is greater than or equal value two
+		the value can be a string or variable's content
+		returns T for true, F for false, or E for error
+
+<keys>
+	special names that are imbedded in <value>
+	usually begining  with a % {percent sign}
+	a key will denote a special function like %time
+
+	%cwd
+		the current working directory, will be "/" if at the top
+	%cfd
+		the current full directory specification, "/" if at the top
+	%date1 or %date
+		the current date as dd:mm:yy, day first
+	%date2
+		the current date as mm:dd:yy, month first
+	%date3
+		the current date as yy:dd:mm, year first
+	%dosv
+		MS-DOS major version
+	%dosm
+		MS-DOS minor version
+	%drive
+		current working disk drive letter
+	%time
+		the current time as hh:mm:ss
+	%+n
+		plus "n"'s disk drive letter from current drive
+	%-n
+		minus "n"'s disk drive letter from current drive
+
+
+
+
+
+setenv command line syntax continued:
+
+<special keys>
+	%chr<del><number><del>
+		returns that ascii code as a character, range 1 - 255
+
+	%elem<del><number><del><character><del><variable><del>
+		extracts element <number> from the string of elements
+		separated by <character>
+		'0' the first element if the element precedes the first
+		<character>
+
+	%mid<del><variable><del><number1><del><number2><del>
+		returns a string of length <number1> from
+		<variable> starting from <number2>
+
+	%loc<del><number><del><variable><del><text><del>
+		searches for the first occurrence of the <text>
+		in <variable> starting at location <number> and
+		returns the offset of <text>
+		returns '0' if <text> not found
+
+	%len<del><variable><del>
+		returns the number of characters in <variable>,
+		but only the data portion
+
+	%sum<del><variable><del><number><del>
+		returns the sum of <number> and <variable>
+		<number> can be negative
+
+<del>
+	any one character, to delimit or to quote <text>
+	the delimiter must be consistent for the option used
+
+<character>
+	any one character
+
+<variable>
+	the name, the environment variable name
+	any valid environment variable you wish to define or re-define
+
+<text>
+	a string of printable characters
+	any variable length text {maximum length 20}
+
+<number>
+	any number from 0 to 255
+
+<number1>
+	any number from 0 to 255
+
+<number1>
+	any number from 0 to 255
+
+
+
+
+
+setenv command line syntax continued:
+
+<prompt options>
+
+	%def<def><text><del>
+		if no data is entered at the prompt then use <text>
+		no data entered is a soul carriage return
+
+	%noecho
+		when data is entered do not display it
+		necessary for passwords, 
+		remember to ersae the variable after use
+		
+	%timo=hh:mm:ss
+		exit prompt, if no data is entered in the time hh:mm:ss 
+		if no %def accompanies this option then %def// is assumed
+		ss for seconds, mm:ss for minutes, hh:mm:ss for hours
+
+	%upper
+		convert prompted / entered data to uppercase
+
+	%lower
+		convert prompted / entered data to lowercase
+
+	%readkey
+		read one key stroke, without needing the carriage return
+		the other <prompt options> are also useful with %readkey
+		except %trim (%trim results questionable), %def is 
+		usefull when used with %timo
+
+	%trim
+		trim leading and trailing spaces from entered line
+
+
+
+
+
+setenv command examples:
+
+To create a variable
+	setenv name John Wolchak
+
+To erase a variable
+	setenv name
+
+To prompt a question
+	setenv node %prompt Node name to connect to 
+
+To prompt passwords
+	setenv pass %prompt %noecho Your password 
+
+When you want to pass on a string with spaces in it to a batch file
+	batfile this_is_a_test
+	setenv name %%rep/_/ /
+
+When you want to minimize parsing data, use uppercase
+	set name=John
+	setenv name %%chgup
+	or
+	setenv name %%prompt %%upper Your first name 
+
+To given batch files startup options
+	prompt:
+	setenv ans %%prompt %%upper %%def/N/ Connect to the Network (Y/N) 
+	setenv ans %%rep/ES//
+	setenv ans %%rep/ //
+	setenv ans %%rep/O//
+	if "%ans%" == "Y" goto network
+	if not "%ans%" == "N" goto prompt
+
+To give batch files startup options, that can be unattendable as well
+	prompt:
+	setenv ans %%prompt %%upper %%def/N/ %%timo=20 Network Connect (Y/N) 
+	if "%ans%" == "Y" goto network
+	if not "%ans%" == "N" goto prompt
+
+For timing test
+	setenv start Starting time %%time
+	myporg
+	setenv end Ending time %%time
+
+For batch procedures that move around and return
+	setenv retdrv %%drive:
+	setenv retdir %%cwd
+	...
+	...
+	%retdrv%
+	cd %retdir%
+
+
+
+
+
+setenv command examples continued:
+
+To save a directory for later use:
+	setenv drvdir %%drive:%%cwd
+	cd d:\tmp
+	.
+	.
+	.
+	cd %drvdir%
+
+To check for files:
+	setenv drvdir %%drive:%%cfd
+	setenv file THISFILE.TXT
+	cd d:\tmp
+	if exist %drvdir%%file% then echo got it
+	
+To check passwords
+	:loop
+	setenv pass %%prompt %%trim %%noecho Password 
+answer:
+	Password ttt
+	setenv len %%len/pass/
+	setenv tst %%lt len '6'
+	if "%tst%" == "F" goto cont
+	echo password length is %len% should be 6 or more
+	goto loop
+	:cont
+
+To get and group and separate arguments
+	setenv full %%prompt %%trim Full Name 
+answer:
+	Full Name John Wolchak
+	setenv full %%rep/  / /
+	setenv full %%rep/  / /
+	setenv first %%elem/0/ /full/
+	setenv last %%%elem/1/ /full/
+or
+	setenv first %%prompt %%trim First Name 
+answer:
+	First Name John
+	setenv last %%prompt %%trim Last Name 
+answer:
+	Last Name Wolchak
+	setenv full %first% %last%
+
+
+To check input for data control
+	:loop
+	setenv ans %%prompt %%trim Selection Number (1-3) 
+answer:
+	Selection Number (1-3) 4
+	setenv log %%gt ans '3'
+	if "%log%" == "Y" goto loop
+	setenv log %%lt ans '1'
+	if "%log%" == "Y" goto loop
+
+
+
+
+
+
+setenv command examples continued:
+
+For programs that spawn by calling command.com
+	setenv %rce name John
+which is the same as
+	c:\command /c setenv %rce name John
+
+
+To tell a program the start time, but you want it to start now.  The
+user normally would enter hh:mm:ss, but for the current time enter %time
+	setenv time %prompt Start time 
+	Start time
+answer:
+	Start time %time
+
+
+
+setenv command special notes:
+
+	In batch (BAT files) use %% to represent a single % for use 
+to SETENV.   ie. setenv drv_dir %%drive:%%cwd
+Which on the display screen would be:   ie. setenv drv_dir %drive:%cwd 
+
+ 	In the preceding section scripts that would be in batch have 
+had %% in them.  In batch you can use %<environ_var>% to reflect the 
+value of a previous environment variable.  Make sure you have enough 
+environment space to store the amount of data you would need.  DOS 2.0 
+throught 3.20 have by default 160 bytes, and need manual extension.
+DOS 3.30 through 6.0 can be extended in the Config.Sys file.
+
+	SETENV can not expand the environment space.  The DOS SET 
+command can do that, by creating temporary variables with long values 
+and then removing them before any resident program is run.  Resident 
+programs are PRINT, MODE.  Once a resident program is run then the 
+environment space can not be expanded, because it precedes the resident
+code in memory.  Documentation is available for versions of DOS 2 thru 
+3.20 that modify DOS to have a larger environment area beyond the normal 
+160 bytes, as default values in Command.Com.  For DOS 3.30 and above 
+use the shell /E:xxxx option.  
+
+	%prompt, %chgup, %chglo, and %rep/// are replacments for a <value>
+field, not inaddition to.  The %prompt sub options are not suppose to 
+be order dependent, but the %prompt must precede the subfunctions.
+
+	When you use %prompt and you do not use a %timo then the prompt 
+will remain until a carriage return is entered.  Having no %def and a 
+%timo will assume %def// for the %prompt.  The time out is for the first 
+character you enter, after the first character is entered you have 
+forever to enter the rest of the text.
+
+	There is some question where SETENV will run under MS-DOS V1.x.  
+I don't know because I have not seen either, as of yet.

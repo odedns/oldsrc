@@ -1,0 +1,13 @@
+# Replace the place holders with valid values of your
+# current configuration
+#
+Configuration/DefaultConfigurationID=FMCWEB5
+Configuration/FMCWEB5/FMLConnectName=FMC.FMCGRP.FMCSYS,FMCQM
+Configuration/FMCWEB5/SystemGroup=FMCGRP
+Configuration/FMCWEB5/MQConnectionType=MQClient
+
+# Following profile values must be set for MQClient connections
+#
+Configuration/FMCWEB5/MQQueueManager=FMCQM
+Configuration/FMCWEB5/MQCommunicationAddress=c1000105133
+Configuration/FMCWEB5/MQPort=5010

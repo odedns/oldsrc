@@ -1,0 +1,95 @@
+include gmake.inc
+
+BINDIR = \\dev\\bin
+VPATH = /dev/bin;.;/dev/src/genclib
+
+
+
+GENCOBJ1 :=$(BINDIR)\\llist.obj 	\
+	  $(BINDIR)\\hash.obj 		\
+	  $(BINDIR)\\stk.obj 		\
+	  $(BINDIR)\\inifile.obj	\
+	  $(BINDIR)\\queue.obj 		\
+	  $(BINDIR)\\path.obj
+
+
+GENCOBJ2 = $(BINDIR)\\regexp.obj 	\
+          $(BINDIR)\\getopt.obj 	\
+	  $(BINDIR)\\vector.obj 	\
+	  $(BINDIR)\\sort.obj           \
+	  $(BINDIR)\\str.obj
+
+SNIPOBJ1 = $(BINDIR)\\crc_32.obj 	\
+	  $(BINDIR)\\crc_16.obj 	\
+	  $(BINDIR)\\checksum.obj 	\
+	  $(BINDIR)\\bignum1.obj 	\
+	  $(BINDIR)\\bignum2.obj 	\
+	  $(BINDIR)\\soundex.obj
+
+
+GENCLIB = gclib32.lib
+SNIPLIB = sniplib.lib
+HASHTST = $(BINDIR)\\hashtst.exe
+INITST = $(BINDIR)\\initst.exe
+
+SRCDIR = /dev/src/genclib/
+
+TESTS = $(INITST) $(HASHTST)
+TARGETS = $(GENCLIB) $(SNIPLIB) 
+
+tests: $(TESTS)
+all: $(TARGETS) $(TESTS)
+
+
+# remove object files and executables
+clean:
+	@echo cleanning up ....
+	@cd $(BINDIR)
+	@-$(RM) $(GENCOBJ1) 
+	@-$(RM) $(GENCOBJ2) 
+	@-$(RM) $(SNIPOBJ1)
+	@-$(RM) $(TARGETS) $(TESTS)
+	@cd $(SRCDIR)
+
+
+# create the library.
+$(GENCLIB): $(GENCOBJ1) $(GENCOBJ2) 
+	@echo creating $@ ....
+	cd $(BINDIR)
+	@dir /b *.obj > tmpfile
+	$(LIB) /OUT:$@ @tmpfile
+	cd $(SRCDIR)
+
+# create the library.
+$(SNIPLIB): $(SNIPOBJ1) 
+	@echo creating $@ ....
+	cd $(BINDIR)
+	$(LIB) /OUT:$@ $(SNIPOBJ1)
+
+#--------------------------------------
+# create the hash test.
+#--------------------------------------
+$(HASHTST): hashtst.obj $(GENCLIB)
+	@echo creating $@ ....
+	@echo cd 
+	$(LD) hashtst.obj $(BINDIR)\\$(GENCLIB)  -o $@
+
+#--------------------------------------
+# create the ini file test.
+#--------------------------------------
+$(INITST): initst.obj $(GENCLIB)
+	@echo creating $@ ....
+	$(LD) initst.obj $(BINDIR)\\$(GENCLIB)  -o $@
+	
+
+#--------------------------------------
+# show flags 
+#--------------------------------------
+show_flags:
+	@echo CC 		=  $(CC)
+	@echo CFLAGS 		=  $(CFLAGS)
+	@echo LIB 		= $(LIB)
+	@echo INCLUDE  		= $(INCLUDE)
+	@echo OS 		= $(OS)
+	@echo MSVCDIR 		= $(MSVCDIR)
+	@echo SRCDIR		= $(SRCDIR)

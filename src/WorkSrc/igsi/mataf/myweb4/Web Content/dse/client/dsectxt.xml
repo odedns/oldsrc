@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsectxt.xml>
+     <!--DWGroupDef:DSE Sample application.Client.Contexts-->
+     <!-- CLIENT CONTEXT DEFs.=================================================== -->
+     <!--=========================================================================-->
+     <!-- Branch Context                                                          -->
+     <!--=========================================================================-->
+     <context id="branchClientCtx" parent="nil" type="branch">
+          <refKColl refId="branchData"/>
+		  <refService alias="CSClient" refId="realCSClient" type="cs"/>
+     </context>
+	 <context id="transCtx2" parent="workstationCtx" type="branch">
+          <refKColl refId="mydata"/>      	 
+          <refService alias="CSService" refId="realCSClient" type="cs"/>
+     </context>
+     
+     <context id="transCtx" type="op">
+          <refKColl refId="mydata"/>      	 
+          <refService alias="CSService" refId="realCSClient" type="cs"/>
+     </context>
+     
+     <!--=========================================================================-->
+     <!-- WorkStation Context                                                     -->
+     <!--=========================================================================-->
+     <context id="workstationCtx" parent="branchClientCtx" type="branch">
+          <refKColl refId="workstationData"/>
+          <refService alias="CSClient" refId="realCSClient" type="cs"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- StartUp Operation Context                                               -->
+     <!--=========================================================================-->
+     <context id="startupClientCtx" parent="workstationCtx" type="op">
+          <refKColl refId="startupClientData"/>
+     </context>
+     <!--=========================================================================-->
+     <!-- End Session Operation Context                                           -->
+     <!--=========================================================================-->
+     <context id="endSessionClientCtx" parent="workstationCtx" type="op">
+          <refKColl refId="endSessionClientData"/>
+     </context>
+     
+      <context id="genClientOpCtx" type="op" parent="startupClientCtx" >
+           <refKColl refId="genOpData"/>          
+     </context>
+     
+       <context id="genOpCtx" type="op" parent="workstationCtx" >
+           <refKColl refId="genOpData"/>          
+     </context>
+     
+     <context id="applicationTablesClientOpCtxt" type="op">
+		  <refKColl refId="applicationTablesClientOpData"/>
+	 </context>
+
+
+	<!-- for ref tables  -->
+	<context id="refTablesCtx" type="op">
+		<refKColl refId="refTablesData" />	
+	</context>
+	<context id="emptyCtx" parent="transCtx" type="op" />
+	
+ 	<!-- override context -->
+	<context id="overrideCtx" type="view">
+		<refKColl refId="overrideData" />
+	</context>
+     <!--/DWGroupDef-->
+</dsectxt.xml>

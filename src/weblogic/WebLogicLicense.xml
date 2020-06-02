@@ -1,0 +1,32 @@
+        
+<!-- Keys for version 4.0 and later -->
+<WEBLOGIC-LICENSES>
+  <LICENSE PRODUCT="Tengah"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="4cce6623faa80c1267b55647c081c70f"
+  />
+  <LICENSE PRODUCT="Tengah/SSL"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="6c712597a52412984f3f5f43cae71659"
+  />
+  <LICENSE PRODUCT="jdbcKona/MSSQLServer4"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="f4bb10ed37dca8607d05c269fb9fe05a"
+  />
+  <LICENSE PRODUCT="jdbcKona/Informix4"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="af2b99e753f718304c8500d07ef62471"
+  />
+  <LICENSE PRODUCT="jdbcKona/Oracle"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="7bda7bac2a1758aefce1302eaf724d8f"
+  />
+  <LICENSE PRODUCT="jdbcKona/Sybase"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="09029d518ac5513c38b6772f13743e86"
+  />
+  <LICENSE PRODUCT="jdbcKona/MSSQLServer"
+    IP="any"  UNITS="3"  EXPIRATION="never"
+    KEY="0f7c6a75b64cf7f9bea3f17a2ae2e201"
+  />
+</WEBLOGIC-LICENSES>

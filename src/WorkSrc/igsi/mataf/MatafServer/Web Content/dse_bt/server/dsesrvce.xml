@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services>
+     <!--DWGroupDef:Test Bank Teller.Server.Services-->
+     <!-- ******************************************************************************** -->
+     <!-- 		START SERVICES DEFINITION SAMPLE FOR THE SERVER	    			        -->
+     <!-- ******************************************************************************** -->
+     <!-- ================================================================== -->
+     <!-- 				Client-Server 			         	      -->
+     <!-- ================================================================== -->
+     <CSServer id="realCSServer"/>
+     <!-- ******************************************************************************** -->
+     <!-- 		END SERVICES DEFINITION SAMPLE FOR THE SERVER	      	        	  -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 	START BTF CORE EXTENSIONS SERVICE DEFINITIONS FOR THE SERVER		        -->
+     <!-- ******************************************************************************** -->
+
+     <!-- ******************************************************************************** -->
+     <!-- 				Agent Admin				           -->
+     <!-- ******************************************************************************** -->
+
+     <SecurityAdministrationService id="SecurityAdministration"/>
+     <!-- Security Access -->
+     <SecurityAccessService CBTFTracing="yes" JDBCDataBase="BTF"
+          JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver" JDBCMaxData="700"
+          JDBCMaxGroups="700" JDBCMaxHandler="100" JDBCMaxID="50"
+          JDBCMaxPassword="120" JDBCMaxRightTimes="700"
+          JDBCMaxRights="700" JDBCMaxRoleTimes="700" JDBCMaxRoles="700"
+          JDBCMaxUserID="25" JDBCMaxUsers="700" JDBCPassword="pssw001"
+          JDBCURL="jdbc:db2:" JDBCUserID="user001"
+          configurations="BTF.CONFIGURATION" contexts="BTF.CONTEXTS"
+          controller="com.ibm.dse.applsrv.aa.SecurityController"
+          encryption="com.ibm.dse.applsrv.aa.Scrambler"
+          groups="BTF.GROUPS" id="SecurityAccess"
+          loggingOptions="debug error info walkbacks"
+          persistContext="yes"
+          persistence="com.ibm.dse.applsrv.aa.SecurityJDBCPersistence2"
+          queryPassword="yes" rights="BTF.RIGHTS" roles="BTF.ROLES"
+          securityManager="com.ibm.dse.applsrv.aa.SecurityManager"
+          services="BTF.SERVICES" testAudit="off"
+          traceExceptions="false" tracing="err" uniqueLogons="no" users="BTF.USERS"/>
+     <!-- ================================================================== -->
+     <!-- 				Electronic Journal				      -->
+     <!-- ================================================================== -->
+     <!-- Electronic Journal Dummy journal service-->
+     <DummyDB2Journal JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver"
+          autoCommit="false" id="dummyJournal" schema="EJDATA">
+          <column dataName="EJData.opCode" id="OPCODE"/>
+          <column dataName="EJData.sessionID" id="SESSIONID"/>
+          <column dataName="EJData.userID" id="USERID"/>
+          <column dataName="EJData.customerID" id="CUSTOMERID"/>
+          <column dataName="EJData.accountID" id="ACCOUNTID"/>
+          <column dataName="EJData.accountCurr" id="ACCOUNTCURR"/>
+          <column dataName="EJData.amount" id="AMOUNT"/>
+          <column dataName="EJData.currency" id="CURRENCY"/>
+          <column dataName="EJData.cashIn" id="CASHIN"/>
+          <column dataName="EJData.cashOut" id="CASHOUT"/>
+          <column dataName="EJData.effectiveDate" id="EFFECTIVEDATE"/>
+          <column dataName="EJData.postingTime" id="POSTINGTIME"/>
+          <column dataName="EJData.status" id="STATUS"/>
+          <column dataName="OpData.opID" id="OPID"/>
+          <column dataName="OpData.hostRequest" id="HOSTREQUEST"/>
+          <column dataName="OpData.hostResponse" id="HOSTRESPONSE"/>
+          <column dataName="OpData.requestData" id="REQUESTDATA"/>
+     </DummyDB2Journal>
+     <!-- Electronic Journal Real journal service-->
+     <SingleTableJournal JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver"
+          autoCommit="false" id="realJournal" schema="EJDATA">
+          <column dataName="EJData.opCode" id="OPCODE"/>
+          <column dataName="EJData.sessionID" id="SESSIONID"/>
+          <column dataName="EJData.userID" id="USERID"/>
+          <column dataName="EJData.customerID" id="CUSTOMERID"/>
+          <column dataName="EJData.accountID" id="ACCOUNTID"/>
+          <column dataName="EJData.accountCurr" id="ACCOUNTCURR"/>
+          <column dataName="EJData.amount" id="AMOUNT"/>
+          <column dataName="EJData.currency" id="CURRENCY"/>
+          <column dataName="EJData.cashIn" id="CASHIN"/>
+          <column dataName="EJData.cashOut" id="CASHOUT"/>
+          <column dataName="EJData.effectiveDate" id="EFFECTIVEDATE"/>
+          <column dataName="EJData.postingTime" id="POSTINGTIME"/>
+          <column dataName="EJData.status" id="STATUS"/>
+          <column dataName="OpData.opID" id="OPID"/>
+          <column dataName="OpData.hostRequest" id="HOSTREQUEST"/>
+          <column dataName="OpData.hostResponse" id="HOSTRESPONSE"/>
+          <column dataName="OpData.requestData" id="REQUESTDATA"/>
+     </SingleTableJournal>
+     <!-- ******************************************************************************** -->
+     <!-- 	END BTF CORE EXTENSIONS SERVICE DEFINITIONS FOR THE SERVER		  	        -->
+     <!-- ******************************************************************************** -->
+     <!-- ******************************************************************************** -->
+     <!-- 	START BTF TELLER EXTENSIONS SERVICE DEFINITIONS FOR THE SERVER		        -->
+     <!-- ******************************************************************************** -->
+
+     <!-- ******************************************************************************** -->
+     <!-- 				Branch Admin				           -->
+     <!-- ******************************************************************************** -->
+
+     <!-- Branch Status Persistence -->
+     <BranchStatusManager JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver"
+          autoCommit="true" autoConnect="false"
+          databaseURL="jdbc:db2:BTF" id="BranchStatusService"
+          schema="BSM" table="BRANCH_STATUS">
+          <column dataName="BranchId" id="BRANCHID"/>
+          <column dataName="BusinessDay" id="BUSINESSDAY"/>
+          <column dataName="OperationDay" id="OPERATIONDAY"/>
+          <column dataName="BranchStatus" id="BRANCH_STATUS"/>
+     </BranchStatusManager>
+     <!-- Branch Totals Persistence -->
+     <BranchTotalsManager id="BranchTotalsService" autoCommit="true" autoConnect="false" schema="BSM" JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver" databaseURL="jdbc:db2:BTF" table="BRANCH_TOTALS">
+          <column id="BRANCHID" dataName="BranchTotals.BranchId"/>
+          <column id="TOTALTYPE" dataName="BranchTotals.TotalType"/>
+          <column id="TOTALCURRENCY" dataName="BranchTotals.TotalCurrency"/>
+          <column id="CURRENTAMOUNT" dataName="BranchTotals.CurrentAmount"/>
+          <column id="NEXTAMOUNT" dataName="BranchTotals.NextAmount"/>
+     </BranchTotalsManager>
+     <!-- User Status Persistence -->
+     <UserStatusManager JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver"
+          autoCommit="true" autoConnect="false"
+          databaseURL="jdbc:db2:BTF" id="UserStatusService" schema="BSM" table="USER_STATUS">
+          <column dataName="BranchId" id="BRANCH_ID"/>
+          <column dataName="UserId" id="USER_ID"/>
+          <column dataName="UserBusinessDay" id="BUSINESS_DAY"/>
+          <column dataName="UserOperationDay" id="OPERATION_DAY"/>
+          <column dataName="UserStatus" id="USER_STATUS"/>
+     </UserStatusManager>
+     <!--  ================================================================== -->
+     <!--     				Cash Drawer Management             	   	 -->
+     <!--  ================================================================== -->
+     <!--CashDrawerMgr id="CashDrawerService" contextFactoryName="com.ibm.ejs.ns.jndi.CNInitialContextFactory" ejbURL="IIOP:///localhost:9000" /-->
+     <CashDrawerMgr dbDriverName="COM.ibm.db2.jdbc.app.DB2Driver"
+          dbURL="jdbc:db2:BTF" id="CashDrawerService" schema="BTF" xmlPath="http://localhost:9080/DSE_TellerSampleApplicationWeb/dse/cm/"/>
+     <!--  ================================================================== -->
+     <!--     		Branch Specification Service           	   	 -->
+     <!--  ================================================================== -->
+     <BranchSpecificationsManager id="BranchSpecificationsService" xmlPath="http://localhost:9080/DSE_TellerSampleApplicationWeb/dse/branch/">
+     </BranchSpecificationsManager>
+     <!-- ================================================================== -->
+     <!-- 				Foreign Exchange				         	-->
+     <!-- ================================================================== -->
+     <!-- Foreign Exchange Rates DB2 Table -->
+     <JDBCTable autoCommit="true" autoConnect="false"
+          databaseURL="jdbc:db2:BTF" id="ForeignExchangeRates" table="BTF.FXRATES">
+          <column dataName="FromCurrency" id="FROMCURRENCY"/>
+          <column dataName="ToCurrency" id="TOCURRENCY"/>
+          <column dataName="FromMonetaryItem" id="FROMMONETARYITEM"/>
+          <column dataName="ToMonetaryItem" id="TOMONETARYITEM"/>
+          <column dataName="BuyRate" id="BUYRATE"/>
+          <column dataName="SellRate" id="SELLRATE"/>
+     </JDBCTable>
+     <!-- ForeignExchangeService -->
+     <!-- ========================================== -->
+     <!--     	Rates cache refresh interval	   	-->
+     <!-- 	Correct format - hh:mm (hours:minutes)	-->
+     <!-- 	For example: 1:30, 10:0, 0:45       	-->
+     <!-- ========================================== -->
+     <ForeignExchangeService ConversionCurrency="USD"
+          EmuCurrencies="ATS,BEF,DEM,ESP,FIM,FRF,IEP,ITL,LUF,NLG,PTE"
+          EuroConversion="true" HomeCurrency="USD"
+          RatesCacheRefreshInterval="3:0"
+          RatesProvider="RatesProviderDB2Schema1"
+          RatesRepository="RatesRepositoryJDBC" id="ForeignExchange">
+          <monetaryItem id="cash" value="CA"/>
+          <monetaryItem id="cheque" value="CK"/>
+          <monetaryItem id="check" value="CK"/>
+          <monetaryItem id="traveler&apos;s cheque" value="TC"/>
+          <monetaryItem id="traveler&apos;s check" value="TC"/>
+          <monetaryItem id="bank draft" value="BD"/>
+          <monetaryItem id="money order" value="MO"/>
+     </ForeignExchangeService>
+     <!-- ================================================================== -->
+     <!-- 				Dummy JDBC Store				         	-->
+     <!-- ================================================================== -->
+     <JDBCStore JDBCDriver="COM.ibm.db2.jdbc.app.DB2Driver"
+          autoCommit="true" id="dummyStore" schema="db2admin" table="storetable">
+          <column dataName="storeData.BranchId" id="BRANCHID"/>
+          <column dataName="storeData.opcode" id="OPCODE"/>
+          <column dataName="storeData.UserId" id="USERID"/>
+          <column dataName="storeData.timestamp" id="POSTINGTIME"/>
+          <column dataName="storeData.buffer" id="HOSTREQUEST"/>
+          <column dataName="storeData.ejId" id="EJ_RECORD_ID"/>
+     </JDBCStore>
+     <!-- ================================================================== -->
+     <!-- 				Transaction Dummy Host		        		-->
+     <!-- ================================================================== -->
+     <TransactionDummyLu0Session IDLength="4"
+          automaticSessionEstablishment="enabled"
+          establishSessionRetries="4" hostApplicationName="J1I1CIC2"
+          id="transactionDummyHost" luName="PUBLIC"
+          synchronousMode="disabled"
+          testFile="c:\dse\server\response.res" timeBetweenRetries="5"/>
+     <!--/DWGroupDef-->
+</Services>

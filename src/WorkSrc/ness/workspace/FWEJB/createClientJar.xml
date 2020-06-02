@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Harel" default="Total" basedir=".">
+<!-- Set user properties  Important(!!!) each programmer sholud change this variables-->
+<property name="currentProject" value="FWEJB" />
+<property name="EJBProject" value="FWEJB"/>
+
+<!-- Set global properties -->
+<property name="jar" value="ejbClient" />
+<property name="type" value="full" />
+<property name="debug" value="false" />
+<property name="basePath" location=".." />
+<property name="temp" value="c:\temp"></property>
+
+<target name="createJar">
+	<!-- Exports the fw -->
+	<jar jarfile="${temp}/${jar}.jar">
+	    <fileset dir="${basePath}/${EJBProject}/ejbModule">
+	    	<include name="**/*.class"/>
+	    </fileset>
+	</jar>
+</target>
+
+<target name="Total" depends="createJar">
+<!-- Buidl all projects and exports all files -->
+<echo message="Total finished" />
+</target>
+
+</project>

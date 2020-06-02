@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Harel" default="exportFrameWork" basedir=".">
+<!-- Set user properties  Important(!!!) each programmer sholud change this variables-->
+<property name="currentProject" value="myclient" />
+<property name="frameWorkProject" value="FrameWorkWeb"/>
+
+<!-- Set global properties -->
+<property name="jar" value="fw" />
+<property name="srcjar" value="fwsrc" />
+<property name="type" value="full" />
+<property name="debug" value="false" />
+<property name="basePath" location=".." />
+<property name="temp" value="temp"></property>
+
+
+<target name="exportFrameWork">
+	<mkdir dir="${temp}"/>
+	<!-- Exports the fw-->
+	<jar jarfile="${temp}/${jar}.jar">
+	    <fileset dir="${basePath}/${frameWorkProject}/WebContent/WEB-INF/classes">
+	    	<include name="**/*.class"/>    	
+	    </fileset>
+	</jar>
+	<jar jarfile="${temp}/${srcjar}.jar">
+	    <fileset dir="${basePath}/${frameWorkProject}/JavaSource">
+	    	<include name="**/*.java"/>    	
+	    </fileset>
+	</jar>
+	
+	<javadoc packagenames="com.ness.fw.*"
+           sourcepath="${basePath}/${frameWorkProject}/JavaSource"
+           excludepackagenames="com.dummy.test.doc-files.*"
+           defaultexcludes="yes"
+           destdir="${temp}/"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="Test API">
+     </javadoc>
+</target>
+
+
+</project>

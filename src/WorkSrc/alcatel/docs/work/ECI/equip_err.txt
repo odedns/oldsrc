@@ -1,0 +1,16 @@
+TestLS ..
+2007-06-11 15:40:50,060 DEBUG [P=646413:O=0:CT] hoshen.xsm.lightsoft.LightsoftManager - NameService=IOR:00bdbdbd0000003149444c3a636f6d2e69626d2f57736e4f7074696d697a65644e616d696e672f4e616d696e67436f6e746578743a312e3000bdbdbd000000010000000000000100000102bd000000104e3831332e68736e6465762e69646600238cbdbd0000006e4a4d4249000000124773e3aa37643062633737336533616166633334000000240000004a49454a5002008b702c4b07736572766572311a57736e44697374436f734f626a65637441646170746572574c4d000000194e3831334e6f6465303243656c6c2f70657273697374656e74bdbd00000007000000010000001400bdbdbd0501000100000000000101000000000049424d0a0000000800bd00011500000100000026000000020002bdbd49424d04000000050005020102bdbdbd0000001f0000000400bd0003000000200000000400bd0001000000250000000400bd0003
+2007-06-11 15:40:50,356 DEBUG [P=646413:O=0:CT] hoshen.xsm.lightsoft.LightsoftManager - user: hoshen2
+2007-06-11 15:40:55,110 DEBUG [P=646413:O=0:CT] hoshen.xsm.lightsoft.LightsoftManager - established emsSession=hoshen.xsm.lightsoft.corba.emsSession.EmsSession_IHolder@415c415c
+subnet = ECI/LightSoft_1-0001
+2007-06-11 15:40:59,910 INFO  [P=646413:O=0:CT] hoshen.xsm.lightsoft.LightsoftManager - getAllEquiptmen: LSN/EMS_XDM_182/1100
+org.omg.CORBA.BAD_PARAM:   vmcid: 0x0  minor code: 0  completed: No
+	at hoshen.xsm.lightsoft.corba.equipment.HolderState_T.from_int(HolderState_T.java:49)
+	at hoshen.xsm.lightsoft.corba.equipment.HolderState_THelper.read(HolderState_THelper.java:52)
+	at hoshen.xsm.lightsoft.corba.equipment.EquipmentHolder_THelper.read(EquipmentHolder_THelper.java:190)
+	at hoshen.xsm.lightsoft.corba.equipment.EquipmentOrHolder_THelper.read(EquipmentOrHolder_THelper.java:86)
+	at hoshen.xsm.lightsoft.corba.equipment.EquipmentOrHolderList_THelper.read(EquipmentOrHolderList_THelper.java:55)
+	at hoshen.xsm.lightsoft.corba.equipment._EquipmentInventoryMgr_IStub.getAllEquipment(_EquipmentInventoryMgr_IStub.java:436)
+	at hoshen.xsm.lightsoft.LightsoftManager.getAllEquipment(LightsoftManager.java:559)
+	at test.TestLS.main(TestLS.java:60)
+TestLS done ...

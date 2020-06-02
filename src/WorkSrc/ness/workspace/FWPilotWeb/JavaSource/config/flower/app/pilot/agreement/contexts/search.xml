@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "flower.dtd">
+<root>
+	<buttonSet name="searchHeskemButtons">
+		<button name="close" eventName="close" group="left" />
+	</buttonSet>
+
+	<context name="searchAgreementCTX">							
+		<field name="identification" type="xiInteger"   />
+		<field name="name" type="xiString"   />
+		<field name="description" type="xiString"   />
+		<field name="statusModel" type="listModel"  />
+		<field name="sugModel" type="listModel"  />							
+		<field name="searchResultTableModel" type="tableModel"  />			
+		<field name="likeModel" type="listModel"  />							
+		<field name="customerID" type="xiInteger"   />
+
+		<field name="pagingService" type="com.ness.fw.persistence.PagingService" />
+
+		<!-- The mode whice detail screen will be open -->
+		<field name="mode" type="xiString" />
+
+		<!-- this field will be used to pass the selected id from the table -->
+		<field name="selectedAgreementID" type="integer"/>
+	</context>
+
+</root>

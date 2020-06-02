@@ -1,0 +1,40 @@
+15:48:59.750 com.ibm.CORBA.iiop.ClientDelegate@4d83ffc1 invoke:729 P=938641:O=0:CT ORBRas[default] Received SystemException  org.omg.CORBA.MARSHAL: 
+
+Trace from server: 1198777258 at host localhost >>
+org.omg.CORBA.MARSHAL: Unable to load Class proxy.MyBpo : proxy.MyBpo (no security manager: RMI class loader disabled)  vmcid: IBM  minor code: 8AB  completed: No
+	at com.ibm.rmi.util.Utility.readClassValue(Utility.java:2498)
+	at com.ibm.rmi.iiop.CDRInputStream.readClass(CDRInputStream.java:2068)
+	at com.ibm.rmi.iiop.CDRInputStream.fast_read_value(CDRInputStream.java:1706)
+	at com.ibm.rmi.iiop.CDRInputStream.read_value(CDRInputStream.java:1832)
+	at onjlib.ejb.invoker._EJSRemoteStatelessInvoker_56d8a526_Tie.invoke(_EJSRemoteStatelessInvoker_56d8a526_Tie.java:148)
+	at onjlib.ejb.invoker._EJSRemoteStatelessInvoker_56d8a526_Tie._invoke(_EJSRemoteStatelessInvoker_56d8a526_Tie.java:78)
+	at com.ibm.CORBA.iiop.ServerDelegate.dispatchInvokeHandler(ServerDelegate.java:608)
+	at com.ibm.CORBA.iiop.ServerDelegate.dispatch(ServerDelegate.java:461)
+	at com.ibm.rmi.iiop.ORB.process(ORB.java:432)
+	at com.ibm.CORBA.iiop.ORB.process(ORB.java:1728)
+	at com.ibm.rmi.iiop.Connection.doWork(Connection.java:2227)
+	at com.ibm.rmi.iiop.WorkUnitImpl.doWork(WorkUnitImpl.java:65)
+	at com.ibm.ejs.oa.pool.PooledThread.run(ThreadPool.java:95)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:912)
+<<  END server: 1198777258 at host localhost
+
+  vmcid: IBM  minor code: 8AB  completed: No
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:80)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:44)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:315)
+	at com.ibm.rmi.iiop.ReplyMessage._getSystemException(ReplyMessage.java:225)
+	at com.ibm.rmi.iiop.ReplyMessage.getSystemException(ReplyMessage.java:174)
+	at com.ibm.rmi.iiop.ClientResponseImpl.getSystemException(ClientResponseImpl.java:173)
+	at com.ibm.rmi.corba.ClientDelegate.intercept(ClientDelegate.java:903)
+	at com.ibm.rmi.corba.ClientDelegate.invoke(ClientDelegate.java:428)
+	at com.ibm.CORBA.iiop.ClientDelegate.invoke(ClientDelegate.java:1148)
+	at com.ibm.rmi.corba.ClientDelegate.invoke(ClientDelegate.java:700)
+	at com.ibm.CORBA.iiop.ClientDelegate.invoke(ClientDelegate.java:1178)
+	at org.omg.CORBA.portable.ObjectImpl._invoke(ObjectImpl.java:486)
+	at onjlib.ejb.invoker._Invoker_Stub.invoke(_Invoker_Stub.java:238)
+	at proxy.EjbInvoker.invokeEjb(EjbInvoker.java:34)
+	at proxy.ProxyHandler.invoke(ProxyHandler.java:33)
+	at $Proxy0.find(Unknown Source)
+	at proxy.InvocationProxy.main(InvocationProxy.java:37)
+, p1=<null> 

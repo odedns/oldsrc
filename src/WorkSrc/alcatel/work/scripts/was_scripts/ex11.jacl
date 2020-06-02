@@ -1,0 +1,234 @@
+# This program may be used, executed, copied, modified and distributed
+# without royalty for the purpose of developing, using, marketing, or distribution
+
+#-----------------------------------------------------------------
+# ex11.jacl - Jacl implementation of example script 11
+#-----------------------------------------------------------------
+#
+#  The purpose of this example is to demonstrate the setting of various
+#  port numbers kept in the serverindex.xml file.
+#  
+#  This is a bi-modal script: it can be included in the wsadmin 
+#  command invocation like this:
+#     
+#     wsadmin -f ex11.jacl dmgrnode othernode 9809 8879 7989 5560 5561 7272 7273 7277
+#
+#  or the script can be sourced from the wsadmin command line:
+#     wsadmin> source ex11.jacl
+#     wsadmin> ex11.jacl dmgrnode othernode 9809 8879 7989 5560 5561 7272 7273 7277
+# 
+#  The script expects 9 parameters:
+#    nodename 
+#    BOOTSTRAP_ADDRESS 
+#    SOAP_CONNECTOR_ADDRESS 
+#    DRS_CLIENT_ADDRESS 
+#    JMSSERVER_QUEUED_ADDRESS
+#    JMSSERVER_DIRECT_ADDRESS 
+#    NODE_DISCOVERY_ADDRESS 
+#    CELL_MULTICAST_DISCOVERY_ADDRESS 
+#    CELL_DISCOVERY_ADDRESS
+#
+#  This example demonstrates these wsadmin features:
+#
+#   - The use of the AdminConfig object to locate configuration objects        
+#   - The use of the AdminConfig object to modify configuration objects 
+#-----------------------------------------------------------------
+#
+proc ex11 {nodeName NAnodeName bootstrap soap drs jmsQueued jmsDirect nodediscovery cellmultdiscovery celldiscovery} {
+  
+  #--------------------------------------------------------------
+  # set up globals
+  #--------------------------------------------------------------
+  global AdminConfig
+
+  #---------------------------------------------------------
+  # Get the config id for the node
+  #---------------------------------------------------------
+  puts "ex11: getting the config id for the node"
+  set node [$AdminConfig getid /Node:$nodeName/]
+  if {[llength $node] == 0} {
+     puts "ex11: could not find a Node object called $nodeName"
+     return
+  } 
+
+  #---------------------------------------------------------
+  # Get the config id for the deployment manager 
+  #---------------------------------------------------------
+  puts "ex11: getting the config id for the deployment manager" 
+  set dmgr [$AdminConfig getid /Node:$nodeName/Server:dmgr/]
+  if {[llength $dmgr] == 0} {
+     puts "ex11: could not find the deployment manager server"
+     return
+  } 
+
+  #---------------------------------------------------------
+  # Get the config id for the node agent 
+  #---------------------------------------------------------
+  puts "ex11: getting the config id for the node agent" 
+  set nodeagent [$AdminConfig getid /Node:$NAnodeName/]
+  puts "nodeagent $nodeagent"
+  set na_server [$AdminConfig getid /Node:$NAnodeName/Server:nodeagent/]
+  puts "na_server $na_server"
+  if {[llength $na_server] == 0} {
+     puts "ex11: could not find the node agent server"
+  } 
+
+  #---------------------------------------------------------
+  # Set the BOOTSTRAP_ADDRESS port 
+  #
+  # This is an attribute on the NameServer object inside the Server.  
+  # To modify this endpoint, you need to get the id of the NameServer
+  # and invoke modify:
+  #---------------------------------------------------------
+  puts "ex11: setting the BOOTSTRAP_ADDRESS port to $bootstrap" 
+  set ns [$AdminConfig list NameServer $dmgr]
+  set port_attr  [list port $bootstrap]
+  set host_attr  [list host $nodeName]
+  set boot_attrs [list BOOTSTRAP_ADDRESS [list $port_attr $host_attr]]
+  set attrs     [list $boot_attrs]
+  puts "ns $ns"
+  puts "port_attr $port_attr"
+  puts "host_attr $host_attr"
+  puts "boot_attrs $boot_attrs"
+  puts "attrs $attrs"
+  $AdminConfig modify $ns $attrs 
+
+  #---------------------------------------------------------
+  # set the SOAP_CONNECTOR_ADDRESS port
+  #
+  # This is an attribute on the SOAPConnector object inside the Server.  
+  # To modify this endpoint, you need to get the id of the SOAPConnector 
+  # and invoke modify:
+  #---------------------------------------------------------
+  puts "ex11: setting the SOAP_CONNECTOR_ADDRESS port to $soap" 
+  set soapC [$AdminConfig list SOAPConnector $dmgr]
+  set port_attr  [list port $soap]
+  set host_attr  [list host $nodeName]
+  set soap_attrs [list SOAP_CONNECTOR_ADDRESS [list $port_attr $host_attr]]
+  set attrs      [list $soap_attrs]
+  $AdminConfig modify $soapC $attrs 
+
+  #---------------------------------------------------------
+  # set the DRS_CLIENT_ADDRESS port
+  #
+  # This is an attribute on the SystemMessageServer object inside the Server.  
+  # To modify this endpoint, you need to get the id of the SystemMessageServer 
+  # and invoke modify:
+  #---------------------------------------------------------
+  puts "ex11: setting the DRS_CLIENT_ADDRESS port to $drs" 
+  set sms [$AdminConfig list SystemMessageServer $dmgr]
+  if {[llength $sms] == 0} {
+     puts "ex11: skipping DRS_CLIENT_ADDRESS because SystemMessageServer not found" 
+  } else {
+     set port_attr  [list port $drs]
+     set host_attr  [list host $nodeName]
+     set drs_attrs  [list DRS_CLIENT_ADDRESS [list $port_attr $host_attr]]
+     set attrs      [list $drs_attrs]
+     $AdminConfig modify $sms $attrs 
+  }
+
+  #---------------------------------------------------------
+  # set the JMSSERVER_QUEUED_ADDRESS and JMSSERVER_DIRECT_ADDRESS ports
+  #
+  # These are attributes on the JMSServer object inside the Server.  
+  # To modify these endpoints, you need to get the id of the JMSServer 
+  # and invoke modify:
+  #---------------------------------------------------------
+  puts "ex11: setting the JMSSERVER_QUEUED_ADDRESS port to $jmsQueued and the JMSSERVER_DIRECT_ADDRESS port to $jmsDirect" 
+  set jms [$AdminConfig list JMSServer $dmgr]
+  if {[llength $jms] == 0} {
+     puts "ex11: skipping JMS addresses because JMSServer not found" 
+  } else {
+     set port_attr  [list port $jmsQueued]
+     set host_attr  [list host $nodeName]
+     set jmsq_attrs [list JMSSERVER_QUEUED_ADDRESS [list $port_attr $host_attr]]
+     set attrs      [list $jmsq_attrs]
+     $AdminConfig modify $jms $attrs 
+
+     set port_attr  [list port $jmsDirect]
+     set host_attr  [list host $nodeName]
+     set jmsd_attrs [list JMSSERVER_DIRECT_ADDRESS [list $port_attr $host_attr]]
+     set attrs      [list $jmsd_attrs]
+     $AdminConfig modify $jms $attrs 
+  }
+
+  #---------------------------------------------------------
+  # set the NODE_DISCOVERY_ADDRESS port
+  #
+  # This is an attribute on the NodeAgent object inside the node agent Server.  
+  # To modify this endpoint, you need to get the id of the NodeAgent 
+  # and invoke modify:
+  #---------------------------------------------------------
+  if {[llength $na_server] == 0} {
+     puts "ex11: skipping NODE_DISCOVERY_ADDRESS because node agent not found." 
+  } else {
+     puts "ex11: setting the NODE_DISCOVERY_ADDRESS port to $nodediscovery" 
+     set na [$AdminConfig list NodeAgent $na_server]
+     set port_attr  [list port $nodediscovery]
+     set host_attr  [list host $NAnodeName]
+     set nd_attrs   [list NODE_DISCOVERY_ADDRESS [list $port_attr $host_attr]]
+     set attrs      [list $nd_attrs]
+     $AdminConfig modify $na $attrs 
+  }
+
+  #---------------------------------------------------------
+  # set the CELL_MULTICAST_DISCOVERY_ADDRESS and CELL_DISCOVERY_ADDRESS ports
+  #
+  # These are attributes on the CellManager object inside the Server.  
+  # To modify these endpoints, you need to get the id of the CellManager 
+  # and invoke modify:
+  #---------------------------------------------------------
+  puts "ex11: setting the CELL_MULTICAST_DISCOVERY_ADDRESS port to $cellmultdiscovery and the CELL_DISCOVERY_ADDRESS port to $celldiscovery" 
+  set cm         [$AdminConfig list CellManager $dmgr]
+  set port_attr  [list port $cellmultdiscovery]
+  set host_attr  [list host $nodeName]
+  set cmda_attrs [list CELL_MULTICAST_DISCOVERY_ADDRESS [list $port_attr $host_attr]]
+  set attrs      [list $cmda_attrs]
+  $AdminConfig modify $cm $attrs 
+
+  set port_attr  [list port $celldiscovery]
+  set host_attr  [list host $nodeName]
+  set cda_attrs  [list CELL_DISCOVERY_ADDRESS [list $port_attr $host_attr]]
+  set attrs      [list $cda_attrs]
+  $AdminConfig modify $cm $attrs 
+
+
+  #---------------------------------------------------------
+  # save the changes 
+  #---------------------------------------------------------
+  puts "ex11: saving the configuration"
+  $AdminConfig save
+
+}
+ 
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 10) } {
+   puts "ex11: this script requires 10 parameters: " 
+   puts "       1) the name of the Deployment Manager node"
+   puts "       2) the name of the Node Agent node"
+   puts "       3) the value of BOOTSTRAP_ADDRESS "
+   puts "       4) the value of SOAP_CONNECTOR_ADDRESS "
+   puts "       5) the value of DRS_CLIENT_ADDRESS "
+   puts "       6) the value of JMSSERVER_QUEUED_ADDRESS"
+   puts "       7) the value of JMSSERVER_DIRECT_ADDRESS "
+   puts "       8) the value of NODE_DISCOVERY_ADDRESS "
+   puts "       9) the value of CELL_MULTICAST_DISCOVERY_ADDRESS "
+   puts "      10) the value of CELL_DISCOVERY_ADDRESS"
+   puts ""
+   puts "e.g.:     ex11 dmgrnode othernode 9809 8879 7989 5560 5561 7272 7273 7277"
+} else { 
+   set nodeName      [lindex $argv 0]  
+   set NAnodeName    [lindex $argv 2]  
+   set bootstrap     [lindex $argv 2]
+   set soap          [lindex $argv 3]
+   set drs           [lindex $argv 4]
+   set jmsQueued     [lindex $argv 5]
+   set jmsDirect     [lindex $argv 6]
+   set nodediscovery [lindex $argv 7]
+   set cellmultdiscovery    [lindex $argv 8]
+   set celldiscovery [lindex $argv 9]
+   ex11 $nodeName $NAnodeName $bootstrap $soap $drs $jmsQueued $jmsDirect $nodediscovery $cellmultdiscovery $celldiscovery
+}

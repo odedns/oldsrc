@@ -1,0 +1,25 @@
+------Start of DE processing------ = [10:00:10:629 GMT+02:00 15/07/07] , key = java.lang.Exception com.ibm.ws.management.configservice.WorkspaceHelper.getDocAccessor 96
+Exception = java.lang.Exception
+Source = com.ibm.ws.management.configservice.WorkspaceHelper.getDocAccessor
+probeid = 96
+Stack Dump = java.lang.Exception: ADMG0505E: Access Denied to access this config data deployment.xml.
+	at com.ibm.ws.management.configservice.WorkspaceHelper.getDocAccessorInternal(WorkspaceHelper.java:168)
+	at com.ibm.ws.management.configservice.WorkspaceHelper.getDocAccessorNoCreate(WorkspaceHelper.java:124)
+	at com.ibm.ws.management.configarchive.EnhancedEarConfigurator.getResource(EnhancedEarConfigurator.java:869)
+	at com.ibm.ws.management.configarchive.EnhancedEarConfigurator.getDeploymentResource(EnhancedEarConfigurator.java:622)
+	at com.ibm.ws.management.configarchive.EnhancedEarConfigurator.getDeployment(EnhancedEarConfigurator.java:647)
+	at com.ibm.ws.management.application.task.ConfigureTask.getExistingResource(ConfigureTask.java:398)
+	at com.ibm.ws.management.application.task.ConfigureTask.getDeploymentResourceFromWorkspace(ConfigureTask.java:345)
+	at com.ibm.ws.management.application.task.ConfigureTask.performTask(ConfigureTask.java:260)
+	at com.ibm.ws.management.application.SchedulerImpl.run(SchedulerImpl.java:262)
+	at java.lang.Thread.run(Thread.java:797)
+
+Dump of callerThis = 
+null
+
+==> Performing default dump from com.ibm.ws.management.dm.JmxDM  = Sun Jul 15 10:00:10 GMT+02:00 2007
+Dump of callerThis = 
+null
+
++Data for directive [defaultjmx] obtained. = 
+==> Dump complete for com.ibm.ws.management.dm.JmxDM  = Sun Jul 15 10:00:10 GMT+02:00 2007

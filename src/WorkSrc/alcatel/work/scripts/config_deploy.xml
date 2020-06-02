@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+
+<!-- 
+	Copy all flower config files from the projects 
+	to the WEB-INF/classes dir on OfekWeb for deployment.	
+-->
+
+
+<project name="configDeploy" default="copyConfig" basedir=".">
+
+	<property name="basepath" location=".." />
+	
+	<property name="destdir" location="WebContent/WEB-INF/classes/config" />
+	<!--
+	<property name="destdir" location="c:/temp/config" />
+	-->
+	 <target name="copyConfig">
+		 <!-- copy config xml files -->
+		 <echo> Copying OfekAuth Config Files </echo>
+		 <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekAuth\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+  		  <echo> Copying OfekCommon Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekCommon\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  <echo> Copying OfekProducts Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekProducts\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+  		  <echo> Copying OfekParty Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekParty\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+   		  <echo> Copying OfekPolicy Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekPolicy\JavaSource\config\">
+    			<include name="**/*.*"/>
+		    </fileset>    		    
+		  </copy>
+   		  <echo> Copying OfekPolicyTree Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekPolicyTree\JavaSource\config\">
+    			<include name="**/*.*"/>
+		    </fileset>    		    
+		  </copy>
+
+		  
+   		  <echo> Copying OfekReinsurance Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekReinsurance\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  
+   		  <echo> Copying OfekSurrender Config Files </echo>
+  		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekSurrender\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  
+   		  <echo> Copying OfekUnderwriting Config Files </echo>
+  		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekUnderwriting\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+
+   		  <echo> Copying OfekCalculation Config Files </echo>
+  		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekCalculation\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+		  
+   		  <echo> Copying OfekWorkFlow Config Files </echo>
+		   <copy todir="${destdir}" includeEmptyDirs="false" >
+    		<fileset dir="${basepath}\OfekWorkFlow\JavaSource\config\">
+    			<include name="**/*.xml"/>
+		    </fileset>    		    
+		  </copy>
+      </target>
+	
+
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project default="make jar">
+	<xmlproperty file="properties.xml" semanticAttributes="true"/>
+	<xmlproperty file="${basedir}/../../CM/prjCM_Builders/classpath.add.xml" semanticAttributes="true"/>
+	
+	<target name="make jar">
+		<javac srcdir="." classpath="${classpath};${cm.jre6}">
+		</javac>
+		<jar destfile="prjEJ_EJBUtil.jar">
+			<fileset dir="ejbModule" includes="**/*.class,**/*.xml,**/*.xmi,**/*.mf,**/*.wsdl"></fileset>
+		</jar>
+	</target>
+</project>

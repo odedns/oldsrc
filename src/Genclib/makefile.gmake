@@ -1,0 +1,32 @@
+
+include gmake.inc
+
+OBJECTS := llist.o queue.o stk.o hash.o network.o bcrypt.o sort.o inifile.o
+TEST_TARGETS := hashtst stktest initst
+LIB_TARGETS := libdstructs.a
+
+
+all : $(LIB_TARGETS)  $(TEST_TARGETS)
+
+libdstructs.a : $(OBJECTS)
+	@echo Creating  : $@ 
+	$(AR)   r $@ $^ 
+
+clean :
+	@echo "--------------"
+	@echo  Cleaning Up !!
+	@echo "--------------"
+	$(RM) $(OBJECTS) 
+
+
+hashtst : hashtst.c libdstructs.a
+	$(CC) $(CFLAGS) -o $@ $^
+
+qtst : qtst.c libdstructs.a
+	$(CC) $(CFLAGS) -o $@ $^
+
+stktest : stktest.c libdstructs.a
+	$(CC) $(CFLAGS) -o $@ $^
+
+initst : initst.c libdstructs.a
+	$(CC) $(CFLAGS) -o $@ $^

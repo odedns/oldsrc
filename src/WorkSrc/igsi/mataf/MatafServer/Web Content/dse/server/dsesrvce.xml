@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dsesrvce.xml SYSTEM "../../dtd/dsesrvce.dtd">
+
+<dsesrvce.xml>
+	<!--DWGroupDef:Server.Services-->
+	<CSServer id="realCSServer" inactivityClientTimeout="0" timeBetweenSessionCheck="600000" />
+	<JDBCServicesConnectionManager id="JDBCServicesConnMgr" poolManager="WebSphere4.0"/>
+	<!--=========================================================================-->
+	<!-- Dummy Lu0 Session Service                                               -->
+	<!--=========================================================================-->
+	<DummyLu0Session IDLength="4" automaticSessionEstablishment="enabled" establishSessionRetries="4" hostApplicationName="J1I1CIC2" id="dummyHost" luName="PUBLIC" synchronousMode="enabled" testFile="/HL01.res" timeBetweenRetries="5" />
+
+	<CommunicationsPool id="communicationsPool" size="2" identicalElements="true" maxPoolSize="100">
+		<Lu0Session id="luSession" luName="COMPOOL" hostApplicationName="A01CICSV" establishSessionRetries="-1" timeBetweenRetries="10" automaticSessionEstablishment="enabled" synchronousMode="disabled" establishTimeout="40" />
+	</CommunicationsPool>
+
+	<CICSConnector 	id="cicsService"  transactionId="" programName=""  commAreaLength=""
+					automaticConnectionEstablishment="enabled" establishSessionRetries="5" 
+					timeBetweenRetries="30" gatewayName="tcp://10.18.188.95" gatewayPort="2006" serverName="CICST" />
+
+	<!-- mq queue for log messages -->
+	<MQConnection id="MQ_LOG" QMgrName="Q283US00" sendToQ="QS1" 
+			replyToQ="QS1" synchronousMode="enabled" 
+			messageOrCorrelation="correlation"		
+			serverOrClient="client" hostName="10.11.103.216" channel="SERVER.CHANNEL" 
+			port="1414" automaticConnectionEstablishment="disabled" 
+			establishConnectionRetries="3" />
+		
+	<!--========================================================================-->
+	<!-- Journal service															-->
+	<!--========================================================================-->
+	<MatafJournalService id="realJournal" autoCommit="true" schema="mataf" dataSourceName="jdbc/matafdb"
+		 counterFieldName="" counterDecimalFormat="0000" 
+		 inquireCounterFieldName="" inquireCounterDecimalFormat="0000">
+		<!--column id="GL_BANK" dataName="toJournalData.GL_BANK" />
+		<column id="GL_SNIF" dataName="toJournalData.GL_SNIF" /-->
+	</MatafJournalService>
+	
+	<!--JDBCJournal id="journalSlikaService" autoCommit="true" schema="mataf" dataSourceName="jdbc/matafdb" -->
+	<MatafJournalService id="journalSlikaService" autoCommit="true" schema="mataf" dataSourceName="jdbc/matafdb" 
+						 counterFieldName="GLSF_GLBL.GL_SIDURI_TAHANA_CZ" counterDecimalFormat="0000" 
+						 inquireCounterFieldName="GLSF_GLBL.GL_MIS_BERUR_CZ" inquireCounterDecimalFormat="0000">
+		<!-- GKSJ_HDR -->
+		<column id="GL_MAARECHET" dataName="CZSJ_REC.GL_MAARECHET" />
+		<column id="GL_MAHADURA" dataName="CZSJ_REC.GL_MAHADURA" />
+		<column id="GL_SESSION" dataName="CZSJ_REC.GL_SESSION" />
+		<column id="GL_SIDURI_YOMAN" dataName="CZSJ_REC.GL_SIDURI_YOMAN" />
+		<column id="GL_MISHMERET" dataName="CZSJ_REC.GL_MISHMERET" />
+		<column id="GL_TR_MARECHET" dataName="CZSJ_REC.GL_TR_MARECHET" />
+		<column id="GL_SHAA_MARECHET" dataName="CZSJ_REC.GL_SHAA_MARECHET" />
+		<column id="GL_MISPAR_TAHANA" dataName="CZSJ_REC.GL_MISPAR_TAHANA" />
+		<column id="GL_SIDURI_TAHANA" dataName="CZSJ_REC.GL_SIDURI_TAHANA" />
+		<column id="GL_SNIF_MARECHET" dataName="CZSJ_REC.GL_SNIF_MARECHET" />
+		<column id="GL_ZIHUI_PAKID" dataName="CZSJ_REC.GL_ZIHUI_PAKID" />
+		<column id="GL_SUG_RESHUMA" dataName="CZSJ_REC.GL_SUG_RESHUMA" />
+		<column id="GL_FILLER" dataName="CZSJ_REC.GL_FILLER" />
+		<column id="GL_PEULA" dataName="CZSJ_REC.GL_PEULA" />
+		<column id="GL_ZCHUT_HOVA" dataName="CZSJ_REC.GL_ZCHUT_HOVA" />
+		<column id="GL_MISCHAR" dataName="CZSJ_REC.GL_MISCHAR" />
+		<column id="GL_IFYUN_SUG_PEULA" dataName="CZSJ_REC.GL_IFYUN_SUG_PEULA" />
+		<column id="GL_TAT_IFYUN_SUG_PEU" dataName="CZSJ_REC.GL_TAT_IFYUN_SUG_PEU" />
+		<column id="GL_SW_ONLINE" dataName="CZSJ_REC.GL_SW_ONLINE" />
+		<column id="GL_SW_MTUKENET" dataName="CZSJ_REC.GL_SW_MTUKENET" />
+		<column id="GL_SW_MTAKENET" dataName="CZSJ_REC.GL_SW_MTAKENET" />
+		<column id="GL_SW_TO_BSHIDUR" dataName="CZSJ_REC.GL_SW_TO_BSHIDUR" />
+		<column id="GL_SW_HUSHLEMA" dataName="CZSJ_REC.GL_SW_HUSHLEMA" />
+		<column id="GL_SW_MISHMERET" dataName="CZSJ_REC.GL_SW_MISHMERET" />
+		<column id="GL_SW_HUKRENA_HODAA" dataName="CZSJ_REC.GL_SW_HUKRENA_HODAA" />
+		<column id="GL_SW_MVATELET" dataName="CZSJ_REC.GL_SW_MVATELET" />
+		<column id="GL_SW_MVUTELET" dataName="CZSJ_REC.GL_SW_MVUTELET" />
+		<column id="GL_SW_LVARER" dataName="CZSJ_REC.GL_SW_LVARER" />
+		<column id="GL_SW_ISHUR_HDAR_ISK" dataName="CZSJ_REC.GL_SW_ISHUR_HDAR_ISK" />
+		<column id="GL_SW_SAMCHUT_MNHL" dataName="CZSJ_REC.GL_SW_SAMCHUT_MNHL" />
+		<column id="GL_SW_IM_LIMIT" dataName="CZSJ_REC.GL_SW_IM_LIMIT" />
+		<column id="GL_ISHUR_MENAEL" dataName="CZSJ_REC.GL_ISHUR_MENAEL" />
+		<column id="GL_ZIHUI_MENAHEL" dataName="CZSJ_REC.GL_ZIHUI_MENAHEL" />
+		<column id="GL_SIDURI_BITUL" dataName="CZSJ_REC.GL_SIDURI_BITUL" />
+		<column id="GL_MISPAR_RES_MTOCH" dataName="CZSJ_REC.GL_MISPAR_RES_MTOCH" />
+		<column id="GL_MISPAR_RES_TOT" dataName="CZSJ_REC.GL_MISPAR_RES_TOT" />
+		<column id="GL_SUG_KIVUTZ" dataName="CZSJ_REC.GL_SUG_KIVUTZ" />
+		<column id="GL_ORECH_SHIDUR" dataName="CZSJ_REC.GL_ORECH_SHIDUR" />
+		<column id="GL_PEULA_MISHNIT" dataName="CZSJ_REC.GL_PEULA_MISHNIT" />
+		<column id="GL_BANK" dataName="CZSJ_REC.GL_BANK" />
+		<column id="GL_SNIF" dataName="CZSJ_REC.GL_SNIF" />
+		<column id="GL_SCH" dataName="CZSJ_REC.GL_SCH" />
+		<column id="GL_CH" dataName="CZSJ_REC.GL_CH" />
+		<column id="GL_MATBEA" dataName="CZSJ_REC.GL_MATBEA" />
+		<column id="GL_SCHUM" dataName="CZSJ_REC.GL_SCHUM" />
+		<column id="GL_LIST_FLAG" dataName="CZSJ_REC.GL_LIST_FLAG" />
+		<column id="GL_HORAA_TELEFONIT" dataName="CZSJ_REC.GL_HORAA_TELEFONIT" />
+		<column id="GL_SUG_ISHUR_MENAEL" dataName="CZSJ_REC.GL_SUG_ISHUR_MENAEL" />
+		<column id="GL_SW_NETEK" dataName="CZSJ_REC.GL_SW_NETEK" />
+		<column id="GL_FILLER1" dataName="CZSJ_REC.GL_FILLER1" />
+		<column id="GL_RESTORE_ASSIGNS" dataName="CZSJ_REC.GL_RESTORE_ASSIGNS" />
+		<column id="GL_RESTORE_SCREENS" dataName="CZSJ_REC.GL_RESTORE_SCREENS" />
+		<column id="GL_RESTORE_FORMS" dataName="CZSJ_REC.GL_RESTORE_FORMS" />
+		<column id="GL_RESTORE_LIST" dataName="CZSJ_REC.GL_RESTORE_LIST" />
+		<column id="GL_STORNO_COUNTERS" dataName="CZSJ_REC.GL_STORNO_COUNTERS" />
+		<!-- CZSJ_CHOTEM -->
+		<column id="CH_SIGN" dataName="CZSJ_REC.CH_SIGN" />
+		<column id="CH_SW_TZ" dataName="CZSJ_REC.CH_SW_TZ" />
+		<column id="CH_HP" dataName="CZSJ_REC.CH_HP" />
+		<column id="CH_KOD_TKINUT" dataName="CZSJ_REC.CH_KOD_TKINUT" />
+		<column id="CH_MISPAR_SIDURI" dataName="CZSJ_REC.CH_MISPAR_SIDURI" />
+		<column id="CH_MISPAR_CHEQ" dataName="CZSJ_REC.CH_MISPAR_CHEQ" />
+		<column id="CH_BANK_CHOTEM" dataName="CZSJ_REC.CH_BANK_CHOTEM" />
+		<column id="CH_BANK_CHOTEM_DESC" dataName="CZSJ_REC.CH_BANK_CHOTEM_DESC" />
+		<column id="CH_SNIF_CHOTEM" dataName="CZSJ_REC.CH_SNIF_CHOTEM" />
+		<column id="CH_SNIF_CHOTEM_DESC" dataName="CZSJ_REC.CH_SNIF_CHOTEM_DESC" />
+		<column id="CH_SNIF_S_B" dataName="CZSJ_REC.CH_SNIF_S_B" />
+		<column id="CH_CH_CHOTEM" dataName="CZSJ_REC.CH_CH_CHOTEM" />
+		<column id="CH_SCHUM_CHEQ" dataName="CZSJ_REC.CH_SCHUM_CHEQ" />
+		<column id="CH_TAARICH_HAFKADA" dataName="CZSJ_REC.CH_TAARICH_HAFKADA" />
+		<column id="CH_TAR_HAFKD_KTZR" dataName="CZSJ_REC.CH_TAR_HAFKD_KTZR" />
+		<column id="CH_TAARICH_NAKUV" dataName="CZSJ_REC.CH_TAARICH_NAKUV" />
+		<column id="CH_TAR_NAKUV_KTZR" dataName="CZSJ_REC.CH_TAR_NAKUV_KTZR" />
+		<column id="CH_TAR_PERAON_KTZR" dataName="CZSJ_REC.CH_TAR_PERAON_KTZR" />
+		<column id="CH_TAARICH_PERAON" dataName="CZSJ_REC.CH_TAARICH_PERAON" />
+		<column id="CH_SUG_HAFKADA" dataName="CZSJ_REC.CH_SUG_HAFKADA" />
+		<column id="CH_SUG_HAFKADA_DESC" dataName="CZSJ_REC.CH_SUG_HAFKADA_DESC" />
+		<column id="CH_KOD_HAGBALA" dataName="CZSJ_REC.CH_KOD_HAGBALA" />
+		<column id="CH_KOD_HAGBALA_DESC" dataName="CZSJ_REC.CH_KOD_HAGBALA_DESC" />
+		<column id="CH_ZIHUI_CHIZONI" dataName="CZSJ_REC.CH_ZIHUI_CHIZONI" />
+		<column id="CH_TEUR_HAFKADA" dataName="CZSJ_REC.CH_TEUR_HAFKADA" />
+		<column id="CH_KOD_MSG1" dataName="CZSJ_REC.CH_KOD_MSG1" />
+		<column id="CH_KOD_MSG2" dataName="CZSJ_REC.CH_KOD_MSG2" />
+		<column id="CH_MSG1" dataName="CZSJ_REC.CH_MSG1" />
+		<column id="CH_MSG2" dataName="CZSJ_REC.CH_MSG2" />
+		<column id="CH_TEUR_HAGBALA" dataName="CZSJ_REC.CH_TEUR_HAGBALA" />
+		<column id="CH_AHUZ_RIBIT" dataName="CZSJ_REC.CH_AHUZ_RIBIT" />
+		<column id="CH_YEME_ERECH" dataName="CZSJ_REC.CH_YEME_ERECH" />
+		<column id="CH_SCHUM_NETO" dataName="CZSJ_REC.CH_SCHUM_NETO" />
+		<column id="GL_ISHUR_MENAEL_2" dataName="CZSJ_REC.GL_ISHUR_MENAEL_2" />
+		<column id="CH_TAARICH_IDKUN" dataName="CZSJ_REC.CH_TAARICH_IDKUN" />
+		<column id="CH_PAKID" dataName="CZSJ_REC.CH_PAKID" />
+		<column id="CH_MENAHEL" dataName="CZSJ_REC.CH_MENAHEL" />
+		<column id="CH_AHUZ_AMLA" dataName="CZSJ_REC.CH_AHUZ_AMLA" />
+		<column id="CH_SCHUM_RIBIT" dataName="CZSJ_REC.CH_SCHUM_RIBIT" />
+		<column id="CH_TAARICH_ERECH" dataName="CZSJ_REC.CH_TAARICH_ERECH" />
+		<column id="CH_TAARICH_ASAKIM" dataName="CZSJ_REC.CH_TAARICH_ASAKIM" />
+		<column id="CH_SACH_SCHUM" dataName="CZSJ_REC.CH_SACH_SCHUM" />
+		<column id="CH_SACH_SCHUM_NETO" dataName="CZSJ_REC.CH_SACH_SCHUM_NETO" />
+		<column id="CH_SACH_SCHUM_RIBIT" dataName="CZSJ_REC.CH_SACH_SCHUM_RIBIT" />
+		<column id="CH_SACH_TAARICH" dataName="CZSJ_REC.CH_SACH_TAARICH" />
+		<column id="CH_KAMUT_CHEQ" dataName="CZSJ_REC.CH_KAMUT_CHEQ" />
+		<column id="CH_TAARICH_LIFNEY" dataName="CZSJ_REC.CH_TAARICH_LIFNEY" />
+		<column id="CH_READ_CHEQ" dataName="CZSJ_REC.CH_READ_CHEQ" />
+		<!-- CZSJ_MUTAV -->
+		<column id="TLSS_BSCH_TL_BANK" dataName="CZSJ_REC.TLSS_BSCH.TL_BANK" />
+		<column id="TLSS_BSCH_TL_SNIF" dataName="CZSJ_REC.TLSS_BSCH.TL_SNIF" />
+		<column id="TLSS_BSCH_TL_SCH" dataName="CZSJ_REC.TLSS_BSCH.TL_SCH" />
+		<column id="TLSS_BSCH_TL_CH" dataName="CZSJ_REC.TLSS_BSCH.TL_CH" />		
+		<column id="MU_ASMACHTA" dataName="CZSJ_REC.CH_ASMACHTA" />
+		<column id="MU_KAMUT_CHEQ" dataName="CZSJ_REC.CH_KAMUT_CHEQ" />
+		<column id="MU_SACH_SCHUM" dataName="CZSJ_REC.CH_SACH_SCHUM" />
+		<column id="MU_YOZEM_PEULA" dataName="CZSJ_REC.CH_YOZEM_PEULA" />
+		<column id="MU_YOZEM_PEULA_DESC" dataName="CZSJ_REC.CH_YOZEM_PEULA" />
+		<column id="MU_TAARICH_ERECH" dataName="CZSJ_REC.CH_TAARICH_ERECH" />
+		<column id="MU_TEUR_PEULA" dataName="CZSJ_REC.CH_TEUR_PEULA" />
+		<column id="MU_KOT_SNIF" dataName="CZSJ_REC.CH_KOT_SNIF" />
+		<column id="MU_YAAD" dataName="CZSJ_REC.CH_YAAD" />
+		<column id="MU_MAKRO_KOT2" dataName="CZSJ_REC.CH_MAKRO_KOT2" />
+		<column id="MU_MAKRO_KOT3" dataName="CZSJ_REC.CH_MAKRO_KOT3" />
+		<column id="MU_KOTERET" dataName="CZSJ_REC.CH_KOTERET" />
+		<column id="MU_MAKRO_DETAIL" dataName="CZSJ_REC.CH_MAKRO_DETAIL" />
+		<column id="MU_MAKRO_KOT1" dataName="CZSJ_REC.CH_MAKRO_KOT1" />
+		<column id="MU_SNIF_MUTAV" dataName="CZSJ_REC.MU_SNIF_MUTAV" />
+		<column id="MU_SNIF_MUTAV_DESC" dataName="CZSJ_REC.MU_SNIF_MUTAV_DESC" />
+		<column id="MU_SNIF_KOLET" dataName="CZSJ_REC.CH_SNIF_KOLET" />
+		<column id="MU_MAKRO_HORAOT_CON" dataName="CZSJ_REC.CH_MAKRO_HORAOT_CON" />
+		<column id="MU_MAKRO_SIGN" dataName="CZSJ_REC.CH_MAKRO_SIGN" />
+		<column id="MU_SCH" dataName="CZSJ_REC.MU_SCH" />
+		<column id="MU_SCH_DESC" dataName="CZSJ_REC.MU_SCH_DESC" />
+		<column id="GL_MELEL1" dataName="CZSJ_REC.GL_MELEL1" />
+		<column id="MU_SNIF_RTRN" dataName="CZSJ_REC.CH_SNIF_RTRN" />
+		<column id="MU_SCH_RTRN" dataName="CZSJ_REC.CH_SCH_RTRN" />
+		<column id="MU_CH_RTRN" dataName="CZSJ_REC.CH_CH_RTRN" />
+		<column id="MU_KOD_ICHUD" dataName="CZSJ_REC.CH_KOD_ICHUD" />
+		<column id="CZ_MELEL_HESHBON" dataName="CZSJ_REC.CZ_MELEL_HESHBON" />
+		<column id="CZ_SW_CH_AHZARA" dataName="CZSJ_REC.CZ_SW_CH_AHZARA" />
+		<column id="GL_MAKOR_PU" dataName="CZSJ_REC.GL_MAKOR_PU" />
+		<column id="GL_TR_ASAKIM" dataName="CZSJ_REC.GL_TR_ASAKIM" />
+		<column id="CZSI_PEULA_MEKORIT_CH_TAARICH_ASAKIM" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.CH_TAARICH_ASAKIM" />
+		<column id="CZSI_PEULA_MEKORIT_GL_MAKOR_PU" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.GL_MAKOR_PU" />
+		<column id="CZSI_PEULA_MEKORIT_GL_MISPAR_TAHANA" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.GL_MISPAR_TAHANA" />
+		<column id="CZSI_PEULA_MEKORIT_GL_MISHMERET" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.GL_MISHMERET" />
+		<column id="CZSI_PEULA_MEKORIT_GL_SIDURI_TAHANA" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.GL_SIDURI_TAHANA" />
+		<column id="CZSI_PEULA_MEKORIT_CH_SACH_SCHUM" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.CH_SACH_SCHUM" />
+		<column id="CZSI_PEULA_MEKORIT_CH_KAMUT_CHEQ" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.CH_KAMUT_CHEQ" />
+		<column id="CZSI_PEULA_MEKORIT_GL_PEULA" dataName="CZSJ_REC.CZSI_PEULA_MEKORIT.GL_PEULA" />
+		<column id="MU_SW_ISHUR_MNL" dataName="CZSJ_REC.CH_SW_ISHUR_MNL" />
+		<column id="TL_MELEL_HALVAA" dataName="CZSJ_REC.TL_MELEL_HALVAA" />
+		<column id="TL_MELEL_ZEHUT" dataName="CZSJ_REC.TL_MELEL_ZEHUT" />
+		<column id="TL_MISPAR_HALVAA" dataName="CZSJ_REC.TL_MISPAR_HALVAA" />
+		<column id="TL_MISPAR_ZEHUT" dataName="CZSJ_REC.TL_MISPAR_ZEHUT" />
+		<column id="GL_MELEL2" dataName="CZSJ_REC.GL_MELEL2" />
+		<column id="TL_MAKOR_HAFKADA" dataName="CZSJ_REC.TL_MAKOR_HAFKADA" />
+		<column id="CZ_MAKRO_50" dataName="CZSJ_REC.CZ_MAKRO_50" />
+		<column id="TL_BUTZA_ALYADEY" dataName="CZSJ_REC.TL_BUTZA_ALYADEY" />
+		<column id="GL_MELEL3" dataName="CZSJ_REC.GL_MELEL3" />
+		<column id="GL_MELEL4" dataName="CZSJ_REC.GL_MELEL4" />
+		<column id="GL_MELEL5" dataName="CZSJ_REC.GL_MELEL5" />
+		<column id="GL_SAMCHUT" dataName="CZSJ_REC.GL_SAMCHUT" />
+		<column id="GL_ZIHUI_MEASHER" dataName="CZSJ_REC.GL_ZIHUI_MEASHER" />
+		<!--column id="GL_TR_MARECHET" dataName="CZSJ_REC.GL_TR_MARECHET" /-->
+		<column id="GL_SHAA" dataName="CZSJ_REC.GL_SHAA" />
+		<column id="GL_SNIF_PAKID" dataName="CZSJ_REC.GL_SNIF_PAKID" />
+		<column id="TL_MISPAR_HALVAOT" dataName="CZSJ_REC.TL_MISPAR_HALVAOT" />
+		<column id="TL_MELEL_HALVAOT" dataName="CZSJ_REC.TL_MELEL_HALVAOT" />
+		<column id="TL_DIVUACH_HOST" dataName="CZSJ_REC.TL_DIVUACH_HOST" />
+		<column id="GL_SHEM_PAKID" dataName="CZSJ_REC.GL_SHEM_PAKID" />
+		<column id="CZ_MELEL_BITUL" dataName="CZSJ_REC.CZ_MELEL_BITUL" />
+		
+		<column id="CONTEXT" dataName="contextAsBinary" />
+		<column id="CONTEXT_NAME" dataName="contextName" />
+	</MatafJournalService>
+	
+	<!--JdbcConnectionService id="jdbcConnectionService" JDBCDriver="COM.ibm.jdbc.net.DB2Driver" autoCommit="true" autoConnect="true" password="odedn01" primaryKeys="false" user="odedn" table="dual" dataSourceName="jdbc/matafdb" /-->
+
+
+	<JdbcConnectionService id="jdbcDSConnection" password="mataf" user="mataf" useDatasource="true" dataSourceName="jdbc/matafdb" />
+	<!-- the proxy Service -->
+	<ProxyService id="proxyService" sendPort="9999" listenPort="9998" sendHost="localhost" loadReceiver="true" />
+
+	<!-- reference tables service -->
+	<RefTablesService id="refTables" jdbcService="jdbcDSConnection" loadAll="true" />
+ 	<UuidService id="uuidService" jdbcService="jdbcDSConnection" />
+	<MsgsHandlerService id="msgsHandler">
+		<!--MsgsTable id="appMsgs" tableName="APP_MSG" keyColumnName="number" msgDescColumnName="desc" /-->
+		<MsgsTable id="runtimeMsgs" tableName="GLST_SGIA" keyColumnName="GL_ZIHUY_HODAA" msgDescColumnName="GL_HODAA" />
+	</MsgsHandlerService>
+
+	<JDBCTable 	id="noDataAccount" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="CHST_NO_DATA_ACCOUNTS"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="snifin" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="GLST_SNIF"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="HAST_CH_LO_MEDUVACH" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="HAST_CH_LO_MEDUVACH"
+				dataSourceName="jdbc/matafdb"
+	/>
+				
+	<JDBCTable 	id="HAST_TAVLAT_HACHLATA" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="HAST_TAVLAT_HACHLATA"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="HAST_SUG_PEULA" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="HAST_SUG_PEULA"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="GLST_IFYUN" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="GLST_IFYUN"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="GLST_IFYUN_2" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="GLST_IFYUN_2"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="GLST_SCH" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="GLST_SCH"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="TLST_HIYUV_AM_SCHUM" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="TLST_HIYUV_AM_SCHUM"
+				dataSourceName="jdbc/matafdb"
+	/>
+	
+	<JDBCTable 	id="PERSONAL_MENU" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="PERSONAL_MENU"
+				dataSourceName="jdbc/matafdb">
+			<column id="PU_ID" dataName="GLSG_GLBL.GL_PU_ID" />	
+			<column id="BRANCH_ID" dataName="GLSE_GLBL.GKSE_KEY.GL_SNIF" />
+			<column id="CLERK_ID" dataName="GLSE_GLBL.GKSE_KEY.GL_ZIHUI_PAKID" />
+			<column id="TRX_ID" dataName="personalMenuData.taskNameToAddToMenu" />			
+	</JDBCTable>
+
+<!--	
+	<JDBCTable 	id="USER_QUERIES" autoCommit="true"
+				autoConnect="true" databaseURL="jdbc:db2:MATAFDB" 
+				user="mataf" password="mataf"
+				table="USER_QUERIES"
+				dataSourceName="jdbc/matafdb">
+		<column id="PU_ID" dataName="queryAddPuId" />
+		<column id="BRANCH_ID" dataName="queryAddBranchId" />
+		<column id="CLERK_ID" dataName="queryAddClerkId" />
+		<column id="MODEL" dataName="queryAddModel" />
+		<column id="QUERY" dataName="queryAddQueryId" />
+	</JDBCTable>
+-->	
+	<JDBCTable id="matafOverrideTable" autoCommit="true" autoConnect="true" 
+     		dataSourceName="jdbc/matafdb" password="mataf" primaryKeys="false" 
+     			table="mataf_override" user="mataf"/>
+
+	<JDBCTable id="DSEJOUCT" autoCommit="true" autoConnect="true" 
+     		dataSourceName="jdbc/matafdb" password="mataf" primaryKeys="false" 
+     			table="DSEJOUCT" user="mataf"/>
+
+	<!--/DWGroupDef-->
+</dsesrvce.xml>

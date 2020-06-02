@@ -1,0 +1,1123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><title>Configuring and using XA distributed transactions in WebSphere Studio</title><meta content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))" http-equiv="PICS-Label"><link href="http://purl.org/DC/elements/1.0/" rel="schema.DC"><link href="http://www.ibm.com/favicon.ico" rel="SHORTCUT ICON"><meta content="dW Information/Raleigh/IBM" name="Owner"><meta content="en-US" scheme="rfc1766" name="DC.Language"><meta content="ZZ" name="IBM.Country"><meta content="Public" name="Security"><meta name="Abstract" content="This article describes distributed transactions and shows you how to configure a WebSphere Studio Application Developer test server 
+with XA resources for DB2, Oracle, and JMS that can be used together in a distributed transaction. The article describes an example session bean 
+that updates both databases and sends a JMS message, all in the same transaction. The Oracle database must also be configured to support XA transactions, 
+so the article shows the Java exceptions that occur when it is not configured properly, and how to fix these problems."><meta name="Description" content="This article describes distributed transactions and shows you how to configure a WebSphere Studio Application Developer test server 
+with XA resources for DB2, Oracle, and JMS that can be used together in a distributed transaction. The article describes an example session bean 
+that updates both databases and sends a JMS message, all in the same transaction. The Oracle database must also be configured to support XA transactions, 
+so the article shows the Java exceptions that occur when it is not configured properly, and how to fix these problems."><meta name="Keywords" content="XA distributed transactions, WebSphere Studio Application Developer, WSAD, XA resources for DB2, Oracle, JMS, session bean, dddwca"><meta name="DC.Date" scheme="iso8601" content="2004-06-01"><meta name="Source" content="Based on v14 Template Generator, Template 14.0"><meta name="DC.Rights" content="Copyright (c) 2004 by IBM Corporation"> <meta name="Robots" content="index,follow"><meta name="IBM.Effective" scheme="W3CDTF" content="2004-06-01"><meta name="Last update" content="26102005bianco@us.ibm.com"><link href="0407_woolf_files/table.css" media="screen,print" type="text/css" rel="stylesheet"><script language="JavaScript" src="0407_woolf_files/dwcss14.js" type="text/javascript"></script><link rel="stylesheet" href="0407_woolf_files/r1v14.css" type="text/css"><link href="0407_woolf_files/main.css" type="text/css" rel="stylesheet"><link href="0407_woolf_files/screen.css" media="all" type="text/css" rel="stylesheet"><link href="0407_woolf_files/print.css" media="print" type="text/css" rel="stylesheet"><script language="JavaScript" src="0407_woolf_files/detection.js" type="text/javascript"></script><script language="JavaScript" src="0407_woolf_files/dropdown.js" type="text/javascript"></script><script language="JavaScript" src="0407_woolf_files/grabtitle.js" type="text/javascript"></script><script language="JavaScript" src="0407_woolf_files/emailfriend2.js" type="text/javascript"></script><script language="JavaScript" src="0407_woolf_files/dwplugin.js" type="text/javascript"></script><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><script language="javascript" src="0407_woolf_files/ajax1.js" type="text/javascript"></script><script language="javascript" src="0407_woolf_files/searchcount.js" type="text/javascript"></script><!--END RESERVED FOR FUTURE USE INCLUDE FILES--><style type="text/css">
+code.section {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px}
+.boldcode {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold} .rboldcode {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold; color: #ff0000}
+.gboldcode {font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold; color: #ff6600}
+.bboldcode {font-family: Andale Mono, Lucida  Console, Monaco, fixed, monospace; font-size: 11px; font-weight: bold; color: #3c5f84}
+</style><style type="text/css">
+.atitle { font-family:arial,sans-serif; font-size:18px; }
+</style><script language="JavaScript" type="text/javascript">var emailAbstract = "This article describes distributed transactions and shows you how to configure a WebSphere Studio Application Developer test server 
+with XA resources for DB2, Oracle, and JMS that can be used together in a distributed transaction. The article describes an example session bean 
+that updates both databases and sends a JMS message, all in the same transaction. The Oracle database must also be configured to support XA transactions, 
+so the article shows the Java exceptions that occur when it is not configured properly, and how to fix these problems."; </script></head><body><!--MASTHEAD_BEGIN--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="bbg" width="110"><a href="http://www.ibm.com/"><img alt="IBM®" src="0407_woolf_files/ibm-logo.gif" border="0" height="52" width="110"></a></td>
+<td class="bbg"><img src="0407_woolf_files/c.gif" alt="" border="0" height="1" width="1"></td>
+<td class="mbbg" align="right" width="650">
+<table align="right" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr class="cty-tou">
+<td rowspan="2" class="upper-masthead-corner" width="17"><a href="#main"><img src="0407_woolf_files/c.gif" alt="Skip to main content" border="0" height="1" width="1"></a></td>
+<td align="left">
+<table align="left" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span><b class="country">Country/region</b><span class="spacer">&nbsp;[</span><a class="ur-link" href="http://www.ibm.com/developerworks/country/">select</a><span class="spacer">]</span></td>
+<td class="upper-masthead-divider" width="29">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="left"><a class="ur-link" href="http://www.ibm.com/legal/">Terms of use</a></td>
+</tr>
+</tbody></table>
+</td>
+<td width="40">&nbsp;</td>
+</tr>
+<tr>
+<td class="cty-tou-border" colspan="2" height="1"><img src="0407_woolf_files/c.gif" alt="" height="1" width="1"></td>
+</tr>
+<tr>
+<td colspan="3"><img alt="" src="0407_woolf_files/c.gif" height="8" width="1"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td colspan="2" align="center">
+<input name="searchType" value="1" type="hidden"><input value="dW" name="searchSite" type="hidden">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<form method="get" action="//www-128.ibm.com/developerworks/search/searchResults.jsp" id="form1" name="form1"></form><td width="18"><label for="q"><img src="0407_woolf_files/c.gif" alt="Search in:" height="1" width="1"></label></td>
+<td align="right"><select id="sq" name="searchScope" class="input-local" size="1">
+<option value="dW">All of dW</option>
+<option value="dW">-----------------</option>
+<option value="eserver">&nbsp;&nbsp;eServer</option>
+<option value="db2">&nbsp;&nbsp;Information Mgmt</option>
+<option value="lotus">&nbsp;&nbsp;Lotus</option>
+<option value="rdd">&nbsp;&nbsp;Rational</option>
+<option value="tivoli">&nbsp;&nbsp;Tivoli</option>  
+<option value="WSDD">&nbsp;&nbsp;WebSphere</option>
+<option value="workplace">&nbsp;&nbsp;Workplace</option>
+<option value="dW">-----------------</option> 
+<option value="acZ">&nbsp;&nbsp;Autonomic computing</option>
+<option value="gridZ">&nbsp;&nbsp;Grid computing</option>
+<option value="javaZ">&nbsp;&nbsp;Java technology</option> 
+<option value="linuxZ">&nbsp;&nbsp;Linux</option> 
+<option value="opensrcZ">&nbsp;&nbsp;Open source</option>
+<option value="paZ">&nbsp;&nbsp;Power Architecture</option>
+<option value="webservZ">&nbsp;&nbsp;SOA &amp; Web services</option>
+<option value="webarchZ">&nbsp;&nbsp;Web architecture</option>  
+<option value="wirelessZ">&nbsp;&nbsp;Wireless</option> 
+<option value="xmlZ">&nbsp;&nbsp;XML</option>
+<option value="dW">-----------------</option>
+<option value="forums">&nbsp;&nbsp;dW forums</option> 
+<option value="dW">-----------------</option>
+<option value="aW">alphaWorks</option>
+<option value="dW">-----------------</option>
+<option value="all">All of IBM</option>
+</select></td>
+<td align="right" width="7"><label for="q"><img src="0407_woolf_files/c.gif" alt="Search for:" height="1" width="1"></label>&nbsp;&nbsp;</td>
+<td align="right"><input class="input" id="q" maxlength="100" name="query" size="15" value="" type="text">
+</td>
+<td width="7">&nbsp;
+</td>
+<td width="90"><input alt="Search" name="Search" src="0407_woolf_files/search.gif" value="Search" type="image"></td>
+<!-- <td width="20">&nbsp;</td> -->
+
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td class="blbg" colspan="3">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/">Home</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/products/">Products</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/servicessolutions/">Services &amp; solutions</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/support/">Support &amp; downloads</a></td>
+<td class="masthead-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><a class="masthead-mainlink" href="http://www.ibm.com/account/">My account</a></td>
+<td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!--
+<script src="//www.ibm.com/common/v14/pmh.js" language="JavaScript" type="text/javascript"></script>
+-->
+<!--MASTHEAD_END--><table id="v14-body-table" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><!--LEFTNAV_BEGIN--><td id="navigation" width="150"><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td class="left-nav-spacer"><a href="http://www.ibm.com/developerworks" class="left-nav-overview">&nbsp;</a></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td colspan="2" class="left-nav-overview"><a href="http://www.ibm.com/developerworks" class="left-nav-overview">developerWorks</a></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td colspan="2" class="left-nav-highlight"><a href="#" class="left-nav">In this article:</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N10087" class="left-nav-child">What are distributed transactions?</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N10154" class="left-nav-child">Developing with distributed transactions</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N1050F" class="left-nav-child">Set up the example application</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N10672" class="left-nav-child">Run the example application</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N1083A" class="left-nav-child">Conclusions</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N10845" class="left-nav-child">Acknowledgements</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#N1084E" class="left-nav-child">Questions from users</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#download" class="left-nav-child">Download</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#resources" class="left-nav-child">Resources</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#author" class="left-nav-child">About the author</a></td></tr><tr class="left-nav-child-highlight"><td><img alt="" src="0407_woolf_files/cl-bullet.gif" height="8" width="2"></td><td><a href="#rate" class="left-nav-child">Rate this page</a></td></tr><tr class="left-nav-last"><td width="14"><img class="display-img" alt="" src="0407_woolf_files/c.gif" height="1" width="14"></td><td width="136"><img class="display-img" alt="" src="0407_woolf_files/left-nav-corner.gif" height="19" width="136"></td></tr></tbody></table><br><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td class="related" colspan="2"><b class="related">Related links</b></td></tr><tr class="rlinks"><td><img alt="" src="0407_woolf_files/rl-bullet.gif" height="8" width="2"></td><td><a class="rlinks" href="http://www.ibm.com/developerworks/views/websphere/library.jsp">WebSphere technical library</a></td></tr><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><!-- No content currently --><!--END RESERVED FOR FUTURE USE INCLUDE FILES--><tr><td width="14"><img class="display-img" alt="" src="0407_woolf_files/c.gif" height="1" width="14"></td><td width="136"><img class="display-img" alt="" src="0407_woolf_files/c.gif" height="19" width="136"></td></tr></tbody></table><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><!-- No content currently --><!--END RESERVED FOR FUTURE USE INCLUDE FILES--></td><!--LEFTNAV_END--><td width="100%"><table id="content-table" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><a name="main"><img alt="skip to main content" src="0407_woolf_files/c.gif" border="0" height="1" width="592"></a></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td height="18" width="10"><img alt="" src="0407_woolf_files/c.gif" height="18" width="10"></td><td width="100%"><img alt="" src="0407_woolf_files/c.gif" height="6" width="1"><br><a href="http://www.ibm.com/developerworks/" class="bctl">developerWorks</a><span class="bct">&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span><a class="bctl" href="http://www.ibm.com/developerworks/websphere/">WebSphere</a><span class="bct">&nbsp;&nbsp;&gt;</span><img alt="" src="0407_woolf_files/c.gif" height="1" width="1"><br><h1>Configuring and using XA distributed transactions in WebSphere Studio</h1><img alt="" src="0407_woolf_files/c.gif" class="display-img" height="6" width="1"></td><td class="no-print" width="192"><a href="http://www.ibm.com/developerworks/"><img alt="developerWorks" src="0407_woolf_files/dw.gif" border="0" height="18" width="192"></a></td></tr></tbody></table></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr valign="top"><td width="10"><img alt="" src="0407_woolf_files/c.gif" height="1" width="10"></td><td width="100%"><table class="no-print" align="right" border="0" cellpadding="0" cellspacing="0" width="160"><tbody><tr><td width="10"><img alt="" src="0407_woolf_files/c.gif" height="1" width="10"></td><td><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td class="v14-header-1-small">Document options</td></tr></tbody></table><table class="v14-gray-table-border" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="no-padding" width="150"><table border="0" cellpadding="0" cellspacing="0" width="143"><script language="JavaScript" type="text/javascript">
+<!--
+document.write('<tr valign="top"><td width="8"><img src="//www.ibm.com/i/c.gif" width="8" height="1" alt=""/></td><td width="16"><img alt="Set printer orientation to landscape mode" height="16" src="//www.ibm.com/i/v14/icons/printer.gif" width="16" vspace="3" /></td><td width="122"><p><b><a class="smallplainlink" href="javascript:print()">Print this page</a></b></p></td></tr>');
+//-->
+</script><tbody><tr valign="top"><td width="8"><img src="0407_woolf_files/c.gif" alt="" height="1" width="8"></td><td width="16"><img alt="Set printer orientation to landscape mode" src="0407_woolf_files/printer.gif" height="16" vspace="3" width="16"></td><td width="122"><p><b><a class="smallplainlink" href="javascript:print()">Print this page</a></b></p></td></tr>
+<noscript></noscript><script language="JavaScript" type="text/javascript">
+<!--
+document.write('<tr valign="top"><td width="8"><img src="//www.ibm.com/i/c.gif" width="8" height="1" alt=""/></td><td width="16"><img src="//www.ibm.com/i/v14/icons/em.gif" height="16" width="16" vspace="3" alt="Email this page" /></td><td width="122"><p><a class="smallplainlink" href="javascript:void newWindow()"><b>E-mail this page</b></a></p></td></tr>');
+//-->
+</script><tr valign="top"><td width="8"><img src="0407_woolf_files/c.gif" alt="" height="1" width="8"></td><td width="16"><img src="0407_woolf_files/em.gif" alt="Email this page" height="16" vspace="3" width="16"></td><td width="122"><p><a class="smallplainlink" href="javascript:void newWindow()"><b>E-mail this page</b></a></p></td></tr><noscript><tr
+valign="top"><td width="8"><img alt="" height="1" width="8"
+src="//www.ibm.com/i/c.gif"/></td><td width="16"><img alt="" width="16"
+height="16" src="//www.ibm.com/i/c.gif"/></td><td class="small"
+width="122"><p><span class="ast">Document options requiring JavaScript
+are not displayed</span></p></td></tr></noscript><tr valign="top"><td width="8"><img alt="" src="0407_woolf_files/c.gif" height="1" width="8"></td><td width="16"><img alt="" src="0407_woolf_files/dn.gif" border="0" height="16" vspace="3" width="16"></td><td width="122"><p><a href="#download" class="smallplainlink"><b>Sample code</b></a></p></td></tr></tbody></table></td></tr></tbody></table><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><!-- 04/11/06 updated by gretchen -->
+
+<br><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td class="v14-header-2-small"><!--New site feature-->Free software for rapid results</td></tr></tbody></table><table class="v14-gray-table-border" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="no-padding" width="150"><table border="0" cellpadding="0" cellspacing="0" width="143"><tbody><tr valign="top"><td width="8"><img src="0407_woolf_files/c.gif" alt="" height="1" width="8"></td><td><img src="0407_woolf_files/fw_bold.gif" alt="" border="0" height="16" vspace="3" width="16"></td><td width="125"><p><a href="http://www.ibm.com/developerworks/kickstart/?S_TACT=105AGX01&amp;S_CMP=SIMPLECNT" class="smallplainlink">Kick-start your Java apps</a>
+</p></td></tr></tbody></table></td></tr></tbody></table><!--END RESERVED FOR FUTURE USE INCLUDE FILES--><br><table border="0" cellpadding="0" cellspacing="0" width="150"><tbody><tr><td class="v14-header-2-small">Rate this page</td></tr></tbody></table><table class="v14-gray-table-border" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="no-padding" width="150"><table border="0" cellpadding="0" cellspacing="0" width="143"><tbody><tr valign="top"><td width="8"><img alt="" src="0407_woolf_files/c.gif" height="1" width="8"></td><td><img alt="" src="0407_woolf_files/d_bold.gif" border="0" height="16" vspace="3" width="16"></td><td width="125"><p><a href="#rate" class="smallplainlink"><b>Help us improve this content</b></a></p></td></tr></tbody></table></td></tr></tbody></table><br></td></tr></tbody></table><p>Level: Intermediate</p><p><a href="#author">Bobby Woolf</a> (<a href="mailto:bwoolf@us.ibm.com?subject=Configuring%20and%20using%20XA%20distributed%20transactions%20in%20WebSphere%20Studio">bwoolf@us.ibm.com</a>), Consulting I/T Specialist, IBM Raleigh Lab, Research Triangle Park, North Carolina<br></p><p> 01 Jun  2004</p><blockquote>This
+article describes distributed transactions and shows you how to
+configure a WebSphere Studio Application Developer test server with XA
+resources for DB2, Oracle, and JMS that can be used together in a
+distributed transaction. The article describes an example session bean
+that updates both databases and sends a JMS message, all in the same
+transaction. The Oracle database must also be configured to support XA
+transactions, so the article shows the Java exceptions that occur when
+it is not configured properly, and how to fix these problems.</blockquote><!--START RESERVED FOR FUTURE USE INCLUDE FILES--><script language="JavaScript" type="text/javascript">
+<!--
+if (document.referrer&&document.referrer!="") { 
+   // document.write(document.referrer);
+   var q = document.referrer;
+   var engine = q;
+   var isG = engine.search(/google\.com/i);
+   var searchTerms;
+   //var searchTermsForDisplay;
+   if (isG != -1) { 
+	   var i = q.search(/q=/);
+	   var q2 = q.substring(i+2);
+	   var j = q2.search(/&/);
+	   j = (j == -1)?q2.length:j;
+	   searchTerms = q.substring(i+2,i+2+j);
+	   if (searchTerms.length != 0) {
+	       searchQuery(searchTerms);
+	       document.write("<div id=\"contents\"></div>");
+	   }
+   } 
+}
+//-->
+</script><!--END RESERVED FOR FUTURE USE INCLUDE FILES-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="64%"><tbody><tr><td width="10"><img alt="" src="0407_woolf_files/c.gif" height="1" width="10"></td><td><table border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td bgcolor="#eeeeee">  
+<p><a name="N10060"><span class="smalltitle">Get the products and tools used in this article</span></a></p>
+<p>If you are a developerWorks subscriber, you have a single user license to use 
+<a href="http://www.ibm.com/developerworks/views/subscription/enterprise.jsp?sort_order=desc&amp;sort_by=Date&amp;expand=WebSphere+Studio&amp;show_abstract=true&amp;view_by=Topic&amp;search_by=" target="new">
+WebSphere® Studio Application Developer</a> (and other editions of WebSphere Studio),  
+<a href="http://www.ibm.com/developerworks/views/subscription/enterprise.jsp?sort_order=desc&amp;sort_by=Date&amp;expand=WebSphere+Application+Server&amp;show_abstract=true&amp;view_by=Topic&amp;search_by=" target="new"> WebSphere Application Server</a>,  and other DB2®, Lotus®, Rational®, Tivoli®, and WebSphere products 
+-- including the Eclipse-based WebSphere Studio IDE -- to develop, test, evaluate, and demonstrate your applications. 
+If you are not a subscriber, you can <a href="http://www.ibm.com/developerworks/subscription/" target="new">subscribe today</a>.</p> 
+</td></tr></tbody></table></td></tr></tbody></table>
+		
+<a name="definitions"></a><p><a name="N10087"><span class="atitle">What are distributed transactions?</span></a></p>
+
+<p>Before diving into how to develop applications using distributed
+transactions, let's review what distributed transactions are and why
+they're useful. Several terms are often used interchangeably:
+transaction, distributed transaction, two-phase commit, XA transaction,
+transaction propagation, and CORBA OTS transaction. But these terms
+actually have different meanings:</p>
+
+<p><b>Transaction</b> -- a series of actions performed as a single
+logical unit of work in which either all of the actions are performed
+or none of them are
+(also called a <i>local</i> or <i>simple transaction</i>). A transaction is often described as <i>ACID</i> -- atomic, consistent, isolated, and durable. 
+Changes made during a transaction are tentative; to make them permanent, a transaction ends with a <i>commit</i> action that finalizes the changes.
+If any of the changes cannot be committed, the transaction will <i>roll back</i>,
+undoing all of the changes as if the transaction never took place. If
+the code performing the actions decides not to commit or cannot commit
+successfully, then it must roll back the transaction to undo the
+actions. If an application crashes in the middle of a transaction, when
+it restarts, transaction recovery will roll back the open transaction.
+In a <i>write transaction</i>, all changes must either all commit or all roll back. In a <i>read transaction</i>, there are no changes to commit, 
+but the transaction prevents the data being read from changing until all of the reads are complete.</p>
+
+<p><b>Distributed transaction</b> -- An ACID transaction between two or
+more independent transactional resources (for example, two separate
+databases). For the transaction to commit successfully, all of the
+individual resources must commit successfully; if any of them are
+unsuccessful, the transaction must roll back in all of the resources.</p>
+
+<p><b>Two-phase commit</b> -- An approach for committing a distributed transaction in two steps: <i>Phase 1, Prepare</i>: Each of the resources votes 
+on whether it's ready to commit -- usually by going ahead and persisting the new data but not yet deleting the old data. 
+<i>Phase 2, Commit</i>: If all of the resources are ready, they all
+commit -- after which the old data is deleted and the transaction can
+no longer roll back. Two-phase commit ensures that a distributed
+transaction can always be committed or always rolled back, even if
+parts of the system crash while the transaction is being committed.
+Many, but not all, distributed transaction implementations use
+two-phase commit.</p>
+
+<p><b>XA specification</b> -- Documents the Open Group's X/Open Distributed Transaction Processing (DTP) model, which defines how an <i>application program</i> uses a <i>transaction manager</i> to coordinate a distributed transaction across multiple <i>resource managers</i>.
+Any resource manager that adheres to the XA specification can
+participate in a transaction coordinated by an XA-compliant transaction
+manager, thereby enabling different vendors' transactional products
+to work together. All XA-compliant transactions are distributed
+transactions; XA supports both single-phase and two-phase commit.</p>
+
+<p>This diagram form the XA specification shows the parts of a distributed transaction:</p>
+
+<br><a name="N100CC"><b>X/Open Distributed Transaction Processing (DTP) model</b></a><br>
+<img alt="DTP Model" src="0407_woolf_files/DTPModel.gif" height="322" width="591"><br>
+
+<p><b>Transaction propagation</b> -- Enables multiple collaborating objects to participate in a
+single transaction, by passing the transactional context as part of the thread. As the thread passes through the collaborating
+objects, the transaction manager uses the thread's transaction context to perform all work.</p>
+
+<p><b>CORBA OTS specification</b> -- (Common Object Request Broker
+Architecture Object Transaction Service, from the Object Management
+Group) -- Defines how compliant processes propagate a transactional
+context from one process to the next across multiple process threads.
+This propagation enables distributed objects to collaborate in a single
+transaction, even if they're running in containers (e.g., ORBs) from
+different vendors. The CORBA OTS specification builds on the XA
+specification </p>
+
+<p>This diagram form the OTS specification shows the parts of a transaction involving distributed objects:</p>
+
+<br><a name="N100E6"><b>Object Transaction Service (OTS) Model</b></a><br>
+<img alt="OTS Model" src="0407_woolf_files/OTSModel.gif" height="377" width="647"><br>
+
+<p>IBM® WebSphere® Application Server V5 provides its applications with
+a transaction manager that is both XA- and CORBA OTS-compliant.
+This transaction manager implements two APIs that are part of Java™ 2
+Enterprise Edition (J2EE) -- the Java Transaction API (JTA), which
+provides simplified access to the Java Transaction Service (JTS). The
+XA part of JTA is capable of coordinating the transactions for any
+XA-compliant resource (via the interface <code>javax.transaction.xa.XAResource</code>). Two resource types in J2EE that support XA are the Java Database Connectivity (JDBC) API (through the interface <code>javax.sql.XAConnection</code>) 
+and the Java Message Service (JMS) API (through the interface <code>javax.jms.XAConnection</code>). The transaction manager 
+uses CORBA OTS when an EJB in one container calls an EJB in another container.</p>
+
+<a name="why"></a><p><a name="N10109"><span class="smalltitle">Why use distributed transactions?</span></a></p>
+
+<p>Whenever an application needs to access or update the data in a
+transactional resource, it should (and usually must) use a transaction
+to do so. In standard JDBC code without auto-commit, the application
+uses a connection to access and update data, then commits the
+connection to end the transaction (and start another). When a JMS
+client sends or receives a message, the messaging provider uses a
+transaction to add the message to or remove the message from the
+destination. The JMS client can optionally control this transaction
+explicitly, such as to coordinate receiving a message from one queue
+with sending a message on another queue in the same messaging system.</p>
+
+<p>Whenever an application has a single function that needs to access
+or update the data in multiple transactional resources, it should use a
+distributed transaction. You can use a separate simple transaction on
+each of the resources, but this approach is error-prone. If the
+transaction in one resource commits successfully but another fails and
+must roll back, the first transaction can no longer be rolled back, so
+the state of the application becomes inconsistent. If one resource
+commits
+successfully but the system crashes before the other resource can
+commit successfully, the application again is inconsistent.</p>
+
+<p>What kinds of functions need to access multiple transactional resources? Here are some examples:</p> 
+
+<ul>
+<li><b>Moving data between databases</b> -- An application moving data
+from one database to another requires a distributed transaction.
+Otherwise, the data may be duplicated (if the insert completes and the
+delete fails) or lost (if the delete completes and the insert fails).</li>
+<li><b>Moving data between a database and a message</b> -- An application may need to move data from a JMS message to a database
+      table or vise versa. Without a distributed transaction, the data can be either duplicated or lost.</li>
+<li><b>Logging messages to a database</b> -- An application may use a
+database to keep a "paper trail" of messages exchanged with partner
+applications. To keep the record consistent and accurate, it should log
+the message in the same distributed transaction that sends or receives
+the message.</li>
+<li><b>Moving a message between messaging systems</b> -- Many messaging
+scenarios involve receiving one message and sending another as a
+result. When the two destinations are in the same messaging system, the
+receive and send can be done in a simple transaction because they
+involve a single transactional resource. However, when the message is
+received from a destination in one messaging system and sent to a
+destination in a separate messaging system, the application should
+perform the action in a distributed transaction between the two
+messaging systems to ensure that the message is neither duplicated nor
+lost.</li>
+<li><b>Coordinating with an enterprise information system (EIS)</b> --
+The J2EE specification includes the J2EE Connector Architecture for
+implementing adapters to access enterprise information systems (EIS)
+such as CICS or SAP. The level of transactional support the adapter
+provides -- none, local, or XA -- depends on the capabilities of the
+EIS being adapted. If an adapter supports XA transactions, the
+application can use distributed transactions to coordinate the EIS
+resource with JDBC and JMS resources.</li>
+</ul>
+
+<p>Basically, whenever an application is using multiple transactional, persistent resources, it may need distributed
+transactions. Any function that manipulates more than one resource should use a distributed transaction.</p>
+
+<a name="ejb"></a><p><a name="N10139"><span class="smalltitle">Transactions and EJBs</span></a></p>
+
+<p>Enterprise JavaBeans (EJBs) have many advantages: componentization,
+remoteness, security, persistence capabilities,
+messaging capabilities, and so on. While all of these features are
+useful, perhaps the single greatest advantage of using EJBs is
+transaction management. EJBs and <i>container-managed transactions</i> (CMTs) make transaction management virtually transparent to the bean developer.</p>
+
+<p>Every public method on an EJB defines a transactional boundary
+between the EJB container and the EJB client, as specified in
+the deployment descriptor. The result is that all EJB code invoked by a
+client call typically executes in a single container-
+managed transaction (unless the deployment descriptor specifies
+otherwise), such that either all of the code's work is performed,
+or it all rolls back. Furthermore, the bean developer doesn't actually
+have to write any code for handling transactions, such as
+deciding when to invoke the <code>commit()</code> method and what to do if it fails. The container infers the transaction model
+from the method boundaries and deployment descriptor, and controls the transaction commits and rollbacks at runtime.</p>
+
+<p>EJB container-managed transactions work even when multiple EJBs collaborate to perform a task. Once the first EJB in the
+thread establishes a transactional context, the transaction manager uses transaction propagation to pass the context to the
+collaborating EJBs so that all work is performed in the same transaction (unless the deployment descriptor specifies otherwise).
+Even if the collaborating EJBs are in different containers, CORBA OTS enables the containers' transaction managers to coordinate
+so that the transaction propagates across containers.</p>
+
+<p>EJB container-managed transactions are especially helpful for
+controlling distributed transactions. This approach allows code
+to manipulate multiple sets of data without regard to whether the data
+all comes from a single resource (requiring a simple
+transaction) or multiple resources (requiring a distributed
+transaction). The application simply uses EJBs to manipulate the data
+as needed. The EJB container's transaction manager determines at
+runtime whether the data comes from one resource -- in which case
+it lets the resource manager manage the transaction -- or multiple
+resources -- in which case the transaction manager manages the
+transaction and coordinates the resource managers. Whether the data
+comes from one resource or many, the EJB code remains the
+same, and the EJB container handles the transaction appropriately.</p>
+
+<a name="developing"><br></a><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><a name="developing"><br><br></a><p><a name="N10154"><span class="atitle">Developing with distributed transactions</span></a></p>
+
+<p>Now we've reviewed what we want to accomplish. We've established what distributed transactions are, scenarios where they're
+useful and necessary, and how EJB technology makes these scenarios much simpler for the bean developer. Now let's use WebSphere
+Studio Application Developer (hereafter called Application Developer) to create and run a simple example.</p>
+
+<p>These sections show you how to create an Application Developer test server and configure it for JDBC and JMS. It shows you the
+specific settings to fill in, using values that are specific to this example. The description before each table explains which
+values are applicable to all applications and which only apply to this example.</p>
+
+<p>This example will show how to configure XA data sources for two common JDBC database products, DB2®, and Oracle. It will also
+show how to configure a JMS destination with an XA connection.</p>
+
+<p>To start, we need to create a new test server. To do so, switch to the Servers perspective. From the Server Configuration
+view's context (e.g. right mouse button) menu, select <b>New  =&gt; Server and Server Configuration</b>. In the create
+dialog, enter a server name (such as "XA Example Server"), choose Test Environment (either WebSphere version 5.0 or WebSphere
+version 5.1 for this example) as the server type, and click finish.</p>
+
+<br><a name="N1016C"><b>Create a new server and server configuration dialog</b></a><br>
+<img alt="Create server dialog" src="0407_woolf_files/CreateNewServer.jpg" height="581" width="504"><br>
+
+<a name="configure_oracle"></a><p><a name="N1017A"><span class="smalltitle">Configure an Oracle XA data source</span></a></p>
+
+<a name="oracle_login"></a><p><a name="oracle_login">Before we create
+the data source, we'll create a JAAS authentication entry, which later
+we'll
+associate with the data source so that it can log into the database. In
+the server configuration editor, switch to the Security
+page. In the JAAS Authentication Entries list, add an entry. Your entry
+must be a valid login for your database, one that is able
+to create tables and add data as shown in this article. For this
+example, we'll use a sample login that's part of the default
+Oracle install. You may need to use a different login with your
+particular install.</a></p>
+
+<p><a name="oracle_login"><b>Oracle JAAS authentication entry settings</b></a></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>Alias</td><td><code>Scott</code></td><td> </td></tr><tr><td>User ID</td><td><code>scott</code></td><td> </td></tr><tr><td>Password</td><td><code>tiger</code></td><td> </td></tr></tbody></table>
+
+<a name="oracle_login"><br></a><a name="N101B9"><b>Add JAAS authentication entry dialog</b></a><br>
+<img alt="Add JAAS dialog" src="0407_woolf_files/AddJAASEntryScott.jpg" height="200" width="299"><br>
+
+<p>For this example, the server configuration must include a JDBC data source registered in JNDI as <code>jdbc/OracleXADS</code>.
+Its JDBC provider will be accessed as an Oracle XA database.</p>
+
+<p>First, we need to create a JDBC provider that describes how to
+access an Oracle XA database. In the server configuration editor,
+switch to the Data Source page. In the JDBC provider list, add a
+provider with the settings shown below. The name can be anything; we'll
+use the provider type.</p>
+
+<p><b>Oracle JDBC provider settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>JDBC Provider type</td><td><code>Oracle JDBC Driver (XA)</code></td><td> </td></tr><tr><td>Name</td><td><code>Oracle JDBC Driver (XA)</code></td><td> </td></tr><tr><td>Implementation class name</td><td><code>oracle.jdbc.xa.client.OracleXADataSource</code></td><td>default</td></tr><tr><td>Class path</td><td><code>${ORACLE_JDBC_DRIVER_PATH}/ojdbc14.jar</code></td><td>default</td></tr></tbody></table>
+
+<br><a name="N1020D"><b>Create a JDBC provider dialog</b></a><br>
+<img alt="Create Provider Dialog" src="0407_woolf_files/CreateJDBCProviderOracle.jpg" height="529" width="613"><br>
+
+<p>Second, create a JDBC data source that will provide access to our specific Oracle XA database. Select the Oracle provider we
+just created, and then add a data source with the settings shown below. The name can be anything. The JNDI name is the unique
+identifier your code will use to lookup the data source; this article's example code uses <code>jdbc/OracleXADS</code>. For the
+container-managed authentication alias, choose the JAAS authentication entry we <a>created earlier</a>.
+<code>URL</code> is a required resource property; specify the one for accessing your database.</p>
+
+<p><b>Oracle JDBC data source settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property name</i></td><td><i>Property value</i></td><td><i>Default?</i></td></tr><tr><td>JDBC Provider type</td><td><code>Oracle JDBC Driver (XA), version 5.0</code></td><td> </td></tr><tr><td>Name</td><td><code>Example Oracle XA Data Source</code></td><td> </td></tr><tr><td>JNDI name</td><td><code>jdbc/OracleXADS</code></td><td> </td></tr><tr><td>Helper class</td><td><code>com.ibm.websphere.rsadapter.OracleDataStoreHelper</code></td><td>default</td></tr><tr><td>Authentication alias</td><td><code>Scott</code></td><td> </td></tr><tr><td>URL</td><td><code>jdbc:oracle:thin:@localhost:1521:example</code></td><td> </td></tr></tbody></table>
+
+<br><a name="N10279"><b>Create a JDBC data source dialog</b></a><br><img alt="Create data source dialog" src="0407_woolf_files/ModifyDataSourceOracle.jpg" height="684" width="642"><br>
+
+<p>The JDBC provider we created earlier looks for its JAR file in the directory specified by the variable <code>ORACLE_JDBC_DRIVER_PATH</code>.
+The variable must be set to the proper directory, but WebSphere Studio
+does not know where you the Oracle client is installed, so you must
+specify this directory.
+In the Server Configuration Editor, switch to the Substitution
+variables page. Under Node settings is a list of defined variables.
+Find the one for Oracle and set it to the directory containing the <code>ojdbc14.jar</code> file.</p>
+
+<p><b>Oracle defined variables (for nodes) settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>ORACLE_JDBC_DRIVER_PATH</td><td><code>C:\oracle\ora92\jdbc\lib</code></td><td> </td></tr></tbody></table>
+
+<br><a name="N102AF"><b>Edit Oracle JDBC driver path variable dialog</b></a><br><img alt="Edit variable dialog" src="0407_woolf_files/EditVariableOraclePath.jpg" height="173" width="405"><br>
+
+<p>You have now configured the server with an Oracle XA JDBC data source. Save the server configuration.</p>
+
+<p>Although you have now configured your test server with an Oracle XA JDBC data source, you may also need to configure the
+Oracle database itself to support XA transactions. Your Oracle DBA can help you determine if further configuration is necessary
+and can help you perform the steps. Later in this article, we'll discuss the errors you get if your Oracle database is not
+configured for XA, and how to configure it.</p>
+
+<a name="configure_db2"></a><p><a name="N102C2"><span class="smalltitle">Configure a DB2 XA data source</span></a></p>
+
+<p>This example also includes a DB2 XA data source. The configuration
+settings for a DB2 data source are very similar to those for an Oracle
+data source.</p>
+
+<a name="db2_login"></a><p><a name="db2_login">First, define a JAAS identity capable of logging into your database. In this example, we've set up one named DB2.</a></p><a name="db2_login"> 
+
+</a><p><a name="db2_login"><b>DB2 JAAS authentication entry settings</b></a></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>Alias</td><td><code>DB2</code></td><td> </td></tr><tr><td>User ID</td><td><code>db2</code></td><td> </td></tr><tr><td>Password</td><td><code>a_password</code></td><td> </td></tr></tbody></table>
+
+<p><a name="db2_login">Second, we need to create a JDBC provider for DB2 XA data sources.</a></p>
+
+<p><a name="db2_login"><b>DB2 JDBC provider settings</b></a></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>JDBC Provider type</td><td><code>DB2 Universal JDBC Driver Provider (XA)</code></td><td> </td></tr><tr><td><p>Name</p></td><td><code>DB2 Universal JDBC Driver Provider (XA)</code></td><td> </td></tr><tr><td>Implementation class name</td><td><code>com.ibm.db2.jcc.DB2XADataSource</code></td><td>default</td></tr><tr><td>Class path</td><td>
+  <p><code>${DB2UNIVERSAL_JDBC_DRIVER_PATH}}/db2jcc.jar</code></p>
+  <p><code>${UNIVERSAL_JDBC_DRIVER_PATH}}/db2jcc_license_cu.jar</code></p>
+  <p><code>${DB2UNIVERSAL_JDBC_DRIVER_PATH}}/db2jcc_license_cisuz.jar</code></p>
+  </td><td>default</td></tr></tbody></table>
+
+<p><a name="db2_login">Third, we need to create a DB2 XA data source with the JNDI name <code>jdbc/DB2XADS</code>. We'll use the JAAS identity from
+</a><a href="#db2_login">step 1</a>. Whereas an Oracle data source needs a URL string for accessing the database, a DB2 data source
+just needs the name of the database, in this case, "sample."</p>
+
+<p><b>DB2 JDBC data source settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>JDBC Provider type</td><td><code>DB2 Universal JDBC Driver Provider (XA), version 5.0</code></td><td> </td></tr><tr><td>Name</td><td><code>Example DB2 XA Data Source</code></td><td> </td></tr><tr><td>JNDI name</td><td><code>jdbc/DB2XADS</code></td><td> </td></tr><tr><td>Helper class</td><td><code>com.ibm.websphere.rsadapter.DB2UniversalDataStoreHelper</code></td><td>default</td></tr><tr><td>Authentication alias</td><td><code>DB2</code></td><td> </td></tr><tr><td>databaseName</td><td><code>sample</code></td><td> </td></tr></tbody></table>
+
+<p>Fourth, we need to specify the path where the DB2 drivers are installed, which is the directory that contains the <code>db2jcc.jar</code>
+file. Also, verify the default value of the other variable in the data source's class path.</p>
+
+<p><b>DB2 defined variables (for nodes) settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>DB2UNIVERSAL_JDBC_DRIVER_PATH</td><td><code>C:\db2\SQLLIB\java</code></td><td> </td></tr><tr><td>UNIVERSAL_JDBC_DRIVER_PATH</td><td><code>${WAS_INSTALL_ROOT}/universalDriver/lib</code></td><td>default</td></tr></tbody></table>
+
+<p>You have now configured a DB2 XA data source registered as <code>jdbc/DB2XADS</code>. Save the server configuration.</p>
+
+<a name="configure_jms"></a><p><a name="N103E9"><span class="smalltitle">Configure a JMS provider</span></a></p>
+
+<p>To demonstrate an XA transaction, while we're at it, let's also add
+in a JMS resource. A simple one to use that also has full
+XA capabilities is the JMS simulator built in to Application Developer.
+Your WebSphere applications that use DB2 and or Oracle XA
+may use resources other than JMS, but it is required for this example.</p>
+
+<p>In the server configuration editor, switch to the JMS page. Under JMS Server Properties, add the queue name <code>XAExampleQ
+</code>. Under JMS Provider, select MQ Simulator for Java Developers.</p>
+
+<p>For this example, the server configuration must include two JMS resources, a queue connection factory named <code>
+jms/XAExampleQCF</code> and a queue named <code>jms/XAExampleQ</code>. On the server configuration editor's JMS page, in the
+WASQueueConnectionFactories entries list, add a new queue connection factory with the settings shown below. Be sure that XA
+support is enabled; that's the whole point of this example.</p>
+
+<p><b>WAS queue connection factory settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>Name</td><td><code>XAExampleQCF</code></td><td> </td></tr><tr><td>JNDI Name</td><td><code>jms/XAExampleQCF</code></td><td> </td></tr><tr><td>Enable XA Support</td><td>True (checked)</td><td>default</td></tr></tbody></table>
+
+<br><a name="N10436"><b>Add WAS Queue Connection Factory Dialog</b></a><br>
+<img alt="Add QCF Dialog" src="0407_woolf_files/AddQCF.jpg" height="593" width="445"><br>
+
+<p>In the WASQueue entries list, add a new queue with these settings:</p>
+
+<p><b>WAS queue settings</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Property Name</i></td><td><i>Property Value</i></td><td><i>Default?</i></td></tr><tr><td>Name</td><td><code>XAExampleQ</code></td><td> </td></tr><tr><td>JNDI Name</td><td><code>jms/XAExampleQ</code></td><td> </td></tr></tbody></table>
+
+<br><a name="N1046F"><b>Add WAS Queue Dialog</b></a><br>
+<img alt="Add Queue Dialog" src="0407_woolf_files/AddQueue.jpg" height="406" width="326"><br>
+
+<p>Save the server configuration.</p>
+
+<p>You are now through configuring the server. It has a data source for
+accessing Oracle through XA, and a JMS queue with a queue connection
+factory that supports XA transactions. You can even run the server at
+this point. It doesn't contain any applications, but you can verify
+that it starts without errors and binds the JDBC and JMS resources in
+JNDC that we configured for this server. A successful startup will
+contain JMS- and JDBC-specific messages like these:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+JMSMQJDProvid A MSGS0656I: Starting the MQJD JMS Provider
+JMSMQJDProvid A MSGS0650I: MQJD JMS Provider open for business
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding XAExampleQCF as jms/XAExampleQCF</span>
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding XAExampleQ as jms/XAExampleQ</span>
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding Example Oracle XA Data Source as jdbc/OracleXADS</span>
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding Example DB2 XA Data Source as jdbc/DB2XADS</span>
+CacheServiceI I DYNA0048I: WebSphere Dynamic Cache initialized successfully.
+</code></pre></td></tr></tbody></table><br>
+
+<a name="import_server"></a><p><a name="N10493"><span class="smalltitle">Optional: Import the server configuration</span></a></p>
+
+<p>You really should practice setting up the server configuration as described so far. But if you're unsuccessful and still wish
+to run the example application described below, you can import the configuration instead.</p>
+
+<p>To start, download and unzip the example file. It contains a directory called <code>XA Example Server.wsc</code>; this is a
+<code>WebSphere version 5.1</code> server configuration.</p>
+
+<p>To import a server configuration, you first need to create a server, which is described at the beginning of this article. Make
+sure it is a WebSphere version 5.1 Test Environment (available in Application Developer version 5.1.1), since the configuration
+is for version 5.1.</p>
+
+<p>Also, it helps to be able to see both the list of servers and the list of configurations. In the Server Configuration view of
+the Server perspective, select <b>View =&gt; Advanced</b> from the Menu (e.g., down triangle) button.</p>
+
+<br><a name="N104B1"><b>Advanced Server Configuration View Menu</b></a><br>
+<img alt="Advanced View Menu" src="0407_woolf_files/AdvancedServerConfigurationViewMenu.jpg" height="185" width="330"><br>
+
+<p>Next, import the server configuration by following these steps:</p>
+
+<ol>
+<li>From the Studio menu bar, choose <b>File =&gt; Import</b>.</li>
+<li>The Import wizard opens on its Select page. Select <b>Server Configuration</b> and click <b>Next</b>.</li>
+<li>The wizard switches to its Import a Server Configuration page.</li>
+  <ol>
+  <li>At
+the Configuration Name field, enter some name that is different from
+the name of the server you just created, such as "Imported
+Configuration."</li>
+  <li>The Folder field will default to the name of your servers project, which is usually called "Servers."</li>
+  <li>For the Configuration Type, select <b>WebSphere version 5.1 =&gt; Server Configuration</b>.</li>
+  <li>In the Location field, click <b>Browse</b> and select the <code>XA Example Server.wsc</code> file you downloaded.</li>
+  </ol>
+<li>Click <b>Finish</b> to import the server configuration. Your Server
+Configuration view will now list the new configuration with the name
+you specified.</li>
+</ol>
+
+<br><a name="N104F5"><b>Import a server configuration dialog</b></a><br>
+<img alt="Import configuration dialog" src="0407_woolf_files/ImportServerConfiguration.jpg" height="550" width="508"><br>
+
+<p>Now we need to switch the server you created to use the server configuration you just imported. In the Server Configuration
+view, select the server, pop up the context (e.g., right mouse button) menu, select <b>Switch configuration</b>, and select the configuration you imported.</p>
+
+<p>Open the server configuration editor for your server and you'll see that it now has the settings for the JDBC and JMS
+resources described earlier. (If you don't see these settings, make sure to switch your server to the imported configuration.)</p>
+
+<p>Start the server and you'll see the server startup log shown earlier.</p>
+
+<a name="setup_example"><br></a><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><a name="setup_example"><br><br></a><p><a name="N1050F"><span class="atitle">Set up the example application</span></a></p>
+
+<p>This article includes a simple J2EE application that you can download, import into Application Developer, and run. It will
+execute an XA transaction using the JDBC and JMS resources you configured earlier.</p>
+
+<p>To start, download and unzip the example file. It contains an Enterprise Archive (EAR) file named
+<code>XAExampleEAR.ear</code>. Follow these steps to import it into your WebSphere Studio workspace:</p>
+
+<ol>
+<li>From the Studio menu bar, choose <b>File =&gt; Import</b>.</li>
+<li>The Import wizard opens on its Select page. Select <b>EAR file</b> and click <b>Next</b>.</li>
+<li>The wizard switches to its Enterprise Application Import page. At the EAR File field, click <b>Browse</b> and select the
+     <code>XAExampleEAR.ear</code> file you downloaded. The project name will default to <code>XAExampleEAR</code>.</li>
+<li>Click <b>Finish</b> to import the EAR. Your workspace will now contain three projects named <code>XAExampleEAR</code>, <code>
+     XAExampleEJB</code>, and <code>XAExampleWeb</code>.</li>
+</ol>
+
+<p>The <code>XAExampleEJB</code> project, not too surprisingly, contains EJBs, so you must generate their deployment code. Select
+the <code>XAExampleEJB</code> project, pop up the context (e.g., right mouse button) menu, and select <b>Generate =&gt;
+Deployment and RMIC code</b>. Use the dialog to generate the code for the <code>XAExampleSession</code> bean. Application
+Developer will generate new classes with names like <code>EJSLocalStatelessXAExampleSession_5a0991c7</code>.
+These are the concrete classes with work with the WebSphere Application
+Server EJB container to make the example EJBs fulfill all of the
+qualities defined by the EJB specification.</p>
+
+<p>You must also add the EAR project to the test server. This is analogous to deploying an EAR, but more flexible because as you
+modify the EAR's code, you don't have to redeploy the EAR to use the new code. Instead, you can simply restart the server or
+restart the EAR project within the running server and start testing your code changes.</p>
+
+<p>To add the EAR project to the test server, select the server in the Server Configurations view, pop up the context (e.g. right
+mouse button) menu, and select <b>Add and remove projects</b>. In the dialog, add <code>XAExampleEAR</code>
+to the list of
+configured projects. In the Server Configuration view, expand the
+imported configuration and you'll now see that the EAR is part of the
+configuration.</p>
+
+<p>The download contains a file named <code>XAExampleDB.sql</code>, which creates a database table named <code>XA_EXAMPLE</code>.  For Oracle, run this file in SQL*Plus to create the table:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+SQL&gt; @C:\temp\XA Example Article\XAExampleDB.sql
+DROP TABLE XA_EXAMPLE
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+ 
+Table created.
+</code></pre></td></tr></tbody></table><br>
+
+<p>For DB2, run the file in the DB2 command line processor:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+C:\db2\SQLLIB\BIN&gt;db2 -tvf C:\temp\XA Example Article\XAExampleDB.sql
+DROP TABLE XA_EXAMPLE
+DB21034E&nbsp; The command was processed as an SQL statement because it was not a
+valid Command Line Processor command.&nbsp; During SQL processing it returned:
+SQL0204N  "DB2.XA_EXAMPLE" is an undefined name.&nbsp; SQLSTATE=42704
+ 
+CREATE TABLE XA_EXAMPLE ( TEXT VARCHAR(256) NOT NULL )
+DB20000I&nbsp; The SQL command completed successfully.
+</code></pre></td></tr></tbody></table><br>
+
+<a name="example_code"></a><p><a name="N1058C"><span class="smalltitle">Example code</span></a></p>
+
+<p>The example application is simple and consists of two classes:</p>
+
+<ol>
+<li><code>XAExampleSessionBean</code> -- A session EJB that performs an XA transaction.</li>
+<li><code>XAExampleServlet</code> -- A servlet that invokes the EJB.</li>
+</ol>
+
+<p>The session bean's public method, <code>persistAndSend(String)</code>,
+writes the argument to the two JDBC tables (DB2 and
+Oracle) and a JMS message. This functionality alone is not a very
+useful application; however, since JDBC and JMS are transactional
+resources, performing all three tasks requires an XA transaction. The
+distributed (two-phase) transaction ensures that all three tasks are
+performed successfully. If one task cannot commit successfully, the
+others are rolled back such that none of the tasks are performed. This
+maintains consistency between the two resources.</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">public</span> <span class="boldcode">void</span> persistAndSend(String data) <span class="boldcode">throws</span> Exception {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">try</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataSource oracleDS = getDataSource("java:comp/env/jdbc/OracleXADS");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; persist(data, oracleDS);
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataSource db2DS = getDataSource("java:comp/env/jdbc/DB2XADS");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; persist(data, db2DS);
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QueueConnectionFactory factory =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; getQueueConnectionFactory("java:comp/env/jms/XAExampleQCF");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Queue queue = getQueue("java:comp/env/jms/XAExampleQ");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; send(data, factory, queue);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">catch</span> (Exception e) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.printStackTrace();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">this</span>.getSessionContext().setRollbackOnly();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">throw</span> e;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+</code></pre></td></tr></tbody></table><br>
+
+<p>The method performs three steps:</p>
+<ol>
+<li>Persists the data using the data source named <code>jdbc/OracleXADS</code>.</li>
+<li>Persists the data using the data source named <code>jdbc/DB2XADS</code>.</li>
+<li>Sends the data in a JMS message to a queue named <code>jms/XAExampleQ</code>.</li>
+</ol>
+
+<p>If anything goes wrong, the catch block will catch the exception, mark the transaction for rollback, and rethrow the exception. 
+Just for completeness, here's the rest of the code for implementing the session bean:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">private</span> <span class="boldcode">void</span> persist(String data, DataSource datasource)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">throws</span> SQLException {
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Adding a new database row containing: " + data);
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Connection connection = <span class="boldcode">null</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">try</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection = datasource.getConnection();
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PreparedStatement statement =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.prepareStatement(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "INSERT INTO XA_EXAMPLE (TEXT) VALUES (?)");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement.setString(1, data);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement.execute();
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Successfully added row: " + data);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">finally</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">if</span> (connection != <span class="boldcode">null</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.close();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">private</span> <span class="boldcode">void</span> send(String data, QueueConnectionFactory factory, Queue queue)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">throws</span> JMSException {
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Sending a message containing: " + data);
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QueueConnection connection = <span class="boldcode">null</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">try</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection = factory.createQueueConnection();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QueueSession session =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.createQueueSession(<span class="boldcode">false</span>, Session.AUTO_ACKNOWLEDGE);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; QueueSender sender = session.createSender(queue);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextMessage message = session.createTextMessage(data);
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sender.send(message);
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Successfully sent message: " + data);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">finally</span> {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">if</span> (connection != <span class="boldcode">null</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.close();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">private</span> DataSource getDataSource(String jndiName) <span class="boldcode">throws</span> NamingException {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">return</span> (DataSource) <span class="boldcode">this</span>.getJNDIObject(jndiName);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">private</span> QueueConnectionFactory getQueueConnectionFactory(String jndiName)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">throws</span> NamingException {
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">return</span> (QueueConnectionFactory) <span class="boldcode">this</span>.getJNDIObject(jndiName);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">private</span> Queue getQueue(String jndiName) <span class="boldcode">throws</span> NamingException {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">return</span> (Queue) <span class="boldcode">this</span>.getJNDIObject(jndiName);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+ 
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">private</span> Object getJNDIObject(String jndiName) <span class="boldcode">throws</span> NamingException {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Context root = <span class="boldcode">new</span> InitialContext();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="boldcode">return</span> root.lookup(jndiName);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+</code></pre></td></tr></tbody></table><br>
+
+<p>This is standard code for using JDBC and JMS. There isn't even any
+code to define a transaction or make it XA. But because the
+code is invoked by the WebSphere Application Server's EJB container as
+a single public EJB method, the container automatically
+runs the code in a transaction. The container would normally use a
+simple (e.g. single phase) transaction, but it automatically
+detects when the second transactional resource is updated and converts
+the transaction to an XA transaction. As part of doing so,
+the container informs the resources that it is coordinating an XA
+transaction for them and to participate accordingly. All of
+this behavior is achieved automatically, without any additional code
+for the developer to write, simply by implementing the code in an EJB.</p>
+
+<a name="run_example"><br></a><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><a name="run_example"><br><br></a><p><a name="N10672"><span class="atitle">Run the example application</span></a></p>
+
+<p>Ideally, while you're reading this article, you should also be performing these steps in Application Developer. If you have
+been, you have now configured a test server and installed the example EAR.</p>
+
+<p>You can now start the server to run the application. In the Server perspective, go to the Servers view. Select your server and
+click Start to run it. If the server starts correctly, you'll see a startup log in the console similar to this:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+JMSMQJDProvid A MSGS0656I: Starting the MQJD JMS Provider
+JMSMQJDProvid A MSGS0650I: MQJD JMS Provider open for business
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding XAExampleQCF as jms/XAExampleQCF</span>
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding XAExampleQ as jms/XAExampleQ</span>
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding Example Oracle XA Data Source as jdbc/OracleXADS</span>
+ResourceMgrIm I WSVR0049I: <span class="boldcode">Binding Example DB2 XA Data Source as jdbc/DB2XADS</span>
+CacheServiceI I DYNA0048I: WebSphere Dynamic Cache initialized successfully.
+. . .
+ApplicationMg A WSVR0200I: <span class="boldcode">Starting application: XAExampleEAR</span>
+EJBContainerI I WSVR0207I: <span class="boldcode">Preparing to start EJB jar: XAExampleEJB.jar</span>
+EJBContainerI I WSVR0037I: <span class="boldcode">Starting EJB jar: XAExampleEJB.jar</span>
+WebContainer&nbsp; A SRVE0169I: <span class="boldcode">Loading Web Module: XAExampleWeb</span>.
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SRVE0180I: [XAExampleWeb] [/XAExampleWeb] [Servlet.LOG]: JSP 1.2 Processor: init
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SRVE0180I: [XAExampleWeb] [/XAExampleWeb] [Servlet.LOG]: SimpleFileServlet: init
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SRVE0180I: [XAExampleWeb] [/XAExampleWeb] [Servlet.LOG]: InvokerServlet: init
+ApplicationMg A WSVR0221I: <span class="boldcode">Application started: XAExampleEAR</span>
+</code></pre></td></tr></tbody></table><br>
+
+<p>Now we can run the application. In your favorite web browser, invoke this URL:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section"> http://localhost:9080/XAExampleWeb/XAExampleServlet?data=hello%20world </code></pre></td></tr></tbody></table><br>
+
+<p>This invokes our <code>XAExampleServlet</code> servlet with a single parameter whose name is <code>data</code> and whose value
+is "hello world." If everything runs successfully, the browser will display this result:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">Just persisted and sent data: hello world</code></pre></td></tr></tbody></table><br>
+
+<p>Likewise, in the server console, you'll see some status messages like these:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+SystemOut&nbsp;&nbsp;&nbsp;&nbsp; O Adding a new database row containing: hello world
+SystemOut&nbsp;&nbsp;&nbsp;&nbsp; O Successfully added row: hello world
+SystemOut&nbsp;&nbsp;&nbsp;&nbsp; O Adding a new database row containing: hello world
+SystemOut&nbsp;&nbsp;&nbsp;&nbsp; O Successfully added row: hello world
+SystemOut&nbsp;&nbsp;&nbsp;&nbsp; O Sending a message containing: hello world
+SystemOut&nbsp;&nbsp;&nbsp;&nbsp; O Successfully sent message: hello world
+</code></pre></td></tr></tbody></table><br>
+
+<p>If all of this works for you, congratulations, you've successfully
+run an application that uses an XA transaction spanning JDBC and JMS
+resources.</p>
+
+<a name="troubleshooting"></a><p><a name="N106BF"><span class="smalltitle">Troubleshooting the example application</span></a></p>
+
+<p>Several potential problems can prevent you from running the example
+successfully. Two of them are common mistakes in deploying the example
+and are easy to fix. Two others have to do with configuration problems
+in the Oracle database and require an Oracle DBA to fix.</p>
+
+<p>The following sections list the problems that can occur, show the exceptions displayed in the Application Developer console,
+give a brief description of why the problem occurred, and explain what to do to fix each problem.</p>
+
+<a name="class_exception"></a><p><a name="N106CD"><span class="smalltitle">ClassNotFoundException: EJSStatelessXAExampleSessionHomeBean</span></a></p>
+
+<p>When starting the server, when the application starts successfully, you get these messages:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+ApplicationMg A WSVR0200I: <span class="boldcode">Starting application: XAExampleEAR</span>
+EJBContainerI I WSVR0207I: Preparing to start EJB jar: XAExampleEJB.jar
+EJBContainerI I WSVR0037I: Starting EJB jar: XAExampleEJB.jar
+WebContainer&nbsp; A SRVE0169I: Loading Web Module: XAExampleWeb.
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SRVE0180I: [XAExampleWeb] [/XAExampleWeb] [Servlet.LOG]: JSP 1.2 Processor: init
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SRVE0180I: [XAExampleWeb] [/XAExampleWeb] [Servlet.LOG]: SimpleFileServlet: init
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SRVE0180I: [XAExampleWeb] [/XAExampleWeb] [Servlet.LOG]: InvokerServlet: init
+ApplicationMg A WSVR0221I: <span class="boldcode">Application started: XAExampleEAR</span>
+</code></pre></td></tr></tbody></table><br>
+
+<p>However, you may instead get an error like this:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+ApplicationMg A WSVR0200I: <span class="boldcode">Starting application: XAExampleEAR</span>
+EJBContainerI I WSVR0207I: Preparing to start EJB jar: XAExampleEJB.jar
+BeanMetaData&nbsp; E CNTR0075E: <span class="boldcode">The user-provided class 
+     "com.ibm.example.xa.EJSStatelessXAExampleSessionHomeBean_5a0991c7" 
+     needed by the EnterpriseBean could not be found or loaded.</span>
+EJBContainerI E WSVR0209E: Unable to prepare EJB jar XAExampleEJB.jar 
+     [class com.ibm.ws.runtime.component.DeployedModuleImpl], 
+     enterprise bean com.ibm.etools.ejb.impl.SessionImpl(XAExampleSession) 
+     (transactionType: Container, sessionType: Stateless)
+&nbsp;java.lang.<span class="boldcode">ClassNotFoundException</span>: 
+          com.ibm.example.xa.<span class="boldcode">EJSStatelessXAExampleSessionHomeBean_5a0991c7</span>
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.classloader.CompoundClassLoader.findClass(CompoundClassLoader.java:351)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.classloader.CompoundClassLoader.loadClass(CompoundClassLoader.java:261)
+&nbsp;&nbsp;&nbsp;&nbsp; at java.lang.ClassLoader.loadClass(ClassLoader.java(Compiled Code))
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ejs.container.BeanMetaData.loadExistedClass(BeanMetaData.java:2573)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ejs.container.BeanMetaData.&lt;init&gt;(BeanMetaData.java:888)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.runtime.component.EJBContainerImpl.createBeanMetaData(EJBContainerImpl.java:980)
+     . . .
+ 
+DeployedAppli W WSVR0206E: Module, XAExampleEJB.jar, of application, 
+     XAExampleEAR.ear/deployments/XAExampleEAR, failed to start
+ApplicationMg W WSVR0101W: An error occurred starting, XAExampleEAR
+ApplicationMg A WSVR0217I: Stopping application: XAExampleEAR
+ApplicationMg A WSVR0220I: <span class="boldcode">Application stopped: XAExampleEAR</span>
+</code></pre></td></tr></tbody></table><br>
+
+<p>The error is <code>ClassNotFoundException</code>, where the missing class is <code>
+com.ibm.example.xa.EJSStatelessXAExampleSessionHomeBean_5a0991c7</code>. It occurred while attempting to start the EJB jar <code>
+XAExampleEJB.jar</code>.</p>
+
+<p>What this indicates is that you forgot to generate the EJB code, so the container cannot find the generated <code>Home</code>
+class for the <code>XAExampleSession</code> bean. To fix this problem, generate the <b>Deployment and RMIC code</b> for all of
+the beans in the indicated EJB project, then restart the server.</p>
+
+<a name="sql_exception"></a><p><a name="N10715"><span class="smalltitle">SQLException: Table or view does not exist</span></a></p>
+
+<p>When running the example for the first time, you may get an error that looks like this:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+WSRdbDataSour I DSRA8203I: <span class="boldcode">Database product name: Oracle</span>
+WSRdbDataSour I DSRA8204I: Database product version: 
+     Personal Oracle9i Release 9.2.0.1.0 - Production
+With the Partitioning, OLAP and Oracle Data Mining options
+JServer Release 9.2.0.1.0 - Production
+WSRdbDataSour I DSRA8205I: JDBC driver name&nbsp; : Oracle JDBC driver
+WSRdbDataSour I DSRA8206I: JDBC driver version&nbsp; : 9.2.0.1.0
+WebGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E SRVE0026E: [Servlet Error]-[ORA-00942: table or view does not exist
+]: java.sql.<span class="boldcode">SQLException</span>: <span class="boldcode">ORA-00942</span>: <span class="boldcode">table or view does not exist</span>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:134)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.ttc7.TTIoer.processError(TTIoer.java:289)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.ttc7.Oall7.receive(Oall7.java:573)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.ttc7.TTC7Protocol.doOall7(TTC7Protocol.java:1891)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.ttc7.TTC7Protocol.parseExecuteFetch(TTC7Protocol.java:1093)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.driver.OracleStatement.executeNonQuery(OracleStatement.java:2047)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.driver.OracleStatement.doExecuteOther(OracleStatement.java:1940)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:2709)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:589)
+&nbsp;&nbsp;&nbsp;&nbsp;at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:656)
+&nbsp;&nbsp;&nbsp;&nbsp;at com.ibm.ws.rsadapter.jdbc.WSJdbcPreparedStatement.execute(WSJdbcPreparedStatement.java:386)
+&nbsp;&nbsp;&nbsp;&nbsp;at com.ibm.example.xa.XAExampleSessionBean.persist(XAExampleSessionBean.java:45)
+&nbsp;&nbsp;&nbsp;&nbsp;at com.ibm.example.xa.XAExampleSessionBean.persistAndSend(XAExampleSessionBean.java:30)
+&nbsp;&nbsp;&nbsp;&nbsp;at com.ibm.example.xa.EJSLocalStatelessXAExampleSession_5a0991c7.persistAndSend
+         (EJSLocalStatelessXAExampleSession_5a0991c7.java:23)
+&nbsp;&nbsp;&nbsp;&nbsp;at XAExampleServlet.persistAndSend(XAExampleServlet.java:44)
+&nbsp;&nbsp;&nbsp;&nbsp;at XAExampleServlet.doGet(XAExampleServlet.java:28)
+&nbsp;&nbsp;&nbsp;&nbsp;at javax.servlet.http.HttpServlet.service(HttpServlet.java:740)
+&nbsp;&nbsp;&nbsp;&nbsp;at javax.servlet.http.HttpServlet.service(HttpServlet.java:853)
+    . . .
+</code></pre></td></tr></tbody></table><br>
+
+<p>The error is <code>SQLException</code>, error code <code>ORA-00942</code>; specifically, an expected database table or view
+does not exist. However, the error does not tell you which table or view is missing. The stack trace does show that the error
+occurred in the method <code>XAExampleSessionBean.persist</code>, in line 45 of the <code>.java</code> file. Click on that line
+of the stack trace and the editor takes you to the <code>execute</code> line of this code:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PreparedStatement statement =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; connection.prepareStatement("INSERT INTO XA_EXAMPLE VALUES (?)");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement.setString(1, data);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; statement.execute();
+</code></pre></td></tr></tbody></table><br>
+
+<p>So the problem occurred while inserting a row into the <code>XA_EXAMPLE</code>
+table. What this indicates is that you forgot to run the SQL file that
+creates the database tables. To fix this problem, run the SQL file:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+SQL&gt; @C:\workspace\XAExampleEJB\XAExampleDB.sql
+</code></pre></td></tr></tbody></table><br>
+
+<p>Now run the example again.</p>
+
+<a name="oracle_exception"></a><p><a name="N1075D"><span class="smalltitle">OracleXAException: XAER_RMERR (Internal XA Error)</span></a></p>
+
+<p>When running the example for the first time, you may get an error that looks like this:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+WSRdbDataSour I DSRA8203I: <span class="boldcode">Database product name : Oracle</span>
+WSRdbDataSour I DSRA8204I: Database product version : 
+     Personal Oracle9i Release 9.2.0.1.0 - Production
+With the Partitioning, OLAP and Oracle Data Mining options
+JServer Release 9.2.0.1.0 - Production
+WSRdbDataSour I DSRA8205I: JDBC driver name&nbsp; : Oracle JDBC driver
+WSRdbDataSour I DSRA8206I: JDBC driver version&nbsp; : 9.2.0.1.0
+WSRdbXaResour E DSRA0304E:&nbsp;<span class="boldcode">XAException occurred</span>. XAException contents and details are:
+The XA Error is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : -3
+The XA Error message is&nbsp;&nbsp;&nbsp; : A resource manager error has occurred in the transaction branch.
+The Oracle Error code is&nbsp;&nbsp; : <span class="boldcode">65535</span>
+The Oracle Error message is: <span class="boldcode">Internal XA Error</span>
+The cause is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : null.
+WSRdbXaResour E DSRA0302E:&nbsp;XAException occurred.&nbsp; Error code is: <span class="boldcode">XAER_RMERR</span>.&nbsp; 
+     Exception is: &lt;null&gt;
+RegisteredRes E WTRN0078E: <span class="boldcode">An attempt by the transaction manager to call start 
+         on a transactional resource has resulted in an error. 
+         The error code was XAER_RMERR.</span> The exception stack trace follows: 
+     oracle.jdbc.xa.<span class="boldcode">OracleXAException</span>
+&nbsp;&nbsp;&nbsp;&nbsp; at oracle.jdbc.xa.OracleXAResource.checkError(OracleXAResource.java:1157)
+&nbsp;&nbsp;&nbsp;&nbsp; at oracle.jdbc.xa.client.OracleXAResource.start(OracleXAResource.java:295)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.rsadapter.spi.WSRdbXaResourceImpl.start(WSRdbXaResourceImpl.java:927)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ejs.j2c.XATransactionWrapper.start(XATransactionWrapper.java:1267)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.JTAResourceBase.start(JTAResourceBase.java:164)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.RegisteredResources.startRes(RegisteredResources.java:389)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.TransactionImpl.enlistResource(TransactionImpl.java:1903)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.TranManagerSet.enlist(TranManagerSet.java:494)
+     . . .
+</code></pre></td></tr></tbody></table><br>
+
+<p>The error is that the transaction manager was unable to convert the transaction to an XA transaction. Specifically, Oracle
+returned an error <code>XAER_RMERR</code>, error code number 65535. <code>ORA-65535</code> is not a valid error code and
+<code>XAER_RMERR</code> essentially means that something went wrong
+with XA.
+What this indicates is that your Oracle database is not configured to
+support XA transactions. Therefore, when the WebSphere Application
+Server transaction manager instructs the Oracle transaction manager to
+participate in this XA transaction, Oracle cannot comply and throws
+this exception.</p>
+
+<p>The solution is to run two scripts that are included in the Oracle
+install. This will likely need to be performed by your Oracle DBA,
+since you must be logged into Oracle as <code>SYSOPER</code> or <code>SYSDBA</code> 
+in order to have the necessary permissions for these scripts to work. The scripts are:</p>
+
+<ul>
+<li>directory: <code>&lt;ORACLE_HOME&gt;\javavm\install</code></li>
+  <ul>
+  <li>file:<code>initxa.sql</code></li>
+  <li>file: <code>initjvm.sql</code></li>
+  </ul>
+</ul>
+
+<p>The <code>initxa.sql</code> script configures the database for XA. Once it runs successfully, your database is configured for XA.
+The script may run successfully the first time you try. Unfortunately, it probably will not run successfully because some of
+the database's memory spaces are too small. To fix this, run the <code>initjvm.sql</code> script. It will probably fail too, but
+in doing so it will indicate which parameters need to be adjusted. The parameters are stored in this file:</p>
+
+<ul>
+<li>directory: <code>&lt;ORACLE_HOME&gt;\database</code></li>
+  <ul><li>file: <code>init&lt;DATABASE_SID&gt;.ora</code></li></ul>
+</ul>
+
+<p>This table shows two parameters that typically need to be increased.
+Your particular database configuration may require adjusting different
+parameters.</p>
+
+<p><b>Oracle Initialization Values</b></p>
+<table border="1" cellpadding="5" cellspacing="1"><tbody><tr><td><i>Parameter Name</i></td><td><i>Minimum Value</i></td></tr><tr><td><code>java_pool_size</code></td><td><code>12000000</code></td></tr><tr><td><code>shared_pool_size</code></td><td><code>24000000</code></td></tr></tbody></table>
+
+<p>Once <code>initjvm.sql</code> runs successfully, then <code>initxa.sql</code>
+should run successfully. The Oracle database
+will need to be restarted for the changes to take effect. You can then
+restart the WebSphere Studio test server and retry running the example.</p>
+
+<a name="xa_exception"></a><p><a name="N10802"><span class="smalltitle">XAException: XAER_RMERR (xa_recover)</span></a></p>
+
+<p>You may be able to run the example just fine, at least after fixing
+a few problems. You may develop an application that uses
+XA transactions with Oracle and be able to run it fine. But one day you
+may find that you cannot start your WebSphere Application
+Server. This will probably occur after crashing WebSphere and/or Oracle
+without shutting down the servers properly. The WebSphere startup error
+looks like this:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section">
+SecurityCompo I SECJ0243I: Security service started successfully
+SecurityCompo I SECJ0210I: Security enabled false
+WSRdbXaResour E DSRA0304E:&nbsp;<span class="boldcode">XAException occurred</span>. 
+     XAException contents and details are: The cause is&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : null.
+36185510 WSRdbXaResour E DSRA0302E:&nbsp; XAException occurred.&nbsp; 
+     Error code is: <span class="boldcode">XAER_RMERR</span>.&nbsp; Exception is: &lt;null&gt;
+XARminst&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E WTRN0037W: <span class="boldcode">The transaction service encountered an error 
+     on an xa_recover operation.</span> The resource was J2CXAResourceInfo :
+cfName = XA Example Data Source
+configProps = [Deployed Resource Adapter Properties]
+&nbsp;&nbsp;&nbsp;&nbsp; OptionC_authDataAlias &nbsp;&nbsp;&nbsp; &nbsp;java.lang.String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;scott
+&nbsp;&nbsp;&nbsp;&nbsp; UserName &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;java.lang.String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<span class="boldcode">scott</span>
+&nbsp;&nbsp;&nbsp;&nbsp; Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;java.lang.String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;********
+&nbsp;&nbsp;&nbsp;&nbsp; TransactionResourceRegistration  &nbsp;java.lang.String &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;dynamic
+&nbsp;&nbsp;&nbsp;&nbsp; InactiveConnectionSupport &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;java.lang.Boolean &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;true
+&nbsp;&nbsp;&nbsp;&nbsp; secureMode &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;boolean &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;true
+     . . .
+The error code was XAER_RMERR. The exception stack trace follows: 
+     javax.transaction.xa.XAException
+&nbsp;&nbsp;&nbsp;&nbsp; at oracle.jdbc.xa.OracleXAResource.recover(OracleXAResource.java:626)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.rsadapter.spi.WSRdbXaResourceImpl.recover(WSRdbXaResourceImpl.java:672)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.XARminst.recover(XARminst.java:130)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.XARecoveryData.recover(XARecoveryData.java:673)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.RecoveryManager.resync(RecoveryManager.java:1369)
+&nbsp;&nbsp;&nbsp;&nbsp; at com.ibm.ws.Transaction.JTA.ResyncThread.run(RecoveryManager.java:1440)
+ 
+ApplicationMg A WSVR0200I: Starting application: IBMUTC
+</code></pre></td></tr></tbody></table><br>
+
+<p>The error is that the transaction manager was unable to perform an XA recover operation. Specifically, Oracle returned an
+error XAER_RMERR. As with the last error, <code>XAER_RMERR</code>
+indicates that something went wrong with XA.
+What this indicates is that WebSphere did not close its connection with
+Oracle properly, probably because either or both
+servers were not shut down properly; they crashed. Now that WebSphere
+Application Server is attempting to reestablish the
+connection, Oracle needs to rollback any transactions that were in
+progress, but the Oracle user that WebSphere is using to log into
+the database (<code>scott</code>, in this example) cannot perform the recovery.</p>
+
+<p>The solution is to give the Oracle user permission to perform the recovery, specifically to access the internal Oracle tables
+used to manage recovery. In SQL Plus as <code>SYSOPER</code> or <code>SYSDBA</code>, run this command:</p>
+
+<table bgcolor="#eeeeee" border="1" cellpadding="5" cellspacing="0" width="100%"><tbody><tr><td><pre><code class="section"> grant select on DBA_PENDING_TRANSACTIONS to PUBLIC </code></pre></td></tr></tbody></table><br>
+
+<p>If you don't want to grant this permission to all users, specify only the user listed in the error (in this example, scott). 
+Then restart the database, and this time you should be able to successfully restart the WebSphere server.</p>
+
+<a name="conclusions"><br></a><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><a name="conclusions"><br><br></a><p><a name="N1083A"><span class="atitle">Conclusions</span></a></p>
+
+<p>This article has shown you how to create a WebSphere Studio
+Application Developer test server configured with a JDBC data source
+for Oracle XA, a data source for DB2 XA, and a JMS queue connection
+factory and queue. It described a simple session EJB method that
+updates both JDBC and JMS data, necessitating an XA transaction. You've
+seen what this simple application looks like when it runs correctly, as
+well as some of the errors that can occur and how to fix them. With
+this knowledge, you can now write WebSphere Java applications that use
+XA transactions.</p>
+
+<a name="acknowledgements"><br></a><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><a name="acknowledgements"><br><br></a><p><a name="N10845"><span class="atitle">Acknowledgements</span></a></p>
+<p>The author would like to thank Tom Alcott, Keys Botzum, Roland
+Barcia, Bill Hines, and Paul Ilechko for their help in developing this
+article.</p>
+
+<br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><br><br><p><a name="N1084E"><span class="atitle">Questions from users</span></a></p>
+<p><b>Question 1:</b> Hi Bobby -- your article is very useful and I was
+looking desperately to some information it contains a few months ago
+when I tried to make this work with Oracle.
+I just wanted to mention that in our case, it didn't work without the
+property "transactionBranchesLooselyCoupled" set to "true" in the
+datasource. Best regards, Daniel</p>
+<p><b>Response from author: </b> Daniel -- you are correct xxxxxxxxxxxxxxx</p>
+
+
+<br><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><br><br><p><span class="atitle"><a name="download">Download</a></span></p><table class="data-table-1" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><th>Name</th><th style="text-align: right;">Size</th><th>Download method</th></tr><tr><td nowrap="nowrap">XA_example_article.zip</td><td style="text-align: right;" nowrap="nowrap">43 KB</td><td nowrap="nowrap"><a class="fbox" href="http://www.ibm.com/developerworks/views/download.jsp?contentid=13679&amp;filename=XA_example_article.zip&amp;method=ftp&amp;locale=worldwide"><b>FTP</b></a><img alt="" src="0407_woolf_files/c.gif" height="1" width="8">|<img alt="" src="0407_woolf_files/c.gif" height="1" width="8"><a class="fbox" href="http://www.ibm.com/developerworks/views/download.jsp?contentid=13679&amp;filename=XA_example_article.zip&amp;method=http&amp;locale=worldwide"><b>HTTP</b></a></td></tr></tbody></table><table border="0" cellpadding="0" cellspacing="0"><tbody><tr valign="top"><td colspan="5"><img alt="" src="0407_woolf_files/c.gif" border="0" height="12" width="12"></td></tr><tr><td><img alt="" src="0407_woolf_files/fw.gif" height="16" width="16"></td><td><a class="fbox" href="http://www-128.ibm.com/developerworks/library/whichmethod.html">Information about download methods</a></td><td><img alt="" src="0407_woolf_files/c.gif" height="1" width="50"></td><td><img alt="" src="0407_woolf_files/sout.gif" height="16" width="16"></td><td><a class="fbox" href="http://www.adobe.com/products/acrobat/readstep2.html">Get Adobe® Reader®</a></td></tr></tbody></table><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><br><br><p><a name="resources"><span class="atitle">Resources</span></a></p><ul><li><a href="http://www.ibm.com/developerworks/apps/SendTo?bookstore=safari">Browse for books</a> on these and other technical topics.<br><br></li><li><a href="http://www.amazon.com/exec/obidos/tg/detail/-/0131468626/qid=1088533928/sr=1-1/ref=sr_1_1/102-5790440-7312931?v=glance&amp;s=books">
+     <i>IBM WebSphere: Deployment and Advanced Configuration</i></a> by Roland Barcia, et. al., Addison-Wesley 2004<br><br></li><li><i><a href="http://publib-b.boulder.ibm.com/Redbooks.nsf/RedbookAbstracts/sg246957.html">WebSphere Studio Application Developer V5 
+     Programming Guide</a></i>, by Ueli Wahli, et. al., IBM Redbook SG246957<br><br></li><li>"<a href="http://www.redbooks.ibm.com/redpapers/pdfs/redp3659.pdf">Transactions in J2EE</a>"
+     by Jan Smolenski and Peter Kovari, IBM Redpaper REDP3659<br><br></li><li>"<a href="http://www.opengroup.org/public/pubs/catalog/c193.htm">Distributed Transaction Processing: The XA Specification</a>"
+     by The Open Group, February 1992, UK ISBN 1-872630-24-3<br><br></li><li>"<a href="http://www.omg.org/technology/documents/formal/transaction_service.htm">Transaction Service Specification</a>"
+      (CORBA OTS) by the Object Management Group<br></li></ul><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><br><br><p><a name="author"><span class="atitle">About the author</span></a></p><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="3"><img alt="" src="0407_woolf_files/c.gif" height="5" width="100%"></td></tr><tr align="left" valign="top"><td><p><img alt="Bobby Woolf" src="0407_woolf_files/BobbyWoolf.jpg" align="left" height="157" width="127"></p></td><td><img alt="" src="0407_woolf_files/c.gif" height="5" width="4"></td><td width="100%"><p><b>Bobby Woolf</b> is a member of the <a href="http://www.ibm.com/developerworks/websphere/services/">IBM Software Services for WebSphere</a>
+consulting practice, where he assists clients in developing
+applications for WebSphere Application Server using WebSphere Studio
+Application Developer. He is a co-author of <i>Enterprise Integration Patterns</i> and <i>The Design Patterns Smalltalk Companion</i>, both from Addison-Wesley, 
+and a frequent conference speaker. You can reach Bobby at <a href="mailto:bwoolf@us.ibm.com">bwoolf@us.ibm.com</a></p></td></tr></tbody></table><br><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="0407_woolf_files/blue_rule.gif" alt="" height="1" width="100%"></td></tr></tbody></table><table class="no-print" align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><br><br><p class="no-print"><span class="atitle"><a name="rate">Rate this page</a></span></p><span class="no-print"><form action="//www-128.ibm.com/developerworks/utils/RatingsHandler" method="post"><input value="Configuring and using XA distributed transactions in WebSphere Studio" name="ArticleTitle" type="hidden"><input value="WebSphere" name="Zone" type="hidden"><input value="http://www.ibm.com/developerworks/thankyou/feedback-thankyou.html" name="RedirectURL" type="hidden"><input value="13679" name="ArticleID" type="hidden"><input value="06012004" name="publish-date" type="hidden"><input name="author1-email" value="bwoolf@us.ibm.com" type="hidden"><input name="author1-email-cc" value="" type="hidden"><script language="javascript" type="text/javascript">document.write('<input type="hidden" name="url" value="'+location.href+'">');</script><input name="url" value="http://www-128.ibm.com/developerworks/websphere/library/techarticles/0407_woolf/0407_woolf.html" type="hidden"><img src="0407_woolf_files/gray_rule.gif" alt="" height="1" width="100%"><br><table class="v14-gray-table-border" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="3"><p>Please take a moment to complete this form to help us better serve you.</p></td></tr><tr valign="top"><td width="140"><img src="0407_woolf_files/c.gif" alt="" height="1" width="140"><br><p><label for="Goal">Did the information help you to achieve your goal?</label></p></td><td width="303"><img src="0407_woolf_files/c.gif" alt="" height="6" width="303"><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><input value="Yes" id="Goal" name="Goal" type="radio">Yes</td><td><input value="No" id="Goal" name="Goal" type="radio">No</td><td><input value="Don't know" id="Goal" name="Goal" type="radio">Don't know</td></tr></tbody></table></td><td width="100%">&nbsp;</td></tr><tr><td colspan="3"><img alt="" src="0407_woolf_files/c.gif" height="12" width="8"></td></tr><tr valign="top"><td width="140"><img src="0407_woolf_files/c.gif" alt="" height="1" width="140"><br><p><label for="Comments">Please provide us with comments to help improve this page:</label></p></td><td width="303"><img src="0407_woolf_files/c.gif" alt="" height="6" width="303"><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><textarea class="iform" cols="35" rows="5" wrap="virtual" id="Comments" name="Comments">&nbsp;</textarea></td></tr></tbody></table></td><td width="100%">&nbsp;</td></tr><tr><td colspan="3"><img alt="" src="0407_woolf_files/c.gif" height="12" width="8"></td></tr><tr valign="top"><td width="140"><img src="0407_woolf_files/c.gif" alt="" height="1" width="140"><br><p><label for="Rating">How useful is the information?
+<br>
+(1 = Not at all,
+<br>
+5 = Extremely useful)</label></p></td><td width="303"><img src="0407_woolf_files/c.gif" alt="" height="6" width="303"><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><input value="1" id="Rating" name="Rating" type="radio">1</td><td><input value="2" id="Rating" name="Rating" type="radio">2</td><td><input value="3" id="Rating" name="Rating" type="radio">3</td><td><input value="4" id="Rating" name="Rating" type="radio">4</td><td><input value="5" id="Rating" name="Rating" type="radio">5</td></tr></tbody></table></td><td width="100%">&nbsp;</td></tr></tbody></table></td></tr></tbody></table><table class="v14-gray-table-border" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td colspan="3"><img alt="" src="0407_woolf_files/c.gif" height="8" width="8"></td></tr><tr><td width="8"><img alt="" src="0407_woolf_files/c.gif" height="1" width="8"></td><td colspan="3"><input alt="Submit" src="0407_woolf_files/submit.gif" border="0" height="21" type="image" width="120"></td></tr><tr><td colspan="3"><img alt="" src="0407_woolf_files/c.gif" height="8" width="8"></td></tr></tbody></table></form><br></span><span class="no-print"><table align="right" cellpadding="0" cellspacing="0"><tbody><tr align="right"><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td valign="middle"><img src="0407_woolf_files/u_bold.gif" alt="" border="0" height="16" width="16"><br></td><td align="right" valign="top"><a href="#main" class="fbox"><b>Back to top</b></a></td></tr></tbody></table></td></tr></tbody></table><br><br></span></td><td width="10"><img alt="" src="0407_woolf_files/c.gif" height="1" width="10"></td></tr></tbody></table></td></tr></tbody></table><!--FOOTER_BEGIN--><br><table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td class="bbg" height="19"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><span class="spacer">&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="http://www.ibm.com/ibm/" class="mainlink">About IBM</a></td><td class="footer-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td><td><a href="http://www.ibm.com/privacy/" class="mainlink">Privacy</a></td><td class="footer-divider" width="27">&nbsp;&nbsp;&nbsp;&nbsp;</td><td><a href="http://www.ibm.com/contact/" class="mainlink">Contact</a></td></tr></tbody></table></td></tr></tbody></table><script language="JavaScript1.2" type="text/javascript" src="0407_woolf_files/stats.js"></script><noscript><img border="0" alt="" height="1" width="1" src="//stats.www.ibm.com/rc/images/uc.GIF?R=noscript"/></noscript><!--FOOTER_END--><!--XSLT stylesheet used to transform this file:  dw-document-html-5.3.xsl--></body></html>

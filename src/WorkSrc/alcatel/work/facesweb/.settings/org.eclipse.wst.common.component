@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="facesweb">
+        <module-type module-type-id="jst.web">
+            <version>2.4</version>
+        </module-type>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/JavaSource"/>
+        <property name="FeatureID_1" value="templatefeature"/>
+        <property name="FeatureID_25" value="RelationalDataFeature"/>
+        <property name="FeatureID_24" value="feature.odc.base.v600.6.0.16.0.1"/>
+        <property name="FeatureID_23" value="jsf.ri.v600.6.0.1"/>
+        <property name="FeatureID_22" value="rte.base.v600.6.0.1"/>
+        <property name="FeatureID_21" value="jsf.base.v600.6.0.1"/>
+        <property name="FeatureID_20" value="jsf.extended.v600.6.0.1"/>
+        <property name="java-output-path" value="WebContent/WEB-INF/classes"/>
+        <property name="JSPLevel" value="1.2"/>
+        <property name="FeatureID_19" value="JSPStandardFeature"/>
+        <property name="jsf.standard.scheme.managedBean" value="singleFile"/>
+        <property name="FeatureID_18" value="feature.odc.base.v600"/>
+        <property name="FeatureID_17" value="jsf.ri.v600"/>
+        <property name="jsf.standard.scheme.managedBean.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="FeatureID_16" value="jsf.base.v600"/>
+        <property name="FeatureID_15" value="jsf.extended.v600"/>
+        <property name="context-root" value="facesweb"/>
+        <property name="FeatureID_14" value="rte.base"/>
+        <property name="FeatureID_13" value="jsf.base"/>
+        <property name="FeatureID_12" value="jsf.extended"/>
+        <property name="jsf.standard.scheme.pageCodeBean.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="FeatureID_11" value="jsf.ri"/>
+        <property name="FeatureID_10" value="com.ibm.etools.siteedit.wizards.projectfeature.WebSiteFeature"/>
+        <property name="jsf.standard.scheme.other.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="jsf.standard.scheme.navigationRule" value="singleFile"/>
+        <property name="jsf.standard.scheme.other" value="singleFile"/>
+        <property name="FeatureID_30" value="jsf.ri.v600.6.0.1.1"/>
+        <property name="FeatureID_9" value="WebProjectCSSFileFeature"/>
+        <property name="FeatureID_8" value="templatefeature"/>
+        <property name="jsf.standard.scheme.navigationRule.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="FeatureID_7" value="rte.base"/>
+        <property name="jsf.standard.scheme.pageCodeBean" value="singleFile"/>
+        <property name="FeatureID_6" value="jsf.base"/>
+        <property name="FeatureID_5" value="jsf.extended"/>
+        <property name="FeatureID_29" value="rte.base.v600.6.0.1.1"/>
+        <property name="FeatureID_4" value="jsf.ri"/>
+        <property name="FeatureID_28" value="jsf.extended.v600.6.0.1.1"/>
+        <property name="FeatureID_3" value="com.ibm.etools.siteedit.wizards.projectfeature.WebSiteFeature"/>
+        <property name="FeatureID_27" value="feature.odc.base.v600.6.0.1.16.0.1.1"/>
+        <property name="FeatureID_2" value="WebProjectCSSFileFeature"/>
+        <property name="FeatureID_26" value="RelationalDataFeature_patch version_6.0.1"/>
+        <property name="jsf.odc" value="7.0.100.v20070309-0330"/>
+        <property name="jsf.extended" value="7.0.100.v20070313-0330"/>
+        <property name="jsf.ri" value="7.0.100.v20070301-0330"/>
+        <property name="jsf.rte" value="7.0.100.v20070309-0330"/>
+        <property name="jsf.base" value="7.0.100.v20070215-0330"/>
+    </wb-module>
+</project-modules>

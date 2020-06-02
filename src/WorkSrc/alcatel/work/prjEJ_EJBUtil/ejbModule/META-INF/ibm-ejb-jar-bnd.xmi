@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejbbnd:EJBJarBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ejb="ejb.xmi" xmlns:ejbbnd="ejbbnd.xmi" xmi:id="EJBJarBinding_1126171644938">
+  <ejbJar href="META-INF/ejb-jar.xml#ejb-jar_ID"/>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1126171644938" jndiName="ejb/com/ibm/websphere/scheduler/TaskHandlerHome">
+    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#HoshenProcess"/>
+  </ejbBindings>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1126181961048" jndiName="ejb/com/ibm/websphere/scheduler/NotificationSinkHome">
+    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#ReceiveNotification"/>
+  </ejbBindings>
+  <ejbBindings xmi:id="EnterpriseBeanBinding_1127038192562" jndiName="ejb/com/ibm/websphere/startupservice/AppStartUpHome">
+    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#HoshenStartupBean"/>
+  </ejbBindings>
+</ejbbnd:EJBJarBinding>

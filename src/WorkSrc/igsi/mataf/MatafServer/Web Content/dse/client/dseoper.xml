@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dseoper.xml>
+	<!--DWGroupDef:client.Operations-->
+	<!-- CLIENT OPERATION DEFs.=================================================-->
+	<!--========================================================================-->
+	<!-- StartUp Operation														-->
+	<!--========================================================================-->
+	<operation context="startupClientCtx" id="startupClientOp" implClass="mataf.operations.StartupClientOp" serverOperation="startupServerOp">
+		<refFormat name="csRequestFormat" refId="startupReqFmt" />
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- Tables Loader operation												-->
+	<!-- This operation called after the desktop & the Global variables         -->
+	<!-- finished loading. The reason that this Logic don't execute in the      -->
+	<!-- StartUpOperation is because we need the data in the Global variables   --> 
+	<!--========================================================================-->
+	<operation context="startupClientCtx" id="tablesLoaderClientOp" 
+			   implClass="mataf.general.operations.MatafClientOp" 
+			   serverOperation="tablesLoaderServerOp">
+			   
+		<refFormat name="csRequestFormat" refId="tablesLoaderReqFmt" />
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- End Session Operation													-->
+	<!--========================================================================-->
+	<operation context="endSessionClientCtx" id="endSessionClientOp" implClass="mataf.operations.EndSessionClientOp" serverOperation="endSessionServerOp" />
+	
+	<!--========================================================================-->
+	<!-- Activate DLL Operation													-->
+	<!--========================================================================-->
+	<operation context="linkCtx" id="linkClientOp" implClass="mataf.dll.operations.LinkClientOp"> </operation>
+
+	<!--========================================================================-->
+	<!-- Open Word Operation													-->
+	<!--========================================================================-->
+	<operation context="wordCtx" id="wordClientOp" implClass="mataf.windows.operations.WordClientOp"></operation>
+
+	<!--========================================================================-->
+	<!-- Open Web Browser Operation												-->
+	<!--========================================================================-->
+	<operation context="browserViewCtx" id="browserClientOp" implClass="mataf.windows.operations.BrowserClientOp"></operation>
+
+	<!--========================================================================-->
+	<!-- create new appointment Operation										-->
+	<!--========================================================================-->
+	<operation context="emptyCtx" id="outlookClientOp" implClass="mataf.windows.operations.OutlookClientOp"></operation>
+
+	<!--========================================================================-->
+	<!-- open web based tax calculator Operation								-->
+	<!--========================================================================-->
+	<operation context="emptyCtx" id="calculatorClientOp" implClass="mataf.windows.operations.CalculatorClientOp"></operation>
+
+	<!--========================================================================-->
+	<!-- test trx client Operation												-->
+	<!--========================================================================-->
+	<!--operation context="testTrxCtx" id="testTrxClientOp" implClass="mataf.operations.TestTrxClientOp" serverOperation="testTrxServerOp">
+		<refFormat name="csRequestFormat" refId="testTrxRequestFmt" />
+	</operation-->
+	
+	<operation context="emptyCtx" id="testTrxClientOp" implClass="mataf.operations.TestTrxClientOp">
+		<!--refFormat name="csRequestFormat" refId="testTrxRequestFmt" /-->
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- test flow processor client Operation									-->
+	<!--========================================================================-->
+	<operation id="flowClientOp" context="testTrxCtx" implClass="tests.FlowClientOp" serverOperation="flowServerOp">
+		<refFormat name="csRequestFormat" refId="testTrxRequestFmt" />
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- JDBC client Operation												-->
+	<!--========================================================================-->
+	<operation context="testTrxCtx" id="JDBCClientOp" implClass="mataf.operations.JDBCClientOp" serverOperation="JDBCServerOp">
+		<!--refFormat name="csRequestFormat" refId="testTrxRequestFmt" /-->
+	</operation>
+
+	<!--========================================================================-->
+	<!-- A Generic client operation for activating RT transactions				-->
+	<!--========================================================================-->
+	<operation context="RTTrxCtx" id="activateRTTransactionOp" implClass="mataf.operations.ActivateRTTransactionOp"></operation>
+
+	<!-- reference tables client operation -->
+	<operation context="refTablesCtx" id="refTablesClientOp" implClass="mataf.services.reftables.RefTablesClientOp" serverOperation="refTablesServerOp">
+	</operation>
+
+	<!-- generic client operation -->
+	<operation context="genOpCtx" id="genericClientOp" implClass="mataf.operations.general.GenericClientOp" serverOperation="genericSrvOp">
+		<refFormat name="csRequestFormat" refId="genReqFmt" />
+	</operation>
+	<!-- test operation -->
+	<operation context="testTrxCtx" id="clientOp" implClass="tests.ClientOp" serverOperation="serverOp"></operation>
+
+	<operation context="chequeReaderCtx" id="chequeReadClientOp" implClass="mataf.operations.ChequeReadClientOp">
+		<refFormat name="csReplyFormat" refId="chequeReaderReplyFmt" />
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- Printer client Operation												-->
+	<!--========================================================================-->
+	<operation id="printerClientOp" context="printerCtx" implClass="mataf.services.printer.PrinterClientOp">
+		
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- Journal client Operation												-->
+	<!--========================================================================-->
+	<operation context="testTrxCtx" id="journalClientOp" implClass="tests.JournalClientOp" serverOperation="journalServerOp">
+		<refFormat name="csRequestFormat" refId="emptyFmt" />
+	</operation>
+	
+	<!--========================================================================-->
+	<!-- Personal Menu client Operation											-->
+	<!--========================================================================-->
+	<operation	context="emptyCtxChainedToBranchCtx" id="addTrxToPersonalMenuSlClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="addTrxToPersonalMenuSlServerOp">
+     	<refFormat name="csRequestFormat" refId="personalMenuCsRequestFmt"/>
+    </operation>
+    <operation	context="emptyCtxChainedToBranchCtx" id="removeTrxFromPersonalMenuSlClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="removeTrxFromPersonalMenuSlServerOp">
+     	<refFormat name="csRequestFormat" refId="personalMenuCsRequestFmt"/>
+    </operation>
+	
+	<!--=========================================================================-->
+    <!-- Slika (T410) client operations                                                  -->
+    <!--=========================================================================-->
+    
+    <operation	context="emptyCtx" id="initSlikaClientOp"
+    			implClass="mataf.slika.operations.InitSlikaClientOp"
+     			serverOperation="initSlikaServerOp">
+     	<refFormat name="csRequestFormat" refId="initSlikaCsRequestFmt"/>
+     	<!--opStep id="checkAccess" on0Do="next" on1Do="end"/-->
+		<opStep id="mapTaskAttributes" on0Do="next"	on1Do="end"/>
+		<opStep id="setSlikaInitParams" 
+				implClass="mataf.slika.operationsteps.InitSlikaParams"
+				on0Do="next"	
+				on1Do="end"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkAccountSlClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkAccountSlServerOp">
+     	<refFormat name="csRequestFormat" refId="accountValidationsCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkTotalAmountSlClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkTotalAmountSlServerOp">
+     	<refFormat name="csRequestFormat" refId="checkTotalAmountCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkBankNumberClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkBankNumberServerOp">     			
+     	<refFormat name="csRequestFormat" refId="CZSS_T110_LIST_CsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkBranchIdAccording2bankClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkBranchIdAccording2bankServerOp">
+     	<refFormat name="csRequestFormat" refId="CZSS_T110_LIST_CsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkAccountNumber4ChequeClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkAccountNumber4ChequeServerOp">
+     	<refFormat name="csRequestFormat" refId="CZSS_T110_LIST_CsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkAmountOfCheckClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkAmmountOfCheckServerOp">
+     	<refFormat name="csRequestFormat" refId="CZSS_T110_LIST_CsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkBranchIdClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkBranchIdServerOp">
+     	<refFormat name="csRequestFormat" refId="checkBranchIdCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkAccountTypeClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkAccountTypeServerOp">
+     	<refFormat name="csRequestFormat" refId="checkAccountTypeCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkReturnAccountNumberClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkReturnAccountNumberServerOp">
+     	<refFormat name="csRequestFormat" refId="checkReturnAccountNumberCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkIdCardNumberClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkIdCardNumberServerOp">
+     	<refFormat name="csRequestFormat" refId="checkIdCardNumberCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkMahutTashlumClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkMahutTashlumServerOp">
+     	<refFormat name="csRequestFormat" refId="checkMahutTashlumCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="loanDataChangedClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="loanDataChangedServerOp">
+     	<refFormat name="csRequestFormat" refId="checkLoanNumberCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkLoanNumberClientOp"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="checkLoanNumberServerOp">
+     	<refFormat name="csRequestFormat" refId="checkLoanNumberCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="checkLoanDetailsClientOp"
+    			implClass="mataf.slika.operations.CheckLoanDetailsClientOp"
+     			serverOperation="checkLoanDetailsServerOp">
+     	<refFormat name="csRequestFormat" refId="checkLoanDetailsCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="localOverrideOp"
+    			implClass="mataf.override.LocalOverrideOp">
+    </operation>
+    
+    <operation	context="emptyCtx" id="sendCheckDetailsClientOp"
+    			implClass="mataf.slika.operations.SendCheckDetailsClientOp"
+     			serverOperation="sendCheckDetailsServerOp">
+     	<refFormat name="csRequestFormat" refId="sendCheckDetailsCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="acceptSlClientOp"
+    			implClass="mataf.slika.operations.AcceptSlClientOp"
+     			serverOperation="acceptSlServerOp">
+     	<refFormat name="csRequestFormat" refId="sendCheckDetailsCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="saveContextInJournalClientOp" 
+    			implClass="mataf.general.operations.SaveContextInJournalClientOp"
+    			serverOperation="saveContextInJournalServerOp"
+    			errorNo="TL644">
+     	<refFormat name="csRequestFormat" refId="sendCheckDetailsCsRequestFmt"/>
+    </operation>
+    
+    <operation	context="emptyCtx" id="readCheckDetailsClientOp"
+    			implClass="mataf.slika.operations.ReadCheckDetailsClientOp" >
+    </operation>
+    
+	<!-- override operations -->
+	<operation context="emptyCtx" id="overrideReqOp" implClass="mataf.override.OverrideReqClientOp" 
+				     		serverOperation="overrideReqServerOp">
+	</operation>    
+	<operation context="emptyCtx" id="openOverrideReqOp" implClass="mataf.override.OpenOverrideReqOp" 
+				     		serverOperation="openOverrideServerOp">
+	</operation>    
+	<operation context="emptyCtx" id="managersListOp" implClass="mataf.override.ManagersListOp" >
+	</operation>    
+	<operation context="emptyCtx" id="overrideReplyClientOp" implClass="mataf.override.OverrideReplyClientOp" 
+		     			serverOperation="overrideReplyServerOp">
+	</operation>    
+	<operation context="emptyCtx" id="overrideCancelClientOp" implClass="mataf.override.OverrideCancelClientOp" 
+		     			serverOperation="overrideCancelServerOp">
+	</operation>    
+	
+	<operation context="emptyCtx" id="overrideResponceRefuseOp" implClass="mataf.override.OverrideResponceRefuseOp">
+	</operation>
+	<operation context="emptyCtx" id="overrideResponceApproveOp" implClass="mataf.override.OverrideResponceApproveOp">
+	</operation>
+	<operation context="emptyCtx" id="overrideResponceExitOp" implClass="mataf.override.OverrideResponceExitOp">
+	</operation>
+	
+	<operation context="emptyCtx" id="overrideWaitOp" implClass="mataf.override.OverrideWaitOp" >
+	</operation>    
+	<operation context="emptyCtx" id="localOverrideOp" implClass="mataf.override.LocalOverrideOp" >
+	</operation>    
+	<operation context="slikaCtx" id="testPanelOp" implClass="mataf.override.TestPanelOp" >
+	</operation>    
+	<operation context="emptyCtx" id="srikaTestOp" implClass="mataf.srika.operations.SrikaTestOp" >
+	</operation>    
+	
+	<!--/DWGroupDef-->
+	
+	<operation context="journalWrapCtx" id="journalWrapClientOp" implClass="mataf.services.electronicjournal.JournalWrapClientOp" 
+		     			serverOperation="journalWrapSrvOp">
+	</operation>
+
+	<!--=========================================================================-->
+	<!-- Halbanat Hon K86P client operations                                -->
+    <!--=========================================================================-->
+	
+	<!-- ============== SUG LAKOACH SCREEN CLIENT OPERATIONS =================== -->
+	
+	<operation	id="initHalbanatHonClientOp" context="emptyCtx"
+    			implClass="mataf.halbanathon.operations.InitHalbanatHonClientOp"
+     			serverOperation="initHalbanatHonServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+     	<refFormat name="slikaToHalbantHonMapper" refId="TLAS_HAZRAMA_T410"/>
+    </operation>
+    
+    <operation	id="halbanatHonSugLakoachClientOp" context="emptyCtx" 
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="halbanatHonSugLakoachServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    
+    <operation	id="halbanatHonSibatDivuachClientOp" context="emptyCtx" 
+    			implClass="mataf.general.operations.MatafClientOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <operation	id="halbanatHonSugCheshbonAcherClientOp" context="emptyCtx" 
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="halbanatHonSugCheshbonAcherServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <operation	id="halbanatHonAccountAcherClientOp" context="emptyCtx" 
+    			implClass="mataf.general.operations.MatafClientOp"
+    			serverOperation="halbanatHonAccountAcherServerOp">     			
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <operation	id="halbanatHonTransmitSugLakoachClientOp" context="emptyCtx" 
+    			implClass="mataf.halbanathon.operations.HalbanatHonTransmitSugLakoachClientOp"
+     			serverOperation="halbanatHonTransmitSugLakoachServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <!-- ==================== PRATIM SCREEN CLIENT OPERATIONS ================= -->
+   
+    <operation	id="halbanatHonDetailsClientOp" context="emptyCtx" 
+    			implClass="mataf.halbanathon.operations.HalbanatHonDetailsClientOp"
+     			serverOperation="halbanatHonDetailsServerOp">     			
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <operation	id="halbanatHonTransmitDetailsClientOp" context="emptyCtx"
+    			implClass="mataf.halbanathon.operations.HalbanatHonTransmitDetailsClientOp"
+     			serverOperation="halbanatHonTransmitDetailsServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>  
+    
+    <operation	id="halbanatHonCountriesClientOp" context="emptyCtx"
+    			implClass="mataf.general.operations.MatafClientOp"
+     			serverOperation="halbanatHonCountriesServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+     <operation	id="halbanatHonIDClientOp" context="emptyCtx"
+    			implClass="mataf.general.operations.MatafClientOp"
+    			serverOperation="halbanatHonIDServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+     <operation	id="halbanatHonKidometClientOp" context="emptyCtx"
+    			implClass="mataf.general.operations.MatafClientOp"
+    			serverOperation="halbanatHonKidometServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <operation	id="halbanatHonPhoneClientOp" context="emptyCtx"
+    			implClass="mataf.general.operations.MatafClientOp"
+    			serverOperation="halbanatHonPhoneServerOp">
+     	<refFormat name="csRequestFormat" refId="initHalbanatHonCsRequestFmt"/>
+    </operation>
+    
+    <!--=========================================================================-->
+    <!-- Print client operations                                                 -->
+    <!--=========================================================================-->
+    <operation	id="printChecksPrepClientOp" context="emptyCtx"
+    			implClass="mataf.slika.operations.PrintChecksPrepClientOp" >
+     	<refFormat name="printFormat" refId="CZSP_LAZER_T110Fmt"/>
+    </operation>
+    <operation	id="printChecksExecClientOp" context="emptyCtx"
+    			implClass="mataf.slika.operations.PrintChecksExecClientOp" >
+     	<refFormat name="printFormat" refId="CZSP_LAZER_T110Fmt"/>
+    </operation>
+    <operation	id="printPrepClientOp" context="printerCtx"
+    			implClass="mataf.operations.PrintPrepClientOp" >
+    </operation>
+    <operation	id="printExecClientOp" context="printerCtx"
+    			implClass="mataf.operations.PrintExecClientOp" >
+    </operation>
+
+    <!--=========================================================================-->
+    <!-- Srika (T491) client operations                                                  -->
+    <!--=========================================================================-->
+    
+    <operation	id="initSrikaClientOp" context="emptyCtx" implClass="mataf.srika.operations.InitSrikaClientOp">
+    	<opStep id="checkAccess" on0Do="next" on1Do="end"/>
+		<opStep id="mapTaskAttributes" on0Do="next"	on1Do="end"/>
+    </operation>
+    
+    <operation	id="scanJournalClientOp" context="scanJournalCtx"
+    			implClass="mataf.srika.operations.ScanJournalClientOp"
+    			serverOperation="scanJournalServerOp">
+    		<refFormat refId="scanJournalCsRequestFmt" name="csRequestFormat"/>
+    </operation>
+    <!-- restore client operation -->
+    <operation id="srikaRestoreOp" context="srikaRestoreCtx" implClass="mataf.srika.operations.SrikaRestoreOp" 
+    			serverOperation="restoreContextServerOp" >
+    		<refFormat refId="srikaRestoreCsRequestFmt" name="csRequestFormat"/>
+	</operation>    
+
+    <operation id="srikaRestorePrevTrnsOp" context="srikaRestoreCtx" implClass="mataf.srika.operations.SrikaRestorePrevTrnsOp" 
+    			serverOperation="restoreContextServerOp" >
+    		<refFormat refId="srikaRestoreCsRequestFmt" name="csRequestFormat"/>
+	</operation>    
+
+    <operation id="srikaRestoreNextTrnsOp" context="srikaRestoreCtx" implClass="mataf.srika.operations.SrikaRestoreNextTrnsOp" 
+    			serverOperation="restoreContextServerOp" >
+    		<refFormat refId="srikaRestoreCsRequestFmt" name="csRequestFormat"/>
+	</operation>    
+
+	<operation id="printRestoreClientOp" context="emptyCtx" implClass="mataf.srika.operations.SrikaRestorePrintClientOp">
+	</operation>
+	
+	<operation id="switchPrinterOp" context="switchPrinterCtx" implClass="mataf.operations.SwitchPrinterOp">
+	</operation>
+	<!--=========================================================================-->
+    <!-- Transactions validations operations                                                  -->
+    <!--=========================================================================-->
+   <operation id="checkConnectionToHostClientOp" context="validatorCtx" implClass="mataf.operations.CheckConnectionToHost"
+		serverOperation="checkConnectionToHostServerOp" >
+    		<refFormat refId="emptyFmt" name="csRequestFormat"/>
+	</operation>
+	
+	<operation id="checkConnectionToPrinterClientOp" context="validatorCtx" implClass="mataf.operations.CheckConnectionToPrinter" />
+
+    
+</dseoper.xml>

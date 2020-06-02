@@ -1,0 +1,311 @@
+<?xml version="1.0" standalone="no"?>
+<!-- DOCTYPE management SYSTEM "./dtd/mac.dtd" -->
+
+<repository>
+
+	<table name="ATTRIBUTES" implementor="com.ibm.dse.dw.model.db2.base.AttributesTable" alias="ATT">
+		<column name="ENTITY" 			type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NAME" 			type="char" length="60" mandatory="true" primaryKey="true"/>
+		<column name="VALUE_TYPE" 		type="char" length="50" mandatory="false"/>
+		<column name="DEFAULT_VALUE" 		type="char" length="50" mandatory="false"/>
+		<column name="LABEL" 			type="char" length="60" mandatory="false"/>
+		<column name="REQUIRED" 		type="char" length="1" mandatory="false">
+			<checkConstraint name="ATT_REQ_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="DESCRIPTION" 		type="char" length="255" mandatory="false"/>
+		<column name="EXTERNALIZE" 		type="char" length="1" mandatory="false">
+			<checkConstraint name="ATT_EXT_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="VALIDATION_PARAMS" 	type="char" length="255" mandatory="false"/>
+		<column name="IMAGE_URI"		type="char" length="255" mandatory="false"/>
+		<index name="ATTNAMI">
+			<refColumn name="NAME" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="DOMAINS" implementor="com.ibm.dse.dw.model.db2.base.DomainsTable" alias="DOM">
+		<column name="TIMESTAMP" 		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NAME" 			type="char" length="50" mandatory="true"/>
+		<column name="VERSION" 			type="char" length="50" mandatory="false"/>
+		<column name="VALUE_TYPE" 		type="char" length="100" mandatory="false"/>
+		<column name="DESCRIPTION" 		type="char" length="255" mandatory="false"/>		
+		<column name="RELEASED" 		type="char" length="1" mandatory="false">
+			<checkConstraint name="DOM_REL_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="VERSIONED" 		type="char" length="1" mandatory="false">
+			<checkConstraint name="DOM_VER_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="OWNER" 			type="char" length="50" mandatory="false"/>		
+		<column name="USER_DATA"		type="char" length="255" mandatory="false"/>
+		<column name="USERS_GROUP"		type="char" length="50" mandatory="false"/>
+		<index name="DOMVER1">
+			<refColumn name="NAME" type="ASC"/>
+			<refColumn name="VERSION" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="DOMAIN_ELEMENTS" implementor="com.ibm.dse.dw.model.db2.base.DomainElementsTable" alias="DEL">
+		<column name="DOMAIN"			type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="LABEL"			type="char" length="80" mandatory="true" primaryKey="true"/>
+		<column name="VALUE"			type="char" length="80" mandatory="false"/>
+	</table>
+
+	<table name="ENTITIES" implementor="com.ibm.dse.dw.model.db2.base.RepositoryEntitiesTable" alias="ENT">
+		<column name="TIMESTAMP"		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NAME"			type="char" length="70" mandatory="false"/>
+		<column name="VERSION"			type="char" length="50" mandatory="false"/>
+		<column name="STEREOTYPE"		type="char" length="20" mandatory="false"/>
+		<column name="COMPOSITE"		type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_COM_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="CLASS"			type="char" length="70" mandatory="false"/>
+		<column name="TAG_NAME"			type="char" length="70" mandatory="false"/>
+		<column name="DESCRIPTION"		type="char" length="500" mandatory="false"/>
+		<column name="ROOT"			type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_ROO_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="ABSTRACT"			type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_ABS_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="TAG_OVERRIDEABLE"	type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_TOV_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="EXTERNALIZE"		type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_EXT_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="IMAGE_URI"		type="char" length="255" mandatory="false"/>
+		<column name="OWNER"			type="char" length="50" mandatory="false"/>
+		<column name="RELEASED"			type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_REL_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="VERSIONED"		type="char" length="1" mandatory="false">
+			<checkConstraint name="ENT_VER_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="ORDER"			type="char" length="7" mandatory="false"/>
+		<column name="USER_DATA"		type="char" length="255" mandatory="false"/>
+		<column name="USERS_GROUP"		type="char" length="50" mandatory="false"/>
+		<column name="SUPER_ENTITY_NAME"	type="char" length="70" mandatory="false"/>
+		<column name="PARENT_GRP"		type="char" length="50" mandatory="false"/>
+		<column name="SUPER_ENTITY_VERSION"	type="char"	length="50" mandatory="false"/>
+		<column name="MODIFIER"			type="char" length="4" mandatory="false">
+			<checkConstraint name="ENT_MOD_CHK">
+				<allowedValue value="0..1"/>
+				<allowedValue value="0"/>
+				<allowedValue value="0..n"/>
+				<allowedValue value="1"/>
+				<allowedValue value="1..n"/>
+				<allowedValue value="n"/>
+			</checkConstraint>
+		</column>
+		<index name="ENTUSRI">
+			<refColumn name="OWNER" type="ASC"/>
+		</index>
+		<index name="ENTPARSI">
+			<refColumn name="SUPER_ENTITY_NAME" type="ASC"/>
+		</index>
+		<index name="ENTGRPI">
+			<refColumn name="PARENT_GRP" type="ASC"/>
+		</index>
+		<index name="ENTVER1">
+			<refColumn name="NAME" type="ASC"/>
+			<refColumn name="VERSION" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="ENTITIES_COMPOSITION" implementor="com.ibm.dse.dw.model.db2.base.EntitiesCompositionTable" alias="ECC">
+		<column name="ENT_PARENT"		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="ENT_COMPONENT"	type="char" length="70" mandatory="true" primaryKey="true"/>
+		<column name="ORDER"			type="char" length="7" mandatory="true" primaryKey="true"/>
+		<column name="MODIFIER"			type="char" length="4" mandatory="false">
+			<checkConstraint name="ECC_MOD_CHK">
+				<allowedValue value="0..1"/>
+				<allowedValue value="0"/>
+				<allowedValue value="0..n"/>
+				<allowedValue value="1"/>
+				<allowedValue value="1..n"/>
+				<allowedValue value="n"/>
+			</checkConstraint>
+		</column>
+		<!-- column name="ENT_COMP_VERSION" type="char"	length="50"	mandatory="true"/ -->
+		<index name="ENTPARPI">
+			<refColumn name="ENT_PARENT" type="ASC"/>
+		</index>
+		<index name="ENTCOMPI">
+			<refColumn name="ENT_COMPONENT" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="GROUPS" implementor ="com.ibm.dse.dw.model.db2.base.RepositoryGroupsTable" alias="GRP">
+		<column name="TIMESTAMP"		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NAME"			type="char" length="50" mandatory="false"/>
+		<column name="VERSION"			type="char" length="50" mandatory="false"/>
+		<column name="STEREOTYPE"		type="char" length="20" mandatory="false"/>
+		<column name="RELEASED"			type="char" length="1" mandatory="false">
+			<checkConstraint name="GRP_REL_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="VERSIONED"		type="char" length="1" mandatory="false">
+			<checkConstraint name="GRP_VER_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="OWNER"			type="char" length="50" mandatory="false"/>
+		<column name="DESCRIPTION"		type="char" length="500" mandatory="false"/>
+		<column name="IMAGE_URI"		type="char" length="255" mandatory="false"/>
+		<column name="ORDER"			type="char" length="7" mandatory="false"/>
+		<column name="USER_DATA"		type="char" length="255" mandatory="false"/>
+		<column name="USERS_GROUP"		type="char" length="50" mandatory="false"/>
+		<column name="PARENT"			type="char" length="50" mandatory="false"/>
+		<column name="PATH"			type="char" length="1000" mandatory="true"/>
+		<index name="GRPUSRI">
+			<refColumn name="OWNER" type="ASC"/>
+		</index>
+		<index name="GRPVERI">
+			<refColumn name="NAME" type="ASC"/>
+			<refColumn name="VERSION" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="INSTANCES" implementor="com.ibm.dse.dw.model.db2.base.RepositoryInstancesTable" alias="INS">
+		<column name="TIMESTAMP"		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NAME"			type="char" length="70" mandatory="false"/>
+		<column name="VERSION"			type="char" length="50" mandatory="false"/>
+		<column name="TAG_NAME"			type="char" length="70" mandatory="false"/>
+		<column name="IMAGE_URI"		type="char" length="255" mandatory="false"/>
+		<column name="DESCRIPTION"		type="char" length="500" mandatory="false"/>
+		<column name="ORDER"			type="char" length="7" mandatory="false"/>
+		<column name="OWNER"			type="char" length="50" mandatory="false"/>
+		<column name="RELEASED"			type="char" length="1" mandatory="false">
+			<checkConstraint name="INS_REL_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="VERSIONED"		type="char" length="1" mandatory="false">
+			<checkConstraint name="INS_VER_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="STEREOTYPE"		type="char" length="20" mandatory="false"/>
+		<column name="USER_DATA"		type="char" length="255" mandatory="false"/>
+		<column name="USERS_GROUP"		type="char" length="50" mandatory="false"/>
+		<column name="ENTITY_NAME"		type="char" length="50" mandatory="false"/>
+		<column name="ENTITY_VERSION"		type="char" length="50" mandatory="false"/>
+		<column name="PARENT_TYPE"		type="char" length="1" mandatory="false"/>
+		<column name="PARENT"			type="char" length="50" mandatory="false"/>
+		<column name="PATH"			type="char" length="1000" mandatory="true"/>
+		<index name="INSENTI">
+			<refColumn name="NAME" type="ASC"/>
+			<refColumn name="VERSION" type="ASC"/>
+		</index>
+		<index name="INSUSRI">
+			<refColumn name="OWNER" type="ASC"/>
+		</index>
+		<index name="INSNAMI">
+			<refColumn name="NAME" type="ASC"/>
+			<refColumn name="VERSION" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="PROPERTIES" implementor="com.ibm.dse.dw.model.db2.base.PropertiesTable" alias="PRP">
+		<column name="INSTANCE" 		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="ATTRIBUTE_NAME" 		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="VALUE" 			type="char" length="255" mandatory="false"/>
+		<column name="META_VALUE"    		type="char" length="1000" mandatory="false"/>
+	</table>
+
+	<table name="USERS" implementor="com.ibm.dse.dw.model.db2.base.UsersTable" alias="USR">
+		<column name="NAME" 			type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NET_NAME" 		type="char" length="100" mandatory="false"/>
+		<column name="DESCRIPTION" 		type="char" length="255" mandatory="false"/>
+		<column name="USER_DATA" 		type="char" length="255" mandatory="false"/>		
+	</table>
+
+	<table name="USERS_GROUPS_USERS" implementor="com.ibm.dse.dw.model.db2.base.UsersGroupsUsersTable" alias="USRGRPUSR">
+		<column name="USERS_GROUP" 		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="USER_NAME" 		type="char" length="50" mandatory="true" primaryKey="true"/>
+	</table>
+
+	<table name="USERS_GROUP" implementor="com.ibm.dse.dw.model.db2.base.UsersGroupTable" alias="USRGRP">
+		<column name="NAME"			type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="DESCRIPTION"		type="char" length="150" mandatory="false"/>
+		<column name="USER_DATA"		type="char" length="255" mandatory="false"/>
+	</table>
+
+	<table name="PROJECTS" implementor="com.ibm.dse.dw.model.db2.base.ProjectsTable" alias="PRJ">
+		<column name="TIMESTAMP"		type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="NAME"			type="char" length="50" mandatory="false"/>
+		<column name="VERSION"			type="char" length="50" mandatory="false"/>
+		<column name="RELEASED"			type="char" length="1" mandatory="false">
+			<checkConstraint name="PRJ_REL_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="VERSIONED"		type="char" length="1" mandatory="false">
+			<checkConstraint name="PRJ_VER_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+		<column name="OWNER"			type="char" length="50" mandatory="false"/>
+		<column name="DESCRIPTION"		type="char" length="255" mandatory="false"/>
+		<column name="USER_DATA"		type="char" length="255" mandatory="false"/>
+		<column name="USERS_GROUP"		type="char" length="50" mandatory="false"/>
+		<index name="PRJVERI">
+			<refColumn name="NAME" type="ASC"/>
+			<refColumn name="VERSION" type="ASC"/>
+		</index>
+	</table>
+
+	<table name="PROJECT_COMPOSITION" implementor="com.ibm.dse.dw.model.db2.base.ProjectCompositionTable" alias="PRJCOM">
+		<column name="PROJECT"			type="char" length="50" mandatory="true" primaryKey="true"/>
+		<column name="COMPONENT_TYPE"		type="char" length="3" mandatory="true"/>
+		<column name="COMPONENT"		type="char" length="1000" mandatory="true" primaryKey="true"/>
+		<column name="COMPONENT_VERSION"	type="char" length="50" mandatory="false"/>
+		<column name="AUTOUPDATE"		type="char" length="1" mandatory="false">
+			<checkConstraint name="PCO_AUT_CHK">
+				<allowedValue value="Y"/>
+				<allowedValue value="N"/>
+			</checkConstraint>
+		</column>
+	</table>
+
+</repository>

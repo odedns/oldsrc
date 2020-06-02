@@ -1,0 +1,53 @@
+#ifndef _OMG_DS_EVENT_LOG_ADMIN_IDL_
+#define _OMG_DS_EVENT_LOG_ADMIN_IDL_
+
+//
+//	Copyright (c) 1999 IONA Technologies PLC. All Rights Reserved.
+//
+//   THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF IONA Technologies PLC
+//	    The copyright notice above does not evidence any
+//	    actual or intended publication of such source code.
+//
+
+#include <omg/CosEventChannelAdmin.idl> // CORBA Event Service
+#include <omg/DsLogAdmin.idl>
+
+#pragma IT_SystemSpecification
+#pragma prefix "omg.org"
+
+#pragma IT_BeginCBESpecific AllJava                             "@@\
+@module DsEventLogAdmin=org.omg"
+module DsEventLogAdmin
+{
+
+interface EventLog : DsLogAdmin::Log, CosEventChannelAdmin::EventChannel 
+{
+};
+
+interface EventLogFactory : 
+	DsLogAdmin::LogMgr, CosEventChannelAdmin::ConsumerAdmin
+{
+    EventLog create(
+	in DsLogAdmin::LogFullActionType full_action,
+	in unsigned long long max_size,
+	in DsLogAdmin::CapacityAlarmThresholdList thresholds,
+	out DsLogAdmin::LogId id
+	) 
+	raises (DsLogAdmin::InvalidLogFullAction, 
+		DsLogAdmin::InvalidThreshold);
+
+    EventLog create_with_id(
+	in DsLogAdmin::LogId id,
+	in DsLogAdmin::LogFullActionType full_action,
+	in unsigned long long max_size,
+	in DsLogAdmin::CapacityAlarmThresholdList thresholds
+	)
+	raises (DsLogAdmin::LogIdAlreadyExists,
+		DsLogAdmin::InvalidLogFullAction,
+		DsLogAdmin::InvalidThreshold);
+    
+};
+
+};
+
+#endif

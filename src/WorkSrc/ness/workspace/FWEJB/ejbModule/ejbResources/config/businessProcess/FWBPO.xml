@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "bpo.dtd">
+<root>
+	<!-- Legacy -->
+	<commandDefinition name="SPLegacyCmd" methodName="executeSPLegacyCommand" className="com.ness.fw.legacy.LegacyBPO" />
+
+	<!-- Batch -->
+	<commandDefinition name="jobCmd" methodName="runJob" className="com.ness.fw.job.bpo.JobBPO" />
+
+	<commandDefinition name="fetchByIdCmd" methodName="fetchById" className="com.ness.fw.cache.fetcher.FetcherBPO" />
+	<commandDefinition name="fetchAllCmd" methodName="fetchAll" className="com.ness.fw.cache.fetcher.FetcherBPO" />
+
+
+</root>

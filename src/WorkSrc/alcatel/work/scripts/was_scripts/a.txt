@@ -1,0 +1,13 @@
+On Windows systems WSAdmin returns the WAS_INSTALL_ROOT directory
+location with with escaped backslashes "C:IBMWebSphereAppServer"
+instead of "C:\IBM\WebSphere\AppServer".  The work around is to split
+the list element containing the list element.
+
+   set nodeVarMapId [ $AdminConfig getid /Node:[exec
+hostname]/VariableMap:/ ]
+   set listVar1     [ eval join  [ $AdminConfig showall $nodeVarMapId
+] ]
+   set x            [ lindex [ lindex $listVar1 [lsearch $listVar1
+*WAS_INSTALL_ROOT*] ] 2 ]
+
+   *** set WAS_INSTALL_ROOT [ lindex [ split $x ] 1 ] *** 
