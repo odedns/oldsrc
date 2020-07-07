@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root SYSTEM "flower.dtd">
-<root>
-	<activityDefinition name="chooseNodeActivity"  activityType="readOnly" class="fwpilot.activities.ChooseNodeActivity"/>	
-	<activityDefinition name="chooseTabActivity"  activityType="readOnly" class="fwpilot.activities.ChooseTabActivity"/>	
-</root>

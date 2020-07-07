@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<views.xml>
-
-<view id="slikaView" context="emptyViewCtx" defaultOperation="browserClientOp" 
-    implClass="tests.views.EmptyView"/>
-
-</views.xml>

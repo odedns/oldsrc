@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<server-preference>
-   <deployable factoryId="com.ibm.etools.server.looseArchive"
-      memento="BPEAudit" server="/Servers/EE Server.wsi"/>
-   <deployable factoryId="com.ibm.etools.server.j2ee.ejb20"
-      memento="BPEAudit" server="/Servers/EE Server.wsi"/>
-</server-preference>

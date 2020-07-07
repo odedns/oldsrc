@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<modulemap:EARProjectMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:modulemap="modulemap.xmi" xmlns:application="application.xmi" xmi:id="EARProjectMap_1075798856307">
-  <mappings xmi:id="ModuleMapping_1075798856323" projectName="OverrideEJB">
-    <module xmi:type="application:EjbModule" href="META-INF/application.xml#EjbModule_1075798856323"/>
-  </mappings>
-  <utilityJARMappings xmi:id="UtilityJARMapping_1075798865417" projectName="Override" uri="Override.jar"/>
-</modulemap:EARProjectMap>

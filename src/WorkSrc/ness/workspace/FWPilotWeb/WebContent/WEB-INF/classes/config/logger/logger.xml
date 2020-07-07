@@ -1,5 +1,0 @@
-<logger>
-	<filterList>
-		<filter refId="simpleFilter"></filter>
-	</filterList>
-</logger>

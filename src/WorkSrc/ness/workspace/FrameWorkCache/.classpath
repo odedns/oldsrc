@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-    <classpathentry kind="src" path="JavaSources"/>
-    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-    <classpathentry kind="con" path="com.ibm.etools.server.target.container/com.ibm.etools.websphere.serverTarget.base.v51/j2ee.web/1"/>
-    <classpathentry kind="src" path="/FWCore"/>
-    <classpathentry kind="var" path="NFW_JARS/jgroups-2.2.7.jar"/>
-    <classpathentry kind="output" path="classes"/>
-</classpath>

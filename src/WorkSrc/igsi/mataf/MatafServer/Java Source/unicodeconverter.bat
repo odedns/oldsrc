@@ -1,1 +1,0 @@
-c:\jdk1.3.1\bin\native2ascii -encoding iso8859-8 Maarachot_heb.properties Maarachot.properties

@@ -1,1 +1,0 @@
-$AdminTask exportWasprofile {-archive c:\tmp\HoshenProfile.car}

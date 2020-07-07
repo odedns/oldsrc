@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<test.xml>
-
-<operation context="testTrxCtx" id="testTrxClientOp" implClass="mataf.operations.TestTrxClientOp">
-		<refFormat name="csRequestFormat" refId="testTrxRequestFmt" />
-</operation>
-
-	
-</test.xml>

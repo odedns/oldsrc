@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<servers>
-		<server name="myserver" host="N813" port="8880" />
-		<server name="HsnServer" host="hsn-hsn-01-190r" port="8881" />
-		<server name="XsmServer" host="hsn-xsm-01-190r" port="8884" />
-		<server host="dev190sun03" name="dev190sun03" port="8879"/>		
-</servers>
-

@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: prjEJ_Utils.jar 
- prjEJ_Common.jar 
- prjEJ_Model.jar 
- log4j-1.2.12.jar 
- prjEJ_ServicesImpl.jar
-

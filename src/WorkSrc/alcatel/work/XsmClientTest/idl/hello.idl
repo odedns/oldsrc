@@ -1,9 +1,0 @@
-
-module HelloWorld
-{
-	interface Hello 
-	{
-		string getGreeting();
-	};
-
-};

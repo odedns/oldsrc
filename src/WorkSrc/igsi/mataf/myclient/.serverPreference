@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<server-preference>
-   <deployable factoryId="com.ibm.etools.server.j2ee.appclient13"
-      memento="myclient" server="/Servers/was5.wsi"/>
-</server-preference>

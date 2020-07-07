@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ejbbnd:EJBJarBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ejbbnd="ejbbnd.xmi" xmlns:ejb="ejb.xmi" xmi:id="EJBJarBinding_1045384585014">
-  <ejbJar href="META-INF/ejb-jar.xml#ejb-jar_ID"/>
-  <ejbBindings xmi:id="EnterpriseBeanBinding_1045384585014" jndiName="ejb/com/ibm/AuditDataHome">
-    <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#AuditData"/>
-  </ejbBindings>
-</ejbbnd:EJBJarBinding>

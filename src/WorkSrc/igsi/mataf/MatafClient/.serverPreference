@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<server-preference>
-   <deployable factoryId="com.ibm.etools.server.j2ee.appclient"
-      memento="MatafClient" server="/Servers/Mataf Server Instance.wsi"/>
-</server-preference>

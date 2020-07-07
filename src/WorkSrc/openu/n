@@ -1,5 +1,0 @@
-http://telem5.openu.ac.il/tsol/ts.exe?tsurl=0.2988&tsstmplt=search_object&name=בריאות'
-select * from data_char a, data b where a.obj_id=b.id and b.node_id=2988
-and a.data like '%בריאות%'
-go
-

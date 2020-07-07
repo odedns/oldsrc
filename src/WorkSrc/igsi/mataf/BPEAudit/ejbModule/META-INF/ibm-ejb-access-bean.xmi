@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<accessbean:EJBShadow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:accessbean="accessbean.xmi" xmlns:ejb="ejb.xmi" xmi:id="EJBShadow_1045388262982" name="AuditData" factoryPackageName="com.ibm">
-  <accessBeans xmi:type="accessbean:Type1AccessBean" xmi:id="Type1AccessBean_1045388262982" name="AuditDataAccessBean" package="com.ibm" version="WSAD-1.0">
-    <nullConstructor xmi:id="MethodElement_1045388262982" name="create" parms="" type="Home">
-      <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#AuditData"/>
-    </nullConstructor>
-  </accessBeans>
-  <enterpriseBean xmi:type="ejb:Session" href="META-INF/ejb-jar.xml#AuditData"/>
-</accessbean:EJBShadow>
